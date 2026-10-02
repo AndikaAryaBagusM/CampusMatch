@@ -1,2 +1,3 @@
-# KampusCheck
+# CampusMatch
+
 My new project
