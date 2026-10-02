@@ -39,6 +39,6 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 ## Technology
 
 15. **Stack**: Next.js (App Router, TypeScript) on Vercel; Neon Postgres; Drizzle; Auth.js; Postgres FTS with `pg_trgm`; Tailwind with shadcn/ui; Screening via `after()` calling `claude-haiku-4-5-20251001`, plus a cron retry; the xlsx import uses SheetJS. See [ADR 0005](./adr/0005-nextjs-postgres-on-vercel.md).
-16. **Name**: CampusMatch. The repo name `kampusCheck` stays as it is.
+16. **Name**: CampusMatch. The GitHub repo is `AndikaAryaBagusM/CampusMatch` (renamed from `kampusCheck`).
 
 See also: [roadmap.md](./roadmap.md) and [legal-todo.md](./legal-todo.md).
