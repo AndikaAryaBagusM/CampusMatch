@@ -2,8 +2,10 @@ import { sql } from "drizzle-orm";
 import {
   boolean,
   check,
+  date,
   index,
   integer,
+  jsonb,
   pgTable,
   primaryKey,
   text,
@@ -50,6 +52,7 @@ export const kampus = pgTable(
   },
   (t) => [
     index("kampus_kota_id_idx").on(t.kotaId),
+    index("kampus_nama_trgm_idx").using("gin", t.nama.op("gin_trgm_ops")),
     check(
       "kampus_akreditasi_check",
       sql`${t.akreditasi} IN (${sql.raw(AKREDITASI.map((a) => `'${a}'`).join(", "))})`,
@@ -57,14 +60,18 @@ export const kampus = pgTable(
   ],
 );
 
-export const jurusan = pgTable("jurusan", {
-  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
-  nama: text("nama").notNull().unique(),
-  slug: text("slug").notNull().unique(),
-  deskripsi: text("deskripsi"),
-  createdAt: createdAt(),
-  updatedAt: updatedAt(),
-});
+export const jurusan = pgTable(
+  "jurusan",
+  {
+    id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+    nama: text("nama").notNull().unique(),
+    slug: text("slug").notNull().unique(),
+    deskripsi: text("deskripsi"),
+    createdAt: createdAt(),
+    updatedAt: updatedAt(),
+  },
+  (t) => [index("jurusan_nama_trgm_idx").using("gin", t.nama.op("gin_trgm_ops"))],
+);
 
 // Kode Prodi -> Jurusan mapping (ADR 0001).
 export const kodeProdiJurusan = pgTable("kode_prodi_jurusan", {
@@ -108,6 +115,7 @@ export const prodi = pgTable(
       t.nama,
     ),
     index("prodi_kode_prodi_idx").on(t.kodeProdi),
+    index("prodi_nama_trgm_idx").using("gin", t.nama.op("gin_trgm_ops")),
   ],
 );
 
@@ -127,3 +135,17 @@ export const verifikasiKampus = pgTable(
   },
   (t) => [primaryKey({ columns: [t.userId, t.kampusId] })],
 );
+
+// One row per catalogue import; the latest row's tanggal_data is the
+// catalogue's as-of date (ADR 0003).
+export const imporKatalog = pgTable("impor_katalog", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  // Date the official exports were downloaded.
+  tanggalData: date("tanggal_data").notNull(),
+  // Source file names and their sha256.
+  sumber: jsonb("sumber").$type<{ file: string; sha256: string }[]>().notNull(),
+  jumlahKota: integer("jumlah_kota").notNull(),
+  jumlahKampus: integer("jumlah_kampus").notNull(),
+  jumlahProdi: integer("jumlah_prodi").notNull(),
+  createdAt: createdAt(),
+});
