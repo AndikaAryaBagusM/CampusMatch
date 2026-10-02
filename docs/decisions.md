@@ -13,6 +13,8 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 4. **Catalogue source**: official Kemenristekdikti exports (Program Studi .xlsx and Perguruan Tinggi terakreditasi .xlsx), loaded by an import script as a snapshot. There are no live PDDikti calls. The files are in `data/raw/` and join on `npsn`.
 4a. **Jenjang**: only D3, D4 and S1 Prodi are imported.
 4b. **Akreditasi**: shown for Kampus only. Prodi accreditation is out of the MVP, since the exports don't include it.
+4c. **Import** (`npm run catalogue:import -- --as-of YYYY-MM-DD`): idempotent upserts, never deletes. Each run records the export download date in `impor_katalog`; the latest row is the catalogue's as-of date. Kampus whose Kota is "Lainnya" in the exports go under a per-province Kota "Lainnya".
+4d. **Jurusan list**: `npm run catalogue:propose-jurusan` writes `data/jurusan-mapping.csv`, which proposes the most common name of each Kode Prodi as its Jurusan. The team edits the `jurusan` column (blank = unmapped), then `npm run catalogue:load-jurusan` loads it. Mappings a Moderator has changed are never overwritten.
 
 ## Roles
 
@@ -38,7 +40,7 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 
 ## Technology
 
-15. **Stack**: Next.js (App Router, TypeScript) on Vercel; Neon Postgres; Drizzle; Auth.js; Postgres FTS with `pg_trgm`; Tailwind with shadcn/ui; Screening via `after()` calling `claude-haiku-4-5-20251001`, plus a cron retry; the xlsx import uses SheetJS. See [ADR 0005](./adr/0005-nextjs-postgres-on-vercel.md).
+15. **Stack**: Next.js (App Router, TypeScript) on Vercel; Neon Postgres; Drizzle; Auth.js; name search with `pg_trgm` (substring and typo matching; Postgres has no Indonesian text-search configuration, and catalogue names are too short for stemming to help); Tailwind with shadcn/ui; Screening via `after()` calling `claude-haiku-4-5-20251001`, plus a cron retry; the xlsx import uses SheetJS. See [ADR 0005](./adr/0005-nextjs-postgres-on-vercel.md).
 16. **Name**: CampusMatch. The GitHub repo is `AndikaAryaBagusM/CampusMatch` (renamed from `kampusCheck`).
 
 See also: [roadmap.md](./roadmap.md) and [legal-todo.md](./legal-todo.md).
