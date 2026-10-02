@@ -1,0 +1,79 @@
+Daftar Kampus Unggulan: universities from Webometrics 2026 July (data/raw/webometrics-indonesia-top100.txt, captured 2026-10-02)
+that could not be matched to an NPSN with high confidence.
+
+None: all 100 universities were matched.
+
+For review: the 24 matches below are high confidence but not exact name matches.
+The other 76 are exact matches with an official name in data/raw/.
+
+6. "Universitas Padjadjaran Bandung" -> 001007 Universitas Padjadjaran
+   City suffix 'Bandung' added by Webometrics; Universitas Padjadjaran is the only Kampus with that name (campus in Kab. Sumedang/Jatinangor).
+
+8. "Universitas Sebelas Maret UNS Surakarta" -> 001027 Universitas Sebelas Maret
+   'UNS Surakarta' is the acronym and city; Universitas Sebelas Maret (Kota Surakarta) is the only match.
+
+10. "IPB University / Bogor Agricultural University" -> 002003 Institut Pertanian Bogor
+   IPB University is the brand name of Institut Pertanian Bogor (Kab. Bogor); no other Kampus uses it.
+
+27. "Universitas Islam Negeri UIN Sunan Gunung Djati Bandung" -> 201004 Universitas Islam Negeri Sunan Gunung Djati
+   'UIN' repeats 'Universitas Islam Negeri', and 'Bandung' is the city; UIN Sunan Gunung Djati is in Kota Bandung.
+
+33. "Universitas Ahmad Dahlan Yogyakarta" -> 051013 Universitas Ahmad Dahlan
+   City suffix 'Yogyakarta'; Universitas Ahmad Dahlan is in Kota Yogyakarta. The other candidates (Ahmad Dahlan Aceh, Islam Ahmad Dahlan Sinjai) are elsewhere.
+
+39. "Universitas Islam Negeri UIN Sunan Kalijaga Yogyakarta" -> 201002 Universitas Islam Negeri Sunan Kalijaga
+   'UIN' and the city 'Yogyakarta' added; UIN Sunan Kalijaga is in Kab. Sleman, D.I. Yogyakarta.
+
+40. "Universitas Islam Negeri UIN Syarif Hidayatullah Jakarta" -> 201001 Universitas Islam Negeri Syarif Hidayatullah
+   'UIN' and 'Jakarta' added; UIN Syarif Hidayatullah Jakarta is officially located in Kota Tangerang Selatan (Ciputat).
+
+50. "Universitas Islam Negeri UIN Maulana Malik Ibrahim Malang" -> 201003 Universitas Islam Negeri Maulana Malik Ibrahim
+   'UIN' and the city 'Malang' added; UIN Maulana Malik Ibrahim is in Kota Malang.
+
+55. "Universitas Halu Oleo Kendari" -> 001029 Universitas Halu Oleo
+   City suffix 'Kendari'; Universitas Halu Oleo is in Kota Kendari.
+
+58. "Universitas Islam Negeri UIN Sumatera Utara" -> 201008 Universitas Islam Negeri Sumatera Utara Medan
+   'Negeri UIN' makes this the state Islamic university, 201008 Universitas Islam Negeri Sumatera Utara Medan. It is NOT 011001 Universitas Islam Sumatera Utara, a private university, even though the scorer ranked that one first.
+
+68. "Universitas Islam Sultan Agung Semarang" -> 061002 Universitas Islam Sultan Agung
+   City suffix 'Semarang'; Universitas Islam Sultan Agung is in Kota Semarang.
+
+69. "Universitas Islam Negeri UIN Sunan Ampel Surabaya UINSA" -> 201007 Universitas Islam Negeri Sunan Ampel
+   'UIN', the city and the acronym 'UINSA' added; UIN Sunan Ampel is in Kota Surabaya.
+
+72. "Universitas Islam Negeri UIN Sultan Syarif Kasim Riau" -> 201005 Universitas Islam Negeri Sultan Syarif Kasim Riau
+   'UIN' repeats 'Universitas Islam Negeri'; otherwise identical.
+
+73. "Universitas Muslim Indonesia Makassar" -> 091002 Universitas Muslim Indonesia
+   City suffix 'Makassar'; Universitas Muslim Indonesia is in Kota Makassar.
+
+74. "Universitas Islam Negeri UIN Raden Fatah" -> 201009 Universitas Islam Negeri Raden Fatah Palembang
+   'UIN' added and the city 'Palembang' omitted; UIN Raden Fatah Palembang is the only Raden Fatah university.
+
+77. "Universitas Islam Negeri UIN Ar Raniry" -> 201011 Universitas Islam Negeri Ar-Raniry Banda Aceh
+   'UIN' added and 'Banda Aceh' omitted (Ar Raniry vs Ar-Raniry); the only Ar-Raniry university.
+
+80. "Universitas PGRI Semarang" -> 061038 Universitas Persatuan Guru Republik Indonesia Semarang
+   PGRI is the abbreviation of 'Persatuan Guru Republik Indonesia'; the export spells it out (061038, Kota Semarang). Not 061017 Universitas Semarang, a different university that the scorer ranked first.
+
+83. "Universitas Trunojoyo Madura" -> 001043 Universitas Trunodjoyo Madura
+   Trunojoyo vs Trunodjoyo is the old/new spelling (dj → j); Universitas Trunodjoyo Madura is the state university in Kab. Bangkalan. Not 061048 Universitas Madura.
+
+85. "Universitas Pasundan Bandung" -> 041008 Universitas Pasundan
+   City suffix 'Bandung'; Universitas Pasundan is in Kota Bandung.
+
+91. "Universitas Islam Negeri UIN Walisongo Semarang" -> 201010 Universitas Islam Negeri Walisongo Semarang
+   'UIN' repeats 'Universitas Islam Negeri'; otherwise identical.
+
+92. "Universitas Mahammadiyah Purwokerto" -> 061019 Universitas Muhammadiyah Purwokerto
+   'Mahammadiyah' is a typo for 'Muhammadiyah' in the Webometrics export; Universitas Muhammadiyah Purwokerto (Kab. Banyumas) is the only match.
+
+96. "Universitas Pakuan UNPAK Bogor" -> 041004 Universitas Pakuan
+   'UNPAK' is the acronym and 'Bogor' the city; Universitas Pakuan is in Kota Bogor.
+
+97. "Universitas Tarumanagara UNTAR" -> 031015 Universitas Tarumanagara
+   'UNTAR' is the acronym of Universitas Tarumanagara.
+
+100. "Petra Christian University" -> 071002 Universitas Kristen Petra
+   Petra Christian University is the English name of Universitas Kristen Petra (Kota Surabaya). Not STIE Petra (Bitung) or STT Petra (Samarinda).
