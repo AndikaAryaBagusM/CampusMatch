@@ -5,12 +5,14 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 ## Domain
 
 1. **What an Ulasan is about**: every Ulasan is about one Prodi (one programme at one Kampus). Kampus and Jurusan scores are aggregated from Prodi Ulasan. See [ADR 0001](./adr/0001-ulasan-belongs-to-prodi.md).
-2. **Jurusan**: a curated list maintained by the team. Every Prodi maps to exactly one Jurusan, automatically when the name matches, otherwise by a Moderator. See [ADR 0001](./adr/0001-ulasan-belongs-to-prodi.md).
+2. **Jurusan**: a curated list maintained by the team. Every Prodi maps to exactly one Jurusan. The mapping is made per Kode Prodi (the national programme code), and a Moderator can override it for an individual Prodi. See [ADR 0001](./adr/0001-ulasan-belongs-to-prodi.md).
 
 ## Data
 
 3. **Coverage**: the Daftar Kampus Unggulan, initially the first 100 Indonesian entries of Webometrics/UniRank. It was **copied once, by hand, into `data/top-100-kampus.csv`** (not scraped). After that, Moderators edit it. See [ADR 0003](./adr/0003-catalogue-snapshot-from-official-exports.md).
-4. **Catalogue source**: official Kemenristekdikti exports (Program Studi .xlsx and Perguruan Tinggi terakreditasi .xlsx), loaded by an import script as a snapshot. There are no live PDDikti calls. *Pending: the export files are to be added under `data/raw/`, and their columns checked before the importer is written.*
+4. **Catalogue source**: official Kemenristekdikti exports (Program Studi .xlsx and Perguruan Tinggi terakreditasi .xlsx), loaded by an import script as a snapshot. There are no live PDDikti calls. The files are in `data/raw/` and join on `npsn`.
+4a. **Jenjang**: only D3, D4 and S1 Prodi are imported.
+4b. **Akreditasi**: shown for Kampus only. Prodi accreditation is out of the MVP, since the exports don't include it.
 
 ## Roles
 

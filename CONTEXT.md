@@ -12,16 +12,20 @@ _Avoid_: Universitas, PT, campus, university
 One degree programme at one Kampus and one Jenjang, e.g. "S1 Informatika, Universitas Gadjah Mada". Every Ulasan is about a Prodi.
 _Avoid_: Jurusan (when you mean a specific programme), program, major, course
 
+**Kode Prodi**:
+The national code for a kind of programme (e.g. 55201), shared by every Prodi of that kind regardless of its local name. One Kampus can have several Prodi with the same Kode Prodi, e.g. at different branch campuses.
+_Avoid_: Prodi ID, nomenclature code
+
 **Jurusan**:
 A generic field of study from CampusMatch's own curated list, e.g. "Teknik Informatika". It groups equivalent Prodi across many Kampus. Each Prodi belongs to exactly one Jurusan.
 _Avoid_: Bidang, major, field, department
 
 **Jenjang**:
-The level of a Prodi: D3, D4 or S1.
+The level of a Prodi. CampusMatch covers only D3, D4 and S1.
 _Avoid_: Strata, degree level
 
 **Akreditasi**:
-The official accreditation grade of a Kampus or Prodi, as published by the government.
+The official accreditation grade of a Kampus, as published by the government. CampusMatch does not show accreditation for individual Prodi.
 _Avoid_: Rating, peringkat
 
 **Kota**:
