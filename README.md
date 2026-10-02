@@ -1,2 +1,2 @@
-# new-project
+# KampusCheck
 My new project
