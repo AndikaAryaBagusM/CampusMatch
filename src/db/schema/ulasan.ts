@@ -17,6 +17,7 @@ import {
 import { users } from "./auth";
 import { createdAt, updatedAt } from "./columns";
 import {
+  aksiModerasi,
   alasanLaporan,
   statusLaporan,
   statusPengulas,
@@ -93,6 +94,9 @@ export const ulasanRevisi = pgTable(
     status: statusUlasan("status").notNull().default("menunggu"),
     tingkatRisiko: tingkatRisiko("tingkat_risiko"),
     alasanScreening: text("alasan_screening"),
+    // Model id that produced tingkat_risiko, e.g. "claude-haiku-4-5-20251001".
+    modelScreening: text("model_screening"),
+    // Failed Screening rounds (ADR 0002); the third sends the revision to Ditinjau.
     percobaanScreening: smallint("percobaan_screening").notNull().default(0),
     discreeningAt: timestamp("discreening_at", { withTimezone: true }),
     diputuskanOleh: text("diputuskan_oleh").references(() => users.id, {
@@ -144,5 +148,33 @@ export const laporan = pgTable(
   (t) => [
     index("laporan_status_idx").on(t.status),
     index("laporan_ulasan_id_idx").on(t.ulasanId),
+    // One open Laporan per reporter per Ulasan.
+    uniqueIndex("laporan_ulasan_pelapor_baru_unique")
+      .on(t.ulasanId, t.pelaporId)
+      .where(sql`${t.status} = 'baru'`),
   ],
+);
+
+// Append-only log of what happened to an Ulasan: Screening results and
+// Moderator decisions. Shown to Moderators as the Ulasan's history.
+export const riwayatModerasi = pgTable(
+  "riwayat_moderasi",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    ulasanId: uuid("ulasan_id")
+      .notNull()
+      .references(() => ulasan.id, { onDelete: "cascade" }),
+    revisiId: uuid("revisi_id").references(() => ulasanRevisi.id, {
+      onDelete: "cascade",
+    }),
+    laporanId: uuid("laporan_id").references(() => laporan.id, {
+      onDelete: "set null",
+    }),
+    aksi: aksiModerasi("aksi").notNull(),
+    // NULL for automatic Screening entries.
+    oleh: text("oleh").references(() => users.id, { onDelete: "set null" }),
+    alasan: text("alasan"),
+    createdAt: createdAt(),
+  },
+  (t) => [index("riwayat_moderasi_ulasan_id_idx").on(t.ulasanId)],
 );

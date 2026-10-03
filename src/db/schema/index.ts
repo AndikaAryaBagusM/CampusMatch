@@ -9,9 +9,10 @@ import {
   verifikasiKampus,
 } from "./katalog";
 import { kodeRiasec } from "./riasec";
-import { laporan, ulasan, ulasanRevisi } from "./ulasan";
+import { laporan, riwayatModerasi, ulasan, ulasanRevisi } from "./ulasan";
 
 export * from "./auth";
+export * from "./batas-laju";
 export * from "./enums";
 export * from "./katalog";
 export * from "./riasec";
@@ -90,6 +91,7 @@ export const ulasanRelations = relations(ulasan, ({ one, many }) => ({
   }),
   revisi: many(ulasanRevisi, { relationName: "revisi" }),
   laporan: many(laporan),
+  riwayat: many(riwayatModerasi),
 }));
 
 export const ulasanRevisiRelations = relations(ulasanRevisi, ({ one }) => ({
@@ -104,6 +106,14 @@ export const laporanRelations = relations(laporan, ({ one }) => ({
   ulasan: one(ulasan, { fields: [laporan.ulasanId], references: [ulasan.id] }),
   revisi: one(ulasanRevisi, {
     fields: [laporan.revisiId],
+    references: [ulasanRevisi.id],
+  }),
+}));
+
+export const riwayatModerasiRelations = relations(riwayatModerasi, ({ one }) => ({
+  ulasan: one(ulasan, { fields: [riwayatModerasi.ulasanId], references: [ulasan.id] }),
+  revisi: one(ulasanRevisi, {
+    fields: [riwayatModerasi.revisiId],
     references: [ulasanRevisi.id],
   }),
 }));
