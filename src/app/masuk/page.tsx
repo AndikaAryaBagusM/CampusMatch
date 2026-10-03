@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { auth, caraMasuk } from "@/auth";
 import { kontainer, Panel } from "@/components/panel";
@@ -68,6 +69,18 @@ export default async function MasukPage(props: PageProps<"/masuk">) {
         {!cara.google && !cara.email ? (
           <p className="mt-6 rounded-lg bg-secondary p-3 text-sm">Masuk belum tersedia. Coba lagi nanti.</p>
         ) : null}
+
+        <p className="mt-6 border-t border-border pt-4 text-xs text-muted-foreground">
+          Dengan masuk, kamu menyetujui{" "}
+          <Link href="/ketentuan" className="font-medium text-primary hover:underline">
+            Ketentuan Layanan
+          </Link>{" "}
+          dan{" "}
+          <Link href="/privasi" className="font-medium text-primary hover:underline">
+            Kebijakan Privasi
+          </Link>{" "}
+          CampusMatch. Teks ulasan diperiksa otomatis dengan Claude API dari Anthropic.
+        </p>
       </Panel>
     </div>
   );

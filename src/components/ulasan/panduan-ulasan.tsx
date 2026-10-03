@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import { Panel } from "@/components/panel";
 import { kontakEmail, mailtoTakedown } from "@/lib/kontak";
 
-// The short rules shown next to the form. Not the full terms (roadmap TODO).
+// The short rules shown next to the form; the full rules are on /ketentuan.
 export function PanduanUlasan() {
   const email = kontakEmail();
   return (
@@ -18,7 +19,12 @@ export function PanduanUlasan() {
         <li>Tanpa SARA, hinaan, atau promosi.</li>
       </ul>
       <p className="mt-3 text-xs text-muted-foreground">
-        Setiap ulasan diperiksa otomatis dan ditinjau tim kami bila perlu. Ulasan tampil tanpa nama.
+        Setiap ulasan diperiksa otomatis dan ditinjau tim kami bila perlu. Ulasan tampil tanpa nama. Aturan lengkap ada
+        di{" "}
+        <Link href="/ketentuan#ulasan" className="font-medium text-primary hover:underline">
+          Ketentuan Layanan
+        </Link>
+        .
       </p>
       {email ? (
         <p className="mt-3 text-xs text-muted-foreground">
