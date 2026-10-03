@@ -291,16 +291,38 @@ export function loadExports(): Catalogue {
   return { kota, kampus, prodi, sources, report };
 }
 
-// Daftar Kampus Unggulan, or null when the CSV does not exist yet.
-export function loadUnggulan(): { rows: UnggulanRow[]; source: Source } | null {
+// The one value a column holds across all rows; throws if it is missing or varies.
+function singleValue(rows: Record<string, string>[], column: string): string {
+  const values = new Set(rows.map((r) => clean(r[column])));
+  if (values.size !== 1 || values.has("")) {
+    throw new Error(`${UNGGULAN_FILE}: column "${column}" must hold one value in every row, got ${[...values].map((v) => `"${v}"`).join(", ")}`);
+  }
+  return [...values][0];
+}
+
+// Daftar Kampus Unggulan, or null when the CSV does not exist yet. `sumber` and
+// `tanggalAmbil` are its provenance, recorded in impor_katalog.
+export function loadUnggulan(): {
+  rows: UnggulanRow[];
+  source: Source;
+  sumber: string;
+  tanggalAmbil: string;
+} | null {
   if (!existsSync(UNGGULAN_FILE)) return null;
-  const rows = readRows(UNGGULAN_FILE, ["npsn", "nama"]).map((r) => ({
+  const raw = readRows(UNGGULAN_FILE, ["npsn", "nama", "sumber", "tanggal_ambil"]);
+  const rows = raw.map((r) => ({
     npsn: clean(r.npsn),
     nama: clean(r.nama),
     peringkat: clean(r.peringkat),
   }));
+  const tanggalAmbil = singleValue(raw, "tanggal_ambil");
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(tanggalAmbil)) {
+    throw new Error(`${UNGGULAN_FILE}: tanggal_ambil must be YYYY-MM-DD, got "${tanggalAmbil}"`);
+  }
   return {
     rows: rows.filter((r) => r.npsn),
     source: { file: basename(UNGGULAN_FILE), sha256: sha256(UNGGULAN_FILE) },
+    sumber: singleValue(raw, "sumber"),
+    tanggalAmbil,
   };
 }
