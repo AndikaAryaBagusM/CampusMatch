@@ -23,4 +23,5 @@ Requires Node.js 22 or later.
 | `npm run db:generate` | Writes a new SQL migration from changes in `src/db/schema/` |
 | `npm run db:migrate` | Applies pending migrations |
 | `npm run db:studio` | Opens Drizzle Studio |
+| `npm test` | Unit and database tests (vitest; an in-memory PGlite database, never Neon) |
 | `npm run typecheck` / `lint` / `build` | Checks |
