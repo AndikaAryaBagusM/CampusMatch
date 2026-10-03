@@ -9,7 +9,7 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 
 ## Data
 
-3. **Coverage**: the Daftar Kampus Unggulan, initially the first 100 Indonesian entries of Webometrics/UniRank. It was **copied once, by hand, into `data/top-100-kampus.csv`** (not scraped). After that, Moderators edit it. See [ADR 0003](./adr/0003-catalogue-snapshot-from-official-exports.md).
+3. **Coverage**: every Kampus with D3, D4 or S1 Prodi in the official exports has a page and appears in search (changed on 2026-10-03; previously only the Daftar Kampus Unggulan). The **Daftar Kampus Unggulan** is a highlight (badge and filter) that never affects search ordering: initially the first 100 Indonesian entries of Webometrics 2026 Juli, **copied once, by hand, into `data/top-100-kampus.csv`** (not scraped). After that, Moderators edit it. Its source and capture date are recorded per import in `impor_katalog`. See [ADR 0003](./adr/0003-catalogue-snapshot-from-official-exports.md).
 4. **Catalogue source**: official Kemenristekdikti exports (Program Studi .xlsx and Perguruan Tinggi terakreditasi .xlsx), loaded by an import script as a snapshot. There are no live PDDikti calls. The files are in `data/raw/` and join on `npsn`.
 4a. **Jenjang**: only D3, D4 and S1 Prodi are imported.
 4b. **Akreditasi**: shown for Kampus only. Prodi accreditation is out of the MVP, since the exports don't include it.

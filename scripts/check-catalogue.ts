@@ -46,6 +46,10 @@ async function main() {
 
     const [latest] = await db.select().from(imporKatalog).orderBy(desc(imporKatalog.id)).limit(1);
     console.log("\nLatest import:", latest ? `${latest.tanggalData} (row ${latest.id}, at ${latest.createdAt.toISOString()})` : "none");
+    console.log(
+      "Daftar Kampus Unggulan provenance:",
+      latest?.unggulanSumber ? `${latest.unggulanSumber}, diambil ${latest.unggulanTanggalAmbil}` : "none",
+    );
 
     for (const q of queries) {
       const r = await searchKatalog(db, q, { limit: 5 });
