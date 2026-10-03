@@ -33,7 +33,7 @@ The city where a Kampus is located. Used for browsing.
 _Avoid_: Lokasi, daerah, region
 
 **Daftar Kampus Unggulan**:
-The curated list of Kampus (initially 100) that CampusMatch covers.
+A curated list of Kampus (initially 100, taken from Webometrics) that CampusMatch highlights with a badge and a filter. It does not limit which Kampus are covered and never changes the order of search results. Its source and capture date are recorded with each catalogue import.
 _Avoid_: Top 100, ranking
 
 ## Ulasan

@@ -8,7 +8,7 @@ import { config } from "dotenv";
 
 config({ path: ".env.local" });
 
-import { and, eq, inArray, not, sql } from "drizzle-orm";
+import { and, desc, eq, inArray, not, sql } from "drizzle-orm";
 import { withDb, type Db } from "../src/db";
 import { imporKatalog, kampus, kota, prodi } from "../src/db/schema";
 import { clean, loadExports, loadUnggulan, UNGGULAN_FILE, type Catalogue } from "./catalogue/exports";
@@ -77,7 +77,8 @@ function checkUnggulan(cat: Catalogue) {
     }
   }
   console.log(`\nDaftar Kampus Unggulan: ${unggulan.rows.length} rows in ${UNGGULAN_FILE}, ${npsns.size} matched`);
-  return { npsns, source: unggulan.source };
+  console.log(`  sumber "${unggulan.sumber}", tanggal_ambil ${unggulan.tanggalAmbil}`);
+  return { npsns, source: unggulan.source, sumber: unggulan.sumber, tanggalAmbil: unggulan.tanggalAmbil };
 }
 
 async function importAll(tx: Tx, cat: Catalogue, unggulan: ReturnType<typeof checkUnggulan>, asOf: string) {
@@ -198,12 +199,24 @@ async function importAll(tx: Tx, cat: Catalogue, unggulan: ReturnType<typeof che
     unggulanChange = `${on.length} added, ${off.length} removed, ${list.length} in list`;
   }
 
+  // Unggulan provenance: from the CSV, or carried over from the previous import
+  // when the CSV is absent (the flags were left untouched above).
+  const [previous] = unggulan
+    ? []
+    : await tx
+        .select({ sumber: imporKatalog.unggulanSumber, tanggalAmbil: imporKatalog.unggulanTanggalAmbil })
+        .from(imporKatalog)
+        .orderBy(desc(imporKatalog.id))
+        .limit(1);
+
   await tx.insert(imporKatalog).values({
     tanggalData: asOf,
     sumber: unggulan ? [...cat.sources, unggulan.source] : cat.sources,
     jumlahKota: cat.kota.length,
     jumlahKampus: cat.kampus.length,
     jumlahProdi: cat.prodi.length,
+    unggulanSumber: unggulan ? unggulan.sumber : (previous?.sumber ?? null),
+    unggulanTanggalAmbil: unggulan ? unggulan.tanggalAmbil : (previous?.tanggalAmbil ?? null),
   });
 
   return { stats, staleKampus, staleProdi, unggulanChange };

@@ -147,5 +147,10 @@ export const imporKatalog = pgTable("impor_katalog", {
   jumlahKota: integer("jumlah_kota").notNull(),
   jumlahKampus: integer("jumlah_kampus").notNull(),
   jumlahProdi: integer("jumlah_prodi").notNull(),
+  // Provenance of the Daftar Kampus Unggulan (sumber and tanggal_ambil in
+  // data/top-100-kampus.csv). Copied from the previous row when the CSV is absent,
+  // so the latest row always describes the current unggulan flags.
+  unggulanSumber: text("unggulan_sumber"),
+  unggulanTanggalAmbil: date("unggulan_tanggal_ambil"),
   createdAt: createdAt(),
 });
