@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="space-y-3">
           <Wordmark inverted />
           <p className="max-w-sm text-sm text-white/85">
-            Bantu kamu memilih Jurusan dan Kampus, dengan data katalog resmi dan, segera, ulasan dari mahasiswa dan
+            Bantu kamu memilih Jurusan dan Kampus, dengan data katalog resmi dan ulasan dari mahasiswa dan
             alumni.
           </p>
         </div>

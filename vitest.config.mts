@@ -7,7 +7,7 @@ export default defineConfig({
   },
   test: {
     environment: "node",
-    include: ["src/**/*.test.ts", "test/**/*.test.ts"],
+    include: ["src/**/*.test.{ts,tsx}", "test/**/*.test.ts"],
     // Each PGlite database boots in-process and applies every migration.
     testTimeout: 30_000,
     hookTimeout: 60_000,

@@ -9,17 +9,22 @@ import { KampusHeader } from "@/components/kampus/kampus-header";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { kontainer, Panel } from "@/components/panel";
 import { TombolTulis } from "@/components/ulasan/tombol-tulis";
+import { RingkasanUlasan } from "@/components/ulasan/ringkasan-ulasan";
+import { DaftarUlasan } from "@/components/ulasan/ulasan-card";
 import { formatAngka, formatProvinsi } from "@/lib/format";
 import { loadKampus } from "./data";
 
-// The catalogue only changes on import: render on first visit, cache for a day.
+// Render on first visit, cache for a day; Ulasan changes revalidate it
+// (src/lib/ulasan/revalidasi.ts).
 export const revalidate = 86400;
+const ULASAN_TAMPIL = 3;
+
 export function generateStaticParams() {
   return [];
 }
 
 export async function generateMetadata({ params }: PageProps<"/kampus/[slug]">): Promise<Metadata> {
-  const data = await loadKampus((await params).slug);
+  const data = await loadKampus((await params).slug, ULASAN_TAMPIL);
   if (!data) return {};
   const { kampus } = data;
   return {
@@ -30,9 +35,9 @@ export async function generateMetadata({ params }: PageProps<"/kampus/[slug]">):
 }
 
 export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">) {
-  const data = await loadKampus((await params).slug);
+  const data = await loadKampus((await params).slug, ULASAN_TAMPIL);
   if (!data) notFound();
-  const { kampus, prodiPerJenjang, jumlahUlasan, info } = data;
+  const { kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan } = data;
 
   return (
     <div className={kontainer}>
@@ -88,15 +93,22 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
 
         <div className="space-y-6">
           <TombolTulis href={`/kampus/${kampus.slug}/tulis`} className="w-full justify-center" />
+          {ringkasan ? <RingkasanUlasan ringkasan={ringkasan} /> : null}
           <Panel title="Ulasan terbaru">
-            {jumlahUlasan === 0 ? (
+            {ulasan.length === 0 ? (
               <EmptyState icon={MessageSquareText} title="Belum ada ulasan">
                 Ulasan dari mahasiswa dan alumni untuk Prodi di Kampus ini akan muncul di sini.
               </EmptyState>
             ) : (
-              <Link href={`/kampus/${kampus.slug}/ulasan`} className="text-sm font-medium text-primary hover:underline">
-                Lihat {formatAngka(jumlahUlasan)} ulasan
-              </Link>
+              <>
+                <DaftarUlasan ulasan={ulasan} tampilkanProdi />
+                <Link
+                  href={`/kampus/${kampus.slug}/ulasan`}
+                  className="mt-5 inline-flex text-sm font-medium text-primary hover:underline"
+                >
+                  Lihat semua {formatAngka(jumlahUlasan)} ulasan
+                </Link>
+              </>
             )}
           </Panel>
           <KatalogAsOf info={info} className="px-1" />

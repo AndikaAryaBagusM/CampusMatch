@@ -1,17 +1,28 @@
 import { cache } from "react";
 import { withDb } from "@/db";
-import { countProdiPerJenjang, countUlasanKampus, getInfoKatalog, getKampus } from "@/lib/katalog";
+import {
+  countProdiPerJenjang,
+  countUlasanKampus,
+  getInfoKatalog,
+  getKampus,
+  getRingkasanUlasan,
+  listUlasanTerbit,
+} from "@/lib/katalog";
 
-// Everything the Kampus header needs, in one pool and one round of parallel
-// queries. cache() shares it between generateMetadata and the page.
-export const loadKampus = cache((slug: string) =>
+// Everything a Kampus page needs, in one pool and one round of parallel
+// queries. cache() shares it between generateMetadata and the page, so both
+// must pass the same arguments. `ulasanTampil` is how many newest Terbit
+// Ulasan the page shows.
+export const loadKampus = cache((slug: string, ulasanTampil: number) =>
   withDb(async (db) => {
-    const [kampus, prodiPerJenjang, jumlahUlasan, info] = await Promise.all([
+    const [kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan] = await Promise.all([
       getKampus(db, slug),
       countProdiPerJenjang(db, slug),
       countUlasanKampus(db, slug),
       getInfoKatalog(db),
+      getRingkasanUlasan(db, { kampusSlug: slug }),
+      listUlasanTerbit(db, { kampusSlug: slug }, ulasanTampil),
     ]);
-    return kampus ? { kampus, prodiPerJenjang, jumlahUlasan, info } : null;
+    return kampus ? { kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan } : null;
   }),
 );

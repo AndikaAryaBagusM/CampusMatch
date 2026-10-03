@@ -2,11 +2,12 @@
 // request's Db so a page can run all of its queries in one Promise.all on one
 // pool. Lists filter by slug through joins, never by an id fetched first, so no
 // query waits on another.
-import { and, asc, countDistinct, count, desc, eq, isNotNull, isNull, sql } from "drizzle-orm";
+import { and, asc, countDistinct, count, desc, eq, isNotNull, isNull, sql, type AnyColumn } from "drizzle-orm";
 import type { PgSelect } from "drizzle-orm/pg-core";
 import type { Db } from "@/db";
-import { imporKatalog, jenjang as jenjangEnum, jurusan, kampus, kodeProdiJurusan, kota, prodi, ulasan } from "@/db/schema";
+import { imporKatalog, jenjang as jenjangEnum, jurusan, kampus, kodeProdiJurusan, kota, prodi, ulasan, ulasanRevisi } from "@/db/schema";
 import { jurusanEfektif } from "@/lib/search";
+import type { KolomAspek } from "@/lib/ulasan/skema";
 
 export type Jenjang = (typeof jenjangEnum.enumValues)[number];
 // Display order: S1 first, the level most visitors look for.
@@ -284,3 +285,76 @@ export async function listKampusUnggulan(db: Db) {
     .where(eq(kampus.unggulan, true))
     .orderBy(asc(kampus.nama));
 }
+
+// --- Ulasan (public) ---------------------------------------------------------
+// Only Terbit, not-deleted Ulasan, shown anonymously: these queries never
+// select the Pengulas, only Status Pengulas and tahun masuk.
+
+export type RingkasanUlasan = {
+  jumlah: number;
+  bintang: number;
+  aspek: Record<KolomAspek, number>;
+  // Share of Ulasan whose Rekomendasi is yes, 0–1.
+  tingkatRekomendasi: number;
+};
+
+const rata = (kolom: AnyColumn) => sql<number>`round(avg(${kolom})::numeric, 1)::float`;
+
+function filterUlasan(target: { prodiSlug: string } | { kampusSlug: string }) {
+  return and(ulasanTerbit, "prodiSlug" in target ? eq(prodi.slug, target.prodiSlug) : eq(kampus.slug, target.kampusSlug));
+}
+
+export async function getRingkasanUlasan(
+  db: Db,
+  target: { prodiSlug: string } | { kampusSlug: string },
+): Promise<RingkasanUlasan | null> {
+  const [row] = await db
+    .select({
+      jumlah: count(),
+      bintang: rata(ulasanRevisi.bintang),
+      aspekKurikulum: rata(ulasanRevisi.aspekKurikulum),
+      aspekDosen: rata(ulasanRevisi.aspekDosen),
+      aspekFasilitas: rata(ulasanRevisi.aspekFasilitas),
+      aspekSuasanaBelajar: rata(ulasanRevisi.aspekSuasanaBelajar),
+      aspekOrganisasi: rata(ulasanRevisi.aspekOrganisasi),
+      aspekBiayaKualitas: rata(ulasanRevisi.aspekBiayaKualitas),
+      tingkatRekomendasi: sql<number>`avg(CASE WHEN ${ulasanRevisi.rekomendasi} THEN 1 ELSE 0 END)::float`,
+    })
+    .from(ulasan)
+    .innerJoin(ulasanRevisi, eq(ulasan.revisiTerbitId, ulasanRevisi.id))
+    .innerJoin(prodi, eq(ulasan.prodiId, prodi.id))
+    .innerJoin(kampus, eq(prodi.kampusId, kampus.id))
+    .where(filterUlasan(target));
+  if (!row || row.jumlah === 0) return null;
+  const { jumlah, bintang, tingkatRekomendasi, ...aspek } = row;
+  return { jumlah, bintang, tingkatRekomendasi, aspek };
+}
+
+export async function listUlasanTerbit(
+  db: Db,
+  target: { prodiSlug: string } | { kampusSlug: string },
+  limit: number,
+) {
+  return db
+    .select({
+      id: ulasan.id,
+      statusPengulas: ulasan.statusPengulas,
+      tahunMasuk: ulasan.tahunMasuk,
+      judul: ulasanRevisi.judul,
+      isi: ulasanRevisi.isi,
+      bintang: ulasanRevisi.bintang,
+      rekomendasi: ulasanRevisi.rekomendasi,
+      terbitAt: ulasanRevisi.createdAt,
+      prodiNama: sql<string>`${prodi.jenjang} || ' ' || ${prodi.nama}`,
+      prodiSlug: prodi.slug,
+    })
+    .from(ulasan)
+    .innerJoin(ulasanRevisi, eq(ulasan.revisiTerbitId, ulasanRevisi.id))
+    .innerJoin(prodi, eq(ulasan.prodiId, prodi.id))
+    .innerJoin(kampus, eq(prodi.kampusId, kampus.id))
+    .where(filterUlasan(target))
+    .orderBy(desc(ulasanRevisi.createdAt), desc(ulasan.id))
+    .limit(limit);
+}
+
+export type UlasanPublik = Awaited<ReturnType<typeof listUlasanTerbit>>[number];

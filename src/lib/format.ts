@@ -31,3 +31,10 @@ const waktu = new Intl.DateTimeFormat("id-ID", {
 export function formatWaktu(d: Date | string): string {
   return waktu.format(typeof d === "string" ? new Date(d) : d);
 }
+
+const hari = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" });
+
+// A timestamp -> "3 Oktober 2026" in WIB.
+export function formatHari(d: Date | string): string {
+  return hari.format(typeof d === "string" ? new Date(d) : d);
+}
