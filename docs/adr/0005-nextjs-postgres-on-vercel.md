@@ -14,6 +14,8 @@ Rules that follow from the Neon driver docs:
 - Migrations (`drizzle-kit`) use the direct `DATABASE_URL_UNPOOLED` connection.
 - Local development and `db:smoke` run against a Neon **dev branch**, never the production branch.
 
+**Exception for Auth.js (decided 2026-10-03).** The Auth.js Drizzle adapter is configured once, outside any request handler, so it cannot use a per-request `Pool`. Sessions and accounts need only single statements, so the adapter gets its own **`neon-http`** Drizzle instance (stateless HTTP, nothing to close). All other app queries keep using `withDb()`.
+
 ## Considered Options
 
 - Laravel + MySQL + Filament: the admin panel comes almost free and it runs on XAMPP, but the team chose Next.js on Vercel.

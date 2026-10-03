@@ -22,11 +22,20 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 
 ## Ulasan and moderation
 
-6. **Moderation flow**: every new or edited Ulasan goes through Screening. *rendah* → Terbit; *perlu dicek* → Antrean Moderasi; *melanggar* → Ditolak with a reason. The **Laporkan** button returns a Terbit Ulasan to the queue. See [ADR 0002](./adr/0002-auto-publish-after-screening.md).
-7. **Screening**: a wordlist/regex pass, then Claude Haiku 4.5. **Fail-closed:** if the call errors or times out, the Ulasan stays Menunggu and is never published automatically. A cron job retries, then hands the Ulasan to a Moderator.
+6. **Moderation flow**: every new or edited Ulasan goes through Screening. *rendah* → Terbit; *perlu dicek* and *melanggar* → Ditinjau in the Antrean Moderasi, *melanggar* first (changed 2026-10-03; previously *melanggar* → Ditolak automatically). Only a Moderator rejects, always with a reason. The **Laporkan** button puts a Terbit Ulasan in the Antrean Moderasi. It stays visible until a Moderator unpublishes it (Turunkan). See [ADR 0002](./adr/0002-auto-publish-after-screening.md).
+7. **Screening**: a wordlist/regex pass that can only raise the risk, then Claude Haiku 4.5 (`claude-haiku-4-5-20251001`), run in `after()` so the Pengulas isn't kept waiting. The result (Tingkat Risiko, reason, model, time) is stored on the revision. **Fail-closed:** if the call errors or times out, the Ulasan stays Menunggu and is never published automatically. Screening runs in rounds (one attempt plus up to 2 quick retries). A cron job runs a further round for Menunggu revisions older than 10 minutes. After 3 failed rounds the Ulasan goes to a Moderator with the reason "Screening gagal".
 8. **Verification**: login with Google or an email magic link. The Pengulas declares their Status Pengulas (mahasiswa aktif / alumni) and entry year. Verifying a campus email (`.ac.id`) that matches the Kampus is optional and earns the **Terverifikasi** badge.
 9. **Ulasan content**: Bintang (1–5); Aspek stars for Kurikulum, Dosen, Fasilitas, Suasana belajar, Organisasi/administrasi and Biaya vs kualitas; Rekomendasi (yes/no); a title; and text of at least about 150 characters, with guiding prompts.
-10. **Lifecycle**: one Ulasan per Pengulas per Prodi. An edit goes through Screening again, and the previous version stays Terbit until the new one passes. A Pengulas can delete their own Ulasan. Ulasan are shown anonymously (Status Pengulas, entry year, badge).
+10. **Lifecycle**: one Ulasan per Pengulas per Prodi. An edit creates a new revision and goes through Screening again, and the previous version stays Terbit until the new one passes. While a revision is Menunggu or Ditinjau, the Pengulas can't submit another edit. A Pengulas can delete their own Ulasan. Ulasan are shown anonymously (Status Pengulas, entry year, badge), newest first.
+
+### Step 4 scope (decided 2026-10-03)
+
+10a. **Who can be reviewed**: any Prodi of any of the 4,261 covered Kampus, not only the Daftar Kampus Unggulan. Unggulan never affects eligibility or ordering ([ADR 0003](./adr/0003-catalogue-snapshot-from-official-exports.md)).
+10b. **Ulasan stay Prodi-only** ([ADR 0001](./adr/0001-ulasan-belongs-to-prodi.md)). The Kampus page has a "Tulis ulasan" button that asks the Pengulas to pick a Prodi first. Kampus scores are aggregated from its Prodi.
+10c. **Login required** to write, edit, delete or Laporkan an Ulasan. Reading stays public. Auth.js with Google and an email magic link (Resend), with sessions stored in the database.
+10d. **Moderators** are the signed-in users whose email is in the `MODERATOR_EMAILS` environment variable, checked on every request. There is no public sign-up for Moderators. `users.peran` is not used yet.
+10e. **Abuse limits**: rate limits by IP, using HMAC-SHA256 with `IP_HASH_SECRET` (the raw IP is never stored), plus per-Pengulas daily limits.
+10f. **Not in this step**: photos, logos or uploads of any kind; Terverifikasi (campus-email verification); the Kode Prodi → Jurusan mapping tool. Jenjang stays D3/D4/S1 and Akreditasi stays Kampus-only.
 
 ## Tes Minat
 

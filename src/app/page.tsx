@@ -102,9 +102,9 @@ export default async function Beranda() {
               ),
             },
             {
-              tanya: "Kapan ulasan tersedia?",
+              tanya: "Bagaimana ulasan diperiksa?",
               jawab:
-                "Ulasan dari mahasiswa dan alumni sedang kami siapkan. Setiap ulasan akan diperiksa sebelum ditampilkan.",
+                "Setiap ulasan diperiksa otomatis dan ditinjau tim kami bila perlu. Ulasan tampil tanpa nama, hanya dengan status (mahasiswa aktif atau alumni) dan tahun masuk. Pembaca yang masuk bisa melaporkan ulasan yang melanggar aturan.",
             },
           ]}
         />

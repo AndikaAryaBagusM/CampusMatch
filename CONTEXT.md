@@ -81,22 +81,27 @@ The outcome of Screening: *rendah* (low), *perlu dicek* (needs a human check) or
 _Avoid_: Skor, score
 
 **Antrean Moderasi**:
-The Ulasan waiting for a Moderator's decision.
+The Ulasan waiting for a Moderator's decision: Ditinjau revisions and open Laporan.
 _Avoid_: Queue, inbox
 
 **Laporan**:
-A visitor's report that a Terbit Ulasan breaks the rules. A Laporan sends the Ulasan back to the Antrean Moderasi.
+A signed-in user's report that a Terbit Ulasan breaks the rules. A Laporan puts the Ulasan in the Antrean Moderasi. It stays Terbit and visible until a Moderator unpublishes it.
 _Avoid_: Flag, aduan
+
+**Turunkan**:
+A Moderator's decision to unpublish a Terbit Ulasan after a Laporan. Its live revision becomes Ditolak.
+_Avoid_: Takedown, hapus
 
 **Moderator**:
 A CampusMatch team member who decides on Ulasan in the Antrean Moderasi and maintains the catalogue.
 _Avoid_: Admin, tim redaksi, editor
 
 **Status Ulasan**:
+The state of one revision of an Ulasan. An edit is a new revision, and the previous Terbit revision stays shown until the new one is Terbit.
 - *Menunggu*: not yet screened, or screening could not finish. Never shown.
 - *Terbit*: shown publicly.
-- *Ditinjau*: in the Antrean Moderasi. Not shown, unless it was already Terbit and a Laporan sent it back for review.
-- *Ditolak*: rejected and never shown.
+- *Ditinjau*: in the Antrean Moderasi after Screening. Not shown.
+- *Ditolak*: rejected by a Moderator, always with a reason, and never shown.
 
 _Avoid_: Draft, approved, pending
 

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | CampusMatch",
   },
   description:
-    "Cari Jurusan, Kampus dan Prodi di Indonesia dengan data katalog resmi Kemenristekdikti. Ulasan mahasiswa dan alumni segera hadir.",
+    "Cari Jurusan, Kampus dan Prodi di Indonesia dengan data katalog resmi Kemenristekdikti dan ulasan dari mahasiswa dan alumni.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

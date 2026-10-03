@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cache } from "react";
-import { BookOpen, GraduationCap, Hash, Landmark, Layers, MapPin, ShieldCheck } from "lucide-react";
+import { BookOpen, GraduationCap, Hash, Landmark, Layers, MapPin, MessageSquareText, ShieldCheck } from "lucide-react";
+import { EmptyState } from "@/components/empty-state";
 import { withDb } from "@/db";
 import { FactList } from "@/components/fact-list";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
@@ -12,18 +13,33 @@ import { KatalogAsOf } from "@/components/katalog-as-of";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { kontainer, Panel } from "@/components/panel";
 import { RatingSummaryPlaceholder } from "@/components/prodi/rating-summary-placeholder";
+import { RingkasanUlasan } from "@/components/ulasan/ringkasan-ulasan";
+import { TombolTulis } from "@/components/ulasan/tombol-tulis";
+import { DaftarUlasan } from "@/components/ulasan/ulasan-card";
 import { formatAngka, formatProvinsi } from "@/lib/format";
-import { countUlasanProdi, getInfoKatalog, getProdi } from "@/lib/katalog";
+import { countUlasanProdi, getInfoKatalog, getProdi, getRingkasanUlasan, listUlasanTerbit } from "@/lib/katalog";
 
+// Render on first visit, cache for a day; Ulasan changes revalidate it
+// (src/lib/ulasan/revalidasi.ts). No session is read here, so it stays static.
 export const revalidate = 86400;
+// Newest first. Paging would make the page dynamic, so it waits until a Prodi
+// has this many Ulasan.
+const ULASAN_TAMPIL = 50;
+
 export function generateStaticParams() {
   return [];
 }
 
 const load = cache((slug: string) =>
   withDb(async (db) => {
-    const [prodi, jumlahUlasan, info] = await Promise.all([getProdi(db, slug), countUlasanProdi(db, slug), getInfoKatalog(db)]);
-    return prodi ? { prodi, jumlahUlasan, info } : null;
+    const [prodi, jumlahUlasan, info, ringkasan, ulasan] = await Promise.all([
+      getProdi(db, slug),
+      countUlasanProdi(db, slug),
+      getInfoKatalog(db),
+      getRingkasanUlasan(db, { prodiSlug: slug }),
+      listUlasanTerbit(db, { prodiSlug: slug }, ULASAN_TAMPIL),
+    ]);
+    return prodi ? { prodi, jumlahUlasan, info, ringkasan, ulasan } : null;
   }),
 );
 
@@ -43,7 +59,7 @@ export async function generateMetadata({ params }: PageProps<"/prodi/[slug]">): 
 export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) {
   const data = await load((await params).slug);
   if (!data) notFound();
-  const { prodi, jumlahUlasan, info } = data;
+  const { prodi, jumlahUlasan, info, ringkasan, ulasan } = data;
   const { kampus } = prodi;
 
   return (
@@ -142,10 +158,27 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
               Lihat Prodi {prodi.jurusanNama} di Kampus lain
             </Link>
           ) : null}
+          <Panel title={jumlahUlasan > 0 ? `Ulasan (${formatAngka(jumlahUlasan)})` : "Ulasan"} id="ulasan">
+            {ulasan.length === 0 ? (
+              <EmptyState icon={MessageSquareText} title="Belum ada ulasan">
+                Kuliah atau lulus dari Prodi ini? Jadilah yang pertama menulis ulasan. Setiap ulasan diperiksa otomatis
+                dan ditinjau tim kami bila perlu.
+              </EmptyState>
+            ) : (
+              <>
+                <DaftarUlasan ulasan={ulasan} />
+                {jumlahUlasan > ulasan.length ? (
+                  <p className="mt-5 text-sm text-muted-foreground">
+                    Menampilkan {formatAngka(ulasan.length)} ulasan terbaru dari {formatAngka(jumlahUlasan)}.
+                  </p>
+                ) : null}
+              </>
+            )}
+          </Panel>
         </div>
         <div className="space-y-6">
-          {/* Replaced by the real summary once Ulasan exist (roadmap step 4). */}
-          {jumlahUlasan === 0 ? <RatingSummaryPlaceholder /> : null}
+          <TombolTulis href={`/prodi/${prodi.slug}/tulis`} className="w-full justify-center" />
+          {ringkasan ? <RingkasanUlasan ringkasan={ringkasan} /> : <RatingSummaryPlaceholder />}
           <KatalogAsOf info={info} className="px-1" />
         </div>
       </div>

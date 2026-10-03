@@ -60,3 +60,13 @@ export const AKREDITASI = [
   "Terakreditasi Sementara",
 ] as const;
 export type Akreditasi = (typeof AKREDITASI)[number];
+
+// One entry in riwayat_moderasi, the history a Moderator sees per Ulasan.
+export const aksiModerasi = pgEnum("aksi_moderasi", [
+  "screening",
+  "disetujui",
+  "ditolak",
+  "diturunkan",
+  "laporan_ditutup",
+  "dihapus_pengulas",
+]);

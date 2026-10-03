@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search } from "lucide-react";
+import { Search, UserRound } from "lucide-react";
 import { SearchForm } from "@/components/search-form";
 import { Wordmark } from "@/components/layout/wordmark";
 
@@ -8,6 +8,8 @@ const NAV = [
   { href: "/#unggulan", label: "Kampus Unggulan" },
 ];
 
+// Static on purpose: reading the session here would make every catalogue page
+// dynamic. /akun signs the visitor in when needed.
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-border bg-white">
@@ -33,6 +35,13 @@ export function SiteHeader() {
           className="ml-auto inline-flex size-10 items-center justify-center rounded-full text-primary hover:bg-secondary sm:hidden"
         >
           <Search className="size-5" aria-hidden />
+        </Link>
+        <Link
+          href="/akun"
+          className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full px-3 text-sm font-medium text-primary hover:bg-secondary"
+        >
+          <UserRound className="size-5" aria-hidden />
+          <span className="hidden sm:inline">Akun</span>
         </Link>
       </div>
     </header>

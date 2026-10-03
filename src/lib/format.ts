@@ -17,3 +17,24 @@ export function formatProvinsi(provinsi: string): string {
 export function formatAngka(n: number): string {
   return angka.format(n);
 }
+
+const waktu = new Intl.DateTimeFormat("id-ID", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  timeZone: "Asia/Jakarta",
+});
+
+// A timestamp -> "3 Okt 2026, 14.05" in WIB.
+export function formatWaktu(d: Date | string): string {
+  return waktu.format(typeof d === "string" ? new Date(d) : d);
+}
+
+const hari = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Jakarta" });
+
+// A timestamp -> "3 Oktober 2026" in WIB.
+export function formatHari(d: Date | string): string {
+  return hari.format(typeof d === "string" ? new Date(d) : d);
+}

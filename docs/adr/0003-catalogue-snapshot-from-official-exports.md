@@ -13,4 +13,4 @@ The **Daftar Kampus Unggulan** is a curated highlight, not a coverage limit: a b
 ## Consequences
 
 - Data is only as fresh as the latest export. Pages show the data's as-of date from the latest `impor_katalog` row.
-- Whether a Pengulas can write an Ulasan for every covered Kampus, or only some, is decided with the Ulasan form (roadmap step 4).
+- A Pengulas can write an Ulasan for any Prodi of any covered Kampus (decided 2026-10-03, roadmap step 4). Membership of the Daftar Kampus Unggulan never affects who can be reviewed or the order in which Ulasan, Kampus or search results are shown.

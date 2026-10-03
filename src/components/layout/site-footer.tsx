@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="space-y-3">
           <Wordmark inverted />
           <p className="max-w-sm text-sm text-white/85">
-            Bantu kamu memilih Jurusan dan Kampus, dengan data katalog resmi dan, segera, ulasan dari mahasiswa dan
+            Bantu kamu memilih Jurusan dan Kampus, dengan data katalog resmi dan ulasan dari mahasiswa dan
             alumni.
           </p>
         </div>
@@ -45,7 +45,17 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="bg-brand-deep">
-        <div className="mx-auto w-full max-w-6xl px-4 py-4 text-sm sm:px-6">© 2026 CampusMatch</div>
+        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4 text-sm sm:px-6">
+          <span>© 2026 CampusMatch</span>
+          <nav aria-label="Informasi hukum" className="flex gap-4">
+            <Link href="/privasi" className="hover:underline">
+              Kebijakan Privasi
+            </Link>
+            <Link href="/ketentuan" className="hover:underline">
+              Ketentuan Layanan
+            </Link>
+          </nav>
+        </div>
       </div>
     </footer>
   );
