@@ -12,6 +12,7 @@ import { KatalogAsOf } from "@/components/katalog-as-of";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { kontainer, Panel } from "@/components/panel";
 import { RatingSummaryPlaceholder } from "@/components/prodi/rating-summary-placeholder";
+import { TombolTulis } from "@/components/ulasan/tombol-tulis";
 import { formatAngka, formatProvinsi } from "@/lib/format";
 import { countUlasanProdi, getInfoKatalog, getProdi } from "@/lib/katalog";
 
@@ -144,6 +145,7 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
           ) : null}
         </div>
         <div className="space-y-6">
+          <TombolTulis href={`/prodi/${prodi.slug}/tulis`} className="w-full justify-center" />
           {/* Replaced by the real summary once Ulasan exist (roadmap step 4). */}
           {jumlahUlasan === 0 ? <RatingSummaryPlaceholder /> : null}
           <KatalogAsOf info={info} className="px-1" />

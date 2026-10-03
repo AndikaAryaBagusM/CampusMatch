@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { auth } from "@/auth";
+import { auth, caraMasuk } from "@/auth";
 import { kontainer, Panel } from "@/components/panel";
 import { jalurAman } from "@/lib/sesi";
 import { param } from "@/lib/url";
@@ -23,6 +23,7 @@ export default async function MasukPage(props: PageProps<"/masuk">) {
   const callbackUrl = jalurAman(param(sp.callbackUrl), "/akun");
   if ((await auth())?.user) redirect(callbackUrl);
   const error = param(sp.error);
+  const cara = caraMasuk();
 
   return (
     <div className={`${kontainer} max-w-md py-10`}>
@@ -37,24 +38,36 @@ export default async function MasukPage(props: PageProps<"/masuk">) {
           </p>
         ) : null}
 
-        <form action={masukGoogle} className="mt-6">
-          <input type="hidden" name="callbackUrl" value={callbackUrl} />
-          <button
-            type="submit"
-            className="h-11 w-full rounded-lg bg-white font-medium ring-1 ring-border transition-colors hover:bg-secondary"
-          >
-            Masuk dengan Google
-          </button>
-        </form>
+        {cara.google ? (
+          <form action={masukGoogle} className="mt-6">
+            <input type="hidden" name="callbackUrl" value={callbackUrl} />
+            <button
+              type="submit"
+              className="h-11 w-full rounded-lg bg-white font-medium ring-1 ring-border transition-colors hover:bg-secondary"
+            >
+              Masuk dengan Google
+            </button>
+          </form>
+        ) : null}
 
-        <div className="my-6 flex items-center gap-3 text-xs text-muted-foreground">
-          <span className="h-px flex-1 bg-border" />
-          atau lewat email
-          <span className="h-px flex-1 bg-border" />
-        </div>
+        {cara.google && cara.email ? (
+          <div className="my-6 flex items-center gap-3 text-xs text-muted-foreground">
+            <span className="h-px flex-1 bg-border" />
+            atau lewat email
+            <span className="h-px flex-1 bg-border" />
+          </div>
+        ) : null}
 
-        <FormEmail callbackUrl={callbackUrl} />
-        <p className="mt-3 text-xs text-muted-foreground">Kami kirim tautan sekali pakai. Tidak perlu kata sandi.</p>
+        {cara.email ? (
+          <div className={cara.google ? undefined : "mt-6"}>
+            <FormEmail callbackUrl={callbackUrl} />
+            <p className="mt-3 text-xs text-muted-foreground">Kami kirim tautan sekali pakai. Tidak perlu kata sandi.</p>
+          </div>
+        ) : null}
+
+        {!cara.google && !cara.email ? (
+          <p className="mt-6 rounded-lg bg-secondary p-3 text-sm">Masuk belum tersedia. Coba lagi nanti.</p>
+        ) : null}
       </Panel>
     </div>
   );

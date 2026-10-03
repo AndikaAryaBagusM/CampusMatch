@@ -8,6 +8,7 @@ import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusHeader } from "@/components/kampus/kampus-header";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { kontainer, Panel } from "@/components/panel";
+import { TombolTulis } from "@/components/ulasan/tombol-tulis";
 import { formatAngka, formatProvinsi } from "@/lib/format";
 import { loadKampus } from "./data";
 
@@ -86,6 +87,7 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
         </div>
 
         <div className="space-y-6">
+          <TombolTulis href={`/kampus/${kampus.slug}/tulis`} className="w-full justify-center" />
           <Panel title="Ulasan terbaru">
             {jumlahUlasan === 0 ? (
               <EmptyState icon={MessageSquareText} title="Belum ada ulasan">

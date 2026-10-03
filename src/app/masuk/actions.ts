@@ -2,13 +2,14 @@
 
 import { AuthError } from "next-auth";
 import { z } from "zod";
-import { signIn } from "@/auth";
+import { caraMasuk, signIn } from "@/auth";
 import { withDb } from "@/db";
 import { BATAS, kunciIp, pakaiBatas } from "@/lib/batas-laju";
 import { hashIpPemanggil } from "@/lib/ip";
 import { jalurAman } from "@/lib/sesi";
 
 export async function masukGoogle(formData: FormData) {
+  if (!caraMasuk().google) return;
   await signIn("google", { redirectTo: jalurAman(formData.get("callbackUrl")) });
 }
 
@@ -17,6 +18,7 @@ export type StatusMasukEmail = { pesan: string } | null;
 const email = z.email().max(254);
 
 export async function masukEmail(_prev: StatusMasukEmail, formData: FormData): Promise<StatusMasukEmail> {
+  if (!caraMasuk().email) return { pesan: "Masuk lewat email belum tersedia." };
   const parsed = email.safeParse(String(formData.get("email") ?? "").trim());
   if (!parsed.success) return { pesan: "Alamat email tidak valid." };
 

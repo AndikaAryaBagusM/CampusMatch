@@ -4,6 +4,7 @@ import { MessageSquareText } from "lucide-react";
 import { EmptyState } from "@/components/empty-state";
 import { KampusHeader } from "@/components/kampus/kampus-header";
 import { kontainer, Panel } from "@/components/panel";
+import { TombolTulis } from "@/components/ulasan/tombol-tulis";
 import { formatAngka } from "@/lib/format";
 import { loadKampus } from "../data";
 
@@ -31,7 +32,7 @@ export default async function KampusUlasanPage({ params }: PageProps<"/kampus/[s
   return (
     <div className={kontainer}>
       <KampusHeader kampus={kampus} prodiPerJenjang={prodiPerJenjang} jumlahUlasan={jumlahUlasan} info={info} tab="ulasan" />
-      <Panel title="Ulasan" className="mt-6">
+      <Panel title="Ulasan" className="mt-6" action={<TombolTulis href={`/kampus/${kampus.slug}/tulis`} />}>
         {jumlahUlasan === 0 ? (
           <EmptyState icon={MessageSquareText} title="Belum ada ulasan">
             Ulasan dari mahasiswa dan alumni untuk Prodi di {kampus.nama} akan muncul di sini. Setiap ulasan diperiksa
