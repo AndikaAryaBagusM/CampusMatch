@@ -3,11 +3,10 @@ import Link from "next/link";
 import { withDb } from "@/db";
 import { TabModerasiNav } from "@/components/moderasi/tab-moderasi";
 import { kontainer, Panel } from "@/components/panel";
-import { hitungSumberDraf } from "@/lib/fakta/periksa";
+import { hitungTabModerasi } from "@/lib/moderasi-tab";
 import { formatAngka } from "@/lib/format";
 import { requireModerator } from "@/lib/moderator";
 import { cariPemetaan, KODE_PERLU_DICEK, listIsiJurusan } from "@/lib/pemetaan-jurusan";
-import { hitungAntrean } from "@/lib/ulasan/moderasi";
 import { param } from "@/lib/url";
 
 export const metadata: Metadata = {
@@ -20,10 +19,9 @@ export default async function PemetaanJurusanPage(props: PageProps<"/moderasi/ju
   const sp = await props.searchParams;
   const cari = (param(sp.cari) ?? "").slice(0, 100);
   const slugJurusan = param(sp.jurusan) ?? "";
-  const [jumlah, jumlahFakta, hasil, isi] = await withDb((db) =>
+  const [jumlah, hasil, isi] = await withDb((db) =>
     Promise.all([
-      hitungAntrean(db),
-      hitungSumberDraf(db),
+      hitungTabModerasi(db),
       cari ? cariPemetaan(db, cari) : null,
       slugJurusan ? listIsiJurusan(db, slugJurusan) : null,
     ]),
@@ -39,7 +37,7 @@ export default async function PemetaanJurusanPage(props: PageProps<"/moderasi/ju
           lewat CSV (data/jurusan-mapping.csv).
         </p>
       </div>
-      <TabModerasiNav jumlah={{ ...jumlah, fakta: jumlahFakta }} aktif="jurusan" />
+      <TabModerasiNav jumlah={jumlah} aktif="jurusan" />
 
       <Panel title="Cari">
         <form className="flex gap-2" role="search">

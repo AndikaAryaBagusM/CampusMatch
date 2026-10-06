@@ -162,7 +162,25 @@ export default function KetentuanPage() {
         </ul>
       </Bagian>
 
-      <Bagian id="perubahan" judul="10. Perubahan ketentuan dan hukum yang berlaku">
+      <Bagian id="promosi" judul="10. Promosi">
+        <ul>
+          <li>
+            Kampus bisa membayar untuk tampil di tempat berlabel <strong>Promosi</strong> di Beranda, di halaman Jurusan yang
+            dibelinya, dan di hasil pencarian yang cocok dengan Jurusan itu. Promosi selalu terpisah dari daftar biasa.
+          </li>
+          <li>
+            Promosi tidak pernah mengubah ulasan, Bintang, Tingkat Rekomendasi, atau urutan daftar dan hasil pencarian.
+            Promosi tidak tampil di hasil Tes Minat, Perbandingan, halaman Prodi dan Kampus, maupun di bagian ulasan.
+          </li>
+          <li>
+            Promosi hanya memuat data katalog Kampus dan teks singkat dari Kampus, yang diperiksa dua orang tim CampusMatch
+            sebelum tampil. Tautannya mengarah ke halaman Kampus itu di CampusMatch.
+          </li>
+          <li>Promosi bukan rekomendasi atau penilaian dari CampusMatch atas Kampus tersebut.</li>
+        </ul>
+      </Bagian>
+
+      <Bagian id="perubahan" judul="11. Perubahan ketentuan dan hukum yang berlaku">
         <p>
           Jika ketentuan ini berubah, tanggal di atas akan diperbarui. Untuk perubahan penting, kami akan memberi tahu
           lewat situs ini sebelum perubahan berlaku. Ketentuan ini tunduk pada hukum Republik Indonesia.

@@ -7,16 +7,18 @@ import { KampusUnggulanList } from "@/components/home/kampus-unggulan-list";
 import { UnggulanFootnote } from "@/components/kampus/unggulan-badge";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { kontainer, Panel } from "@/components/panel";
+import { KotakPromosi } from "@/components/promosi/kotak-promosi";
 import { SearchForm } from "@/components/search-form";
 import { formatAngka } from "@/lib/format";
 import { getBidangSorotan, getInfoKatalog, listKampusUnggulan } from "@/lib/katalog";
+import { pilihPromosi } from "@/lib/promosi";
 
 // Catalogue data only changes on import; regenerate at most hourly.
 export const revalidate = 3600;
 
 export default async function Beranda() {
-  const [info, bidang, unggulan] = await withDb((db) =>
-    Promise.all([getInfoKatalog(db), getBidangSorotan(db), listKampusUnggulan(db)]),
+  const [info, bidang, unggulan, promosi] = await withDb((db) =>
+    Promise.all([getInfoKatalog(db), getBidangSorotan(db), listKampusUnggulan(db), pilihPromosi(db, { tempat: "beranda" })]),
   );
 
   return (
@@ -61,6 +63,8 @@ export default async function Beranda() {
           ))}
         </div>
       </section>
+
+      {promosi ? <KotakPromosi promosi={promosi} className="mt-12" /> : null}
 
       {unggulan.length > 0 ? (
         <section id="unggulan" className="mt-12 scroll-mt-24">

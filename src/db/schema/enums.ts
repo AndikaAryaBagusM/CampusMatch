@@ -104,3 +104,7 @@ export const tesJalur = pgEnum("tes_jalur", [
   "prestasi",
   "lain",
 ]);
+
+// Promosi (ADR 0009): entered as Draf, activated by a second Moderator,
+// stopped early with a reason. Its dates decide when an aktif Promosi shows.
+export const statusPromosi = pgEnum("status_promosi", ["draf", "aktif", "dihentikan"]);

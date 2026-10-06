@@ -16,6 +16,7 @@ export * from "./batas-laju";
 export * from "./enums";
 export * from "./fakta";
 export * from "./katalog";
+export * from "./promosi";
 export * from "./riasec";
 export * from "./ulasan";
 

@@ -71,6 +71,10 @@ export default function PrivasiPage() {
           memuat Prodi itu lewat alamat tautannya, sama seperti halaman lain, tanpa dikaitkan dengan akunmu.
         </p>
         <p>
+          <strong>Saat kamu mengeklik Promosi.</strong> Kami hanya menambah satu pada jumlah klik Promosi itu untuk hari
+          tersebut. Tidak ada cookie, alamat IP, atau data lain tentang siapa yang mengeklik.
+        </p>
+        <p>
           <strong>Alamat IP dalam bentuk hash.</strong> Saat kamu menulis ulasan, melaporkan ulasan, atau meminta
           tautan masuk lewat email, kami mengubah alamat IP-mu menjadi kode hash (HMAC-SHA256 dengan kunci rahasia) yang
           tidak bisa dikembalikan menjadi alamat IP. Kode ini hanya dipakai untuk membatasi jumlah permintaan dan

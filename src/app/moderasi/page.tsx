@@ -6,11 +6,11 @@ import { EmptyState } from "@/components/empty-state";
 import { IsiUlasan, LABEL_RISIKO } from "@/components/moderasi/isi-ulasan";
 import { TabModerasiNav } from "@/components/moderasi/tab-moderasi";
 import { kontainer, Panel } from "@/components/panel";
-import { hitungSumberDraf } from "@/lib/fakta/periksa";
+import { hitungTabModerasi } from "@/lib/moderasi-tab";
 import { formatWaktu } from "@/lib/format";
 import { requireModerator } from "@/lib/moderator";
 import { LABEL_ALASAN_LAPORAN } from "@/lib/ulasan/laporan";
-import { hitungAntrean, listAntrean, listLaporanTerbuka, listMenunggu } from "@/lib/ulasan/moderasi";
+import { listAntrean, listLaporanTerbuka, listMenunggu } from "@/lib/ulasan/moderasi";
 import { MAKS_PUTARAN_SCREENING } from "@/lib/ulasan/status";
 import { param } from "@/lib/url";
 import { cn } from "@/lib/utils";
@@ -32,10 +32,9 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
   const pesan = param(sp.pesan);
   const kembali = `/moderasi?tab=${tab}`;
 
-  const [jumlah, jumlahFakta, antrean, laporan, menunggu] = await withDb((db) =>
+  const [jumlah, antrean, laporan, menunggu] = await withDb((db) =>
     Promise.all([
-      hitungAntrean(db),
-      hitungSumberDraf(db),
+      hitungTabModerasi(db),
       tab === "antrean" ? listAntrean(db) : null,
       tab === "laporan" ? listLaporanTerbuka(db) : null,
       tab === "menunggu" ? listMenunggu(db) : null,
@@ -56,7 +55,7 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
         </p>
       ) : null}
 
-      <TabModerasiNav jumlah={{ ...jumlah, fakta: jumlahFakta }} aktif={tab} />
+      <TabModerasiNav jumlah={jumlah} aktif={tab} />
 
       {antrean ? (
         antrean.length === 0 ? (
