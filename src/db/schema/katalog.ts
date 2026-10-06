@@ -114,6 +114,8 @@ export const prodi = pgTable(
       t.jenjang,
       t.nama,
     ),
+    // Target of biaya_prodi_fk, so a Biaya's Prodi belongs to the Biaya's Kampus.
+    unique("prodi_id_kampus_unique").on(t.id, t.kampusId),
     index("prodi_kode_prodi_idx").on(t.kodeProdi),
     index("prodi_nama_trgm_idx").using("gin", t.nama.op("gin_trgm_ops")),
   ],
