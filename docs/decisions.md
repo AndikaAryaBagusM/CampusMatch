@@ -24,7 +24,7 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 
 6. **Moderation flow**: every new or edited Ulasan goes through Screening. *rendah* → Terbit; *perlu dicek* and *melanggar* → Ditinjau in the Antrean Moderasi, *melanggar* first (changed 2026-10-03; previously *melanggar* → Ditolak automatically). Only a Moderator rejects, always with a reason. The **Laporkan** button puts a Terbit Ulasan in the Antrean Moderasi. It stays visible until a Moderator unpublishes it (Turunkan). See [ADR 0002](./adr/0002-auto-publish-after-screening.md).
 7. **Screening**: a wordlist/regex pass that can only raise the risk, then Claude Haiku 4.5 (`claude-haiku-4-5-20251001`), run in `after()` so the Pengulas isn't kept waiting. The result (Tingkat Risiko, reason, model, time) is stored on the revision. **Fail-closed:** if the call errors or times out, the Ulasan stays Menunggu and is never published automatically. Screening runs in rounds (one attempt plus up to 2 quick retries). A cron job runs a further round for Menunggu revisions older than 10 minutes. After 3 failed rounds the Ulasan goes to a Moderator with the reason "Screening gagal".
-8. **Verification**: login with Google or an email magic link. The Pengulas declares their Status Pengulas (mahasiswa aktif / alumni) and entry year. Verifying a campus email (`.ac.id`) that matches the Kampus is optional and earns the **Terverifikasi** badge.
+8. **Verification**: login with Google or an email magic link. The Pengulas declares their Status Pengulas (mahasiswa aktif / alumni) and entry year. Verifying a campus email (`.ac.id`) that matches the Kampus is optional and earns the **Terverifikasi** badge. Every account requires declaring "18 tahun atau lebih" (added 2026-10-06, see 17h and [ADR 0008](./adr/0008-adult-only-accounts.md)).
 9. **Ulasan content**: Bintang (1–5); Aspek stars for Kurikulum, Dosen, Fasilitas, Suasana belajar, Organisasi/administrasi and Biaya vs kualitas; Rekomendasi (yes/no); a title; and text of at least about 150 characters, with guiding prompts.
 10. **Lifecycle**: one Ulasan per Pengulas per Prodi. An edit creates a new revision and goes through Screening again, and the previous version stays Terbit until the new one passes. While a revision is Menunggu or Ditinjau, the Pengulas can't submit another edit. A Pengulas can delete their own Ulasan. Ulasan are shown anonymously (Status Pengulas, entry year, badge), newest first.
 
@@ -40,16 +40,30 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 ## Tes Minat
 
 11. **Method**: RIASEC, using the O*NET® Interest Profiler Short Form (60 items), translated and adapted to Indonesian under the **O*NET Tools Developer License**, with the required attribution. Moderators set Kode RIASEC per Jurusan, seeded from O*NET. See [ADR 0004](./adr/0004-riasec-via-onet-interest-profiler.md).
-12. **Access**: no login needed. The result has a shareable link, and logged-in users can save it to their profile.
+12. **Access**: no login needed. The result has a shareable link that carries the scores in the URL (nothing is stored). Logged-in users can save it as a **Profil Minat** (changed 2026-10-06, see 17g).
 
 ## Scope
 
-13. **In the MVP**: home with a large search box, search results, Jurusan page, Kampus page, Prodi page with Ulasan, the Ulasan form, the Tes Minat, Pengulas accounts, and the Moderator area (Antrean Moderasi, catalogue, Jurusan and Kode RIASEC mapping). Also Kota browsing, a side-by-side comparison of 2–3 Prodi, and a labelled **Promosi** Kampus slot that never affects scores or organic ordering.
+13. **In the MVP**: home with a large search box, search results, Jurusan page, Kampus page, Prodi page with Ulasan, the Ulasan form, the Tes Minat, Pengulas accounts, and the Moderator area (Antrean Moderasi, catalogue, Jurusan and Kode RIASEC mapping). Also Biaya & Masuk facts (17a–17f), Kota browsing, the **Perbandingan** of 2–3 Prodi (facts side by side only, 17f), and a labelled **Promosi** Kampus slot that never affects scores or organic ordering.
 14. **Out of the MVP**: Profesi/salary pages, Kampus partner / Reputation Manager, awards, social features (chat, following, feeds), and off-topic articles.
 
 ## Technology
 
 15. **Stack**: Next.js (App Router, TypeScript) on Vercel; Neon Postgres; Drizzle; Auth.js; name search with `pg_trgm` (substring and typo matching; Postgres has no Indonesian text-search configuration, and catalogue names are too short for stemming to help); Tailwind with shadcn/ui; Screening via `after()` calling `claude-haiku-4-5-20251001`, plus a cron retry; the xlsx import uses SheetJS. See [ADR 0005](./adr/0005-nextjs-postgres-on-vercel.md).
 16. **Name**: CampusMatch. The GitHub repo is `AndikaAryaBagusM/CampusMatch` (renamed from `kampusCheck`).
+
+## Info Biaya & Masuk and Profil Minat (decided 2026-10-06)
+
+From a lecturer requirement: complete, factual cost and admission information for the Daftar Kampus Unggulan, a comparison between Kampus, and a saved Profil Minat. Roadmap step 6 (facts) and step 7 (Profil Minat).
+
+17a. **Scope**: facts belong to a Kampus or Prodi. The Daftar Kampus Unggulan (5,043 Prodi on 2026-10-06) only decides which Kampus are collected first; facts stay if a Kampus leaves the list. See [ADR 0006](./adr/0006-facts-need-sumber-and-second-check.md).
+17b. **Which facts**: UKT/SPP per Prodi; Uang Pangkal per Prodi when published that way, otherwise per Kampus; Jalur Masuk with their tests and registration fee per Kampus; Biaya Lain (official compulsory one-off fees only, no living costs) per Kampus; Beasiswa per Kampus, with national schemes recorded once and linked. Not collected: daya tampung, keketatan. A Kampus-wide value is never copied down to each Prodi.
+17c. **Shape**: one Biaya table (Kampus or Prodi, Tahun Akademik, jenis UKT/SPP/uang pangkal/pendaftaran/lain, optional Jalur Masuk, label such as "Kelompok III", whole-rupiah amount with a minimal/maksimal flag, per semester or once, Sumber). A Jalur Masuk is per Kampus per Tahun Akademik: name, category (SNBP, SNBT, Mandiri, PTS's own), tests from a fixed list (UTBK, Kampus test, rapor, portofolio, wawancara, prestasi, lain), registration dates only when stated, Sumber. Which Prodi a jalur is open to is not recorded.
+17d. **Sumber and checking**: every fact has a Tahun Akademik and a Sumber (URL, title, publisher, access date, required Wayback link, or "tanpa arsip" with the checker's reason). Draf → Diperiksa by a *different* Moderator. Entry is one CSV per Sumber with Prodi matched by name (unmatched rows block the import), plus a form for small fixes. Moderators only; Kampus send corrections by email.
+17e. **Refresh**: once a year, February–June. Facts from an older Tahun Akademik are labelled "Data TA X — mungkin sudah berubah". Never deleted.
+17f. **Perbandingan**: 2–3 Prodi side by side, facts and Ulasan scores only, no Kelebihan/Kekurangan and no best-value marks. The Tes Minat recommends Jurusan only; from a Rekomendasi Jurusan the student browses its Prodi at every Kampus (sorted by Kampus name, filters for Unggulan, Kota, Jenjang and maximum UKT, optional sort by lowest UKT or Bintang) and picks Prodi to compare. See [ADR 0007](./adr/0007-comparison-shows-facts-only.md).
+17g. **Profil Minat**: the six scores and the date only (no item answers), every saved Profil Minat kept as history, Rekomendasi Jurusan recalculated on view, private, deletable, never used for Promosi or ads.
+17h. **Age**: every account requires declaring "18 tahun atau lebih". Existing accounts confirm at next sign-in; an under-18 declaration locks the account and shows how to request deletion, and its Ulasan stay Terbit. Under-18s use the Tes Minat without saving. See [ADR 0008](./adr/0008-adult-only-accounts.md).
+17i. **Legal**: `/privasi` adds the Profil Minat and the age declaration; `/ketentuan` adds a disclaimer that facts come from official sources on a stated date, may change, and that CampusMatch is not affiliated with any Kampus. Both are written when the features ship.
 
 See also: [roadmap.md](./roadmap.md) and [legal-todo.md](./legal-todo.md).
