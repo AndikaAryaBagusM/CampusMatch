@@ -50,7 +50,15 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
             <FactList
               facts={[
                 { icon: Landmark, label: "Bentuk", value: kampus.bentuk },
-                { icon: MapPin, label: "Kota", value: kampus.kotaNama },
+                {
+                  icon: MapPin,
+                  label: "Kota",
+                  value: (
+                    <Link href={`/kota/${kampus.kotaSlug}`} className="text-primary hover:underline">
+                      {kampus.kotaNama}
+                    </Link>
+                  ),
+                },
                 { icon: MapPin, label: "Provinsi", value: formatProvinsi(kampus.provinsi) },
                 {
                   icon: ShieldCheck,

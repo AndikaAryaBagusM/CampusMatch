@@ -19,6 +19,7 @@ import { BintangTampil } from "@/components/ulasan/bintang-tampil";
 import { formatRupiah } from "@/lib/fakta/label";
 import { formatTahunAkademik } from "@/lib/fakta/tahun-akademik";
 import { formatAngka } from "@/lib/format";
+import { namaKota } from "@/lib/kota";
 import { countJurusanPerJenjang, getInfoKatalog, getJurusan, parseJenjang } from "@/lib/katalog";
 import {
   countJurusanPerKota,
@@ -99,7 +100,12 @@ function BarisProdi({ p }: { p: ProdiJurusan }) {
               <Link href={`/kampus/${p.kampus.slug}`} className="hover:underline">
                 {p.kampus.nama}
               </Link>
-              <span className="text-muted-foreground"> · {p.kotaNama}</span>
+              <span className="text-muted-foreground">
+                {" · "}
+                <Link href={`/kota/${p.kotaSlug}`} className="hover:underline">
+                  {p.kotaNama}
+                </Link>
+              </span>
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -239,7 +245,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
                 <option value="">Semua Kota</option>
                 {perKota.map((k) => (
                   <option key={k.slug} value={k.slug}>
-                    {k.nama} ({formatAngka(k.jumlahProdi)})
+                    {namaKota(k)} ({formatAngka(k.jumlahProdi)})
                   </option>
                 ))}
               </select>
@@ -264,7 +270,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
             <p>
               {formatAngka(tersaring.jumlahProdi)} Prodi di {formatAngka(tersaring.jumlahKampus)} Kampus, urut{" "}
               {LABEL_URUT[urut].toLowerCase()}
-              {kotaDipilih ? `, di ${kotaDipilih.nama}` : null}
+              {kotaDipilih ? `, di ${namaKota(kotaDipilih)}` : null}
             </p>
             {uktJuta !== null || urut === "ukt" ? (
               <p>

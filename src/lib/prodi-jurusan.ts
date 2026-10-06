@@ -118,6 +118,7 @@ export async function listProdiJurusan(
           unggulan: kampus.unggulan,
         },
         kotaNama: kota.nama,
+        kotaSlug: kota.slug,
         ukt,
         uktTahun: sql<number | null>`CASE WHEN ${uktProdi.jumlah} IS NOT NULL THEN ${uktProdi.tahun} ELSE ${uktKampus.tahun} END`,
         uktTingkat: sql<"prodi" | "kampus" | null>`CASE WHEN ${uktProdi.jumlah} IS NOT NULL THEN 'prodi' WHEN ${uktKampus.jumlah} IS NOT NULL THEN 'kampus' END`,
@@ -151,7 +152,7 @@ export async function countProdiJurusan(db: Db, jurusanSlug: string, filter: Fil
 
 // The Kota with this Jurusan's Prodi, for the Kota filter (unfiltered counts).
 export async function countJurusanPerKota(db: Db, jurusanSlug: string) {
-  return joinJurusan(db.select({ slug: kota.slug, nama: kota.nama, jumlahProdi: count() }).from(prodi).$dynamic())
+  return joinJurusan(db.select({ slug: kota.slug, nama: kota.nama, provinsi: kota.provinsi, jumlahProdi: count() }).from(prodi).$dynamic())
     .where(eq(jurusan.slug, jurusanSlug))
     .groupBy(kota.id)
     .orderBy(asc(kota.nama));

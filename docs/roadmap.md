@@ -18,4 +18,5 @@
 8. **Perbandingan**: side-by-side view of 2–3 Prodi, facts and Ulasan scores only (17f).
    - Built 2026-10-06: `/bandingkan`, the Bandingkan button and bottom bar (list kept in the browser), and the Jurusan page as a Prodi list with Kota and maximum-UKT filters and UKT/Bintang sort. No migration. See 17k.
 9. **Kota browse**: browse Kampus by Kota.
+   - Built 2026-10-06: `/kota` (by Provinsi) and `/kota/[slug]` (Kampus in name order, Unggulan and Bentuk filters), linked from the header, footer and every page that shows a Kota. No migration. See 17l.
 10. **Promosi slot**: a labelled sponsored Kampus placement.

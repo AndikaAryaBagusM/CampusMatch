@@ -63,6 +63,7 @@ export async function getKampus(db: Db, slug: string) {
       akreditasi: kampus.akreditasi,
       unggulan: kampus.unggulan,
       kotaNama: kota.nama,
+      kotaSlug: kota.slug,
       provinsi: kota.provinsi,
     })
     .from(kampus)
@@ -174,6 +175,7 @@ export async function getProdi(db: Db, slug: string) {
         unggulan: kampus.unggulan,
       },
       kotaNama: kota.nama,
+      kotaSlug: kota.slug,
       provinsi: kota.provinsi,
       jurusanNama: jurusan.nama,
       jurusanSlug: jurusan.slug,

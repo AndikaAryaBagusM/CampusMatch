@@ -36,6 +36,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/kota" className="hover:text-white hover:underline">
+                Kampus per Kota
+              </Link>
+            </li>
+            <li>
               <Link href="/tes-minat" className="hover:text-white hover:underline">
                 Tes Minat
               </Link>
