@@ -35,6 +35,11 @@ export function SiteFooter() {
                 Daftar Kampus Unggulan
               </Link>
             </li>
+            <li>
+              <Link href="/tes-minat" className="hover:text-white hover:underline">
+                Tes Minat
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
