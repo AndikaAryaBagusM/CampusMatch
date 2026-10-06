@@ -12,6 +12,9 @@
    - **Not built yet**: the form for small fixes; calling Save Page Now from the import.
    - **Data collection** (the main work): 100 Kampus, 5,043 Prodi.
 7. **Tes Minat and Profil Minat**: translated items, Profil RIASEC scoring, Kode RIASEC per Jurusan, the results page with O*NET attribution, the Prodi list per Rekomendasi Jurusan, saving a Profil Minat, and the 18+ account declaration. See 17f–17h.
+   - Built 2026-10-06: migration `0006`, `/tes-minat`, `/tes-minat/hasil`, Profil Minat in `/akun`, `/akun/usia` and `/akun/dikunci`, and Kode RIASEC for all 372 Jurusan (proposed from O*NET, loaded on dev, **to be reviewed**). See 17j.
+   - **Not built yet**: the Kota and maximum-UKT filters and the UKT/Bintang sort on the Jurusan page (17f); a Moderator screen for Kode RIASEC (the CSV workflow covers it for now).
+   - **Before launch**: the Validation Study the O*NET Tools Developer License requires (ADR 0004).
 8. **Perbandingan**: side-by-side view of 2–3 Prodi, facts and Ulasan scores only (17f).
 9. **Kota browse**: browse Kampus by Kota.
 10. **Promosi slot**: a labelled sponsored Kampus placement.
