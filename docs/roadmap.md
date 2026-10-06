@@ -22,3 +22,4 @@
 9. **Kota browse**: browse Kampus by Kota.
    - Built 2026-10-06: `/kota` (by Provinsi) and `/kota/[slug]` (Kampus in name order, Unggulan and Bentuk filters), linked from the header, footer and every page that shows a Kota. No migration. See 17l.
 10. **Promosi slot**: a labelled sponsored Kampus placement.
+   - Built 2026-10-06: `/moderasi/promosi` (Draf, a second Moderator activates, stop with a reason), the labelled box on the home page, Jurusan pages and search, `/promosi/[id]` daily click totals, `/ketentuan` section 10, and migration `0008`. See 17n and ADR 0009.

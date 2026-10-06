@@ -182,5 +182,5 @@ _Avoid_: Guest, tamu, visitor
 ## Commercial
 
 **Promosi**:
-A paid, clearly labelled placement of a Kampus. It never changes Bintang, Tingkat Rekomendasi or the order of organic results.
-_Avoid_: Iklan (in reference to Kampus), sponsored, featured
+A paid, clearly labelled placement of a Kampus beside a list, never inside it. It never changes Bintang, Tingkat Rekomendasi or the order of organic results. It shows (is *Tayang*) between its dates once a second Moderator has activated it.
+_Avoid_: Iklan (in reference to Kampus), sponsored, featured, Terverifikasi
