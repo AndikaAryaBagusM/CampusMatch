@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BadgeCheck, GraduationCap, Hash, Landmark, MapPin, MessageSquareText, ShieldCheck } from "lucide-react";
 import { EmptyState } from "@/components/empty-state";
+import { PanelBiayaMasukKampus } from "@/components/fakta/biaya-masuk";
 import { FactList } from "@/components/fact-list";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusHeader } from "@/components/kampus/kampus-header";
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: PageProps<"/kampus/[slug]">):
 export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">) {
   const data = await loadKampus((await params).slug, ULASAN_TAMPIL);
   if (!data) notFound();
-  const { kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan } = data;
+  const { kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan, fakta } = data;
 
   return (
     <div className={kontainer}>
@@ -70,6 +71,8 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
               ]}
             />
           </Panel>
+
+          {fakta ? <PanelBiayaMasukKampus fakta={fakta} /> : null}
 
           <Panel title="Prodi per Jenjang">
             <ul className="grid gap-3 sm:grid-cols-3">

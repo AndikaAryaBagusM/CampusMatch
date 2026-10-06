@@ -74,6 +74,7 @@ _Avoid_: Bantuan biaya, scholarship
 Whether a fact may be shown:
 - *Draf*: entered by a Moderator, not shown.
 - *Diperiksa*: checked against its Sumber by a second Moderator, shown.
+- *Ditarik*: withdrawn by a Moderator after it was shown, always with a reason. Not shown, but kept as history.
 
 _Avoid_: Terverifikasi (that is the Pengulas badge), verified, approved
 

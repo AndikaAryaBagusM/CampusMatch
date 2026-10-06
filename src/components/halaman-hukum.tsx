@@ -4,14 +4,23 @@ import { kontakEmail } from "@/lib/kontak";
 // Shared layout for /privasi and /ketentuan. Both are drafts until a lawyer
 // reviews them (docs/legal-todo.md).
 
-export const TERAKHIR_DIPERBARUI = "3 Oktober 2026";
-
-export function HalamanHukum({ judul, ringkas, children }: { judul: string; ringkas: string; children: React.ReactNode }) {
+export function HalamanHukum({
+  judul,
+  diperbarui,
+  ringkas,
+  children,
+}: {
+  judul: string;
+  // "Terakhir diperbarui" date, e.g. "6 Oktober 2026".
+  diperbarui: string;
+  ringkas: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className={`${kontainer} max-w-3xl py-10`}>
       <Panel>
         <h1 className="text-3xl font-medium tracking-tight">{judul}</h1>
-        <p className="mt-2 text-sm text-muted-foreground">Terakhir diperbarui: {TERAKHIR_DIPERBARUI}</p>
+        <p className="mt-2 text-sm text-muted-foreground">Terakhir diperbarui: {diperbarui}</p>
         <p className="mt-4">{ringkas}</p>
         <div className="mt-8 space-y-8">{children}</div>
       </Panel>

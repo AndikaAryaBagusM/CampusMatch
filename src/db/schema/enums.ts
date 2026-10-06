@@ -70,3 +70,37 @@ export const aksiModerasi = pgEnum("aksi_moderasi", [
   "laporan_ditutup",
   "dihapus_pengulas",
 ]);
+
+// Biaya & Masuk facts (ADR 0006).
+// Ditarik: withdrawn by a Moderator after it was shown; kept as history.
+export const statusFakta = pgEnum("status_fakta", ["draf", "diperiksa", "ditarik"]);
+
+export const jenisBiaya = pgEnum("jenis_biaya", [
+  "ukt",
+  "spp",
+  "uang_pangkal",
+  "pendaftaran",
+  "lain",
+]);
+
+// NULL batas means the amount is exact.
+export const batasBiaya = pgEnum("batas_biaya", ["minimal", "maksimal"]);
+
+export const periodeBiaya = pgEnum("periode_biaya", ["per_semester", "sekali"]);
+
+export const kategoriJalur = pgEnum("kategori_jalur", [
+  "snbp",
+  "snbt",
+  "mandiri",
+  "pts",
+]);
+
+export const tesJalur = pgEnum("tes_jalur", [
+  "utbk",
+  "tes_kampus",
+  "rapor",
+  "portofolio",
+  "wawancara",
+  "prestasi",
+  "lain",
+]);

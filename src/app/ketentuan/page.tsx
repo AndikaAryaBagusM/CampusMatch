@@ -14,6 +14,7 @@ export default function KetentuanPage() {
   return (
     <HalamanHukum
       judul="Ketentuan Layanan"
+      diperbarui="6 Oktober 2026"
       ringkas="Ketentuan ini berlaku saat kamu memakai CampusMatch, termasuk saat membaca, menulis, atau melaporkan ulasan. Dengan masuk atau mengirim ulasan, kamu menyetujui ketentuan ini dan Kebijakan Privasi."
     >
       <Bagian id="layanan" judul="1. Tentang CampusMatch">
@@ -137,7 +138,31 @@ export default function KetentuanPage() {
         </ul>
       </Bagian>
 
-      <Bagian id="perubahan" judul="9. Perubahan ketentuan dan hukum yang berlaku">
+      <Bagian id="biaya-masuk" judul="9. Biaya, jalur masuk, dan beasiswa">
+        <ul>
+          <li>
+            Biaya kuliah, jalur masuk, dan beasiswa dicatat dari dokumen atau halaman resmi Kampus (atau penyelenggara
+            beasiswa) pada tanggal akses yang tertera, dan berlaku untuk tahun akademik yang tertera. Setiap angka
+            menyebut sumbernya, dan sebisa mungkin salinan arsipnya.
+          </li>
+          <li>
+            Setiap data diperiksa oleh dua orang tim CampusMatch: satu yang mencatat dan satu lagi yang mencocokkannya
+            dengan sumber sebelum ditampilkan. Meski begitu, angka bisa sudah berubah atau keliru dicatat. Pastikan
+            kembali ke Kampus sebelum mendaftar atau membayar.
+          </li>
+          <li>Data dari tahun akademik sebelumnya tetap ditampilkan dengan tanda bahwa data itu mungkin sudah berubah.</li>
+          <li>
+            CampusMatch tidak berafiliasi dengan Kampus mana pun dan tidak memberi penilaian atau peringkat atas biaya,
+            jalur masuk, atau beasiswa.
+          </li>
+          <li>
+            Jika kamu mewakili Kampus dan menemukan data yang keliru, kirim email ke <TautanKontak /> dengan tautan ke
+            dokumen resmi yang benar.
+          </li>
+        </ul>
+      </Bagian>
+
+      <Bagian id="perubahan" judul="10. Perubahan ketentuan dan hukum yang berlaku">
         <p>
           Jika ketentuan ini berubah, tanggal di atas akan diperbarui. Untuk perubahan penting, kami akan memberi tahu
           lewat situs ini sebelum perubahan berlaku. Ketentuan ini tunduk pada hukum Republik Indonesia.

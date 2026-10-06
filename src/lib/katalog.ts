@@ -204,12 +204,14 @@ export async function listKampusJurusan(
 export async function getProdi(db: Db, slug: string) {
   const [row] = await db
     .select({
+      id: prodi.id,
       nama: prodi.nama,
       slug: prodi.slug,
       jenjang: prodi.jenjang,
       kodeProdi: prodi.kodeProdi,
       bidang: prodi.bidang,
       kampus: {
+        id: kampus.id,
         npsn: kampus.npsn,
         nama: kampus.nama,
         slug: kampus.slug,

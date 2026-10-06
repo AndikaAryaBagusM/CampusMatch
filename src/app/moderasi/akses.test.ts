@@ -11,6 +11,9 @@ const { withDb } = await import("@/db");
 const actions = await import("./actions");
 const { default: ModerasiPage } = await import("./page");
 const { default: RiwayatPage } = await import("./ulasan/[id]/page");
+const aksiFakta = await import("./fakta/actions");
+const { default: FaktaPage } = await import("./fakta/page");
+const { default: PeriksaSumberPage } = await import("./fakta/[id]/page");
 const mockAuth = vi.mocked(auth as unknown as () => Promise<unknown>);
 
 const form = () => {
@@ -18,6 +21,8 @@ const form = () => {
   fd.set("revisiId", "00000000-0000-0000-0000-000000000000");
   fd.set("laporanId", "00000000-0000-0000-0000-000000000000");
   fd.set("alasan", "alasan");
+  fd.set("sumberId", "1");
+  fd.set("catatan", "catatan");
   return fd;
 };
 
@@ -39,6 +44,18 @@ describe.each(Object.entries(pemanggil))("%s", (_, sesi) => {
 
   test.each(["setujui", "tolak", "turunkan", "tutup"] as const)("is refused by the %s action", async (nama) => {
     await expect(actions[nama](form())).rejects.toMatchObject({ digest: expect.stringContaining("404") });
+    expect(withDb).not.toHaveBeenCalled();
+  });
+
+  test.each(["periksa", "kembalikan", "tarik"] as const)("is refused by the fact %s action", async (nama) => {
+    await expect(aksiFakta[nama](form())).rejects.toMatchObject({ digest: expect.stringContaining("404") });
+    expect(withDb).not.toHaveBeenCalled();
+  });
+
+  test("is refused by the fact pages", async () => {
+    await expect(FaktaPage({ params: Promise.resolve({}), searchParams: Promise.resolve({}) } as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
+    const props = { params: Promise.resolve({ id: "1" }), searchParams: Promise.resolve({}) };
+    await expect(PeriksaSumberPage(props as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
     expect(withDb).not.toHaveBeenCalled();
   });
 

@@ -7,6 +7,10 @@
    - **TODO before public launch**: a lawyer reviews the draft `/privasi` (Kebijakan Privasi) and `/ketentuan` (Ketentuan Layanan) and answers the open questions in [legal-todo.md](./legal-todo.md).
 5. **Deferred from step 4**: campus-email verification (Terverifikasi) and the Kode Prodi → Jurusan mapping tool with per-Prodi overrides.
 6. **Info Biaya & Masuk** (added 2026-10-06): Sumber, Biaya, Jalur Masuk and Beasiswa tables; the CSV-per-Sumber import with Draf → Diperiksa checking; facts on the Kampus and Prodi pages. Collect the Daftar Kampus Unggulan first. See [decisions.md](./decisions.md) 17a–17e.
+   - Built 2026-10-06: migration `0005`, `npm run fakta:import`, `/moderasi/fakta`, the panels on the Kampus and Prodi pages, and `/ketentuan` section 9.
+   - Withdrawing shown facts (Ditarik) at `/moderasi/fakta/[id]`; a correction is then imported as a new Sumber.
+   - **Not built yet**: the form for small fixes; calling Save Page Now from the import.
+   - **Data collection** (the main work): 100 Kampus, 5,043 Prodi.
 7. **Tes Minat and Profil Minat**: translated items, Profil RIASEC scoring, Kode RIASEC per Jurusan, the results page with O*NET attribution, the Prodi list per Rekomendasi Jurusan, saving a Profil Minat, and the 18+ account declaration. See 17f–17h.
 8. **Perbandingan**: side-by-side view of 2–3 Prodi, facts and Ulasan scores only (17f).
 9. **Kota browse**: browse Kampus by Kota.

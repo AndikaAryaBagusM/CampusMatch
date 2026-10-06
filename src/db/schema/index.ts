@@ -14,6 +14,7 @@ import { laporan, riwayatModerasi, ulasan, ulasanRevisi } from "./ulasan";
 export * from "./auth";
 export * from "./batas-laju";
 export * from "./enums";
+export * from "./fakta";
 export * from "./katalog";
 export * from "./riasec";
 export * from "./ulasan";

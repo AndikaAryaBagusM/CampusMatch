@@ -36,6 +36,13 @@
       "when": 1791032866084,
       "tag": "0004_moderasi",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1791292539638,
+      "tag": "0005_fakta_biaya_masuk",
+      "breakpoints": true
     }
   ]
 }

@@ -4,8 +4,9 @@ import { Inbox } from "lucide-react";
 import { withDb } from "@/db";
 import { EmptyState } from "@/components/empty-state";
 import { IsiUlasan, LABEL_RISIKO } from "@/components/moderasi/isi-ulasan";
+import { TabModerasiNav } from "@/components/moderasi/tab-moderasi";
 import { kontainer, Panel } from "@/components/panel";
-import { TabNav } from "@/components/tab-nav";
+import { hitungSumberDraf } from "@/lib/fakta/periksa";
 import { formatWaktu } from "@/lib/format";
 import { requireModerator } from "@/lib/moderator";
 import { LABEL_ALASAN_LAPORAN } from "@/lib/ulasan/laporan";
@@ -31,9 +32,10 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
   const pesan = param(sp.pesan);
   const kembali = `/moderasi?tab=${tab}`;
 
-  const [jumlah, antrean, laporan, menunggu] = await withDb((db) =>
+  const [jumlah, jumlahFakta, antrean, laporan, menunggu] = await withDb((db) =>
     Promise.all([
       hitungAntrean(db),
+      hitungSumberDraf(db),
       tab === "antrean" ? listAntrean(db) : null,
       tab === "laporan" ? listLaporanTerbuka(db) : null,
       tab === "menunggu" ? listMenunggu(db) : null,
@@ -54,16 +56,7 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
         </p>
       ) : null}
 
-      <div className="rounded-xl bg-white px-1 ring-1 ring-border sm:px-4">
-        <TabNav
-          label="Bagian Antrean Moderasi"
-          tabs={[
-            { href: "/moderasi?tab=antrean", label: `Ditinjau (${jumlah.ditinjau})`, active: tab === "antrean" },
-            { href: "/moderasi?tab=laporan", label: `Laporan (${jumlah.laporan})`, active: tab === "laporan" },
-            { href: "/moderasi?tab=menunggu", label: `Menunggu (${jumlah.menunggu})`, active: tab === "menunggu" },
-          ]}
-        />
-      </div>
+      <TabModerasiNav jumlah={{ ...jumlah, fakta: jumlahFakta }} aktif={tab} />
 
       {antrean ? (
         antrean.length === 0 ? (

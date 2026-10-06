@@ -16,6 +16,7 @@
     "catalogue:propose-jurusan": "tsx scripts/propose-jurusan.ts",
     "catalogue:load-jurusan": "tsx scripts/load-jurusan.ts",
     "catalogue:check": "tsx scripts/check-catalogue.ts",
+    "fakta:import": "tsx scripts/import-fakta.ts",
     "test": "vitest run"
   },
   "engines": {

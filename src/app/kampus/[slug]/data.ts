@@ -1,5 +1,6 @@
 import { cache } from "react";
 import { withDb } from "@/db";
+import { getFaktaKampus } from "@/lib/fakta/kueri";
 import {
   countProdiPerJenjang,
   countUlasanKampus,
@@ -23,6 +24,8 @@ export const loadKampus = cache((slug: string, ulasanTampil: number) =>
       getRingkasanUlasan(db, { kampusSlug: slug }),
       listUlasanTerbit(db, { kampusSlug: slug }, ulasanTampil),
     ]);
-    return kampus ? { kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan } : null;
+    if (!kampus) return null;
+    const fakta = await getFaktaKampus(db, kampus.id);
+    return { kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan, fakta };
   }),
 );

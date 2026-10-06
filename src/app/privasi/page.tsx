@@ -14,6 +14,7 @@ export default function PrivasiPage() {
   return (
     <HalamanHukum
       judul="Kebijakan Privasi"
+      diperbarui="3 Oktober 2026"
       ringkas="Kebijakan ini menjelaskan data apa yang dikumpulkan CampusMatch, untuk apa, siapa yang ikut memprosesnya, berapa lama disimpan, dan hakmu sebagai subjek data pribadi menurut Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP)."
     >
       <Bagian id="ringkasan" judul="Ringkasnya">
