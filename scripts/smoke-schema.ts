@@ -135,7 +135,7 @@ async function run(db: Db) {
   await db.insert(verifikasiKampus).values({
     userId: u1.id,
     kampusId: kp.id,
-    email: `${tag}@kampus.ac.id`,
+    domain: `${tag}.ac.id`,
     verifiedAt: new Date(),
   });
   pass("kota, kampus, jurusan, kode_riasec, kode_prodi_jurusan, prodi, users, accounts, sessions, verification_tokens, verifikasi_kampus");

@@ -14,6 +14,7 @@ const ulasan = (ubah: Partial<UlasanPublik> = {}): UlasanPublik => ({
   terbitAt: new Date("2026-10-03T07:00:00Z"),
   prodiNama: "S1 Informatika",
   prodiSlug: "kampus-s1-informatika",
+  terverifikasiSejak: null,
   ...ubah,
 });
 
@@ -50,4 +51,13 @@ test("Laporkan links to the login-protected page", () => {
   const html = renderToStaticMarkup(<UlasanCard ulasan={ulasan()} />);
   expect(html).toContain('href="/ulasan/3f0c6a8e-1111-4222-8333-944445555666/laporkan"');
   expect(html).toContain('rel="nofollow"');
+});
+
+test("the Terverifikasi badge shows with its month, and nothing else about the Pengulas", () => {
+  const tanpa = renderToStaticMarkup(<UlasanCard ulasan={ulasan()} />);
+  expect(tanpa).not.toContain("Terverifikasi");
+  const html = renderToStaticMarkup(<UlasanCard ulasan={ulasan({ terverifikasiSejak: new Date("2026-10-06T03:00:00Z") })} />);
+  expect(html).toContain("Terverifikasi");
+  expect(html).toContain("Terverifikasi email kampus, Oktober 2026");
+  expect(html).not.toContain(".ac.id");
 });

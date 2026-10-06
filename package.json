@@ -19,6 +19,7 @@
     "fakta:import": "tsx scripts/import-fakta.ts",
     "riasec:propose": "tsx scripts/propose-riasec.ts",
     "riasec:load": "tsx scripts/load-riasec.ts",
+    "kampus:load-domain": "tsx scripts/load-domain.ts",
     "test": "vitest run"
   },
   "engines": {

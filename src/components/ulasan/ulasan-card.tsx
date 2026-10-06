@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { Flag, ThumbsDown, ThumbsUp } from "lucide-react";
-import { formatHari } from "@/lib/format";
+import { BadgeCheck, Flag, ThumbsDown, ThumbsUp } from "lucide-react";
+import { formatBulan, formatHari } from "@/lib/format";
 import type { UlasanPublik } from "@/lib/katalog";
 import { STATUS_PENGULAS } from "@/lib/ulasan/skema";
 import { BintangTampil } from "./bintang-tampil";
 
 // One Terbit Ulasan, anonymous: only Status Pengulas and tahun masuk identify
-// the writer. Text is rendered as React text (escaped, never HTML or markdown);
+// the writer, plus the Terverifikasi badge and its month. Text is rendered as React text (escaped, never HTML or markdown);
 // whitespace-pre-line keeps the writer's line breaks.
 export function UlasanCard({ ulasan, tampilkanProdi }: { ulasan: UlasanPublik; tampilkanProdi?: boolean }) {
   const status = STATUS_PENGULAS.find((s) => s.nilai === ulasan.statusPengulas)?.label;
@@ -17,7 +17,18 @@ export function UlasanCard({ ulasan, tampilkanProdi }: { ulasan: UlasanPublik; t
         <h3 className="font-medium">{ulasan.judul}</h3>
       </div>
       <p className="text-xs text-muted-foreground">
-        {status}, masuk {ulasan.tahunMasuk} · {formatHari(ulasan.terbitAt)}
+        {status}, masuk {ulasan.tahunMasuk}
+        {ulasan.terverifikasiSejak ? (
+          <span
+            className="ml-1.5 inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 font-medium text-emerald-800 ring-1 ring-emerald-200"
+            title={`Terverifikasi email kampus, ${formatBulan(ulasan.terverifikasiSejak)}`}
+          >
+            <BadgeCheck className="size-3.5" aria-hidden />
+            Terverifikasi
+            <span className="sr-only">email kampus, {formatBulan(ulasan.terverifikasiSejak)}</span>
+          </span>
+        ) : null}{" "}
+        · {formatHari(ulasan.terbitAt)}
         {tampilkanProdi ? (
           <>
             {" · "}

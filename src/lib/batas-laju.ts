@@ -15,6 +15,8 @@ export const BATAS = {
   laporanPengulas: { maks: 10, jendelaDetik: HARI },
   laporanIp: { maks: 20, jendelaDetik: HARI },
   emailMasukIp: { maks: 5, jendelaDetik: JAM },
+  verifikasiKampusPengulas: { maks: 5, jendelaDetik: HARI },
+  verifikasiKampusIp: { maks: 20, jendelaDetik: JAM },
 } satisfies Record<string, Batas>;
 
 export const kunciIp = (ipHash: string, aksi: string) => `ip:${ipHash}:${aksi}`;

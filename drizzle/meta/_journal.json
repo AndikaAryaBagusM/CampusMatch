@@ -64,6 +64,13 @@
       "when": 1791300232208,
       "tag": "0008_promosi",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1791302066241,
+      "tag": "0009_terverifikasi",
+      "breakpoints": true
     }
   ]
 }
