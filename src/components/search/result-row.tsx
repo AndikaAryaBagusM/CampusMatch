@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen } from "lucide-react";
+import { BookOpen, PenLine } from "lucide-react";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusLogo } from "@/components/kampus/kampus-logo";
 import { UnggulanBadge } from "@/components/kampus/unggulan-badge";
@@ -17,6 +17,8 @@ const KOLOM_JURUSAN = "minmax(0,1fr) 8rem";
 const KOLOM_KAMPUS = "minmax(0,1fr) 12rem 12rem";
 // The Kampus column sits right after the name: it is what tells same-named Prodi apart.
 const KOLOM_PRODI = "minmax(0,26rem) minmax(0,1fr)";
+// In writing mode each row ends with its Tulis ulasan action.
+const KOLOM_PRODI_TULIS = "minmax(0,24rem) minmax(0,1fr) 9rem";
 
 export function KepalaJurusan() {
   return <KepalaJadwal tipis kolom={KOLOM_JURUSAN} judul={["Jurusan", "Prodi"]} kanan={[1]} />;
@@ -24,8 +26,12 @@ export function KepalaJurusan() {
 export function KepalaKampus() {
   return <KepalaJadwal tipis kolom={KOLOM_KAMPUS} judul={["Kampus", "Kota", "Akreditasi"]} />;
 }
-export function KepalaProdi() {
-  return <KepalaJadwal tipis kolom={KOLOM_PRODI} judul={["Prodi", "Kampus"]} />;
+export function KepalaProdi({ tulis }: { tulis?: boolean }) {
+  return tulis ? (
+    <KepalaJadwal tipis kolom={KOLOM_PRODI_TULIS} judul={["Prodi", "Kampus", ""]} />
+  ) : (
+    <KepalaJadwal tipis kolom={KOLOM_PRODI} judul={["Prodi", "Kampus"]} />
+  );
 }
 
 export function JurusanResult({ j }: { j: SearchResults["jurusan"][number] }) {
@@ -74,13 +80,13 @@ export function KampusResult({ k }: { k: SearchResults["kampus"][number] }) {
   );
 }
 
-export function ProdiResult({ p }: { p: SearchResults["prodi"][number] }) {
+export function ProdiResult({ p, tulis }: { p: SearchResults["prodi"][number]; tulis?: boolean }) {
   return (
-    <BarisJadwal kolom={KOLOM_PRODI}>
+    <BarisJadwal kolom={tulis ? KOLOM_PRODI_TULIS : KOLOM_PRODI}>
       <div className="flex min-w-0 items-center gap-3">
         <KampusLogo kampus={{ npsn: p.kampusNpsn, nama: p.kampusNama }} size="sm" />
         <div className="min-w-0">
-          <Link href={`/prodi/${p.slug}`} className={`flex flex-wrap items-center gap-x-2 ${tautan}`}>
+          <Link href={tulis ? `/prodi/${p.slug}/tulis` : `/prodi/${p.slug}`} className={`flex flex-wrap items-center gap-x-2 ${tautan}`}>
             <Plat warna="var(--foreground)" ukuran="sm">
               {p.jenjang}
             </Plat>
@@ -95,6 +101,20 @@ export function ProdiResult({ p }: { p: SearchResults["prodi"][number] }) {
             {p.kampusNama}
           </Link>
         </Sel>
+        {tulis ? (
+          <div className="md:text-right">
+            {/* A plain link: the form asks for login, so this page stays static. */}
+            <Link
+              href={`/prodi/${p.slug}/tulis`}
+              prefetch={false}
+              aria-label={`Tulis ulasan untuk ${p.jenjang} ${p.nama}, ${p.kampusNama}`}
+              className="inline-flex h-9 items-center gap-1.5 rounded-sm bg-pengulas px-3 text-sm font-bold text-pengulas-foreground transition-colors hover:bg-pengulas-ink"
+            >
+              <PenLine className="size-4" aria-hidden />
+              Tulis ulasan
+            </Link>
+          </div>
+        ) : null}
       </SelJadwal>
     </BarisJadwal>
   );

@@ -9,6 +9,7 @@ import { kontainer, Panel } from "@/components/panel";
 import { SearchForm } from "@/components/search-form";
 import { JurusanResult, KampusResult, KepalaJurusan, KepalaKampus, KepalaProdi, ProdiResult } from "@/components/search/result-row";
 import { TabNav } from "@/components/tab-nav";
+import { GarisRute } from "@/components/trayek/garis-rute";
 import { KotakPromosi } from "@/components/promosi/kotak-promosi";
 import { getInfoKatalog } from "@/lib/katalog";
 import { pilihPromosi } from "@/lib/promosi";
@@ -29,7 +30,10 @@ export const metadata: Metadata = {
 export default async function CariPage(props: PageProps<"/cari">) {
   const sp = await props.searchParams;
   const q = normalizeQuery(param(sp.q) ?? "");
-  const rawTipe = param(sp.tipe);
+  // Writing mode (?tulis=1): pick the Prodi to review. Prodi results only,
+  // each opening that Prodi's Ulasan form (which asks for login).
+  const tulis = param(sp.tulis) === "1";
+  const rawTipe = tulis ? "prodi" : param(sp.tipe);
   const tipe: Tipe = (SEARCH_TYPES as readonly string[]).includes(rawTipe ?? "") ? (rawTipe as SearchType) : "semua";
   const unggulanOnly = param(sp.unggulan) === "1";
   const halaman = tipe === "semua" ? 1 : parseHalaman(param(sp.hal));
@@ -39,6 +43,7 @@ export default async function CariPage(props: PageProps<"/cari">) {
       q,
       tipe: (over.tipe ?? tipe) === "semua" ? null : (over.tipe ?? tipe),
       unggulan: (over.unggulan ?? unggulanOnly) && "1",
+      tulis: tulis ? "1" : null,
       hal: over.hal && over.hal > 1 ? over.hal : null,
     });
 
@@ -72,20 +77,51 @@ export default async function CariPage(props: PageProps<"/cari">) {
     <div className={kontainer}>
       <div className="py-6 sm:py-8">
         <h1 className="mb-4 text-2xl leading-tight font-extrabold tracking-tight sm:text-3xl">
-          {cukup ? <>Hasil untuk &ldquo;{q}&rdquo;</> : "Cari Jurusan, Kampus atau Prodi"}
+          {tulis
+            ? "Tulis ulasan: pilih Prodi-mu"
+            : cukup
+              ? <>Hasil untuk &ldquo;{q}&rdquo;</>
+              : "Cari Jurusan, Kampus atau Prodi"}
         </h1>
-        <SearchForm defaultValue={q} autoFocus={!q} />
+        {tulis ? (
+          <p className="mb-4 max-w-[68ch] text-sm leading-relaxed text-muted-foreground">
+            Setiap ulasan tentang satu Prodi. Cari Prodi tempat kamu kuliah atau lulus, lalu pilih untuk mengisi
+            formulirnya.
+          </p>
+        ) : null}
+        <SearchForm
+          defaultValue={q}
+          autoFocus={!q}
+          tersembunyi={tulis ? { tulis: "1" } : undefined}
+          placeholder={tulis ? "Nama Prodi atau Kampus" : undefined}
+        />
+        {tulis ? (
+          <GarisRute
+            arah="md"
+            label="Rute Pengulas"
+            className="mt-6 text-sm"
+            halte={[
+              { label: "Cari Prodi-mu", keterangan: "Kamu di sini", keadaan: "kini" },
+              { label: "Masuk", keterangan: "Berikutnya, bila belum masuk", keadaan: "nanti" },
+              { label: "Tulis ulasan", keadaan: "nanti" },
+              { label: "Diperiksa", keadaan: "nanti" },
+              { label: "Terbit tanpa nama", keadaan: "nanti" },
+            ]}
+          />
+        ) : null}
       </div>
 
       {!cukup ? (
         <Panel>
           <EmptyState icon={Search} title={q ? `Ketik minimal ${MIN_QUERY_LENGTH} huruf` : "Mulai dengan kata kunci"}>
-            Misalnya nama Jurusan (Teknik Informatika), Kampus (Universitas Gadjah Mada) atau Prodi (Kedokteran).
+            {tulis
+              ? "Misalnya nama Prodi (Informatika, Kedokteran) atau Kampus (Universitas Gadjah Mada)."
+              : "Misalnya nama Jurusan (Teknik Informatika), Kampus (Universitas Gadjah Mada) atau Prodi (Kedokteran)."}
           </EmptyState>
         </Panel>
       ) : (
         <div className="space-y-4">
-          <div>
+          <div className={tulis ? "hidden" : undefined}>
             <TabNav
               label="Jenis hasil"
               tabs={(["semua", ...SEARCH_TYPES] as Tipe[]).map((t) => ({
@@ -164,10 +200,10 @@ export default async function CariPage(props: PageProps<"/cari">) {
                 jumlah={hasil.prodi.length}
                 batas={tampil}
                 lihatSemua={tipe === "semua" ? href({ tipe: "prodi", hal: 1 }) : null}
-                kepala={<KepalaProdi />}
+                kepala={<KepalaProdi tulis={tulis} />}
               >
                 {hasil.prodi.slice(0, tampil).map((p) => (
-                  <ProdiResult key={p.id} p={p} />
+                  <ProdiResult key={p.id} p={p} tulis={tulis} />
                 ))}
               </Bagian>
 

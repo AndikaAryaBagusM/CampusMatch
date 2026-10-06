@@ -274,7 +274,10 @@ export default async function AkunPage(props: PageProps<"/akun">) {
       <Panel lembar title="Ulasan saya">
         {ulasan.length === 0 ? (
           <EmptyState icon={MessageSquareText} title="Belum ada ulasan">
-            Cari Prodi tempat kamu kuliah, lalu tekan Tulis ulasan.
+            <Link href="/cari?tulis=1" className="font-semibold text-jade underline-offset-4 hover:underline">
+              Cari Prodi tempat kamu kuliah
+            </Link>
+            , lalu tekan Tulis ulasan.
           </EmptyState>
         ) : (
           <ul className="divide-y divide-border">

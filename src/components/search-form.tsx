@@ -5,11 +5,16 @@ import { MAX_QUERY_LENGTH } from "@/lib/search";
 // Plain GET form to /cari: works without client JavaScript.
 export function SearchForm({
   defaultValue,
+  tersembunyi,
+  placeholder,
   size = "lg",
   autoFocus,
   className,
 }: {
   defaultValue?: string;
+  // Extra GET parameters the search keeps (e.g. the writing mode on /cari).
+  tersembunyi?: Record<string, string>;
+  placeholder?: string;
   size?: "lg" | "sm";
   autoFocus?: boolean;
   className?: string;
@@ -26,6 +31,9 @@ export function SearchForm({
         className,
       )}
     >
+      {tersembunyi
+        ? Object.entries(tersembunyi).map(([k, v]) => <input key={k} type="hidden" name={k} value={v} />)
+        : null}
       <Search aria-hidden className={cn("shrink-0 text-foreground", lg ? "size-5" : "size-4")} />
       <label htmlFor={lg ? "q-besar" : "q-kecil"} className="sr-only">
         Cari Jurusan, Kampus atau Prodi
@@ -37,7 +45,7 @@ export function SearchForm({
         defaultValue={defaultValue}
         maxLength={MAX_QUERY_LENGTH}
         autoFocus={autoFocus}
-        placeholder={lg ? "Jurusan, Kampus atau Prodi" : "Cari Jurusan, Kampus, Prodi"}
+        placeholder={placeholder ?? (lg ? "Jurusan, Kampus atau Prodi" : "Cari Jurusan, Kampus, Prodi")}
         className={cn(
           "min-w-0 flex-1 bg-transparent px-2 text-foreground outline-none placeholder:text-muted-foreground [&::-webkit-search-cancel-button]:hidden",
           lg ? "h-12 text-base sm:text-lg" : "h-8 text-sm",

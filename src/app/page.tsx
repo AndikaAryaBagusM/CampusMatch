@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PenLine } from "lucide-react";
 import { withDb } from "@/db";
 import { FaqList } from "@/components/faq-list";
 import { GarisBidang, gayaBidang, idBidang } from "@/components/home/garis-bidang";
@@ -30,7 +31,7 @@ const RUTE_PENGULAS = [
     keterangan: "Ketik nama Prodi atau Kampus di kolom pencarian, lalu buka halaman Prodi.",
   },
   { label: "Masuk", keterangan: "Dengan Google atau tautan email. Akun hanya untuk usia 18 tahun ke atas." },
-  { label: "Tulis ulasan", keterangan: "Bintang, enam Aspek, Rekomendasi, dan ceritamu sendiri." },
+  { label: "Tulis ulasan", href: "/cari?tulis=1", keterangan: "Bintang, enam Aspek, Rekomendasi, dan ceritamu sendiri." },
   { label: "Diperiksa", keterangan: "Diperiksa otomatis, lalu ditinjau tim kami bila perlu." },
   { label: "Terbit tanpa nama", keterangan: "Hanya status (mahasiswa aktif atau alumni) dan tahun masuk yang tampil." },
 ];
@@ -98,6 +99,13 @@ export default async function Beranda() {
                 Sedang atau pernah kuliah? Ceritakan Prodi-mu untuk calon mahasiswa angkatan berikutnya.
               </p>
               <GarisRute label="Langkah menulis ulasan" animasi halte={RUTE_PENGULAS} />
+              <Link
+                href="/cari?tulis=1"
+                className="mt-6 inline-flex h-11 w-full items-center justify-center gap-2 rounded-sm bg-pengulas px-5 text-sm font-bold text-pengulas-foreground transition-colors hover:bg-pengulas-ink"
+              >
+                <PenLine className="size-4" aria-hidden />
+                Mulai tulis ulasan
+              </Link>
             </div>
           </aside>
         </div>

@@ -38,7 +38,7 @@ export function SiteHeader() {
           <Search className="size-5" aria-hidden />
         </Link>
         <Link
-          href="/#rute-pengulas"
+          href="/cari?tulis=1"
           className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-sm bg-pengulas px-3 text-sm font-semibold text-pengulas-foreground transition-colors hover:bg-pengulas-ink"
         >
           <PenLine className="size-4" aria-hidden />
