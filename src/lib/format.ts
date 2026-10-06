@@ -38,3 +38,10 @@ const hari = new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "long", y
 export function formatHari(d: Date | string): string {
   return hari.format(typeof d === "string" ? new Date(d) : d);
 }
+
+const bulan = new Intl.DateTimeFormat("id-ID", { month: "long", year: "numeric", timeZone: "Asia/Jakarta" });
+
+// A Date -> "Oktober 2026".
+export function formatBulan(d: Date | string): string {
+  return bulan.format(new Date(d));
+}

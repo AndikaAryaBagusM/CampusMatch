@@ -71,6 +71,11 @@ export default function PrivasiPage() {
           memuat Prodi itu lewat alamat tautannya, sama seperti halaman lain, tanpa dikaitkan dengan akunmu.
         </p>
         <p>
+          <strong>Saat kamu memverifikasi email kampus.</strong> Alamat email kampus yang kamu masukkan hanya dipakai untuk
+          mengirim satu tautan konfirmasi dan tidak kami simpan. Setelah kamu mengonfirmasi, kami menyimpan nama domainnya
+          (misalnya ugm.ac.id), Kampus-nya, dan tanggalnya. Kamu bisa menghapusnya kapan saja di halaman Akun.
+        </p>
+        <p>
           <strong>Saat kamu mengeklik Promosi.</strong> Kami hanya menambah satu pada jumlah klik Promosi itu untuk hari
           tersebut. Tidak ada cookie, alamat IP, atau data lain tentang siapa yang mengeklik.
         </p>
@@ -92,6 +97,7 @@ export default function PrivasiPage() {
           <li>Menampilkan ulasanmu secara anonim di halaman Prodi dan Kampus.</li>
           <li>Menampilkan Profil Minat yang kamu simpan beserta Rekomendasi Jurusan-nya, hanya untukmu.</li>
           <li>Memastikan akun hanya dipakai oleh orang berusia 18 tahun ke atas.</li>
+          <li>Menandai ulasanmu sebagai Terverifikasi di Kampus tempat kamu membuktikan email kampusmu.</li>
           <li>Memeriksa ulasan sebelum tampil (Screening) dan menangani laporan.</li>
           <li>Membatasi jumlah permintaan dan mencegah spam serta penyalahgunaan.</li>
           <li>Membalas permintaanmu tentang data pribadi.</li>
@@ -105,7 +111,9 @@ export default function PrivasiPage() {
       <Bagian id="anonim" judul="3. Bagaimana ulasan ditampilkan">
         <p>
           Ulasan tampil tanpa nama, email, foto, atau ID akun. Yang terlihat publik hanya isi ulasan, nilai, jawaban
-          rekomendasi, status (mahasiswa aktif atau alumni), tahun masuk, dan tanggal terbit.
+          rekomendasi, status (mahasiswa aktif atau alumni), tahun masuk, dan tanggal terbit. Jika kamu sudah memverifikasi
+          email kampus di Kampus tersebut, ulasanmu juga bertanda Terverifikasi beserta bulan dan tahun verifikasinya, tanpa
+          alamat atau domain emailnya.
         </p>
         <p>
           Perlu diingat: isi ulasan, status dan tahun masuk dibaca siapa saja. Jika kamu menceritakan detail yang sangat

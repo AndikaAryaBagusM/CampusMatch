@@ -30,6 +30,10 @@ export default function KetentuanPage() {
           <li>Pakai alamat email yang kamu kendalikan dan jaga akses ke email atau akun Google-mu.</li>
           <li>Satu orang memakai satu akun. Jangan membuat akun lain untuk menghindari batasan atau keputusan Moderator.</li>
           <li>Kamu bertanggung jawab atas ulasan dan laporan yang dikirim dari akunmu.</li>
+          <li>
+            Tanda Terverifikasi hanya berarti kamu pernah membuktikan akses ke alamat email dengan domain Kampus itu. Tanda
+            ini tidak menilai isi ulasanmu.
+          </li>
         </ul>
       </Bagian>
 

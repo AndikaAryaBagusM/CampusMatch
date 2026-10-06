@@ -93,7 +93,7 @@ Whether the Pengulas is a *mahasiswa aktif* or an *alumni* of the Prodi, as they
 _Avoid_: Role, tipe
 
 **Terverifikasi**:
-A badge showing that the Pengulas proved a link to the Kampus with a campus email address.
+A badge showing that the Pengulas proved a link to the Kampus by opening a link sent to an address on the Kampus's email domain. It is permanent and is shown with the month it was earned, on the Pengulas's Ulasan for that Kampus's Prodi.
 _Avoid_: Verified, asli
 
 **Bintang**:

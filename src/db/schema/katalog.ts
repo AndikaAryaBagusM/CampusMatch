@@ -11,6 +11,7 @@ import {
   text,
   timestamp,
   unique,
+  uniqueIndex,
   varchar,
 } from "drizzle-orm/pg-core";
 import { users } from "./auth";
@@ -45,13 +46,16 @@ export const kampus = pgTable(
     akreditasi: text("akreditasi"),
     // Member of the Daftar Kampus Unggulan.
     unggulan: boolean("unggulan").notNull().default(false),
-    // Campus email domain (e.g. "ugm.ac.id"), used for Terverifikasi.
+    // Campus email domain (e.g. "ugm.ac.id"), used for Terverifikasi; its
+    // subdomains (mail.ugm.ac.id) count too. From data/domain-kampus.csv.
     domainEmail: text("domain_email"),
     createdAt: createdAt(),
     updatedAt: updatedAt(),
   },
   (t) => [
     index("kampus_kota_id_idx").on(t.kotaId),
+    // One domain belongs to one Kampus.
+    uniqueIndex("kampus_domain_email_unique").on(t.domainEmail).where(sql`${t.domainEmail} IS NOT NULL`),
     index("kampus_nama_trgm_idx").using("gin", t.nama.op("gin_trgm_ops")),
     check(
       "kampus_akreditasi_check",
@@ -144,7 +148,8 @@ export const riwayatJurusan = pgTable(
   ],
 );
 
-// A Pengulas proved a link to a Kampus with a campus email (Terverifikasi).
+// A Pengulas proved a link to a Kampus with a campus email (Terverifikasi,
+// decisions.md 17o). Only the domain is kept, never the address.
 export const verifikasiKampus = pgTable(
   "verifikasi_kampus",
   {
@@ -154,11 +159,31 @@ export const verifikasiKampus = pgTable(
     kampusId: integer("kampus_id")
       .notNull()
       .references(() => kampus.id, { onDelete: "cascade" }),
-    email: text("email").notNull(),
+    domain: text("domain").notNull(),
     verifiedAt: timestamp("verified_at", { withTimezone: true }).notNull(),
     createdAt: createdAt(),
   },
   (t) => [primaryKey({ columns: [t.userId, t.kampusId] })],
+);
+
+// A pending link sent to a campus address. The address itself is not kept;
+// the link's token proves access to the mailbox. Stored as its sha256.
+export const tokenVerifikasiKampus = pgTable(
+  "token_verifikasi_kampus",
+  {
+    id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    kampusId: integer("kampus_id")
+      .notNull()
+      .references(() => kampus.id, { onDelete: "cascade" }),
+    domain: text("domain").notNull(),
+    tokenHash: text("token_hash").notNull().unique(),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [index("token_verifikasi_kampus_user_id_idx").on(t.userId)],
 );
 
 // One row per catalogue import; the latest row's tanggal_data is the

@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, expect, test } from "vitest";
 import { eq, sql } from "drizzle-orm";
-import { ulasan, ulasanRevisi } from "@/db/schema";
+import { ulasan, ulasanRevisi, verifikasiKampus } from "@/db/schema";
 import type { ScreeningModel } from "@/lib/screening";
 import { createTestDb, type TestDb } from "../../test/db";
 import { buatKatalog, buatPengguna, dataUlasan } from "../../test/fixtures";
@@ -41,7 +41,7 @@ test("lists only Terbit, not-deleted Ulasan, newest first, without any Pengulas 
   expect(daftar.map((u) => u.judul)).toEqual(["Ulasan baru", "Ulasan lama"]);
   expect(daftar[0].id).toBe(baru.ulasanId);
   expect(Object.keys(daftar[0]).sort()).toEqual(
-    ["bintang", "id", "isi", "judul", "prodiNama", "prodiSlug", "rekomendasi", "statusPengulas", "tahunMasuk", "terbitAt"].sort(),
+    ["bintang", "id", "isi", "judul", "prodiNama", "prodiSlug", "rekomendasi", "statusPengulas", "tahunMasuk", "terbitAt", "terverifikasiSejak"].sort(),
   );
   expect(JSON.stringify(daftar)).not.toContain(baru.pengulas.id);
   expect(JSON.stringify(daftar)).not.toContain(baru.pengulas.email!);
@@ -82,4 +82,21 @@ test("no summary without Terbit Ulasan", async () => {
   expect(await getRingkasanUlasan(t.db, { prodiSlug: prodi[0].slug })).toBeNull();
   const [u] = await t.db.select().from(ulasan).where(eq(ulasan.prodiId, prodi[0].id));
   expect(u.revisiTerbitId).toBeNull();
+});
+
+test("the Terverifikasi date shows only for Ulasan at the verified Kampus", async () => {
+  const a = await buatKatalog(t.db);
+  const b = await buatKatalog(t.db);
+  const u = await buatPengguna(t.db);
+  for (const p of [a.prodi[0], b.prodi[0]]) {
+    const r = await tulisUlasan(t.db, { pengulasId: u.id, prodiId: p.id, data: dataUlasan() });
+    await prosesScreening(t.db, r.revisiId, model("rendah"), tanpaJeda);
+  }
+  const sejak = new Date("2026-10-06T03:00:00Z");
+  await t.db.insert(verifikasiKampus).values({ userId: u.id, kampusId: a.kampus.id, domain: "a.ac.id", verifiedAt: sejak });
+  const [diA] = await listUlasanTerbit(t.db, { prodiSlug: a.prodi[0].slug }, 10);
+  const [diB] = await listUlasanTerbit(t.db, { prodiSlug: b.prodi[0].slug }, 10);
+  expect(diA.terverifikasiSejak).toEqual(sejak);
+  expect(diB.terverifikasiSejak).toBeNull();
+  expect(JSON.stringify(diA)).not.toContain("a.ac.id");
 });

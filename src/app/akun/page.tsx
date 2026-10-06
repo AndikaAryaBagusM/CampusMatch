@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CircleCheck, Compass, MessageSquareText } from "lucide-react";
+import { BadgeCheck, CircleCheck, Compass, MessageSquareText } from "lucide-react";
 import { withDb } from "@/db";
 import { EmptyState } from "@/components/empty-state";
 import { kontainer, Panel } from "@/components/panel";
+import { listVerifikasiSaya } from "@/lib/akun/verifikasi-kampus";
 import { formatHari } from "@/lib/format";
 import { isModerator } from "@/lib/moderator";
 import { LABEL_TIPE } from "@/lib/riasec/item";
@@ -14,7 +15,7 @@ import { listUlasanSaya } from "@/lib/ulasan/kueri";
 import type { StatusUlasan } from "@/lib/ulasan/status";
 import { param } from "@/lib/url";
 import { cn } from "@/lib/utils";
-import { hapusProfilSaya, hapusUlasanSaya, keluar } from "./actions";
+import { hapusProfilSaya, hapusUlasanSaya, hapusVerifikasiKampus, keluar, kirimVerifikasiKampus } from "./actions";
 
 export const metadata: Metadata = {
   title: "Akun",
@@ -32,10 +33,12 @@ const LABEL: Record<StatusUlasan, { teks: string; kelas: string }> = {
 
 export default async function AkunPage(props: PageProps<"/akun">) {
   const pengulas = await requirePengulas("/akun");
-  const [sp, [ulasan, profil]] = await Promise.all([
+  const [sp, [ulasan, profil, verifikasi]] = await Promise.all([
     props.searchParams,
-    withDb((db) => Promise.all([listUlasanSaya(db, pengulas.id), listProfilMinat(db, pengulas.id)])),
+    withDb((db) => Promise.all([listUlasanSaya(db, pengulas.id), listProfilMinat(db, pengulas.id), listVerifikasiSaya(db, pengulas.id)])),
   ]);
+  const pesanKampus = param(sp.kampus);
+  const kampusOk = param(sp.ok) === "1";
   const terkirim = param(sp.terkirim);
   const profilTersimpan = param(sp.profil) === "tersimpan";
 
@@ -66,6 +69,68 @@ export default async function AkunPage(props: PageProps<"/akun">) {
             Buka Antrean Moderasi
           </Link>
         ) : null}
+      </Panel>
+
+      <Panel title="Email kampus" id="email-kampus">
+        {pesanKampus ? (
+          <p
+            role={kampusOk ? "status" : "alert"}
+            className={cn(
+              "mb-4 rounded-lg p-3 text-sm",
+              kampusOk ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200" : "bg-destructive/10 text-destructive",
+            )}
+          >
+            {pesanKampus}
+          </p>
+        ) : null}
+        {verifikasi.length ? (
+          <ul className="mb-4 divide-y divide-border">
+            {verifikasi.map((v) => (
+              <li key={v.kampusId} className="flex flex-wrap items-center justify-between gap-3 py-3 first:pt-0">
+                <div className="min-w-0">
+                  <p className="flex items-center gap-1.5 font-medium">
+                    <BadgeCheck className="size-4 text-emerald-700" aria-hidden />
+                    Terverifikasi di{" "}
+                    <Link href={`/kampus/${v.kampusSlug}`} className="hover:underline">
+                      {v.kampusNama}
+                    </Link>
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {v.domain} · {formatHari(v.verifiedAt)}
+                  </p>
+                </div>
+                <form action={hapusVerifikasiKampus}>
+                  <input type="hidden" name="kampusId" value={v.kampusId} />
+                  <button type="submit" className="text-sm font-medium text-destructive hover:underline">
+                    Hapus
+                  </button>
+                </form>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        <form action={kirimVerifikasiKampus} className="flex flex-col gap-2 sm:flex-row">
+          <label htmlFor="email-kampus-input" className="sr-only">
+            Alamat email kampus
+          </label>
+          <input
+            id="email-kampus-input"
+            name="email"
+            type="email"
+            required
+            maxLength={320}
+            placeholder="nama@mail.kampus.ac.id"
+            className="h-9 min-w-0 flex-1 rounded-lg border border-input bg-white px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+          />
+          <button type="submit" className="h-9 shrink-0 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-deep">
+            Kirim tautan
+          </button>
+        </form>
+        <p className="mt-3 text-xs text-muted-foreground">
+          Buktikan kamu kuliah atau pernah kuliah di sebuah Kampus dengan email kampusmu. Kami mengirim satu tautan ke alamat
+          itu dan tidak menyimpannya; yang kami simpan hanya domainnya dan tanggalnya. Ulasanmu untuk Prodi di Kampus itu
+          lalu bertanda <span className="font-medium">Terverifikasi</span>.
+        </p>
       </Panel>
 
       <Panel title="Profil Minat" id="profil-minat">

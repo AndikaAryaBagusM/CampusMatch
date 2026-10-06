@@ -5,7 +5,7 @@
 import { and, asc, countDistinct, count, desc, eq, isNotNull, isNull, sql, type AnyColumn } from "drizzle-orm";
 import type { PgSelect } from "drizzle-orm/pg-core";
 import type { Db } from "@/db";
-import { imporKatalog, jenjang as jenjangEnum, jurusan, kampus, kodeProdiJurusan, kota, prodi, ulasan, ulasanRevisi } from "@/db/schema";
+import { imporKatalog, jenjang as jenjangEnum, jurusan, kampus, kodeProdiJurusan, kota, prodi, ulasan, ulasanRevisi, verifikasiKampus } from "@/db/schema";
 import { jurusanEfektif } from "@/lib/search";
 import type { KolomAspek } from "@/lib/ulasan/skema";
 
@@ -305,6 +305,9 @@ export async function listUlasanTerbit(
       terbitAt: ulasanRevisi.createdAt,
       prodiNama: sql<string>`${prodi.jenjang} || ' ' || ${prodi.nama}`,
       prodiSlug: prodi.slug,
+      // Terverifikasi at this Prodi's Kampus (decisions.md 17o): only the date,
+      // never who or which address.
+      terverifikasiSejak: sql<Date | null>`(SELECT ${verifikasiKampus.verifiedAt} FROM ${verifikasiKampus} WHERE ${verifikasiKampus.userId} = ${ulasan.pengulasId} AND ${verifikasiKampus.kampusId} = ${prodi.kampusId})`.mapWith((v) => (v ? new Date(v) : null)),
     })
     .from(ulasan)
     .innerJoin(ulasanRevisi, eq(ulasan.revisiTerbitId, ulasanRevisi.id))
