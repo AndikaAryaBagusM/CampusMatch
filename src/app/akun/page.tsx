@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CircleCheck, MessageSquareText } from "lucide-react";
+import { CircleCheck, Compass, MessageSquareText } from "lucide-react";
 import { withDb } from "@/db";
 import { EmptyState } from "@/components/empty-state";
 import { kontainer, Panel } from "@/components/panel";
+import { formatHari } from "@/lib/format";
 import { isModerator } from "@/lib/moderator";
+import { LABEL_TIPE } from "@/lib/riasec/item";
+import { listProfilMinat } from "@/lib/riasec/profil";
+import { kodekanProfil, kodeProfil } from "@/lib/riasec/skor";
 import { requirePengulas } from "@/lib/sesi";
 import { listUlasanSaya } from "@/lib/ulasan/kueri";
 import type { StatusUlasan } from "@/lib/ulasan/status";
 import { param } from "@/lib/url";
 import { cn } from "@/lib/utils";
-import { hapusUlasanSaya, keluar } from "./actions";
+import { hapusProfilSaya, hapusUlasanSaya, keluar } from "./actions";
 
 export const metadata: Metadata = {
   title: "Akun",
@@ -28,8 +32,12 @@ const LABEL: Record<StatusUlasan, { teks: string; kelas: string }> = {
 
 export default async function AkunPage(props: PageProps<"/akun">) {
   const pengulas = await requirePengulas("/akun");
-  const [sp, ulasan] = await Promise.all([props.searchParams, withDb((db) => listUlasanSaya(db, pengulas.id))]);
+  const [sp, [ulasan, profil]] = await Promise.all([
+    props.searchParams,
+    withDb((db) => Promise.all([listUlasanSaya(db, pengulas.id), listProfilMinat(db, pengulas.id)])),
+  ]);
   const terkirim = param(sp.terkirim);
+  const profilTersimpan = param(sp.profil) === "tersimpan";
 
   return (
     <div className={`${kontainer} max-w-3xl space-y-6 py-10`}>
@@ -58,6 +66,52 @@ export default async function AkunPage(props: PageProps<"/akun">) {
             Buka Antrean Moderasi
           </Link>
         ) : null}
+      </Panel>
+
+      <Panel title="Profil Minat" id="profil-minat">
+        {profilTersimpan ? (
+          <p role="status" className="mb-4 flex items-start gap-2 rounded-lg bg-emerald-50 p-3 text-sm text-emerald-900 ring-1 ring-emerald-200">
+            <CircleCheck className="mt-0.5 size-4 shrink-0" aria-hidden />
+            Profil Minat tersimpan.
+          </p>
+        ) : null}
+        {profil.length === 0 ? (
+          <EmptyState icon={Compass} title="Belum ada Profil Minat">
+            <Link href="/tes-minat" className="font-medium text-primary hover:underline">
+              Kerjakan Tes Minat
+            </Link>
+            , lalu simpan hasilnya ke akunmu.
+          </EmptyState>
+        ) : (
+          <ul className="divide-y divide-border">
+            {profil.map((p, i) => {
+              const kode = kodeProfil(p.profil);
+              return (
+                <li key={p.id} className="flex flex-wrap items-center justify-between gap-3 py-3 first:pt-0 last:pb-0">
+                  <div className="min-w-0">
+                    <Link href={`/tes-minat/hasil?p=${kodekanProfil(p.profil)}`} className="font-medium hover:underline">
+                      {kode.split("").map((t) => LABEL_TIPE[t as keyof typeof LABEL_TIPE]).join(", ")} ({kode})
+                    </Link>
+                    <p className="text-sm text-muted-foreground">
+                      {formatHari(p.createdAt)}
+                      {i === 0 ? " · terbaru" : ""}
+                    </p>
+                  </div>
+                  <form action={hapusProfilSaya}>
+                    <input type="hidden" name="profilId" value={p.id} />
+                    <button type="submit" className="text-sm font-medium text-destructive hover:underline">
+                      Hapus
+                    </button>
+                  </form>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+        <p className="mt-4 text-xs text-muted-foreground">
+          Hanya kamu yang bisa melihat Profil Minat. Kami menyimpan enam skornya dan tanggalnya saja, dan tidak memakainya
+          untuk Promosi atau iklan.
+        </p>
       </Panel>
 
       <Panel title="Ulasan saya">
