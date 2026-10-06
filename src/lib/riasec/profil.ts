@@ -1,7 +1,8 @@
-import { and, asc, count, desc, eq } from "drizzle-orm";
+import { and, asc, count, desc, eq, sql } from "drizzle-orm";
 import type { Db } from "@/db";
 import { jurusan, kodeProdiJurusan, kodeRiasec, prodi, profilMinat } from "@/db/schema";
 import type { Tipe } from "./item";
+import { jurusanEfektif } from "@/lib/search";
 import { kecocokan, type ProfilRiasec } from "./skor";
 
 // --- Rekomendasi Jurusan ------------------------------------------------------
@@ -25,13 +26,13 @@ export async function listRekomendasiJurusan(db: Db, profil: ProfilRiasec, batas
       .from(kodeRiasec)
       .innerJoin(jurusan, eq(kodeRiasec.jurusanId, jurusan.id))
       .orderBy(asc(jurusan.id), asc(kodeRiasec.urutan)),
-    // Prodi per Jurusan through the Kode Prodi mapping; a per-Prodi override
-    // moves a Prodi elsewhere, which this count ignores (it is shown, and orders ties).
+    // Prodi per effective Jurusan (a Moderator override counts where it moved
+    // the Prodi), as on the Jurusan pages; it is shown, and orders ties.
     db
-      .select({ jurusanId: kodeProdiJurusan.jurusanId, n: count() })
+      .select({ jurusanId: sql<number | null>`${jurusanEfektif}`, n: count() })
       .from(prodi)
-      .innerJoin(kodeProdiJurusan, eq(prodi.kodeProdi, kodeProdiJurusan.kodeProdi))
-      .groupBy(kodeProdiJurusan.jurusanId),
+      .leftJoin(kodeProdiJurusan, eq(prodi.kodeProdi, kodeProdiJurusan.kodeProdi))
+      .groupBy(jurusanEfektif),
   ]);
   const jumlahPerJurusan = new Map(jumlah.map((j) => [j.jurusanId, Number(j.n)]));
   const perJurusan = new Map<number, { nama: string; slug: string; kode: Tipe[] }>();

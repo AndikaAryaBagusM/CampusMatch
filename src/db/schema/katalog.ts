@@ -121,6 +121,29 @@ export const prodi = pgTable(
   ],
 );
 
+// Every Moderator change to the Jurusan mapping (decisions.md 17m): a Kode
+// Prodi remapped (jenis 'kode') or one Prodi moved by an override (jenis
+// 'prodi'). A NULL Jurusan means unmapped, or an override cleared.
+export const riwayatJurusan = pgTable(
+  "riwayat_jurusan",
+  {
+    id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+    jenis: text("jenis", { enum: ["kode", "prodi"] }).notNull(),
+    kodeProdi: varchar("kode_prodi", { length: 10 }).notNull(),
+    prodiId: integer("prodi_id").references(() => prodi.id, { onDelete: "cascade" }),
+    jurusanLamaId: integer("jurusan_lama_id").references(() => jurusan.id, { onDelete: "set null" }),
+    jurusanBaruId: integer("jurusan_baru_id").references(() => jurusan.id, { onDelete: "set null" }),
+    alasan: text("alasan").notNull(),
+    oleh: text("oleh").references(() => users.id, { onDelete: "set null" }),
+    createdAt: createdAt(),
+  },
+  (t) => [
+    index("riwayat_jurusan_kode_prodi_idx").on(t.kodeProdi),
+    check("riwayat_jurusan_jenis_check", sql`${t.jenis} IN ('kode', 'prodi') AND (${t.jenis} = 'prodi') = (${t.prodiId} IS NOT NULL)`),
+    check("riwayat_jurusan_alasan_check", sql`length(trim(${t.alasan})) > 0`),
+  ],
+);
+
 // A Pengulas proved a link to a Kampus with a campus email (Terverifikasi).
 export const verifikasiKampus = pgTable(
   "verifikasi_kampus",

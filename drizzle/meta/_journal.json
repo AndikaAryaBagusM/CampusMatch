@@ -50,6 +50,13 @@
       "when": 1791293889858,
       "tag": "0006_profil_minat_usia",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1791298586328,
+      "tag": "0007_riwayat_jurusan",
+      "breakpoints": true
     }
   ]
 }

@@ -17,7 +17,7 @@ The national code for a kind of programme (e.g. 55201), shared by every Prodi of
 _Avoid_: Prodi ID, nomenclature code
 
 **Jurusan**:
-A generic field of study from CampusMatch's own curated list, e.g. "Teknik Informatika". It groups equivalent Prodi across many Kampus. Each Prodi belongs to exactly one Jurusan.
+A generic field of study from CampusMatch's own curated list, e.g. "Teknik Informatika". It groups equivalent Prodi across many Kampus. Each Prodi belongs to exactly one Jurusan: normally the one its Kode Prodi is mapped to, unless a Moderator has moved that single Prodi to another Jurusan.
 _Avoid_: Bidang, major, field, department
 
 **Jenjang**:

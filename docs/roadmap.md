@@ -6,6 +6,8 @@
 4. **Login, Ulasan, Screening and Antrean Moderasi** (steps 4 and 5 merged on 2026-10-03): Google and magic-link login, Status Pengulas, the Ulasan form, wordlist and LLM Screening (fail-closed) with cron retry, Laporkan, the Moderator area, and Terbit Ulasan on the Kampus and Prodi pages. See [decisions.md](./decisions.md) 10a–10f.
    - **TODO before public launch**: a lawyer reviews the draft `/privasi` (Kebijakan Privasi) and `/ketentuan` (Ketentuan Layanan) and answers the open questions in [legal-todo.md](./legal-todo.md).
 5. **Deferred from step 4**: campus-email verification (Terverifikasi) and the Kode Prodi → Jurusan mapping tool with per-Prodi overrides.
+   - Built 2026-10-06: the mapping tool at `/moderasi/jurusan` with the `riwayat_jurusan` log (migration `0007`). See 17m.
+   - **Not built yet**: Terverifikasi (it also needs a verified Resend domain to email anyone but the owner).
 6. **Info Biaya & Masuk** (added 2026-10-06): Sumber, Biaya, Jalur Masuk and Beasiswa tables; the CSV-per-Sumber import with Draf → Diperiksa checking; facts on the Kampus and Prodi pages. Collect the Daftar Kampus Unggulan first. See [decisions.md](./decisions.md) 17a–17e.
    - Built 2026-10-06: migration `0005`, `npm run fakta:import`, `/moderasi/fakta`, the panels on the Kampus and Prodi pages, and `/ketentuan` section 9.
    - Withdrawing shown facts (Ditarik) at `/moderasi/fakta/[id]`; a correction is then imported as a new Sumber.

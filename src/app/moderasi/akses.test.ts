@@ -14,6 +14,9 @@ const { default: RiwayatPage } = await import("./ulasan/[id]/page");
 const aksiFakta = await import("./fakta/actions");
 const { default: FaktaPage } = await import("./fakta/page");
 const { default: PeriksaSumberPage } = await import("./fakta/[id]/page");
+const aksiJurusan = await import("./jurusan/actions");
+const { default: PemetaanPage } = await import("./jurusan/page");
+const { default: KodePage } = await import("./jurusan/kode/[kode]/page");
 const mockAuth = vi.mocked(auth as unknown as () => Promise<unknown>);
 
 const form = () => {
@@ -23,6 +26,9 @@ const form = () => {
   fd.set("alasan", "alasan");
   fd.set("sumberId", "1");
   fd.set("catatan", "catatan");
+  fd.set("kode", "55201");
+  fd.set("jurusanId", "1");
+  fd.set("prodi", "1");
   return fd;
 };
 
@@ -56,6 +62,18 @@ describe.each(Object.entries(pemanggil))("%s", (_, sesi) => {
     await expect(FaktaPage({ params: Promise.resolve({}), searchParams: Promise.resolve({}) } as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
     const props = { params: Promise.resolve({ id: "1" }), searchParams: Promise.resolve({}) };
     await expect(PeriksaSumberPage(props as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
+    expect(withDb).not.toHaveBeenCalled();
+  });
+
+  test.each(["ubahKode", "pindahkanProdi"] as const)("is refused by the Jurusan %s action", async (nama) => {
+    await expect(aksiJurusan[nama](form())).rejects.toMatchObject({ digest: expect.stringContaining("404") });
+    expect(withDb).not.toHaveBeenCalled();
+  });
+
+  test("is refused by the Jurusan mapping pages", async () => {
+    await expect(PemetaanPage({ params: Promise.resolve({}), searchParams: Promise.resolve({}) } as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
+    const props = { params: Promise.resolve({ kode: "55201" }), searchParams: Promise.resolve({}) };
+    await expect(KodePage(props as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
     expect(withDb).not.toHaveBeenCalled();
   });
 

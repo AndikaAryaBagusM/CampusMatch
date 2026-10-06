@@ -50,6 +50,18 @@ describe("Rekomendasi Jurusan", () => {
     ]);
   });
 
+  test("a Prodi moved by an override counts in its new Jurusan", async () => {
+    const [komputasi] = await t.db.select().from(jurusan).where(eq(jurusan.slug, "aaa-komputasi"));
+    const [ti] = await t.db.select().from(prodi).where(eq(prodi.kodeProdi, "55201")).limit(1);
+    await t.db.update(prodi).set({ jurusanOverrideId: komputasi.id }).where(eq(prodi.id, ti.id));
+    const hasil = await listRekomendasiJurusan(t.db, { R: 3, I: 9, A: 1, S: 2, E: 1, C: 6 });
+    expect(hasil.slice(0, 2).map((x) => [x.nama, x.jumlahProdi])).toEqual([
+      ["Aaa Komputasi", 2],
+      ["Teknik Informatika", 1],
+    ]);
+    await t.db.update(prodi).set({ jurusanOverrideId: null }).where(eq(prodi.id, ti.id));
+  });
+
   test("leaves out Jurusan without a Kode RIASEC and respects the limit", async () => {
     const semua = await listRekomendasiJurusan(t.db, { R: 5, I: 5, A: 5, S: 5, E: 5, C: 5 }, 1);
     expect(semua).toHaveLength(1);
