@@ -11,9 +11,9 @@ import { formatTahunAkademik, tahunAkademikLama } from "@/lib/fakta/tahun-akadem
 // the panel with the access date and the Wayback copy. Facts only: no
 // verdicts, no "best" marks (ADR 0007).
 
-type Rujukan = { nomor: Map<number, number>; awalan: string };
+export type Rujukan = { nomor: Map<number, number>; awalan: string };
 
-function rujukan(daftar: SumberRingkas[], awalan: string): Rujukan & { sumber: SumberRingkas[] } {
+export function rujukan(daftar: SumberRingkas[], awalan: string): Rujukan & { sumber: SumberRingkas[] } {
   const nomor = new Map<number, number>();
   const sumber: SumberRingkas[] = [];
   for (const s of daftar)
@@ -24,7 +24,7 @@ function rujukan(daftar: SumberRingkas[], awalan: string): Rujukan & { sumber: S
   return { nomor, awalan, sumber };
 }
 
-function Ref({ sumber, r }: { sumber: SumberRingkas; r: Rujukan }) {
+export function Ref({ sumber, r }: { sumber: SumberRingkas; r: Rujukan }) {
   const i = r.nomor.get(sumber.id);
   return (
     <a
@@ -37,11 +37,11 @@ function Ref({ sumber, r }: { sumber: SumberRingkas; r: Rujukan }) {
   );
 }
 
-function DaftarSumber({ r }: { r: ReturnType<typeof rujukan> }) {
+export function DaftarSumber({ r, judul = true }: { r: ReturnType<typeof rujukan>; judul?: boolean }) {
   return (
-    <div className="border-t border-border pt-4">
-      <h3 className="text-sm font-medium">Sumber</h3>
-      <ol className="mt-2 space-y-1.5 text-xs leading-relaxed text-muted-foreground">
+    <div className={judul ? "border-t border-border pt-4" : undefined}>
+      {judul ? <h3 className="mb-2 text-sm font-medium">Sumber</h3> : null}
+      <ol className="space-y-1.5 text-xs leading-relaxed text-muted-foreground">
         {r.sumber.map((s, i) => (
           <li key={s.id} id={`${r.awalan}-sumber-${i + 1}`} className="scroll-mt-24">
             [{i + 1}]{" "}
@@ -64,7 +64,7 @@ function DaftarSumber({ r }: { r: ReturnType<typeof rujukan> }) {
   );
 }
 
-function Keterangan() {
+export function Keterangan() {
   return (
     <p className="text-xs leading-relaxed text-muted-foreground">
       Dicatat dari sumber resmi pada tanggal yang tertera dan diperiksa dua orang tim CampusMatch. Biaya dan jalur masuk

@@ -17,13 +17,13 @@ export function parseJenjang(value: unknown): Jenjang | null {
   return typeof value === "string" && (JENJANG_URUTAN as readonly string[]).includes(value) ? (value as Jenjang) : null;
 }
 
-const jenjangOrder = sql`array_position(array['S1','D4','D3']::jenjang[], ${prodi.jenjang})`;
+export const jenjangOrder = sql`array_position(array['S1','D4','D3']::jenjang[], ${prodi.jenjang})`;
 
 // Prodi LEFT JOIN its effective Jurusan; the Jurusan columns are NULL when unmapped.
 const jurusanProdi = sql`${jurusan.id} = ${jurusanEfektif}`;
 
 // Publicly shown Ulasan: a live revision and not deleted.
-const ulasanTerbit = and(isNotNull(ulasan.revisiTerbitId), isNull(ulasan.dihapusAt));
+export const ulasanTerbit = and(isNotNull(ulasan.revisiTerbitId), isNull(ulasan.dihapusAt));
 
 // --- Catalogue as-of date and Daftar Kampus Unggulan provenance ------------
 
@@ -131,18 +131,8 @@ export async function getJurusan(db: Db, slug: string) {
   return row;
 }
 
-type FilterJurusan = { jenjang: Jenjang | null; unggulanOnly: boolean };
-
-function filterJurusan(slug: string, { jenjang, unggulanOnly }: FilterJurusan) {
-  return and(
-    eq(jurusan.slug, slug),
-    jenjang ? eq(prodi.jenjang, jenjang) : undefined,
-    unggulanOnly ? eq(kampus.unggulan, true) : undefined,
-  );
-}
-
 // prodi -> kampus, kota, and its effective Jurusan (inner: only mapped Prodi).
-function joinJurusan<T extends PgSelect>(qb: T) {
+export function joinJurusan<T extends PgSelect>(qb: T) {
   return qb
     .innerJoin(kampus, eq(prodi.kampusId, kampus.id))
     .innerJoin(kota, eq(kampus.kotaId, kota.id))
@@ -161,42 +151,6 @@ export async function countJurusanPerJenjang(db: Db, jurusanSlug: string) {
     .where(eq(jurusan.slug, jurusanSlug))
     .groupBy(prodi.jenjang);
   return JENJANG_URUTAN.flatMap((j) => rows.filter((r) => r.jenjang === j));
-}
-
-export async function countJurusanTotal(db: Db, jurusanSlug: string, filter: FilterJurusan) {
-  const [row] = await joinJurusan(
-    db.select({ jumlahProdi: count(), jumlahKampus: countDistinct(prodi.kampusId) }).from(prodi).$dynamic(),
-  ).where(filterJurusan(jurusanSlug, filter));
-  return { jumlahProdi: row?.jumlahProdi ?? 0, jumlahKampus: row?.jumlahKampus ?? 0 };
-}
-
-export type ProdiRingkas = { nama: string; slug: string; jenjang: Jenjang };
-
-// Kampus offering a Jurusan, alphabetical, each with its Prodi in that Jurusan.
-export async function listKampusJurusan(
-  db: Db,
-  jurusanSlug: string,
-  filter: FilterJurusan & { limit: number; offset: number },
-) {
-  return joinJurusan(
-    db
-      .select({
-        npsn: kampus.npsn,
-        nama: kampus.nama,
-        slug: kampus.slug,
-        akreditasi: kampus.akreditasi,
-        unggulan: kampus.unggulan,
-        kotaNama: sql<string>`min(${kota.nama})`,
-        prodi: sql<ProdiRingkas[]>`json_agg(json_build_object('nama', ${prodi.nama}, 'slug', ${prodi.slug}, 'jenjang', ${prodi.jenjang}) ORDER BY ${jenjangOrder}, ${prodi.nama})`,
-      })
-      .from(prodi)
-      .$dynamic(),
-  )
-    .where(filterJurusan(jurusanSlug, filter))
-    .groupBy(kampus.id)
-    .orderBy(asc(kampus.nama), asc(kampus.id))
-    .limit(filter.limit)
-    .offset(filter.offset);
 }
 
 // --- Prodi -----------------------------------------------------------------

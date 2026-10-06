@@ -5,6 +5,7 @@ import { cache } from "react";
 import { BookOpen, GraduationCap, Hash, Landmark, Layers, MapPin, MessageSquareText, ShieldCheck } from "lucide-react";
 import { EmptyState } from "@/components/empty-state";
 import { PanelBiayaProdi } from "@/components/fakta/biaya-masuk";
+import { TombolBandingkan } from "@/components/perbandingan/tombol-bandingkan";
 import { listBiayaKampus, listBiayaProdi } from "@/lib/fakta/kueri";
 import { withDb } from "@/db";
 import { FactList } from "@/components/fact-list";
@@ -154,14 +155,17 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
               ]}
             />
           </Panel>
-          {prodi.jurusanSlug ? (
-            <Link
-              href={`/jurusan/${prodi.jurusanSlug}`}
-              className="inline-flex text-sm font-medium text-primary hover:underline"
-            >
-              Lihat Prodi {prodi.jurusanNama} di Kampus lain
-            </Link>
-          ) : null}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <TombolBandingkan slug={prodi.slug} label={`${prodi.jenjang} ${prodi.nama}, ${kampus.nama}`} />
+            {prodi.jurusanSlug ? (
+              <Link
+                href={`/jurusan/${prodi.jurusanSlug}`}
+                className="inline-flex text-sm font-medium text-primary hover:underline"
+              >
+                Lihat Prodi {prodi.jurusanNama} di Kampus lain
+              </Link>
+            ) : null}
+          </div>
           <PanelBiayaProdi biayaProdi={biayaProdi} biayaKampus={biayaKampus} kampus={kampus} />
           <Panel title={jumlahUlasan > 0 ? `Ulasan (${formatAngka(jumlahUlasan)})` : "Ulasan"} id="ulasan">
             {ulasan.length === 0 ? (
