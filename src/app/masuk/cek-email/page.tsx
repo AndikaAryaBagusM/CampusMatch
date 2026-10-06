@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function CekEmailPage() {
   return (
     <div className={`${kontainer} max-w-md py-10`}>
-      <Panel>
+      <Panel lembar>
         <EmptyState icon={MailCheck} title="Cek email kamu">
           Kami sudah mengirim tautan masuk. Buka email itu di perangkat ini. Tautan berlaku 24 jam dan hanya bisa dipakai
           sekali. Tidak ada di kotak masuk? Cek folder spam.

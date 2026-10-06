@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MessageSquareText } from "lucide-react";
-import { EmptyState } from "@/components/empty-state";
 import { KampusHeader } from "@/components/kampus/kampus-header";
 import { kontainer, Panel } from "@/components/panel";
 import { RingkasanUlasan } from "@/components/ulasan/ringkasan-ulasan";
+import { RuteUlasanPertama } from "@/components/ulasan/rute-ulasan-pertama";
 import { TombolTulis } from "@/components/ulasan/tombol-tulis";
 import { DaftarUlasan } from "@/components/ulasan/ulasan-card";
 import { formatAngka } from "@/lib/format";
@@ -42,10 +41,7 @@ export default async function KampusUlasanPage({ params }: PageProps<"/kampus/[s
       <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
         <Panel title="Ulasan" action={<TombolTulis href={`/kampus/${kampus.slug}/tulis`} />}>
           {ulasan.length === 0 ? (
-            <EmptyState icon={MessageSquareText} title="Belum ada ulasan">
-              Ulasan dari mahasiswa dan alumni untuk Prodi di {kampus.nama} akan muncul di sini. Setiap ulasan diperiksa
-              otomatis dan ditinjau tim kami bila perlu.
-            </EmptyState>
+            <RuteUlasanPertama dari="kampus" hrefTulis={`/kampus/${kampus.slug}/tulis`} />
           ) : (
             <>
               <DaftarUlasan ulasan={ulasan} tampilkanProdi />

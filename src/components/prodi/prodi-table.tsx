@@ -24,10 +24,10 @@ export function ProdiTable({ rows }: { rows: ProdiBaris[] }) {
   }
 
   return (
-    <div className="overflow-hidden rounded-xl bg-white ring-1 ring-border">
+    <div className="border-t-[3px] border-foreground">
       <div
         aria-hidden
-        className="hidden grid-cols-[minmax(0,2fr)_minmax(0,1.5fr)_8rem] gap-4 border-b border-border px-5 py-3 text-sm text-muted-foreground md:grid"
+        className="hidden grid-cols-[minmax(0,2fr)_minmax(0,1.5fr)_8rem] gap-4 border-b-2 border-foreground px-5 py-3 font-plate text-sm font-semibold tracking-wide text-muted-foreground uppercase md:grid"
       >
         <span>Prodi</span>
         <span>Jurusan</span>
@@ -35,20 +35,25 @@ export function ProdiTable({ rows }: { rows: ProdiBaris[] }) {
       </div>
       {groups.map((g) => (
         <section key={g.jenjang} aria-label={`Prodi ${g.jenjang}`}>
-          <h3 className="bg-muted px-5 py-2 text-sm font-semibold">{g.jenjang}</h3>
+          <h3 className="flex items-center gap-2 bg-muted px-5 py-2 text-sm font-bold">
+            <span className="inline-flex h-5 items-center rounded-sm bg-foreground px-1.5 font-plate text-xs font-bold tracking-wide text-background">
+              {g.jenjang}
+            </span>
+            {g.rows.length} Prodi
+          </h3>
           <ul className="divide-y divide-border">
             {g.rows.map((p) => (
               <li
                 key={p.id}
                 className="grid gap-1 px-5 py-3 text-sm md:grid-cols-[minmax(0,2fr)_minmax(0,1.5fr)_8rem] md:items-center md:gap-4"
               >
-                <Link href={`/prodi/${p.slug}`} className="font-medium text-primary hover:underline">
+                <Link href={`/prodi/${p.slug}`} className="font-semibold text-foreground decoration-jade decoration-2 underline-offset-4 hover:underline">
                   {p.jenjang} {p.nama}
                 </Link>
                 <span className="text-muted-foreground md:text-foreground/90">
                   <span className="md:hidden">Jurusan: </span>
                   {p.jurusanSlug ? (
-                    <Link href={`/jurusan/${p.jurusanSlug}`} className="hover:text-primary hover:underline">
+                    <Link href={`/jurusan/${p.jurusanSlug}`} className="underline-offset-4 hover:text-jade hover:underline">
                       {p.jurusanNama}
                     </Link>
                   ) : (

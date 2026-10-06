@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BadgeCheck, GraduationCap, Hash, Landmark, MapPin, MessageSquareText, ShieldCheck } from "lucide-react";
-import { EmptyState } from "@/components/empty-state";
+import { BadgeCheck, ChevronRight, Hash, Landmark, MapPin, ShieldCheck } from "lucide-react";
+
 import { PanelBiayaMasukKampus } from "@/components/fakta/biaya-masuk";
 import { FactList } from "@/components/fact-list";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusHeader } from "@/components/kampus/kampus-header";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { kontainer, Panel } from "@/components/panel";
+import { Plat } from "@/components/trayek/plat";
+import { RuteUlasanPertama } from "@/components/ulasan/rute-ulasan-pertama";
 import { TombolTulis } from "@/components/ulasan/tombol-tulis";
 import { RingkasanUlasan } from "@/components/ulasan/ringkasan-ulasan";
 import { DaftarUlasan } from "@/components/ulasan/ulasan-card";
@@ -83,18 +85,18 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
           {fakta ? <PanelBiayaMasukKampus fakta={fakta} /> : null}
 
           <Panel title="Prodi per Jenjang">
-            <ul className="grid gap-3 sm:grid-cols-3">
+            <ul className="tabular divide-y divide-border">
               {prodiPerJenjang.map((j) => (
                 <li key={j.jenjang}>
                   <Link
                     href={`/kampus/${kampus.slug}/prodi?jenjang=${j.jenjang}`}
-                    className="flex items-center gap-3 rounded-lg p-3 ring-1 ring-border transition-colors hover:bg-secondary"
+                    className="group flex items-center gap-3 py-3 transition-colors hover:bg-secondary/60"
                   >
-                    <GraduationCap className="size-5 text-primary" aria-hidden />
-                    <span>
-                      <span className="block font-medium">{j.jenjang}</span>
-                      <span className="text-sm text-muted-foreground">{formatAngka(j.jumlah)} Prodi</span>
+                    <Plat warna="var(--foreground)">{j.jenjang}</Plat>
+                    <span className="flex-1 font-semibold decoration-2 underline-offset-4 group-hover:underline">
+                      <span className="font-plate text-lg font-bold">{formatAngka(j.jumlah)}</span> Prodi {j.jenjang}
                     </span>
+                    <ChevronRight className="size-4 text-jade" aria-hidden />
                   </Link>
                 </li>
               ))}
@@ -107,15 +109,13 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
           {ringkasan ? <RingkasanUlasan ringkasan={ringkasan} /> : null}
           <Panel title="Ulasan terbaru">
             {ulasan.length === 0 ? (
-              <EmptyState icon={MessageSquareText} title="Belum ada ulasan">
-                Ulasan dari mahasiswa dan alumni untuk Prodi di Kampus ini akan muncul di sini.
-              </EmptyState>
+              <RuteUlasanPertama dari="kampus" hrefTulis={`/kampus/${kampus.slug}/tulis`} />
             ) : (
               <>
                 <DaftarUlasan ulasan={ulasan} tampilkanProdi />
                 <Link
                   href={`/kampus/${kampus.slug}/ulasan`}
-                  className="mt-5 inline-flex text-sm font-medium text-primary hover:underline"
+                  className="mt-5 inline-flex text-sm font-semibold text-primary hover:underline"
                 >
                   Lihat semua {formatAngka(jumlahUlasan)} ulasan
                 </Link>

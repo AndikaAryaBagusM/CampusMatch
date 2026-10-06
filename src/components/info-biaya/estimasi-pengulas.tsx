@@ -22,7 +22,7 @@ export function TeksAngka({ r }: { r: RingkasanAngka }) {
   if (r.median === undefined) return <BelumCukup n={r.n} />;
   return (
     <>
-      <span className="font-medium whitespace-nowrap">sekitar {formatRupiah(r.median)}</span>
+      <span className="font-semibold whitespace-nowrap">sekitar {formatRupiah(r.median)}</span>
       <span className="block text-xs text-muted-foreground">
         sebagian besar <span className="whitespace-nowrap">{formatRupiah(r.p25!)}</span> –{" "}
         <span className="whitespace-nowrap">{formatRupiah(r.p75!)}</span>, dari {r.n} jawaban
@@ -90,7 +90,7 @@ export function PanelEstimasiPengulas({ estimasi, prodiSlug }: { estimasi: Estim
           </span>
           {e.nTerverifikasi > 0 ? (
             <span className="inline-flex items-center gap-1.5">
-              <BadgeCheck className="size-4 text-emerald-700" aria-hidden />
+              <BadgeCheck className="size-4 text-jade" aria-hidden />
               {formatAngka(e.nTerverifikasi)} Terverifikasi
             </span>
           ) : null}
@@ -114,7 +114,7 @@ export function PanelEstimasiPengulas({ estimasi, prodiSlug }: { estimasi: Estim
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Link
             href={`/prodi/${prodiSlug}/info-biaya`}
-            className="inline-flex h-9 items-center rounded-full bg-white px-4 text-sm font-medium ring-1 ring-border hover:bg-secondary"
+            className="inline-flex h-9 items-center rounded-sm bg-card px-4 text-sm font-semibold ring-1 ring-foreground/10 hover:bg-secondary"
           >
             Bagikan info biaya
           </Link>

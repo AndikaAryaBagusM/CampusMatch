@@ -16,7 +16,7 @@ function nomorHalaman(sekarang: number, total: number): (number | "…")[] {
 }
 
 const kotak =
-  "inline-flex h-9 min-w-9 items-center justify-center rounded-md px-2 text-sm font-medium transition-colors";
+  "tabular inline-flex h-9 min-w-9 items-center justify-center rounded-sm px-2 font-plate text-base font-bold transition-colors";
 
 // Numbered pagination as links. `href(n)` builds the URL of page n.
 export function Paging({
@@ -36,7 +36,7 @@ export function Paging({
       <ul className="flex flex-wrap items-center justify-center gap-1">
         <li>
           {halaman > 1 ? (
-            <Link href={href(halaman - 1)} className={cn(kotak, "text-primary hover:bg-secondary")} aria-label="Halaman sebelumnya">
+            <Link href={href(halaman - 1)} className={cn(kotak, "text-foreground hover:bg-secondary")} aria-label="Halaman sebelumnya">
               <ChevronLeft className="size-4" aria-hidden />
             </Link>
           ) : (
@@ -55,7 +55,7 @@ export function Paging({
               <Link
                 href={href(n)}
                 aria-current={n === halaman ? "page" : undefined}
-                className={cn(kotak, n === halaman ? "bg-primary text-primary-foreground" : "text-primary hover:bg-secondary")}
+                className={cn(kotak, n === halaman ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-secondary")}
               >
                 {n}
               </Link>
@@ -64,7 +64,7 @@ export function Paging({
         )}
         <li>
           {halaman < total ? (
-            <Link href={href(halaman + 1)} className={cn(kotak, "text-primary hover:bg-secondary")} aria-label="Halaman berikutnya">
+            <Link href={href(halaman + 1)} className={cn(kotak, "text-foreground hover:bg-secondary")} aria-label="Halaman berikutnya">
               <ChevronRight className="size-4" aria-hidden />
             </Link>
           ) : (

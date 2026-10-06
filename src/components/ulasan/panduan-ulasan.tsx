@@ -8,11 +8,11 @@ export function PanduanUlasan() {
   const email = kontakEmail();
   return (
     <Panel>
-      <h2 className="flex items-center gap-2 font-medium">
-        <ShieldCheck className="size-5 text-primary" aria-hidden />
+      <h2 className="flex items-center gap-2 font-bold">
+        <ShieldCheck className="size-5 text-jade" aria-hidden />
         Panduan ulasan
       </h2>
-      <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm">
+      <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm marker:text-jade">
         <li>Tulis dengan jujur, dari pengalamanmu sendiri.</li>
         <li>Kritik boleh, serangan pribadi tidak. Jangan menyebut nama dosen, staf atau mahasiswa.</li>
         <li>Jangan menulis info pribadi: nomor HP, email, alamat, akun media sosial.</li>
@@ -21,7 +21,7 @@ export function PanduanUlasan() {
       <p className="mt-3 text-xs text-muted-foreground">
         Setiap ulasan diperiksa otomatis dan ditinjau tim kami bila perlu. Ulasan tampil tanpa nama. Aturan lengkap ada
         di{" "}
-        <Link href="/ketentuan#ulasan" className="font-medium text-primary hover:underline">
+        <Link href="/ketentuan#ulasan" className="font-semibold text-jade underline-offset-4 hover:underline">
           Ketentuan Layanan
         </Link>
         .
@@ -29,7 +29,7 @@ export function PanduanUlasan() {
       {email ? (
         <p className="mt-3 text-xs text-muted-foreground">
           Ingin melaporkan konten atau meminta penghapusan?{" "}
-          <a href={mailtoTakedown(email)} className="font-medium text-primary hover:underline">
+          <a href={mailtoTakedown(email)} className="font-semibold text-jade underline-offset-4 hover:underline">
             Hubungi kami
           </a>
           .

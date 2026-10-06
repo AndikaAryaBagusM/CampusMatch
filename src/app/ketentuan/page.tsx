@@ -164,7 +164,7 @@ export default function KetentuanPage() {
             dokumen resmi yang benar.
           </li>
         </ul>
-        <h3 id="estimasi-pengulas" className="scroll-mt-24 pt-2 font-medium">
+        <h3 id="estimasi-pengulas" className="scroll-mt-24 pt-2 font-semibold">
           Estimasi Pengulas
         </h3>
         <ul>

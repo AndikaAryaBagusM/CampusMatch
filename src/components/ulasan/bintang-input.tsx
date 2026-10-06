@@ -21,8 +21,8 @@ export function BintangInput({
       aria-label={label}
       aria-invalid={invalid || undefined}
       className={cn(
-        "flex flex-row-reverse justify-end gap-0.5 rounded-md text-input",
-        "[&>input:checked~label]:text-amber-400 [&>label:hover]:text-amber-300 [&>label:hover~label]:text-amber-300",
+        "flex flex-row-reverse justify-end gap-0.5 rounded-sm text-input",
+        "[&>input:checked~label]:text-star [&>label:hover]:text-star/70 [&>label:hover~label]:text-star/70",
         "has-[input:focus-visible]:ring-3 has-[input:focus-visible]:ring-ring/50",
       )}
     >
@@ -40,7 +40,7 @@ export function BintangInput({
             className="sr-only"
           />,
           <label key={`l${n}`} htmlFor={id} className="cursor-pointer p-0.5 transition-colors">
-            <Star className="size-6 fill-current" aria-hidden />
+            <Star className="size-7 fill-current" strokeWidth={1.5} aria-hidden />
             <span className="sr-only">
               {n} dari 5 bintang
             </span>

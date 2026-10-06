@@ -28,7 +28,7 @@ export default async function PromosiPage() {
     <div className={`${kontainer} space-y-6 py-8`}>
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-medium tracking-tight">Promosi</h1>
+          <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Promosi</h1>
           <p className="mt-1 max-w-3xl text-sm text-muted-foreground">
             Tempat berbayar untuk Kampus di Beranda, halaman Jurusan, dan pencarian, selalu berlabel Promosi. Satu Moderator
             memasukkan Draf, Moderator lain memeriksa teks dan pengaturannya lalu mengaktifkannya. Klik dihitung per hari,
@@ -37,7 +37,7 @@ export default async function PromosiPage() {
         </div>
         <Link
           href="/moderasi/promosi/baru"
-          className="inline-flex h-9 items-center rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-deep"
+          className="inline-flex h-9 items-center rounded-sm bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-brand-deep"
         >
           Buat Promosi
         </Link>
@@ -47,7 +47,7 @@ export default async function PromosiPage() {
       {GRUP.map((g) => {
         const isi = daftar.filter((p) => g.keadaan.includes(p.keadaan));
         return (
-          <Panel key={g.judul} title={g.judul}>
+          <Panel lembar key={g.judul} title={g.judul}>
             {isi.length === 0 ? (
               <p className="text-sm text-muted-foreground">{g.kosong}</p>
             ) : (
@@ -55,12 +55,12 @@ export default async function PromosiPage() {
                 {isi.map((p) => (
                   <li key={p.id} className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between">
                     <div className="min-w-0">
-                      <Link href={`/moderasi/promosi/${p.id}`} className="font-medium hover:underline">
+                      <Link href={`/moderasi/promosi/${p.id}`} className="font-semibold hover:underline">
                         {p.kampusNama}
                       </Link>
                       <span
                         className={cn(
-                          "ml-2 rounded-full px-2 py-0.5 text-xs",
+                          "ml-2 rounded-sm px-2 py-0.5 text-xs",
                           p.keadaan === "tayang" ? "bg-emerald-100 text-emerald-900" : "bg-secondary",
                         )}
                       >

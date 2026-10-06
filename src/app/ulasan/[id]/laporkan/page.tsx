@@ -39,8 +39,8 @@ export default async function LaporkanPage({ params }: PageProps<"/ulasan/[id]/l
 
   return (
     <div className={`${kontainer} max-w-xl py-10`}>
-      <Panel>
-        <h1 className="text-2xl font-medium tracking-tight">Laporkan ulasan</h1>
+      <Panel lembar>
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Laporkan ulasan</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           “{target.judul}”, ulasan untuk {halaman.jenjang} {halaman.prodiNama}, {halaman.kampusNama}.
         </p>
@@ -53,7 +53,7 @@ export default async function LaporkanPage({ params }: PageProps<"/ulasan/[id]/l
         {email ? (
           <p className="mt-6 text-xs text-muted-foreground">
             Mewakili Kampus atau orang yang disebut dalam ulasan?{" "}
-            <a href={mailtoTakedown(email)} className="font-medium text-primary hover:underline">
+            <a href={mailtoTakedown(email)} className="font-semibold text-primary hover:underline">
               Hubungi kami
             </a>
             .

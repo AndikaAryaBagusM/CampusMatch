@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const kolomInput =
-  "min-h-9 w-full rounded-lg border border-input bg-white px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50";
+  "min-h-9 w-full rounded-sm border border-input bg-white px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50";
 
 function PilihJurusan({ id, daftar, kosong }: { id: string; daftar: { id: number; nama: string }[]; kosong: React.ReactNode }) {
   return (
@@ -44,7 +44,7 @@ function Grup({ g }: { g: GrupPemetaan }) {
       <label className="flex items-start gap-3">
         <input type="checkbox" name="grup" value={g.prodi.map((p) => p.id).join(",")} className="mt-1 size-4 accent-primary" />
         <span className="min-w-0 flex-1">
-          <span className="font-medium">
+          <span className="font-semibold">
             {g.jenjang} {g.nama}
           </span>
           <span className="text-muted-foreground"> · {formatAngka(g.prodi.length)} Prodi</span>
@@ -93,7 +93,7 @@ export default async function KodePemetaanPage(props: PageProps<"/moderasi/jurus
     <div className={`${kontainer} max-w-4xl space-y-6 py-8`}>
       <PageBreadcrumb items={[{ label: "Pemetaan Jurusan", href: "/moderasi/jurusan" }, { label: `Kode ${kode}` }]} />
       <div>
-        <h1 className="text-2xl font-medium tracking-tight">Kode Prodi {kode}</h1>
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Kode Prodi {kode}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           {peta.jenjang.join(", ")}
           {peta.bidang.length ? ` · ${peta.bidang.join(", ")}` : null} · {formatAngka(peta.jumlahProdi)} Prodi
@@ -101,11 +101,11 @@ export default async function KodePemetaanPage(props: PageProps<"/moderasi/jurus
         <p className="mt-2">
           Jurusan:{" "}
           {peta.jurusan ? (
-            <Link href={`/jurusan/${peta.jurusan.slug}`} className="font-medium text-primary hover:underline" target="_blank">
+            <Link href={`/jurusan/${peta.jurusan.slug}`} className="font-semibold text-primary hover:underline" target="_blank">
               {peta.jurusan.nama}
             </Link>
           ) : (
-            <span className="font-medium">belum dipetakan</span>
+            <span className="font-semibold">belum dipetakan</span>
           )}
           {peta.jurusan?.olehModerator ? <span className="text-sm text-muted-foreground"> (diubah Moderator; CSV tidak menimpanya)</span> : null}
         </p>
@@ -114,13 +114,13 @@ export default async function KodePemetaanPage(props: PageProps<"/moderasi/jurus
       {pesan ? (
         <p
           role={berhasil ? "status" : "alert"}
-          className={cn("rounded-lg p-3 text-sm", berhasil ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200" : "bg-destructive/10 text-destructive")}
+          className={cn("rounded-sm p-3 text-sm", berhasil ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200" : "bg-destructive/10 text-destructive")}
         >
           {pesan}
         </p>
       ) : null}
 
-      <Panel title="Pindahkan Prodi tertentu">
+      <Panel lembar title="Pindahkan Prodi tertentu">
         <form action={pindahkanProdi} className="space-y-4">
           <input type="hidden" name="kode" value={kode} />
           <p className="text-sm text-muted-foreground">
@@ -133,7 +133,7 @@ export default async function KodePemetaanPage(props: PageProps<"/moderasi/jurus
           </ul>
           <div className="grid gap-3 sm:grid-cols-2">
             <div>
-              <label htmlFor="tujuan-prodi" className="mb-1 block text-sm font-medium">
+              <label htmlFor="tujuan-prodi" className="mb-1 block text-sm font-semibold">
                 Pindahkan ke
               </label>
               <PilihJurusan
@@ -143,19 +143,19 @@ export default async function KodePemetaanPage(props: PageProps<"/moderasi/jurus
               />
             </div>
             <div>
-              <label htmlFor="alasan-prodi" className="mb-1 block text-sm font-medium">
+              <label htmlFor="alasan-prodi" className="mb-1 block text-sm font-semibold">
                 Alasan
               </label>
               <textarea id="alasan-prodi" name="alasan" required maxLength={ALASAN_MAKS} rows={2} className={kolomInput} />
             </div>
           </div>
-          <button type="submit" className="h-9 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-deep">
+          <button type="submit" className="h-9 rounded-sm bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-brand-deep">
             Pindahkan yang dicentang
           </button>
         </form>
       </Panel>
 
-      <Panel title="Ubah Jurusan seluruh Kode">
+      <Panel lembar title="Ubah Jurusan seluruh Kode">
         <form action={ubahKode} className="space-y-4">
           <input type="hidden" name="kode" value={kode} />
           <p className="text-sm text-muted-foreground">
@@ -163,25 +163,25 @@ export default async function KodePemetaanPage(props: PageProps<"/moderasi/jurus
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             <div>
-              <label htmlFor="tujuan-kode" className="mb-1 block text-sm font-medium">
+              <label htmlFor="tujuan-kode" className="mb-1 block text-sm font-semibold">
                 Jurusan baru
               </label>
               <PilihJurusan id="tujuan-kode" daftar={semuaJurusan.filter((j) => j.id !== peta.jurusan?.id)} kosong={null} />
             </div>
             <div>
-              <label htmlFor="alasan-kode" className="mb-1 block text-sm font-medium">
+              <label htmlFor="alasan-kode" className="mb-1 block text-sm font-semibold">
                 Alasan
               </label>
               <textarea id="alasan-kode" name="alasan" required maxLength={ALASAN_MAKS} rows={2} className={kolomInput} />
             </div>
           </div>
-          <button type="submit" className="h-9 rounded-full bg-white px-4 text-sm font-medium ring-1 ring-border hover:bg-secondary">
+          <button type="submit" className="h-9 rounded-sm bg-card px-4 text-sm font-semibold ring-1 ring-foreground/10 hover:bg-secondary">
             Ubah Jurusan Kode
           </button>
         </form>
       </Panel>
 
-      <Panel title="Riwayat">
+      <Panel lembar title="Riwayat">
         {peta.riwayat.length === 0 ? (
           <p className="text-sm text-muted-foreground">Belum ada perubahan oleh Moderator.</p>
         ) : (
@@ -190,9 +190,9 @@ export default async function KodePemetaanPage(props: PageProps<"/moderasi/jurus
               <li key={r.id} className="py-2">
                 <p>
                   {r.jenis === "kode" ? (
-                    <span className="font-medium">Seluruh Kode</span>
+                    <span className="font-semibold">Seluruh Kode</span>
                   ) : (
-                    <span className="font-medium">
+                    <span className="font-semibold">
                       {r.prodiNama ?? "Prodi terhapus"}
                       {r.kampusNama ? `, ${r.kampusNama}` : null}
                     </span>

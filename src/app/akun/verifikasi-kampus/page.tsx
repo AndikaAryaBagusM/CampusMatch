@@ -23,24 +23,24 @@ export default async function VerifikasiKampusPage(props: PageProps<"/akun/verif
 
   return (
     <div className={`${kontainer} max-w-xl py-10`}>
-      <Panel>
+      <Panel lembar>
         {berhasil ? (
           <EmptyState icon={BadgeCheck} title={`Kamu Terverifikasi di ${berhasil}`}>
             Ulasanmu untuk Prodi di Kampus ini sekarang bertanda Terverifikasi.{" "}
-            <Link href="/akun#email-kampus" className="font-medium text-primary hover:underline">
+            <Link href="/akun#email-kampus" className="font-semibold text-primary hover:underline">
               Kembali ke Akun
             </Link>
           </EmptyState>
         ) : info?.berlaku ? (
           <div className="space-y-4 text-center">
-            <h1 className="text-xl font-medium">Konfirmasi email kampus</h1>
+            <h1 className="text-xl leading-tight font-extrabold">Konfirmasi email kampus</h1>
             <p className="text-sm text-muted-foreground">
-              Tandai ulasanmu di <span className="font-medium text-foreground">{info.kampusNama}</span> sebagai Terverifikasi.
+              Tandai ulasanmu di <span className="font-semibold text-foreground">{info.kampusNama}</span> sebagai Terverifikasi.
               Kami hanya menyimpan domain email kampusmu dan tanggal hari ini.
             </p>
             <form action={konfirmasiVerifikasiKampus}>
               <input type="hidden" name="token" value={token} />
-              <button type="submit" className="h-10 rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground hover:bg-brand-deep">
+              <button type="submit" className="h-10 rounded-sm bg-primary px-5 text-sm font-semibold text-primary-foreground hover:bg-brand-deep">
                 Konfirmasi
               </button>
             </form>
@@ -48,7 +48,7 @@ export default async function VerifikasiKampusPage(props: PageProps<"/akun/verif
         ) : (
           <EmptyState icon={LinkIcon} title="Tautan sudah dipakai atau kedaluwarsa">
             Tautan berlaku 24 jam dan hanya sekali.{" "}
-            <Link href="/akun#email-kampus" className="font-medium text-primary hover:underline">
+            <Link href="/akun#email-kampus" className="font-semibold text-primary hover:underline">
               Minta tautan baru di halaman Akun
             </Link>
           </EmptyState>

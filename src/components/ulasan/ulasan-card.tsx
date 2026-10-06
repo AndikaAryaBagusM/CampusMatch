@@ -14,13 +14,13 @@ export function UlasanCard({ ulasan, tampilkanProdi }: { ulasan: UlasanPublik; t
     <article className="space-y-2">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         <BintangTampil nilai={ulasan.bintang} />
-        <h3 className="font-medium">{ulasan.judul}</h3>
+        <h3 className="text-lg leading-snug font-bold">{ulasan.judul}</h3>
       </div>
-      <p className="text-xs text-muted-foreground">
+      <p className="text-sm text-muted-foreground">
         {status}, masuk {ulasan.tahunMasuk}
         {ulasan.terverifikasiSejak ? (
           <span
-            className="ml-1.5 inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 font-medium text-emerald-800 ring-1 ring-emerald-200"
+            className="ml-1.5 inline-flex items-center gap-1 rounded-sm bg-jade px-1.5 py-0.5 text-xs font-bold text-on-jade"
             title={`Terverifikasi email kampus, ${formatBulan(ulasan.terverifikasiSejak)}`}
           >
             <BadgeCheck className="size-3.5" aria-hidden />
@@ -32,22 +32,22 @@ export function UlasanCard({ ulasan, tampilkanProdi }: { ulasan: UlasanPublik; t
         {tampilkanProdi ? (
           <>
             {" · "}
-            <Link href={`/prodi/${ulasan.prodiSlug}`} className="text-primary hover:underline">
+            <Link href={`/prodi/${ulasan.prodiSlug}`} className="font-semibold text-jade underline-offset-4 hover:underline">
               {ulasan.prodiNama}
             </Link>
           </>
         ) : null}
       </p>
-      <p className="text-sm break-words whitespace-pre-line">{ulasan.isi}</p>
-      <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
-        <span className="inline-flex items-center gap-1.5 text-muted-foreground">
+      <p className="max-w-[68ch] leading-relaxed break-words whitespace-pre-line">{ulasan.isi}</p>
+      <div className="flex flex-wrap items-center justify-between gap-2 pt-1 text-sm">
+        <span className="inline-flex items-center gap-1.5 font-semibold">
           {ulasan.rekomendasi ? (
             <>
-              <ThumbsUp className="size-3.5 text-emerald-600" aria-hidden /> Merekomendasikan Prodi ini
+              <ThumbsUp className="size-4 text-success" aria-hidden /> Merekomendasikan Prodi ini
             </>
           ) : (
             <>
-              <ThumbsDown className="size-3.5 text-orange-600" aria-hidden /> Tidak merekomendasikan Prodi ini
+              <ThumbsDown className="size-4 text-warning" aria-hidden /> Tidak merekomendasikan Prodi ini
             </>
           )}
         </span>

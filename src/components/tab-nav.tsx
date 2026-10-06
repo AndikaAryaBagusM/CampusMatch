@@ -3,20 +3,21 @@ import { cn } from "@/lib/utils";
 
 export type Tab = { href: string; label: string; active: boolean };
 
-// Tabs as links (each tab is its own URL), with the design's 2px underline.
+// Tabs as links (each tab is its own URL), set as platform signs: the current
+// one is the ink plate, the others are outlined plates.
 export function TabNav({ tabs, label, className }: { tabs: Tab[]; label: string; className?: string }) {
   return (
-    <nav aria-label={label} className={cn("-mb-px flex overflow-x-auto", className)}>
+    <nav aria-label={label} className={cn("flex gap-2 overflow-x-auto py-3", className)}>
       {tabs.map((t) => (
         <Link
           key={t.href}
           href={t.href}
           aria-current={t.active ? "page" : undefined}
           className={cn(
-            "shrink-0 border-b-2 px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors sm:min-w-36 sm:text-center sm:text-base",
+            "inline-flex h-10 shrink-0 items-center rounded-sm px-4 text-sm font-bold whitespace-nowrap transition-colors sm:text-base",
             t.active
-              ? "border-primary text-primary"
-              : "border-transparent text-foreground/80 hover:border-border hover:text-foreground",
+              ? "bg-foreground text-background"
+              : "text-foreground ring-1 ring-foreground/40 ring-inset hover:bg-secondary hover:ring-foreground",
           )}
         >
           {t.label}

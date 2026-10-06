@@ -6,13 +6,14 @@ import { SearchX } from "lucide-react";
 import { withDb } from "@/db";
 import { EmptyState } from "@/components/empty-state";
 import { FilterBar, FilterChips } from "@/components/filter-bar";
-import { AkreditasiBadge } from "@/components/kampus/akreditasi-badge";
+import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusLogo } from "@/components/kampus/kampus-logo";
 import { UnggulanBadge, UnggulanFootnote } from "@/components/kampus/unggulan-badge";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Paging } from "@/components/paging";
 import { kontainer, Panel } from "@/components/panel";
+import { BarisJadwal, DaftarJadwal, KepalaJadwal, Sel, SelJadwal } from "@/components/trayek/jadwal";
 import { BintangTampil } from "@/components/ulasan/bintang-tampil";
 import { formatAngka, formatProvinsi } from "@/lib/format";
 import { getInfoKatalog } from "@/lib/katalog";
@@ -69,38 +70,47 @@ export async function generateMetadata(props: PageProps<"/kota/[slug]">): Promis
   };
 }
 
+// Departure-board columns for the Kampus list: destination, then the facts.
+const KOLOM_KAMPUS = "minmax(0,1fr) 11rem 5rem 11rem";
+
 function BarisKampus({ k }: { k: KampusKota }) {
   return (
-    <li className="flex gap-4 p-4 sm:p-5">
-      <KampusLogo kampus={k} size="sm" />
-      <div className="min-w-0 flex-1 space-y-2">
-        <div>
-          <Link href={`/kampus/${k.slug}`} className="font-medium text-primary hover:underline">
+    <BarisJadwal kolom={KOLOM_KAMPUS}>
+      <div className="flex min-w-0 items-center gap-3">
+        <KampusLogo kampus={k} size="sm" />
+        <div className="min-w-0">
+          <Link
+            href={`/kampus/${k.slug}`}
+            className="font-bold decoration-jade decoration-2 underline-offset-4 hover:underline"
+          >
             {k.nama}
           </Link>
-          <p className="text-sm text-muted-foreground">
-            {k.bentuk} · {formatAngka(k.jumlahProdi)} Prodi
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+            {k.bentuk}
+            {k.unggulan ? <UnggulanBadge className="h-5" /> : null}
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <AkreditasiBadge akreditasi={k.akreditasi} />
-          {k.unggulan ? <UnggulanBadge /> : null}
-        </div>
-        <p className="flex flex-wrap items-center gap-2 text-sm">
+      </div>
+      <SelJadwal>
+        <Sel label="Akreditasi">{labelAkreditasi(k.akreditasi)}</Sel>
+        <Sel label="Prodi" angka>
+          {formatAngka(k.jumlahProdi)}
+        </Sel>
+        <Sel label="Ulasan" className="md:pl-6">
           {k.bintang !== null ? (
-            <>
+            <span className="inline-flex items-center gap-1.5">
               <BintangTampil nilai={k.bintang} />
-              <span>
+              <span className="tabular font-plate text-base font-bold">
                 {k.bintang.toLocaleString("id-ID", { minimumFractionDigits: 1 })}
-                <span className="text-muted-foreground"> · {formatAngka(k.jumlahUlasan)} ulasan</span>
               </span>
-            </>
+              <span className="text-muted-foreground">({formatAngka(k.jumlahUlasan)})</span>
+            </span>
           ) : (
             <span className="text-muted-foreground">Belum ada ulasan</span>
           )}
-        </p>
-      </div>
-    </li>
+        </Sel>
+      </SelJadwal>
+    </BarisJadwal>
   );
 }
 
@@ -123,11 +133,12 @@ export default async function KotaPage(props: PageProps<"/kota/[slug]">) {
         items={[{ label: "Kota", href: "/kota" }, { label: provinsi, href: `/kota#provinsi-${slugProvinsi(kota.provinsi)}` }, { label: nama }]}
       />
 
-      <div className="rounded-xl bg-white p-5 ring-1 ring-border sm:p-7">
-        <p className="text-sm font-medium text-primary">{provinsi}</p>
-        <h1 className="mt-1 text-2xl font-medium tracking-tight sm:text-3xl">Kampus di {nama}</h1>
-        <p className="mt-2 text-muted-foreground">
-          {formatAngka(kota.jumlahKampus)} Kampus · {formatAngka(kota.jumlahProdi)} Prodi
+      <div className="rounded-md bg-jade p-5 text-on-jade sm:p-7">
+        <h1 className="text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl">Kampus di {nama}</h1>
+        <p className="mt-2 text-on-jade-muted">
+          {provinsi} ·{" "}
+          <span className="tabular font-plate text-2xl font-bold text-on-jade">{formatAngka(kota.jumlahKampus)}</span> Kampus ·{" "}
+          <span className="tabular font-plate text-2xl font-bold text-on-jade">{formatAngka(kota.jumlahProdi)}</span> Prodi
         </p>
       </div>
 
@@ -160,35 +171,37 @@ export default async function KotaPage(props: PageProps<"/kota/[slug]">) {
         {kampus.length === 0 ? (
           <Panel>
             <EmptyState icon={SearchX} title="Tidak ada Kampus yang cocok dengan filter ini.">
-              <Link href={base} className="font-medium text-primary hover:underline">
+              <Link href={base} className="font-semibold text-primary hover:underline">
                 Atur ulang filter
               </Link>
             </EmptyState>
           </Panel>
         ) : (
-          <ul className="divide-y divide-border overflow-hidden rounded-xl bg-white ring-1 ring-border">
-            {kampus.map((k) => (
-              <BarisKampus key={k.slug} k={k} />
-            ))}
-          </ul>
+          <div>
+            <KepalaJadwal kolom={KOLOM_KAMPUS} judul={["Kampus", "Akreditasi", "Prodi", <span key="u" className="md:pl-6">Ulasan</span>]} kanan={[2]} />
+            <DaftarJadwal>
+              {kampus.map((k) => (
+                <BarisKampus key={k.slug} k={k} />
+              ))}
+            </DaftarJadwal>
+          </div>
         )}
 
         <Paging halaman={halaman} total={halamanTotal} href={(n) => href({ hal: n > 1 ? n : null })} />
 
         {lain.length ? (
           <section className="pt-4" aria-labelledby="kota-lain">
-            <h2 id="kota-lain" className="text-lg font-medium">
+            <h2 id="kota-lain" className="text-lg font-semibold">
               Kota lain di {provinsi}
             </h2>
-            <ul className="mt-3 flex flex-wrap gap-2">
+            {/* Departure rows: each Kota a stop, with its Kampus count. */}
+            <ul className="tabular mt-3 grid grid-cols-1 gap-x-8 border-t border-border sm:grid-cols-2 lg:grid-cols-3">
               {lain.map((k) => (
-                <li key={k.slug}>
-                  <Link
-                    href={`/kota/${k.slug}`}
-                    className="inline-flex h-8 items-center rounded-full bg-white px-3 text-sm ring-1 ring-input hover:bg-secondary"
-                  >
-                    {namaKota(k)}
-                    <span className="ml-1.5 text-muted-foreground">{formatAngka(k.jumlahKampus)}</span>
+                <li key={k.slug} className="min-w-0 border-b border-border">
+                  <Link href={`/kota/${k.slug}`} className="group flex items-center gap-2.5 py-2.5 text-sm hover:bg-secondary/60">
+                    <span aria-hidden className="size-3.5 shrink-0 rounded-full border-[3px] border-jade bg-white" />
+                    <span className="min-w-0 flex-1 font-semibold decoration-2 underline-offset-4 group-hover:underline">{namaKota(k)}</span>
+                    <span className="font-plate text-base font-bold text-muted-foreground">{formatAngka(k.jumlahKampus)}</span>
                   </Link>
                 </li>
               ))}

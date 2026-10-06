@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "titik tengah",
+        "createdAt": "2026-10-06T20:05:03.985Z",
+        "reason": "Claude, from the finish review: a unicode-range face that serves only U+00B7 (middle dot) from a system sans so separators sit centred; Overpass stays the documented text face, and DESIGN.md records it as the middot fallback"
+      }
+    ]
+  }
+}

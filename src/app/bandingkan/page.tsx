@@ -66,7 +66,7 @@ function Tahun({ tahun, seKampus }: { tahun: number; seKampus?: boolean }) {
       TA {formatTahunAkademik(tahun)}
       {seKampus ? ", berlaku se-Kampus" : null}
       {tahunAkademikLama(tahun) ? (
-        <span className="mt-0.5 flex items-center gap-1 text-amber-800">
+        <span className="mt-0.5 flex items-center gap-1 text-warning">
           <AlertTriangle className="size-3.5 shrink-0" aria-hidden />
           mungkin sudah berubah
         </span>
@@ -82,7 +82,7 @@ function DaftarBiaya({ daftar, r }: { daftar: BiayaTampil[]; r: Rujukan }) {
         <li key={b.id}>
           {b.label ?? LABEL_JENIS_BIAYA[b.jenis]}
           {b.jalurNama ? <span className="text-muted-foreground"> ({b.jalurNama})</span> : null}:{" "}
-          <span className="font-medium whitespace-nowrap">{formatRupiah(b.jumlah, b.batas)}</span>
+          <span className="font-semibold whitespace-nowrap">{formatRupiah(b.jumlah, b.batas)}</span>
           <Ref sumber={b.sumber} r={r} />
           {b.jenis === "lain" || b.jenis === "pendaftaran" ? <span className="text-muted-foreground">, {LABEL_PERIODE[b.periode]}</span> : null}
         </li>
@@ -126,7 +126,7 @@ function SelJalur({ k, r }: { k: Kolom; r: Rujukan }) {
       <ul className="space-y-2">
         {jalur.daftar.map((j) => (
           <li key={j.id}>
-            <span className="font-medium">{j.nama}</span>
+            <span className="font-semibold">{j.nama}</span>
             <Ref sumber={j.sumber} r={r} />
             <span className="block text-muted-foreground">{j.tes.map((t) => LABEL_TES[t]).join(", ")}</span>
             {j.biaya.map((b) => (
@@ -175,13 +175,13 @@ function sumberKolom(k: Kolom, i: number) {
   );
 }
 
-const thBaris = "sticky left-0 z-10 w-32 min-w-32 bg-white py-3 pr-3 text-left align-top text-xs font-medium text-muted-foreground sm:w-44 sm:min-w-44 sm:text-sm";
+const thBaris = "sticky left-0 z-10 w-32 min-w-32 bg-card py-3 pr-3 text-left align-top text-xs font-semibold text-muted-foreground sm:w-44 sm:min-w-44 sm:text-sm";
 const td = "min-w-56 py-3 pr-4 align-top";
 
 function Bagian({ judul, jumlah }: { judul: string; jumlah: number }) {
   return (
     <tr>
-      <th scope="colgroup" colSpan={jumlah + 1} className="bg-secondary/60 px-3 py-2 text-left text-sm font-medium">
+      <th scope="colgroup" colSpan={jumlah + 1} className="bg-secondary/60 px-3 py-2 text-left text-sm font-semibold">
         <span className="sticky left-3">{judul}</span>
       </th>
     </tr>
@@ -201,12 +201,12 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
       <div className={`${kontainer} max-w-3xl`}>
         <SinkronBandingkan daftar={pilihan} />
         <PageBreadcrumb items={[{ label: "Perbandingan" }]} />
-        <h1 className="mb-6 text-2xl font-medium tracking-tight sm:text-3xl">Perbandingan Prodi</h1>
+        <h1 className="mb-6 text-2xl leading-tight font-extrabold tracking-tight sm:text-3xl">Perbandingan Prodi</h1>
         <Panel>
           <EmptyState icon={Columns3} title={kolom.length === 1 ? "Pilih satu Prodi lagi" : "Pilih 2 atau 3 Prodi untuk dibandingkan"}>
-            Tekan <span className="font-medium">Bandingkan</span> di halaman Prodi atau di daftar Prodi sebuah Jurusan. Prodi
+            Tekan <span className="font-semibold">Bandingkan</span> di halaman Prodi atau di daftar Prodi sebuah Jurusan. Prodi
             yang kamu pilih muncul di bilah bawah layar.{" "}
-            <Link href="/tes-minat" className="font-medium text-primary hover:underline">
+            <Link href="/tes-minat" className="font-semibold text-primary hover:underline">
               Belum tahu Jurusan? Coba Tes Minat
             </Link>
             {hilang > 0 ? <span className="mt-2 block">{hilang} Prodi dari tautan ini tidak ditemukan.</span> : null}
@@ -256,7 +256,7 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
       <SinkronBandingkan daftar={pilihan} />
       <PageBreadcrumb items={[{ label: "Perbandingan" }]} />
       <div className="mb-6 space-y-2">
-        <h1 className="text-2xl font-medium tracking-tight sm:text-3xl">Perbandingan Prodi</h1>
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight sm:text-3xl">Perbandingan Prodi</h1>
         <p className="max-w-3xl text-sm text-muted-foreground">
           Data dijajarkan apa adanya. CampusMatch tidak menilai mana yang lebih baik; pertimbangkan sendiri sesuai
           kebutuhanmu.
@@ -264,14 +264,14 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
         </p>
       </div>
 
-      <div className="overflow-x-auto rounded-xl bg-white px-3 ring-1 ring-border sm:px-5">
+      <div className="overflow-x-auto border-t-[3px] border-foreground">
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr>
               <td className={`${thBaris} pt-5`} />
               {kolom.map((k) => (
                 <th key={k.prodi.slug} scope="col" className={`${td} pt-5 text-left font-normal`}>
-                  <Link href={`/prodi/${k.prodi.slug}`} className="text-base font-medium text-primary hover:underline">
+                  <Link href={`/prodi/${k.prodi.slug}`} className="text-base font-semibold text-primary hover:underline">
                     {k.prodi.jenjang} {k.prodi.nama}
                   </Link>
                   <Link href={`/kampus/${k.prodi.kampus.slug}`} className="mt-0.5 block hover:underline">
@@ -282,7 +282,7 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
                   </Link>
                   <Link
                     href={hrefBandingkan(slugs.filter((s) => s !== k.prodi.slug))}
-                    className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:underline"
+                    className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground hover:text-foreground hover:underline"
                     aria-label={`Hapus ${labelProdi(k)} dari perbandingan`}
                   >
                     <X className="size-3.5" aria-hidden />
@@ -328,7 +328,7 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
                 <span className="flex flex-wrap items-center gap-2">
                   <BintangTampil nilai={k.ringkasan.bintang} />
                   <span>
-                    <span className="font-medium">{satuDesimal(k.ringkasan.bintang)}</span>
+                    <span className="font-semibold">{satuDesimal(k.ringkasan.bintang)}</span>
                     <span className="text-muted-foreground"> dari {formatAngka(k.ringkasan.jumlah)} ulasan</span>
                   </span>
                 </span>
@@ -345,9 +345,9 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
                   <td key={k.prodi.slug} className={td}>
                     {k.ringkasan ? (
                       <span className="flex items-center gap-2">
-                        <span className="h-2 w-20 overflow-hidden rounded-full bg-secondary" aria-hidden>
+                        <span className="h-2 w-20 overflow-hidden rounded-sm bg-secondary" aria-hidden>
                           <span
-                            className="block h-full rounded-full bg-amber-400"
+                            className="block h-full rounded-full bg-jade"
                             style={{ width: `${(k.ringkasan.aspek[a.kolom] / 5) * 100}%` }}
                           />
                         </span>

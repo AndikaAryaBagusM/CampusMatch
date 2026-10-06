@@ -44,13 +44,13 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
   return (
     <div className={`${kontainer} space-y-6 py-8`}>
       <div>
-        <h1 className="text-2xl font-medium tracking-tight">Antrean Moderasi</h1>
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Antrean Moderasi</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           Ulasan yang tertahan oleh Screening dan ulasan yang dilaporkan.
         </p>
       </div>
       {pesan ? (
-        <p role="alert" className="rounded-lg bg-destructive/10 p-3 text-sm text-destructive">
+        <p role="alert" className="rounded-sm bg-destructive/10 p-3 text-sm text-destructive">
           {pesan}
         </p>
       ) : null}
@@ -62,15 +62,15 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
           <Kosong />
         ) : (
           antrean.map((r) => (
-            <Panel key={r.revisiId}>
+            <Panel lembar key={r.revisiId}>
               <Kepala prodiNama={r.prodiNama} prodiSlug={r.prodiSlug} kampusNama={r.kampusNama} ulasanId={r.ulasanId} />
               <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
                 {r.tingkatRisiko ? (
-                  <span className={cn("rounded-full px-2.5 py-0.5 font-medium", LABEL_RISIKO[r.tingkatRisiko].kelas)}>
+                  <span className={cn("rounded-sm px-2.5 py-0.5 font-semibold", LABEL_RISIKO[r.tingkatRisiko].kelas)}>
                     {LABEL_RISIKO[r.tingkatRisiko].teks}
                   </span>
                 ) : (
-                  <span className="rounded-full bg-secondary px-2.5 py-0.5 font-medium">
+                  <span className="rounded-sm bg-secondary px-2.5 py-0.5 font-semibold">
                     Screening gagal {r.percobaan}× ({MAKS_PUTARAN_SCREENING} putaran)
                   </span>
                 )}
@@ -90,7 +90,7 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
                 <form action={setujui}>
                   <input type="hidden" name="revisiId" value={r.revisiId} />
                   <input type="hidden" name="kembali" value={kembali} />
-                  <button type="submit" className="h-9 rounded-full bg-emerald-600 px-4 text-sm font-medium text-white hover:bg-emerald-700">
+                  <button type="submit" className="h-9 rounded-sm bg-emerald-600 px-4 text-sm font-semibold text-white hover:bg-emerald-700">
                     Setujui
                   </button>
                 </form>
@@ -106,10 +106,10 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
           <Kosong />
         ) : (
           laporan.map((l) => (
-            <Panel key={l.laporanId}>
+            <Panel lembar key={l.laporanId}>
               <Kepala prodiNama={l.prodiNama} prodiSlug={l.prodiSlug} kampusNama={l.kampusNama} ulasanId={l.ulasanId} />
-              <div className="mt-3 rounded-lg bg-amber-50 p-3 text-sm ring-1 ring-amber-200">
-                <p className="font-medium">{LABEL_ALASAN_LAPORAN[l.alasan]}</p>
+              <div className="mt-3 rounded-sm bg-amber-50 p-3 text-sm ring-1 ring-amber-200">
+                <p className="font-semibold">{LABEL_ALASAN_LAPORAN[l.alasan]}</p>
                 {l.catatan ? <p className="mt-1 whitespace-pre-line">{l.catatan}</p> : null}
                 <p className="mt-1 text-xs text-muted-foreground">Dilaporkan {formatWaktu(l.createdAt)}</p>
               </div>
@@ -133,7 +133,7 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
         menunggu.length === 0 ? (
           <Kosong />
         ) : (
-          <Panel>
+          <Panel lembar>
             <p className="mb-3 text-sm text-muted-foreground">
               Belum lolos Screening. Cron mencoba lagi; setelah {MAKS_PUTARAN_SCREENING} putaran gagal, ulasan masuk tab
               Ditinjau.
@@ -141,7 +141,7 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
             <ul className="divide-y divide-border">
               {menunggu.map((m) => (
                 <li key={m.revisiId} className="flex flex-wrap justify-between gap-2 py-3 text-sm">
-                  <Link href={`/moderasi/ulasan/${m.ulasanId}`} className="font-medium hover:underline">
+                  <Link href={`/moderasi/ulasan/${m.ulasanId}`} className="font-semibold hover:underline">
                     “{m.judul}”
                   </Link>
                   <span className="text-muted-foreground">
@@ -159,7 +159,7 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
 
 function Kosong() {
   return (
-    <Panel>
+    <Panel lembar>
       <EmptyState icon={Inbox} title="Tidak ada yang perlu diperiksa" />
     </Panel>
   );
@@ -169,12 +169,12 @@ function Kepala({ prodiNama, prodiSlug, kampusNama, ulasanId }: { prodiNama: str
   return (
     <div className="flex flex-wrap items-baseline justify-between gap-2">
       <p className="text-sm">
-        <Link href={`/prodi/${prodiSlug}`} className="font-medium hover:underline">
+        <Link href={`/prodi/${prodiSlug}`} className="font-semibold hover:underline">
           {prodiNama}
         </Link>
         <span className="text-muted-foreground">, {kampusNama}</span>
       </p>
-      <Link href={`/moderasi/ulasan/${ulasanId}`} className="text-sm font-medium text-primary hover:underline">
+      <Link href={`/moderasi/ulasan/${ulasanId}`} className="text-sm font-semibold text-primary hover:underline">
         Riwayat
       </Link>
     </div>
@@ -210,13 +210,13 @@ function FormAlasan({
         required={wajib}
         maxLength={1000}
         placeholder={wajib ? "Alasan (wajib, dilihat penulis)" : "Catatan (opsional)"}
-        className="h-9 min-w-0 flex-1 rounded-lg border border-input bg-white px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+        className="h-9 min-w-0 flex-1 rounded-sm border border-input bg-white px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
       />
       <button
         type="submit"
         className={cn(
-          "h-9 shrink-0 rounded-full px-4 text-sm font-medium",
-          wajib ? "bg-destructive text-white hover:bg-destructive/90" : "bg-white ring-1 ring-border hover:bg-secondary",
+          "h-9 shrink-0 rounded-sm px-4 text-sm font-semibold",
+          wajib ? "bg-destructive text-white hover:bg-destructive/90" : "bg-card ring-1 ring-foreground/10 hover:bg-secondary",
         )}
       >
         {tombol}

@@ -5,11 +5,16 @@ import { MAX_QUERY_LENGTH } from "@/lib/search";
 // Plain GET form to /cari: works without client JavaScript.
 export function SearchForm({
   defaultValue,
+  tersembunyi,
+  placeholder,
   size = "lg",
   autoFocus,
   className,
 }: {
   defaultValue?: string;
+  // Extra GET parameters the search keeps (e.g. the writing mode on /cari).
+  tersembunyi?: Record<string, string>;
+  placeholder?: string;
   size?: "lg" | "sm";
   autoFocus?: boolean;
   className?: string;
@@ -21,12 +26,15 @@ export function SearchForm({
       method="get"
       role="search"
       className={cn(
-        "flex w-full items-center gap-1 rounded-full bg-white ring-1 ring-input focus-within:ring-2 focus-within:ring-primary",
-        lg ? "p-1.5 pl-5 shadow-sm" : "p-1 pl-3.5",
+        "flex w-full items-center gap-1 rounded-sm bg-white ring-2 ring-foreground focus-within:ring-[3px] focus-within:ring-pengulas",
+        lg ? "p-1.5 pl-4 shadow-[0_6px_16px_-8px_rgb(19_32_26/0.45)]" : "p-1 pl-3",
         className,
       )}
     >
-      <Search aria-hidden className={cn("shrink-0 text-muted-foreground", lg ? "size-5" : "size-4")} />
+      {tersembunyi
+        ? Object.entries(tersembunyi).map(([k, v]) => <input key={k} type="hidden" name={k} value={v} />)
+        : null}
+      <Search aria-hidden className={cn("shrink-0 text-foreground", lg ? "size-5" : "size-4")} />
       <label htmlFor={lg ? "q-besar" : "q-kecil"} className="sr-only">
         Cari Jurusan, Kampus atau Prodi
       </label>
@@ -37,17 +45,17 @@ export function SearchForm({
         defaultValue={defaultValue}
         maxLength={MAX_QUERY_LENGTH}
         autoFocus={autoFocus}
-        placeholder={lg ? "Jurusan, Kampus atau Prodi" : "Cari Jurusan, Kampus, Prodi"}
+        placeholder={placeholder ?? (lg ? "Jurusan, Kampus atau Prodi" : "Cari Jurusan, Kampus, Prodi")}
         className={cn(
-          "min-w-0 flex-1 bg-transparent px-2 text-foreground outline-none placeholder:text-muted-foreground",
-          lg ? "h-11 text-base" : "h-8 text-sm",
+          "min-w-0 flex-1 bg-transparent px-2 text-foreground outline-none placeholder:text-muted-foreground [&::-webkit-search-cancel-button]:hidden",
+          lg ? "h-12 text-base sm:text-lg" : "h-8 text-sm",
         )}
       />
       <button
         type="submit"
         className={cn(
-          "shrink-0 rounded-full bg-primary font-medium text-primary-foreground transition-colors hover:bg-brand-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
-          lg ? "h-11 px-6 text-base" : "h-8 px-4 text-sm",
+          "shrink-0 rounded-[3px] bg-foreground font-bold text-background transition-colors hover:bg-jade focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pengulas",
+          lg ? "h-12 px-6 text-base" : "h-8 px-3.5 text-sm",
         )}
       >
         Cari

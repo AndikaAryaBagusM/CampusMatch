@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 const kolomInput =
-  "min-h-9 w-full rounded-lg border border-input bg-white px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50";
+  "min-h-9 w-full rounded-sm border border-input bg-white px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50";
 
 const rp = (v: number | null) => (v === null ? "—" : formatRupiah(v));
 
@@ -44,7 +44,7 @@ export default async function InfoBiayaModerasiPage(props: PageProps<"/moderasi/
     <div className={`${kontainer} space-y-6 py-8`}>
       {detail ? <PageBreadcrumb items={[{ label: "Info Biaya", href: "/moderasi/info-biaya" }, { label: detail.prodi.nama }]} /> : null}
       <div>
-        <h1 className="text-2xl font-medium tracking-tight">{detail ? `Info Biaya: ${detail.prodi.nama}` : "Info Biaya"}</h1>
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">{detail ? `Info Biaya: ${detail.prodi.nama}` : "Info Biaya"}</h1>
         <p className="mt-1 max-w-3xl text-sm text-muted-foreground">
           {detail
             ? `${detail.prodi.kampusNama}. `
@@ -59,16 +59,16 @@ export default async function InfoBiayaModerasiPage(props: PageProps<"/moderasi/
       {pesan ? (
         <p
           role={berhasil ? "status" : "alert"}
-          className={cn("rounded-lg p-3 text-sm", berhasil ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200" : "bg-destructive/10 text-destructive")}
+          className={cn("rounded-sm p-3 text-sm", berhasil ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200" : "bg-destructive/10 text-destructive")}
         >
           {pesan}
         </p>
       ) : null}
 
-      {slug && !detail ? <Panel>Prodi tidak ditemukan.</Panel> : null}
+      {slug && !detail ? <Panel lembar>Prodi tidak ditemukan.</Panel> : null}
 
       {!slug ? (
-        <Panel title="Prodi dengan Info Biaya">
+        <Panel lembar title="Prodi dengan Info Biaya">
           {daftar.length === 0 ? (
             <p className="text-sm text-muted-foreground">Belum ada Info Biaya.</p>
           ) : (
@@ -76,7 +76,7 @@ export default async function InfoBiayaModerasiPage(props: PageProps<"/moderasi/
               {daftar.map((p) => (
                 <li key={p.slug} className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between">
                   <div className="min-w-0">
-                    <Link href={`/moderasi/info-biaya?prodi=${p.slug}`} className="font-medium hover:underline">
+                    <Link href={`/moderasi/info-biaya?prodi=${p.slug}`} className="font-semibold hover:underline">
                       {p.nama}
                     </Link>
                     <span className="text-muted-foreground">, {p.kampusNama}</span>
@@ -92,7 +92,7 @@ export default async function InfoBiayaModerasiPage(props: PageProps<"/moderasi/
       ) : null}
 
       {detail ? (
-        <Panel title={`Jawaban (${detail.entri.length})`}>
+        <Panel lembar title={`Jawaban (${detail.entri.length})`}>
           {detail.entri.length === 0 ? (
             <p className="text-sm text-muted-foreground">Belum ada Info Biaya untuk Prodi ini.</p>
           ) : (
@@ -100,10 +100,10 @@ export default async function InfoBiayaModerasiPage(props: PageProps<"/moderasi/
               {detail.entri.map((e) => (
                 <li
                   key={e.id}
-                  className={cn("rounded-lg p-4 text-sm ring-1", e.dikesampingkanAt ? "bg-secondary/50 ring-border" : e.pencilan ? "ring-amber-300" : "ring-border")}
+                  className={cn("rounded-sm p-4 text-sm ring-1", e.dikesampingkanAt ? "bg-secondary/50 ring-foreground/10" : e.pencilan ? "ring-amber-300" : "ring-foreground/10")}
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <p className="flex flex-wrap items-center gap-x-2 font-medium">
+                    <p className="flex flex-wrap items-center gap-x-2 font-semibold">
                       {e.email ?? "akun tanpa email"}
                       {e.terverifikasi ? (
                         <span className="inline-flex items-center gap-1 text-xs font-normal text-emerald-800">
@@ -152,19 +152,19 @@ export default async function InfoBiayaModerasiPage(props: PageProps<"/moderasi/
                       <form action={pulihkan}>
                         <input type="hidden" name="prodi" value={detail.prodi.slug} />
                         <input type="hidden" name="id" value={e.id} />
-                        <button type="submit" className="font-medium text-primary hover:underline">
+                        <button type="submit" className="font-semibold text-primary hover:underline">
                           Hitung lagi
                         </button>
                       </form>
                     </div>
                   ) : (
                     <details className="mt-3 border-t border-border pt-3">
-                      <summary className="cursor-pointer font-medium text-destructive hover:underline">Kesampingkan</summary>
+                      <summary className="cursor-pointer font-semibold text-destructive hover:underline">Kesampingkan</summary>
                       <form action={kesampingkan} className="mt-3 space-y-2">
                         <input type="hidden" name="prodi" value={detail.prodi.slug} />
                         <input type="hidden" name="id" value={e.id} />
                         <input type="hidden" name="userId" value={e.userId} />
-                        <label htmlFor={`alasan-${e.id}`} className="block text-sm font-medium">
+                        <label htmlFor={`alasan-${e.id}`} className="block text-sm font-semibold">
                           Alasan
                         </label>
                         <input id={`alasan-${e.id}`} name="alasan" required maxLength={500} className={kolomInput} />
@@ -172,7 +172,7 @@ export default async function InfoBiayaModerasiPage(props: PageProps<"/moderasi/
                           <input type="checkbox" name="semuaAkun" value="1" className="size-4 accent-primary" />
                           Semua info biaya dari akun ini, di semua Prodi
                         </label>
-                        <button type="submit" className="h-9 rounded-full bg-destructive px-4 text-sm font-medium text-white hover:bg-destructive/90">
+                        <button type="submit" className="h-9 rounded-sm bg-destructive px-4 text-sm font-semibold text-white hover:bg-destructive/90">
                           Kesampingkan
                         </button>
                       </form>
@@ -182,7 +182,7 @@ export default async function InfoBiayaModerasiPage(props: PageProps<"/moderasi/
               ))}
             </ul>
           )}
-          <Link href={`/prodi/${detail.prodi.slug}#estimasi-pengulas`} className="mt-4 inline-flex text-sm font-medium text-primary hover:underline">
+          <Link href={`/prodi/${detail.prodi.slug}#estimasi-pengulas`} className="mt-4 inline-flex text-sm font-semibold text-primary hover:underline">
             Lihat Estimasi di halaman Prodi
           </Link>
         </Panel>

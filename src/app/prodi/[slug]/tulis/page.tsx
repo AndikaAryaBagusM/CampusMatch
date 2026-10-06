@@ -6,6 +6,7 @@ import { withDb } from "@/db";
 import { EmptyState } from "@/components/empty-state";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { kontainer, Panel } from "@/components/panel";
+import { GarisRute } from "@/components/trayek/garis-rute";
 import { PanduanUlasan } from "@/components/ulasan/panduan-ulasan";
 import { getInfoBiayaSaya } from "@/lib/info-biaya/layanan";
 import { requirePengulas } from "@/lib/sesi";
@@ -70,13 +71,30 @@ export default async function TulisUlasanPage({ params }: PageProps<"/prodi/[slu
           { label: "Tulis ulasan" },
         ]}
       />
-      <div className="rounded-xl bg-gradient-to-br from-secondary to-blue-100 px-5 py-8 text-center sm:py-10">
-        <h1 className="text-2xl font-medium tracking-tight sm:text-3xl">
-          {ada ? "Ubah ulasanmu" : "Bagaimana kuliahmu?"}
-        </h1>
-        <p className="mt-1 text-sm sm:text-base">
-          {namaProdi}, {prodi.kampusNama}
-        </p>
+      {/* On the Pengulas line: where this page sits, and the stops still ahead. */}
+      <div className="overflow-hidden rounded-md bg-card ring-1 ring-foreground/10">
+        <div className="bg-pengulas px-5 py-6 text-pengulas-foreground sm:px-7 sm:py-8">
+          <h1 className="text-2xl leading-tight font-extrabold tracking-tight sm:text-4xl">
+            {ada ? "Ubah ulasanmu" : "Bagaimana kuliahmu?"}
+          </h1>
+          <p className="mt-1 text-sm sm:text-base">
+            {namaProdi}, {prodi.kampusNama}
+          </p>
+        </div>
+        <div className="px-5 py-5 sm:px-7">
+          <GarisRute
+            arah="md"
+            label="Rute Pengulas"
+            className="text-sm"
+            halte={[
+              { label: "Cari Prodi-mu", keadaan: "lewat" },
+              { label: "Masuk", keadaan: "lewat" },
+              { label: "Tulis ulasan", keterangan: "Kamu di sini", keadaan: "kini" },
+              { label: "Diperiksa", keterangan: "Berikutnya", keadaan: "nanti" },
+              { label: "Terbit tanpa nama", keadaan: "nanti" },
+            ]}
+          />
+        </div>
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
@@ -85,7 +103,7 @@ export default async function TulisUlasanPage({ params }: PageProps<"/prodi/[slu
             <Panel>
               <EmptyState icon={Hourglass} title="Ulasanmu sedang diperiksa">
                 Kamu bisa mengubahnya lagi setelah pemeriksaan selesai.{" "}
-                <Link href="/akun" className="font-medium text-primary hover:underline">
+                <Link href="/akun" className="font-semibold text-primary hover:underline">
                   Lihat status di Akun
                 </Link>
                 .
@@ -98,7 +116,7 @@ export default async function TulisUlasanPage({ params }: PageProps<"/prodi/[slu
         <aside className="space-y-6">
           <PanduanUlasan />
           <Panel>
-            <h2 className="font-medium">Yang bisa kamu ceritakan</h2>
+            <h2 className="font-bold">Yang bisa kamu ceritakan</h2>
             <ul className="mt-3 space-y-2 text-sm">
               {PERTANYAAN.map((p) => (
                 <li key={p} className="flex gap-2">

@@ -1,15 +1,18 @@
 import { cn } from "@/lib/utils";
 import { formatTanggal } from "@/lib/format";
 import type { InfoKatalog } from "@/lib/katalog";
+import { TiketSumber } from "@/components/trayek/tiket-sumber";
 
+// An outlined plate, so it reads as a list membership rather than a grade.
 export function UnggulanBadge({ className }: { className?: string }) {
   return (
     <span
       className={cn(
-        "inline-flex h-6 items-center rounded-full bg-cta px-2.5 text-xs font-medium whitespace-nowrap text-cta-foreground",
+        "inline-flex h-6 items-center gap-1.5 rounded-sm bg-card px-2 text-xs font-semibold whitespace-nowrap text-foreground ring-1 ring-foreground",
         className,
       )}
     >
+      <span aria-hidden className="size-2 rounded-full bg-foreground" />
       Daftar Kampus Unggulan
     </span>
   );
@@ -20,8 +23,7 @@ export function UnggulanBadge({ className }: { className?: string }) {
 export function UnggulanFootnote({ info, className }: { info: InfoKatalog | null; className?: string }) {
   const sumber = info?.unggulanSumber;
   return (
-    <p className={cn("text-xs leading-relaxed text-muted-foreground", className)}>
-      <span className="font-medium text-foreground">Daftar Kampus Unggulan.</span>{" "}
+    <TiketSumber stub="Unggulan" className={className}>
       {sumber ? (
         <>
           Sumber: {sumber}
@@ -29,6 +31,6 @@ export function UnggulanFootnote({ info, className }: { info: InfoKatalog | null
         </>
       ) : null}
       Webometrics mengukur kehadiran web dan keluaran riset, bukan kualitas pengajaran.
-    </p>
+    </TiketSumber>
   );
 }

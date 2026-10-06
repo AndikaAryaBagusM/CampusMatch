@@ -12,8 +12,8 @@ export function AkreditasiBadge({ akreditasi, className }: { akreditasi: string 
   return (
     <span
       className={cn(
-        "inline-flex h-6 items-center rounded-full px-2.5 text-xs font-medium whitespace-nowrap",
-        akreditasi ? "bg-secondary text-secondary-foreground" : "bg-muted text-muted-foreground",
+        "inline-flex h-6 items-center rounded-sm px-2 text-xs font-semibold whitespace-nowrap",
+        akreditasi ? "bg-jade-tint text-secondary-foreground" : "bg-muted text-muted-foreground ring-1 ring-foreground/10 ring-inset",
         className,
       )}
     >

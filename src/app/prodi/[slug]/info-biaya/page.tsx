@@ -46,8 +46,8 @@ export default async function InfoBiayaPage({ params }: PageProps<"/prodi/[slug]
           { label: "Info biaya" },
         ]}
       />
-      <div className="rounded-xl bg-gradient-to-br from-secondary to-blue-100 px-5 py-8 text-center sm:py-10">
-        <h1 className="text-2xl font-medium tracking-tight sm:text-3xl">{ada ? "Ubah info biayamu" : "Bagikan info biaya"}</h1>
+      <div className="rounded-md bg-pengulas px-5 py-6 text-pengulas-foreground sm:px-7 sm:py-8">
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight sm:text-4xl">{ada ? "Ubah info biayamu" : "Bagikan info biaya"}</h1>
         <p className="mt-1 text-sm sm:text-base">
           {namaProdi}, {prodi.kampusNama}
         </p>
@@ -57,7 +57,7 @@ export default async function InfoBiayaPage({ params }: PageProps<"/prodi/[slug]
         <FormInfoBiaya prodiSlug={prodi.slug} awal={awal} edit={!!ada} />
         <aside>
           <Panel>
-            <h2 className="font-medium">Bagaimana info ini dipakai</h2>
+            <h2 className="font-bold">Bagaimana info ini dipakai</h2>
             <ul className="mt-3 space-y-3 text-sm">
               <li className="flex gap-2">
                 <EyeOff className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />

@@ -8,7 +8,7 @@ export type JumlahModerasi = { ditinjau: number; laporan: number; menunggu: numb
 // check, the Jurusan mapping tool, Promosi, and Info Biaya (no queue, so no count).
 export function TabModerasiNav({ jumlah, aktif }: { jumlah: JumlahModerasi; aktif: TabModerasi }) {
   return (
-    <div className="rounded-xl bg-white px-1 ring-1 ring-border sm:px-4">
+    <div className="rounded-md bg-card px-1 ring-1 ring-foreground/10 sm:px-4">
       <TabNav
         label="Bagian Antrean Moderasi"
         tabs={[
