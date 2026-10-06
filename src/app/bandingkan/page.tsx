@@ -9,8 +9,11 @@ import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { kontainer, Panel } from "@/components/panel";
 import { SinkronBandingkan } from "@/components/perbandingan/sinkron-bandingkan";
 import { BintangTampil } from "@/components/ulasan/bintang-tampil";
+import { TeksAngka, TeksPilihan, TeksUangPangkal } from "@/components/info-biaya/estimasi-pengulas";
 import { getFaktaKampus, listBiayaProdi, type BiayaTampil } from "@/lib/fakta/kueri";
-import { formatRupiah, LABEL_JENIS_BIAYA, LABEL_PERIODE, LABEL_TES } from "@/lib/fakta/label";
+import { formatRupiah, LABEL_JENIS_BIAYA, LABEL_KATEGORI_JALUR, LABEL_PERIODE, LABEL_TES } from "@/lib/fakta/label";
+import { estimasiProdi, K } from "@/lib/info-biaya/estimasi";
+import { LABEL_BEASISWA } from "@/lib/info-biaya/label";
 import { formatTahunAkademik, tahunAkademikLama } from "@/lib/fakta/tahun-akademik";
 import { formatAngka } from "@/lib/format";
 import { getProdi, getRingkasanUlasan } from "@/lib/katalog";
@@ -18,8 +21,9 @@ import { bacaSlugs, hrefBandingkan } from "@/lib/perbandingan/daftar";
 import { ASPEK } from "@/lib/ulasan/skema";
 
 // The Perbandingan (ADR 0007, decisions.md 17f, 17k): 2–3 Prodi side by side,
-// facts and Ulasan scores only. No verdict, no pros and cons, and no marks on
-// the highest or lowest value: the student draws the conclusion.
+// facts and Ulasan scores, plus muted Estimasi Pengulas rows (ADR 0010). No
+// verdict, no pros and cons, and no marks on the highest or lowest value: the
+// student draws the conclusion.
 
 export const metadata: Metadata = {
   title: "Perbandingan Prodi",
@@ -28,8 +32,8 @@ export const metadata: Metadata = {
 };
 
 async function muat(slugs: string[]) {
-  return withDb((db) =>
-    Promise.all(
+  return withDb(async (db) => {
+    const kolom = await Promise.all(
       slugs.map(async (slug) => {
         const prodi = await getProdi(db, slug);
         if (!prodi) return null;
@@ -40,8 +44,11 @@ async function muat(slugs: string[]) {
         ]);
         return { prodi, biayaProdi, fakta, ringkasan };
       }),
-    ),
-  );
+    );
+    const ada = kolom.filter((k) => k !== null);
+    const estimasi = await estimasiProdi(db, ada.map((k) => k.prodi.id));
+    return kolom.map((k) => (k ? { ...k, estimasi: estimasi.get(k.prodi.id)! } : null));
+  });
 }
 
 type Kolom = NonNullable<Awaited<ReturnType<typeof muat>>[number]>;
@@ -218,6 +225,19 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
 
   const rujukanKolom = kolom.map(sumberKolom);
   const n = kolom.length;
+  // Muted rows under the official ones (ADR 0010): never merged with the fact above.
+  const estimasi = (sel: (k: Kolom) => React.ReactNode) => (
+    <tr className="border-t border-dashed border-border">
+      <th scope="row" className={`${thBaris} font-normal italic`}>
+        Estimasi Pengulas
+      </th>
+      {kolom.map((k) => (
+        <td key={k.prodi.slug} className={`${td} text-muted-foreground`}>
+          {sel(k)}
+        </td>
+      ))}
+    </tr>
+  );
   const baris = (label: string, sel: (k: Kolom, i: number) => React.ReactNode) => (
     <tr className="border-t border-border">
       <th scope="row" className={thBaris}>
@@ -290,12 +310,17 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
 
             <Bagian judul="Biaya" jumlah={n} />
             {baris("UKT / SPP per semester", (k, i) => <SelBiaya k={k} jenis={["ukt", "spp"]} r={rujukanKolom[i]} />)}
+            {estimasi((k) => <TeksAngka r={k.estimasi.biayaSemester} />)}
             {baris("Uang Pangkal", (k, i) => <SelBiaya k={k} jenis={["uang_pangkal"]} r={rujukanKolom[i]} />)}
+            {estimasi((k) => <TeksUangPangkal r={k.estimasi.uangPangkal} />)}
             {baris("Biaya lain", (k, i) => <SelBiaya k={k} jenis={["lain", "pendaftaran"]} r={rujukanKolom[i]} gabung />)}
+            {estimasi((k) => <TeksAngka r={k.estimasi.biayaLainMasuk} />)}
 
             <Bagian judul="Masuk dan Beasiswa" jumlah={n} />
             {baris("Jalur Masuk", (k, i) => <SelJalur k={k} r={rujukanKolom[i]} />)}
+            {estimasi((k) => <TeksPilihan r={k.estimasi.jalur} label={LABEL_KATEGORI_JALUR} />)}
             {baris("Beasiswa", (k, i) => <SelBeasiswa k={k} r={rujukanKolom[i]} />)}
+            {estimasi((k) => <TeksPilihan r={k.estimasi.beasiswa} label={LABEL_BEASISWA} />)}
 
             <Bagian judul="Ulasan" jumlah={n} />
             {baris("Bintang", (k) =>
@@ -349,6 +374,10 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
         <p className="text-xs text-muted-foreground">
           Biaya Prodi diambil dari data Prodi itu sendiri; bila Kampus hanya menerbitkan biaya untuk seluruh Kampus,
           angka itu ditandai &ldquo;berlaku se-Kampus&rdquo;. Skor ulasan adalah rata-rata ulasan yang sudah terbit.
+        </p>
+        <p className="text-xs text-muted-foreground">
+          Baris Estimasi Pengulas bukan data resmi: gabungan jawaban Pengulas tentang yang mereka bayar, dari angkatan lima
+          tahun terakhir, dan baru muncul setelah dijawab minimal {K} Pengulas.
         </p>
       </div>
     </div>

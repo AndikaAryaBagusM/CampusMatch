@@ -23,6 +23,10 @@ export default function PrivasiPage() {
           <li>Kami hanya meminta data saat kamu masuk untuk menulis atau melaporkan ulasan, atau menyimpan hasil Tes Minat.</li>
           <li>Akun hanya untuk usia 18 tahun ke atas. Tes Minat bisa dikerjakan tanpa akun, dan hasilnya tidak kami simpan.</li>
           <li>Daftar Prodi yang kamu pilih untuk dibandingkan hanya tersimpan di browsermu, tidak dikirim ke kami.</li>
+          <li>
+            Info biaya yang kamu bagikan tidak pernah ditampilkan sendiri, hanya sebagai estimasi gabungan dari minimal 5
+            Pengulas.
+          </li>
           <li>Ulasan tampil tanpa nama: hanya status (mahasiswa aktif atau alumni) dan tahun masuk.</li>
           <li>Teks ulasan diperiksa otomatis dengan Claude API dari Anthropic sebelum tampil.</li>
           <li>
@@ -75,13 +79,21 @@ export default function PrivasiPage() {
           mengirim satu tautan konfirmasi dan tidak kami simpan. Setelah kamu mengonfirmasi, kami menyimpan nama domainnya
           (misalnya ugm.ac.id), Kampus-nya, dan tanggalnya. Kamu bisa menghapusnya kapan saja di halaman Akun.
         </p>
+        <p id="info-biaya">
+          <strong>Saat kamu membagikan info biaya.</strong> Jika kamu mengisi Info Biaya untuk sebuah Prodi (di formulir
+          ulasan atau lewat Bagikan info biaya), kami menyimpan jawabanmu: jalur masuk, seleksi yang kamu ikuti, UKT atau
+          SPP per semester beserta kelompok UKT, uang pangkal, biaya lain saat masuk, jenis beasiswa, status dan tahun
+          masukmu, serta kapan kamu menyetujuinya. Karena angka ini bisa menunjukkan keadaan ekonomi keluargamu, kami
+          memperlakukannya sebagai data pribadi yang bersifat spesifik (data keuangan pribadi menurut UU PDP) dan hanya
+          memprosesnya dengan persetujuan yang kamu centang setiap kali menyimpan.
+        </p>
         <p>
           <strong>Saat kamu mengeklik Promosi.</strong> Kami hanya menambah satu pada jumlah klik Promosi itu untuk hari
           tersebut. Tidak ada cookie, alamat IP, atau data lain tentang siapa yang mengeklik.
         </p>
         <p>
-          <strong>Alamat IP dalam bentuk hash.</strong> Saat kamu menulis ulasan, melaporkan ulasan, atau meminta
-          tautan masuk lewat email, kami mengubah alamat IP-mu menjadi kode hash (HMAC-SHA256 dengan kunci rahasia) yang
+          <strong>Alamat IP dalam bentuk hash.</strong> Saat kamu menulis ulasan, melaporkan ulasan, membagikan info
+          biaya, atau meminta tautan masuk lewat email, kami mengubah alamat IP-mu menjadi kode hash (HMAC-SHA256 dengan kunci rahasia) yang
           tidak bisa dikembalikan menjadi alamat IP. Kode ini hanya dipakai untuk membatasi jumlah permintaan dan
           mencegah penyalahgunaan. Alamat IP aslinya tidak kami simpan.
         </p>
@@ -98,13 +110,19 @@ export default function PrivasiPage() {
           <li>Menampilkan Profil Minat yang kamu simpan beserta Rekomendasi Jurusan-nya, hanya untukmu.</li>
           <li>Memastikan akun hanya dipakai oleh orang berusia 18 tahun ke atas.</li>
           <li>Menandai ulasanmu sebagai Terverifikasi di Kampus tempat kamu membuktikan email kampusmu.</li>
+          <li>
+            Menghitung Estimasi Pengulas dari info biaya: gabungan jawaban minimal 5 Pengulas per angka, tanpa
+            menampilkan jawaban satu orang. Info biaya tidak dipakai untuk Promosi atau iklan.
+          </li>
           <li>Memeriksa ulasan sebelum tampil (Screening) dan menangani laporan.</li>
           <li>Membatasi jumlah permintaan dan mencegah spam serta penyalahgunaan.</li>
           <li>Membalas permintaanmu tentang data pribadi.</li>
         </ul>
         <p>
           Dasar pemrosesannya adalah persetujuanmu saat masuk dan mengirim ulasan, pelaksanaan layanan yang kamu minta,
-          serta kepentingan yang sah untuk menjaga keamanan dan mencegah penyalahgunaan layanan.
+          serta kepentingan yang sah untuk menjaga keamanan dan mencegah penyalahgunaan layanan. Info biaya diproses
+          hanya atas persetujuan tegas yang kamu berikan di formulirnya, dan persetujuan itu bisa kamu tarik dengan
+          menghapus info biayamu di halaman Akun.
         </p>
       </Bagian>
 
@@ -114,6 +132,12 @@ export default function PrivasiPage() {
           rekomendasi, status (mahasiswa aktif atau alumni), tahun masuk, dan tanggal terbit. Jika kamu sudah memverifikasi
           email kampus di Kampus tersebut, ulasanmu juga bertanda Terverifikasi beserta bulan dan tahun verifikasinya, tanpa
           alamat atau domain emailnya.
+        </p>
+        <p>
+          Info biaya tidak pernah tampil di ulasanmu atau di tempat lain sebagai jawaban satu orang. Publik hanya melihat
+          Estimasi Pengulas, yang baru muncul setelah minimal 5 Pengulas menjawab, tanpa menggabungkan dua jawaban
+          (misalnya uang pangkal per jalur masuk) yang bisa mempersempit kelompok. Hanya Moderator CampusMatch yang bisa
+          melihat jawaban per akun, untuk mengesampingkan jawaban yang tampak palsu.
         </p>
         <p>
           Perlu diingat: isi ulasan, status dan tahun masuk dibaca siapa saja. Jika kamu menceritakan detail yang sangat
@@ -164,6 +188,10 @@ export default function PrivasiPage() {
         <ul>
           <li>Akun dan ulasan disimpan selama akunmu ada, kecuali kamu meminta penghapusan.</li>
           <li>Profil Minat disimpan sampai kamu menghapusnya atau akunmu dihapus.</li>
+          <li>
+            Info biaya disimpan sampai kamu menghapusnya di halaman Akun atau akunmu dihapus, dan paling lama sampai tahun
+            masukmu keluar dari lima angkatan terakhir; setelah itu kami menghapusnya otomatis.
+          </li>
           <li>
             Jika kamu menyatakan belum 18 tahun, akun yang belum pernah menulis ulasan langsung dihapus beserta datanya.
             Akun yang sudah punya ulasan dikunci, dan ulasannya tetap tampil tanpa nama sampai kamu meminta penghapusan.

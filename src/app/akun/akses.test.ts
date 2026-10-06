@@ -40,3 +40,11 @@ test("no 18+ declaration yet: sent to /akun/usia first", async () => {
   expect(await tujuan(aksi.kirimVerifikasiKampus(form({ email: "a@ugm.ac.id" })))).toBe("/akun/usia?callbackUrl=%2Fakun");
   expect(withDb).not.toHaveBeenCalled();
 });
+
+test("Info Biaya: deleting needs a signed-in 18+ account", async () => {
+  mockAuth.mockResolvedValue(null);
+  expect(await tujuan(aksi.hapusInfoBiayaSaya(form({ infoBiayaId: "1" })))).toBe("/masuk?callbackUrl=%2Fakun");
+  mockAuth.mockResolvedValue({ user: { id: "u1", email: "a@b.id", usia18At: null, dikunciAt: null } });
+  expect(await tujuan(aksi.hapusInfoBiayaSaya(form({ infoBiayaId: "1" })))).toBe("/akun/usia?callbackUrl=%2Fakun");
+  expect(withDb).not.toHaveBeenCalled();
+});

@@ -15,6 +15,7 @@ export * from "./auth";
 export * from "./batas-laju";
 export * from "./enums";
 export * from "./fakta";
+export * from "./info-biaya";
 export * from "./katalog";
 export * from "./promosi";
 export * from "./riasec";

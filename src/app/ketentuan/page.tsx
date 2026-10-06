@@ -164,6 +164,28 @@ export default function KetentuanPage() {
             dokumen resmi yang benar.
           </li>
         </ul>
+        <h3 id="estimasi-pengulas" className="scroll-mt-24 pt-2 font-medium">
+          Estimasi Pengulas
+        </h3>
+        <ul>
+          <li>
+            Selain data resmi, halaman Prodi dan Perbandingan menampilkan <strong>Estimasi Pengulas</strong>: gabungan
+            jawaban Pengulas tentang biaya yang mereka bayar, jalur masuk, seleksi, dan beasiswa yang mereka jalani.
+          </li>
+          <li>
+            Estimasi Pengulas bukan data resmi dan tidak diperiksa terhadap dokumen Kampus. Isinya bisa keliru, sudah
+            berubah, atau berbeda dengan yang akan kamu bayar. Estimasi selalu ditampilkan terpisah dari data resmi dan
+            tidak pernah menggantikannya.
+          </li>
+          <li>
+            Setiap angka baru muncul setelah dijawab minimal 5 Pengulas dari lima angkatan terakhir. Jawaban yang jauh dari
+            yang lain tidak dihitung, dan Moderator bisa mengesampingkan jawaban yang tampak palsu.
+          </li>
+          <li>
+            Saat membagikan info biaya, isilah sejujurnya sesuai yang kamu alami. Jangan mengisi atas nama orang lain atau
+            untuk Prodi yang tidak kamu jalani.
+          </li>
+        </ul>
       </Bagian>
 
       <Bagian id="promosi" judul="10. Promosi">

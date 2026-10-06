@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BadgeCheck, CircleCheck, Compass, MessageSquareText } from "lucide-react";
+import { BadgeCheck, CircleCheck, Compass, MessageSquareText, Wallet } from "lucide-react";
 import { withDb } from "@/db";
 import { EmptyState } from "@/components/empty-state";
 import { kontainer, Panel } from "@/components/panel";
 import { listVerifikasiSaya } from "@/lib/akun/verifikasi-kampus";
 import { formatHari } from "@/lib/format";
+import { listInfoBiayaSaya } from "@/lib/info-biaya/layanan";
 import { isModerator } from "@/lib/moderator";
 import { LABEL_TIPE } from "@/lib/riasec/item";
 import { listProfilMinat } from "@/lib/riasec/profil";
@@ -15,7 +16,14 @@ import { listUlasanSaya } from "@/lib/ulasan/kueri";
 import type { StatusUlasan } from "@/lib/ulasan/status";
 import { param } from "@/lib/url";
 import { cn } from "@/lib/utils";
-import { hapusProfilSaya, hapusUlasanSaya, hapusVerifikasiKampus, keluar, kirimVerifikasiKampus } from "./actions";
+import {
+  hapusInfoBiayaSaya,
+  hapusProfilSaya,
+  hapusUlasanSaya,
+  hapusVerifikasiKampus,
+  keluar,
+  kirimVerifikasiKampus,
+} from "./actions";
 
 export const metadata: Metadata = {
   title: "Akun",
@@ -33,10 +41,18 @@ const LABEL: Record<StatusUlasan, { teks: string; kelas: string }> = {
 
 export default async function AkunPage(props: PageProps<"/akun">) {
   const pengulas = await requirePengulas("/akun");
-  const [sp, [ulasan, profil, verifikasi]] = await Promise.all([
+  const [sp, [ulasan, profil, verifikasi, infoBiaya]] = await Promise.all([
     props.searchParams,
-    withDb((db) => Promise.all([listUlasanSaya(db, pengulas.id), listProfilMinat(db, pengulas.id), listVerifikasiSaya(db, pengulas.id)])),
+    withDb((db) =>
+      Promise.all([
+        listUlasanSaya(db, pengulas.id),
+        listProfilMinat(db, pengulas.id),
+        listVerifikasiSaya(db, pengulas.id),
+        listInfoBiayaSaya(db, pengulas.id),
+      ]),
+    ),
   ]);
+  const statusInfoBiaya = param(sp.infoBiaya);
   const pesanKampus = param(sp.kampus);
   const kampusOk = param(sp.ok) === "1";
   const terkirim = param(sp.terkirim);
@@ -176,6 +192,54 @@ export default async function AkunPage(props: PageProps<"/akun">) {
         <p className="mt-4 text-xs text-muted-foreground">
           Hanya kamu yang bisa melihat Profil Minat. Kami menyimpan enam skornya dan tanggalnya saja, dan tidak memakainya
           untuk Promosi atau iklan.
+        </p>
+      </Panel>
+
+      <Panel title="Info Biaya" id="info-biaya">
+        {statusInfoBiaya === "tersimpan" ? (
+          <p role="status" className="mb-4 flex items-start gap-2 rounded-lg bg-emerald-50 p-3 text-sm text-emerald-900 ring-1 ring-emerald-200">
+            <CircleCheck className="mt-0.5 size-4 shrink-0" aria-hidden />
+            Info biaya tersimpan. Terima kasih!
+          </p>
+        ) : statusInfoBiaya === "gagal" ? (
+          <p role="alert" className="mb-4 rounded-lg bg-destructive/10 p-3 text-sm text-destructive">
+            Ulasanmu terkirim, tetapi info biayanya belum tersimpan. Coba bagikan lagi dari halaman Prodi.
+          </p>
+        ) : null}
+        {infoBiaya.length === 0 ? (
+          <EmptyState icon={Wallet} title="Belum ada info biaya">
+            Di halaman Prodi tempat kamu kuliah, tekan Bagikan info biaya.
+          </EmptyState>
+        ) : (
+          <ul className="divide-y divide-border">
+            {infoBiaya.map((b) => (
+              <li key={b.id} className="flex flex-wrap items-center justify-between gap-3 py-3 first:pt-0 last:pb-0">
+                <div className="min-w-0">
+                  <Link href={`/prodi/${b.prodiSlug}`} className="font-medium hover:underline">
+                    {b.prodiNama}
+                  </Link>
+                  <p className="text-sm text-muted-foreground">
+                    {b.kampusNama} · masuk {b.tahunMasuk} · {formatHari(b.updatedAt)}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 text-sm">
+                  <Link href={`/prodi/${b.prodiSlug}/info-biaya`} className="font-medium text-primary hover:underline">
+                    Ubah
+                  </Link>
+                  <form action={hapusInfoBiayaSaya}>
+                    <input type="hidden" name="infoBiayaId" value={b.id} />
+                    <button type="submit" className="font-medium text-destructive hover:underline">
+                      Hapus
+                    </button>
+                  </form>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+        <p className="mt-4 text-xs text-muted-foreground">
+          Info biayamu tidak pernah ditampilkan sendiri, hanya sebagai Estimasi Pengulas gabungan dari minimal 5 Pengulas.
+          Info dari angkatan lebih dari lima tahun lalu dihapus otomatis.
         </p>
       </Panel>
 

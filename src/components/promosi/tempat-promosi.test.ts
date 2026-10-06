@@ -22,3 +22,10 @@ test("KotakPromosi is used only where Promosi may appear", () => {
     .sort();
   expect(pemakai).toEqual([...BOLEH].sort());
 });
+
+// ADR 0010: Info Biaya is never used for Promosi.
+test("Promosi code never reads Info Biaya", () => {
+  const src = join(process.cwd(), "src");
+  const promosi = [join(src, "lib", "promosi.ts"), ...berkas(join(src, "components", "promosi")), ...berkas(join(src, "app", "promosi"))];
+  for (const f of promosi.filter((f) => !f.endsWith(".test.ts"))) expect(readFileSync(f, "utf8"), f).not.toMatch(/info-biaya|infoBiaya|info_biaya/);
+});
