@@ -33,8 +33,49 @@ The city where a Kampus is located. Used for browsing.
 _Avoid_: Lokasi, daerah, region
 
 **Daftar Kampus Unggulan**:
-A curated list of Kampus (initially 100, taken from Webometrics) that CampusMatch highlights with a badge and a filter. It does not limit which Kampus are covered and never changes the order of search results. Its source and capture date are recorded with each catalogue import.
+A curated list of Kampus (initially 100, taken from Webometrics) that CampusMatch highlights with a badge and a filter. It does not limit which Kampus are covered and never changes the order of search results. It also sets which Kampus get their Biaya & Masuk facts collected first. Its source and capture date are recorded with each catalogue import.
 _Avoid_: Top 100, ranking
+
+## Biaya & Masuk
+
+**Sumber**:
+An official public document or page (e.g. an SK Rektor on UKT, a Kampus admissions page) that backs one or more facts, recorded with its URL, publisher, access date and an archived copy.
+_Avoid_: Referensi, link, citation
+
+**Tahun Akademik**:
+The academic year a fact applies to, e.g. 2026/2027. Every fact has its own; facts from different years exist side by side.
+_Avoid_: TA (in prose), tahun ajaran, periode
+
+**Biaya**:
+One published amount a student pays a Kampus: UKT, SPP, Uang Pangkal, a registration fee or a Biaya Lain. It belongs to a Prodi when the Kampus publishes it per Prodi, otherwise to the Kampus.
+_Avoid_: Tarif, harga, cost
+
+**UKT** (Uang Kuliah Tunggal):
+The per-semester fee at a public Kampus, published per Prodi in groups (Kelompok I, II, …). At a private Kampus the per-semester fee is called SPP.
+_Avoid_: SPP (for a public Kampus), biaya kuliah
+
+**Uang Pangkal**:
+A one-off fee paid on entry, often only for some Jalur Masuk; also published as IPI, SPI or dana pengembangan.
+_Avoid_: Uang gedung, sumbangan
+
+**Biaya Lain**:
+A compulsory one-off fee the Kampus publishes besides UKT, SPP and Uang Pangkal (e.g. almamater, KKN). Never an estimate of living costs.
+_Avoid_: Biaya hidup, extra costs
+
+**Jalur Masuk**:
+One admission route of a Kampus in a Tahun Akademik (SNBP, SNBT, a Mandiri route, or a private Kampus's own route), with the tests it requires.
+_Avoid_: Seleksi, gelombang, admission path
+
+**Beasiswa**:
+A scholarship a student of a Kampus can receive, either the Kampus's own or a national scheme (e.g. KIP Kuliah) that the Kampus takes part in.
+_Avoid_: Bantuan biaya, scholarship
+
+**Status Fakta**:
+Whether a fact may be shown:
+- *Draf*: entered by a Moderator, not shown.
+- *Diperiksa*: checked against its Sumber by a second Moderator, shown.
+
+_Avoid_: Terverifikasi (that is the Pengulas badge), verified, approved
 
 ## Ulasan
 
@@ -120,8 +161,16 @@ The two or three interest types assigned to a Jurusan.
 _Avoid_: Tag, kategori
 
 **Rekomendasi Jurusan**:
-The Jurusan ranked by how well their Kode RIASEC match a Profil RIASEC.
+The Jurusan ranked by how well their Kode RIASEC match a Profil RIASEC. It recommends Jurusan only, never a Prodi or Kampus.
 _Avoid_: Hasil, saran jurusan
+
+**Profil Minat**:
+A Profil RIASEC saved to an account, with the date the Tes Minat was taken. An account keeps every Profil Minat it has saved.
+_Avoid_: Hasil tersimpan, profil kepribadian
+
+**Perbandingan**:
+A side-by-side view of 2–3 Prodi showing their facts and Ulasan scores, with no verdict on which is better.
+_Avoid_: Kelebihan dan kekurangan, pros and cons, ranking
 
 ## People
 
