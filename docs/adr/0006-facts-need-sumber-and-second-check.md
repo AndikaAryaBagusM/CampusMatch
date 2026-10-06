@@ -4,6 +4,10 @@ Tuition, admission and scholarship facts (Biaya, Jalur Masuk, Beasiswa) are copi
 
 Facts belong to a Kampus or Prodi, not to the Daftar Kampus Unggulan: Unggulan only decides which Kampus are collected first ([ADR 0003](./0003-catalogue-snapshot-from-official-exports.md) still holds). A fact is stored at Prodi level only when the Kampus publishes it per Prodi; a Kampus-wide figure is never copied down to each Prodi. Facts are refreshed once a year (February–June, following the SNPMB calendar) and never deleted: a new Tahun Akademik adds rows, and pages label facts from an older Tahun Akademik as possibly out of date.
 
+## Withdrawing a shown fact (Ditarik)
+
+Any single Moderator can withdraw (*tarik*) Diperiksa facts, chosen rows or a whole Sumber, with a required reason. Unlike Diperiksa this needs no second person: taking a wrong fee down must be quick, and withdrawing never shows students a new number. A Ditarik fact is no longer shown but stays in the database with who withdrew it, when and why. Withdrawing a Jalur Masuk also withdraws the Diperiksa Biaya attached to it. Uniqueness rules ignore Ditarik facts, so the correction is imported as a new Sumber under the same name; until it is Diperiksa, an older Tahun Akademik (if any) shows again with its "mungkin sudah berubah" label.
+
 ## Considered Options
 
 - **Our own archived copy in Vercel Blob**: more reliable than Wayback, but it needs storage and an upload feature, which [decisions.md](../decisions.md) 10f keeps out. If Wayback cannot capture a page, the Sumber is marked "tanpa arsip" and the checking Moderator records why it was accepted anyway.
