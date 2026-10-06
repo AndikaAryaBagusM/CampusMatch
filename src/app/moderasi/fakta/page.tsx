@@ -5,10 +5,10 @@ import { withDb } from "@/db";
 import { EmptyState } from "@/components/empty-state";
 import { TabModerasiNav } from "@/components/moderasi/tab-moderasi";
 import { kontainer, Panel } from "@/components/panel";
-import { hitungSumberDraf, listSumberDiperiksa, listSumberDraf } from "@/lib/fakta/periksa";
+import { listSumberDiperiksa, listSumberDraf } from "@/lib/fakta/periksa";
+import { hitungTabModerasi } from "@/lib/moderasi-tab";
 import { formatWaktu } from "@/lib/format";
 import { requireModerator } from "@/lib/moderator";
-import { hitungAntrean } from "@/lib/ulasan/moderasi";
 import { param } from "@/lib/url";
 
 export const metadata: Metadata = {
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 export default async function FaktaPage(props: PageProps<"/moderasi/fakta">) {
   const moderator = await requireModerator();
   const cari = (param((await props.searchParams).cari) ?? "").slice(0, 100);
-  const [jumlah, jumlahFakta, { draf, dikembalikan }, diperiksa] = await withDb((db) =>
-    Promise.all([hitungAntrean(db), hitungSumberDraf(db), listSumberDraf(db), listSumberDiperiksa(db, cari)]),
+  const [jumlah, { draf, dikembalikan }, diperiksa] = await withDb((db) =>
+    Promise.all([hitungTabModerasi(db), listSumberDraf(db), listSumberDiperiksa(db, cari)]),
   );
   const email = moderator.email.toLowerCase();
 
@@ -33,7 +33,7 @@ export default async function FaktaPage(props: PageProps<"/moderasi/fakta">) {
           sendiri harus diperiksa Moderator lain.
         </p>
       </div>
-      <TabModerasiNav jumlah={{ ...jumlah, fakta: jumlahFakta }} aktif="fakta" />
+      <TabModerasiNav jumlah={jumlah} aktif="fakta" />
 
       {draf.length === 0 ? (
         <Panel>

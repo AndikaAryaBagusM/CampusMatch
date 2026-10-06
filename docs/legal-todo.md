@@ -7,7 +7,7 @@ None of the four items below is finished. All four must be done before public la
 | # | Item | Status |
 |---|---|---|
 | 1 | **Privacy policy** (Kebijakan Privasi): what we collect, why, how long we keep it, and who processes it | ◐ Draft at `/privasi`; lawyer review needed. Covers the account (email, name, Google profile picture URL, Google account id and tokens), the Ulasan, Status Pengulas, tahun masuk, Laporan, and the hashed IP. The Profil Minat and the stored 18+ declaration were added on 2026-10-06 ([ADR 0008](./adr/0008-adult-only-accounts.md)). Campus email must be added when it ships. |
-| 2 | **Terms of use** (Ketentuan Layanan): Ulasan content rules, the licence Pengulas grant us over their Ulasan, disclaimers | ◐ Draft at `/ketentuan`; lawyer review needed. The Biaya & Masuk disclaimer is section 9 (added 2026-10-06). Promosi labelling and Tes Minat disclaimers must be added when those features ship. |
+| 2 | **Terms of use** (Ketentuan Layanan): Ulasan content rules, the licence Pengulas grant us over their Ulasan, disclaimers | ◐ Draft at `/ketentuan`; lawyer review needed. The Biaya & Masuk disclaimer is section 9 (added 2026-10-06). Promosi is section 10 (added 2026-10-06, [ADR 0009](./adr/0009-promosi-never-touches-reviews-or-order.md)). Tes Minat disclaimers must be added before it launches. |
 | 3 | **Kampus takedown/dispute process**: how a Kampus or a named person contests an Ulasan, the contact channel, response time, who decides, and what is recorded | ◐ Described in `/ketentuan` section 7 (email to `KONTAK_EMAIL`; a Moderator decides; decisions are recorded in `riwayat_moderasi`). No response time is promised yet. |
 | 4 | **UU PDP (UU No. 27/2022) obligations**: lawful basis and consent; data-subject rights; breach notification; processor agreements and cross-border transfer | ◐ Rights and the request channel are listed in `/privasi` sections 7–8. Still open: see the questions below. |
 
@@ -23,5 +23,7 @@ None of the four items below is finished. All four must be done before public la
 8. **Breach notification.** `/privasi` section 9 commits to notifying affected people and the authority as UU PDP requires. Confirm the wording and the internal procedure.
 9. **Account suspension.** `/ketentuan` section 5 reserves the right to disable accounts that keep breaking the rules. The app has no such switch yet.
 10. **Tes Minat validation.** The O*NET Tools Developer License requires a Validation Study for the translated Interest Profiler ([ADR 0004](./adr/0004-riasec-via-onet-interest-profiler.md)). Confirm what the study must cover for an Indonesian adaptation, and whether the "belum divalidasi" notice on the pages is acceptable meanwhile. This blocks launching the Tes Minat.
+
+11. **Promosi disclosure.** Paid Kampus placements are labelled "Promosi" with the line "Promosi berbayar dari Kampus…" and explained in `/ketentuan` section 10. Confirm this meets Indonesian advertising and consumer-protection rules (e.g. UU Perlindungan Konsumen, Etika Pariwara Indonesia), and what the contract with a Kampus must say about the text it supplies.
 
 Related: the O*NET attribution requirement for the Tes Minat is recorded in [ADR 0004](./adr/0004-riasec-via-onet-interest-profiler.md).

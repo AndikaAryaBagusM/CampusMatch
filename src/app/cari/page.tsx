@@ -9,7 +9,9 @@ import { kontainer, Panel } from "@/components/panel";
 import { SearchForm } from "@/components/search-form";
 import { JurusanResult, KampusResult, ProdiResult } from "@/components/search/result-row";
 import { TabNav } from "@/components/tab-nav";
+import { KotakPromosi } from "@/components/promosi/kotak-promosi";
 import { getInfoKatalog } from "@/lib/katalog";
+import { pilihPromosi } from "@/lib/promosi";
 import { MIN_QUERY_LENGTH, normalizeQuery, searchKatalog, SEARCH_TYPES, type SearchType } from "@/lib/search";
 import { hrefWith, param, parseHalaman } from "@/lib/url";
 
@@ -56,6 +58,12 @@ export default async function CariPage(props: PageProps<"/cari">) {
         ]),
       )
     : [null, null];
+
+  // A Promosi for a Jurusan the query matches, shown above the results and
+  // never among them (ADR 0009).
+  const promosi = hasil?.jurusan.length
+    ? await withDb((db) => pilihPromosi(db, { tempat: "jurusan", jurusanIds: hasil.jurusan.map((j) => j.id) }))
+    : null;
 
   const tampil = tipe === "semua" ? PRATINJAU : PER_HALAMAN;
   const kosong = hasil && hasil.jurusan.length + hasil.kampus.length + hasil.prodi.length === 0;
@@ -125,6 +133,7 @@ export default async function CariPage(props: PageProps<"/cari">) {
             </Panel>
           ) : hasil ? (
             <>
+              {promosi ? <KotakPromosi promosi={promosi} /> : null}
               <Bagian
                 judul="Jurusan"
                 tampil={tipe === "semua" || tipe === "jurusan"}

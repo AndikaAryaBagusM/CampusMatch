@@ -15,11 +15,13 @@ import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Paging } from "@/components/paging";
 import { kontainer, Panel } from "@/components/panel";
 import { TombolBandingkan } from "@/components/perbandingan/tombol-bandingkan";
+import { KotakPromosi } from "@/components/promosi/kotak-promosi";
 import { BintangTampil } from "@/components/ulasan/bintang-tampil";
 import { formatRupiah } from "@/lib/fakta/label";
 import { formatTahunAkademik } from "@/lib/fakta/tahun-akademik";
 import { formatAngka } from "@/lib/format";
 import { namaKota } from "@/lib/kota";
+import { pilihPromosi } from "@/lib/promosi";
 import { countJurusanPerJenjang, getInfoKatalog, getJurusan, parseJenjang } from "@/lib/katalog";
 import {
   countJurusanPerKota,
@@ -54,7 +56,10 @@ const load = cache((slug: string, kunci: string) =>
       listProdiJurusan(db, slug, { ...p, limit: PER_HALAMAN, offset: (p.halaman - 1) * PER_HALAMAN }),
       getInfoKatalog(db),
     ]);
-    return jurusan ? { jurusan, perJenjang, perKota, semua, tersaring, prodi, info } : null;
+    if (!jurusan) return null;
+    // Never inside the list: the slot sits above it and leaves its order alone (ADR 0009).
+    const promosi = await pilihPromosi(db, { tempat: "jurusan", jurusanIds: [jurusan.id] });
+    return { jurusan, perJenjang, perKota, semua, tersaring, prodi, info, promosi };
   }),
 );
 
@@ -156,7 +161,7 @@ function BarisProdi({ p }: { p: ProdiJurusan }) {
 export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
   const { slug, pilihan, data } = await resolve(props);
   if (!data) notFound();
-  const { jurusan, perJenjang, perKota, semua, tersaring, prodi, info } = data;
+  const { jurusan, perJenjang, perKota, semua, tersaring, prodi, info, promosi } = data;
   const { jenjang, unggulanOnly, kotaSlug, uktJuta, urut, halaman } = pilihan;
 
   const base = `/jurusan/${slug}`;
@@ -202,6 +207,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
       ) : (
         <div className="mt-6 space-y-4">
           <h2 className="text-xl font-medium">Prodi {jurusan.nama} di setiap Kampus</h2>
+          {promosi ? <KotakPromosi promosi={promosi} /> : null}
           <FilterBar>
             <FilterChips
               label="Jenjang"
