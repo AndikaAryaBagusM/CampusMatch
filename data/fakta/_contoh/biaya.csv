@@ -1,0 +1,7 @@
+tahun_akademik,jenis,prodi,jenjang,prodi_slug,jalur,label,jumlah,batas,periode
+2026/2027,ukt,Teknologi Informasi,S1,,,Kelompok I,500.000,,
+2026/2027,ukt,Teknologi Informasi,S1,,,Kelompok II,1.000.000,,
+2026/2027,ukt,Teknologi Informasi,S1,,Ujian Mandiri,Mandiri,12.500.000,,
+2026/2027,uang_pangkal,,,,Ujian Mandiri,,25.000.000,minimal,
+2026/2027,pendaftaran,,,,Ujian Mandiri,,300.000,,
+2026/2027,lain,,,,,Jaket almamater,350.000,,sekali
