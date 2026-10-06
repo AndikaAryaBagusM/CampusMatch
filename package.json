@@ -17,6 +17,8 @@
     "catalogue:load-jurusan": "tsx scripts/load-jurusan.ts",
     "catalogue:check": "tsx scripts/check-catalogue.ts",
     "fakta:import": "tsx scripts/import-fakta.ts",
+    "riasec:propose": "tsx scripts/propose-riasec.ts",
+    "riasec:load": "tsx scripts/load-riasec.ts",
     "test": "vitest run"
   },
   "engines": {

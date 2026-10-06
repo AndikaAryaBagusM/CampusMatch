@@ -1,0 +1,373 @@
+﻿jurusan,kode,usulan,rata_R,rata_I,rata_A,rata_S,rata_E,rata_C,onet
+Administrasi Bisnis,ECI,ECI,1.79,3.91,1.46,3.10,5.90,5.70,11-1021.00 General and Operations Managers; 13-1111.00 Management Analysts
+Administrasi Kesehatan,ECS,ECS,2.05,3.75,1.45,4.40,5.95,5.17,11-9111.00 Medical and Health Services Managers
+Administrasi Keuangan,CEI,CEI,1.18,3.09,1.59,2.65,5.96,6.28,11-3031.00 Financial Managers; 13-2031.00 Budget Analysts
+Administrasi Pemerintahan,CEI,CEI,1.40,3.78,1.37,3.28,5.64,6.16,11-3012.00 Administrative Services Managers; 13-1111.00 Management Analysts
+Administrasi Pendidikan,SEC,SEC,1.31,3.06,2.84,5.72,5.34,4.68,"11-9032.00 Education Administrators, Kindergarten through Secondary"
+Administrasi Perkantoran,CES,CES,1.70,1.75,1.06,3.68,5.32,6.61,"43-6014.00 Secretaries and Administrative Assistants, Except Legal, Medical, and Executive; 11-3012.00 Administrative Services Managers"
+Administrasi Perkantoran Digital,CES,CES,1.87,2.63,1.41,2.95,3.56,6.85,"43-6014.00 Secretaries and Administrative Assistants, Except Legal, Medical, and Executive; 15-1299.03 Document Management Specialists"
+Administrasi Publik,CEI,CEI,1.26,4.76,2.20,3.33,4.96,5.28,11-3012.00 Administrative Services Managers; 13-1111.00 Management Analysts; 19-3094.00 Political Scientists
+Administrasi Rumah Sakit,CES,CES,2.17,3.39,1.23,4.27,4.56,5.92,11-9111.00 Medical and Health Services Managers; 43-6013.00 Medical Secretaries and Administrative Assistants
+Agribisnis,ERC,ERC,4.86,2.30,1.07,2.19,5.22,4.67,"11-9013.00 Farmers, Ranchers, and Other Agricultural Managers; 13-1021.00 Buyers and Purchasing Agents, Farm Products"
+Agribisnis K. Mataram,ERC,ERC,4.86,2.30,1.07,2.19,5.22,4.67,"11-9013.00 Farmers, Ranchers, and Other Agricultural Managers; 13-1021.00 Buyers and Purchasing Agents, Farm Products"
+Agribisnis Perikanan,ERC,ERC,5.35,2.49,1.03,2.76,5.77,4.60,"11-9013.00 Farmers, Ranchers, and Other Agricultural Managers; 45-1011.00 First-Line Supervisors of Farming, Fishing, and Forestry Workers"
+Agribisnis Unggas,RIE,RIE,5.20,4.84,1.51,2.30,3.96,3.95,"11-9013.00 Farmers, Ranchers, and Other Agricultural Managers; 19-1011.00 Animal Scientists"
+Agro Industri,CRI,CRI,4.53,4.31,1.93,2.01,4.31,4.58,19-1012.00 Food Scientists and Technologists; 11-3051.00 Industrial Production Managers
+Agroteknologi,RIC,RIC,6.63,5.64,1.56,1.57,1.85,3.84,19-1013.00 Soil and Plant Scientists; 19-4012.00 Agricultural Technicians
+Akuakultur,RIC,RIC,6.11,4.83,1.87,2.53,2.13,3.33,"45-2093.00 Farmworkers, Farm, Ranch, and Aquacultural Animals; 19-1023.00 Zoologists and Wildlife Biologists"
+Akuntansi,CEI,CEI,1.14,3.57,1.08,2.13,3.87,7.00,13-2011.00 Accountants and Auditors
+Akuntansi Syariah,CEI,CEI,1.14,3.57,1.08,2.13,3.87,7.00,13-2011.00 Accountants and Auditors
+Analis Farmasi dan Makanan,RIC,RIC,5.51,5.15,1.42,1.69,1.55,5.15,19-4031.00 Chemical Technicians; 19-4013.00 Food Science Technicians
+Analisis Kimia,IRC,IRC,5.56,6.26,1.52,1.39,1.37,5.03,19-4031.00 Chemical Technicians; 19-2031.00 Chemists
+Animasi,ARC,ARC,3.71,2.77,7.00,2.18,2.62,3.13,27-1014.00 Special Effects Artists and Animators
+Antropologi,IAR,IAR,3.99,6.84,4.21,3.67,1.63,3.19,19-3091.00 Anthropologists and Archeologists
+Aqidah dan Filsafat Islam,SIA,SIA,2.28,3.63,3.60,6.46,3.47,3.19,"25-1126.00 Philosophy and Religion Teachers, Postsecondary; 21-2011.00 Clergy"
+Arkeologi,IRC,IRC,4.83,5.03,3.68,3.16,1.57,3.89,19-3091.00 Anthropologists and Archeologists; 25-4013.00 Museum Technicians and Conservators
+Arsitektur,RCA,RCA,4.92,3.88,4.13,2.53,3.65,4.44,"17-1011.00 Architects, Except Landscape and Naval"
+Arsitektur Lanskap,RIA,RIA,5.42,4.73,4.68,2.67,3.65,3.70,17-1012.00 Landscape Architects
+Astronomi,IRC,IRC,5.07,7.00,3.28,2.71,1.87,4.04,19-2011.00 Astronomers
+Asuransi,CEI,CEI,1.32,3.14,1.03,3.05,5.07,5.95,"13-2053.00 Insurance Underwriters; 41-3021.00 Insurance Sales Agents; 13-1031.00 Claims Adjusters, Examiners, and Investigators"
+Asuransi Syariah,CEI,CEI,1.32,3.14,1.03,3.05,5.07,5.95,"13-2053.00 Insurance Underwriters; 41-3021.00 Insurance Sales Agents; 13-1031.00 Claims Adjusters, Examiners, and Investigators"
+Bachelor of Business Analytics,CIE,CIE,1.31,5.43,1.78,2.34,4.62,5.92,15-2051.01 Business Intelligence Analysts; 13-1111.00 Management Analysts
+Bahasa dan Kebudayaan Korea,CAS,CAS,1.89,3.19,4.28,3.48,1.90,4.79,27-3091.00 Interpreters and Translators
+Bahasa dan Sastra Arab,ACE,ACE,1.44,3.22,5.48,3.17,3.33,4.06,27-3091.00 Interpreters and Translators; 27-3043.00 Writers and Authors
+Bahasa Mandarin,CAS,CAS,1.89,3.19,4.28,3.48,1.90,4.79,27-3091.00 Interpreters and Translators
+Bimbingan Dan Konseling,SCE,SCE,1.00,3.30,3.13,7.00,3.92,4.09,"21-1012.00 Educational, Guidance, and Career Counselors and Advisors"
+Bimbingan dan Konseling Islam,SIC,SIC,1.16,3.86,3.10,6.90,3.44,3.76,"21-1012.00 Educational, Guidance, and Career Counselors and Advisors; 21-1014.00 Mental Health Counselors"
+Bimbingan dan Konseling Kristen,SEC,SEC,1.55,2.71,3.29,6.46,4.05,3.49,"21-1012.00 Educational, Guidance, and Career Counselors and Advisors; 21-2011.00 Clergy"
+Bimbingan Penyuluhan Islam,SEC,SEC,1.00,3.01,3.26,7.00,5.04,3.63,"21-1012.00 Educational, Guidance, and Career Counselors and Advisors; 21-2021.00 Directors, Religious Activities and Education"
+Bioinformatika,ICR,ICR,3.81,6.71,2.05,1.67,1.13,5.54,19-1029.01 Bioinformatics Scientists; 15-2099.01 Bioinformatics Technicians
+Biokimia,IRC,IRC,5.11,7.00,2.61,2.15,1.83,3.64,19-1021.00 Biochemists and Biophysicists
+Biologi,ICR,ICR,4.11,7.00,2.40,2.62,2.76,4.45,19-1029.04 Biologists
+Bioteknologi,IRC,IRC,5.07,6.83,2.28,2.21,2.21,4.37,19-1029.02 Molecular and Cellular Biologists; 19-1021.00 Biochemists and Biophysicists
+Bisnis dan Manajemen Buddha,ECI,ECI,1.79,3.91,1.46,3.10,5.90,5.70,11-1021.00 General and Operations Managers; 13-1111.00 Management Analysts
+Bisnis Digital,CEI,CEI,2.00,3.42,3.20,2.43,4.82,5.02,13-1161.01 Search Marketing Strategists; 13-1199.06 Online Merchants; 15-1255.00 Web and Digital Interface Designers
+Bisnis Internasional,ECI,ECI,1.29,3.14,1.96,2.92,6.26,5.08,13-1161.00 Market Research Analysts and Marketing Specialists; 11-2022.00 Sales Managers
+Bisnis Jasa,ECS,ECS,1.64,2.16,1.37,3.57,6.87,5.21,"11-1021.00 General and Operations Managers; 41-3091.00 Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel"
+Bisnis Kreatif,ECA,ECA,2.58,2.53,4.14,3.13,6.12,4.47,11-1021.00 General and Operations Managers; 27-1011.00 Art Directors
+Bisnis Maritim,CER,CER,3.56,2.62,1.00,2.12,4.97,5.67,"11-3071.00 Transportation, Storage, and Distribution Managers; 43-5011.01 Freight Forwarders"
+Bisnis Properti,ECS,ECS,3.00,1.82,1.35,3.22,6.58,5.51,"41-9021.00 Real Estate Brokers; 11-9141.00 Property, Real Estate, and Community Association Managers"
+Demografi dan Pencatatan Sipil,CIE,CIE,1.93,4.87,1.73,2.52,3.03,5.81,"15-2041.00 Statisticians; 19-3022.00 Survey Researchers; 43-4031.00 Court, Municipal, and License Clerks"
+Desain Interaktif,ACI,ACI,2.99,3.87,5.74,2.18,3.28,4.16,15-1255.00 Web and Digital Interface Designers; 27-1024.00 Graphic Designers
+Desain Interior,ARC,ARC,4.12,3.07,5.56,2.68,3.70,3.82,27-1025.00 Interior Designers
+Desain Komunikasi Visual,AEC,AEC,3.17,2.78,7.00,2.52,4.34,3.76,27-1024.00 Graphic Designers; 27-1011.00 Art Directors
+Desain Mode,ARE,ARE,4.34,2.17,7.00,2.35,3.96,2.94,27-1022.00 Fashion Designers
+Desain Produk,ARI,ARI,4.62,4.06,5.54,1.84,3.70,3.47,27-1021.00 Commercial and Industrial Designers
+Ekonomi,ICE,ICE,1.35,7.00,2.43,2.40,3.93,4.53,19-3011.00 Economists
+Ekonomi Hindu,ICE,ICE,1.35,7.00,2.43,2.40,3.93,4.53,19-3011.00 Economists
+Ekonomi Pembangunan,ICE,ICE,1.35,7.00,2.43,2.40,3.93,4.53,19-3011.00 Economists
+Ekonomi Syariah,ICE,ICE,1.18,6.03,2.11,2.33,4.51,5.04,19-3011.00 Economists; 13-2051.00 Financial and Investment Analysts
+Ekowisata,SRA,SRA,3.86,3.32,3.60,5.11,3.55,3.14,19-1031.03 Park Naturalists; 39-7011.00 Tour Guides and Escorts
+Engineering Science,IRC,IRC,5.74,6.00,2.52,1.58,1.81,4.53,17-2199.07 Photonics Engineers; 19-2012.00 Physicists; 17-2141.00 Mechanical Engineers
+Etnomusikologi,AIS,AIS,3.43,4.18,5.44,3.54,2.53,2.68,27-2042.00 Musicians and Singers; 19-3091.00 Anthropologists and Archeologists
+Farmasi,ISC,ISC,2.82,5.67,1.48,4.88,2.62,4.56,29-1051.00 Pharmacists
+Film dan Televisi,AEC,AEC,3.39,2.05,5.60,2.29,3.71,3.65,"27-2012.00 Producers and Directors; 27-4031.00 Camera Operators, Television, Video, and Film; 27-4032.00 Film and Video Editors"
+Fisika,IRC,IRC,4.94,7.00,2.75,2.12,1.77,4.80,19-2012.00 Physicists
+Fisioterapi,SIR,SIR,4.33,4.87,2.17,5.91,2.49,3.07,29-1123.00 Physical Therapists
+Fotografi,RAC,RAC,5.54,2.18,5.28,1.94,2.28,3.35,27-4021.00 Photographers
+Geofisika,IRC,IRC,5.18,6.63,2.72,2.37,2.17,4.31,"19-2042.00 Geoscientists, Except Hydrologists and Geographers; 19-2021.00 Atmospheric and Space Scientists"
+Geografi,ICR,ICR,4.69,5.97,3.00,2.33,2.02,4.79,19-3092.00 Geographers; 15-1299.02 Geographic Information Systems Technologists and Technicians
+Gizi,SIE,SIE,3.03,4.80,2.40,5.50,3.42,3.35,29-1031.00 Dietitians and Nutritionists
+Higiene Gigi,SRI,SRI,5.27,4.52,1.12,5.35,1.73,4.31,29-1292.00 Dental Hygienists
+Hubungan Internasional,IAE,IAE,1.00,6.71,3.87,3.42,3.61,3.52,19-3094.00 Political Scientists
+Hubungan Masyarakat,EAS,EAS,1.00,2.53,4.18,4.06,6.41,3.92,27-3031.00 Public Relations Specialists; 11-2032.00 Public Relations Managers
+Hubungan Masyarakat K. Batang,EAS,EAS,1.00,2.53,4.18,4.06,6.41,3.92,27-3031.00 Public Relations Specialists; 11-2032.00 Public Relations Managers
+Hukum Adat,ICS,ICS,2.56,5.61,3.31,3.58,3.57,3.89,23-1011.00 Lawyers; 19-3091.00 Anthropologists and Archeologists
+Hukum Bisnis,ECI,ECI,1.12,4.38,2.40,3.48,5.51,4.59,23-1011.00 Lawyers
+Hukum Ekonomi Syariah (Muamalah),ECI,ECI,1.06,4.72,2.09,2.87,5.30,5.06,23-1011.00 Lawyers; 13-2051.00 Financial and Investment Analysts
+Hukum Keluarga Islam (Ahwal Syakhshiyyah),ECI,ECI,1.12,4.00,2.33,3.86,5.07,4.46,"23-1011.00 Lawyers; 23-1022.00 Arbitrators, Mediators, and Conciliators"
+Hukum Pidana Islam (Jinayah),ECI,ECI,1.12,4.38,2.40,3.48,5.51,4.59,23-1011.00 Lawyers
+Hukum Tatanegara (Siyasah Syar'iyyah),IEC,IEC,1.06,5.55,3.14,3.45,4.56,4.06,23-1011.00 Lawyers; 19-3094.00 Political Scientists
+Ilmu Aktuaria,CIE,CIE,1.78,4.45,1.13,2.49,3.33,6.29,15-2011.00 Actuaries
+Ilmu Al-Qur'an dan Tafsir,SIA,SIA,2.28,3.63,3.60,6.46,3.47,3.19,"25-1126.00 Philosophy and Religion Teachers, Postsecondary; 21-2011.00 Clergy"
+Ilmu Biomedis,IRC,IRC,5.04,6.58,1.78,3.03,1.87,4.35,"19-1042.00 Medical Scientists, Except Epidemiologists; 29-2011.00 Medical and Clinical Laboratory Technologists"
+Ilmu Ekonomi dan Keuangan Islam,ICE,ICE,1.18,6.03,2.11,2.33,4.51,5.04,19-3011.00 Economists; 13-2051.00 Financial and Investment Analysts
+Ilmu Falak,ISR,ISR,3.59,4.56,3.36,4.31,3.02,3.47,19-2011.00 Astronomers; 21-2011.00 Clergy
+Ilmu Filsafat,SIA,SIA,2.46,5.14,3.76,7.00,2.77,3.48,"25-1126.00 Philosophy and Religion Teachers, Postsecondary"
+Ilmu Hadis,SIA,SIA,2.28,3.63,3.60,6.46,3.47,3.19,"25-1126.00 Philosophy and Religion Teachers, Postsecondary; 21-2011.00 Clergy"
+Ilmu Hukum,ECI,ECI,1.73,4.10,2.30,3.72,5.39,4.35,"23-1011.00 Lawyers; 23-1023.00 Judges, Magistrate Judges, and Magistrates"
+Ilmu Kelautan,IRC,IRC,5.10,7.00,2.09,2.65,2.45,4.01,"19-1023.00 Zoologists and Wildlife Biologists; 19-2041.00 Environmental Scientists and Specialists, Including Health"
+Ilmu Keluarga Dan Konsumen,SIC,SIC,2.83,3.80,2.61,5.84,3.22,3.38,"25-9021.00 Farm and Home Management Educators; 21-1021.00 Child, Family, and School Social Workers"
+Ilmu Keolahragaan,SRE,SRE,4.91,3.26,2.11,5.22,3.88,3.39,29-1128.00 Exercise Physiologists; 39-9031.00 Exercise Trainers and Group Fitness Instructors; 27-2022.00 Coaches and Scouts
+Ilmu Kepolisian,RCE,RCE,4.77,3.83,1.14,3.09,4.06,4.59,33-3051.00 Police and Sheriff's Patrol Officers; 33-3021.00 Detectives and Criminal Investigators
+Ilmu Komunikasi,AEC,AEC,1.23,3.44,4.89,3.37,4.89,3.55,"27-3031.00 Public Relations Specialists; 27-3023.00 News Analysts, Reporters, and Journalists"
+Ilmu Komunikasi Hindu,ESA,ESA,1.00,2.72,4.03,5.47,5.99,3.31,"27-3031.00 Public Relations Specialists; 21-2021.00 Directors, Religious Activities and Education"
+Ilmu Lingkungan,IRC,IRC,4.76,7.00,1.87,2.75,2.56,4.32,"19-2041.00 Environmental Scientists and Specialists, Including Health"
+Ilmu Pemerintahan,IEC,IEC,1.27,5.03,3.29,3.56,4.56,3.57,19-3094.00 Political Scientists; 11-1031.00 Legislators
+Ilmu Perikanan,RIC,RIC,6.11,4.83,1.87,2.53,2.13,3.33,"19-1023.00 Zoologists and Wildlife Biologists; 45-2093.00 Farmworkers, Farm, Ranch, and Aquacultural Animals"
+Ilmu Perpustakaan,CSI,CSI,2.32,3.63,2.65,4.04,2.75,5.83,25-4022.00 Librarians and Media Collections Specialists
+Ilmu Pertanian,RIC,RIC,5.80,4.72,1.59,2.15,3.62,3.97,"19-1013.00 Soil and Plant Scientists; 11-9013.00 Farmers, Ranchers, and Other Agricultural Managers"
+Ilmu Politik,IAE,IAE,1.00,6.71,3.87,3.42,3.61,3.52,19-3094.00 Political Scientists
+Ilmu Sejarah,ICA,ICA,2.39,5.32,3.70,3.22,2.35,4.87,19-3093.00 Historians
+Ilmu Tanah,IRC,IRC,6.43,6.71,2.11,1.67,1.71,3.41,19-1013.00 Soil and Plant Scientists
+Informatika Medis,ICS,ICS,2.71,5.73,1.59,4.18,2.14,5.33,15-1211.01 Health Informatics Specialists; 29-9021.00 Health Information Technologists and Medical Registrars
+Inovasi Digital,CIE,CIE,2.14,4.84,2.23,2.32,4.43,5.18,15-1252.00 Software Developers; 15-1299.09 Information Technology Project Managers; 13-1161.00 Market Research Analysts and Marketing Specialists
+Intelijen,ICE,ICE,2.33,5.77,2.11,1.91,3.84,5.37,33-3021.06 Intelligence Analysts
+Jurnalistik,AIE,AIE,1.47,4.16,5.09,2.80,3.95,3.64,"27-3023.00 News Analysts, Reporters, and Journalists"
+Kajian Sastra dan Budaya,ASI,ASI,2.03,4.28,5.26,4.89,3.88,3.18,"27-3043.00 Writers and Authors; 25-1062.00 Area, Ethnic, and Cultural Studies Teachers, Postsecondary"
+Keamanan Ekonomi dan Intelijen Keuangan,CIE,CIE,2.17,5.22,1.67,1.93,4.21,5.50,"13-2099.04 Fraud Examiners, Investigators and Analysts; 33-3021.06 Intelligence Analysts"
+Keamanan Siber,CIR,CIR,3.92,5.38,1.33,1.98,2.54,5.77,15-1212.00 Information Security Analysts; 15-1299.04 Penetration Testers; 15-1299.05 Information Security Engineers
+Keamanan Sistem Informasi,CIR,CIR,3.93,5.47,1.34,1.97,2.76,6.07,15-1212.00 Information Security Analysts; 15-1299.05 Information Security Engineers
+Kearsipan,CIS,CIS,2.32,4.31,2.35,2.63,2.38,6.36,25-4011.00 Archivists; 15-1299.03 Document Management Specialists
+Kebidanan,SIR,SIR,3.61,3.90,1.92,6.00,2.84,3.33,29-9099.01 Midwives; 29-1161.00 Nurse Midwives
+Kecerdasan Buatan,ICR,ICR,3.17,6.68,2.64,1.82,2.02,5.27,15-1221.00 Computer and Information Research Scientists; 15-2051.00 Data Scientists; 15-1252.00 Software Developers
+Kedokteran,ISR,ISR,4.09,6.45,1.44,6.15,2.22,3.79,29-1215.00 Family Medicine Physicians; 29-1216.00 General Internal Medicine Physicians
+Kedokteran Gigi,IRS,IRS,5.23,5.48,1.17,4.41,2.00,3.71,"29-1021.00 Dentists, General"
+Kedokteran Hewan,RIC,RIC,5.98,5.98,1.00,3.45,1.70,3.47,29-1131.00 Veterinarians
+Kehutanan,RIC,RIC,5.24,5.09,1.61,2.59,3.47,4.18,19-1032.00 Foresters; 19-1031.00 Conservation Scientists
+Keimigrasian,CER,CER,3.39,2.64,1.00,2.60,4.29,5.27,33-3051.04 Customs and Border Protection Officers
+Keperawatan,SCI,SCI,3.46,4.71,1.34,5.57,2.38,4.75,29-1141.00 Registered Nurses
+Keperawatan Anestesiologi,SIR,SIR,4.78,5.06,1.00,5.35,1.96,4.15,29-1151.00 Nurse Anesthetists
+Kesehatan Gigi,RCS,RCS,4.88,4.04,1.06,4.86,1.54,4.87,29-1292.00 Dental Hygienists; 31-9091.00 Dental Assistants
+Kesehatan Hewan,RIC,RIC,6.71,5.26,1.00,3.02,1.00,4.56,29-2056.00 Veterinary Technologists and Technicians
+Kesehatan Lingkungan,IRC,IRC,5.30,6.30,1.55,2.34,1.96,4.63,"19-2041.00 Environmental Scientists and Specialists, Including Health; 19-4042.00 Environmental Science and Protection Technicians, Including Health"
+Kesehatan Masyarakat,ISC,ISC,2.24,6.15,2.37,5.13,2.79,3.79,19-1041.00 Epidemiologists; 21-1091.00 Health Education Specialists
+Kesejahteraan Sosial,SCE,SCE,1.49,3.06,2.42,6.47,3.28,4.07,"21-1021.00 Child, Family, and School Social Workers; 21-1093.00 Social and Human Service Assistants"
+Keselamatan dan Kesehatan Kerja,CIR,CIR,4.90,4.93,1.14,3.16,2.92,5.13,19-5011.00 Occupational Health and Safety Specialists; 19-5012.00 Occupational Health and Safety Technicians
+Keselamatan Kerja & Pencegahan Kebakaran,RIC,RIC,5.42,4.83,1.26,2.96,3.11,4.78,17-2111.02 Fire-Prevention and Protection Engineers; 19-5011.00 Occupational Health and Safety Specialists; 33-2021.00 Fire Inspectors and Investigators
+Keteknikan Pertanian,RIC,RIC,6.65,6.29,2.19,1.73,2.31,3.77,17-2021.00 Agricultural Engineers
+Keuangan dan Perbankan,CEI,CEI,1.26,3.28,1.46,2.98,5.69,5.73,13-2051.00 Financial and Investment Analysts; 13-2072.00 Loan Officers; 11-3031.00 Financial Managers
+Keuangan Negara,CEI,CEI,1.11,3.10,1.29,2.70,4.64,6.93,"13-2031.00 Budget Analysts; 13-2081.00 Tax Examiners and Collectors, and Revenue Agents"
+Kewirausahaan,ECS,ECS,2.31,1.99,1.59,2.85,6.39,5.65,11-1021.00 General and Operations Managers; 13-1199.06 Online Merchants
+Kimia,IRC,IRC,5.67,6.71,1.52,1.14,1.60,4.81,19-2031.00 Chemists
+Kimia Terapan,RIC,RIC,5.86,5.78,1.66,1.33,1.49,4.89,19-4031.00 Chemical Technicians; 17-2041.00 Chemical Engineers
+Komputerisasi Akuntansi,CIE,CIE,2.01,4.05,1.35,1.84,2.99,6.64,"13-2011.00 Accountants and Auditors; 43-3031.00 Bookkeeping, Accounting, and Auditing Clerks; 15-1211.00 Computer Systems Analysts"
+Komunikasi dan Penyiaran Islam,SEA,SEA,1.33,2.36,4.53,5.27,5.27,3.14,"27-3011.00 Broadcast Announcers and Radio Disc Jockeys; 21-2021.00 Directors, Religious Activities and Education"
+Komunikasi dan Penyiaran Khonghucu,SEA,SEA,1.33,2.36,4.53,5.27,5.27,3.14,"27-3011.00 Broadcast Announcers and Radio Disc Jockeys; 21-2021.00 Directors, Religious Activities and Education"
+Komunikasi Penerbangan,CRE,CRE,4.59,3.00,1.00,2.59,4.38,4.96,53-2021.00 Air Traffic Controllers; 53-2022.00 Airfield Operations Specialists
+Kriminologi,ICE,ICE,2.87,5.70,2.60,3.55,3.56,4.22,19-3041.00 Sociologists; 33-3021.00 Detectives and Criminal Investigators
+Kriya,ARE,ARE,5.89,1.85,5.93,1.68,2.86,2.66,27-1012.00 Craft Artists
+Laboratorium Sains,IRC,IRC,5.53,5.58,1.36,1.81,1.22,5.44,19-4021.00 Biological Technicians; 19-4031.00 Chemical Technicians
+Lalu Lintas Udara,CRE,CRE,4.55,2.45,1.00,2.68,4.29,4.99,53-2021.00 Air Traffic Controllers
+Linguistik Terapan,SAC,SAC,2.00,3.85,4.17,5.24,2.21,4.16,"27-3091.00 Interpreters and Translators; 25-1124.00 Foreign Language and Literature Teachers, Postsecondary"
+Logistik,ECI,ECI,2.87,3.14,1.05,2.19,5.63,5.35,13-1081.00 Logisticians; 11-3071.04 Supply Chain Managers
+Manajemen,ECI,ECI,1.79,3.91,1.46,3.10,5.90,5.70,11-1021.00 General and Operations Managers; 13-1111.00 Management Analysts
+Manajemen Administrasi Perkantoran,ECS,ECS,1.50,1.75,1.06,4.04,6.69,5.99,43-1011.00 First-Line Supervisors of Office and Administrative Support Workers; 11-3012.00 Administrative Services Managers
+Manajemen Bencana,ECI,ECI,3.53,4.49,1.82,4.01,5.07,4.69,11-9161.00 Emergency Management Directors
+Manajemen Dakwah,ESC,ESC,1.00,2.44,2.91,6.22,6.57,3.69,"21-2021.00 Directors, Religious Activities and Education; 11-9151.00 Social and Community Service Managers"
+Manajemen Haji dan Umrah,ECS,ECS,1.08,1.54,2.20,4.43,6.39,5.37,"41-3041.00 Travel Agents; 13-1121.00 Meeting, Convention, and Event Planners"
+Manajemen Industri Halal,CEI,CEI,2.99,3.45,1.23,2.14,5.19,5.65,11-3051.00 Industrial Production Managers; 11-3051.01 Quality Control Systems Managers; 13-1041.07 Regulatory Affairs Specialists
+Manajemen Informatika,CIE,CIE,2.93,5.24,1.55,2.18,3.42,6.16,15-1211.00 Computer Systems Analysts; 15-1242.00 Database Administrators; 11-3021.00 Computer and Information Systems Managers
+Manajemen Keamanan dan Keselamatan Publik,CIE,CIE,3.70,4.79,1.75,2.99,4.40,5.19,11-9161.00 Emergency Management Directors; 13-1199.07 Security Management Specialists
+Manajemen Logistik Industri Elektronika,ECI,ECI,2.87,3.14,1.05,2.19,5.63,5.35,13-1081.00 Logisticians; 11-3071.04 Supply Chain Managers
+Manajemen Pelabuhan dan Pelayaran,CER,CER,4.12,2.27,1.00,2.14,5.01,5.54,"11-3071.00 Transportation, Storage, and Distribution Managers; 43-5011.00 Cargo and Freight Agents; 53-5021.00 Captains, Mates, and Pilots of Water Vessels"
+Manajemen Pemasaran Internasional,ECI,ECI,1.04,3.75,2.51,2.65,6.26,4.66,11-2021.00 Marketing Managers; 13-1161.00 Market Research Analysts and Marketing Specialists
+Manajemen Pendidikan Islam,SEC,SEC,1.31,3.06,2.84,5.72,5.34,4.68,"11-9032.00 Education Administrators, Kindergarten through Secondary"
+Manajemen Pertahanan,CIE,CIE,2.45,4.97,1.73,3.42,4.94,5.37,11-9161.00 Emergency Management Directors; 13-1111.00 Management Analysts
+Manajemen Sumber Daya Perairan,IRC,IRC,5.15,6.11,1.71,2.36,2.91,4.24,11-9121.02 Water Resource Specialists; 19-2043.00 Hydrologists
+Manajemen Syariah,ECI,ECI,1.79,3.91,1.46,3.10,5.90,5.70,11-1021.00 General and Operations Managers; 13-1111.00 Management Analysts
+Manajemen Zakat dan Wakaf,ESC,ESC,1.00,2.09,2.83,4.83,6.50,4.14,11-9151.00 Social and Community Service Managers; 13-1131.00 Fundraisers
+Masase,SRI,SRI,4.84,3.79,2.23,5.75,2.10,2.66,31-9011.00 Massage Therapists
+Matematika,ICA,ICA,3.22,7.00,3.23,1.95,1.11,5.03,15-2021.00 Mathematicians
+Mekanisasi Perikanan,RIC,RIC,6.83,4.58,1.60,1.37,1.96,3.83,17-2021.00 Agricultural Engineers; 49-3051.00 Motorboat Mechanics and Service Technicians
+Meteorologi,IRC,IRC,4.77,6.26,2.72,2.49,2.68,4.45,19-2021.00 Atmospheric and Space Scientists
+Mikrobiologi,IRC,IRC,5.29,7.00,1.92,1.98,1.07,3.85,19-1022.00 Microbiologists
+Multi Media,ACI,ACI,3.15,3.19,5.70,2.11,2.94,3.76,27-1014.00 Special Effects Artists and Animators; 27-4032.00 Film and Video Editors; 15-1255.00 Web and Digital Interface Designers
+Multimedia,ACI,ACI,3.15,3.19,5.70,2.11,2.94,3.76,27-1014.00 Special Effects Artists and Animators; 27-4032.00 Film and Video Editors; 15-1255.00 Web and Digital Interface Designers
+Nautika,RCE,RCE,5.61,2.64,1.00,1.88,4.22,4.56,"53-5021.00 Captains, Mates, and Pilots of Water Vessels"
+Okupasi Terapi,SIR,SIR,3.57,4.23,3.07,6.08,1.83,3.12,29-1122.00 Occupational Therapists
+Optometri,CRS,CRS,4.57,4.03,1.51,4.04,2.80,4.68,"29-1041.00 Optometrists; 29-2081.00 Opticians, Dispensing"
+Ortotik dan Prostetik,RIS,RIS,6.00,5.10,1.99,4.30,1.56,3.58,29-2091.00 Orthotists and Prosthetists
+Pariwisata,ECS,ECS,2.10,1.65,1.93,4.49,5.53,5.10,39-7012.00 Travel Guides; 41-3041.00 Travel Agents; 11-9081.00 Lodging Managers
+Pemasyarakatan,SCR,SCR,3.84,2.57,1.60,4.71,3.54,4.49,33-3012.00 Correctional Officers and Jailers; 21-1092.00 Probation Officers and Correctional Treatment Specialists
+Pembangunan Pertanian,REC,REC,4.56,3.51,1.69,3.73,4.51,3.86,"25-9021.00 Farm and Home Management Educators; 11-9013.00 Farmers, Ranchers, and Other Agricultural Managers"
+Pemikiran Politik Islam,ISA,ISA,1.73,5.93,3.82,5.21,3.19,3.50,"19-3094.00 Political Scientists; 25-1126.00 Philosophy and Religion Teachers, Postsecondary"
+Pendidikan Administrasi Perkantoran,CSE,CSE,2.42,2.38,2.23,5.31,3.35,5.44,"25-2032.00 Career/Technical Education Teachers, Secondary School; 43-6014.00 Secretaries and Administrative Assistants, Except Legal, Medical, and Executive"
+Pendidikan Agama Buddha,SEA,SEA,1.87,2.95,3.58,7.00,4.53,3.39,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 21-2021.00 Directors, Religious Activities and Education"
+Pendidikan Agama Hindu,SEA,SEA,1.87,2.95,3.58,7.00,4.53,3.39,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 21-2021.00 Directors, Religious Activities and Education"
+Pendidikan Agama Islam,SEA,SEA,1.87,2.95,3.58,7.00,4.53,3.39,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 21-2021.00 Directors, Religious Activities and Education"
+Pendidikan Agama Katolik,SEA,SEA,1.87,2.95,3.58,7.00,4.53,3.39,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 21-2021.00 Directors, Religious Activities and Education"
+Pendidikan Agama Khonghucu,SEA,SEA,1.87,2.95,3.58,7.00,4.53,3.39,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 21-2021.00 Directors, Religious Activities and Education"
+Pendidikan Agama Kristen,SEA,SEA,1.87,2.95,3.58,7.00,4.53,3.39,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 21-2021.00 Directors, Religious Activities and Education"
+Pendidikan Akuntansi,CSE,CSE,1.94,3.38,2.42,4.56,3.39,5.31,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 13-2011.00 Accountants and Auditors"
+Pendidikan Antropologi,SIA,SIA,3.36,5.01,3.99,5.34,2.26,3.40,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 19-3091.00 Anthropologists and Archeologists"
+Pendidikan Bahasa Arab,SCA,SCA,2.31,3.19,4.03,5.24,2.40,4.20,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-3091.00 Interpreters and Translators"
+Pendidikan Bahasa dan Sastra Daerah,ASE,ASE,1.87,3.22,5.23,4.93,3.83,3.47,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-3043.00 Writers and Authors"
+Pendidikan Bahasa dan Sastra Indonesia,ASE,ASE,1.87,3.22,5.23,4.93,3.83,3.47,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-3043.00 Writers and Authors"
+Pendidikan Bahasa Inggris,SAC,SAC,2.53,3.17,3.84,7.00,2.88,3.50,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 25-3011.00 Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors"
+Pendidikan Bahasa Jepang,SCA,SCA,2.31,3.19,4.03,5.24,2.40,4.20,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-3091.00 Interpreters and Translators"
+Pendidikan Bahasa Jerman,SCA,SCA,2.31,3.19,4.03,5.24,2.40,4.20,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-3091.00 Interpreters and Translators"
+Pendidikan Bahasa Korea,SCA,SCA,2.31,3.19,4.03,5.24,2.40,4.20,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-3091.00 Interpreters and Translators"
+Pendidikan Bahasa Mandarin,SCA,SCA,2.31,3.19,4.03,5.24,2.40,4.20,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-3091.00 Interpreters and Translators"
+Pendidikan Bahasa Perancis,SCA,SCA,2.31,3.19,4.03,5.24,2.40,4.20,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-3091.00 Interpreters and Translators"
+Pendidikan Biologi,ISC,ISC,3.42,5.10,3.09,4.81,2.83,4.03,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 19-1029.04 Biologists"
+Pendidikan Ekonomi,ISC,ISC,2.04,5.10,3.10,4.70,3.42,4.07,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 19-3011.00 Economists"
+Pendidikan Fisika,ISC,ISC,3.84,5.10,3.26,4.56,2.34,4.21,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 19-2012.00 Physicists"
+Pendidikan Geografi,ISR,ISR,3.92,4.97,3.73,4.86,2.50,3.65,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 19-3092.00 Geographers"
+Pendidikan Guru Madrasah Ibtidaiyah,SAC,SAC,2.64,3.35,3.87,7.00,2.57,3.78,"25-2021.00 Elementary School Teachers, Except Special Education"
+Pendidikan Guru Pendidikan Anak Usia Dini,SAC,SAC,2.81,2.93,3.99,7.00,2.49,3.71,"25-2011.00 Preschool Teachers, Except Special Education; 25-2012.00 Kindergarten Teachers, Except Special Education"
+Pendidikan Guru Sekolah Dasar,SAC,SAC,2.64,3.35,3.87,7.00,2.57,3.78,"25-2021.00 Elementary School Teachers, Except Special Education"
+Pendidikan Ilmu Pengetahuan Alam,ISC,ISC,3.35,5.16,3.25,4.81,2.71,4.01,"25-2022.00 Middle School Teachers, Except Special and Career/Technical Education; 19-1029.04 Biologists"
+Pendidikan Ilmu Pengetahuan Sosial,SIA,SIA,2.08,4.91,4.05,5.68,2.87,3.58,"25-2022.00 Middle School Teachers, Except Special and Career/Technical Education; 19-3041.00 Sociologists"
+Pendidikan IPA,ISC,ISC,3.35,5.16,3.25,4.81,2.71,4.01,"25-2022.00 Middle School Teachers, Except Special and Career/Technical Education; 19-1029.04 Biologists"
+Pendidikan Islam Anak Usia Dini,SAC,SAC,2.94,2.76,3.98,7.00,2.49,3.61,"25-2011.00 Preschool Teachers, Except Special Education"
+"Pendidikan Jasmani, Kesehatan dan Rekreasi",SRE,SRE,4.07,2.68,2.87,5.98,3.85,3.35,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-2022.00 Coaches and Scouts; 39-9031.00 Exercise Trainers and Group Fitness Instructors"
+Pendidikan Kepelatihan Olahraga,SRE,SRE,4.74,2.43,2.42,5.47,4.33,3.22,27-2022.00 Coaches and Scouts; 39-9031.00 Exercise Trainers and Group Fitness Instructors
+Pendidikan Kepercayaan Terhadap Tuhan Yang Maha Esa,SEA,SEA,1.87,2.95,3.58,7.00,4.53,3.39,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 21-2021.00 Directors, Religious Activities and Education"
+Pendidikan Kesejahteraan Keluarga,SIC,SIC,3.35,3.74,3.04,5.92,3.20,3.40,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 25-9021.00 Farm and Home Management Educators"
+Pendidikan Kimia,ICR,ICR,4.20,4.95,2.65,4.07,2.25,4.21,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 19-2031.00 Chemists"
+Pendidikan Kriya,ASR,ASR,4.31,2.52,4.85,4.34,2.88,3.14,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-1012.00 Craft Artists"
+Pendidikan Luar Biasa,SIA,SIA,2.33,3.88,3.71,7.00,1.85,3.50,"25-2056.00 Special Education Teachers, Elementary School; 25-2058.00 Special Education Teachers, Secondary School"
+Pendidikan Luar Sekolah,SAC,SAC,2.42,3.06,4.05,7.00,3.03,3.23,"25-3011.00 Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors; 25-3021.00 Self-Enrichment Teachers"
+Pendidikan Matematika,ISC,ISC,2.98,5.10,3.50,4.47,2.01,4.32,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 15-2021.00 Mathematicians"
+Pendidikan Musik,ASE,ASE,2.80,2.36,5.22,5.21,3.16,2.89,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-2042.00 Musicians and Singers"
+Pendidikan Pancasila Dan Kewarganegaraan,SIA,SIA,1.87,4.95,3.82,5.21,3.26,3.57,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 19-3094.00 Political Scientists"
+Pendidikan Penyuluh Agama,SEC,SEC,1.14,2.76,2.67,6.55,4.89,3.87,"21-2021.00 Directors, Religious Activities and Education; 21-1093.00 Social and Human Service Assistants"
+Pendidikan Sejarah,SIC,SIC,2.56,4.26,3.74,5.11,2.63,4.24,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 19-3093.00 Historians"
+Pendidikan Seni dan Keagamaan,SEA,SEA,1.87,2.95,3.58,7.00,4.53,3.39,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 21-2021.00 Directors, Religious Activities and Education"
+"Pendidikan Seni Drama, Tari dan Musik",ASE,ASE,3.28,2.26,5.72,4.91,3.36,2.34,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-2011.00 Actors; 27-2031.00 Dancers"
+Pendidikan Seni Keagamaan,ASE,ASE,2.80,2.36,5.22,5.21,3.16,2.89,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-2042.00 Musicians and Singers"
+Pendidikan Seni Rupa,ASR,ASR,3.39,2.94,5.39,4.64,2.64,2.97,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-1013.00 Fine Artists, Including Painters, Sculptors, and Illustrators"
+Pendidikan Sosiologi,SIA,SIA,2.15,4.85,3.88,5.68,2.99,3.61,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 19-3041.00 Sociologists"
+Pendidikan Tari,SAR,SAR,3.78,2.31,5.08,5.33,3.04,2.61,"25-2031.00 Secondary School Teachers, Except Special and Career/Technical Education; 27-2031.00 Dancers"
+Pendidikan Tata Boga,SCR,SCR,3.85,2.53,3.09,4.97,3.83,4.14,"25-2032.00 Career/Technical Education Teachers, Secondary School; 35-1011.00 Chefs and Head Cooks"
+Pendidikan Tata Busana,ASR,ASR,3.60,2.78,5.23,4.68,3.24,3.43,"25-2032.00 Career/Technical Education Teachers, Secondary School; 27-1022.00 Fashion Designers"
+Pendidikan Tata Rias,SRC,SRC,4.13,2.46,3.35,5.36,2.89,3.92,"25-2032.00 Career/Technical Education Teachers, Secondary School; 39-5012.00 Hairdressers, Hairstylists, and Cosmetologists"
+Pendidikan Teknik Bangunan,CIR,CIR,4.31,4.38,3.17,4.28,2.26,4.60,"25-2032.00 Career/Technical Education Teachers, Secondary School; 17-3022.00 Civil Engineering Technologists and Technicians"
+Pendidikan Teknik Elektro,RCS,RCS,4.56,4.29,2.61,4.39,1.92,4.46,"25-2032.00 Career/Technical Education Teachers, Secondary School; 17-3023.00 Electrical and Electronic Engineering Technologists and Technicians"
+Pendidikan Teknik Elektronika,RCS,RCS,4.56,4.29,2.61,4.39,1.92,4.46,"25-2032.00 Career/Technical Education Teachers, Secondary School; 17-3023.00 Electrical and Electronic Engineering Technologists and Technicians"
+Pendidikan Teknik Mesin,RIC,RIC,4.56,4.38,2.83,4.10,1.80,4.34,"25-2032.00 Career/Technical Education Teachers, Secondary School; 17-3027.00 Mechanical Engineering Technologists and Technicians"
+Pendidikan Teknik Otomotif,RSC,RSC,4.93,3.48,2.23,4.22,2.06,4.12,"25-2032.00 Career/Technical Education Teachers, Secondary School; 49-3023.00 Automotive Service Technicians and Mechanics"
+Pendidikan Teknologi Agroindustri,SIR,SIR,3.96,4.55,2.96,4.58,2.55,3.94,"25-2032.00 Career/Technical Education Teachers, Secondary School; 19-1012.00 Food Scientists and Technologists"
+Pendidikan Teknologi Informasi,CIS,CIS,3.07,4.89,2.72,4.46,2.38,4.93,"25-2032.00 Career/Technical Education Teachers, Secondary School; 15-1211.00 Computer Systems Analysts"
+Pendidikan Vokasional Agribisnis,SCE,SCE,4.01,3.06,2.26,4.81,4.02,4.22,"25-2032.00 Career/Technical Education Teachers, Secondary School; 11-9013.00 Farmers, Ranchers, and Other Agricultural Managers"
+Pendidikan Vokasional Mekatronika,RCS,RCS,4.93,3.88,2.42,4.00,1.76,4.25,"25-2032.00 Career/Technical Education Teachers, Secondary School; 17-3024.00 Electro-Mechanical and Mechatronics Technologists and Technicians"
+Pendidikan Vokasional Teknik,SIC,SIC,3.31,3.77,3.31,6.81,2.32,3.61,"25-2032.00 Career/Technical Education Teachers, Secondary School; 25-1194.00 Career/Technical Education Teachers, Postsecondary"
+Pendidikan Vokasional Teknik Pertanian,IRS,IRS,4.76,4.84,2.83,4.37,2.42,3.85,"25-2032.00 Career/Technical Education Teachers, Secondary School; 17-2021.00 Agricultural Engineers"
+Penerbang,RCE,RCE,4.77,2.85,1.27,2.54,3.87,4.76,"53-2011.00 Airline Pilots, Copilots, and Flight Engineers; 53-2012.00 Commercial Pilots"
+Penerbitan,CAE,CAE,2.21,2.87,4.81,2.13,2.92,5.19,27-3041.00 Editors; 43-9031.00 Desktop Publishers
+Pengelolaan Agribisnis,ERC,ERC,4.86,2.30,1.07,2.19,5.22,4.67,"11-9013.00 Farmers, Ranchers, and Other Agricultural Managers; 13-1021.00 Buyers and Purchasing Agents, Farm Products"
+Pengelolaan Pelabuhan Perikanan,ECR,ECR,4.57,2.44,1.00,2.64,6.00,5.20,"11-3071.00 Transportation, Storage, and Distribution Managers; 45-1011.00 First-Line Supervisors of Farming, Fishing, and Forestry Workers"
+Pengelolaan Perkebunan,RCE,RCE,5.99,3.66,1.03,2.05,3.76,4.39,"11-9013.00 Farmers, Ranchers, and Other Agricultural Managers; 19-4012.00 Agricultural Technicians"
+Pengembangan Masyarakat Islam,SEC,SEC,1.14,2.49,2.19,5.76,5.29,4.39,21-1093.00 Social and Human Service Assistants; 11-9151.00 Social and Community Service Managers
+Pengembangan Produk Agroindustri,RIC,RIC,5.16,5.12,2.34,1.88,2.84,4.18,19-1012.00 Food Scientists and Technologists; 17-2112.03 Manufacturing Engineers
+Pengobatan Tradisional,ISR,ISR,4.67,5.69,1.95,5.69,1.79,3.16,29-1291.00 Acupuncturists; 29-1299.01 Naturopathic Physicians
+Pengolahan Hasil Hutan,RCI,RCI,6.16,3.43,1.19,1.75,2.40,4.26,"19-1032.00 Foresters; 51-7042.00 Woodworking Machine Setters, Operators, and Tenders, Except Sawing"
+Pengolahan Hasil Perkebunan Terpadu,RIC,RIC,5.31,5.11,1.89,1.95,2.27,4.50,19-1012.00 Food Scientists and Technologists; 19-4013.00 Food Science Technicians
+Pengolahan Limbah Industri,RCI,RCI,5.96,4.32,1.48,1.90,2.40,4.60,17-2081.00 Environmental Engineers; 51-8031.00 Water and Wastewater Treatment Plant and System Operators
+Penyiaran,AEC,AEC,2.86,2.41,4.88,2.93,4.22,3.94,27-3011.00 Broadcast Announcers and Radio Disc Jockeys; 27-2012.00 Producers and Directors; 27-4012.00 Broadcast Technicians
+Penyuluhan Pertanian,SIR,SIR,3.96,4.28,2.31,4.83,3.49,3.18,25-9021.00 Farm and Home Management Educators
+Perbandingan Madzhab,SIE,SIE,1.79,4.76,3.08,5.24,4.14,4.04,"25-1126.00 Philosophy and Religion Teachers, Postsecondary; 23-1011.00 Lawyers"
+Perbankan Syariah,CEI,CEI,1.26,3.28,1.46,2.98,5.69,5.73,13-2072.00 Loan Officers; 13-2051.00 Financial and Investment Analysts; 11-3031.00 Financial Managers
+Perencanaan Tata Ruang Wilayah Dan Kota,IEC,IEC,3.22,5.31,3.06,3.03,4.46,3.96,19-3051.00 Urban and Regional Planners
+Perencanaan Wilayah dan Kota,ICE,ICE,3.41,5.46,2.54,2.40,3.80,4.42,19-3051.00 Urban and Regional Planners; 19-3099.01 Transportation Planners
+Perhotelan,CES,CES,2.66,1.05,1.39,4.40,5.01,5.47,"11-9081.00 Lodging Managers; 43-4081.00 Hotel, Motel, and Resort Desk Clerks"
+Perikanan Tangkap,RCE,RCE,6.31,2.46,1.03,1.46,3.11,3.93,"45-3031.00 Fishing and Hunting Workers; 53-5021.00 Captains, Mates, and Pilots of Water Vessels"
+Periklanan,EAC,EAC,1.71,1.97,4.84,2.99,6.30,4.12,11-2011.00 Advertising and Promotions Managers; 41-3011.00 Advertising Sales Agents; 27-1011.00 Art Directors
+Perkeretaapian,RCI,RCI,6.29,3.74,1.38,1.67,2.00,4.51,53-4011.00 Locomotive Engineers; 49-9097.00 Signal and Track Switch Repairers; 17-2051.01 Transportation Engineers
+Permesinan Kapal,RIC,RIC,6.09,4.63,1.81,1.52,3.50,4.61,53-5031.00 Ship Engineers; 17-2121.00 Marine Engineers and Naval Architects
+Perpajakan,CES,CES,1.69,2.42,1.00,2.71,3.88,6.82,"13-2082.00 Tax Preparers; 13-2081.00 Tax Examiners and Collectors, and Revenue Agents"
+Pertanahan,CRI,CRI,3.85,3.68,1.62,1.99,2.66,6.02,"17-1022.00 Surveyors; 23-2093.00 Title Examiners, Abstractors, and Searchers"
+Peternakan,RIE,RIE,5.20,4.84,1.51,2.30,3.96,3.95,"19-1011.00 Animal Scientists; 11-9013.00 Farmers, Ranchers, and Other Agricultural Managers"
+Produksi Media,ACE,ACE,3.67,2.49,4.69,2.55,3.83,4.07,27-2012.00 Producers and Directors; 27-4011.00 Audio and Video Technicians
+Promosi Kesehatan,SIC,SIC,1.66,5.29,2.54,6.15,3.21,3.95,21-1091.00 Health Education Specialists
+Proteksi Tanaman,RIC,RIC,6.63,5.64,1.56,1.57,1.85,3.84,19-1013.00 Soil and Plant Scientists; 19-4012.00 Agricultural Technicians
+Psikologi,ISC,ISC,1.05,5.46,3.10,5.28,3.68,3.89,19-3033.00 Clinical and Counseling Psychologists; 19-3032.00 Industrial-Organizational Psychologists
+Radiologi,RCI,RCI,5.90,4.88,1.00,3.41,1.00,5.08,29-2034.00 Radiologic Technologists and Technicians
+Rekam Medis & Informasi Kesehatan,CIS,CIS,2.72,4.75,1.09,3.62,2.04,6.45,29-9021.00 Health Information Technologists and Medical Registrars; 29-2072.00 Medical Records Specialists
+Rekam Medis dan Informasi Kesehatan,CIS,CIS,2.72,4.75,1.09,3.62,2.04,6.45,29-9021.00 Health Information Technologists and Medical Registrars; 29-2072.00 Medical Records Specialists
+Rekayasa Hayati,IRC,IRC,5.24,6.71,2.03,2.36,2.21,4.79,17-2031.00 Bioengineers and Biomedical Engineers; 19-1029.02 Molecular and Cellular Biologists
+Rekayasa Kosmetik,IRC,IRC,5.97,6.23,1.66,1.08,1.73,4.68,19-2031.00 Chemists; 17-2041.00 Chemical Engineers
+Rekayasa Nanoteknologi,IRC,IRC,5.31,6.10,2.36,1.47,2.57,4.04,17-2199.09 Nanosystems Engineers
+Rekayasa Perangkat Lunak,ICR,ICR,3.71,5.90,2.03,1.67,1.72,5.65,15-1252.00 Software Developers; 15-1253.00 Software Quality Assurance Analysts and Testers
+Relasi Industri,ECS,ECS,1.29,2.71,1.61,3.80,6.33,5.08,13-1075.00 Labor Relations Specialists; 11-3121.00 Human Resources Managers
+Sains Analitik dan Instrumentasi Kimia,IRC,IRC,5.56,6.26,1.52,1.39,1.37,5.03,19-2031.00 Chemists; 19-4031.00 Chemical Technicians
+Sains Data,ICA,ICA,2.17,6.98,2.61,1.66,1.71,5.39,15-2051.00 Data Scientists
+Sains Informasi,CIR,CIR,2.59,5.67,2.41,2.54,2.23,5.72,15-1211.00 Computer Systems Analysts; 15-2051.00 Data Scientists; 25-4022.00 Librarians and Media Collections Specialists
+Sastra Belanda,ACE,ACE,1.44,3.22,5.48,3.17,3.33,4.06,27-3091.00 Interpreters and Translators; 27-3043.00 Writers and Authors
+Sastra Daerah,AEC,AEC,1.00,3.25,6.68,2.86,4.75,3.34,27-3043.00 Writers and Authors
+Sastra Indonesia,AEC,AEC,1.02,3.08,6.04,2.71,4.44,4.01,27-3043.00 Writers and Authors; 27-3041.00 Editors
+Sastra Inggris,ACE,ACE,1.44,3.22,5.48,3.17,3.33,4.06,27-3043.00 Writers and Authors; 27-3091.00 Interpreters and Translators
+Sastra Jepang,ACE,ACE,1.44,3.22,5.48,3.17,3.33,4.06,27-3091.00 Interpreters and Translators; 27-3043.00 Writers and Authors
+Sastra Jerman,ACE,ACE,1.44,3.22,5.48,3.17,3.33,4.06,27-3091.00 Interpreters and Translators; 27-3043.00 Writers and Authors
+Sastra Perancis,ACE,ACE,1.44,3.22,5.48,3.17,3.33,4.06,27-3091.00 Interpreters and Translators; 27-3043.00 Writers and Authors
+Sastra Rusia,ACE,ACE,1.44,3.22,5.48,3.17,3.33,4.06,27-3091.00 Interpreters and Translators; 27-3043.00 Writers and Authors
+Sejarah Peradaban Islam,ICA,ICA,2.39,5.32,3.70,3.22,2.35,4.87,19-3093.00 Historians
+Seni Budaya Buddha,ASE,ASE,2.53,2.70,5.19,4.64,4.27,2.75,"27-1013.00 Fine Artists, Including Painters, Sculptors, and Illustrators; 21-2021.00 Directors, Religious Activities and Education"
+Seni Karawitan,AES,AES,2.87,1.53,6.66,3.41,3.42,2.17,27-2042.00 Musicians and Singers
+Seni Musik,AES,AES,2.47,1.90,6.83,3.23,4.12,2.40,27-2042.00 Musicians and Singers; 27-2041.00 Music Directors and Composers
+Seni Pedalangan,ASE,ASE,2.58,1.85,6.83,3.75,3.71,1.99,27-2011.00 Actors; 27-2042.00 Musicians and Singers
+Seni Pertunjukan,AES,AES,2.21,2.20,6.57,3.60,4.89,2.69,27-2011.00 Actors; 27-2012.00 Producers and Directors
+Seni Rupa,ARI,ARI,4.05,2.68,7.00,2.28,2.37,2.34,"27-1013.00 Fine Artists, Including Painters, Sculptors, and Illustrators"
+Seni Tari,ARS,ARS,4.23,1.83,6.70,3.81,3.48,1.87,27-2031.00 Dancers; 27-2032.00 Choreographers
+Seni Teater,AES,AES,2.21,2.20,6.57,3.60,4.89,2.69,27-2011.00 Actors; 27-2012.00 Producers and Directors
+Sistem Informasi,CIE,CIE,2.61,5.03,1.65,2.29,3.69,5.95,15-1211.00 Computer Systems Analysts; 15-1242.00 Database Administrators; 15-1299.09 Information Technology Project Managers
+Sistem Informasi Akuntansi,CIE,CIE,2.21,4.98,1.53,2.02,3.05,6.47,15-1211.00 Computer Systems Analysts; 13-2011.00 Accountants and Auditors
+Sosiologi,ISA,ISA,1.56,6.50,3.99,4.36,3.08,3.60,19-3041.00 Sociologists
+Sosiologi Agama,ISA,ISA,2.01,5.82,3.88,5.68,2.93,3.54,"19-3041.00 Sociologists; 25-1126.00 Philosophy and Religion Teachers, Postsecondary"
+Statistika,ICR,ICR,2.14,6.58,1.77,1.71,1.82,6.03,15-2041.00 Statisticians
+Studi Agama Buddha,SIA,SIA,2.28,3.63,3.60,6.46,3.47,3.19,"25-1126.00 Philosophy and Religion Teachers, Postsecondary; 21-2011.00 Clergy"
+Studi Agama Hindu,SIA,SIA,2.28,3.63,3.60,6.46,3.47,3.19,"25-1126.00 Philosophy and Religion Teachers, Postsecondary; 21-2011.00 Clergy"
+Studi Agama-Agama,ISA,ISA,2.01,5.82,3.88,5.68,2.93,3.54,"25-1126.00 Philosophy and Religion Teachers, Postsecondary; 19-3041.00 Sociologists"
+Studi Humanitas,ICA,ICA,1.98,5.91,3.85,3.79,2.72,4.24,19-3093.00 Historians; 19-3041.00 Sociologists
+Studi Islam,SIA,SIA,2.28,3.63,3.60,6.46,3.47,3.19,"25-1126.00 Philosophy and Religion Teachers, Postsecondary; 21-2011.00 Clergy"
+Tari Sunda,ARS,ARS,4.83,1.43,6.39,3.65,3.18,1.61,27-2031.00 Dancers
+Tarjamah,CAS,CAS,1.89,3.19,4.28,3.48,1.90,4.79,27-3091.00 Interpreters and Translators
+Tasawuf dan Psikoterapi,SEI,SEI,1.71,3.26,3.25,6.35,3.57,3.16,21-1014.00 Mental Health Counselors; 21-2011.00 Clergy
+Tata Boga,ERC,ERC,4.84,1.68,2.72,2.95,5.13,4.35,35-1011.00 Chefs and Head Cooks
+Tata Kelola Seni,ECS,ECS,2.27,2.38,2.84,3.96,5.52,4.71,"13-1011.00 Agents and Business Managers of Artists, Performers, and Athletes; 11-9072.00 Entertainment and Recreation Managers, Except Gambling; 25-4012.00 Curators"
+Tata Rias dan Kecantikan,RAS,RAS,5.07,1.65,4.30,3.63,3.15,3.43,"39-5012.00 Hairdressers, Hairstylists, and Cosmetologists; 39-5091.00 Makeup Artists, Theatrical and Performance; 39-5094.00 Skincare Specialists"
+Teknik & Manajemen Pembekalan,ECI,ECI,2.87,3.14,1.05,2.19,5.63,5.35,13-1081.00 Logisticians; 11-3071.04 Supply Chain Managers
+Teknik Bangunan Rawa,RIC,RIC,6.03,5.25,2.03,1.73,2.78,4.57,17-2051.00 Civil Engineers; 17-2051.02 Water/Wastewater Engineers
+Teknik Biomedis,IRC,IRC,5.44,6.75,2.11,2.45,1.84,4.48,17-2031.00 Bioengineers and Biomedical Engineers
+Teknik Dirgantara,IRC,IRC,5.65,6.05,2.35,1.25,2.52,4.44,17-2011.00 Aerospace Engineers
+Teknik Elektro,RIC,RIC,6.02,5.45,2.12,1.72,2.44,4.43,17-2071.00 Electrical Engineers
+Teknik Elektromedik,RIC,RIC,6.22,5.67,1.56,2.21,1.42,4.64,17-2031.00 Bioengineers and Biomedical Engineers; 49-9062.00 Medical Equipment Repairers
+Teknik Elektronika,RIC,RIC,6.25,5.51,1.90,1.69,1.47,4.84,"17-2072.00 Electronics Engineers, Except Computer; 17-3023.00 Electrical and Electronic Engineering Technologists and Technicians"
+Teknik Energi,RIC,RIC,5.59,4.86,2.07,2.07,3.07,4.18,"17-2199.03 Energy Engineers, Except Wind and Solar; 17-2199.11 Solar Energy Systems Engineers"
+Teknik Fisika,IRC,IRC,5.42,6.44,2.78,1.76,1.74,4.38,17-2199.07 Photonics Engineers; 19-2012.00 Physicists
+Teknik Geodesi,CIR,CIR,5.06,5.29,2.55,1.76,1.63,5.32,17-1022.01 Geodetic Surveyors; 17-1021.00 Cartographers and Photogrammetrists
+Teknik Geologi,IRC,IRC,5.84,6.29,2.14,2.04,2.20,4.40,"19-2042.00 Geoscientists, Except Hydrologists and Geographers; 17-2151.00 Mining and Geological Engineers, Including Mining Safety Engineers"
+Teknik Gigi,RIC,RIC,6.61,4.46,1.52,2.67,1.00,4.12,51-9081.00 Dental Laboratory Technicians
+Teknik Industri,RCI,RCI,5.12,4.76,1.90,1.49,3.19,4.88,17-2112.00 Industrial Engineers; 17-2112.03 Manufacturing Engineers
+Teknik Industri Otomotif,RIC,RIC,5.72,5.10,2.38,1.49,2.61,4.23,17-2141.02 Automotive Engineers; 17-2112.03 Manufacturing Engineers
+Teknik Informatika,ICR,ICR,3.54,6.48,2.43,1.91,2.20,5.45,15-1252.00 Software Developers; 15-1221.00 Computer and Information Research Scientists; 15-1211.00 Computer Systems Analysts
+Teknik Instrumentasi,RCI,RCI,6.27,4.97,1.58,1.58,1.31,5.14,"17-2072.00 Electronics Engineers, Except Computer; 17-3028.00 Calibration Technologists and Technicians"
+Teknik Kardiovaskular,RIC,RIC,5.61,5.31,1.00,4.25,1.30,4.70,29-2031.00 Cardiovascular Technologists and Technicians
+Teknik Kelautan,RIC,RIC,6.09,5.43,2.42,1.48,2.96,4.46,17-2121.00 Marine Engineers and Naval Architects; 17-2051.00 Civil Engineers
+Teknik Kelistrikan Kapal,RCI,RCI,6.51,4.42,1.56,1.44,1.73,4.63,"17-2071.00 Electrical Engineers; 49-2093.00 Electrical and Electronics Installers and Repairers, Transportation Equipment"
+Teknik Kimia,RIC,RIC,6.27,5.75,1.80,1.02,1.85,4.54,17-2041.00 Chemical Engineers
+Teknik Komputer,ICR,ICR,4.87,5.42,2.04,2.00,2.59,5.22,17-2061.00 Computer Hardware Engineers; 15-1241.00 Computer Network Architects
+Teknik Lingkungan,IRC,IRC,5.40,5.73,1.91,1.99,3.04,4.56,17-2081.00 Environmental Engineers; 17-2051.02 Water/Wastewater Engineers
+Teknik Mekanikal Bandar Udara,RCI,RCI,5.67,3.68,1.00,1.90,3.16,4.81,49-3011.00 Aircraft Mechanics and Service Technicians; 53-2022.00 Airfield Operations Specialists
+Teknik Mekatronika,RIC,RIC,5.93,5.58,2.11,1.54,1.76,4.66,17-2199.05 Mechatronics Engineers; 17-2199.08 Robotics Engineers
+Teknik Mesin,RIC,RIC,6.39,5.12,2.02,1.22,1.97,4.83,17-2141.00 Mechanical Engineers
+Teknik Metalurgi,RIC,RIC,5.88,5.82,2.54,1.38,2.06,4.11,17-2131.00 Materials Engineers
+Teknik Nuklir,IRC,IRC,4.92,6.44,2.05,1.89,2.53,4.48,17-2161.00 Nuclear Engineers
+Teknik Otomotif,RIC,RIC,6.59,4.63,1.78,1.41,1.87,4.18,17-2141.02 Automotive Engineers; 49-3023.00 Automotive Service Technicians and Mechanics
+Teknik Penangkapan Ikan,RCE,RCE,6.31,2.46,1.03,1.46,3.11,3.93,"45-3031.00 Fishing and Hunting Workers; 53-5021.00 Captains, Mates, and Pilots of Water Vessels"
+Teknik Perkapalan,RIC,RIC,5.74,5.71,2.62,1.27,3.26,4.31,17-2121.00 Marine Engineers and Naval Architects
+Teknik Perminyakan,RIC,RIC,5.37,5.33,1.92,1.78,3.04,4.32,17-2171.00 Petroleum Engineers
+Teknik Perpipaan,RCI,RCI,6.70,3.66,1.51,1.19,1.49,4.28,"17-2141.00 Mechanical Engineers; 47-2152.00 Plumbers, Pipefitters, and Steamfitters"
+Teknik Pertambangan,RIC,RIC,6.08,5.58,1.55,1.84,2.75,4.64,"17-2151.00 Mining and Geological Engineers, Including Mining Safety Engineers"
+Teknik Pertanian,RIC,RIC,6.65,6.29,2.19,1.73,2.31,3.77,17-2021.00 Agricultural Engineers
+Teknik Pesawat Udara,RCI,RCI,6.59,4.46,1.00,1.16,1.64,5.01,49-3011.00 Aircraft Mechanics and Service Technicians; 17-3021.00 Aerospace Engineering and Operations Technologists and Technicians
+Teknik Sipil,RIC,RIC,6.43,5.15,2.21,1.69,2.66,4.61,17-2051.00 Civil Engineers
+Teknik Tekstil,RIC,RIC,5.57,5.18,2.38,1.49,2.58,4.26,17-2131.00 Materials Engineers; 17-2112.03 Manufacturing Engineers
+Teknik Telekomunikasi,RIC,RIC,5.39,5.05,1.97,1.95,2.34,4.81,"15-1241.01 Telecommunications Engineering Specialists; 17-2072.00 Electronics Engineers, Except Computer"
+Teknik Transportasi Laut,RCI,RCI,5.68,4.18,1.81,1.58,3.74,4.43,"17-2121.00 Marine Engineers and Naval Architects; 53-5021.00 Captains, Mates, and Pilots of Water Vessels"
+Teknika,RCE,RCE,6.44,3.54,1.00,1.76,3.73,4.91,53-5031.00 Ship Engineers
+Teknologi Bank Darah,RIC,RIC,5.63,5.42,1.07,3.19,1.46,5.21,29-2011.00 Medical and Clinical Laboratory Technologists; 31-9097.00 Phlebotomists
+Teknologi Benih,RIC,RIC,6.63,5.64,1.56,1.57,1.85,3.84,19-1013.00 Soil and Plant Scientists; 19-4012.00 Agricultural Technicians
+Teknologi dan Bisnis Perikanan dan Kelautan,RIC,RIC,5.86,4.00,1.48,2.07,3.28,3.84,"11-9013.00 Farmers, Ranchers, and Other Agricultural Managers; 45-3031.00 Fishing and Hunting Workers; 19-1023.00 Zoologists and Wildlife Biologists"
+Teknologi Grafika,CAR,CAR,3.92,2.55,4.78,1.83,2.16,5.13,51-5111.00 Prepress Technicians and Workers; 43-9031.00 Desktop Publishers; 27-1024.00 Graphic Designers
+Teknologi Hasil Perikanan,RIC,RIC,5.31,5.11,1.89,1.95,2.27,4.50,19-1012.00 Food Scientists and Technologists; 19-4013.00 Food Science Technicians
+Teknologi Hasil Pertanian,RIC,RIC,5.31,5.11,1.89,1.95,2.27,4.50,19-1012.00 Food Scientists and Technologists; 19-4013.00 Food Science Technicians
+Teknologi Industri Pertanian,IRC,IRC,5.55,5.66,2.07,1.75,2.73,4.36,17-2021.00 Agricultural Engineers; 19-1012.00 Food Scientists and Technologists; 17-2112.00 Industrial Engineers
+Teknologi Informasi,CIR,CIR,3.69,5.49,1.78,1.98,2.52,5.91,15-1211.00 Computer Systems Analysts; 15-1244.00 Network and Computer Systems Administrators; 15-1252.00 Software Developers
+Teknologi Kedokteran,IRC,IRC,5.81,6.15,1.13,2.77,1.51,4.99,29-2011.00 Medical and Clinical Laboratory Technologists
+Teknologi Kosmetik,IRC,IRC,5.56,6.26,1.52,1.39,1.37,5.03,19-2031.00 Chemists; 19-4031.00 Chemical Technicians
+Teknologi Laboratorium Medis,IRC,IRC,5.91,6.02,1.07,2.83,1.25,4.92,29-2011.00 Medical and Clinical Laboratory Technologists; 29-2012.00 Medical and Clinical Laboratory Technicians
+Teknologi Pangan,IRC,IRC,5.05,5.71,2.45,2.16,2.58,3.95,19-1012.00 Food Scientists and Technologists
+Teknologi Pendidikan,ICS,ICS,2.11,4.46,4.02,4.18,3.70,4.19,25-9031.00 Instructional Coordinators; 15-1255.00 Web and Digital Interface Designers
+Teknologi Pengolahan Kulit,RCI,RCI,6.20,3.72,2.32,1.48,1.33,4.22,19-4031.00 Chemical Technicians; 51-6041.00 Shoe and Leather Workers and Repairers
+Teknologi Permainan,ICA,ICA,3.19,5.10,4.38,2.05,2.90,4.74,15-1255.01 Video Game Designers; 15-1252.00 Software Developers
+Teknologi Pulp dan Kertas,RCI,RCI,6.40,3.74,1.53,1.01,1.65,4.55,"17-2041.00 Chemical Engineers; 51-9196.00 Paper Goods Machine Setters, Operators, and Tenders"
+Teknologi Rekayasa Multimedia,ACR,ACR,3.28,3.23,5.25,2.12,2.89,3.97,27-1014.00 Special Effects Artists and Animators; 27-4032.00 Film and Video Editors; 15-1254.00 Web Developers
+Teknologi Rekayasa Persenjataan Militer,RIC,RIC,6.32,5.47,2.03,1.41,1.80,4.76,"17-2141.00 Mechanical Engineers; 17-2072.00 Electronics Engineers, Except Computer"
+Teknologi Rekayasa Sistem Aerial Nirawak,RIC,RIC,5.92,5.83,2.07,1.37,2.16,4.46,17-2011.00 Aerospace Engineers; 17-2199.08 Robotics Engineers
+Teologi,SIA,SIA,2.28,3.63,3.60,6.46,3.47,3.19,"21-2011.00 Clergy; 25-1126.00 Philosophy and Religion Teachers, Postsecondary"
+Terapi Wicara,SIC,SIC,2.62,5.57,3.00,6.09,1.44,4.03,29-1127.00 Speech-Language Pathologists
+Tradisi Lisan,AIS,AIS,2.50,5.05,5.45,3.26,3.19,3.26,19-3091.00 Anthropologists and Archeologists; 27-3043.00 Writers and Authors
+Transportasi,ICR,ICR,4.48,5.34,2.07,1.87,3.12,4.64,17-2051.01 Transportation Engineers; 19-3099.01 Transportation Planners
+Yoga Kesehatan,SER,SER,4.22,2.70,2.27,5.60,4.47,3.32,39-9031.00 Exercise Trainers and Group Fitness Instructors; 11-9179.01 Fitness and Wellness Coordinators
