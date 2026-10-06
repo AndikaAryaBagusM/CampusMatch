@@ -9,9 +9,9 @@ export function BintangTampil({ nilai, className }: { nilai: number; className?:
         const isi = Math.max(0, Math.min(1, nilai - (n - 1)));
         return (
           <span key={n} className="relative inline-block size-4">
-            <Star className="absolute inset-0 size-4 fill-current text-input" aria-hidden />
+            <Star className="absolute inset-0 size-4 fill-current text-input" strokeWidth={1.5} aria-hidden />
             <span className="absolute inset-0 overflow-hidden" style={{ width: `${isi * 100}%` }}>
-              <Star className="size-4 fill-current text-amber-400" aria-hidden />
+              <Star className="size-4 fill-current text-star" strokeWidth={1.5} aria-hidden />
             </span>
           </span>
         );

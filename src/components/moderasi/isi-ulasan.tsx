@@ -9,8 +9,8 @@ export const LABEL_RISIKO: Record<TingkatRisiko, { teks: string; kelas: string }
 // One revision's text, as a Moderator reads it.
 export function IsiUlasan({ judul, isi, bintang, rekomendasi }: { judul: string; isi: string; bintang: number; rekomendasi?: boolean }) {
   return (
-    <div className="mt-3 rounded-lg bg-muted/50 p-3">
-      <p className="font-medium">“{judul}”</p>
+    <div className="mt-3 rounded-sm bg-muted/50 p-3">
+      <p className="font-semibold">“{judul}”</p>
       <p className="mt-1 text-xs text-muted-foreground">
         {bintang}/5 bintang{rekomendasi === undefined ? "" : rekomendasi ? " · merekomendasikan" : " · tidak merekomendasikan"}
       </p>

@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cache } from "react";
-import { BookOpen, GraduationCap, Hash, Landmark, Layers, MapPin, MessageSquareText, ShieldCheck } from "lucide-react";
-import { EmptyState } from "@/components/empty-state";
+import { BookOpen, GraduationCap, Hash, Landmark, Layers, MapPin, ShieldCheck } from "lucide-react";
 import { PanelBiayaProdi } from "@/components/fakta/biaya-masuk";
 import { PanelEstimasiPengulas } from "@/components/info-biaya/estimasi-pengulas";
 import { TombolBandingkan } from "@/components/perbandingan/tombol-bandingkan";
@@ -16,10 +15,12 @@ import { KampusLogo } from "@/components/kampus/kampus-logo";
 import { UnggulanBadge, UnggulanFootnote } from "@/components/kampus/unggulan-badge";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
+import { Plat } from "@/components/trayek/plat";
 import { kontainer, Panel } from "@/components/panel";
 import { RatingSummaryPlaceholder } from "@/components/prodi/rating-summary-placeholder";
 import { RingkasanUlasan } from "@/components/ulasan/ringkasan-ulasan";
 import { TombolTulis } from "@/components/ulasan/tombol-tulis";
+import { RuteUlasanPertama } from "@/components/ulasan/rute-ulasan-pertama";
 import { DaftarUlasan } from "@/components/ulasan/ulasan-card";
 import { formatAngka, formatProvinsi } from "@/lib/format";
 import { countUlasanProdi, getInfoKatalog, getProdi, getRingkasanUlasan, listUlasanTerbit } from "@/lib/katalog";
@@ -83,34 +84,40 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
         ]}
       />
 
-      {/* Frame L: blue title box and data tiles, without the photo. */}
-      <div className="grid gap-2 overflow-hidden rounded-xl lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-        <div className="flex flex-col justify-between gap-6 bg-gradient-to-br from-primary to-brand-deep p-5 text-white sm:p-7">
-          <h1 className="text-2xl font-medium tracking-tight sm:text-3xl">
-            {prodi.jenjang} {prodi.nama}
+      {/* The Prodi's station sign on the jade field, with timetable cells beside it. */}
+      <div>
+        <div className="flex flex-col justify-between gap-6 rounded-md bg-jade p-5 text-on-jade sm:p-7">
+          <h1 className="flex flex-wrap items-center gap-x-3 gap-y-2 text-2xl leading-tight font-extrabold tracking-tight sm:text-4xl">
+            <Plat warna="var(--foreground)" ukuran="lg">
+              {prodi.jenjang}
+            </Plat>
+            <span>{prodi.nama}</span>
           </h1>
           <div className="flex items-center gap-3">
-            <KampusLogo kampus={kampus} size="sm" className="ring-2 ring-white/70" />
+            <KampusLogo kampus={kampus} size="sm" className="ring-2 ring-on-jade" />
             <div className="min-w-0">
-              <Link href={`/kampus/${kampus.slug}`} className="font-medium underline-offset-4 hover:underline">
+              <Link href={`/kampus/${kampus.slug}`} className="font-semibold underline-offset-4 hover:underline">
                 {kampus.nama}
               </Link>
-              <p className="text-sm text-white/85">
+              <p className="text-sm text-on-jade-muted">
                 {prodi.kotaNama}, {formatProvinsi(prodi.provinsi)}
               </p>
             </div>
           </div>
+          <p className="tabular flex flex-wrap items-baseline gap-x-2 border-t border-on-jade/25 pt-3 text-sm text-on-jade-muted">
+            <span>{labelAkreditasi(kampus.akreditasi)} (Kampus)</span>
+            <span aria-hidden>·</span>
+            <span>
+              {jumlahUlasan === 0 ? (
+                "Belum ada ulasan"
+              ) : (
+                <>
+                  <span className="font-plate text-xl font-bold text-on-jade">{formatAngka(jumlahUlasan)}</span> ulasan
+                </>
+              )}
+            </span>
+          </p>
         </div>
-        <ul className="grid grid-cols-2 gap-2 lg:grid-cols-1">
-          <li className="flex min-h-24 flex-col justify-center rounded-lg bg-white p-4 ring-1 ring-border">
-            <span className="text-xs text-muted-foreground">Akreditasi Kampus</span>
-            <span className="font-medium">{kampus.akreditasi ?? labelAkreditasi(null)}</span>
-          </li>
-          <li className="flex min-h-24 flex-col justify-center rounded-lg bg-white p-4 ring-1 ring-border">
-            <span className="text-xs text-muted-foreground">Ulasan</span>
-            <span className="font-medium">{jumlahUlasan === 0 ? "Belum ada ulasan" : `${formatAngka(jumlahUlasan)} ulasan`}</span>
-          </li>
-        </ul>
       </div>
       {kampus.unggulan ? (
         <div className="mt-3 flex flex-col gap-2 px-1 sm:flex-row sm:items-start">
@@ -177,7 +184,7 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
             {prodi.jurusanSlug ? (
               <Link
                 href={`/jurusan/${prodi.jurusanSlug}`}
-                className="inline-flex text-sm font-medium text-primary hover:underline"
+                className="inline-flex text-sm font-semibold text-primary hover:underline"
               >
                 Lihat Prodi {prodi.jurusanNama} di Kampus lain
               </Link>
@@ -187,10 +194,7 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
           <PanelEstimasiPengulas estimasi={estimasi} prodiSlug={prodi.slug} />
           <Panel title={jumlahUlasan > 0 ? `Ulasan (${formatAngka(jumlahUlasan)})` : "Ulasan"} id="ulasan">
             {ulasan.length === 0 ? (
-              <EmptyState icon={MessageSquareText} title="Belum ada ulasan">
-                Kuliah atau lulus dari Prodi ini? Jadilah yang pertama menulis ulasan. Setiap ulasan diperiksa otomatis
-                dan ditinjau tim kami bila perlu.
-              </EmptyState>
+              <RuteUlasanPertama dari="prodi" hrefTulis={`/prodi/${prodi.slug}/tulis`} />
             ) : (
               <>
                 <DaftarUlasan ulasan={ulasan} />

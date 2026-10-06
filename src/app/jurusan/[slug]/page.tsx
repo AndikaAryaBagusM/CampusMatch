@@ -7,7 +7,7 @@ import { BookOpen, SearchX } from "lucide-react";
 import { withDb } from "@/db";
 import { EmptyState } from "@/components/empty-state";
 import { FilterBar, FilterChips } from "@/components/filter-bar";
-import { AkreditasiBadge } from "@/components/kampus/akreditasi-badge";
+import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusLogo } from "@/components/kampus/kampus-logo";
 import { UnggulanBadge, UnggulanFootnote } from "@/components/kampus/unggulan-badge";
 import { KatalogAsOf } from "@/components/katalog-as-of";
@@ -16,6 +16,8 @@ import { Paging } from "@/components/paging";
 import { kontainer, Panel } from "@/components/panel";
 import { TombolBandingkan } from "@/components/perbandingan/tombol-bandingkan";
 import { KotakPromosi } from "@/components/promosi/kotak-promosi";
+import { BarisJadwal, DaftarJadwal, KepalaJadwal, Sel, SelJadwal } from "@/components/trayek/jadwal";
+import { Plat } from "@/components/trayek/plat";
 import { BintangTampil } from "@/components/ulasan/bintang-tampil";
 import { formatRupiah } from "@/lib/fakta/label";
 import { formatTahunAkademik } from "@/lib/fakta/tahun-akademik";
@@ -91,70 +93,72 @@ export async function generateMetadata(props: PageProps<"/jurusan/[slug]">): Pro
   };
 }
 
+// Departure-board columns for the Prodi list: destination, the facts, then
+// the Bandingkan control.
+const KOLOM_PRODI = "minmax(0,1fr) 10rem 10rem 9rem 8.5rem";
+
 function BarisProdi({ p }: { p: ProdiJurusan }) {
   return (
-    <li className="flex flex-col gap-3 p-4 sm:flex-row sm:items-start sm:gap-4 sm:p-5">
-      <div className="flex min-w-0 flex-1 gap-4">
+    <BarisJadwal kolom={KOLOM_PRODI}>
+      <div className="flex min-w-0 items-start gap-3">
         <KampusLogo kampus={p.kampus} size="sm" />
-        <div className="min-w-0 flex-1 space-y-2">
-          <div>
-            <Link href={`/prodi/${p.slug}`} className="font-medium text-primary hover:underline">
-              {p.jenjang} {p.nama}
+        <div className="min-w-0">
+          <Link
+            href={`/prodi/${p.slug}`}
+            className="flex flex-wrap items-center gap-x-2 font-bold decoration-jade decoration-2 underline-offset-4 hover:underline"
+          >
+            <Plat warna="var(--foreground)" ukuran="sm">
+              {p.jenjang}
+            </Plat>
+            {p.nama}
+          </Link>
+          <p className="text-sm">
+            <Link href={`/kampus/${p.kampus.slug}`} className="underline-offset-4 hover:underline">
+              {p.kampus.nama}
             </Link>
-            <p className="text-sm">
-              <Link href={`/kampus/${p.kampus.slug}`} className="hover:underline">
-                {p.kampus.nama}
+            <span className="text-muted-foreground">
+              {" · "}
+              <Link href={`/kota/${p.kotaSlug}`} className="underline-offset-4 hover:underline">
+                {p.kotaNama}
               </Link>
-              <span className="text-muted-foreground">
-                {" · "}
-                <Link href={`/kota/${p.kotaSlug}`} className="hover:underline">
-                  {p.kotaNama}
-                </Link>
-              </span>
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <AkreditasiBadge akreditasi={p.kampus.akreditasi} />
-            {p.kampus.unggulan ? <UnggulanBadge /> : null}
-          </div>
-          <dl className="grid gap-x-6 gap-y-1 text-sm sm:grid-cols-2">
-            <div>
-              <dt className="sr-only">UKT</dt>
-              <dd>
-                {p.ukt !== null && p.uktTahun !== null ? (
-                  <>
-                    UKT/SPP s.d. <span className="font-medium">{formatRupiah(p.ukt)}</span> per semester
-                    <span className="block text-xs text-muted-foreground">
-                      TA {formatTahunAkademik(p.uktTahun)}
-                      {p.uktTingkat === "kampus" ? ", berlaku se-Kampus" : null}
-                    </span>
-                  </>
-                ) : (
-                  <span className="text-muted-foreground">Biaya belum tersedia</span>
-                )}
-              </dd>
-            </div>
-            <div>
-              <dt className="sr-only">Ulasan</dt>
-              <dd className="flex flex-wrap items-center gap-2">
-                {p.bintang !== null ? (
-                  <>
-                    <BintangTampil nilai={p.bintang} />
-                    <span>
-                      {p.bintang.toLocaleString("id-ID", { minimumFractionDigits: 1 })}
-                      <span className="text-muted-foreground"> · {formatAngka(p.jumlahUlasan)} ulasan</span>
-                    </span>
-                  </>
-                ) : (
-                  <span className="text-muted-foreground">Belum ada ulasan</span>
-                )}
-              </dd>
-            </div>
-          </dl>
+            </span>
+          </p>
+          {p.kampus.unggulan ? <UnggulanBadge className="mt-1.5 h-5" /> : null}
         </div>
       </div>
-      <TombolBandingkan slug={p.slug} label={`${p.jenjang} ${p.nama}, ${p.kampus.nama}`} className="self-start" />
-    </li>
+      <SelJadwal>
+        <Sel label="UKT/SPP maks. per semester" kanan>
+          {p.ukt !== null && p.uktTahun !== null ? (
+            <>
+              <span className="tabular font-plate text-base font-bold md:text-lg">{formatRupiah(p.ukt)}</span>
+              <span className="block text-xs text-muted-foreground">
+                TA {formatTahunAkademik(p.uktTahun)}
+                {p.uktTingkat === "kampus" ? ", berlaku se-Kampus" : null}
+              </span>
+            </>
+          ) : (
+            <span className="text-muted-foreground">Biaya belum tersedia</span>
+          )}
+        </Sel>
+        <Sel label="Akreditasi Kampus">{labelAkreditasi(p.kampus.akreditasi)}</Sel>
+        <Sel label="Ulasan">
+          {p.bintang !== null ? (
+            <span className="inline-flex items-center gap-1.5">
+              <BintangTampil nilai={p.bintang} />
+              <span className="tabular font-plate text-base font-bold">
+                {p.bintang.toLocaleString("id-ID", { minimumFractionDigits: 1 })}
+              </span>
+              <span className="text-muted-foreground">({formatAngka(p.jumlahUlasan)})</span>
+            </span>
+          ) : (
+            <span className="text-muted-foreground">Belum ada ulasan</span>
+          )}
+        </Sel>
+        <div className="md:text-right">
+          <TombolBandingkan slug={p.slug} label={`${p.jenjang} ${p.nama}, ${p.kampus.nama}`} />
+        </div>
+      </SelJadwal>
+    </BarisJadwal>
   );
 }
 
@@ -183,13 +187,15 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
     <div className={kontainer}>
       <PageBreadcrumb items={[{ label: "Jurusan" }, { label: jurusan.nama }]} />
 
-      <div className="rounded-xl bg-white p-5 ring-1 ring-border sm:p-7">
-        <p className="text-sm font-medium text-primary">Jurusan</p>
-        <h1 className="mt-1 text-2xl font-medium tracking-tight sm:text-3xl">{jurusan.nama}</h1>
-        <p className="mt-2 text-muted-foreground">
-          {formatAngka(semua.jumlahProdi)} Prodi di {formatAngka(semua.jumlahKampus)} Kampus
-        </p>
-        <div className="mt-4 max-w-3xl text-sm leading-relaxed">
+      <div>
+        <div className="rounded-md bg-jade p-5 text-on-jade sm:p-7">
+          <h1 className="text-3xl leading-tight font-extrabold tracking-tight sm:text-4xl">{jurusan.nama}</h1>
+          <p className="mt-2 text-on-jade-muted">
+            <span className="tabular font-plate text-2xl font-bold text-on-jade">{formatAngka(semua.jumlahProdi)}</span> Prodi di{" "}
+            <span className="tabular font-plate text-2xl font-bold text-on-jade">{formatAngka(semua.jumlahKampus)}</span> Kampus
+          </p>
+        </div>
+        <div className="max-w-3xl px-1 pt-4 text-sm leading-relaxed">
           {jurusan.deskripsi ? (
             <p>{jurusan.deskripsi}</p>
           ) : (
@@ -206,7 +212,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
         </Panel>
       ) : (
         <div className="mt-6 space-y-4">
-          <h2 className="text-xl font-medium">Prodi {jurusan.nama} di setiap Kampus</h2>
+          <h2 className="text-xl font-bold">Prodi {jurusan.nama} di setiap Kampus</h2>
           {promosi ? <KotakPromosi promosi={promosi} /> : null}
           <FilterBar>
             <FilterChips
@@ -246,7 +252,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
                 id="filter-kota"
                 name="kota"
                 defaultValue={kotaDipilih?.slug ?? ""}
-                className="h-8 max-w-full min-w-0 rounded-full bg-white px-3 text-sm ring-1 ring-input"
+                className="h-8 max-w-full min-w-0 rounded-sm bg-white px-3 text-sm ring-1 ring-input"
               >
                 <option value="">Semua Kota</option>
                 {perKota.map((k) => (
@@ -257,7 +263,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
               </select>
               <button
                 type="submit"
-                className="inline-flex h-8 items-center rounded-full bg-primary px-3 text-sm font-medium text-primary-foreground hover:bg-brand-deep"
+                className="inline-flex h-8 items-center rounded-sm bg-primary px-3 text-sm font-semibold text-primary-foreground hover:bg-brand-deep"
               >
                 Terapkan
               </button>
@@ -296,17 +302,20 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
           {prodi.length === 0 ? (
             <Panel>
               <EmptyState icon={SearchX} title="Tidak ada Prodi yang cocok dengan filter ini.">
-                <Link href={base} className="font-medium text-primary hover:underline">
+                <Link href={base} className="font-semibold text-primary hover:underline">
                   Atur ulang filter
                 </Link>
               </EmptyState>
             </Panel>
           ) : (
-            <ul className="divide-y divide-border overflow-hidden rounded-xl bg-white ring-1 ring-border">
-              {prodi.map((p) => (
-                <BarisProdi key={p.slug} p={p} />
-              ))}
-            </ul>
+            <div>
+              <KepalaJadwal kolom={KOLOM_PRODI} judul={["Prodi", "UKT maks./semester", "Akreditasi Kampus", "Ulasan", ""]} kanan={[1]} />
+              <DaftarJadwal>
+                {prodi.map((p) => (
+                  <BarisProdi key={p.slug} p={p} />
+                ))}
+              </DaftarJadwal>
+            </div>
           )}
 
           <Paging halaman={halaman} total={halamanTotal} href={(n) => href({ hal: n > 1 ? n : null })} />

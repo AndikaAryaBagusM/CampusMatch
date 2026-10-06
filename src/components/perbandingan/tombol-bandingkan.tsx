@@ -19,8 +19,8 @@ export function TombolBandingkan({ slug, label, className }: { slug: string; lab
       title={penuh ? `Paling banyak ${MAKS_PRODI} Prodi; hapus satu dari daftar dulu.` : undefined}
       onClick={() => simpanDaftar(dipilih ? hapus(daftar, slug) : tambah(daftar, { slug, label }))}
       className={cn(
-        "inline-flex h-8 shrink-0 items-center gap-1.5 rounded-full px-3 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60",
-        dipilih ? "bg-primary text-primary-foreground hover:bg-brand-deep" : "bg-white text-foreground ring-1 ring-input hover:bg-secondary",
+        "inline-flex h-8 shrink-0 items-center gap-1.5 rounded-sm px-3 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60",
+        dipilih ? "bg-jade text-on-jade hover:bg-jade-deep" : "bg-card text-foreground ring-1 ring-foreground/60 hover:bg-secondary",
         className,
       )}
     >

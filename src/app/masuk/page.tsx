@@ -3,6 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { auth, caraMasuk } from "@/auth";
 import { kontainer, Panel } from "@/components/panel";
+import { RuteMasuk } from "@/components/ulasan/rute-masuk";
 import { jalurAman } from "@/lib/sesi";
 import { param } from "@/lib/url";
 import { masukGoogle } from "./actions";
@@ -27,14 +28,14 @@ export default async function MasukPage(props: PageProps<"/masuk">) {
   const cara = caraMasuk();
 
   return (
-    <div className={`${kontainer} max-w-md py-10`}>
-      <Panel>
-        <h1 className="text-2xl font-medium tracking-tight">Masuk ke CampusMatch</h1>
+    <div className={`${kontainer} grid max-w-4xl gap-6 py-10 md:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] md:items-start`}>
+      <Panel lembar className="md:order-2">
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Masuk ke CampusMatch</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           Masuk untuk menulis atau melaporkan ulasan. Membaca ulasan tidak perlu masuk.
         </p>
         {error ? (
-          <p role="alert" className="mt-4 rounded-lg bg-destructive/10 p-3 text-sm text-destructive">
+          <p role="alert" className="mt-4 rounded-sm bg-destructive/10 p-3 text-sm text-destructive">
             {PESAN_ERROR[error] ?? "Gagal masuk. Coba lagi."}
           </p>
         ) : null}
@@ -44,7 +45,7 @@ export default async function MasukPage(props: PageProps<"/masuk">) {
             <input type="hidden" name="callbackUrl" value={callbackUrl} />
             <button
               type="submit"
-              className="h-11 w-full rounded-lg bg-white font-medium ring-1 ring-border transition-colors hover:bg-secondary"
+              className="h-11 w-full rounded-sm bg-card font-semibold ring-1 ring-foreground/10 transition-colors hover:bg-secondary"
             >
               Masuk dengan Google
             </button>
@@ -67,22 +68,24 @@ export default async function MasukPage(props: PageProps<"/masuk">) {
         ) : null}
 
         {!cara.google && !cara.email ? (
-          <p className="mt-6 rounded-lg bg-secondary p-3 text-sm">Masuk belum tersedia. Coba lagi nanti.</p>
+          <p className="mt-6 rounded-sm bg-secondary p-3 text-sm">Masuk belum tersedia. Coba lagi nanti.</p>
         ) : null}
 
         <p className="mt-6 border-t border-border pt-4 text-xs text-muted-foreground">
           Dengan masuk, kamu menyetujui{" "}
-          <Link href="/ketentuan" className="font-medium text-primary hover:underline">
+          <Link href="/ketentuan" className="font-semibold text-primary hover:underline">
             Ketentuan Layanan
           </Link>{" "}
           dan{" "}
-          <Link href="/privasi" className="font-medium text-primary hover:underline">
+          <Link href="/privasi" className="font-semibold text-primary hover:underline">
             Kebijakan Privasi
           </Link>{" "}
           CampusMatch. Teks ulasan diperiksa otomatis dengan Claude API dari Anthropic. Akun hanya untuk usia 18 tahun ke
           atas.
         </p>
       </Panel>
+
+      <RuteMasuk keterangan="Kamu di sini. Akun hanya untuk usia 18 tahun ke atas." className="md:order-1" />
     </div>
   );
 }

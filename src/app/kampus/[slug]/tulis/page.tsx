@@ -41,7 +41,7 @@ export default async function PilihProdiPage({ params }: PageProps<"/kampus/[slu
     <div className={`${kontainer} max-w-3xl pb-6`}>
       <PageBreadcrumb items={[{ label: kampus.nama, href: `/kampus/${kampus.slug}` }, { label: "Tulis ulasan" }]} />
       <Panel>
-        <h1 className="text-2xl font-medium tracking-tight">Pilih Prodi kamu</h1>
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Pilih Prodi kamu</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           Ulasan ditulis untuk satu Prodi di {kampus.nama}. Pilih Prodi tempat kamu kuliah atau lulus.
         </p>
@@ -50,8 +50,8 @@ export default async function PilihProdiPage({ params }: PageProps<"/kampus/[slu
             const daftar = prodi.filter((p) => p.jenjang === j);
             return daftar.length ? (
               <section key={j}>
-                <h2 className="mb-2 font-medium">{j}</h2>
-                <ul className="divide-y divide-border rounded-lg ring-1 ring-border">
+                <h2 className="mb-2 font-bold">{j}</h2>
+                <ul className="divide-y divide-border rounded-sm ring-1 ring-foreground/10">
                   {daftar.map((p) => (
                     <li key={p.slug}>
                       <Link

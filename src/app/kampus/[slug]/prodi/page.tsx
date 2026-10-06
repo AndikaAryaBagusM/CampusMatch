@@ -73,7 +73,7 @@ export default async function KampusProdiPage(props: PageProps<"/kampus/[slug]/p
       <KampusHeader kampus={kampus} prodiPerJenjang={prodiPerJenjang} jumlahUlasan={jumlahUlasan} info={info} tab="prodi" />
 
       <div className="mt-6 space-y-4">
-        <h2 className="text-xl font-medium">
+        <h2 className="text-xl font-bold">
           {formatAngka(total)} Prodi{jenjang ? ` ${jenjang}` : ""} di {kampus.nama}
         </h2>
         <FilterBar>

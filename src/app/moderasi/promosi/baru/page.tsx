@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const kolomInput =
-  "min-h-9 w-full rounded-lg border border-input bg-white px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50";
+  "min-h-9 w-full rounded-sm border border-input bg-white px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50";
 
 // Two steps, both plain GET/POST forms: pick the Kampus, then fill in the rest
 // (the Jurusan list depends on the Kampus).
@@ -33,17 +33,17 @@ export default async function BuatPromosiPage(props: PageProps<"/moderasi/promos
   return (
     <div className={`${kontainer} max-w-3xl space-y-6 py-8`}>
       <PageBreadcrumb items={[{ label: "Promosi", href: "/moderasi/promosi" }, { label: "Buat" }]} />
-      <h1 className="text-2xl font-medium tracking-tight">Buat Promosi</h1>
-      {pesan ? <p role="alert" className="rounded-lg bg-destructive/10 p-3 text-sm text-destructive">{pesan}</p> : null}
+      <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Buat Promosi</h1>
+      {pesan ? <p role="alert" className="rounded-sm bg-destructive/10 p-3 text-sm text-destructive">{pesan}</p> : null}
 
       {!kampus ? (
-        <Panel title="1. Pilih Kampus">
+        <Panel lembar title="1. Pilih Kampus">
           <form className="flex gap-2" role="search">
             <label htmlFor="cari" className="sr-only">
               NPSN atau nama Kampus
             </label>
             <input id="cari" name="cari" defaultValue={cari} maxLength={100} placeholder="NPSN atau nama Kampus" className={kolomInput} />
-            <button type="submit" className="h-9 shrink-0 rounded-full bg-white px-4 text-sm font-medium ring-1 ring-border hover:bg-secondary">
+            <button type="submit" className="h-9 shrink-0 rounded-sm bg-card px-4 text-sm font-semibold ring-1 ring-foreground/10 hover:bg-secondary">
               Cari
             </button>
           </form>
@@ -54,7 +54,7 @@ export default async function BuatPromosiPage(props: PageProps<"/moderasi/promos
               <ul className="mt-3 divide-y divide-border text-sm">
                 {hasil.map((k) => (
                   <li key={k.id} className="py-2">
-                    <Link href={`/moderasi/promosi/baru?kampus=${k.id}`} className="font-medium text-primary hover:underline">
+                    <Link href={`/moderasi/promosi/baru?kampus=${k.id}`} className="font-semibold text-primary hover:underline">
                       {k.nama}
                     </Link>
                     <span className="text-muted-foreground">
@@ -68,7 +68,7 @@ export default async function BuatPromosiPage(props: PageProps<"/moderasi/promos
           ) : null}
         </Panel>
       ) : (
-        <Panel title={`2. Promosi untuk ${kampus.nama}`}>
+        <Panel lembar title={`2. Promosi untuk ${kampus.nama}`}>
           <p className="mb-4 text-sm text-muted-foreground">
             {kampus.kotaNama} · NPSN {kampus.npsn} ·{" "}
             <Link href="/moderasi/promosi/baru" className="text-primary hover:underline">
@@ -78,7 +78,7 @@ export default async function BuatPromosiPage(props: PageProps<"/moderasi/promos
           <form action={buat} className="space-y-5">
             <input type="hidden" name="kampusId" value={kampus.id} />
             <fieldset>
-              <legend className="mb-2 text-sm font-medium">Tempat tampil</legend>
+              <legend className="mb-2 text-sm font-semibold">Tempat tampil</legend>
               <label className="flex items-center gap-2 text-sm">
                 <input type="checkbox" name="diBeranda" value="1" className="size-4 accent-primary" />
                 Beranda
@@ -86,7 +86,7 @@ export default async function BuatPromosiPage(props: PageProps<"/moderasi/promos
               <p className="mb-1 mt-3 text-sm text-muted-foreground">
                 Halaman Jurusan dan pencarian yang cocok, untuk Jurusan yang dibeli (hanya yang ditawarkan Kampus ini):
               </p>
-              <div className="max-h-72 overflow-y-auto rounded-lg p-2 ring-1 ring-border">
+              <div className="max-h-72 overflow-y-auto rounded-sm p-2 ring-1 ring-foreground/10">
                 {jurusan.map((j) => (
                   <label key={j.id} className="flex items-center gap-2 py-0.5 text-sm">
                     <input type="checkbox" name="jurusan" value={j.id} className="size-4 accent-primary" />
@@ -97,20 +97,20 @@ export default async function BuatPromosiPage(props: PageProps<"/moderasi/promos
             </fieldset>
             <div className="grid gap-3 sm:grid-cols-2">
               <div>
-                <label htmlFor="mulai" className="mb-1 block text-sm font-medium">
+                <label htmlFor="mulai" className="mb-1 block text-sm font-semibold">
                   Mulai
                 </label>
                 <input id="mulai" name="mulai" type="date" required defaultValue={hariIni} className={kolomInput} />
               </div>
               <div>
-                <label htmlFor="selesai" className="mb-1 block text-sm font-medium">
+                <label htmlFor="selesai" className="mb-1 block text-sm font-semibold">
                   Selesai (termasuk)
                 </label>
                 <input id="selesai" name="selesai" type="date" required min={hariIni} className={kolomInput} />
               </div>
             </div>
             <div>
-              <label htmlFor="teks" className="mb-1 block text-sm font-medium">
+              <label htmlFor="teks" className="mb-1 block text-sm font-semibold">
                 Teks dari Kampus (opsional, maks. {TEKS_MAKS} karakter)
               </label>
               <textarea id="teks" name="teks" maxLength={TEKS_MAKS} rows={2} className={kolomInput} />
@@ -120,12 +120,12 @@ export default async function BuatPromosiPage(props: PageProps<"/moderasi/promos
               </p>
             </div>
             <div>
-              <label htmlFor="catatanInternal" className="mb-1 block text-sm font-medium">
+              <label htmlFor="catatanInternal" className="mb-1 block text-sm font-semibold">
                 Catatan internal (tidak tampil publik)
               </label>
               <input id="catatanInternal" name="catatanInternal" maxLength={500} placeholder="Mis. nomor kontrak" className={kolomInput} />
             </div>
-            <button type="submit" className="h-9 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground hover:bg-brand-deep">
+            <button type="submit" className="h-9 rounded-sm bg-primary px-4 text-sm font-semibold text-primary-foreground hover:bg-brand-deep">
               Simpan sebagai Draf
             </button>
           </form>

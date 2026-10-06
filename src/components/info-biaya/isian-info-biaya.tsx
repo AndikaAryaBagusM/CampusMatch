@@ -5,7 +5,7 @@ import type { GalatInfoBiaya, IsianInfoBiaya } from "@/lib/info-biaya/skema";
 import { cn } from "@/lib/utils";
 
 const masukan =
-  "w-full rounded-lg border border-input bg-white px-3 text-base outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive";
+  "w-full rounded-sm border border-input bg-white px-3 text-base outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive";
 
 // The Info Biaya questions (ADR 0010), shared by the standalone form and the
 // optional section of the Ulasan form. Every answer is optional and none is
@@ -14,7 +14,7 @@ export function IsianInfoBiaya({ isian, galat }: { isian: IsianInfoBiaya; galat:
   return (
     <div className="space-y-5">
       <fieldset>
-        <legend className="text-sm font-medium">Jalur Masuk</legend>
+        <legend className="text-sm font-semibold">Jalur Masuk</legend>
         <div className="mt-2 flex flex-wrap gap-x-6 gap-y-2">
           {KATEGORI_JALUR.map((j) => (
             <label key={j} className="flex items-center gap-2 text-sm">
@@ -31,7 +31,7 @@ export function IsianInfoBiaya({ isian, galat }: { isian: IsianInfoBiaya; galat:
       </fieldset>
 
       <fieldset>
-        <legend className="text-sm font-medium">Seleksi yang kamu ikuti</legend>
+        <legend className="text-sm font-semibold">Seleksi yang kamu ikuti</legend>
         <div className="mt-2 grid gap-2 sm:grid-cols-2">
           {TES.map((t) => (
             <label key={t} className="flex items-center gap-2 text-sm">
@@ -53,7 +53,7 @@ export function IsianInfoBiaya({ isian, galat }: { isian: IsianInfoBiaya; galat:
           maks={BATAS_INFO_BIAYA.biayaSemester}
         />
         <div>
-          <label htmlFor="kelompokUkt" className="text-sm font-medium">
+          <label htmlFor="kelompokUkt" className="text-sm font-semibold">
             Kelompok UKT
           </label>
           <input
@@ -92,7 +92,7 @@ export function IsianInfoBiaya({ isian, galat }: { isian: IsianInfoBiaya; galat:
       />
 
       <fieldset>
-        <legend className="text-sm font-medium">Beasiswa</legend>
+        <legend className="text-sm font-semibold">Beasiswa</legend>
         <div className="mt-2 grid gap-2 sm:grid-cols-2">
           {BEASISWA.map((b) => (
             <label key={b} className="flex items-center gap-2 text-sm">
@@ -108,7 +108,7 @@ export function IsianInfoBiaya({ isian, galat }: { isian: IsianInfoBiaya; galat:
         <Galat pesan={galat.beasiswa} />
       </fieldset>
 
-      <div className="rounded-lg bg-secondary/60 p-3">
+      <div className="rounded-sm bg-secondary/60 p-3">
         <label className="flex items-start gap-2 text-sm">
           <input
             type="checkbox"
@@ -146,7 +146,7 @@ function Rupiah({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="text-sm font-medium">
+      <label htmlFor={name} className="text-sm font-semibold">
         {label}
       </label>
       <div className="relative mt-2">

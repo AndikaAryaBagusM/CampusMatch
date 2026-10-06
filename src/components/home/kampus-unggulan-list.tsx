@@ -6,40 +6,57 @@ type Item = { npsn: string; nama: string; slug: string; kotaNama: string };
 
 const TERLIHAT = 12;
 
-function Kartu({ k }: { k: Item }) {
+function Baris({ k }: { k: Item }) {
   return (
-    <li>
-      <Link href={`/kampus/${k.slug}`} className="flex items-center gap-3 rounded-lg bg-white p-3 ring-1 ring-border transition-colors hover:bg-secondary">
+    <li className="min-w-0">
+      <Link
+        href={`/kampus/${k.slug}`}
+        className="group flex items-center gap-3 border-b border-on-jade/15 px-1 py-2.5 transition-colors hover:bg-on-jade/10"
+      >
         <KampusLogo kampus={k} size="sm" />
-        <span className="min-w-0">
-          <span className="block truncate text-sm font-medium">{k.nama}</span>
-          <span className="block truncate text-xs text-muted-foreground">{k.kotaNama}</span>
+        {/* Phones: the Kota sits under the name, so no name is cut. From md: two columns, as on a board. */}
+        <span className="min-w-0 flex-1 md:flex md:items-center md:gap-3">
+          <span className="block font-semibold leading-snug decoration-2 underline-offset-4 group-hover:underline md:min-w-0 md:flex-1 md:truncate">
+            {k.nama}
+          </span>
+          <span className="block text-sm text-on-jade-muted md:max-w-40 md:shrink-0 md:truncate md:text-right">{k.kotaNama}</span>
         </span>
       </Link>
     </li>
   );
 }
 
-// Alphabetical, not ranked. The rest sits in a native <details>.
+// A departure board: Kampus in alphabetical order, never ranked. The rest
+// sits in a native <details>.
 export function KampusUnggulanList({ items }: { items: Item[] }) {
-  const grid = "grid gap-3 sm:grid-cols-2 lg:grid-cols-3";
+  const kolom = "grid grid-cols-1 gap-x-8 md:grid-cols-2";
   return (
-    <div className="space-y-3">
-      <ul className={grid}>
+    <div className="rounded-md bg-foreground p-4 text-on-jade sm:p-6">
+      <div className="mb-1 hidden grid-cols-2 gap-x-8 border-b-2 border-on-jade/30 pb-2 font-plate text-sm font-semibold tracking-wide text-on-jade-muted uppercase md:grid">
+        <span className="flex justify-between px-1">
+          <span>Kampus</span>
+          <span>Kota</span>
+        </span>
+        <span className="flex justify-between px-1">
+          <span>Kampus</span>
+          <span>Kota</span>
+        </span>
+      </div>
+      <ul className={kolom}>
         {items.slice(0, TERLIHAT).map((k) => (
-          <Kartu key={k.slug} k={k} />
+          <Baris key={k.slug} k={k} />
         ))}
       </ul>
       {items.length > TERLIHAT ? (
         <details className="group">
-          <summary className="mx-auto flex w-fit cursor-pointer list-none items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-primary ring-1 ring-primary hover:bg-secondary [&::-webkit-details-marker]:hidden">
+          <summary className="mx-auto mt-5 flex w-fit cursor-pointer list-none items-center gap-1.5 rounded-sm bg-on-jade px-4 py-2 text-sm font-bold text-foreground transition-colors hover:bg-jade-tint [&::-webkit-details-marker]:hidden">
             <span className="group-open:hidden">Tampilkan semua {items.length}</span>
             <span className="hidden group-open:inline">Tampilkan lebih sedikit</span>
             <ChevronDown className="size-4 transition-transform group-open:rotate-180" aria-hidden />
           </summary>
-          <ul className={`${grid} mt-3`}>
+          <ul className={`${kolom} mt-3`}>
             {items.slice(TERLIHAT).map((k) => (
-              <Kartu key={k.slug} k={k} />
+              <Baris key={k.slug} k={k} />
             ))}
           </ul>
         </details>

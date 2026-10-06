@@ -10,7 +10,7 @@ export default function NotFound() {
       <Panel>
         <EmptyState icon={SearchX} title="Halaman tidak ditemukan">
           Alamat ini tidak ada di katalog CampusMatch. Coba cari, atau kembali ke{" "}
-          <Link href="/" className="font-medium text-primary hover:underline">
+          <Link href="/" className="font-semibold text-primary hover:underline">
             beranda
           </Link>
           .

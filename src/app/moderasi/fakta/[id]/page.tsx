@@ -21,9 +21,9 @@ export const metadata: Metadata = {
 type Status = "draf" | "diperiksa" | "ditarik";
 
 const sel = "py-2 pr-3 align-top";
-const kepala = "py-2 pr-3 text-left text-xs font-medium text-muted-foreground";
+const kepala = "py-2 pr-3 text-left text-xs font-semibold text-muted-foreground";
 const kolomInput =
-  "min-h-9 w-full rounded-lg border border-input bg-white px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50";
+  "min-h-9 w-full rounded-sm border border-input bg-white px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50";
 
 // Only the facts of one Status Fakta.
 function saring(s: SumberLengkap, status: Status) {
@@ -52,14 +52,14 @@ export default async function PeriksaSumberPage({ params, searchParams }: PagePr
       {pesan ? (
         <p
           role={berhasil ? "status" : "alert"}
-          className={cn("rounded-lg p-3 text-sm", berhasil ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200" : "bg-destructive/10 text-destructive")}
+          className={cn("rounded-sm p-3 text-sm", berhasil ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200" : "bg-destructive/10 text-destructive")}
         >
           {pesan}
         </p>
       ) : null}
 
-      <Panel>
-        <h1 className="text-xl font-medium">{s.judul}</h1>
+      <Panel lembar>
+        <h1 className="text-xl leading-tight font-extrabold">{s.judul}</h1>
         <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-sm">
           <dt className="text-muted-foreground">Kampus</dt>
           <dd>
@@ -86,7 +86,7 @@ export default async function PeriksaSumberPage({ params, searchParams }: PagePr
                 {s.arsipUrl}
               </a>
             ) : (
-              <span className="font-medium text-amber-700">Tanpa arsip</span>
+              <span className="font-semibold text-amber-700">Tanpa arsip</span>
             )}
           </dd>
           <dt className="text-muted-foreground">Diakses</dt>
@@ -98,9 +98,9 @@ export default async function PeriksaSumberPage({ params, searchParams }: PagePr
 
       {draf.jumlah ? (
         <>
-          <h2 className="text-lg font-medium">Draf ({draf.jumlah})</h2>
+          <h2 className="text-lg font-bold">Draf ({draf.jumlah})</h2>
           <TabelFakta fakta={draf} />
-          <Panel title="Keputusan">
+          <Panel lembar title="Keputusan">
             <div className="grid gap-6 md:grid-cols-2">
               <form action={periksa} className="space-y-3">
                 <input type="hidden" name="sumberId" value={s.id} />
@@ -110,7 +110,7 @@ export default async function PeriksaSumberPage({ params, searchParams }: PagePr
                 </p>
                 {!s.arsipUrl ? (
                   <div className="space-y-1.5">
-                    <label htmlFor="alasanTanpaArsip" className="text-sm font-medium">
+                    <label htmlFor="alasanTanpaArsip" className="text-sm font-semibold">
                       Alasan menerima tanpa arsip (wajib)
                     </label>
                     <textarea id="alasanTanpaArsip" name="alasanTanpaArsip" required maxLength={1000} rows={2} className={kolomInput} />
@@ -119,7 +119,7 @@ export default async function PeriksaSumberPage({ params, searchParams }: PagePr
                 <button
                   type="submit"
                   disabled={milikSendiri}
-                  className="h-9 rounded-full bg-emerald-600 px-4 text-sm font-medium text-white hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="h-9 rounded-sm bg-emerald-600 px-4 text-sm font-semibold text-white hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   Tandai Diperiksa
                 </button>
@@ -130,7 +130,7 @@ export default async function PeriksaSumberPage({ params, searchParams }: PagePr
               <form action={kembalikan} className="space-y-3">
                 <input type="hidden" name="sumberId" value={s.id} />
                 <div className="space-y-1.5">
-                  <label htmlFor="catatan" className="text-sm font-medium">
+                  <label htmlFor="catatan" className="text-sm font-semibold">
                     Kembalikan: apa yang perlu diperbaiki?
                   </label>
                   <textarea id="catatan" name="catatan" required maxLength={1000} rows={2} className={kolomInput} />
@@ -138,7 +138,7 @@ export default async function PeriksaSumberPage({ params, searchParams }: PagePr
                 <p className="text-xs text-muted-foreground">
                   Fakta Draf Sumber ini dihapus dan catatanmu ditampilkan untuk yang memasukkan.
                 </p>
-                <button type="submit" className="h-9 rounded-full bg-white px-4 text-sm font-medium ring-1 ring-border hover:bg-secondary">
+                <button type="submit" className="h-9 rounded-sm bg-card px-4 text-sm font-semibold ring-1 ring-foreground/10 hover:bg-secondary">
                   Kembalikan
                 </button>
               </form>
@@ -150,9 +150,9 @@ export default async function PeriksaSumberPage({ params, searchParams }: PagePr
       {tampil.jumlah ? (
         <form action={tarik} className="space-y-4">
           <input type="hidden" name="sumberId" value={s.id} />
-          <h2 className="text-lg font-medium">Tampil di halaman publik ({tampil.jumlah})</h2>
+          <h2 className="text-lg font-bold">Tampil di halaman publik ({tampil.jumlah})</h2>
           <TabelFakta fakta={tampil} pilih />
-          <Panel title="Tarik fakta">
+          <Panel lembar title="Tarik fakta">
             <div className="space-y-3">
               <p className="text-sm text-muted-foreground">
                 Fakta yang ditarik langsung hilang dari halaman publik tetapi tetap tersimpan sebagai riwayat. Menarik Jalur
@@ -160,20 +160,20 @@ export default async function PeriksaSumberPage({ params, searchParams }: PagePr
                 menarik yang salah.
               </p>
               <div className="space-y-1.5">
-                <label htmlFor="alasan" className="text-sm font-medium">
+                <label htmlFor="alasan" className="text-sm font-semibold">
                   Alasan (wajib, disimpan)
                 </label>
                 <textarea id="alasan" name="alasan" required maxLength={1000} rows={2} className={kolomInput} />
               </div>
               <div className="flex flex-wrap gap-3">
-                <button type="submit" name="semua" value="" className="h-9 rounded-full bg-destructive px-4 text-sm font-medium text-white hover:bg-destructive/90">
+                <button type="submit" name="semua" value="" className="h-9 rounded-sm bg-destructive px-4 text-sm font-semibold text-white hover:bg-destructive/90">
                   Tarik yang dipilih
                 </button>
                 <button
                   type="submit"
                   name="semua"
                   value="ya"
-                  className="h-9 rounded-full bg-white px-4 text-sm font-medium text-destructive ring-1 ring-destructive/40 hover:bg-destructive/10"
+                  className="h-9 rounded-sm bg-card px-4 text-sm font-semibold text-destructive ring-1 ring-destructive/40 hover:bg-destructive/10"
                 >
                   Tarik semua {tampil.jumlah} fakta Sumber ini
                 </button>
@@ -185,13 +185,13 @@ export default async function PeriksaSumberPage({ params, searchParams }: PagePr
 
       {ditarik.jumlah ? (
         <>
-          <h2 className="text-lg font-medium">Ditarik ({ditarik.jumlah})</h2>
+          <h2 className="text-lg font-bold">Ditarik ({ditarik.jumlah})</h2>
           <TabelFakta fakta={ditarik} riwayat />
         </>
       ) : null}
 
       {draf.jumlah + tampil.jumlah + ditarik.jumlah === 0 ? (
-        <Panel>
+        <Panel lembar>
           <p className="text-sm text-muted-foreground">Sumber ini belum punya fakta. Impor lagi foldernya setelah diperbaiki.</p>
         </Panel>
       ) : null}
@@ -233,7 +233,7 @@ function TabelFakta({ fakta, pilih, riwayat }: { fakta: Fakta; pilih?: boolean; 
   return (
     <>
       {fakta.jalur.length ? (
-        <Panel title={`Jalur Masuk (${fakta.jalur.length})`}>
+        <Panel lembar title={`Jalur Masuk (${fakta.jalur.length})`}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="border-b border-border">
@@ -270,7 +270,7 @@ function TabelFakta({ fakta, pilih, riwayat }: { fakta: Fakta; pilih?: boolean; 
       ) : null}
 
       {fakta.biaya.length ? (
-        <Panel title={`Biaya (${fakta.biaya.length})`}>
+        <Panel lembar title={`Biaya (${fakta.biaya.length})`}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="border-b border-border">
@@ -317,7 +317,7 @@ function TabelFakta({ fakta, pilih, riwayat }: { fakta: Fakta; pilih?: boolean; 
       ) : null}
 
       {fakta.beasiswa.length || fakta.ikutNasional.length ? (
-        <Panel title={`Beasiswa (${fakta.beasiswa.length + fakta.ikutNasional.length})`}>
+        <Panel lembar title={`Beasiswa (${fakta.beasiswa.length + fakta.ikutNasional.length})`}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="border-b border-border">
@@ -334,7 +334,7 @@ function TabelFakta({ fakta, pilih, riwayat }: { fakta: Fakta; pilih?: boolean; 
                     <SelPilih aktif={pilih} nama="beasiswa" id={b.id} label={b.nama} />
                     <td className={sel}>{formatTahunAkademik(b.tahunAkademik)}</td>
                     <td className={sel}>
-                      <p className="font-medium">{b.nama}</p>
+                      <p className="font-semibold">{b.nama}</p>
                       <p>Penyelenggara: {b.penyelenggara}</p>
                       <p>Untuk: {b.sasaran}</p>
                       <p>Mencakup: {b.cakupan}</p>
@@ -352,7 +352,7 @@ function TabelFakta({ fakta, pilih, riwayat }: { fakta: Fakta; pilih?: boolean; 
                     <SelPilih aktif={pilih} nama="beasiswaKampus" id={b.id} label={`ikut ${b.nama}`} />
                     <td className={sel}>{formatTahunAkademik(b.tahunAkademik)}</td>
                     <td className={sel}>
-                      Ikut program nasional <span className="font-medium">{b.nama}</span>
+                      Ikut program nasional <span className="font-semibold">{b.nama}</span>
                     </td>
                     <SelRiwayat aktif={riwayat} f={b} />
                   </tr>

@@ -37,7 +37,7 @@ export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/has
         <Panel>
           <EmptyState icon={ListChecks} title="Belum ada kegiatan yang dicentang">
             Centang kegiatan kerja yang ingin kamu lakukan untuk melihat hasilnya.{" "}
-            <Link href="/tes-minat" className="font-medium text-primary hover:underline">
+            <Link href="/tes-minat" className="font-semibold text-primary hover:underline">
               Mulai Tes Minat
             </Link>
           </EmptyState>
@@ -55,10 +55,10 @@ export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/has
   return (
     <div className={`${kontainer} max-w-4xl space-y-6 py-10`}>
       <div className="space-y-2">
-        <h1 className="text-3xl font-medium tracking-tight">Hasil Tes Minat</h1>
+        <h1 className="text-3xl leading-tight font-extrabold tracking-tight">Hasil Tes Minat</h1>
         <p className="text-muted-foreground">
           Minat terkuatmu:{" "}
-          <span className="font-medium text-foreground">{teratas.map((t) => LABEL_TIPE[t.tipe]).join(", ")}</span> (
+          <span className="font-semibold text-foreground">{teratas.map((t) => LABEL_TIPE[t.tipe]).join(", ")}</span> (
           {teratas.map((t) => t.tipe).join("")}).
         </p>
       </div>
@@ -69,16 +69,16 @@ export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/has
             {urutan.map(({ tipe, skor }) => (
               <li key={tipe}>
                 <div className="flex justify-between text-sm">
-                  <span className={cn(kodeTeratas.has(tipe) && "font-medium")}>
+                  <span className={cn(kodeTeratas.has(tipe) && "font-semibold")}>
                     {LABEL_TIPE[tipe]} ({tipe})
                   </span>
                   <span className="text-muted-foreground">
                     {skor} dari {SKOR_MAKS}
                   </span>
                 </div>
-                <div className="mt-1 h-2.5 overflow-hidden rounded-full bg-secondary" aria-hidden>
+                <div className="mt-1 h-2.5 overflow-hidden rounded-sm bg-secondary" aria-hidden>
                   <div
-                    className={cn("h-full rounded-full", kodeTeratas.has(tipe) ? "bg-primary" : "bg-primary/40")}
+                    className={cn("h-full rounded-sm", kodeTeratas.has(tipe) ? "bg-primary" : "bg-primary/40")}
                     style={{ width: `${(skor / SKOR_MAKS) * 100}%` }}
                   />
                 </div>
@@ -97,7 +97,7 @@ export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/has
           <dl className="space-y-3 text-sm">
             {teratas.map(({ tipe }) => (
               <div key={tipe}>
-                <dt className="font-medium">
+                <dt className="font-semibold">
                   {LABEL_TIPE[tipe]} ({tipe})
                 </dt>
                 <dd className="text-muted-foreground">{DESKRIPSI_TIPE[tipe]}</dd>
@@ -124,7 +124,7 @@ export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/has
                 >
                   <span className="w-6 shrink-0 text-right text-sm text-muted-foreground">{i + 1}</span>
                   <span className="min-w-0 flex-1">
-                    <span className="block font-medium">{j.nama}</span>
+                    <span className="block font-semibold">{j.nama}</span>
                     <span className="text-sm text-muted-foreground">{formatAngka(j.jumlahProdi)} Prodi</span>
                   </span>
                   <span className="flex shrink-0 gap-1" aria-label={`Kode RIASEC ${j.kode.join("")}`}>
@@ -133,7 +133,7 @@ export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/has
                         key={t}
                         title={LABEL_TIPE[t]}
                         className={cn(
-                          "inline-flex size-7 items-center justify-center rounded-md text-xs font-medium",
+                          "inline-flex size-7 items-center justify-center rounded-md text-xs font-semibold",
                           kodeTeratas.has(t) ? "bg-primary text-primary-foreground" : "bg-secondary text-foreground",
                         )}
                       >
@@ -153,7 +153,7 @@ export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/has
         <div className="grid gap-6 md:grid-cols-2">
           <form action={simpanProfil} className="space-y-2">
             <input type="hidden" name="p" value={kodekanProfil(profil)} />
-            <button type="submit" className="h-10 rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+            <button type="submit" className="h-10 rounded-sm bg-primary px-5 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
               Simpan ke akun
             </button>
             <p className="text-xs text-muted-foreground">
@@ -161,14 +161,14 @@ export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/has
             </p>
           </form>
           <div className="space-y-2">
-            <label htmlFor="tautan" className="text-sm font-medium">
+            <label htmlFor="tautan" className="text-sm font-semibold">
               Tautan hasil
             </label>
             <input
               id="tautan"
               readOnly
               value={tautan}
-              className="h-10 w-full rounded-lg border border-input bg-secondary/50 px-3 text-sm"
+              className="h-10 w-full rounded-sm border border-input bg-secondary/50 px-3 text-sm"
             />
             <p className="text-xs text-muted-foreground">Tautan ini memuat skormu saja; kami tidak menyimpannya.</p>
           </div>

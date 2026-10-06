@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const kolomInput =
-  "min-h-9 w-full rounded-lg border border-input bg-white px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50";
+  "min-h-9 w-full rounded-sm border border-input bg-white px-3 py-2 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50";
 
 export default async function DetailPromosiPage(props: PageProps<"/moderasi/promosi/[id]">) {
   const moderator = await requireModerator();
@@ -36,9 +36,9 @@ export default async function DetailPromosiPage(props: PageProps<"/moderasi/prom
     <div className={`${kontainer} max-w-3xl space-y-6 py-8`}>
       <PageBreadcrumb items={[{ label: "Promosi", href: "/moderasi/promosi" }, { label: p.kampus.nama }]} />
       <div>
-        <h1 className="text-2xl font-medium tracking-tight">Promosi {p.kampus.nama}</h1>
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Promosi {p.kampus.nama}</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          <span className="font-medium text-foreground">{LABEL_KEADAAN[p.keadaan]}</span> · {formatTanggal(p.mulai)} –{" "}
+          <span className="font-semibold text-foreground">{LABEL_KEADAAN[p.keadaan]}</span> · {formatTanggal(p.mulai)} –{" "}
           {formatTanggal(p.selesai)} · {[p.diBeranda ? "Beranda" : null, p.jurusan].filter(Boolean).join(" · ")}
         </p>
       </div>
@@ -46,13 +46,13 @@ export default async function DetailPromosiPage(props: PageProps<"/moderasi/prom
       {pesan ? (
         <p
           role={berhasil ? "status" : "alert"}
-          className={cn("rounded-lg p-3 text-sm", berhasil ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200" : "bg-destructive/10 text-destructive")}
+          className={cn("rounded-sm p-3 text-sm", berhasil ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200" : "bg-destructive/10 text-destructive")}
         >
           {pesan}
         </p>
       ) : null}
 
-      <Panel title="Pratinjau">
+      <Panel lembar title="Pratinjau">
         <KotakPromosi promosi={{ id: p.id, teks: p.teks, kampus: p.kampus }} />
         <p className="mt-3 text-xs text-muted-foreground">
           Tautan mengarah ke{" "}
@@ -64,7 +64,7 @@ export default async function DetailPromosiPage(props: PageProps<"/moderasi/prom
       </Panel>
 
       {p.status === "draf" ? (
-        <Panel title="Periksa">
+        <Panel lembar title="Periksa">
           <p className="mb-3 text-sm text-muted-foreground">
             Cocokkan Kampus, tempat tampil, tanggal, dan teks dengan kontraknya. Teks hanya boleh berisi fakta tentang Kampus,
             tanpa klaim &ldquo;terbaik&rdquo; atau perbandingan.
@@ -75,14 +75,14 @@ export default async function DetailPromosiPage(props: PageProps<"/moderasi/prom
               <button
                 type="submit"
                 disabled={milikSendiri}
-                className="h-9 rounded-full bg-emerald-600 px-4 text-sm font-medium text-white hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
+                className="h-9 rounded-sm bg-emerald-600 px-4 text-sm font-semibold text-white hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Aktifkan
               </button>
             </form>
             <form action={hapusDrafPromosi}>
               <input type="hidden" name="id" value={p.id} />
-              <button type="submit" className="h-9 rounded-full bg-white px-4 text-sm font-medium ring-1 ring-border hover:bg-secondary">
+              <button type="submit" className="h-9 rounded-sm bg-card px-4 text-sm font-semibold ring-1 ring-foreground/10 hover:bg-secondary">
                 Hapus draf
               </button>
             </form>
@@ -94,14 +94,14 @@ export default async function DetailPromosiPage(props: PageProps<"/moderasi/prom
       ) : null}
 
       {p.status === "aktif" ? (
-        <Panel title="Hentikan">
+        <Panel lembar title="Hentikan">
           <form action={hentikanPromosi} className="space-y-3">
             <input type="hidden" name="id" value={p.id} />
-            <label htmlFor="alasan" className="block text-sm font-medium">
+            <label htmlFor="alasan" className="block text-sm font-semibold">
               Alasan
             </label>
             <textarea id="alasan" name="alasan" required maxLength={500} rows={2} className={kolomInput} />
-            <button type="submit" className="h-9 rounded-full bg-destructive px-4 text-sm font-medium text-white hover:bg-destructive/90">
+            <button type="submit" className="h-9 rounded-sm bg-destructive px-4 text-sm font-semibold text-white hover:bg-destructive/90">
               Hentikan Promosi
             </button>
           </form>
@@ -109,7 +109,7 @@ export default async function DetailPromosiPage(props: PageProps<"/moderasi/prom
         </Panel>
       ) : null}
 
-      <Panel title={`Klik (${formatAngka(totalKlik)})`}>
+      <Panel lembar title={`Klik (${formatAngka(totalKlik)})`}>
         {p.klik.length === 0 ? (
           <p className="text-sm text-muted-foreground">Belum ada klik.</p>
         ) : (
@@ -126,7 +126,7 @@ export default async function DetailPromosiPage(props: PageProps<"/moderasi/prom
         )}
       </Panel>
 
-      <Panel title="Catatan">
+      <Panel lembar title="Catatan">
         <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
           <dt className="text-muted-foreground">Dimasukkan</dt>
           <dd>

@@ -30,7 +30,7 @@ export function Ref({ sumber, r }: { sumber: SumberRingkas; r: Rujukan }) {
     <a
       href={`#${r.awalan}-sumber-${i}`}
       aria-label={`Sumber ${i}`}
-      className="ml-0.5 align-super text-[0.7rem] font-medium text-primary hover:underline"
+      className="ml-0.5 align-super text-[0.7rem] font-semibold text-primary hover:underline"
     >
       [{i}]
     </a>
@@ -40,7 +40,7 @@ export function Ref({ sumber, r }: { sumber: SumberRingkas; r: Rujukan }) {
 export function DaftarSumber({ r, judul = true }: { r: ReturnType<typeof rujukan>; judul?: boolean }) {
   return (
     <div className={judul ? "border-t border-border pt-4" : undefined}>
-      {judul ? <h3 className="mb-2 text-sm font-medium">Sumber</h3> : null}
+      {judul ? <h3 className="mb-2 text-sm font-semibold">Sumber</h3> : null}
       <ol className="space-y-1.5 text-xs leading-relaxed text-muted-foreground">
         {r.sumber.map((s, i) => (
           <li key={s.id} id={`${r.awalan}-sumber-${i + 1}`} className="scroll-mt-24">
@@ -81,11 +81,11 @@ function JudulBagian({ judul, tahunAkademik }: { judul: string; tahunAkademik: n
   return (
     <div className="mb-3 space-y-2">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 className="font-medium">{judul}</h3>
+        <h3 className="font-semibold">{judul}</h3>
         <span className="text-xs text-muted-foreground">TA {formatTahunAkademik(tahunAkademik)}</span>
       </div>
       {lama ? (
-        <p className="flex items-start gap-2 rounded-lg bg-amber-50 p-2.5 text-xs text-amber-900 ring-1 ring-amber-200">
+        <p className="flex items-start gap-2 rounded-sm bg-[#f6e7d3] p-2.5 text-xs text-[#5a3407] ring-1 ring-warning/30">
           <AlertTriangle className="mt-px size-4 shrink-0" aria-hidden />
           Data TA {formatTahunAkademik(tahunAkademik)}, mungkin sudah berubah.
         </p>
@@ -101,15 +101,15 @@ function TabelBiaya({ daftar, r }: { daftar: BiayaTampil[]; r: Rujukan }) {
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-border text-left text-xs text-muted-foreground">
-            <th scope="col" className="py-2 pr-3 font-medium">
+            <th scope="col" className="py-2 pr-3 font-semibold">
               Rincian
             </th>
             {adaJalur ? (
-              <th scope="col" className="py-2 pr-3 font-medium">
+              <th scope="col" className="py-2 pr-3 font-semibold">
                 Jalur Masuk
               </th>
             ) : null}
-            <th scope="col" className="py-2 text-right font-medium">
+            <th scope="col" className="py-2 text-right font-semibold">
               Jumlah
             </th>
           </tr>
@@ -124,7 +124,7 @@ function TabelBiaya({ daftar, r }: { daftar: BiayaTampil[]; r: Rujukan }) {
               {/* No Jalur Masuk means the Sumber didn't tie it to one, not "every jalur". */}
               {adaJalur ? <td className="py-2 pr-3 text-muted-foreground">{b.jalurNama ?? "—"}</td> : null}
               <td className="py-2 text-right whitespace-nowrap">
-                <span className="font-medium">{formatRupiah(b.jumlah, b.batas)}</span>
+                <span className="font-semibold">{formatRupiah(b.jumlah, b.batas)}</span>
                 <Ref sumber={b.sumber} r={r} />
                 <span className="block text-xs text-muted-foreground">{LABEL_PERIODE[b.periode]}</span>
               </td>
@@ -140,14 +140,14 @@ function DaftarJalur({ daftar, r }: { daftar: JalurTampil[]; r: Rujukan }) {
   return (
     <ul className="space-y-3">
       {daftar.map((j) => (
-        <li key={j.id} className="rounded-lg p-3 text-sm ring-1 ring-border">
+        <li key={j.id} className="rounded-sm p-3 text-sm ring-1 ring-foreground/10">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <p className="font-medium">
+            <p className="font-semibold">
               {j.nama}
               <Ref sumber={j.sumber} r={r} />
             </p>
             {j.nama.toLowerCase() !== LABEL_KATEGORI_JALUR[j.kategori].toLowerCase() ? (
-              <span className="rounded-full bg-secondary px-2 py-0.5 text-xs">{LABEL_KATEGORI_JALUR[j.kategori]}</span>
+              <span className="rounded-sm bg-secondary px-2 py-0.5 text-xs">{LABEL_KATEGORI_JALUR[j.kategori]}</span>
             ) : null}
           </div>
           <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-muted-foreground">
@@ -181,9 +181,9 @@ function DaftarBeasiswa({ daftar, r }: { daftar: BeasiswaTampil[]; r: Rujukan })
   return (
     <ul className="space-y-3">
       {daftar.map((b) => (
-        <li key={`${b.nasional}-${b.nama}`} className="rounded-lg p-3 text-sm ring-1 ring-border">
+        <li key={`${b.nasional}-${b.nama}`} className="rounded-sm p-3 text-sm ring-1 ring-foreground/10">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <p className="font-medium">
+            <p className="font-semibold">
               {b.url ? (
                 <a href={b.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
                   {b.nama}
@@ -194,7 +194,7 @@ function DaftarBeasiswa({ daftar, r }: { daftar: BeasiswaTampil[]; r: Rujukan })
               <Ref sumber={b.sumber} r={r} />
               {b.sumberIkut ? <Ref sumber={b.sumberIkut} r={r} /> : null}
             </p>
-            {b.nasional ? <span className="rounded-full bg-secondary px-2 py-0.5 text-xs">Program nasional</span> : null}
+            {b.nasional ? <span className="rounded-sm bg-secondary px-2 py-0.5 text-xs">Program nasional</span> : null}
           </div>
           <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-muted-foreground">
             <dt>Penyelenggara</dt>
@@ -277,7 +277,7 @@ export function PanelBiayaProdi({
             <TabelBiaya daftar={biayaKampus.daftar} r={r} />
           </section>
         ) : null}
-        <Link href={`/kampus/${kampus.slug}#biaya-masuk`} className="inline-flex text-sm font-medium text-primary hover:underline">
+        <Link href={`/kampus/${kampus.slug}#biaya-masuk`} className="inline-flex text-sm font-semibold text-primary hover:underline">
           Jalur Masuk dan Beasiswa di {kampus.nama}
         </Link>
         <DaftarSumber r={r} />

@@ -27,7 +27,7 @@ export default async function FaktaPage(props: PageProps<"/moderasi/fakta">) {
   return (
     <div className={`${kontainer} space-y-6 py-8`}>
       <div>
-        <h1 className="text-2xl font-medium tracking-tight">Fakta Biaya & Masuk</h1>
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Fakta Biaya & Masuk</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           Fakta Draf per Sumber. Bandingkan setiap fakta dengan dokumennya, lalu tandai Diperiksa. Fakta yang kamu masukkan
           sendiri harus diperiksa Moderator lain.
@@ -36,20 +36,20 @@ export default async function FaktaPage(props: PageProps<"/moderasi/fakta">) {
       <TabModerasiNav jumlah={jumlah} aktif="fakta" />
 
       {draf.length === 0 ? (
-        <Panel>
+        <Panel lembar>
           <EmptyState icon={Inbox} title="Tidak ada fakta yang perlu diperiksa">
             Fakta baru masuk lewat <code>npm run fakta:import</code> (lihat data/fakta/README.md).
           </EmptyState>
         </Panel>
       ) : (
-        <Panel>
+        <Panel lembar>
           <ul className="divide-y divide-border">
             {draf.map((s) => {
               const milikSendiri = s.dimasukkan_email?.toLowerCase() === email;
               return (
                 <li key={s.id} className="flex flex-col gap-1 py-3 text-sm sm:flex-row sm:items-baseline sm:justify-between">
                   <div className="min-w-0">
-                    <Link href={`/moderasi/fakta/${s.id}`} className="font-medium hover:underline">
+                    <Link href={`/moderasi/fakta/${s.id}`} className="font-semibold hover:underline">
                       {s.judul}
                     </Link>
                     <p className="text-muted-foreground">
@@ -68,7 +68,7 @@ export default async function FaktaPage(props: PageProps<"/moderasi/fakta">) {
         </Panel>
       )}
 
-      <Panel title="Sudah Diperiksa">
+      <Panel lembar title="Sudah Diperiksa">
         <p className="mb-3 text-sm text-muted-foreground">
           Menemukan angka yang salah di halaman publik? Buka Sumbernya dan tarik faktanya. Satu Moderator cukup.
         </p>
@@ -82,9 +82,9 @@ export default async function FaktaPage(props: PageProps<"/moderasi/fakta">) {
             defaultValue={cari}
             maxLength={100}
             placeholder="Nama Kampus, kode, atau judul Sumber"
-            className="h-9 min-w-0 flex-1 rounded-lg border border-input bg-white px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="h-9 min-w-0 flex-1 rounded-sm border border-input bg-white px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
           />
-          <button type="submit" className="h-9 shrink-0 rounded-full bg-white px-4 text-sm font-medium ring-1 ring-border hover:bg-secondary">
+          <button type="submit" className="h-9 shrink-0 rounded-sm bg-card px-4 text-sm font-semibold ring-1 ring-foreground/10 hover:bg-secondary">
             Cari
           </button>
         </form>
@@ -95,7 +95,7 @@ export default async function FaktaPage(props: PageProps<"/moderasi/fakta">) {
             {diperiksa.map((s) => (
               <li key={s.id} className="flex flex-col gap-1 py-3 text-sm sm:flex-row sm:items-baseline sm:justify-between">
                 <div className="min-w-0">
-                  <Link href={`/moderasi/fakta/${s.id}`} className="font-medium hover:underline">
+                  <Link href={`/moderasi/fakta/${s.id}`} className="font-semibold hover:underline">
                     {s.judul}
                   </Link>
                   <p className="text-muted-foreground">
@@ -111,17 +111,17 @@ export default async function FaktaPage(props: PageProps<"/moderasi/fakta">) {
       </Panel>
 
       {dikembalikan.length ? (
-        <Panel title="Dikembalikan">
+        <Panel lembar title="Dikembalikan">
           <p className="mb-3 text-sm text-muted-foreground">
             Fakta Draf yang dikembalikan sudah dihapus. Perbaiki CSV-nya, lalu impor lagi dengan kode yang sama.
           </p>
           <ul className="divide-y divide-border">
             {dikembalikan.map((s) => (
               <li key={s.id} className="py-3 text-sm">
-                <p className="font-medium">
+                <p className="font-semibold">
                   {s.judul} <span className="font-normal text-muted-foreground">({s.kode})</span>
                 </p>
-                <p className="mt-1 rounded-lg bg-amber-50 p-2.5 ring-1 ring-amber-200">{s.catatan_pemeriksa}</p>
+                <p className="mt-1 rounded-sm bg-amber-50 p-2.5 ring-1 ring-amber-200">{s.catatan_pemeriksa}</p>
               </li>
             ))}
           </ul>

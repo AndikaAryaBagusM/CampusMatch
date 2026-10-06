@@ -1,24 +1,39 @@
 import { cn } from "@/lib/utils";
 
-// White content card on the grey page background, as in every design frame.
+// A section of a timetable board, set straight on the enamel ground: a heavy
+// ink rule, the heading hanging from it, then ruled rows. `lembar` puts it on
+// a lighter sheet instead, for forms and account tools that need a container.
 export function Panel({
   title,
   action,
   children,
   className,
   id,
+  lembar = false,
 }: {
   title?: React.ReactNode;
   action?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
   id?: string;
+  lembar?: boolean;
 }) {
   return (
-    <section id={id} className={cn("rounded-xl bg-white p-5 ring-1 ring-border sm:p-6", className)}>
+    <section
+      id={id}
+      className={cn(
+        lembar ? "rounded-md bg-card p-5 ring-1 ring-foreground/10 sm:p-6" : "scroll-mt-28 border-t-[3px] border-foreground pt-3",
+        className,
+      )}
+    >
       {title || action ? (
-        <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
-          {title ? <h2 className="text-lg font-medium">{title}</h2> : null}
+        <div
+          className={cn(
+            "mb-3 flex flex-wrap items-baseline justify-between gap-2",
+            lembar && "mb-4 border-b-2 border-foreground pb-2",
+          )}
+        >
+          {title ? <h2 className="text-lg leading-tight font-bold">{title}</h2> : null}
           {action}
         </div>
       ) : null}

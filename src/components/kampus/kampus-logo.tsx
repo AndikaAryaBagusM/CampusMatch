@@ -22,12 +22,12 @@ function hue(npsn: string): number {
 }
 
 const UKURAN = {
-  sm: "size-10 text-sm rounded-lg",
-  md: "size-14 text-lg rounded-xl",
-  lg: "size-16 text-xl rounded-xl sm:size-20 sm:text-2xl",
+  sm: "size-10 text-base rounded-sm",
+  md: "size-14 text-2xl rounded-sm",
+  lg: "size-16 text-3xl rounded-sm sm:size-20 sm:text-4xl",
 };
 
-// The Kampus logo when we have one (see getKampusMedia), otherwise a monogram.
+// The Kampus logo when we have one (see getKampusMedia), otherwise a route-plate monogram.
 // Monogram background is oklch L 0.45, which keeps white text above 4.5:1 for any hue.
 export function KampusLogo({
   kampus,
@@ -42,14 +42,14 @@ export function KampusLogo({
   if (logoUrl) {
     return (
       // eslint-disable-next-line @next/next/no-img-element -- logos will come from varied origins
-      <img src={logoUrl} alt={`Logo ${kampus.nama}`} className={cn("shrink-0 bg-white object-contain", UKURAN[size], className)} />
+      <img src={logoUrl} alt={`Logo ${kampus.nama}`} className={cn("shrink-0 bg-card object-contain", UKURAN[size], className)} />
     );
   }
   return (
     <span
       aria-hidden
       style={{ backgroundColor: `oklch(0.45 0.12 ${hue(kampus.npsn)})` }}
-      className={cn("inline-flex shrink-0 items-center justify-center font-semibold tracking-tight text-white", UKURAN[size], className)}
+      className={cn("inline-flex shrink-0 items-center justify-center font-plate leading-none font-bold tracking-wide text-white", UKURAN[size], className)}
     >
       {inisialKampus(kampus.nama)}
     </span>

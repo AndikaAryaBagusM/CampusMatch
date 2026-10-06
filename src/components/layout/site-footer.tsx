@@ -1,60 +1,51 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/layout/wordmark";
+import { GarisRute } from "@/components/trayek/garis-rute";
 
+const JELAJAHI = [
+  { href: "/", label: "Beranda" },
+  { href: "/cari", label: "Cari" },
+  { href: "/#bidang", label: "Bidang" },
+  { href: "/#unggulan", label: "Daftar Kampus Unggulan" },
+  { href: "/kota", label: "Kampus per Kota" },
+  { href: "/tes-minat", label: "Tes Minat" },
+];
+
+// The close of every page: the jade field, with the site's sections laid out
+// as one line.
 export function SiteFooter() {
   return (
-    <footer className="mt-16 bg-brand-footer text-white">
-      <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-[2fr_1fr_1fr]">
-        <div className="space-y-3">
-          <Wordmark inverted />
-          <p className="max-w-sm text-sm text-white/85">
-            Bantu kamu memilih Jurusan dan Kampus, dengan data katalog resmi dan ulasan dari mahasiswa dan
-            alumni.
-          </p>
-        </div>
-        <div>
-          <h2 className="mb-3 text-sm font-semibold">Jelajahi</h2>
-          <ul className="space-y-2 text-sm text-white/85">
-            <li>
-              <Link href="/" className="hover:text-white hover:underline">
-                Beranda
-              </Link>
-            </li>
-            <li>
-              <Link href="/cari" className="hover:text-white hover:underline">
-                Cari
-              </Link>
-            </li>
-            <li>
-              <Link href="/#bidang" className="hover:text-white hover:underline">
-                Bidang
-              </Link>
-            </li>
-            <li>
-              <Link href="/#unggulan" className="hover:text-white hover:underline">
-                Daftar Kampus Unggulan
-              </Link>
-            </li>
-            <li>
-              <Link href="/kota" className="hover:text-white hover:underline">
-                Kampus per Kota
-              </Link>
-            </li>
-            <li>
-              <Link href="/tes-minat" className="hover:text-white hover:underline">
-                Tes Minat
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="mb-3 text-sm font-semibold">Tentang data</h2>
-          <p className="text-sm text-white/85">
-            Data Kampus, Prodi dan akreditasi Kampus berasal dari ekspor resmi Kemenristekdikti.
-          </p>
+    <footer className="mt-20 bg-jade text-on-jade">
+      <div className="mx-auto w-full max-w-6xl px-4 pt-12 pb-10 sm:px-6">
+        <div className="grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-12">
+          <div className="space-y-4">
+            <Wordmark inverted />
+            <p className="max-w-sm text-sm leading-relaxed text-on-jade-muted">
+              Bantu kamu memilih Jurusan dan Kampus, dengan data katalog resmi dan ulasan dari mahasiswa dan alumni.
+            </p>
+          </div>
+          <div className="space-y-8">
+            <div>
+              <h2 className="mb-4 text-sm font-bold">Jelajahi</h2>
+              <GarisRute
+                label="Jelajahi CampusMatch"
+                warna="var(--on-jade-muted)"
+                diJade
+                arah="md"
+                halte={JELAJAHI.map((j) => ({ label: j.label, href: j.href }))}
+                className="text-sm [&_a]:text-on-jade"
+              />
+            </div>
+            <div>
+              <h2 className="mb-2 text-sm font-bold">Tentang data</h2>
+              <p className="max-w-xl text-sm leading-relaxed text-on-jade-muted">
+                Data Kampus, Prodi dan akreditasi Kampus berasal dari ekspor resmi Kemenristekdikti.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="bg-brand-deep">
+      <div className="bg-jade-deep">
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4 text-sm sm:px-6">
           <span>© 2026 CampusMatch</span>
           <nav aria-label="Informasi hukum" className="flex gap-4">

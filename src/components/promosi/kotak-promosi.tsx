@@ -6,17 +6,17 @@ import { cn } from "@/lib/utils";
 
 // A paid Kampus placement (ADR 0009), always labelled and set apart from the
 // organic list. Only catalogue data and the Kampus's checked text; never
-// Bintang or Ulasan. The link is a plain <a> through /promosi/[id] so a click
+// Bintang or Ulasan. Set as a poster in a different paper from the routes. The link is a plain <a> through /promosi/[id] so a click
 // is counted (a daily total) and prefetching never is.
 export function KotakPromosi({ promosi, className }: { promosi: PromosiTampil; className?: string }) {
   const { kampus } = promosi;
   return (
-    <aside aria-label="Promosi" className={cn("rounded-xl border border-dashed border-amber-300 bg-amber-50/60 p-4 sm:p-5", className)}>
+    <aside aria-label="Promosi" className={cn("rounded-md border-2 border-dashed border-[#6b4a00]/60 bg-[#f5ecd7] p-4 sm:p-5", className)}>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="inline-flex h-6 items-center rounded-full bg-amber-200 px-2.5 text-xs font-semibold text-amber-950">Promosi</span>
-        <p className="text-xs text-muted-foreground">
+        <span className="inline-flex h-6 items-center rounded-sm bg-[#6b4a00] px-2 font-plate text-sm font-bold tracking-wide text-white uppercase">Promosi</span>
+        <p className="text-xs text-[#4f4430]">
           Promosi berbayar dari Kampus. Tidak memengaruhi ulasan, Bintang, atau urutan hasil.{" "}
-          <Link href="/ketentuan#promosi" className="text-primary hover:underline">
+          <Link href="/ketentuan#promosi" className="font-semibold text-foreground underline">
             Selengkapnya
           </Link>
         </p>
@@ -24,8 +24,8 @@ export function KotakPromosi({ promosi, className }: { promosi: PromosiTampil; c
       <a href={`/promosi/${promosi.id}`} rel="sponsored nofollow" className="group mt-3 flex gap-4">
         <KampusLogo kampus={kampus} size="sm" />
         <span className="min-w-0 flex-1 space-y-1.5">
-          <span className="block font-medium text-primary group-hover:underline">{kampus.nama}</span>
-          <span className="block text-sm text-muted-foreground">{kampus.kotaNama}</span>
+          <span className="block font-bold decoration-2 underline-offset-4 group-hover:underline">{kampus.nama}</span>
+          <span className="block text-sm text-[#4f4430]">{kampus.kotaNama}</span>
           <AkreditasiBadge akreditasi={kampus.akreditasi} />
           {promosi.teks ? <span className="block text-sm">{promosi.teks}</span> : null}
         </span>

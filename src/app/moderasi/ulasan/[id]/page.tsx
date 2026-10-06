@@ -40,8 +40,8 @@ export default async function RiwayatUlasanPage({ params }: PageProps<"/moderasi
   return (
     <div className={`${kontainer} max-w-4xl space-y-6 pb-8`}>
       <PageBreadcrumb items={[{ label: "Antrean Moderasi", href: "/moderasi" }, { label: "Riwayat ulasan" }]} />
-      <Panel>
-        <h1 className="text-xl font-medium">
+      <Panel lembar>
+        <h1 className="text-xl leading-tight font-extrabold">
           <Link href={`/prodi/${ulasan.prodiSlug}`} className="hover:underline">
             {ulasan.prodiNama}
           </Link>
@@ -57,21 +57,21 @@ export default async function RiwayatUlasanPage({ params }: PageProps<"/moderasi
         </p>
       </Panel>
 
-      <Panel title="Revisi">
+      <Panel lembar title="Revisi">
         <ol className="space-y-5">
           {revisi.map((r) => (
             <li key={r.id}>
               <div className="flex flex-wrap items-center gap-2 text-xs">
-                <span className="font-medium">Revisi ke-{r.nomor}</span>
-                <span className="rounded-full bg-secondary px-2 py-0.5">{r.status}</span>
+                <span className="font-semibold">Revisi ke-{r.nomor}</span>
+                <span className="rounded-sm bg-secondary px-2 py-0.5">{r.status}</span>
                 {r.id === ulasan.revisiTerbitId ? (
-                  <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-emerald-900">tampil</span>
+                  <span className="rounded-sm bg-emerald-100 px-2 py-0.5 text-emerald-900">tampil</span>
                 ) : null}
                 <span className="text-muted-foreground">{formatWaktu(r.createdAt)}</span>
               </div>
               <p className="mt-1 text-sm">
                 {r.tingkatRisiko ? (
-                  <span className={cn("mr-2 rounded-full px-2 py-0.5 text-xs font-medium", LABEL_RISIKO[r.tingkatRisiko].kelas)}>
+                  <span className={cn("mr-2 rounded-sm px-2 py-0.5 text-xs font-semibold", LABEL_RISIKO[r.tingkatRisiko].kelas)}>
                     {LABEL_RISIKO[r.tingkatRisiko].teks}
                   </span>
                 ) : null}
@@ -89,14 +89,14 @@ export default async function RiwayatUlasanPage({ params }: PageProps<"/moderasi
         </ol>
       </Panel>
 
-      <Panel title={`Laporan (${laporan.length})`}>
+      <Panel lembar title={`Laporan (${laporan.length})`}>
         {laporan.length === 0 ? (
           <p className="text-sm text-muted-foreground">Belum pernah dilaporkan.</p>
         ) : (
           <ul className="divide-y divide-border text-sm">
             {laporan.map((l) => (
               <li key={l.id} className="py-2">
-                <span className="font-medium">{LABEL_ALASAN_LAPORAN[l.alasan]}</span> · {l.status} · {formatWaktu(l.createdAt)}
+                <span className="font-semibold">{LABEL_ALASAN_LAPORAN[l.alasan]}</span> · {l.status} · {formatWaktu(l.createdAt)}
                 {l.catatan ? <p className="mt-1 whitespace-pre-line text-muted-foreground">{l.catatan}</p> : null}
               </li>
             ))}
@@ -104,14 +104,14 @@ export default async function RiwayatUlasanPage({ params }: PageProps<"/moderasi
         )}
       </Panel>
 
-      <Panel title="Riwayat keputusan">
+      <Panel lembar title="Riwayat keputusan">
         {riwayat.length === 0 ? (
           <p className="text-sm text-muted-foreground">Belum ada.</p>
         ) : (
           <ul className="divide-y divide-border text-sm">
             {riwayat.map((h) => (
               <li key={h.id} className="py-2">
-                <span className="font-medium">{LABEL_AKSI[h.aksi]}</span>
+                <span className="font-semibold">{LABEL_AKSI[h.aksi]}</span>
                 <span className="text-muted-foreground">
                   {" "}
                   · {h.olehEmail ?? "otomatis"} · {formatWaktu(h.createdAt)}

@@ -18,8 +18,8 @@ export default async function AkunDikunciPage() {
 
   return (
     <div className={`${kontainer} max-w-xl py-10`}>
-      <Panel>
-        <h1 className="text-2xl font-medium tracking-tight">Akunmu dikunci</h1>
+      <Panel lembar>
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Akunmu dikunci</h1>
         <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
           <p>
             Akun CampusMatch hanya untuk usia 18 tahun ke atas, jadi akunmu tidak bisa dipakai lagi. Ulasan yang pernah kamu
@@ -28,7 +28,7 @@ export default async function AkunDikunciPage() {
           <p>
             Untuk menghapus akun beserta ulasanmu, kirim email ke{" "}
             {email ? (
-              <a href={`mailto:${email}?subject=${encodeURIComponent("Hapus akun")}`} className="font-medium text-primary hover:underline">
+              <a href={`mailto:${email}?subject=${encodeURIComponent("Hapus akun")}`} className="font-semibold text-primary hover:underline">
                 {email}
               </a>
             ) : (
@@ -38,7 +38,7 @@ export default async function AkunDikunciPage() {
           </p>
         </div>
         <form action={keluar} className="mt-5">
-          <button type="submit" className="text-sm font-medium text-primary hover:underline">
+          <button type="submit" className="text-sm font-semibold text-primary hover:underline">
             Keluar
           </button>
         </form>

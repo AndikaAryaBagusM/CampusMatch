@@ -1,0 +1,795 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T20:15:55.626Z",
+  "title": "Design System: CampusMatch",
+  "extensions": {
+    "colorMeta": {
+      "enamel-ground": {
+        "role": "neutral",
+        "displayName": "Enamel Ground",
+        "canonical": "#e7ede9",
+        "oklch": "oklch(94.0% 0.008 157.1)",
+        "tonalRamp": [
+          "oklch(15% 0.008 157.1)",
+          "oklch(26% 0.008 157.1)",
+          "oklch(37% 0.008 157.1)",
+          "oklch(48% 0.008 157.1)",
+          "oklch(59% 0.008 157.1)",
+          "oklch(70% 0.008 157.1)",
+          "oklch(82% 0.008 157.1)",
+          "oklch(95% 0.008 157.1)"
+        ]
+      },
+      "signal-ink": {
+        "role": "neutral",
+        "displayName": "Signal Ink",
+        "canonical": "#13201a",
+        "oklch": "oklch(22.9% 0.022 164.3)",
+        "tonalRamp": [
+          "oklch(15% 0.022 164.3)",
+          "oklch(26% 0.022 164.3)",
+          "oklch(37% 0.022 164.3)",
+          "oklch(48% 0.022 164.3)",
+          "oklch(59% 0.022 164.3)",
+          "oklch(70% 0.022 164.3)",
+          "oklch(82% 0.022 164.3)",
+          "oklch(95% 0.022 164.3)"
+        ]
+      },
+      "sheet": {
+        "role": "neutral",
+        "displayName": "Sheet",
+        "canonical": "#f2f6f3",
+        "oklch": "oklch(96.9% 0.006 153.8)",
+        "tonalRamp": [
+          "oklch(15% 0.006 153.8)",
+          "oklch(26% 0.006 153.8)",
+          "oklch(37% 0.006 153.8)",
+          "oklch(48% 0.006 153.8)",
+          "oklch(59% 0.006 153.8)",
+          "oklch(70% 0.006 153.8)",
+          "oklch(82% 0.006 153.8)",
+          "oklch(95% 0.006 153.8)"
+        ]
+      },
+      "jade": {
+        "role": "primary",
+        "displayName": "Station Jade",
+        "canonical": "#0b6b4e",
+        "oklch": "oklch(46.9% 0.094 165.8)",
+        "tonalRamp": [
+          "oklch(15% 0.094 165.8)",
+          "oklch(26% 0.094 165.8)",
+          "oklch(37% 0.094 165.8)",
+          "oklch(48% 0.094 165.8)",
+          "oklch(59% 0.094 165.8)",
+          "oklch(70% 0.094 165.8)",
+          "oklch(82% 0.094 165.8)",
+          "oklch(95% 0.040 165.8)"
+        ]
+      },
+      "jade-deep": {
+        "role": "primary",
+        "displayName": "Deep Jade",
+        "canonical": "#08513b",
+        "oklch": "oklch(38.7% 0.077 166.3)",
+        "tonalRamp": [
+          "oklch(15% 0.077 166.3)",
+          "oklch(26% 0.077 166.3)",
+          "oklch(37% 0.077 166.3)",
+          "oklch(48% 0.077 166.3)",
+          "oklch(59% 0.077 166.3)",
+          "oklch(70% 0.077 166.3)",
+          "oklch(82% 0.077 166.3)",
+          "oklch(95% 0.040 166.3)"
+        ]
+      },
+      "jade-tint": {
+        "role": "primary",
+        "displayName": "Jade Tint",
+        "canonical": "#d5e3db",
+        "oklch": "oklch(90.3% 0.018 161.1)",
+        "tonalRamp": [
+          "oklch(15% 0.018 161.1)",
+          "oklch(26% 0.018 161.1)",
+          "oklch(37% 0.018 161.1)",
+          "oklch(48% 0.018 161.1)",
+          "oklch(59% 0.018 161.1)",
+          "oklch(70% 0.018 161.1)",
+          "oklch(82% 0.018 161.1)",
+          "oklch(95% 0.018 161.1)"
+        ]
+      },
+      "jade-tint-ink": {
+        "role": "primary",
+        "displayName": "Tint Ink",
+        "canonical": "#0a5e44",
+        "oklch": "oklch(42.9% 0.086 165.5)",
+        "tonalRamp": [
+          "oklch(15% 0.086 165.5)",
+          "oklch(26% 0.086 165.5)",
+          "oklch(37% 0.086 165.5)",
+          "oklch(48% 0.086 165.5)",
+          "oklch(59% 0.086 165.5)",
+          "oklch(70% 0.086 165.5)",
+          "oklch(82% 0.086 165.5)",
+          "oklch(95% 0.040 165.5)"
+        ]
+      },
+      "on-jade": {
+        "role": "primary",
+        "displayName": "On-Jade White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(26% 0.000 89.9)",
+          "oklch(37% 0.000 89.9)",
+          "oklch(48% 0.000 89.9)",
+          "oklch(59% 0.000 89.9)",
+          "oklch(70% 0.000 89.9)",
+          "oklch(82% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      },
+      "on-jade-muted": {
+        "role": "primary",
+        "displayName": "On-Jade Muted",
+        "canonical": "#cfe3d9",
+        "oklch": "oklch(89.8% 0.025 164.4)",
+        "tonalRamp": [
+          "oklch(15% 0.025 164.4)",
+          "oklch(26% 0.025 164.4)",
+          "oklch(37% 0.025 164.4)",
+          "oklch(48% 0.025 164.4)",
+          "oklch(59% 0.025 164.4)",
+          "oklch(70% 0.025 164.4)",
+          "oklch(82% 0.025 164.4)",
+          "oklch(95% 0.025 164.4)"
+        ]
+      },
+      "pengulas-pink": {
+        "role": "secondary",
+        "displayName": "Pengulas Pink",
+        "canonical": "#c42f73",
+        "oklch": "oklch(55.7% 0.192 358.0)",
+        "tonalRamp": [
+          "oklch(15% 0.192 358.0)",
+          "oklch(26% 0.192 358.0)",
+          "oklch(37% 0.192 358.0)",
+          "oklch(48% 0.192 358.0)",
+          "oklch(59% 0.192 358.0)",
+          "oklch(70% 0.192 358.0)",
+          "oklch(82% 0.192 358.0)",
+          "oklch(95% 0.040 358.0)"
+        ]
+      },
+      "pengulas-ink": {
+        "role": "secondary",
+        "displayName": "Pengulas Ink",
+        "canonical": "#a8245f",
+        "oklch": "oklch(49.3% 0.173 359.0)",
+        "tonalRamp": [
+          "oklch(15% 0.173 359.0)",
+          "oklch(26% 0.173 359.0)",
+          "oklch(37% 0.173 359.0)",
+          "oklch(48% 0.173 359.0)",
+          "oklch(59% 0.173 359.0)",
+          "oklch(70% 0.173 359.0)",
+          "oklch(82% 0.173 359.0)",
+          "oklch(95% 0.040 359.0)"
+        ]
+      },
+      "pengulas-tint": {
+        "role": "secondary",
+        "displayName": "Pengulas Tint",
+        "canonical": "#f6dbe7",
+        "oklch": "oklch(91.7% 0.034 349.1)",
+        "tonalRamp": [
+          "oklch(15% 0.034 349.1)",
+          "oklch(26% 0.034 349.1)",
+          "oklch(37% 0.034 349.1)",
+          "oklch(48% 0.034 349.1)",
+          "oklch(59% 0.034 349.1)",
+          "oklch(70% 0.034 349.1)",
+          "oklch(82% 0.034 349.1)",
+          "oklch(95% 0.034 349.1)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "#dde5e0",
+        "oklch": "oklch(91.4% 0.011 158.8)",
+        "tonalRamp": [
+          "oklch(15% 0.011 158.8)",
+          "oklch(26% 0.011 158.8)",
+          "oklch(37% 0.011 158.8)",
+          "oklch(48% 0.011 158.8)",
+          "oklch(59% 0.011 158.8)",
+          "oklch(70% 0.011 158.8)",
+          "oklch(82% 0.011 158.8)",
+          "oklch(95% 0.011 158.8)"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#4b5b53",
+        "oklch": "oklch(45.5% 0.024 163.7)",
+        "tonalRamp": [
+          "oklch(15% 0.024 163.7)",
+          "oklch(26% 0.024 163.7)",
+          "oklch(37% 0.024 163.7)",
+          "oklch(48% 0.024 163.7)",
+          "oklch(59% 0.024 163.7)",
+          "oklch(70% 0.024 163.7)",
+          "oklch(82% 0.024 163.7)",
+          "oklch(95% 0.024 163.7)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#c3d0c8",
+        "oklch": "oklch(84.5% 0.018 159.0)",
+        "tonalRamp": [
+          "oklch(15% 0.018 159.0)",
+          "oklch(26% 0.018 159.0)",
+          "oklch(37% 0.018 159.0)",
+          "oklch(48% 0.018 159.0)",
+          "oklch(59% 0.018 159.0)",
+          "oklch(70% 0.018 159.0)",
+          "oklch(82% 0.018 159.0)",
+          "oklch(95% 0.018 159.0)"
+        ]
+      },
+      "input-stroke": {
+        "role": "neutral",
+        "displayName": "Input Stroke",
+        "canonical": "#a9b8af",
+        "oklch": "oklch(76.8% 0.021 159.6)",
+        "tonalRamp": [
+          "oklch(15% 0.021 159.6)",
+          "oklch(26% 0.021 159.6)",
+          "oklch(37% 0.021 159.6)",
+          "oklch(48% 0.021 159.6)",
+          "oklch(59% 0.021 159.6)",
+          "oklch(70% 0.021 159.6)",
+          "oklch(82% 0.021 159.6)",
+          "oklch(95% 0.021 159.6)"
+        ]
+      },
+      "star": {
+        "role": "tertiary",
+        "displayName": "Bintang Amber",
+        "canonical": "#b87400",
+        "oklch": "oklch(61.7% 0.134 69.4)",
+        "tonalRamp": [
+          "oklch(15% 0.134 69.4)",
+          "oklch(26% 0.134 69.4)",
+          "oklch(37% 0.134 69.4)",
+          "oklch(48% 0.134 69.4)",
+          "oklch(59% 0.134 69.4)",
+          "oklch(70% 0.134 69.4)",
+          "oklch(82% 0.134 69.4)",
+          "oklch(95% 0.040 69.4)"
+        ]
+      },
+      "success": {
+        "role": "tertiary",
+        "displayName": "Success Green",
+        "canonical": "#1d7a3e",
+        "oklch": "oklch(51.2% 0.126 150.5)",
+        "tonalRamp": [
+          "oklch(15% 0.126 150.5)",
+          "oklch(26% 0.126 150.5)",
+          "oklch(37% 0.126 150.5)",
+          "oklch(48% 0.126 150.5)",
+          "oklch(59% 0.126 150.5)",
+          "oklch(70% 0.126 150.5)",
+          "oklch(82% 0.126 150.5)",
+          "oklch(95% 0.040 150.5)"
+        ]
+      },
+      "warning": {
+        "role": "tertiary",
+        "displayName": "Warning Rust",
+        "canonical": "#9a4a0c",
+        "oklch": "oklch(50.2% 0.126 50.8)",
+        "tonalRamp": [
+          "oklch(15% 0.126 50.8)",
+          "oklch(26% 0.126 50.8)",
+          "oklch(37% 0.126 50.8)",
+          "oklch(48% 0.126 50.8)",
+          "oklch(59% 0.126 50.8)",
+          "oklch(70% 0.126 50.8)",
+          "oklch(82% 0.126 50.8)",
+          "oklch(95% 0.040 50.8)"
+        ]
+      },
+      "destructive": {
+        "role": "tertiary",
+        "displayName": "Destructive Red",
+        "canonical": "#b42318",
+        "oklch": "oklch(50.0% 0.182 29.5)",
+        "tonalRamp": [
+          "oklch(15% 0.182 29.5)",
+          "oklch(26% 0.182 29.5)",
+          "oklch(37% 0.182 29.5)",
+          "oklch(48% 0.182 29.5)",
+          "oklch(59% 0.182 29.5)",
+          "oklch(70% 0.182 29.5)",
+          "oklch(82% 0.182 29.5)",
+          "oklch(95% 0.040 29.5)"
+        ]
+      },
+      "line-pendidikan": {
+        "role": "tertiary",
+        "displayName": "Pendidikan Line (PD)",
+        "canonical": "#b45309",
+        "oklch": "oklch(55.5% 0.146 49.0)",
+        "tonalRamp": [
+          "oklch(15% 0.146 49.0)",
+          "oklch(26% 0.146 49.0)",
+          "oklch(37% 0.146 49.0)",
+          "oklch(48% 0.146 49.0)",
+          "oklch(59% 0.146 49.0)",
+          "oklch(70% 0.146 49.0)",
+          "oklch(82% 0.146 49.0)",
+          "oklch(95% 0.040 49.0)"
+        ]
+      },
+      "line-teknik": {
+        "role": "tertiary",
+        "displayName": "Teknik Line (TK)",
+        "canonical": "#1e3a8a",
+        "oklch": "oklch(37.9% 0.138 265.5)",
+        "tonalRamp": [
+          "oklch(15% 0.138 265.5)",
+          "oklch(26% 0.138 265.5)",
+          "oklch(37% 0.138 265.5)",
+          "oklch(48% 0.138 265.5)",
+          "oklch(59% 0.138 265.5)",
+          "oklch(70% 0.138 265.5)",
+          "oklch(82% 0.138 265.5)",
+          "oklch(95% 0.040 265.5)"
+        ]
+      },
+      "line-sosial": {
+        "role": "tertiary",
+        "displayName": "Sosial Line (SO)",
+        "canonical": "#86198f",
+        "oklch": "oklch(45.2% 0.192 324.6)",
+        "tonalRamp": [
+          "oklch(15% 0.192 324.6)",
+          "oklch(26% 0.192 324.6)",
+          "oklch(37% 0.192 324.6)",
+          "oklch(48% 0.192 324.6)",
+          "oklch(59% 0.192 324.6)",
+          "oklch(70% 0.192 324.6)",
+          "oklch(82% 0.192 324.6)",
+          "oklch(95% 0.040 324.6)"
+        ]
+      },
+      "line-ekonomi": {
+        "role": "tertiary",
+        "displayName": "Ekonomi Line (EK)",
+        "canonical": "#0e7490",
+        "oklch": "oklch(52.0% 0.094 223.1)",
+        "tonalRamp": [
+          "oklch(15% 0.094 223.1)",
+          "oklch(26% 0.094 223.1)",
+          "oklch(37% 0.094 223.1)",
+          "oklch(48% 0.094 223.1)",
+          "oklch(59% 0.094 223.1)",
+          "oklch(70% 0.094 223.1)",
+          "oklch(82% 0.094 223.1)",
+          "oklch(95% 0.040 223.1)"
+        ]
+      },
+      "line-kesehatan": {
+        "role": "tertiary",
+        "displayName": "Kesehatan Line (KS)",
+        "canonical": "#c62a36",
+        "oklch": "oklch(54.2% 0.191 22.9)",
+        "tonalRamp": [
+          "oklch(15% 0.191 22.9)",
+          "oklch(26% 0.191 22.9)",
+          "oklch(37% 0.191 22.9)",
+          "oklch(48% 0.191 22.9)",
+          "oklch(59% 0.191 22.9)",
+          "oklch(70% 0.191 22.9)",
+          "oklch(82% 0.191 22.9)",
+          "oklch(95% 0.040 22.9)"
+        ]
+      },
+      "line-pertanian": {
+        "role": "tertiary",
+        "displayName": "Pertanian Line (PT)",
+        "canonical": "#4d7c0f",
+        "oklch": "oklch(53.2% 0.141 131.6)",
+        "tonalRamp": [
+          "oklch(15% 0.141 131.6)",
+          "oklch(26% 0.141 131.6)",
+          "oklch(37% 0.141 131.6)",
+          "oklch(48% 0.141 131.6)",
+          "oklch(59% 0.141 131.6)",
+          "oklch(70% 0.141 131.6)",
+          "oklch(82% 0.141 131.6)",
+          "oklch(95% 0.040 131.6)"
+        ]
+      },
+      "line-agama": {
+        "role": "tertiary",
+        "displayName": "Agama Line (AG)",
+        "canonical": "#9f1239",
+        "oklch": "oklch(45.5% 0.171 13.7)",
+        "tonalRamp": [
+          "oklch(15% 0.171 13.7)",
+          "oklch(26% 0.171 13.7)",
+          "oklch(37% 0.171 13.7)",
+          "oklch(48% 0.171 13.7)",
+          "oklch(59% 0.171 13.7)",
+          "oklch(70% 0.171 13.7)",
+          "oklch(82% 0.171 13.7)",
+          "oklch(95% 0.040 13.7)"
+        ]
+      },
+      "line-mipa": {
+        "role": "tertiary",
+        "displayName": "MIPA Line (MP)",
+        "canonical": "#4f46e5",
+        "oklch": "oklch(51.1% 0.230 277.0)",
+        "tonalRamp": [
+          "oklch(15% 0.230 277.0)",
+          "oklch(26% 0.230 277.0)",
+          "oklch(37% 0.230 277.0)",
+          "oklch(48% 0.230 277.0)",
+          "oklch(59% 0.230 277.0)",
+          "oklch(70% 0.230 277.0)",
+          "oklch(82% 0.230 277.0)",
+          "oklch(95% 0.040 277.0)"
+        ]
+      },
+      "line-humaniora": {
+        "role": "tertiary",
+        "displayName": "Humaniora Line (HU)",
+        "canonical": "#8a6a00",
+        "oklch": "oklch(54.1% 0.111 87.7)",
+        "tonalRamp": [
+          "oklch(15% 0.111 87.7)",
+          "oklch(26% 0.111 87.7)",
+          "oklch(37% 0.111 87.7)",
+          "oklch(48% 0.111 87.7)",
+          "oklch(59% 0.111 87.7)",
+          "oklch(70% 0.111 87.7)",
+          "oklch(82% 0.111 87.7)",
+          "oklch(95% 0.040 87.7)"
+        ]
+      },
+      "line-seni": {
+        "role": "tertiary",
+        "displayName": "Seni Line (SN)",
+        "canonical": "#7c2d12",
+        "oklch": "oklch(40.8% 0.116 38.2)",
+        "tonalRamp": [
+          "oklch(15% 0.116 38.2)",
+          "oklch(26% 0.116 38.2)",
+          "oklch(37% 0.116 38.2)",
+          "oklch(48% 0.116 38.2)",
+          "oklch(59% 0.116 38.2)",
+          "oklch(70% 0.116 38.2)",
+          "oklch(82% 0.116 38.2)",
+          "oklch(95% 0.040 38.2)"
+        ]
+      },
+      "line-lainnya": {
+        "role": "tertiary",
+        "displayName": "Fallback Line (LN)",
+        "canonical": "#58665f",
+        "oklch": "oklch(49.6% 0.020 164.0)",
+        "tonalRamp": [
+          "oklch(15% 0.020 164.0)",
+          "oklch(26% 0.020 164.0)",
+          "oklch(37% 0.020 164.0)",
+          "oklch(48% 0.020 164.0)",
+          "oklch(59% 0.020 164.0)",
+          "oklch(70% 0.020 164.0)",
+          "oklch(82% 0.020 164.0)",
+          "oklch(95% 0.020 164.0)"
+        ]
+      },
+      "promosi-paper": {
+        "role": "tertiary",
+        "displayName": "Promosi Paper",
+        "canonical": "#f5ecd7",
+        "oklch": "oklch(94.5% 0.029 87.5)",
+        "tonalRamp": [
+          "oklch(15% 0.029 87.5)",
+          "oklch(26% 0.029 87.5)",
+          "oklch(37% 0.029 87.5)",
+          "oklch(48% 0.029 87.5)",
+          "oklch(59% 0.029 87.5)",
+          "oklch(70% 0.029 87.5)",
+          "oklch(82% 0.029 87.5)",
+          "oklch(95% 0.029 87.5)"
+        ]
+      },
+      "promosi-ink": {
+        "role": "tertiary",
+        "displayName": "Promosi Brown",
+        "canonical": "#6b4a00",
+        "oklch": "oklch(43.4% 0.090 79.3)",
+        "tonalRamp": [
+          "oklch(15% 0.090 79.3)",
+          "oklch(26% 0.090 79.3)",
+          "oklch(37% 0.090 79.3)",
+          "oklch(48% 0.090 79.3)",
+          "oklch(59% 0.090 79.3)",
+          "oklch(70% 0.090 79.3)",
+          "oklch(82% 0.090 79.3)",
+          "oklch(95% 0.040 79.3)"
+        ]
+      },
+      "promosi-text": {
+        "role": "tertiary",
+        "displayName": "Promosi Text",
+        "canonical": "#4f4430",
+        "oklch": "oklch(39.2% 0.035 82.2)",
+        "tonalRamp": [
+          "oklch(15% 0.035 82.2)",
+          "oklch(26% 0.035 82.2)",
+          "oklch(37% 0.035 82.2)",
+          "oklch(48% 0.035 82.2)",
+          "oklch(59% 0.035 82.2)",
+          "oklch(70% 0.035 82.2)",
+          "oklch(82% 0.035 82.2)",
+          "oklch(95% 0.035 82.2)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home headline on the jade band only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Station headings on the home rail; Kampus name on the station sign."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel headings hanging from the ink rule."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; stop labels in bold."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Explanations, stop notes, tickets; 60-68ch max."
+      },
+      "plate": {
+        "displayName": "Plate",
+        "purpose": "Route codes, column heads, ticket stubs, the Promosi label. Never sentences."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Counts that matter, tabular."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lifted-on-jade",
+        "value": "0 18px 40px -20px rgb(8 40 30 / 0.7)",
+        "purpose": "Rute Pengulas card on the hero band."
+      },
+      {
+        "name": "search-lift",
+        "value": "0 6px 16px -8px rgb(19 32 26 / 0.45)",
+        "purpose": "Large search field only."
+      },
+      {
+        "name": "fixed-bar",
+        "value": "0 -8px 24px -12px rgb(19 32 26 / 0.5)",
+        "purpose": "Bandingkan bar fixed to the viewport bottom."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-route",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Stop-lighting dim and the line draw."
+      },
+      {
+        "name": "stop-dim",
+        "value": "filter 200ms ease-route to opacity(0.3)",
+        "purpose": "Hover or focus on a stop dims the route after it."
+      },
+      {
+        "name": "rute-tumbuh",
+        "value": "360ms ease-route, scaleY(0.4) to 1 from top, 50ms stagger per segment",
+        "purpose": "Rute Pengulas draws in once on load from a visible stub; off under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Jade plate for the main action of a form or tool.",
+      "html": "<button class=\"ds-btn-primary\">Simpan</button>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-btn-primary{background:var(--jade);color:var(--on-jade);border:0;border-radius:3px;height:32px;padding:0 10px;font:600 14px Overpass,sans-serif;cursor:pointer;transition:background .15s} .ds-btn-primary:hover{background:var(--jade-deep)} .ds-btn-primary:focus-visible{outline:2px solid var(--ring);outline-offset:2px} .ds-btn-primary:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Pengulas Button",
+      "kind": "button",
+      "refersTo": "button-pengulas",
+      "description": "The pink writing action; only for Tulis ulasan.",
+      "html": "<a class=\"ds-btn-pengulas\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M13 21h8\"/><path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\"/></svg>Tulis ulasan</a>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-btn-pengulas{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 12px;border-radius:3px;background:var(--pengulas);color:#fff;font:600 14px Overpass,sans-serif;text-decoration:none;transition:background .15s} .ds-btn-pengulas:hover{background:var(--pengulas-ink)} .ds-btn-pengulas:focus-visible{outline:2px solid var(--ring);outline-offset:2px}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "White field in a 2px ink ring with the ink Cari plate; pink ring on focus.",
+      "html": "<form class=\"ds-search\" role=\"search\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input class=\"ds-search-input\" type=\"search\" placeholder=\"Jurusan, Kampus atau Prodi\"><button class=\"ds-search-btn\" type=\"submit\">Cari</button></form>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-search{display:flex;align-items:center;gap:4px;background:#fff;border-radius:3px;padding:6px 6px 6px 16px;box-shadow:0 0 0 2px var(--foreground),0 6px 16px -8px rgb(19 32 26/.45);color:var(--foreground)} .ds-search:focus-within{box-shadow:0 0 0 3px var(--pengulas),0 6px 16px -8px rgb(19 32 26/.45)} .ds-search-input{flex:1;min-width:0;height:48px;border:0;outline:0;background:transparent;padding:0 8px;font:400 18px Overpass,sans-serif;color:var(--foreground);caret-color:var(--pengulas)} .ds-search-input::placeholder{color:var(--muted-foreground)} .ds-search-btn{height:48px;padding:0 24px;border:0;border-radius:3px;background:var(--foreground);color:var(--background);font:700 16px Overpass,sans-serif;cursor:pointer;transition:background .15s} .ds-search-btn:hover{background:var(--jade)} .ds-search-btn:focus-visible{outline:2px solid var(--pengulas);outline-offset:2px}"
+    },
+    {
+      "name": "Plate Tabs",
+      "kind": "nav",
+      "refersTo": "tab-active",
+      "description": "Tabs as platform signs: current is the ink plate, others outlined plates.",
+      "html": "<nav class=\"ds-tabs\"><a class=\"ds-tab ds-tab-active\" href=\"#\" aria-current=\"page\">Ringkasan</a><a class=\"ds-tab\" href=\"#\">Prodi (42)</a><a class=\"ds-tab\" href=\"#\">Ulasan (0)</a></nav>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-tabs{display:flex;gap:8px;padding:12px 0} .ds-tab{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:3px;font:700 16px Overpass,sans-serif;color:var(--foreground);text-decoration:none;box-shadow:inset 0 0 0 1px rgb(19 32 26/.4);transition:background .15s,box-shadow .15s} .ds-tab:hover{background:#d5e3db;box-shadow:inset 0 0 0 1px var(--foreground)} .ds-tab-active,.ds-tab-active:hover{background:var(--foreground);color:var(--background);box-shadow:none} .ds-tab:focus-visible{outline:2px solid var(--ring);outline-offset:2px}"
+    },
+    {
+      "name": "Route Plate",
+      "kind": "chip",
+      "refersTo": "plate",
+      "description": "Condensed upper-case route code on a solid line colour.",
+      "html": "<span class=\"ds-plate\" style=\"background:#1e3a8a\">TK</span> <span class=\"ds-plate\" style=\"background:#c62a36\">KS</span> <span class=\"ds-plate\" style=\"background:#13201a\">P</span>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-plate{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.025em;text-transform:uppercase;display:inline-flex;align-items:center;justify-content:center;height:28px;min-width:28px;padding:0 6px;border-radius:3px;color:#fff;font-size:16px;line-height:1;white-space:nowrap}"
+    },
+    {
+      "name": "Route Line",
+      "kind": "custom",
+      "refersTo": "GarisRute",
+      "description": "6px line with ink-ringed stops; current stop is a larger ring; hovering a stop dims the route after it.",
+      "html": "<ol class=\"ds-rute\"><li class=\"ds-halte\"><span class=\"ds-garis\"></span><span class=\"ds-titik ds-lewat\"></span><b>Cari Prodi-mu</b><small>Buka halaman Prodi.</small></li><li class=\"ds-halte\"><span class=\"ds-garis ds-nanti\"></span><span class=\"ds-titik ds-kini\"></span><b>Tulis ulasan</b><small>Bintang, enam Aspek, Rekomendasi.</small></li><li class=\"ds-halte\"><span class=\"ds-garis ds-nanti\"></span><span class=\"ds-titik\"></span><b>Diperiksa</b><small>Berikutnya</small></li><li class=\"ds-halte\"><span class=\"ds-titik\"></span><b>Terbit tanpa nama</b><small>Hanya status dan tahun masuk.</small></li></ol>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-rute{list-style:none;margin:0;padding:0;font-size:14px} .ds-halte{position:relative;padding:0 0 24px 40px} .ds-halte:last-child{padding-bottom:0} .ds-halte b{display:block;font-weight:700;line-height:1.375} .ds-halte small{display:block;margin-top:2px;color:var(--muted-foreground);font-size:14px} .ds-garis{position:absolute;top:14px;left:9px;width:var(--garis);height:100%;border-radius:9999px;background:var(--pengulas);transition:filter .2s cubic-bezier(.16,1,.3,1)} .ds-nanti{opacity:.45} .ds-titik{position:absolute;z-index:1;top:2px;left:0;width:24px;height:24px;box-sizing:border-box;border-radius:9999px;border:3px solid var(--foreground);background:#fff;transition:filter .2s cubic-bezier(.16,1,.3,1)} .ds-lewat{background:var(--pengulas)} .ds-kini{top:-2px;left:-4px;width:32px;height:32px;border:6px solid var(--pengulas)} .ds-rute:has(>li:hover)>li:hover>.ds-garis,.ds-rute:has(>li:hover)>li:hover~li>*{filter:opacity(.3)}"
+    },
+    {
+      "name": "Source Ticket",
+      "kind": "custom",
+      "refersTo": "TiketSumber",
+      "description": "Stub plus source and date; carried by every official figure.",
+      "html": "<p class=\"ds-tiket\"><span class=\"ds-tiket-stub\">Sumber</span><span class=\"ds-tiket-isi\">Ekspor resmi Kemenristekdikti · data katalog per 2 Oktober 2026</span></p>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-tiket{display:flex;width:fit-content;max-width:100%;margin:0;border-radius:3px;background:var(--card);box-shadow:0 0 0 1px var(--border);font-size:12px} .ds-tiket-stub{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.025em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;padding:0 8px;border-right:1px dashed var(--input);font-size:12.8px;color:var(--muted-foreground)} .ds-tiket-isi{padding:6px 10px;line-height:1.625;color:var(--muted-foreground)}"
+    },
+    {
+      "name": "Timetable Panel",
+      "kind": "card",
+      "refersTo": "Panel",
+      "description": "Default Panel: a section on the bare ground under a 3px ink rule, with ruled fact rows. The lembar sheet is only for account, login, report and moderation.",
+      "html": "<section class=\"ds-panel\"><h2>Fakta Prodi</h2><dl class=\"ds-rows\"><div><dt>Jenjang</dt><dd>S1</dd></div><div><dt>Akreditasi</dt><dd><span class=\"ds-badge\">Unggul</span></dd></div><div><dt>Lama studi</dt><dd>8 semester</dd></div></dl></section>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-panel{border-top:3px solid var(--foreground);padding-top:12px} .ds-panel h2{margin:0 0 12px;font:700 18px/1.25 Overpass,sans-serif} .ds-rows{margin:0;font-variant-numeric:tabular-nums} .ds-rows>div{display:grid;grid-template-columns:9rem 1fr;gap:12px;padding:12px 0;font-size:14px;border-top:1px solid var(--border)} .ds-rows>div:first-child{border-top:0} .ds-rows dt{font-weight:600} .ds-rows dd{margin:0} .ds-badge{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:3px;background:var(--jade-tint);color:#0a5e44;font-size:12px;font-weight:600}"
+    },
+    {
+      "name": "Departure Board",
+      "kind": "card",
+      "refersTo": "departure-board",
+      "description": "Ink board listing Kampus alphabetically, never ranked.",
+      "html": "<div class=\"ds-board\"><div class=\"ds-board-head\"><span>Kampus</span><span>Kota</span></div><a class=\"ds-board-row\" href=\"#\"><span class=\"ds-mono\">ITB</span><b>Institut Teknologi Bandung</b><span class=\"ds-kota\">Kota Bandung</span></a><a class=\"ds-board-row\" href=\"#\"><span class=\"ds-mono\" style=\"background:oklch(.45 .12 300)\">UGM</span><b>Universitas Gadjah Mada</b><span class=\"ds-kota\">Kab. Sleman</span></a></div>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-board{background:var(--foreground);color:var(--on-jade);border-radius:4.5px;padding:24px} .ds-board-head{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.025em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between;padding:0 4px 8px;border-bottom:2px solid rgb(255 255 255/.3);font-size:14px;color:var(--on-jade-muted)} .ds-board-row{display:flex;align-items:center;gap:12px;padding:10px 4px;border-bottom:1px solid rgb(255 255 255/.15);color:inherit;text-decoration:none;transition:background .15s} .ds-board-row:hover{background:rgb(255 255 255/.1)} .ds-board-row:hover b{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px} .ds-board-row b{flex:1;font-weight:600} .ds-kota{font-size:14px;color:var(--on-jade-muted)} .ds-mono{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.025em;text-transform:uppercase;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:3px;background:oklch(.45 .12 40);color:#fff} .ds-board-row:focus-visible{outline:2px solid var(--on-jade);outline-offset:2px}"
+    },
+    {
+      "name": "Timetable Rows",
+      "kind": "custom",
+      "refersTo": "Jadwal",
+      "description": "Result list as departure-board columns: shared grid template, text left, figures right in plate type.",
+      "html": "<div class=\"ds-jadwal-head\"><span>Prodi</span><span>Kampus</span><span class=\"ds-r\">Ulasan</span></div><ul class=\"ds-jadwal\"><li><a href=\"#\">S1 Teknik Informatika</a><span>Universitas Gadjah Mada</span><span class=\"ds-angka\">0</span></li><li><a href=\"#\">S1 Sistem Informasi</a><span>Institut Teknologi Sepuluh Nopember</span><span class=\"ds-angka\">0</span></li></ul>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-jadwal-head,.ds-jadwal li{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.5fr) 6rem;gap:0 16px;padding-left:4px;padding-right:4px} .ds-jadwal-head{font-family:'Barlow Condensed',sans-serif;letter-spacing:.025em;text-transform:uppercase;font-weight:600;font-size:14px;color:var(--muted-foreground);padding-top:8px;padding-bottom:8px;border-top:3px solid var(--foreground)} .ds-r{text-align:right} .ds-jadwal{list-style:none;margin:0;padding:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)} .ds-jadwal li{align-items:center;padding-top:14px;padding-bottom:14px;font-size:14px;border-top:1px solid var(--border)} .ds-jadwal li:first-child{border-top:0} .ds-jadwal a{font-weight:700;font-size:16px;color:var(--foreground);text-decoration:none} .ds-jadwal a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px} .ds-jadwal a:focus-visible{outline:2px solid var(--ring);outline-offset:2px} .ds-angka{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;text-align:right;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Filter Strip",
+      "kind": "chip",
+      "refersTo": "FilterBar",
+      "description": "Ruled control strip on the ground; active chip is the ink plate.",
+      "html": "<div class=\"ds-filter\"><div class=\"ds-chips\"><span class=\"ds-chips-label\">Jenjang</span><a class=\"ds-chip ds-chip-on\" href=\"#\" aria-current=\"true\">Semua</a><a class=\"ds-chip\" href=\"#\">D3</a><a class=\"ds-chip\" href=\"#\">D4</a><a class=\"ds-chip\" href=\"#\">S1</a></div></div>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-filter{display:flex;flex-direction:column;gap:12px;padding:12px 0;border-top:1px solid rgb(19 32 26/.25);border-bottom:1px solid rgb(19 32 26/.25)} .ds-chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px} .ds-chips-label{margin-right:4px;font-size:14px;font-weight:600;color:var(--muted-foreground)} .ds-chip{display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:3px;font:600 14px Overpass,sans-serif;text-decoration:none;color:var(--foreground);background:var(--card);box-shadow:0 0 0 1px var(--input);transition:background .15s,box-shadow .15s} .ds-chip:hover{background:var(--jade-tint);box-shadow:0 0 0 1px var(--jade)} .ds-chip-on,.ds-chip-on:hover{background:var(--foreground);color:var(--background);box-shadow:none} .ds-chip:focus-visible{outline:2px solid var(--ring);outline-offset:2px}"
+    },
+    {
+      "name": "Promosi Poster",
+      "kind": "card",
+      "refersTo": "promosi-poster",
+      "description": "Labelled paid placement in a different paper from the routes.",
+      "html": "<aside class=\"ds-promosi\"><span class=\"ds-promosi-label\">Promosi</span><p>Promosi berbayar dari Kampus. Tidak memengaruhi ulasan, Bintang, atau urutan hasil.</p><a href=\"#\">Universitas Contoh</a></aside>",
+      "css": ":host{--background:#e7ede9;--foreground:#13201a;--card:#f2f6f3;--jade:#0b6b4e;--jade-deep:#08513b;--jade-tint:#d5e3db;--on-jade:#fff;--on-jade-muted:#cfe3d9;--pengulas:#c42f73;--pengulas-ink:#a8245f;--muted-foreground:#4b5b53;--border:#c3d0c8;--input:#a9b8af;--ring:#0b6b4e;--garis:6px;font-family:Overpass,sans-serif;color:var(--foreground)} .ds-promosi{border:2px dashed rgb(107 74 0/.6);background:#f5ecd7;border-radius:4.5px;padding:20px} .ds-promosi-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.025em;text-transform:uppercase;display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:3px;background:#6b4a00;color:#fff;font-size:14px} .ds-promosi p{margin:8px 0;font-size:12px;color:#4f4430} .ds-promosi a{font-weight:700;color:var(--foreground);text-decoration:none} .ds-promosi a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Peta Trayek",
+    "overview": "CampusMatch is set as Indonesian transit signage: angkot route plates, KRL and TransJakarta line maps, a station timetable on an enamel wall. Every path through the site is drawn as a route with named stops. Readers travel Bidang → Jurusan → Prodi; Pengulas travel Cari Prodi-mu → Masuk → Tulis ulasan → Diperiksa → Terbit tanpa nama. A line on this site always diagrams a real sequence or grouping. It never stands for geography, a ranking, or a score.\n\nThe page sits on an enamel green-grey ground in signal ink. Jade is the committed field, used where a station would paint its colour: the header wordmark plate, the home hero band, the Kampus station sign, and the footer. Pink is the Pengulas line and the writing action, and nothing else. Each Bidang owns one line colour and a two-letter route code. Facts are timetable rows ruled in ink, figures are set in condensed plate type with tabular numerals, and every official figure carries a source ticket. The density is that of a timetable board: compact, ruled, and legible at a glance on a phone in daylight. There is only a light theme.\n\nThe confirmed anti-reference is the earlier StudyCheck-derived look (blue `#0068ce`, a yellow CTA, Inter, a grid of same-size white cards over a blue search hero). None of it belongs to this system.",
+    "keyCharacteristics": [
+      "Enamel ground, signal ink, jade field, pink Pengulas line, one line colour per Bidang.",
+      "6px route lines with round caps; white stops ringed in ink; the current stop is a larger interchange ring.",
+      "Overpass for all text; Barlow Condensed only for route codes, column heads and figures.",
+      "Timetable sections hang from a heavy ink rule on the bare ground; sheets only where a form or tool needs a container.",
+      "Small corners (3px) on plates, buttons and inputs; flat by default.",
+      "One signature interaction: pointing at a stop lights the route up to that stop."
+    ],
+    "rules": [
+      {
+        "name": "The One Field Rule",
+        "body": "Jade is the only colour that fills large areas. Pink fills only small things (a button, a header strip); line colours fill only lines and plates.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pink Means Writing Rule",
+        "body": "Pengulas pink marks the act of writing an Ulasan and the Pengulas route. It is never a generic accent, link colour, or alert.",
+        "section": "colors"
+      },
+      {
+        "name": "The Line Colour Contract",
+        "body": "Every route colour must keep white text above 4.5:1 and stay above 3:1 against the enamel ground. A new Bidang, monogram hue or line meets that before it ships.",
+        "section": "colors"
+      },
+      {
+        "name": "The Plate Type Rule",
+        "body": "Barlow Condensed is for codes, column heads and figures only. Sentences, headings and labels are Overpass.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Tables, timetable rows and every figure use tabular numerals so columns align like a timetable.",
+        "section": "typography"
+      },
+      {
+        "name": "The Figures Right Rule",
+        "body": "In timetable rows, text columns align left and figure columns align right, with the figures set in plate type.",
+        "section": "typography"
+      },
+      {
+        "name": "The Timetable, Not Cards Rule",
+        "body": "Sections sit on the bare ground under a 3px ink rule. Use a sheet only when a form, tool or disclosure list needs a container; never wrap content in a card for decoration.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do draw any real sequence (a flow, a Bidang's Jurusan, the site's sections) as a GarisRute with 6px round-capped lines and ink-ringed white stops.",
+      "Do keep jade as the only large field: header plate, hero band, station sign, footer.",
+      "Do put a source ticket on every official figure, and set figures in Barlow Condensed with tabular numerals.",
+      "Do set sections on the bare ground under a 3px ink rule; reach for the sheet only for account, login, report and moderation tools.",
+      "Do set result lists as timetable rows with a shared column template: text left, figures right in plate type.",
+      "Do check every new line colour against white (4.5:1) and the ground (3:1).",
+      "Do keep motion to the stop-lighting hover and the one-time line draw, both off under reduced motion."
+    ],
+    "donts": [
+      "Don't bring back the StudyCheck look: blue `#0068ce`, a yellow CTA, Inter, or a grid of same-size white cards under a blue search hero.",
+      "Don't use a route line to imply rank, score or distance; order is alphabetical or by count and says so.",
+      "Don't use pink for anything but the Pengulas route and the writing action.",
+      "Don't set sentences or headings in Barlow Condensed.",
+      "Don't give the Promosi poster route colours, stops or lines, or set it in the organic list unlabelled.",
+      "Don't add a dark theme; the use scene is a phone in daylight."
+    ]
+  }
+}

@@ -13,10 +13,10 @@ export function FormLaporan({ ulasanId, kembaliKe }: { ulasanId: string; kembali
     return (
       <div role="status" className="space-y-3">
         <p className="flex items-start gap-2 text-sm">
-          <CircleCheck className="mt-0.5 size-4 shrink-0 text-emerald-600" aria-hidden />
+          <CircleCheck className="mt-0.5 size-4 shrink-0 text-success" aria-hidden />
           Terima kasih. Laporanmu sudah kami terima dan akan diperiksa tim kami.
         </p>
-        <Link href={kembaliKe} className="text-sm font-medium text-primary hover:underline">
+        <Link href={kembaliKe} className="text-sm font-semibold text-primary hover:underline">
           Kembali
         </Link>
       </div>
@@ -27,12 +27,12 @@ export function FormLaporan({ ulasanId, kembaliKe }: { ulasanId: string; kembali
     <form action={action} className="space-y-4">
       <input type="hidden" name="ulasanId" value={ulasanId} />
       {status && !status.ok ? (
-        <p role="alert" className="rounded-lg bg-destructive/10 p-3 text-sm text-destructive">
+        <p role="alert" className="rounded-sm bg-destructive/10 p-3 text-sm text-destructive">
           {status.pesan}
         </p>
       ) : null}
       <fieldset>
-        <legend className="text-sm font-medium">Apa masalahnya?</legend>
+        <legend className="text-sm font-semibold">Apa masalahnya?</legend>
         <div className="mt-2 space-y-2">
           {(Object.entries(LABEL_ALASAN_LAPORAN) as [AlasanLaporan, string][]).map(([nilai, label]) => (
             <label key={nilai} className="flex items-center gap-2 text-sm">
@@ -43,7 +43,7 @@ export function FormLaporan({ ulasanId, kembaliKe }: { ulasanId: string; kembali
         </div>
       </fieldset>
       <div>
-        <label htmlFor="catatan" className="text-sm font-medium">
+        <label htmlFor="catatan" className="text-sm font-semibold">
           Catatan (opsional)
         </label>
         <textarea
@@ -51,13 +51,13 @@ export function FormLaporan({ ulasanId, kembaliKe }: { ulasanId: string; kembali
           name="catatan"
           rows={4}
           maxLength={CATATAN_MAKS}
-          className="mt-2 w-full rounded-lg border border-input bg-white px-3 py-2 text-base outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="mt-2 w-full rounded-sm border border-input bg-white px-3 py-2 text-base outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
         />
       </div>
       <button
         type="submit"
         disabled={pending}
-        className="h-11 rounded-full bg-primary px-6 font-medium text-primary-foreground transition-colors hover:bg-brand-deep disabled:opacity-60"
+        className="h-11 rounded-sm bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-brand-deep disabled:opacity-60"
       >
         {pending ? "Mengirim…" : "Kirim laporan"}
       </button>

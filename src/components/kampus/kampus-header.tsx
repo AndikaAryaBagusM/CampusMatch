@@ -1,5 +1,5 @@
 import { MapPin } from "lucide-react";
-import { AkreditasiBadge, labelAkreditasi } from "@/components/kampus/akreditasi-badge";
+import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusLogo } from "@/components/kampus/kampus-logo";
 import { UnggulanBadge, UnggulanFootnote } from "@/components/kampus/unggulan-badge";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
@@ -8,12 +8,11 @@ import { formatAngka, formatProvinsi } from "@/lib/format";
 import { getKampusMedia } from "@/lib/kampus-media";
 import type { InfoKatalog, Jenjang, KampusDetail } from "@/lib/katalog";
 import { namaKota } from "@/lib/kota";
-import { cn } from "@/lib/utils";
 
 export type KampusTab = "ringkasan" | "prodi" | "ulasan";
 
-// Text-and-data header in place of the design's photo mosaic (frames F/O): name,
-// place, badges, data tiles, then the tabs.
+// The Kampus as a station sign: the name on the jade field with one timetable
+// line of its figures, then the tabs as platform signs on the ground.
 export function KampusHeader({
   kampus,
   prodiPerJenjang,
@@ -40,46 +39,36 @@ export function KampusHeader({
           { label: kampus.nama },
         ]}
       />
-      <div className="overflow-hidden rounded-xl bg-white ring-1 ring-border">
+      <div className="overflow-hidden rounded-md">
         {bannerUrl ? (
           // eslint-disable-next-line @next/next/no-img-element -- banners will come from varied origins
           <img src={bannerUrl} alt="" className="h-40 w-full object-cover sm:h-56" />
         ) : null}
-        <div className="flex flex-col gap-5 p-5 sm:p-6 lg:flex-row lg:items-stretch lg:justify-between">
-          <div className="flex min-w-0 gap-4">
-            <KampusLogo kampus={kampus} size="lg" />
-            <div className="min-w-0 space-y-2">
-              <h1 className="text-2xl font-medium tracking-tight sm:text-3xl">{kampus.nama}</h1>
-              <p className="flex items-start gap-1.5 text-sm text-muted-foreground">
-                <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden />
-                <span>
-                  {kampus.bentuk} · {kampus.kotaNama}, {formatProvinsi(kampus.provinsi)}
-                </span>
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <AkreditasiBadge akreditasi={kampus.akreditasi} />
-                {kampus.unggulan ? <UnggulanBadge /> : null}
-              </div>
-            </div>
-          </div>
-          <ul className="grid grid-cols-3 gap-2 text-white lg:w-[26rem] lg:shrink-0">
-            <Tile>
-              <span className="text-2xl font-semibold">{formatAngka(jumlahProdi)}</span>
-              <span className="text-xs">Prodi</span>
-            </Tile>
-            <Tile>
-              <span className={cn("font-semibold", kampus.akreditasi ? "text-lg" : "text-xs")}>
-                {kampus.akreditasi ?? labelAkreditasi(null)}
+        <div className="flex min-w-0 gap-4 bg-jade p-5 text-on-jade sm:p-6">
+          <KampusLogo kampus={kampus} size="lg" className="ring-2 ring-on-jade" />
+          <div className="min-w-0 space-y-2">
+            <h1 className="text-2xl leading-tight font-extrabold tracking-tight sm:text-4xl">{kampus.nama}</h1>
+            <p className="flex items-start gap-1.5 text-sm text-on-jade-muted">
+              <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden />
+              <span>
+                {kampus.bentuk} · {kampus.kotaNama}, {formatProvinsi(kampus.provinsi)}
               </span>
-              {kampus.akreditasi ? <span className="text-xs">Akreditasi Kampus</span> : null}
-            </Tile>
-            <Tile>
-              <span className="text-xs font-medium">{jumlahUlasan === 0 ? "Belum ada ulasan" : `${formatAngka(jumlahUlasan)} ulasan`}</span>
-            </Tile>
-          </ul>
+            </p>
+            <p className="tabular flex flex-wrap items-baseline gap-x-2 pt-1 text-sm text-on-jade-muted">
+              <span>
+                <span className="font-plate text-xl font-bold text-on-jade">{formatAngka(jumlahProdi)}</span> Prodi
+              </span>
+              <span aria-hidden>·</span>
+              <span>{labelAkreditasi(kampus.akreditasi)}</span>
+              <span aria-hidden>·</span>
+              <span>{jumlahUlasan === 0 ? "Belum ada ulasan" : `${formatAngka(jumlahUlasan)} ulasan`}</span>
+            </p>
+            {kampus.unggulan ? <UnggulanBadge className="mt-1" /> : null}
+          </div>
         </div>
-        <div className="border-t border-border px-1 sm:px-4">
-          <TabNav
+      </div>
+      <div>
+        <TabNav
             label={`Bagian halaman ${kampus.nama}`}
             tabs={[
               { href: base, label: "Ringkasan", active: tab === "ringkasan" },
@@ -87,17 +76,8 @@ export function KampusHeader({
               { href: `${base}/ulasan`, label: `Ulasan (${formatAngka(jumlahUlasan)})`, active: tab === "ulasan" },
             ]}
           />
-        </div>
       </div>
-      {kampus.unggulan ? <UnggulanFootnote info={info} className="mt-3 px-1" /> : null}
+      {kampus.unggulan ? <UnggulanFootnote info={info} /> : null}
     </>
-  );
-}
-
-function Tile({ children }: { children: React.ReactNode }) {
-  return (
-    <li className="flex min-h-24 flex-col items-center justify-center gap-0.5 rounded-lg bg-gradient-to-br from-primary to-brand-deep p-2 text-center leading-tight">
-      {children}
-    </li>
   );
 }

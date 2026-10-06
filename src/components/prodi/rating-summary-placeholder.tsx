@@ -1,26 +1,29 @@
-import { MessageSquareText } from "lucide-react";
-import { EmptyState } from "@/components/empty-state";
 import { Panel } from "@/components/panel";
 
 // Aspek from CONTEXT.md, the dimensions every Ulasan will rate.
 const ASPEK = ["Kurikulum", "Dosen", "Fasilitas", "Suasana belajar", "Organisasi/administrasi", "Biaya vs kualitas"];
 
-// Where the rating summary (Bintang, Aspek, Tingkat Rekomendasi; frame P) will
-// go. Until there are Ulasan it shows no stars, bars or numbers.
+// Where the rating summary (Bintang, Aspek, Tingkat Rekomendasi) will go. Until
+// there are Ulasan it shows no stars, bars or numbers: the six Aspek as
+// timetable rows with no value yet. The page's one empty state is the Ulasan
+// route.
 export function RatingSummaryPlaceholder() {
   return (
     <Panel title="Ringkasan penilaian">
-      <EmptyState icon={MessageSquareText} title="Belum ada ulasan" className="py-4">
+      <p className="text-sm leading-relaxed text-muted-foreground">
         Bintang, nilai per aspek dan tingkat rekomendasi akan muncul setelah ada ulasan dari mahasiswa atau alumni.
-      </EmptyState>
-      <div className="mt-2 border-t border-border pt-4">
-        <p className="mb-2 text-sm font-medium">Yang akan dinilai</p>
-        <ul className="grid grid-cols-1 gap-x-4 gap-y-1.5 text-sm text-muted-foreground sm:grid-cols-2 lg:grid-cols-1">
-          {ASPEK.map((a) => (
-            <li key={a}>{a}</li>
-          ))}
-        </ul>
-      </div>
+      </p>
+      <dl className="mt-3 divide-y divide-border text-sm">
+        {ASPEK.map((a) => (
+          <div key={a} className="flex items-baseline justify-between gap-4 py-2">
+            <dt className="font-semibold">{a}</dt>
+            <dd className="text-muted-foreground">
+              <span aria-hidden>–</span>
+              <span className="sr-only">belum dinilai</span>
+            </dd>
+          </div>
+        ))}
+      </dl>
     </Panel>
   );
 }
