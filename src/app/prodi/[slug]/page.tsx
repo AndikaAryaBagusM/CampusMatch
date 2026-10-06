@@ -141,7 +141,18 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
                 },
                 { icon: Layers, label: "Bidang", value: prodi.bidang ?? <span className="text-muted-foreground">Tidak tercantum</span> },
                 { icon: Hash, label: "Kode Prodi", value: prodi.kodeProdi },
-                { icon: MapPin, label: "Kota", value: `${prodi.kotaNama}, ${formatProvinsi(prodi.provinsi)}` },
+                {
+                  icon: MapPin,
+                  label: "Kota",
+                  value: (
+                    <>
+                      <Link href={`/kota/${prodi.kotaSlug}`} className="text-primary hover:underline">
+                        {prodi.kotaNama}
+                      </Link>
+                      , {formatProvinsi(prodi.provinsi)}
+                    </>
+                  ),
+                },
                 {
                   icon: ShieldCheck,
                   label: "Akreditasi Kampus",

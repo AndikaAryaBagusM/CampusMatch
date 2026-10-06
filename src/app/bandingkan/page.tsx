@@ -257,7 +257,9 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
                   <Link href={`/kampus/${k.prodi.kampus.slug}`} className="mt-0.5 block hover:underline">
                     {k.prodi.kampus.nama}
                   </Link>
-                  <span className="block text-muted-foreground">{k.prodi.kotaNama}</span>
+                  <Link href={`/kota/${k.prodi.kotaSlug}`} className="block text-muted-foreground hover:underline">
+                    {k.prodi.kotaNama}
+                  </Link>
                   <Link
                     href={hrefBandingkan(slugs.filter((s) => s !== k.prodi.slug))}
                     className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:underline"

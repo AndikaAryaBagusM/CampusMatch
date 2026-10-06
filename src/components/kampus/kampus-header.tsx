@@ -7,6 +7,7 @@ import { TabNav } from "@/components/tab-nav";
 import { formatAngka, formatProvinsi } from "@/lib/format";
 import { getKampusMedia } from "@/lib/kampus-media";
 import type { InfoKatalog, Jenjang, KampusDetail } from "@/lib/katalog";
+import { namaKota } from "@/lib/kota";
 import { cn } from "@/lib/utils";
 
 export type KampusTab = "ringkasan" | "prodi" | "ulasan";
@@ -32,7 +33,13 @@ export function KampusHeader({
 
   return (
     <>
-      <PageBreadcrumb items={[{ label: kampus.kotaNama }, { label: kampus.nama }]} />
+      <PageBreadcrumb
+        items={[
+          { label: "Kota", href: "/kota" },
+          { label: namaKota({ nama: kampus.kotaNama, provinsi: kampus.provinsi }), href: `/kota/${kampus.kotaSlug}` },
+          { label: kampus.nama },
+        ]}
+      />
       <div className="overflow-hidden rounded-xl bg-white ring-1 ring-border">
         {bannerUrl ? (
           // eslint-disable-next-line @next/next/no-img-element -- banners will come from varied origins
