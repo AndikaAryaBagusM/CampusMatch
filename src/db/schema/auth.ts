@@ -20,6 +20,11 @@ export const users = pgTable("users", {
   emailVerified: timestamp("emailVerified", { withTimezone: true, mode: "date" }),
   image: text("image"),
   peran: peran("peran").notNull().default("pengulas"),
+  // When the person declared "18 tahun atau lebih" (ADR 0008). NULL: not yet;
+  // nothing that needs an account works until they do.
+  usia18At: timestamp("usia18_at", { withTimezone: true, mode: "date" }),
+  // Locked after an existing account holder declared they are under 18.
+  dikunciAt: timestamp("dikunci_at", { withTimezone: true, mode: "date" }),
   createdAt: createdAt(),
 });
 

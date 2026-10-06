@@ -79,7 +79,8 @@ export default async function MasukPage(props: PageProps<"/masuk">) {
           <Link href="/privasi" className="font-medium text-primary hover:underline">
             Kebijakan Privasi
           </Link>{" "}
-          CampusMatch. Teks ulasan diperiksa otomatis dengan Claude API dari Anthropic.
+          CampusMatch. Teks ulasan diperiksa otomatis dengan Claude API dari Anthropic. Akun hanya untuk usia 18 tahun ke
+          atas.
         </p>
       </Panel>
     </div>
