@@ -9,6 +9,7 @@ import { eq, inArray, like } from "drizzle-orm";
 import { withDb, type Db } from "../src/db";
 import {
   accounts,
+  infoBiaya,
   jurusan,
   kampus,
   kodeProdiJurusan,
@@ -169,6 +170,18 @@ async function run(db: Db) {
   });
   pass("second ulasan + revisi, laporan");
 
+  await db.insert(infoBiaya).values({
+    userId: u1.id,
+    prodiId: p.id,
+    statusPengulas: "alumni",
+    tahunMasuk: 2023,
+    kategoriJalur: "snbt",
+    tes: ["utbk"],
+    biayaSemester: 5_000_000,
+    disetujuiAt: new Date(),
+  });
+  pass("info_biaya");
+
   console.log("Transaction rollback");
   const rollbackNpsn = `rb${tag.slice(-8)}`;
   try {
@@ -223,6 +236,15 @@ async function run(db: Db) {
   await expectReject("duplicate RIASEC type in one Jurusan", "23505", () =>
     db.insert(kodeRiasec).values({ jurusanId: j.id, urutan: 3, tipe: "I" }),
   );
+  await expectReject("second Info Biaya for same Pengulas + Prodi", "23505", () =>
+    db.insert(infoBiaya).values({ userId: u1.id, prodiId: p.id, statusPengulas: "alumni", tahunMasuk: 2023, beasiswa: "lain", disetujuiAt: new Date() }),
+  );
+  await expectReject("Info Biaya with no answer", "23514", () =>
+    db.insert(infoBiaya).values({ userId: u2.id, prodiId: p.id, statusPengulas: "alumni", tahunMasuk: 2023, disetujuiAt: new Date() }),
+  );
+  await expectReject("UKT above Rp50 juta", "23514", () =>
+    db.insert(infoBiaya).values({ userId: u2.id, prodiId: p.id, statusPengulas: "alumni", tahunMasuk: 2023, biayaSemester: 60_000_000, disetujuiAt: new Date() }),
+  );
   // ON DELETE RESTRICT raises restrict_violation (23001), not foreign_key_violation.
   await expectReject("delete a Kampus that still has Prodi", "23001", () =>
     db.delete(kampus).where(eq(kampus.id, kp.id)),
@@ -245,7 +267,7 @@ async function run(db: Db) {
 }
 
 async function cleanup(db: Db) {
-  // Children before parents; cascades remove accounts, sessions, verifikasi, kode_riasec.
+  // Children before parents; cascades remove accounts, sessions, verifikasi, info_biaya, kode_riasec.
   const ours = (
     await db.select({ id: users.id }).from(users).where(like(users.email, `${tag}-%`))
   ).map((u) => u.id);

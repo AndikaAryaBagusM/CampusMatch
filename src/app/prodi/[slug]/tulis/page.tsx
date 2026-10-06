@@ -7,6 +7,7 @@ import { EmptyState } from "@/components/empty-state";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { kontainer, Panel } from "@/components/panel";
 import { PanduanUlasan } from "@/components/ulasan/panduan-ulasan";
+import { getInfoBiayaSaya } from "@/lib/info-biaya/layanan";
 import { requirePengulas } from "@/lib/sesi";
 import { getProdiTujuan, getUlasanSaya, type UlasanSaya } from "@/lib/ulasan/kueri";
 import type { IsianUlasan } from "@/lib/ulasan/skema";
@@ -52,10 +53,12 @@ export default async function TulisUlasanPage({ params }: PageProps<"/prodi/[slu
   const pengulas = await requirePengulas(`/prodi/${slug}/tulis`);
   const data = await withDb(async (db) => {
     const prodi = await getProdiTujuan(db, slug);
-    return prodi ? { prodi, ada: await getUlasanSaya(db, pengulas.id, prodi.id) } : null;
+    if (!prodi) return null;
+    const [ada, infoBiaya] = await Promise.all([getUlasanSaya(db, pengulas.id, prodi.id), getInfoBiayaSaya(db, pengulas.id, prodi.id)]);
+    return { prodi, ada, adaInfoBiaya: infoBiaya !== null };
   });
   if (!data) notFound();
-  const { prodi, ada } = data;
+  const { prodi, ada, adaInfoBiaya } = data;
   const namaProdi = `${prodi.jenjang} ${prodi.nama}`;
 
   return (
@@ -89,7 +92,7 @@ export default async function TulisUlasanPage({ params }: PageProps<"/prodi/[slu
               </EmptyState>
             </Panel>
           ) : (
-            <FormUlasan prodiSlug={prodi.slug} awal={ada ? isianDari(ada) : {}} edit={!!ada} />
+            <FormUlasan prodiSlug={prodi.slug} awal={ada ? isianDari(ada) : {}} adaInfoBiaya={adaInfoBiaya} edit={!!ada} />
           )}
         </div>
         <aside className="space-y-6">

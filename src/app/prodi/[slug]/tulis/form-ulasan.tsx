@@ -1,8 +1,11 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { Frown, Smile } from "lucide-react";
+import Link from "next/link";
+import { ChevronDown, Frown, Smile } from "lucide-react";
+import { IsianInfoBiaya } from "@/components/info-biaya/isian-info-biaya";
 import { BintangInput } from "@/components/ulasan/bintang-input";
+import type { IsianInfoBiaya as IsianIB } from "@/lib/info-biaya/skema";
 import {
   ASPEK,
   ISI_MAKS,
@@ -22,10 +25,22 @@ const masukan =
 
 // The Ulasan form (design frame: "Wie gefällt Dir Dein Studium?"), with our
 // field set from decisions.md 9. The server re-validates everything.
-export function FormUlasan({ prodiSlug, awal, edit }: { prodiSlug: string; awal: IsianUlasan; edit: boolean }) {
+export function FormUlasan({
+  prodiSlug,
+  awal,
+  adaInfoBiaya,
+  edit,
+}: {
+  prodiSlug: string;
+  awal: IsianUlasan;
+  adaInfoBiaya: boolean;
+  edit: boolean;
+}) {
   const [status, action, pending] = useActionState<StatusFormUlasan, FormData>(kirimUlasan, null);
   const isian = status?.isian ?? awal;
   const galat = status?.galat ?? {};
+  const isianIB: IsianIB = status?.isianInfoBiaya ?? {};
+  const galatIB = status?.galatInfoBiaya ?? {};
   const tahunIni = new Date().getFullYear();
 
   return (
@@ -138,6 +153,35 @@ export function FormUlasan({ prodiSlug, awal, edit }: { prodiSlug: string; awal:
           </div>
         </div>
       </fieldset>
+
+      {/* Optional Info Biaya (ADR 0010): stored apart from the Ulasan, shown only combined.
+          An existing one is changed in its own form, so editing the Ulasan never asks for consent again. */}
+      {adaInfoBiaya ? (
+        <p className={cn(kotak, "text-sm")}>
+          Kamu sudah membagikan info biaya untuk Prodi ini.{" "}
+          <Link href={`/prodi/${prodiSlug}/info-biaya`} className="font-medium text-primary hover:underline">
+            Ubah info biaya
+          </Link>
+        </p>
+      ) : (
+      <details className={cn(kotak, "group p-0 sm:p-0")} open={Object.keys(galatIB).length > 0 || undefined}>
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 sm:px-6 [&::-webkit-details-marker]:hidden">
+          <span>
+            <span className="block text-lg font-medium">Info biaya (opsional)</span>
+            <span className="block text-sm text-muted-foreground">
+              Berapa yang kamu bayar dan lewat jalur apa. Tidak tampil di ulasanmu, hanya sebagai estimasi gabungan.
+            </span>
+          </span>
+          <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" aria-hidden />
+        </summary>
+        <div className="border-t border-border px-5 py-5 sm:px-6">
+          <p className="mb-5 text-sm text-muted-foreground">
+            Status dan tahun masuk diambil dari bagian &ldquo;Tentang kamu&rdquo;. Kosongkan semua jika tidak ingin berbagi.
+          </p>
+          <IsianInfoBiaya isian={isianIB} galat={galatIB} />
+        </div>
+      </details>
+      )}
 
       <div className="flex flex-col items-end gap-2">
         <button

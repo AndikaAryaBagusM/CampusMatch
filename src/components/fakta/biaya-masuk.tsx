@@ -262,7 +262,7 @@ export function PanelBiayaProdi({
   if (!biayaProdi && !biayaKampus) return null;
   const r = rujukan([...(biayaProdi?.daftar ?? []), ...(biayaKampus?.daftar ?? [])].map((b) => b.sumber), "prodi");
   return (
-    <Panel title="Biaya" id="biaya">
+    <Panel title="Biaya resmi" id="biaya">
       <div className="space-y-6">
         <Keterangan />
         {biayaProdi ? (

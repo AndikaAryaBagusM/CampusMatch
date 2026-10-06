@@ -21,6 +21,8 @@ const aksiPromosi = await import("./promosi/actions");
 const { default: PromosiPage } = await import("./promosi/page");
 const { default: BuatPromosiPage } = await import("./promosi/baru/page");
 const { default: DetailPromosiPage } = await import("./promosi/[id]/page");
+const aksiInfoBiaya = await import("./info-biaya/actions");
+const { default: InfoBiayaPage } = await import("./info-biaya/page");
 const mockAuth = vi.mocked(auth as unknown as () => Promise<unknown>);
 
 const form = () => {
@@ -94,6 +96,17 @@ describe.each(Object.entries(pemanggil))("%s", (_, sesi) => {
     await expect(BuatPromosiPage(kosong as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
     const props = { params: Promise.resolve({ id: "1" }), searchParams: Promise.resolve({}) };
     await expect(DetailPromosiPage(props as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
+    expect(withDb).not.toHaveBeenCalled();
+  });
+
+  test.each(["kesampingkan", "pulihkan"] as const)("is refused by the Info Biaya %s action", async (nama) => {
+    await expect(aksiInfoBiaya[nama](form())).rejects.toMatchObject({ digest: expect.stringContaining("404") });
+    expect(withDb).not.toHaveBeenCalled();
+  });
+
+  test("is refused by the Info Biaya page", async () => {
+    const props = { params: Promise.resolve({}), searchParams: Promise.resolve({ prodi: "p" }) };
+    await expect(InfoBiayaPage(props as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
     expect(withDb).not.toHaveBeenCalled();
   });
 

@@ -1,9 +1,19 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { withDb } from "@/db";
 import { BATAS, kunciIp, kunciPengulas, pakaiSemuaBatas } from "@/lib/batas-laju";
+import { simpanInfoBiaya } from "@/lib/info-biaya/layanan";
+import {
+  adaJawaban,
+  bacaIsianInfoBiaya,
+  galatDari,
+  skemaInfoBiaya,
+  type GalatInfoBiaya,
+  type IsianInfoBiaya,
+} from "@/lib/info-biaya/skema";
 import { hashIpPemanggil } from "@/lib/ip";
 import { requirePengulas } from "@/lib/sesi";
 import { screeningSetelahRespons } from "@/lib/ulasan/jalankan-screening";
@@ -18,6 +28,8 @@ export type StatusFormUlasan = {
   pesan?: string;
   galat?: GalatForm;
   isian?: IsianUlasan;
+  galatInfoBiaya?: GalatInfoBiaya;
+  isianInfoBiaya?: IsianInfoBiaya;
 } | null;
 
 // Write or edit the signed-in Pengulas's Ulasan for one Prodi. Whether this is
@@ -27,13 +39,18 @@ export async function kirimUlasan(prev: StatusFormUlasan, formData: FormData): P
   const pengulas = await requirePengulas(`/prodi/${prodiSlug}/tulis`);
   const kali = (prev?.kali ?? 0) + 1;
   const isian = bacaIsian(formData);
+  // The optional Info Biaya section (ADR 0010) shares Status Pengulas and tahun
+  // masuk with the Ulasan. Checked only when something in it was filled in.
+  const isianInfoBiaya = bacaIsianInfoBiaya(formData);
+  const infoBiaya = adaJawaban(isianInfoBiaya) ? skemaInfoBiaya().safeParse(isianInfoBiaya) : null;
 
   const parsed = skemaUlasan().safeParse(isian);
-  if (!parsed.success) {
-    const galat = Object.fromEntries(
-      Object.entries(z.flattenError(parsed.error).fieldErrors).map(([k, v]) => [k, v?.[0]]),
-    ) as GalatForm;
-    return { kali, isian, galat, pesan: "Periksa lagi isian yang ditandai." };
+  if (!parsed.success || infoBiaya?.success === false) {
+    const galat = parsed.success
+      ? {}
+      : (Object.fromEntries(Object.entries(z.flattenError(parsed.error).fieldErrors).map(([k, v]) => [k, v?.[0]])) as GalatForm);
+    const galatInfoBiaya = infoBiaya?.success === false ? galatDari(infoBiaya.error) : undefined;
+    return { kali, isian, galat, isianInfoBiaya, galatInfoBiaya, pesan: "Periksa lagi isian yang ditandai." };
   }
 
   const ipHash = await hashIpPemanggil();
@@ -52,14 +69,27 @@ export async function kirimUlasan(prev: StatusFormUlasan, formData: FormData): P
       const revisi = ada
         ? await editUlasan(db, { pengulasId: pengulas.id, ulasanId: ada.id, data: parsed.data })
         : await tulisUlasan(db, { pengulasId: pengulas.id, prodiId: prodi.id, data: parsed.data });
-      return { revisiId: revisi.revisiId };
+      // The Ulasan is saved; Info Biaya failing (e.g. its rate limit) never undoes it.
+      let infoBiayaTersimpan: boolean | null = null;
+      if (infoBiaya?.success) {
+        try {
+          await simpanInfoBiaya(db, { userId: pengulas.id, prodiId: prodi.id, ipHash, data: infoBiaya.data });
+          infoBiayaTersimpan = true;
+        } catch (e) {
+          console.error("Info Biaya from the Ulasan form not saved", e);
+          infoBiayaTersimpan = false;
+        }
+      }
+      return { revisiId: revisi.revisiId, infoBiayaTersimpan };
     } catch (e) {
       if (e instanceof UlasanSudahAda || e instanceof RevisiMasihDiperiksa) return { pesan: e.message };
       throw e;
     }
   });
 
-  if ("pesan" in hasil) return { kali, isian, pesan: hasil.pesan };
+  if ("pesan" in hasil) return { kali, isian, isianInfoBiaya, pesan: hasil.pesan };
   screeningSetelahRespons(hasil.revisiId);
-  redirect(`/akun?terkirim=${encodeURIComponent(prodiSlug)}`);
+  if (hasil.infoBiayaTersimpan) revalidatePath(`/prodi/${prodiSlug}`);
+  const infoBiayaParam = hasil.infoBiayaTersimpan === null ? "" : `&infoBiaya=${hasil.infoBiayaTersimpan ? "tersimpan" : "gagal"}`;
+  redirect(`/akun?terkirim=${encodeURIComponent(prodiSlug)}${infoBiayaParam}`);
 }

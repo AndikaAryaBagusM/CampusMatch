@@ -5,8 +5,10 @@ import { cache } from "react";
 import { BookOpen, GraduationCap, Hash, Landmark, Layers, MapPin, MessageSquareText, ShieldCheck } from "lucide-react";
 import { EmptyState } from "@/components/empty-state";
 import { PanelBiayaProdi } from "@/components/fakta/biaya-masuk";
+import { PanelEstimasiPengulas } from "@/components/info-biaya/estimasi-pengulas";
 import { TombolBandingkan } from "@/components/perbandingan/tombol-bandingkan";
 import { listBiayaKampus, listBiayaProdi } from "@/lib/fakta/kueri";
+import { estimasiProdi } from "@/lib/info-biaya/estimasi";
 import { withDb } from "@/db";
 import { FactList } from "@/components/fact-list";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
@@ -43,8 +45,12 @@ const load = cache((slug: string) =>
       listUlasanTerbit(db, { prodiSlug: slug }, ULASAN_TAMPIL),
     ]);
     if (!prodi) return null;
-    const [biayaProdi, biayaKampus] = await Promise.all([listBiayaProdi(db, prodi.id), listBiayaKampus(db, prodi.kampus.id)]);
-    return { prodi, jumlahUlasan, info, ringkasan, ulasan, biayaProdi, biayaKampus };
+    const [biayaProdi, biayaKampus, estimasi] = await Promise.all([
+      listBiayaProdi(db, prodi.id),
+      listBiayaKampus(db, prodi.kampus.id),
+      estimasiProdi(db, [prodi.id]),
+    ]);
+    return { prodi, jumlahUlasan, info, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi: estimasi.get(prodi.id)! };
   }),
 );
 
@@ -64,7 +70,7 @@ export async function generateMetadata({ params }: PageProps<"/prodi/[slug]">): 
 export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) {
   const data = await load((await params).slug);
   if (!data) notFound();
-  const { prodi, jumlahUlasan, info, ringkasan, ulasan, biayaProdi, biayaKampus } = data;
+  const { prodi, jumlahUlasan, info, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi } = data;
   const { kampus } = prodi;
 
   return (
@@ -178,6 +184,7 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
             ) : null}
           </div>
           <PanelBiayaProdi biayaProdi={biayaProdi} biayaKampus={biayaKampus} kampus={kampus} />
+          <PanelEstimasiPengulas estimasi={estimasi} prodiSlug={prodi.slug} />
           <Panel title={jumlahUlasan > 0 ? `Ulasan (${formatAngka(jumlahUlasan)})` : "Ulasan"} id="ulasan">
             {ulasan.length === 0 ? (
               <EmptyState icon={MessageSquareText} title="Belum ada ulasan">

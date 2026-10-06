@@ -1,6 +1,7 @@
 import { timingSafeEqual } from "node:crypto";
 import { withDb } from "@/db";
 import { hapusBatasLama } from "@/lib/batas-laju";
+import { hapusInfoBiayaLama } from "@/lib/info-biaya/layanan";
 import { jalankanScreening } from "@/lib/ulasan/jalankan-screening";
 import { revisiMenungguLama } from "@/lib/ulasan/proses-screening";
 
@@ -24,6 +25,8 @@ export async function GET(request: Request) {
 
   const ids = await withDb(async (db) => {
     await hapusBatasLama(db);
+    // Info Biaya older than the Estimasi window is no longer used (ADR 0010).
+    await hapusInfoBiayaLama(db);
     return revisiMenungguLama(db);
   });
   const hasil = { dicoba: ids.length, terbit: 0, ditinjau: 0, menunggu: 0, dilewati: 0 };

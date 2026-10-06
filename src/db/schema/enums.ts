@@ -108,3 +108,6 @@ export const tesJalur = pgEnum("tes_jalur", [
 // Promosi (ADR 0009): entered as Draf, activated by a second Moderator,
 // stopped early with a reason. Its dates decide when an aktif Promosi shows.
 export const statusPromosi = pgEnum("status_promosi", ["draf", "aktif", "dihentikan"]);
+
+// Info Biaya (ADR 0010): which kind of Beasiswa a Pengulas had, never its name.
+export const beasiswaPengulas = pgEnum("beasiswa_pengulas", ["tidak_ada", "kip_kuliah", "kampus", "lain"]);

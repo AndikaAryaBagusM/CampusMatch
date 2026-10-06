@@ -9,12 +9,24 @@ import { withDb } from "@/db";
 import { kampus } from "@/db/schema";
 import { hapusVerifikasi, konfirmasiVerifikasi, mintaVerifikasi, VerifikasiDitolak } from "@/lib/akun/verifikasi-kampus";
 import { EmailTidakTersedia, kirimEmail } from "@/lib/email";
+import { hapusInfoBiaya } from "@/lib/info-biaya/layanan";
 import { hashIpPemanggil } from "@/lib/ip";
 import { hapusProfilMinat } from "@/lib/riasec/profil";
 import { requirePengulas } from "@/lib/sesi";
 import { targetHalamanProdi } from "@/lib/ulasan/kueri";
 import { hapusUlasan, UlasanTidakDitemukan } from "@/lib/ulasan/layanan";
 import { revalidasiHalamanUlasan } from "@/lib/ulasan/revalidasi";
+
+// A Pengulas deletes their own Info Biaya (ADR 0010); ownership is checked in
+// hapusInfoBiaya.
+export async function hapusInfoBiayaSaya(formData: FormData) {
+  const pengulas = await requirePengulas("/akun");
+  const id = Number(formData.get("infoBiayaId"));
+  if (!Number.isSafeInteger(id) || id <= 0) return;
+  const hasil = await withDb((db) => hapusInfoBiaya(db, pengulas.id, id));
+  if (hasil) revalidatePath(`/prodi/${hasil.prodiSlug}`);
+  revalidatePath("/akun");
+}
 
 export async function keluar() {
   await signOut({ redirectTo: "/" });
