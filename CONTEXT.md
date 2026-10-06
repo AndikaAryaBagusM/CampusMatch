@@ -78,6 +78,14 @@ Whether a fact may be shown:
 
 _Avoid_: Terverifikasi (that is the Pengulas badge), verified, approved
 
+**Info Biaya**:
+One Pengulas's own account of what they paid at one Prodi (UKT or SPP, Uang Pangkal, other fees at entry) and how they got in (Jalur Masuk, tests, Beasiswa). It is never a fact, never shown on its own, and never includes living costs.
+_Avoid_: Laporan, Fakta, Biaya (on its own), data crowdsourcing
+
+**Estimasi Pengulas**:
+The Info Biaya of at least five Pengulas combined, per Prodi and per question, from the last five angkatan. It is always labelled as an estimate and shown apart from the official facts, never merged with them.
+_Avoid_: Rata-rata biaya, estimasi resmi
+
 ## Ulasan
 
 **Ulasan**:
@@ -170,7 +178,7 @@ A Profil RIASEC saved to an account, with the date the Tes Minat was taken. An a
 _Avoid_: Hasil tersimpan, profil kepribadian
 
 **Perbandingan**:
-A side-by-side view of 2–3 Prodi showing their facts and Ulasan scores, with no verdict on which is better. The Prodi may belong to different Jurusan.
+A side-by-side view of 2–3 Prodi showing their facts, Estimasi Pengulas and Ulasan scores, with no verdict on which is better. The Prodi may belong to different Jurusan.
 _Avoid_: Kelebihan dan kekurangan, pros and cons, ranking
 
 ## People

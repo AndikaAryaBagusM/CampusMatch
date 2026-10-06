@@ -23,3 +23,5 @@
    - Built 2026-10-06: `/kota` (by Provinsi) and `/kota/[slug]` (Kampus in name order, Unggulan and Bentuk filters), linked from the header, footer and every page that shows a Kota. No migration. See 17l.
 10. **Promosi slot**: a labelled sponsored Kampus placement.
    - Built 2026-10-06: `/moderasi/promosi` (Draf, a second Moderator activates, stop with a reason), the labelled box on the home page, Jurusan pages and search, `/promosi/[id]` daily click totals, `/ketentuan` section 10, and migration `0008`. See 17n and ADR 0009.
+11. **Info Biaya from Pengulas** (added 2026-10-06): Pengulas share what they paid and how they got in, shown only combined as the Estimasi Pengulas beside the official facts. See 17p and ADR 0010.
+   - Built 2026-10-06: migration `0010`, `/prodi/[slug]/info-biaya`, the optional section of the Ulasan form, the Estimasi on the Prodi page and in `/bandingkan`, the Info Biaya panel in `/akun`, `/moderasi/info-biaya`, the daily deletion in the cron, and `/privasi` and `/ketentuan` (section 9, "Estimasi Pengulas").
