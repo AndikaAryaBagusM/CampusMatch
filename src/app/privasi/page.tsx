@@ -22,6 +22,7 @@ export default function PrivasiPage() {
           <li>Membaca CampusMatch tidak perlu akun dan tidak memakai cookie pelacak atau alat analitik.</li>
           <li>Kami hanya meminta data saat kamu masuk untuk menulis atau melaporkan ulasan, atau menyimpan hasil Tes Minat.</li>
           <li>Akun hanya untuk usia 18 tahun ke atas. Tes Minat bisa dikerjakan tanpa akun, dan hasilnya tidak kami simpan.</li>
+          <li>Daftar Prodi yang kamu pilih untuk dibandingkan hanya tersimpan di browsermu, tidak dikirim ke kami.</li>
           <li>Ulasan tampil tanpa nama: hanya status (mahasiswa aktif atau alumni) dan tahun masuk.</li>
           <li>Teks ulasan diperiksa otomatis dengan Claude API dari Anthropic sebelum tampil.</li>
           <li>
@@ -63,6 +64,11 @@ export default function PrivasiPage() {
           berupa enam skor yang dimuat di tautan hasil; tanpa akun, kami tidak menyimpannya. Jika kamu menekan Simpan ke
           akun, kami menyimpan enam skor itu dan tanggalnya sebagai Profil Minat di akunmu. Profil Minat hanya bisa
           kamu lihat, bisa kamu hapus kapan saja di halaman Akun, dan tidak dipakai untuk Promosi atau iklan.
+        </p>
+        <p>
+          <strong>Saat kamu membandingkan Prodi.</strong> Prodi yang kamu pilih untuk dibandingkan disimpan di penyimpanan
+          lokal browsermu (localStorage), bukan di server kami, dan bisa kamu kosongkan kapan saja. Halaman Perbandingan
+          memuat Prodi itu lewat alamat tautannya, sama seperti halaman lain, tanpa dikaitkan dengan akunmu.
         </p>
         <p>
           <strong>Alamat IP dalam bentuk hash.</strong> Saat kamu menulis ulasan, melaporkan ulasan, atau meminta
