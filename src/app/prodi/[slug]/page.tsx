@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { cache } from "react";
 import { BookOpen, GraduationCap, Hash, Landmark, Layers, MapPin, MessageSquareText, ShieldCheck } from "lucide-react";
 import { EmptyState } from "@/components/empty-state";
+import { PanelBiayaProdi } from "@/components/fakta/biaya-masuk";
+import { listBiayaKampus, listBiayaProdi } from "@/lib/fakta/kueri";
 import { withDb } from "@/db";
 import { FactList } from "@/components/fact-list";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
@@ -39,7 +41,9 @@ const load = cache((slug: string) =>
       getRingkasanUlasan(db, { prodiSlug: slug }),
       listUlasanTerbit(db, { prodiSlug: slug }, ULASAN_TAMPIL),
     ]);
-    return prodi ? { prodi, jumlahUlasan, info, ringkasan, ulasan } : null;
+    if (!prodi) return null;
+    const [biayaProdi, biayaKampus] = await Promise.all([listBiayaProdi(db, prodi.id), listBiayaKampus(db, prodi.kampus.id)]);
+    return { prodi, jumlahUlasan, info, ringkasan, ulasan, biayaProdi, biayaKampus };
   }),
 );
 
@@ -59,7 +63,7 @@ export async function generateMetadata({ params }: PageProps<"/prodi/[slug]">): 
 export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) {
   const data = await load((await params).slug);
   if (!data) notFound();
-  const { prodi, jumlahUlasan, info, ringkasan, ulasan } = data;
+  const { prodi, jumlahUlasan, info, ringkasan, ulasan, biayaProdi, biayaKampus } = data;
   const { kampus } = prodi;
 
   return (
@@ -158,6 +162,7 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
               Lihat Prodi {prodi.jurusanNama} di Kampus lain
             </Link>
           ) : null}
+          <PanelBiayaProdi biayaProdi={biayaProdi} biayaKampus={biayaKampus} kampus={kampus} />
           <Panel title={jumlahUlasan > 0 ? `Ulasan (${formatAngka(jumlahUlasan)})` : "Ulasan"} id="ulasan">
             {ulasan.length === 0 ? (
               <EmptyState icon={MessageSquareText} title="Belum ada ulasan">
