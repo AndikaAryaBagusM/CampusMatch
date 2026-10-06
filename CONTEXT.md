@@ -170,7 +170,7 @@ A Profil RIASEC saved to an account, with the date the Tes Minat was taken. An a
 _Avoid_: Hasil tersimpan, profil kepribadian
 
 **Perbandingan**:
-A side-by-side view of 2–3 Prodi showing their facts and Ulasan scores, with no verdict on which is better.
+A side-by-side view of 2–3 Prodi showing their facts and Ulasan scores, with no verdict on which is better. The Prodi may belong to different Jurusan.
 _Avoid_: Kelebihan dan kekurangan, pros and cons, ranking
 
 ## People
