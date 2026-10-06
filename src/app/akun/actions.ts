@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { signOut } from "@/auth";
 import { withDb } from "@/db";
+import { hapusProfilMinat } from "@/lib/riasec/profil";
 import { requirePengulas } from "@/lib/sesi";
 import { targetHalamanProdi } from "@/lib/ulasan/kueri";
 import { hapusUlasan, UlasanTidakDitemukan } from "@/lib/ulasan/layanan";
@@ -27,5 +28,13 @@ export async function hapusUlasanSaya(formData: FormData) {
     }
   });
   if (target) revalidasiHalamanUlasan(target);
+  revalidatePath("/akun");
+}
+
+// Deletes one of the owner's saved Profil Minat (decisions.md 17g).
+export async function hapusProfilSaya(formData: FormData) {
+  const pengguna = await requirePengulas("/akun");
+  const id = String(formData.get("profilId") ?? "");
+  if (/^[0-9a-f-]{36}$/i.test(id)) await withDb((db) => hapusProfilMinat(db, pengguna.id, id));
   revalidatePath("/akun");
 }

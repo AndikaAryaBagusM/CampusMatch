@@ -14,13 +14,14 @@ export default function PrivasiPage() {
   return (
     <HalamanHukum
       judul="Kebijakan Privasi"
-      diperbarui="3 Oktober 2026"
+      diperbarui="6 Oktober 2026"
       ringkas="Kebijakan ini menjelaskan data apa yang dikumpulkan CampusMatch, untuk apa, siapa yang ikut memprosesnya, berapa lama disimpan, dan hakmu sebagai subjek data pribadi menurut Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP)."
     >
       <Bagian id="ringkasan" judul="Ringkasnya">
         <ul>
           <li>Membaca CampusMatch tidak perlu akun dan tidak memakai cookie pelacak atau alat analitik.</li>
-          <li>Kami hanya meminta data saat kamu masuk untuk menulis atau melaporkan ulasan.</li>
+          <li>Kami hanya meminta data saat kamu masuk untuk menulis atau melaporkan ulasan, atau menyimpan hasil Tes Minat.</li>
+          <li>Akun hanya untuk usia 18 tahun ke atas. Tes Minat bisa dikerjakan tanpa akun, dan hasilnya tidak kami simpan.</li>
           <li>Ulasan tampil tanpa nama: hanya status (mahasiswa aktif atau alumni) dan tahun masuk.</li>
           <li>Teks ulasan diperiksa otomatis dengan Claude API dari Anthropic sebelum tampil.</li>
           <li>
@@ -41,7 +42,11 @@ export default function PrivasiPage() {
             untuk masuk dengan Google: ID akun Google dan token masuk yang diberikan Google, yang dibutuhkan sistem
             masuk kami;
           </li>
-          <li>sesi masuk, disimpan di basis data kami dan dikenali lewat cookie sesi di browsermu.</li>
+          <li>sesi masuk, disimpan di basis data kami dan dikenali lewat cookie sesi di browsermu;</li>
+          <li>
+            pernyataanmu bahwa kamu berusia 18 tahun atau lebih, dan kapan kamu menyatakannya. Kami tidak meminta tanggal
+            lahir.
+          </li>
         </ul>
         <p>Kami tidak meminta dan tidak menyimpan kata sandi.</p>
         <p>
@@ -52,6 +57,12 @@ export default function PrivasiPage() {
         <p>
           <strong>Saat kamu melaporkan ulasan.</strong> Kami menyimpan ulasan yang dilaporkan, alasan, catatan yang kamu
           tulis, dan akunmu sebagai pelapor. Identitas pelapor tidak ditunjukkan kepada penulis ulasan.
+        </p>
+        <p>
+          <strong>Saat kamu mengerjakan Tes Minat.</strong> Jawabanmu tidak dikirim atau disimpan sebagai jawaban. Hasilnya
+          berupa enam skor yang dimuat di tautan hasil; tanpa akun, kami tidak menyimpannya. Jika kamu menekan Simpan ke
+          akun, kami menyimpan enam skor itu dan tanggalnya sebagai Profil Minat di akunmu. Profil Minat hanya bisa
+          kamu lihat, bisa kamu hapus kapan saja di halaman Akun, dan tidak dipakai untuk Promosi atau iklan.
         </p>
         <p>
           <strong>Alamat IP dalam bentuk hash.</strong> Saat kamu menulis ulasan, melaporkan ulasan, atau meminta
@@ -69,6 +80,8 @@ export default function PrivasiPage() {
         <ul>
           <li>Mengenali akunmu dan menjaga sesi masukmu.</li>
           <li>Menampilkan ulasanmu secara anonim di halaman Prodi dan Kampus.</li>
+          <li>Menampilkan Profil Minat yang kamu simpan beserta Rekomendasi Jurusan-nya, hanya untukmu.</li>
+          <li>Memastikan akun hanya dipakai oleh orang berusia 18 tahun ke atas.</li>
           <li>Memeriksa ulasan sebelum tampil (Screening) dan menangani laporan.</li>
           <li>Membatasi jumlah permintaan dan mencegah spam serta penyalahgunaan.</li>
           <li>Membalas permintaanmu tentang data pribadi.</li>
@@ -132,6 +145,11 @@ export default function PrivasiPage() {
       <Bagian id="simpan" judul="6. Berapa lama data disimpan">
         <ul>
           <li>Akun dan ulasan disimpan selama akunmu ada, kecuali kamu meminta penghapusan.</li>
+          <li>Profil Minat disimpan sampai kamu menghapusnya atau akunmu dihapus.</li>
+          <li>
+            Jika kamu menyatakan belum 18 tahun, akun yang belum pernah menulis ulasan langsung dihapus beserta datanya.
+            Akun yang sudah punya ulasan dikunci, dan ulasannya tetap tampil tanpa nama sampai kamu meminta penghapusan.
+          </li>
           <li>Sesi masuk berakhir setelah 30 hari. Tautan masuk lewat email berlaku 24 jam dan hanya sekali pakai.</li>
           <li>Penghitung batas permintaan (dengan IP dalam bentuk hash) dihapus otomatis setelah sekitar dua hari.</li>
           <li>

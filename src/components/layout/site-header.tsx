@@ -6,6 +6,7 @@ import { Wordmark } from "@/components/layout/wordmark";
 const NAV = [
   { href: "/#bidang", label: "Bidang" },
   { href: "/#unggulan", label: "Kampus Unggulan" },
+  { href: "/tes-minat", label: "Tes Minat" },
 ];
 
 // Static on purpose: reading the session here would make every catalogue page

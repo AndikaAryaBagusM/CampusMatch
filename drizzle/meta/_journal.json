@@ -43,6 +43,13 @@
       "when": 1791292539638,
       "tag": "0005_fakta_biaya_masuk",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1791293889858,
+      "tag": "0006_profil_minat_usia",
+      "breakpoints": true
     }
   ]
 }
