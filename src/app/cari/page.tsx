@@ -58,6 +58,7 @@ export default async function CariPage(props: PageProps<"/cari">) {
             offset: (halaman - 1) * PER_HALAMAN,
             types: tipe === "semua" ? SEARCH_TYPES : [tipe],
             unggulanOnly,
+            prodiByKampus: tulis,
           }),
           getInfoKatalog(db),
         ]),
