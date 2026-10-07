@@ -73,7 +73,7 @@ export function KeteranganEstimasi() {
 export function PanelEstimasiPengulas({ estimasi, prodiSlug }: { estimasi: EstimasiPengulas; prodiSlug: string }) {
   const e = estimasi;
   const baris: [string, React.ReactNode][] = [
-    ["UKT / SPP per semester", <TeksAngka key="s" r={e.biayaSemester} />],
+    ["Total UKT / SPP per semester", <TeksAngka key="s" r={e.biayaSemester} />],
     ["Uang Pangkal", <TeksUangPangkal key="p" r={e.uangPangkal} />],
     ["Biaya lain saat masuk", <TeksAngka key="l" r={e.biayaLainMasuk} />],
     ["Jalur Masuk", <TeksPilihan key="j" r={e.jalur} label={LABEL_KATEGORI_JALUR} />],

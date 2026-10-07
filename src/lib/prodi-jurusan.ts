@@ -42,13 +42,17 @@ export const TANPA_FILTER: FilterProdiJurusan = { jenjang: null, qsOnly: false, 
 // newest Tahun Akademik (what a student without a reduction pays), from Diperiksa
 // rows only. The Prodi's own rows first; without them, the Kampus-wide ones.
 // Computed here only; a Kampus-wide value is never stored per Prodi (17a).
+// `perSks`: the Prodi's or the Kampus's rows of that year include a fee per
+// SKS, so the SPP is not the whole semester; such a Prodi is left out of the
+// maximum-UKT filter and goes last in the UKT sort (17q).
 function subkueri(db: Db) {
   const uktDiperiksa = and(eq(biaya.status, "diperiksa"), inArray(biaya.jenis, ["ukt", "spp"]));
   const uktProdi = db
     .selectDistinctOn([biaya.prodiId], {
       prodiId: sql<number>`${biaya.prodiId}`.as("ukt_prodi_id"),
       tahun: sql<number>`${biaya.tahunAkademik}`.as("ukt_prodi_tahun"),
-      jumlah: sql<number>`max(${biaya.jumlah})::float8`.as("ukt_prodi_jumlah"),
+      jumlah: sql<number>`max(${biaya.jumlah}) FILTER (WHERE ${biaya.periode} = 'per_semester')::float8`.as("ukt_prodi_jumlah"),
+      perSks: sql<boolean>`bool_or(${biaya.periode} = 'per_sks')`.as("ukt_prodi_per_sks"),
     })
     .from(biaya)
     .where(and(uktDiperiksa, isNotNull(biaya.prodiId)))
@@ -59,7 +63,8 @@ function subkueri(db: Db) {
     .selectDistinctOn([biaya.kampusId], {
       kampusId: sql<number>`${biaya.kampusId}`.as("ukt_kampus_id"),
       tahun: sql<number>`${biaya.tahunAkademik}`.as("ukt_kampus_tahun"),
-      jumlah: sql<number>`max(${biaya.jumlah})::float8`.as("ukt_kampus_jumlah"),
+      jumlah: sql<number>`max(${biaya.jumlah}) FILTER (WHERE ${biaya.periode} = 'per_semester')::float8`.as("ukt_kampus_jumlah"),
+      perSks: sql<boolean>`bool_or(${biaya.periode} = 'per_sks')`.as("ukt_kampus_per_sks"),
     })
     .from(biaya)
     .where(and(uktDiperiksa, isNull(biaya.prodiId)))
@@ -78,16 +83,18 @@ function subkueri(db: Db) {
     .groupBy(ulasan.prodiId)
     .as("bintang_prodi");
   const ukt = sql<number | null>`coalesce(${uktProdi.jumlah}, ${uktKampus.jumlah})`;
-  return { uktProdi, uktKampus, bintang, ukt };
+  const perSks = sql<boolean>`(coalesce(${uktProdi.perSks}, false) OR coalesce(${uktKampus.perSks}, false))`;
+  return { uktProdi, uktKampus, bintang, ukt, perSks };
 }
 
-function syarat(jurusanSlug: string, f: FilterProdiJurusan, ukt: SQL<number | null>) {
+// `hanyaPerSks`: count the Prodi the maximum-UKT filter left out for a fee per SKS.
+function syarat(jurusanSlug: string, f: FilterProdiJurusan, ukt: SQL<number | null>, perSks: SQL<boolean>, hanyaPerSks = false) {
   return and(
     eq(jurusan.slug, jurusanSlug),
     f.jenjang ? eq(prodi.jenjang, f.jenjang) : undefined,
     f.qsOnly ? diQs : undefined,
     f.kotaSlug ? eq(kota.slug, f.kotaSlug) : undefined,
-    f.uktMaks !== null ? sql`${ukt} <= ${f.uktMaks}` : undefined,
+    f.uktMaks !== null ? sql`${ukt} <= ${f.uktMaks} AND ${hanyaPerSks ? perSks : sql`NOT ${perSks}`}` : undefined,
   );
 }
 
@@ -96,12 +103,12 @@ export async function listProdiJurusan(
   jurusanSlug: string,
   filter: FilterProdiJurusan & { urut: Urut; limit: number; offset: number },
 ) {
-  const { uktProdi, uktKampus, bintang, ukt } = subkueri(db);
+  const { uktProdi, uktKampus, bintang, ukt, perSks } = subkueri(db);
   const bintangUrut = sql`CASE WHEN ${bintang.jumlah} >= ${MIN_ULASAN_URUT} THEN ${bintang.rata} END`;
   const abjad = [asc(kampus.nama), asc(kampus.id), asc(jenjangOrder), asc(prodi.nama), asc(prodi.id)];
   const urutan = {
     nama: abjad,
-    ukt: [sql`${ukt} ASC NULLS LAST`, ...abjad],
+    ukt: [sql`CASE WHEN ${perSks} THEN NULL ELSE ${ukt} END ASC NULLS LAST`, ...abjad],
     bintang: [sql`${bintangUrut} DESC NULLS LAST`, sql`${bintang.jumlah} DESC NULLS LAST`, ...abjad],
   }[filter.urut];
 
@@ -121,6 +128,7 @@ export async function listProdiJurusan(
         kotaNama: kota.nama,
         kotaSlug: kota.slug,
         ukt,
+        uktPerSks: perSks,
         uktTahun: sql<number | null>`CASE WHEN ${uktProdi.jumlah} IS NOT NULL THEN ${uktProdi.tahun} ELSE ${uktKampus.tahun} END`,
         uktTingkat: sql<"prodi" | "kampus" | null>`CASE WHEN ${uktProdi.jumlah} IS NOT NULL THEN 'prodi' WHEN ${uktKampus.jumlah} IS NOT NULL THEN 'kampus' END`,
         bintang: bintang.rata,
@@ -132,7 +140,7 @@ export async function listProdiJurusan(
     .leftJoin(uktProdi, eq(uktProdi.prodiId, prodi.id))
     .leftJoin(uktKampus, eq(uktKampus.kampusId, kampus.id))
     .leftJoin(bintang, eq(bintang.prodiId, prodi.id))
-    .where(syarat(jurusanSlug, filter, ukt))
+    .where(syarat(jurusanSlug, filter, ukt, perSks))
     .orderBy(...urutan)
     .limit(filter.limit)
     .offset(filter.offset);
@@ -140,15 +148,20 @@ export async function listProdiJurusan(
 
 export type ProdiJurusan = Awaited<ReturnType<typeof listProdiJurusan>>[number];
 
+// `jumlahPerSks`: under the maximum-UKT filter, how many Prodi it left out
+// because their Kampus also charges per SKS (0 without the filter).
 export async function countProdiJurusan(db: Db, jurusanSlug: string, filter: FilterProdiJurusan) {
-  const { uktProdi, uktKampus, ukt } = subkueri(db);
-  const [row] = await joinJurusan(
-    db.select({ jumlahProdi: count(), jumlahKampus: countDistinct(prodi.kampusId) }).from(prodi).$dynamic(),
-  )
-    .leftJoin(uktProdi, eq(uktProdi.prodiId, prodi.id))
-    .leftJoin(uktKampus, eq(uktKampus.kampusId, kampus.id))
-    .where(syarat(jurusanSlug, filter, ukt));
-  return { jumlahProdi: row?.jumlahProdi ?? 0, jumlahKampus: row?.jumlahKampus ?? 0 };
+  const { uktProdi, uktKampus, ukt, perSks } = subkueri(db);
+  const hitung = (hanyaPerSks: boolean) =>
+    joinJurusan(db.select({ jumlahProdi: count(), jumlahKampus: countDistinct(prodi.kampusId) }).from(prodi).$dynamic())
+      .leftJoin(uktProdi, eq(uktProdi.prodiId, prodi.id))
+      .leftJoin(uktKampus, eq(uktKampus.kampusId, kampus.id))
+      .where(syarat(jurusanSlug, filter, ukt, perSks, hanyaPerSks));
+  const [[row], [perSksRow]] = await Promise.all([
+    hitung(false),
+    filter.uktMaks !== null ? hitung(true) : Promise.resolve([{ jumlahProdi: 0 }]),
+  ]);
+  return { jumlahProdi: row?.jumlahProdi ?? 0, jumlahKampus: row?.jumlahKampus ?? 0, jumlahPerSks: perSksRow?.jumlahProdi ?? 0 };
 }
 
 // The Kota with this Jurusan's Prodi, for the Kota filter (unfiltered counts).

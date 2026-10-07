@@ -19,7 +19,7 @@ import { KotakPromosi } from "@/components/promosi/kotak-promosi";
 import { BarisJadwal, DaftarJadwal, KepalaJadwal, Sel, SelJadwal } from "@/components/trayek/jadwal";
 import { Plat } from "@/components/trayek/plat";
 import { BintangTampil } from "@/components/ulasan/bintang-tampil";
-import { formatRupiah } from "@/lib/fakta/label";
+import { CATATAN_PER_SKS, formatRupiah } from "@/lib/fakta/label";
 import { formatTahunAkademik } from "@/lib/fakta/tahun-akademik";
 import { formatAngka } from "@/lib/format";
 import { namaKota } from "@/lib/kota";
@@ -137,6 +137,7 @@ function BarisProdi({ p, edisiQs }: { p: ProdiJurusan; edisiQs?: number }) {
                 TA {formatTahunAkademik(p.uktTahun)}
                 {p.uktTingkat === "kampus" ? ", berlaku se-Kampus" : null}
               </span>
+              {p.uktPerSks ? <span className="block text-xs text-muted-foreground">{CATATAN_PER_SKS}</span> : null}
             </>
           ) : (
             <span className="text-muted-foreground">Biaya belum tersedia</span>
@@ -289,7 +290,12 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
             {uktJuta !== null || urut === "ukt" ? (
               <p>
                 UKT di sini adalah UKT/SPP tertinggi per semester dari data biaya yang sudah diperiksa.
-                {uktJuta !== null ? " Prodi yang biayanya belum tersedia tidak ikut ditampilkan." : " Prodi yang biayanya belum tersedia ada di akhir."} Data
+                {uktJuta !== null
+                  ? " Prodi yang biayanya belum tersedia, atau yang Kampusnya juga memungut biaya per SKS, tidak ikut ditampilkan."
+                  : " Prodi yang biayanya belum tersedia, atau yang Kampusnya juga memungut biaya per SKS, ada di akhir."}
+                {uktJuta !== null && tersaring.jumlahPerSks > 0
+                  ? ` ${formatAngka(tersaring.jumlahPerSks)} Prodi dengan biaya per SKS tidak ikut disaring.`
+                  : null} Data
                 biaya baru dikumpulkan untuk sebagian Kampus, dimulai dari Kampus di QS World University Rankings.
               </p>
             ) : null}

@@ -8,11 +8,12 @@
 5. **Deferred from step 4**: campus-email verification (Terverifikasi) and the Kode Prodi → Jurusan mapping tool with per-Prodi overrides.
    - Built 2026-10-06: the mapping tool at `/moderasi/jurusan` with the `riwayat_jurusan` log (migration `0007`). See 17m.
    - Built 2026-10-06: Terverifikasi with campus email (`/akun`, `/akun/verifikasi-kampus`, `data/domain-kampus.csv`, migration `0009`). See 17o. Emails reach anyone only once the Resend domain is verified.
-6. **Info Biaya & Masuk** (added 2026-10-06): Sumber, Biaya, Jalur Masuk and Beasiswa tables; the CSV-per-Sumber import with Draf → Diperiksa checking; facts on the Kampus and Prodi pages. Collect the Daftar Kampus Unggulan first. See [decisions.md](./decisions.md) 17a–17e.
+6. **Info Biaya & Masuk** (added 2026-10-06): Sumber, Biaya, Jalur Masuk and Beasiswa tables; the CSV-per-Sumber import with Draf → Diperiksa checking; facts on the Kampus and Prodi pages. Collect the QS Kampus first (ADR 0011). See [decisions.md](./decisions.md) 17a–17e and 17q.
    - Built 2026-10-06: migration `0005`, `npm run fakta:import`, `/moderasi/fakta`, the panels on the Kampus and Prodi pages, and `/ketentuan` section 9.
    - Withdrawing shown facts (Ditarik) at `/moderasi/fakta/[id]`; a correction is then imported as a new Sumber.
    - **Not built yet**: the form for small fixes; calling Save Page Now from the import.
-   - **Data collection** (the main work): 100 Kampus, 5,043 Prodi.
+   - Shape settled 2026-10-07 (17q): fees per SKS (migration `0013`), amounts per faculty or gelombang, what is skipped, and total amounts in the Info Biaya.
+   - **Data collection** (the main work): the 20 QS Kampus, about 1,460 Prodi, TA 2026/2027, in batches of about five Kampus. Facts stay Draf until a second Moderator exists.
 7. **Tes Minat and Profil Minat**: translated items, Profil RIASEC scoring, Kode RIASEC per Jurusan, the results page with O*NET attribution, the Prodi list per Rekomendasi Jurusan, saving a Profil Minat, and the 18+ account declaration. See 17f–17h.
    - Built 2026-10-06: migration `0006`, `/tes-minat`, `/tes-minat/hasil`, Profil Minat in `/akun`, `/akun/usia` and `/akun/dikunci`, and Kode RIASEC for all 372 Jurusan (proposed from O*NET, loaded on dev, **to be reviewed**). See 17j.
    - **Not built yet**: a Moderator screen for Kode RIASEC (the CSV workflow covers it for now).

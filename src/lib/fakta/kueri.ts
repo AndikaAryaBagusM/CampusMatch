@@ -44,14 +44,16 @@ export type BiayaTampil = {
   label: string | null;
   jumlah: number;
   batas: "minimal" | "maksimal" | null;
-  periode: "per_semester" | "sekali";
+  periode: "per_semester" | "sekali" | "per_sks";
   jalurNama: string | null;
   sumber: SumberRingkas;
 };
 
 const URUTAN_JENIS = ["ukt", "spp", "uang_pangkal", "lain", "pendaftaran"] as const;
+const URUTAN_PERIODE = ["per_semester", "per_sks", "sekali"] as const;
 const urutBiaya = (a: BiayaTampil, b: BiayaTampil) =>
   URUTAN_JENIS.indexOf(a.jenis) - URUTAN_JENIS.indexOf(b.jenis) ||
+  URUTAN_PERIODE.indexOf(a.periode) - URUTAN_PERIODE.indexOf(b.periode) ||
   (a.jalurNama ?? "").localeCompare(b.jalurNama ?? "", "id") ||
   a.jumlah - b.jumlah;
 

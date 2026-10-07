@@ -103,6 +103,25 @@ describe("import", () => {
     expect(await jumlahBiaya(pertama.sumberId)).toBe(1);
   });
 
+  test("an SPP with a fee per SKS loads, and the fixed SPP is listed first", async () => {
+    const { kampus, prodi } = await buatKatalog(t.db);
+    const { sumberId } = await imporSumber(
+      t.db,
+      paket(kode(), meta(kampus.npsn), {
+        biaya: [
+          ukt("Informatika", "350.000", { jenis: "spp", periode: "per_sks", label: "Biaya SKS" }),
+          ukt("Informatika", "9.000.000", { jenis: "spp", label: "BP3" }),
+        ],
+      }),
+      pemasuk,
+    );
+    await tandaiDiperiksa(t.db, { sumberId, moderatorId: pemeriksa });
+    expect((await listBiayaProdi(t.db, prodi[0].id))?.daftar).toMatchObject([
+      { jenis: "spp", periode: "per_semester", jumlah: 9000000 },
+      { jenis: "spp", periode: "per_sks", jumlah: 350000 },
+    ]);
+  });
+
   test("an unmatched Prodi blocks the whole import", async () => {
     const { kampus } = await buatKatalog(t.db);
     const k = kode();
