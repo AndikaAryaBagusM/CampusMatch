@@ -21,6 +21,9 @@ export type SearchOptions = {
   types?: readonly SearchType[];
   // Restrict Kampus and Prodi to the Daftar Kampus Unggulan.
   unggulanOnly?: boolean;
+  // Let Prodi results match on their Kampus name too, word by word, so
+  // "Informatika Gadjah Mada" or just "Gadjah Mada" finds the Prodi.
+  prodiByKampus?: boolean;
 };
 
 // The Jurusan a Prodi belongs to: its Moderator override, else its Kode Prodi
@@ -56,8 +59,25 @@ function matches(col: AnyColumn, q: string) {
 
 export async function searchKatalog(db: Db, query: string, options: SearchOptions = {}) {
   const q = normalizeQuery(query);
-  const { limit = 10, offset = 0, types = SEARCH_TYPES, unggulanOnly = false } = options;
+  const { limit = 10, offset = 0, types = SEARCH_TYPES, unggulanOnly = false, prodiByKampus = false } = options;
   if (q.length < MIN_QUERY_LENGTH) return { jurusan: [], kampus: [], prodi: [] };
+
+  // Every query word in the Prodi or its Kampus name; ranked on both together.
+  const prodiKampus = sql`${prodi.nama} || ' ' || ${kampus.nama}`;
+  const semuaKata = and(...q.split(" ").map((w) => sql`${prodiKampus} ILIKE ${"%" + escapeLike(w) + "%"}`));
+  const prodiWhere = prodiByKampus
+    ? or(matches(prodi.nama, q), matches(kampus.nama, q), semuaKata)
+    : matches(prodi.nama, q);
+  const prodiOrder = prodiByKampus
+    ? [
+        desc(sql`lower(${prodi.nama}) = lower(${q}) or lower(${kampus.nama}) = lower(${q})`),
+        desc(sql`coalesce(${semuaKata}, false)`),
+        desc(sql`word_similarity(${q}, ${prodiKampus})`),
+        asc(kampus.nama),
+        asc(sql`length(${prodi.nama})`),
+        asc(prodi.nama),
+      ]
+    : [...rank(prodi.nama, q), asc(kampus.nama)];
 
   // Prodi per Jurusan, using the effective Jurusan, so equally good matches list
   // the Jurusan with more Prodi first.
@@ -120,8 +140,8 @@ export async function searchKatalog(db: Db, query: string, options: SearchOption
           })
           .from(prodi)
           .innerJoin(kampus, eq(prodi.kampusId, kampus.id))
-          .where(and(matches(prodi.nama, q), unggulanOnly ? eq(kampus.unggulan, true) : undefined))
-          .orderBy(...rank(prodi.nama, q), asc(kampus.nama))
+          .where(and(prodiWhere, unggulanOnly ? eq(kampus.unggulan, true) : undefined))
+          .orderBy(...prodiOrder)
           .limit(limit)
           .offset(offset)
       : [],
