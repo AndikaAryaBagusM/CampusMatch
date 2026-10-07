@@ -5,6 +5,7 @@ import { withDb } from "@/db";
 import { EmptyState } from "@/components/empty-state";
 import { DaftarSumber, Keterangan, Ref, rujukan, type Rujukan } from "@/components/fakta/biaya-masuk";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
+import { judulQs, QsFootnote } from "@/components/kampus/peringkat-qs";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { kontainer, Panel } from "@/components/panel";
 import { SinkronBandingkan } from "@/components/perbandingan/sinkron-bandingkan";
@@ -17,6 +18,7 @@ import { LABEL_BEASISWA } from "@/lib/info-biaya/label";
 import { formatTahunAkademik, tahunAkademikLama } from "@/lib/fakta/tahun-akademik";
 import { formatAngka } from "@/lib/format";
 import { getProdi, getRingkasanUlasan } from "@/lib/katalog";
+import { getInfoQs } from "@/lib/peringkat-qs/kueri";
 import { bacaSlugs, hrefBandingkan } from "@/lib/perbandingan/daftar";
 import { ASPEK } from "@/lib/ulasan/skema";
 
@@ -33,25 +35,28 @@ export const metadata: Metadata = {
 
 async function muat(slugs: string[]) {
   return withDb(async (db) => {
-    const kolom = await Promise.all(
-      slugs.map(async (slug) => {
-        const prodi = await getProdi(db, slug);
-        if (!prodi) return null;
-        const [biayaProdi, fakta, ringkasan] = await Promise.all([
-          listBiayaProdi(db, prodi.id),
-          getFaktaKampus(db, prodi.kampus.id),
-          getRingkasanUlasan(db, { prodiSlug: slug }),
-        ]);
-        return { prodi, biayaProdi, fakta, ringkasan };
-      }),
-    );
+    const [qs, kolom] = await Promise.all([
+      getInfoQs(db),
+      Promise.all(
+        slugs.map(async (slug) => {
+          const prodi = await getProdi(db, slug);
+          if (!prodi) return null;
+          const [biayaProdi, fakta, ringkasan] = await Promise.all([
+            listBiayaProdi(db, prodi.id),
+            getFaktaKampus(db, prodi.kampus.id),
+            getRingkasanUlasan(db, { prodiSlug: slug }),
+          ]);
+          return { prodi, biayaProdi, fakta, ringkasan };
+        }),
+      ),
+    ]);
     const ada = kolom.filter((k) => k !== null);
     const estimasi = await estimasiProdi(db, ada.map((k) => k.prodi.id));
-    return kolom.map((k) => (k ? { ...k, estimasi: estimasi.get(k.prodi.id)! } : null));
+    return { qs, kolom: kolom.map((k) => (k ? { ...k, estimasi: estimasi.get(k.prodi.id)! } : null)) };
   });
 }
 
-type Kolom = NonNullable<Awaited<ReturnType<typeof muat>>[number]>;
+type Kolom = NonNullable<Awaited<ReturnType<typeof muat>>["kolom"][number]>;
 
 const satuDesimal = (n: number) => n.toLocaleString("id-ID", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 const labelProdi = (k: Kolom) => `${k.prodi.jenjang} ${k.prodi.nama}, ${k.prodi.kampus.nama}`;
@@ -191,7 +196,7 @@ function Bagian({ judul, jumlah }: { judul: string; jumlah: number }) {
 export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
   const sp = await props.searchParams;
   const slugs = bacaSlugs(sp.p);
-  const hasil = slugs.length ? await muat(slugs) : [];
+  const { qs, kolom: hasil } = slugs.length ? await muat(slugs) : { qs: null, kolom: [] };
   const kolom = hasil.filter((k): k is Kolom => k !== null);
   const hilang = slugs.length - kolom.length;
   const pilihan = kolom.map((k) => ({ slug: k.prodi.slug, label: labelProdi(k) }));
@@ -306,7 +311,9 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
             {baris("Jenjang", (k) => k.prodi.jenjang)}
             {baris("Bentuk Kampus", (k) => k.prodi.kampus.bentuk)}
             {baris("Akreditasi Kampus", (k) => labelAkreditasi(k.prodi.kampus.akreditasi))}
-            {baris("Daftar Kampus Unggulan", (k) => (k.prodi.kampus.unggulan ? "Ya" : "Tidak"))}
+            {qs
+              ? baris(judulQs(qs.edisi), (k) => k.prodi.kampus.peringkatQs ?? <span className="text-muted-foreground">Tidak masuk</span>)
+              : null}
 
             <Bagian judul="Biaya" jumlah={n} />
             {baris("UKT / SPP per semester", (k, i) => <SelBiaya k={k} jenis={["ukt", "spp"]} r={rujukanKolom[i]} />)}
@@ -370,6 +377,7 @@ export default async function BandingkanPage(props: PageProps<"/bandingkan">) {
       </div>
 
       <div className="mt-4 max-w-3xl space-y-2 px-1">
+        {kolom.some((k) => k.prodi.kampus.peringkatQs) ? <QsFootnote qs={qs} /> : null}
         <Keterangan />
         <p className="text-xs text-muted-foreground">
           Biaya Prodi diambil dari data Prodi itu sendiri; bila Kampus hanya menerbitkan biaya untuk seluruh Kampus,

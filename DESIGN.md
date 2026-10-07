@@ -141,7 +141,7 @@ components:
     rounded: "{rounded.sm}"
     height: "24px"
     padding: "0 8px"
-  plate-unggulan:
+  plate-qs:
     backgroundColor: "{colors.sheet}"
     textColor: "{colors.signal-ink}"
     rounded: "{rounded.sm}"
@@ -272,12 +272,12 @@ Painted plates: solid, small-cornered, bold.
 - **Bidang chips:** deep-jade pill-less rectangles (36px) on the hero band with a small route plate leading; hover to ink.
 - **Filter chips:** 32px link chips, 3px corners; the active chip is a solid ink plate, idle chips are sheet with an input-stroke ring that turns jade on hover.
 - **Badges:** 24px, 3px corners, jade tint for a known akreditasi, muted with a faint ring for "Akreditasi belum tersedia".
-- **Unggulan plate:** an outlined plate (sheet fill, 1px ink ring, a small ink dot) so it reads as list membership, not a grade; always paired with an Unggulan source ticket.
+- **QS plate:** an outlined plate (sheet fill, 1px ink ring, a small ink dot) holding "QS WUR [edisi] · [rank as published]", so it reads as a cited third-party fact, not our grade; always paired on the page with a QS source ticket that names "QS World University Rankings [edisi]" and links to it.
 
 ### Cards / Containers
 - **Panel (timetable section):** on the ground, 3px ink rule on top, title hanging from it, ruled rows below.
 - **Panel lembar (sheet):** sheet background, 4.5px corners, faint ink ring (10%), 20–24px padding, 2px ink rule under the heading. Only on account, login, report and moderation pages; public reading pages stay on the ground.
-- **Departure board:** signal-ink board, white names, on-jade-muted Kota, plate-type column heads, alphabetical, never ranked.
+- **Departure board:** signal-ink board, white names, on-jade-muted Kota, plate-type column heads. Alphabetical and never ranked by us; the one exception is the home QS board, which keeps QS's own order with the rank as published in its first column (ADR 0011).
 
 ### Timetable Rows (Jadwal)
 Result lists set as the columns of a departure board. Column heads in Barlow Condensed (600, uppercase, muted ink) under a 3px ink rule, dropped when the list's own heading already carries one. Rows are ruled with 1px dividers, about 14px vertical padding, the destination (name, with its plate or logo) on the left and fixed fact columns after it. Text columns align left; figure columns align right in plate type (700, 1–1.125rem, tabular). On phones the column heads hide and the facts wrap onto one line under the name, each prefixed with its own label.
@@ -299,10 +299,10 @@ The signature component. An ordered list drawn as a 6px line with stops; vertica
 A short upper-case code in Barlow Condensed on a solid route colour, 3px corners, three sizes (20 / 28 / 40px). Used for Bidang codes, interchange marks ("Juga di"), the Rute Pengulas "P". Kampus without a logo get a plate monogram on an oklch L 0.45 hue fixed by NPSN.
 
 ### Source Ticket (TiketSumber)
-Every official figure carries one: a sheet ticket with a faint ring, a plate-type stub ("Sumber", "Unggulan"), a dashed tear line, then the source and its date in muted ink.
+Every official figure carries one: a sheet ticket with a faint ring, a plate-type stub ("Sumber", "QS"), a dashed tear line, then the source and its date in muted ink.
 
 ### Station Sign (KampusHeader)
-The Kampus on the jade field, optionally under a banner image: logo or monogram ringed in white, the name, the place, one timetable line of figures (plate-type Prodi count, akreditasi, Ulasan count or "Belum ada ulasan"), and the Unggulan plate when it applies. Nothing sits in a strip beneath it; the plate tabs follow directly on the ground, then the Unggulan source ticket.
+The Kampus on the jade field, optionally under a banner image: logo or monogram ringed in white, the name, the place, one timetable line of figures (plate-type Prodi count, akreditasi, Ulasan count or "Belum ada ulasan"), and the QS plate when it applies. Nothing sits in a strip beneath it; the plate tabs follow directly on the ground, then the QS source ticket.
 
 ### Bandingkan Bar
 A fixed ink bar along the bottom; one station per comparison slot, filled jade when chosen, a hollow ring while free.
@@ -323,7 +323,7 @@ The paid placement in a different paper: warm paper, a 2px dashed brown border, 
 
 ### Don't:
 - **Don't** bring back the StudyCheck look: blue `#0068ce`, a yellow CTA, Inter, or a grid of same-size white cards under a blue search hero.
-- **Don't** use a route line to imply rank, score or distance; order is alphabetical or by count and says so.
+- **Don't** use a route line to imply rank, score or distance; order is alphabetical or by count and says so (the home QS board follows QS's published order and says so).
 - **Don't** use pink for anything but the Pengulas route and the writing action.
 - **Don't** set sentences or headings in Barlow Condensed.
 - **Don't** give the Promosi poster route colours, stops or lines, or set it in the organic list unlabelled.

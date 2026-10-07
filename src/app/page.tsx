@@ -3,8 +3,8 @@ import { PenLine } from "lucide-react";
 import { withDb } from "@/db";
 import { FaqList } from "@/components/faq-list";
 import { GarisBidang, gayaBidang, idBidang } from "@/components/home/garis-bidang";
-import { KampusUnggulanList } from "@/components/home/kampus-unggulan-list";
-import { UnggulanFootnote } from "@/components/kampus/unggulan-badge";
+import { KampusQsList } from "@/components/home/kampus-qs-list";
+import { judulQs, QsFootnote } from "@/components/kampus/peringkat-qs";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { kontainer } from "@/components/panel";
 import { KotakPromosi } from "@/components/promosi/kotak-promosi";
@@ -12,7 +12,8 @@ import { SearchForm } from "@/components/search-form";
 import { GarisRute } from "@/components/trayek/garis-rute";
 import { Plat } from "@/components/trayek/plat";
 import { formatAngka } from "@/lib/format";
-import { getBidangSorotan, getInfoKatalog, listKampusUnggulan } from "@/lib/katalog";
+import { getBidangSorotan, getInfoKatalog } from "@/lib/katalog";
+import { getInfoQs, listKampusQs } from "@/lib/peringkat-qs/kueri";
 import { pilihPromosi } from "@/lib/promosi";
 import { cn } from "@/lib/utils";
 
@@ -37,8 +38,14 @@ const RUTE_PENGULAS = [
 ];
 
 export default async function Beranda() {
-  const [info, bidang, unggulan, promosi] = await withDb((db) =>
-    Promise.all([getInfoKatalog(db), getBidangSorotan(db), listKampusUnggulan(db), pilihPromosi(db, { tempat: "beranda" })]),
+  const [info, bidang, kampusQs, qs, promosi] = await withDb((db) =>
+    Promise.all([
+      getInfoKatalog(db),
+      getBidangSorotan(db),
+      listKampusQs(db),
+      getInfoQs(db),
+      pilihPromosi(db, { tempat: "beranda" }),
+    ]),
   );
 
   // Jurusan that sit on more than one Bidang line, for the interchange marks.
@@ -134,11 +141,14 @@ export default async function Beranda() {
             </div>
           ) : null}
 
-          {unggulan.length > 0 ? (
-            <Stasiun id="unggulan" judul="Daftar Kampus Unggulan">
-              <p className="mb-5 text-sm text-muted-foreground">Urut abjad. Daftar ini tidak memengaruhi urutan hasil pencarian.</p>
-              <KampusUnggulanList items={unggulan} />
-              <UnggulanFootnote info={info} className="mt-4" />
+          {qs && kampusQs.length > 0 ? (
+            <Stasiun id="qs" judul={`Kampus Indonesia di ${judulQs(qs.edisi)}`}>
+              <p className="mb-5 max-w-[68ch] text-sm text-muted-foreground">
+                Semua {formatAngka(kampusQs.length)} Kampus Indonesia di edisi ini, urut menurut peringkat dunia dari QS.
+                Peringkat ini tidak memengaruhi urutan hasil pencarian maupun ulasan.
+              </p>
+              <KampusQsList items={kampusQs} />
+              <QsFootnote qs={qs} className="mt-4" />
             </Stasiun>
           ) : null}
 
@@ -162,12 +172,15 @@ export default async function Beranda() {
                       "Akreditasi resmi Kampus dari data pemerintah. Akreditasi per Prodi belum ditampilkan karena tidak ada di data ekspor. Jika tertulis “Akreditasi belum tersedia”, data akreditasi Kampus itu tidak ada di ekspor; itu tidak berarti Kampus tidak terakreditasi.",
                   },
                   {
-                    tanya: "Apa itu Daftar Kampus Unggulan?",
+                    tanya: "Dari mana peringkat QS yang ditampilkan?",
                     jawab: (
                       <>
-                        Daftar pilihan Kampus yang kami sorot{info?.unggulanSumber ? `, diambil dari ${info.unggulanSumber}` : ""}.
-                        Webometrics mengukur kehadiran web dan keluaran riset, bukan kualitas pengajaran. Daftar ini tidak
-                        memengaruhi urutan hasil pencarian.
+                        Dari {qs ? judulQs(qs.edisi) : "QS World University Rankings"}, peringkat dunia yang diterbitkan QS
+                        Quacquarelli Symonds. Kami menampilkan semua Kampus Indonesia di edisi terbaru dengan peringkat persis
+                        seperti yang diterbitkan QS, beserta tautan ke sumbernya. QS menilai universitas secara keseluruhan,
+                        terutama dari survei reputasi di kalangan akademisi dan pemberi kerja, sitasi riset, dan rasio dosen
+                        terhadap mahasiswa, bukan Prodi tertentu. Peringkat ini tidak memengaruhi urutan hasil pencarian, dan
+                        tidak dihitung dari ulasan atau memengaruhi skor ulasan.
                       </>
                     ),
                   },

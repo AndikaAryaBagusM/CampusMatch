@@ -33,11 +33,11 @@ export async function generateMetadata({ params }: PageProps<"/kampus/[slug]/ula
 export default async function KampusUlasanPage({ params }: PageProps<"/kampus/[slug]/ulasan">) {
   const data = await loadKampus((await params).slug, ULASAN_TAMPIL);
   if (!data) notFound();
-  const { kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan } = data;
+  const { kampus, prodiPerJenjang, jumlahUlasan, qs, ringkasan, ulasan } = data;
 
   return (
     <div className={kontainer}>
-      <KampusHeader kampus={kampus} prodiPerJenjang={prodiPerJenjang} jumlahUlasan={jumlahUlasan} info={info} tab="ulasan" />
+      <KampusHeader kampus={kampus} prodiPerJenjang={prodiPerJenjang} jumlahUlasan={jumlahUlasan} qs={qs} tab="ulasan" />
       <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
         <Panel title="Ulasan" action={<TombolTulis href={`/kampus/${kampus.slug}/tulis`} />}>
           {ulasan.length === 0 ? (

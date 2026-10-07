@@ -32,9 +32,9 @@ _Avoid_: Rating, peringkat
 The city where a Kampus is located. Used for browsing.
 _Avoid_: Lokasi, daerah, region
 
-**Daftar Kampus Unggulan**:
-A curated list of Kampus (initially 100, taken from Webometrics) that CampusMatch highlights with a badge and a filter. It does not limit which Kampus are covered and never changes the order of search results. It also sets which Kampus get their Biaya & Masuk facts collected first. Its source and capture date are recorded with each catalogue import.
-_Avoid_: Top 100, ranking
+**Peringkat QS**:
+A Kampus's place in one edition of the QS World University Rankings, exactly as QS publishes it: a rank (e.g. 276), a shared rank (=191) or a band (851-900, 1401+). Every Indonesian Kampus in the latest edition has one. It is always shown labelled with the edition and a link to QS, never changes search order or any Ulasan score, and sets which Kampus get their Biaya & Masuk facts collected first.
+_Avoid_: Daftar Kampus Unggulan, Kampus Unggulan, top kampus, kampus terbaik, ranking (on its own)
 
 ## Biaya & Masuk
 

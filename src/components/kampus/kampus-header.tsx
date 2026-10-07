@@ -1,12 +1,13 @@
 import { MapPin } from "lucide-react";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusLogo } from "@/components/kampus/kampus-logo";
-import { UnggulanBadge, UnggulanFootnote } from "@/components/kampus/unggulan-badge";
+import { PeringkatQsBadge, QsFootnote } from "@/components/kampus/peringkat-qs";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { TabNav } from "@/components/tab-nav";
 import { formatAngka, formatProvinsi } from "@/lib/format";
 import { getKampusMedia } from "@/lib/kampus-media";
-import type { InfoKatalog, Jenjang, KampusDetail } from "@/lib/katalog";
+import type { Jenjang, KampusDetail } from "@/lib/katalog";
+import type { InfoQs } from "@/lib/peringkat-qs/kueri";
 import { namaKota } from "@/lib/kota";
 
 export type KampusTab = "ringkasan" | "prodi" | "ulasan";
@@ -17,13 +18,13 @@ export function KampusHeader({
   kampus,
   prodiPerJenjang,
   jumlahUlasan,
-  info,
+  qs,
   tab,
 }: {
   kampus: KampusDetail;
   prodiPerJenjang: { jenjang: Jenjang; jumlah: number }[];
   jumlahUlasan: number;
-  info: InfoKatalog | null;
+  qs: InfoQs | null;
   tab: KampusTab;
 }) {
   const jumlahProdi = prodiPerJenjang.reduce((s, j) => s + j.jumlah, 0);
@@ -63,7 +64,7 @@ export function KampusHeader({
               <span aria-hidden>·</span>
               <span>{jumlahUlasan === 0 ? "Belum ada ulasan" : `${formatAngka(jumlahUlasan)} ulasan`}</span>
             </p>
-            {kampus.unggulan ? <UnggulanBadge className="mt-1" /> : null}
+            {kampus.peringkatQs && qs ? <PeringkatQsBadge peringkat={kampus.peringkatQs} edisi={qs.edisi} className="mt-1" /> : null}
           </div>
         </div>
       </div>
@@ -77,7 +78,7 @@ export function KampusHeader({
             ]}
           />
       </div>
-      {kampus.unggulan ? <UnggulanFootnote info={info} /> : null}
+      {kampus.peringkatQs ? <QsFootnote qs={qs} /> : null}
     </>
   );
 }

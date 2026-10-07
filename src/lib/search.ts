@@ -1,6 +1,7 @@
 import { and, asc, desc, eq, ilike, or, sql, type AnyColumn, type SQL } from "drizzle-orm";
 import type { Db } from "@/db";
 import { jurusan, kampus, kodeProdiJurusan, kota, prodi } from "@/db/schema";
+import { diQs, peringkatQsKampus } from "@/lib/peringkat-qs/kueri";
 
 // Name search over the catalogue with pg_trgm. Postgres ships no Indonesian
 // text-search configuration, and catalogue names are a few words long, so we
@@ -19,8 +20,8 @@ export type SearchOptions = {
   offset?: number;
   // Which result types to query; defaults to all three.
   types?: readonly SearchType[];
-  // Restrict Kampus and Prodi to the Daftar Kampus Unggulan.
-  unggulanOnly?: boolean;
+  // Restrict Kampus and Prodi to those in the latest QS World University Rankings.
+  qsOnly?: boolean;
   // Let Prodi results match on their Kampus name too, word by word, so
   // "Informatika Gadjah Mada" or just "Gadjah Mada" finds the Prodi.
   prodiByKampus?: boolean;
@@ -40,7 +41,7 @@ function escapeLike(s: string): string {
 }
 
 // Exact name first, then prefix, then closest word match, then any extra
-// tie-breaks, then shortest name, then alphabetical. The Daftar Kampus Unggulan
+// tie-breaks, then shortest name, then alphabetical. QS rank (ADR 0011)
 // never affects this order.
 function rank(col: AnyColumn, q: string, ...tieBreaks: SQL[]) {
   return [
@@ -59,7 +60,7 @@ function matches(col: AnyColumn, q: string) {
 
 export async function searchKatalog(db: Db, query: string, options: SearchOptions = {}) {
   const q = normalizeQuery(query);
-  const { limit = 10, offset = 0, types = SEARCH_TYPES, unggulanOnly = false, prodiByKampus = false } = options;
+  const { limit = 10, offset = 0, types = SEARCH_TYPES, qsOnly = false, prodiByKampus = false } = options;
   if (q.length < MIN_QUERY_LENGTH) return { jurusan: [], kampus: [], prodi: [] };
 
   // Every query word in the Prodi or its Kampus name; ranked on both together.
@@ -116,12 +117,12 @@ export async function searchKatalog(db: Db, query: string, options: SearchOption
             slug: kampus.slug,
             bentuk: kampus.bentuk,
             akreditasi: kampus.akreditasi,
-            unggulan: kampus.unggulan,
+            peringkatQs: peringkatQsKampus,
             kotaNama: kota.nama,
           })
           .from(kampus)
           .innerJoin(kota, eq(kampus.kotaId, kota.id))
-          .where(and(matches(kampus.nama, q), unggulanOnly ? eq(kampus.unggulan, true) : undefined))
+          .where(and(matches(kampus.nama, q), qsOnly ? diQs : undefined))
           .orderBy(...rank(kampus.nama, q))
           .limit(limit)
           .offset(offset)
@@ -136,11 +137,11 @@ export async function searchKatalog(db: Db, query: string, options: SearchOption
             kampusNama: kampus.nama,
             kampusSlug: kampus.slug,
             kampusNpsn: kampus.npsn,
-            unggulan: kampus.unggulan,
+            peringkatQs: peringkatQsKampus,
           })
           .from(prodi)
           .innerJoin(kampus, eq(prodi.kampusId, kampus.id))
-          .where(and(prodiWhere, unggulanOnly ? eq(kampus.unggulan, true) : undefined))
+          .where(and(prodiWhere, qsOnly ? diQs : undefined))
           .orderBy(...prodiOrder)
           .limit(limit)
           .offset(offset)

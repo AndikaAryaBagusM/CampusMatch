@@ -30,7 +30,7 @@ Ulasan are about one Prodi (one programme at one Kampus), are anonymous, and eac
 ## Capabilities and Constraints
 
 - Routes: home, `/cari`, `/kampus/[slug]` (+`/prodi`, `/ulasan`, `/tulis`), `/prodi/[slug]` (+`/info-biaya`, `/tulis`), `/jurusan/[slug]`, `/kota`, `/kota/[slug]`, `/bandingkan`, `/tes-minat`, `/tes-minat/hasil`, `/akun/*`, `/masuk/*`, `/ulasan/[id]/laporkan`, `/privasi`, `/ketentuan`, `/moderasi/*`.
-- Facts only. No pros/cons and no ranking. The Daftar Kampus Unggulan (from Webometrics, with a stated caveat) never affects search order. Promosi is always labelled and never affects scores or ordering.
+- Facts only. No pros/cons and no ranking of our own. The Peringkat QS (QS World University Rankings, shown as QS publishes it, labelled, linked and with a stated caveat) never affects search order or Ulasan scores. Promosi is always labelled and never affects scores or ordering.
 - Every official figure shows its date and source.
 - Ulasan are shown anonymously (Status Pengulas, entry year, Terverifikasi badge). Estimasi Pengulas shows only aggregates, and only once 5 Pengulas have answered.
 - The site header is static (it reads no session) so catalogue pages stay cached.
@@ -44,7 +44,7 @@ Ulasan are about one Prodi (one programme at one Kampus), are anonymous, and eac
 
 ## Evidence on Hand
 
-- Catalogue: 27,195 D3/D4/S1 Prodi at 4,261 Kampus, from the Kemenristekdikti exports dated 2 October 2026. The Daftar Kampus Unggulan has 100 Kampus (Webometrics 2026 Juli).
+- Catalogue: 27,195 D3/D4/S1 Prodi at 4,261 Kampus, from the Kemenristekdikti exports dated 2 October 2026. 20 Kampus have a Peringkat QS (QS World University Rankings 2027, taken 7 October 2026).
 - Bidang groupings with Prodi counts, and Kode RIASEC for every Jurusan (proposed, under review).
 - **Absent:** there are no published Ulasan, ratings or Estimasi Pengulas yet. There are no photos, logos, testimonials, user counts or press. Never fabricate any of these on production surfaces.
 

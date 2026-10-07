@@ -132,8 +132,10 @@ export default function KetentuanPage() {
             konten, tetapi tidak bisa memastikan kebenaran setiap pengalaman yang diceritakan.
           </li>
           <li>
-            Daftar Kampus Unggulan diambil dari peringkat publik (Webometrics) yang mengukur kehadiran web dan keluaran
-            riset, bukan kualitas pengajaran, dan tidak memengaruhi urutan hasil pencarian.
+            Peringkat QS yang ditampilkan berasal dari QS World University Rankings yang diterbitkan QS Quacquarelli
+            Symonds, ditulis seperti aslinya dengan tautan ke sumbernya. CampusMatch tidak berafiliasi dengan QS. Peringkat
+            itu menilai universitas secara keseluruhan, bukan Prodi tertentu atau kualitas pengajaran, tidak memengaruhi
+            urutan hasil pencarian, dan tidak dihitung dari ulasan.
           </li>
           <li>
             CampusMatch disediakan sebagaimana adanya. Kami berusaha menjaga layanan tetap tersedia dan akurat, tetapi

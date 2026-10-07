@@ -1,6 +1,6 @@
 // Imports Kota, Kampus and Prodi (D3, D4, S1) from the official exports in
-// data/raw/, plus the Daftar Kampus Unggulan if data/top-100-kampus.csv exists.
-// Idempotent: upserts on the schema's unique keys, never deletes.
+// data/raw/. Idempotent: upserts on the schema's unique keys, never deletes.
+// QS ranks are loaded separately (npm run kampus:load-qs, ADR 0011).
 //
 //   npm run catalogue:import -- --dry-run
 //   npm run catalogue:import -- --as-of 2026-09-21 [--allow-production]
@@ -8,10 +8,10 @@ import { config } from "dotenv";
 
 config({ path: ".env.local" });
 
-import { and, desc, eq, inArray, not, sql } from "drizzle-orm";
+import { sql } from "drizzle-orm";
 import { withDb, type Db } from "../src/db";
 import { imporKatalog, kampus, kota, prodi } from "../src/db/schema";
-import { clean, loadExports, loadUnggulan, UNGGULAN_FILE, type Catalogue } from "./catalogue/exports";
+import { loadExports, type Catalogue } from "./catalogue/exports";
 import { guardDatabase } from "./catalogue/guard";
 
 type Tx = Parameters<Parameters<Db["transaction"]>[0]>[0];
@@ -58,30 +58,7 @@ function printPlan(cat: Catalogue) {
   console.log(`  prodi   ${cat.prodi.length} (${Object.entries(byJenjang).map(([j, n]) => `${j} ${n}`).join(", ")})`);
 }
 
-// Checks the Unggulan CSV against the export and notes problems in the report.
-function checkUnggulan(cat: Catalogue) {
-  const unggulan = loadUnggulan();
-  if (!unggulan) {
-    console.log(`\nDaftar Kampus Unggulan: skipped, ${UNGGULAN_FILE} not found`);
-    return null;
-  }
-  const byNpsn = new Map(cat.kampus.map((k) => [k.npsn, k]));
-  const npsns = new Set<string>();
-  for (const r of unggulan.rows) {
-    const k = byNpsn.get(r.npsn);
-    if (!k) cat.report.note("Unggulan npsn not in the export (ignored)", `${r.npsn} ${r.nama}`);
-    else {
-      npsns.add(r.npsn);
-      if (r.nama && clean(r.nama).toLowerCase() !== k.nama.toLowerCase())
-        cat.report.note("Unggulan name differs from the export (npsn used)", `${r.npsn}: CSV "${r.nama}" vs export "${k.nama}"`);
-    }
-  }
-  console.log(`\nDaftar Kampus Unggulan: ${unggulan.rows.length} rows in ${UNGGULAN_FILE}, ${npsns.size} matched`);
-  console.log(`  sumber "${unggulan.sumber}", tanggal_ambil ${unggulan.tanggalAmbil}`);
-  return { npsns, source: unggulan.source, sumber: unggulan.sumber, tanggalAmbil: unggulan.tanggalAmbil };
-}
-
-async function importAll(tx: Tx, cat: Catalogue, unggulan: ReturnType<typeof checkUnggulan>, asOf: string) {
+async function importAll(tx: Tx, cat: Catalogue, asOf: string) {
   const stats: Record<string, { inserted: number; updated: number; unchanged: number }> = {};
 
   // Kota: upsert on (nama, provinsi); nothing to update.
@@ -97,7 +74,7 @@ async function importAll(tx: Tx, cat: Catalogue, unggulan: ReturnType<typeof che
   }
   stats.kota = { inserted: newKota.length, updated: 0, unchanged: cat.kota.length - newKota.length };
 
-  // Kampus: upsert on npsn; slug, unggulan and domain_email are never overwritten.
+  // Kampus: upsert on npsn; slug and domain_email are never overwritten.
   const kampusDb = await tx.select().from(kampus);
   const kampusByNpsn = new Map(kampusDb.map((k) => [k.npsn, k]));
   const kampusSlugs = new Set(kampusDb.map((k) => k.slug));
@@ -180,46 +157,15 @@ async function importAll(tx: Tx, cat: Catalogue, unggulan: ReturnType<typeof che
   const staleKampus = kampusDb.filter((k) => !exportNpsn.has(k.npsn)).length;
   const staleProdi = prodiDb.filter((p) => !seenKeys.has(prodiKey(p))).length;
 
-  // Daftar Kampus Unggulan: the CSV is the whole list.
-  let unggulanChange = "skipped";
-  if (unggulan) {
-    const list = [...unggulan.npsns];
-    const on = list.length
-      ? await tx
-          .update(kampus)
-          .set({ unggulan: true })
-          .where(and(inArray(kampus.npsn, list), eq(kampus.unggulan, false)))
-          .returning({ id: kampus.id })
-      : [];
-    const off = await tx
-      .update(kampus)
-      .set({ unggulan: false })
-      .where(list.length ? and(eq(kampus.unggulan, true), not(inArray(kampus.npsn, list))) : eq(kampus.unggulan, true))
-      .returning({ id: kampus.id });
-    unggulanChange = `${on.length} added, ${off.length} removed, ${list.length} in list`;
-  }
-
-  // Unggulan provenance: from the CSV, or carried over from the previous import
-  // when the CSV is absent (the flags were left untouched above).
-  const [previous] = unggulan
-    ? []
-    : await tx
-        .select({ sumber: imporKatalog.unggulanSumber, tanggalAmbil: imporKatalog.unggulanTanggalAmbil })
-        .from(imporKatalog)
-        .orderBy(desc(imporKatalog.id))
-        .limit(1);
-
   await tx.insert(imporKatalog).values({
     tanggalData: asOf,
-    sumber: unggulan ? [...cat.sources, unggulan.source] : cat.sources,
+    sumber: cat.sources,
     jumlahKota: cat.kota.length,
     jumlahKampus: cat.kampus.length,
     jumlahProdi: cat.prodi.length,
-    unggulanSumber: unggulan ? unggulan.sumber : (previous?.sumber ?? null),
-    unggulanTanggalAmbil: unggulan ? unggulan.tanggalAmbil : (previous?.tanggalAmbil ?? null),
   });
 
-  return { stats, staleKampus, staleProdi, unggulanChange };
+  return { stats, staleKampus, staleProdi };
 }
 
 async function main() {
@@ -231,7 +177,6 @@ async function main() {
 
   const cat = loadExports();
   printPlan(cat);
-  const unggulan = checkUnggulan(cat);
   cat.report.print();
 
   if (dryRun) {
@@ -241,12 +186,11 @@ async function main() {
 
   guardDatabase(args);
   const started = Date.now();
-  const result = await withDb((db) => db.transaction((tx) => importAll(tx, cat, unggulan, asOf!)));
+  const result = await withDb((db) => db.transaction((tx) => importAll(tx, cat, asOf!)));
 
   console.log("\nImported (as of " + asOf + ")");
   for (const [table, s] of Object.entries(result.stats))
     console.log(`  ${table.padEnd(7)} inserted ${s.inserted}, updated ${s.updated}, unchanged ${s.unchanged}`);
-  console.log(`  unggulan ${result.unggulanChange}`);
   console.log(`  in the database but not in this export (kept): kampus ${result.staleKampus}, prodi ${result.staleProdi}`);
   console.log(`Done in ${((Date.now() - started) / 1000).toFixed(1)}s`);
 }
