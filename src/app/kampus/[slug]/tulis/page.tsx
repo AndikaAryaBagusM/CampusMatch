@@ -8,11 +8,10 @@ import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { kontainer, Panel } from "@/components/panel";
 import { getKampus, JENJANG_URUTAN, listProdiKampus } from "@/lib/katalog";
 
-// Catalogue data only: cached like the other Kampus pages.
-export const revalidate = 86400;
-export function generateStaticParams() {
-  return [];
-}
+// Rendered per request, not cached: only Pengulas open it, and caching up to
+// 1,000 Prodi links for every Kampus cost ISR writes for pages crawlers and
+// prefetching opened, not people.
+export const dynamic = "force-dynamic";
 
 // Ulasan are about one Prodi (ADR 0001), so writing from a Kampus starts by
 // picking the Prodi. Every Prodi of every Kampus can be reviewed (ADR 0003).

@@ -50,6 +50,7 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 ## Technology
 
 15. **Stack**: Next.js (App Router, TypeScript) on Vercel; Neon Postgres; Drizzle; Auth.js; name search with `pg_trgm` (substring and typo matching; Postgres has no Indonesian text-search configuration, and catalogue names are too short for stemming to help); Tailwind with shadcn/ui; Screening via `after()` calling `claude-haiku-4-5-20251001`, plus a cron retry; the xlsx import uses SheetJS. See [ADR 0005](./adr/0005-nextjs-postgres-on-vercel.md).
+   - **ISR writes (2026-10-07)**: each Vercel deployment starts with an empty ISR cache, and writes are counted per 8 KB, so the free 200,000 units ran low from first renders, not from changing output (fresh renders are byte-identical). Commits that only touch `data/`, `docs/`, `design/`, `.impeccable/`, `scripts/`, `test/`, `drizzle/`, Markdown or tests don't deploy (`ignoreCommand` in `vercel.json`). Links to cached pages in long lists, tabs and "Tulis ulasan" buttons are not prefetched, `/kampus/[slug]/tulis` renders per request, and `robots.txt` keeps crawlers off the writing pages. Merge in batches to deploy less.
 16. **Name**: CampusMatch. The GitHub repo is `AndikaAryaBagusM/CampusMatch` (renamed from `kampusCheck`).
 
 ## Info Biaya & Masuk and Profil Minat (decided 2026-10-06)

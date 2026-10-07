@@ -32,7 +32,7 @@ export function UlasanCard({ ulasan, tampilkanProdi }: { ulasan: UlasanPublik; t
         {tampilkanProdi ? (
           <>
             {" · "}
-            <Link href={`/prodi/${ulasan.prodiSlug}`} className="font-semibold text-jade underline-offset-4 hover:underline">
+            <Link href={`/prodi/${ulasan.prodiSlug}`} prefetch={false} className="font-semibold text-jade underline-offset-4 hover:underline">
               {ulasan.prodiNama}
             </Link>
           </>

@@ -132,6 +132,7 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
                 <DaftarUlasan ulasan={ulasan} tampilkanProdi />
                 <Link
                   href={`/kampus/${kampus.slug}/ulasan`}
+                  prefetch={false}
                   className="mt-5 inline-flex text-sm font-semibold text-primary hover:underline"
                 >
                   Lihat semua {formatAngka(jumlahUlasan)} ulasan

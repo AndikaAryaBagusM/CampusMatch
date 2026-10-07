@@ -107,6 +107,7 @@ function BarisProdi({ p, edisiQs }: { p: ProdiJurusan; edisiQs?: number }) {
         <div className="min-w-0">
           <Link
             href={`/prodi/${p.slug}`}
+            prefetch={false}
             className="flex flex-wrap items-center gap-x-2 font-bold decoration-jade decoration-2 underline-offset-4 hover:underline"
           >
             <Plat warna="var(--foreground)" ukuran="sm">
@@ -115,7 +116,7 @@ function BarisProdi({ p, edisiQs }: { p: ProdiJurusan; edisiQs?: number }) {
             {p.nama}
           </Link>
           <p className="text-sm">
-            <Link href={`/kampus/${p.kampus.slug}`} className="underline-offset-4 hover:underline">
+            <Link href={`/kampus/${p.kampus.slug}`} prefetch={false} className="underline-offset-4 hover:underline">
               {p.kampus.nama}
             </Link>
             <span className="text-muted-foreground">

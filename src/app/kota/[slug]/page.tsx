@@ -83,6 +83,7 @@ function BarisKampus({ k, edisiQs }: { k: KampusKota; edisiQs?: number }) {
         <div className="min-w-0">
           <Link
             href={`/kampus/${k.slug}`}
+            prefetch={false}
             className="font-bold decoration-jade decoration-2 underline-offset-4 hover:underline"
           >
             {k.nama}
