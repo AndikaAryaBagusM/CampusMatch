@@ -21,4 +21,4 @@ The Daftar Kampus Unggulan was 100 Kampus copied once from Webometrics 2026 Juli
 ## Consequences
 
 - When QS publishes a new edition, the team copies it into a new `data/raw/` file, reviews the matches and runs the loader. Kampus that drop out lose the badge, and pages switch to the new edition at once.
-- The old `kampus.unggulan` and `impor_katalog.unggulan_*` columns stay unused until production runs the new code, then a later migration drops them.
+- The old `kampus.unggulan` and `impor_katalog.unggulan_*` columns are dropped by migration `0012`, run only after production served the code that no longer reads them.

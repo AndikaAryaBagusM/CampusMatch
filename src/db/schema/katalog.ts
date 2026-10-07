@@ -1,6 +1,5 @@
 import { sql } from "drizzle-orm";
 import {
-  boolean,
   check,
   date,
   index,
@@ -44,10 +43,6 @@ export const kampus = pgTable(
       .notNull()
       .references(() => kota.id, { onDelete: "restrict" }),
     akreditasi: text("akreditasi"),
-    // Retired: the old Daftar Kampus Unggulan flag (Webometrics). Never read;
-    // QS membership is peringkat_qs (ADR 0011). Dropped once production runs
-    // code that no longer selects it.
-    unggulan: boolean("unggulan").notNull().default(false),
     // Campus email domain (e.g. "ugm.ac.id"), used for Terverifikasi; its
     // subdomains (mail.ugm.ac.id) count too. From data/domain-kampus.csv.
     domainEmail: text("domain_email"),
@@ -235,8 +230,5 @@ export const imporKatalog = pgTable("impor_katalog", {
   jumlahKota: integer("jumlah_kota").notNull(),
   jumlahKampus: integer("jumlah_kampus").notNull(),
   jumlahProdi: integer("jumlah_prodi").notNull(),
-  // Retired with kampus.unggulan (ADR 0011): no longer written or read.
-  unggulanSumber: text("unggulan_sumber"),
-  unggulanTanggalAmbil: date("unggulan_tanggal_ambil"),
   createdAt: createdAt(),
 });
