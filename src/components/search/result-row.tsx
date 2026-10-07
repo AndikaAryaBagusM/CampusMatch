@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BookOpen, PenLine } from "lucide-react";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusLogo } from "@/components/kampus/kampus-logo";
-import { UnggulanBadge } from "@/components/kampus/unggulan-badge";
+import { PeringkatQsBadge } from "@/components/kampus/peringkat-qs";
 import { BarisJadwal, KepalaJadwal, Sel, SelJadwal } from "@/components/trayek/jadwal";
 import { Plat } from "@/components/trayek/plat";
 import { formatAngka } from "@/lib/format";
@@ -57,7 +57,7 @@ export function JurusanResult({ j }: { j: SearchResults["jurusan"][number] }) {
   );
 }
 
-export function KampusResult({ k }: { k: SearchResults["kampus"][number] }) {
+export function KampusResult({ k, edisiQs }: { k: SearchResults["kampus"][number]; edisiQs?: number }) {
   return (
     <BarisJadwal kolom={KOLOM_KAMPUS}>
       <div className="flex min-w-0 items-center gap-3">
@@ -68,7 +68,7 @@ export function KampusResult({ k }: { k: SearchResults["kampus"][number] }) {
           </Link>
           <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
             {k.bentuk}
-            {k.unggulan ? <UnggulanBadge className="h-5" /> : null}
+            {k.peringkatQs && edisiQs ? <PeringkatQsBadge peringkat={k.peringkatQs} edisi={edisiQs} className="h-5" /> : null}
           </p>
         </div>
       </div>
@@ -80,7 +80,7 @@ export function KampusResult({ k }: { k: SearchResults["kampus"][number] }) {
   );
 }
 
-export function ProdiResult({ p, tulis }: { p: SearchResults["prodi"][number]; tulis?: boolean }) {
+export function ProdiResult({ p, tulis, edisiQs }: { p: SearchResults["prodi"][number]; tulis?: boolean; edisiQs?: number }) {
   return (
     <BarisJadwal kolom={tulis ? KOLOM_PRODI_TULIS : KOLOM_PRODI}>
       <div className="flex min-w-0 items-center gap-3">
@@ -92,7 +92,7 @@ export function ProdiResult({ p, tulis }: { p: SearchResults["prodi"][number]; t
             </Plat>
             {p.nama}
           </Link>
-          {p.unggulan ? <UnggulanBadge className="mt-1.5 h-5" /> : null}
+          {p.peringkatQs && edisiQs ? <PeringkatQsBadge peringkat={p.peringkatQs} edisi={edisiQs} className="mt-1.5 h-5" /> : null}
         </div>
       </div>
       <SelJadwal>

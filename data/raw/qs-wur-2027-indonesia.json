@@ -1,0 +1,30 @@
+{
+  "judul": "QS World University Rankings 2027",
+  "edisi": 2027,
+  "diterbitkan": "2026-06-18",
+  "sumber_url": "https://www.topuniversities.com/world-university-rankings?countries=id",
+  "tanggal_ambil": "2026-10-07",
+  "catatan": "Every Indonesian entry (20 results with the Indonesia filter), copied by hand from the ranking page. Only the name, location and rank as QS publishes them; no scores, indicators or logos.",
+  "entri": [
+    { "nama_qs": "Universitas Indonesia", "lokasi_qs": "Depok", "peringkat": "=191" },
+    { "nama_qs": "Gadjah Mada University", "lokasi_qs": "Yogyakarta", "peringkat": "=206" },
+    { "nama_qs": "Universitas Airlangga", "lokasi_qs": "Surabaya", "peringkat": "276" },
+    { "nama_qs": "Institut Teknologi Bandung (ITB)", "lokasi_qs": "Bandung", "peringkat": "287" },
+    { "nama_qs": "IPB University (aka Bogor Agricultural University)", "lokasi_qs": "Bogor", "peringkat": "=419" },
+    { "nama_qs": "Universitas Padjadjaran (UNPAD)", "lokasi_qs": "Bandung", "peringkat": "496" },
+    { "nama_qs": "Institut Teknologi Sepuluh Nopember (ITS Surabaya)", "lokasi_qs": "Surabaya", "peringkat": "=497" },
+    { "nama_qs": "Universitas Brawijaya", "lokasi_qs": "Malang", "peringkat": "=616" },
+    { "nama_qs": "Diponegoro University", "lokasi_qs": "Semarang", "peringkat": "=662" },
+    { "nama_qs": "Universitas Hasanuddin", "lokasi_qs": "Makassar", "peringkat": "851-900" },
+    { "nama_qs": "Bina Nusantara University (BINUS)", "lokasi_qs": "Jakarta", "peringkat": "901-950" },
+    { "nama_qs": "Universitas Sebelas Maret (UNS)", "lokasi_qs": "Surakarta", "peringkat": "951-1000" },
+    { "nama_qs": "Universitas Sumatera Utara", "lokasi_qs": "Medan City", "peringkat": "1001-1200" },
+    { "nama_qs": "Telkom University", "lokasi_qs": "Bandung", "peringkat": "1201-1400" },
+    { "nama_qs": "Universitas Muhammadiyah Yogyakarta (UMY)", "lokasi_qs": "Yogyakarta", "peringkat": "1201-1400" },
+    { "nama_qs": "Universitas Andalas", "lokasi_qs": "Padang", "peringkat": "1401+" },
+    { "nama_qs": "Universitas Negeri Padang", "lokasi_qs": "Padang", "peringkat": "1401+" },
+    { "nama_qs": "Universitas Negeri Yogyakarta", "lokasi_qs": "Yogyakarta", "peringkat": "1401+" },
+    { "nama_qs": "Universitas Pendidikan Indonesia", "lokasi_qs": "Bandung", "peringkat": "1401+" },
+    { "nama_qs": "Universitas Trisakti (USAKTI)", "lokasi_qs": "Jakarta Barat", "peringkat": "1401+" }
+  ]
+}

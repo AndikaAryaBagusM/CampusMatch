@@ -18,20 +18,22 @@ import {
   parseJenjang,
   type Jenjang,
 } from "@/lib/katalog";
+import { getInfoQs } from "@/lib/peringkat-qs/kueri";
 import { hrefWith, jumlahHalaman, param, parseHalaman } from "@/lib/url";
 
 const PER_HALAMAN = 25;
 
 const load = cache((slug: string, jenjang: Jenjang | null, halaman: number) =>
   withDb(async (db) => {
-    const [kampus, prodiPerJenjang, jumlahUlasan, info, prodi] = await Promise.all([
+    const [kampus, prodiPerJenjang, jumlahUlasan, info, qs, prodi] = await Promise.all([
       getKampus(db, slug),
       countProdiPerJenjang(db, slug),
       countUlasanKampus(db, slug),
       getInfoKatalog(db),
+      getInfoQs(db),
       listProdiKampus(db, slug, { jenjang, limit: PER_HALAMAN, offset: (halaman - 1) * PER_HALAMAN }),
     ]);
-    return kampus ? { kampus, prodiPerJenjang, jumlahUlasan, info, prodi } : null;
+    return kampus ? { kampus, prodiPerJenjang, jumlahUlasan, info, qs, prodi } : null;
   }),
 );
 
@@ -59,7 +61,7 @@ export async function generateMetadata(props: PageProps<"/kampus/[slug]/prodi">)
 export default async function KampusProdiPage(props: PageProps<"/kampus/[slug]/prodi">) {
   const { slug, jenjang, halaman, data } = await resolve(props);
   if (!data) notFound();
-  const { kampus, prodiPerJenjang, jumlahUlasan, info, prodi } = data;
+  const { kampus, prodiPerJenjang, jumlahUlasan, info, qs, prodi } = data;
 
   const base = `/kampus/${slug}/prodi`;
   const total = jenjang
@@ -70,7 +72,7 @@ export default async function KampusProdiPage(props: PageProps<"/kampus/[slug]/p
 
   return (
     <div className={kontainer}>
-      <KampusHeader kampus={kampus} prodiPerJenjang={prodiPerJenjang} jumlahUlasan={jumlahUlasan} info={info} tab="prodi" />
+      <KampusHeader kampus={kampus} prodiPerJenjang={prodiPerJenjang} jumlahUlasan={jumlahUlasan} qs={qs} tab="prodi" />
 
       <div className="mt-6 space-y-4">
         <h2 className="text-xl font-bold">

@@ -4,14 +4,14 @@ import { ChevronLeft, ChevronRight, Search, SearchX } from "lucide-react";
 import { withDb } from "@/db";
 import { EmptyState } from "@/components/empty-state";
 import { FilterBar, FilterChips } from "@/components/filter-bar";
-import { UnggulanFootnote } from "@/components/kampus/unggulan-badge";
+import { judulQs, QsFootnote } from "@/components/kampus/peringkat-qs";
 import { kontainer, Panel } from "@/components/panel";
 import { SearchForm } from "@/components/search-form";
 import { JurusanResult, KampusResult, KepalaJurusan, KepalaKampus, KepalaProdi, ProdiResult } from "@/components/search/result-row";
 import { TabNav } from "@/components/tab-nav";
 import { GarisRute } from "@/components/trayek/garis-rute";
 import { KotakPromosi } from "@/components/promosi/kotak-promosi";
-import { getInfoKatalog } from "@/lib/katalog";
+import { filterQsAktif, getInfoQs } from "@/lib/peringkat-qs/kueri";
 import { pilihPromosi } from "@/lib/promosi";
 import { MIN_QUERY_LENGTH, normalizeQuery, searchKatalog, SEARCH_TYPES, type SearchType } from "@/lib/search";
 import { hrefWith, param, parseHalaman } from "@/lib/url";
@@ -35,14 +35,14 @@ export default async function CariPage(props: PageProps<"/cari">) {
   const tulis = param(sp.tulis) === "1";
   const rawTipe = tulis ? "prodi" : param(sp.tipe);
   const tipe: Tipe = (SEARCH_TYPES as readonly string[]).includes(rawTipe ?? "") ? (rawTipe as SearchType) : "semua";
-  const unggulanOnly = param(sp.unggulan) === "1";
+  const qsOnly = filterQsAktif(sp);
   const halaman = tipe === "semua" ? 1 : parseHalaman(param(sp.hal));
 
-  const href = (over: { tipe?: Tipe; unggulan?: boolean; hal?: number }) =>
+  const href = (over: { tipe?: Tipe; qs?: boolean; hal?: number }) =>
     hrefWith("/cari", {
       q,
       tipe: (over.tipe ?? tipe) === "semua" ? null : (over.tipe ?? tipe),
-      unggulan: (over.unggulan ?? unggulanOnly) && "1",
+      qs: (over.qs ?? qsOnly) && "1",
       tulis: tulis ? "1" : null,
       hal: over.hal && over.hal > 1 ? over.hal : null,
     });
@@ -50,17 +50,17 @@ export default async function CariPage(props: PageProps<"/cari">) {
   const cukup = q.length >= MIN_QUERY_LENGTH;
   // One extra row tells whether there is a next page, without a count query.
   const limit = tipe === "semua" ? PRATINJAU + 1 : PER_HALAMAN + 1;
-  const [hasil, info] = cukup
+  const [hasil, qs] = cukup
     ? await withDb((db) =>
         Promise.all([
           searchKatalog(db, q, {
             limit,
             offset: (halaman - 1) * PER_HALAMAN,
             types: tipe === "semua" ? SEARCH_TYPES : [tipe],
-            unggulanOnly,
+            qsOnly,
             prodiByKampus: tulis,
           }),
-          getInfoKatalog(db),
+          getInfoQs(db),
         ]),
       )
     : [null, null];
@@ -136,11 +136,11 @@ export default async function CariPage(props: PageProps<"/cari">) {
             <FilterChips
               label="Kampus"
               chips={[
-                { href: href({ unggulan: false, hal: 1 }), label: "Semua Kampus", active: !unggulanOnly },
-                { href: href({ unggulan: true, hal: 1 }), label: "Daftar Kampus Unggulan", active: unggulanOnly },
+                { href: href({ qs: false, hal: 1 }), label: "Semua Kampus", active: !qsOnly },
+                { href: href({ qs: true, hal: 1 }), label: qs ? judulQs(qs.edisi) : "QS World University Rankings", active: qsOnly },
               ]}
             />
-            {unggulanOnly ? (
+            {qsOnly ? (
               <p className="text-xs text-muted-foreground">Filter ini berlaku untuk hasil Kampus dan Prodi.</p>
             ) : null}
           </FilterBar>
@@ -157,10 +157,10 @@ export default async function CariPage(props: PageProps<"/cari">) {
             <Panel>
               <EmptyState icon={SearchX} title={`Tidak ada hasil untuk “${q}”`}>
                 Periksa ejaan, coba kata yang lebih umum
-                {unggulanOnly ? (
+                {qsOnly ? (
                   <>
                     , atau{" "}
-                    <Link href={href({ unggulan: false, hal: 1 })} className="font-semibold text-primary hover:underline">
+                    <Link href={href({ qs: false, hal: 1 })} className="font-semibold text-primary hover:underline">
                       cari di semua Kampus
                     </Link>
                   </>
@@ -192,7 +192,7 @@ export default async function CariPage(props: PageProps<"/cari">) {
                 kepala={<KepalaKampus />}
               >
                 {hasil.kampus.slice(0, tampil).map((k) => (
-                  <KampusResult key={k.id} k={k} />
+                  <KampusResult key={k.id} k={k} edisiQs={qs?.edisi} />
                 ))}
               </Bagian>
               <Bagian
@@ -204,7 +204,7 @@ export default async function CariPage(props: PageProps<"/cari">) {
                 kepala={<KepalaProdi tulis={tulis} />}
               >
                 {hasil.prodi.slice(0, tampil).map((p) => (
-                  <ProdiResult key={p.id} p={p} tulis={tulis} />
+                  <ProdiResult key={p.id} p={p} tulis={tulis} edisiQs={qs?.edisi} />
                 ))}
               </Bagian>
 
@@ -218,8 +218,8 @@ export default async function CariPage(props: PageProps<"/cari">) {
             </>
           ) : null}
 
-          {unggulanOnly || hasil?.kampus.some((k) => k.unggulan) || hasil?.prodi.some((p) => p.unggulan) ? (
-            <UnggulanFootnote info={info} className="px-1" />
+          {qsOnly || hasil?.kampus.some((k) => k.peringkatQs) || hasil?.prodi.some((p) => p.peringkatQs) ? (
+            <QsFootnote qs={qs} className="px-1" />
           ) : null}
         </div>
       )}

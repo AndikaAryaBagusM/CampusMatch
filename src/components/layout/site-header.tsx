@@ -5,7 +5,7 @@ import { Wordmark } from "@/components/layout/wordmark";
 
 const NAV = [
   { href: "/#bidang", label: "Bidang" },
-  { href: "/#unggulan", label: "Kampus Unggulan" },
+  { href: "/#qs", label: "Peringkat QS" },
   { href: "/kota", label: "Kota" },
   { href: "/tes-minat", label: "Tes Minat" },
 ];

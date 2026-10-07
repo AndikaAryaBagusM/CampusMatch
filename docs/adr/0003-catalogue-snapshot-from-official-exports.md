@@ -8,9 +8,11 @@ The files join on `npsn`, whose values carry trailing spaces and must be trimmed
 
 **Coverage is every Kampus with D3, D4 or S1 Prodi in the exports.** Each has a public page and appears in search.
 
+**Superseded 2026-10-07 by [ADR 0011](./0011-qs-rank-replaces-unggulan-list.md):** the highlight is now the Peringkat QS of every Indonesian Kampus in the latest QS World University Rankings; the paragraph below records the original list.
+
 The **Daftar Kampus Unggulan** is a curated highlight, not a coverage limit: a badge and a filter, which never change the order of search results. It started as the first 100 Indonesian entries of a public ranking (Webometrics 2026 Juli; QS ranks too few Indonesian Kampus to fill 100). The list is **copied once, by hand, into a CSV committed to the repo** (`data/top-100-kampus.csv`, with `sumber` and `tanggal_ambil` columns). **It is not scraped.** After the first import, Moderators change it by editing the list, not by re-copying the ranking. Each import records the list's `sumber` and `tanggal_ambil` in `impor_katalog` (copied from the previous import when the CSV is absent), so pages can name the source next to the badge. Pages also state that Webometrics measures web presence and research output, not teaching quality, so the badge doesn't read as a quality stamp.
 
 ## Consequences
 
 - Data is only as fresh as the latest export. Pages show the data's as-of date from the latest `impor_katalog` row.
-- A Pengulas can write an Ulasan for any Prodi of any covered Kampus (decided 2026-10-03, roadmap step 4). Membership of the Daftar Kampus Unggulan never affects who can be reviewed or the order in which Ulasan, Kampus or search results are shown.
+- A Pengulas can write an Ulasan for any Prodi of any covered Kampus (decided 2026-10-03, roadmap step 4). The highlight (now the Peringkat QS) never affects who can be reviewed or the order in which Ulasan, Kampus or search results are shown.

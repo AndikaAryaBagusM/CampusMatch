@@ -44,7 +44,9 @@ export const kampus = pgTable(
       .notNull()
       .references(() => kota.id, { onDelete: "restrict" }),
     akreditasi: text("akreditasi"),
-    // Member of the Daftar Kampus Unggulan.
+    // Retired: the old Daftar Kampus Unggulan flag (Webometrics). Never read;
+    // QS membership is peringkat_qs (ADR 0011). Dropped once production runs
+    // code that no longer selects it.
     unggulan: boolean("unggulan").notNull().default(false),
     // Campus email domain (e.g. "ugm.ac.id"), used for Terverifikasi; its
     // subdomains (mail.ugm.ac.id) count too. From data/domain-kampus.csv.
@@ -60,6 +62,42 @@ export const kampus = pgTable(
     check(
       "kampus_akreditasi_check",
       sql`${t.akreditasi} IN (${sql.raw(AKREDITASI.map((a) => `'${a}'`).join(", "))})`,
+    ),
+  ],
+);
+
+// One Kampus's place in one edition of the QS World University Rankings
+// (ADR 0011), as QS publishes it: an exact rank ("276"), a shared rank
+// ("=191") or a band ("851-900", "1401+"). Loaded from data/raw/ by
+// `npm run kampus:load-qs`. A sourced third-party fact with no link to Ulasan,
+// Bintang or any score.
+export const peringkatQs = pgTable(
+  "peringkat_qs",
+  {
+    id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+    kampusId: integer("kampus_id")
+      .notNull()
+      .references(() => kampus.id, { onDelete: "restrict" }),
+    // Edition year in QS's own title, e.g. 2027 for "QS World University Rankings 2027".
+    edisi: integer("edisi").notNull(),
+    // Exactly as published.
+    peringkat: text("peringkat").notNull(),
+    // Numeric bounds of `peringkat`, for ordering; max is NULL for an open band ("1401+").
+    peringkatMin: integer("peringkat_min").notNull(),
+    peringkatMax: integer("peringkat_max"),
+    // The name QS lists the Kampus under, e.g. "Gadjah Mada University".
+    namaQs: text("nama_qs").notNull(),
+    sumberUrl: text("sumber_url").notNull(),
+    tanggalAmbil: date("tanggal_ambil").notNull(),
+    createdAt: createdAt(),
+    updatedAt: updatedAt(),
+  },
+  (t) => [
+    unique("peringkat_qs_kampus_edisi_unique").on(t.kampusId, t.edisi),
+    index("peringkat_qs_edisi_idx").on(t.edisi),
+    check(
+      "peringkat_qs_bounds_check",
+      sql`${t.peringkatMin} > 0 AND (${t.peringkatMax} IS NULL OR ${t.peringkatMax} >= ${t.peringkatMin})`,
     ),
   ],
 );
@@ -197,9 +235,7 @@ export const imporKatalog = pgTable("impor_katalog", {
   jumlahKota: integer("jumlah_kota").notNull(),
   jumlahKampus: integer("jumlah_kampus").notNull(),
   jumlahProdi: integer("jumlah_prodi").notNull(),
-  // Provenance of the Daftar Kampus Unggulan (sumber and tanggal_ambil in
-  // data/top-100-kampus.csv). Copied from the previous row when the CSV is absent,
-  // so the latest row always describes the current unggulan flags.
+  // Retired with kampus.unggulan (ADR 0011): no longer written or read.
   unggulanSumber: text("unggulan_sumber"),
   unggulanTanggalAmbil: date("unggulan_tanggal_ambil"),
   createdAt: createdAt(),

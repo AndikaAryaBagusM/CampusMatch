@@ -29,4 +29,4 @@ npm run kampus:load-domain -- --allow-production # production, after checking th
 
 `--usulan` also loads the unchecked `domain_usulan` proposals. It is refused unless `DB_ENV=development`, so unchecked domains never reach production.
 
-Starting set: the 100 Kampus in the Daftar Kampus Unggulan (2026-10-06). Add other Kampus as rows when they're needed.
+Starting set: the 100 Kampus in the Daftar Kampus Unggulan (2026-10-06; that Webometrics list was replaced by the Peringkat QS on 2026-10-07, see ADR 0011, and all 20 QS Kampus are among the 100). Add other Kampus as rows when they're needed.

@@ -7,6 +7,7 @@ import { PanelBiayaMasukKampus } from "@/components/fakta/biaya-masuk";
 import { FactList } from "@/components/fact-list";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusHeader } from "@/components/kampus/kampus-header";
+import { judulQs } from "@/components/kampus/peringkat-qs";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { kontainer, Panel } from "@/components/panel";
 import { Plat } from "@/components/trayek/plat";
@@ -14,7 +15,7 @@ import { RuteUlasanPertama } from "@/components/ulasan/rute-ulasan-pertama";
 import { TombolTulis } from "@/components/ulasan/tombol-tulis";
 import { RingkasanUlasan } from "@/components/ulasan/ringkasan-ulasan";
 import { DaftarUlasan } from "@/components/ulasan/ulasan-card";
-import { formatAngka, formatProvinsi } from "@/lib/format";
+import { formatAngka, formatProvinsi, formatTanggal } from "@/lib/format";
 import { loadKampus } from "./data";
 
 // Render on first visit, cache for a day; Ulasan changes revalidate it
@@ -40,11 +41,11 @@ export async function generateMetadata({ params }: PageProps<"/kampus/[slug]">):
 export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">) {
   const data = await loadKampus((await params).slug, ULASAN_TAMPIL);
   if (!data) notFound();
-  const { kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan, fakta } = data;
+  const { kampus, prodiPerJenjang, jumlahUlasan, info, qs, ringkasan, ulasan, fakta } = data;
 
   return (
     <div className={kontainer}>
-      <KampusHeader kampus={kampus} prodiPerJenjang={prodiPerJenjang} jumlahUlasan={jumlahUlasan} info={info} tab="ringkasan" />
+      <KampusHeader kampus={kampus} prodiPerJenjang={prodiPerJenjang} jumlahUlasan={jumlahUlasan} qs={qs} tab="ringkasan" />
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
         <div className="space-y-6">
@@ -73,11 +74,27 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
                   ),
                 },
                 { icon: Hash, label: "NPSN", value: kampus.npsn },
-                {
-                  icon: BadgeCheck,
-                  label: "Daftar Kampus Unggulan",
-                  value: kampus.unggulan ? "Termasuk" : "Tidak termasuk",
-                },
+                ...(qs
+                  ? [
+                      {
+                        icon: BadgeCheck,
+                        label: judulQs(qs.edisi),
+                        value: (
+                          <>
+                            {kampus.peringkatQs ?? "Tidak masuk"}
+                            <a
+                              href={qs.sumberUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mt-0.5 block text-xs text-muted-foreground underline underline-offset-2"
+                            >
+                              Sumber: QS, diambil {formatTanggal(qs.tanggalAmbil)}
+                            </a>
+                          </>
+                        ),
+                      },
+                    ]
+                  : []),
               ]}
             />
           </Panel>

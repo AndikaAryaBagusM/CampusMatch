@@ -20,6 +20,7 @@
     "riasec:propose": "tsx scripts/propose-riasec.ts",
     "riasec:load": "tsx scripts/load-riasec.ts",
     "kampus:load-domain": "tsx scripts/load-domain.ts",
+    "kampus:load-qs": "tsx scripts/load-qs.ts",
     "test": "vitest run"
   },
   "engines": {

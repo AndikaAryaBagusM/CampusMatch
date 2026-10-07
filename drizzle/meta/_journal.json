@@ -78,6 +78,13 @@
       "when": 1791304014103,
       "tag": "0010_info_biaya",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1791379363479,
+      "tag": "0011_peringkat_qs",
+      "breakpoints": true
     }
   ]
 }

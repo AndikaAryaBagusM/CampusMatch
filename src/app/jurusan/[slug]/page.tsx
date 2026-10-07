@@ -9,7 +9,7 @@ import { EmptyState } from "@/components/empty-state";
 import { FilterBar, FilterChips } from "@/components/filter-bar";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusLogo } from "@/components/kampus/kampus-logo";
-import { UnggulanBadge, UnggulanFootnote } from "@/components/kampus/unggulan-badge";
+import { judulQs, PeringkatQsBadge, QsFootnote } from "@/components/kampus/peringkat-qs";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Paging } from "@/components/paging";
@@ -25,6 +25,7 @@ import { formatAngka } from "@/lib/format";
 import { namaKota } from "@/lib/kota";
 import { pilihPromosi } from "@/lib/promosi";
 import { countJurusanPerJenjang, getInfoKatalog, getJurusan, parseJenjang } from "@/lib/katalog";
+import { filterQsAktif, getInfoQs } from "@/lib/peringkat-qs/kueri";
 import {
   countJurusanPerKota,
   countProdiJurusan,
@@ -49,7 +50,7 @@ type Pilihan = FilterProdiJurusan & { uktJuta: number | null; urut: Urut; halama
 const load = cache((slug: string, kunci: string) =>
   withDb(async (db) => {
     const p = JSON.parse(kunci) as Pilihan;
-    const [jurusan, perJenjang, perKota, semua, tersaring, prodi, info] = await Promise.all([
+    const [jurusan, perJenjang, perKota, semua, tersaring, prodi, info, qs] = await Promise.all([
       getJurusan(db, slug),
       countJurusanPerJenjang(db, slug),
       countJurusanPerKota(db, slug),
@@ -57,11 +58,12 @@ const load = cache((slug: string, kunci: string) =>
       countProdiJurusan(db, slug, p),
       listProdiJurusan(db, slug, { ...p, limit: PER_HALAMAN, offset: (p.halaman - 1) * PER_HALAMAN }),
       getInfoKatalog(db),
+      getInfoQs(db),
     ]);
     if (!jurusan) return null;
     // Never inside the list: the slot sits above it and leaves its order alone (ADR 0009).
     const promosi = await pilihPromosi(db, { tempat: "jurusan", jurusanIds: [jurusan.id] });
-    return { jurusan, perJenjang, perKota, semua, tersaring, prodi, info, promosi };
+    return { jurusan, perJenjang, perKota, semua, tersaring, prodi, info, qs, promosi };
   }),
 );
 
@@ -70,14 +72,14 @@ async function resolve(props: PageProps<"/jurusan/[slug]">) {
   const uktJuta = parseUktMaksJuta(param(sp.ukt));
   const pilihan: Pilihan = {
     jenjang: parseJenjang(param(sp.jenjang)),
-    unggulanOnly: param(sp.unggulan) === "1",
+    qsOnly: filterQsAktif(sp),
     kotaSlug: param(sp.kota) || null,
     uktJuta,
     uktMaks: uktJuta === null ? null : uktJuta * 1_000_000,
     urut: parseUrut(param(sp.urut)),
     halaman: parseHalaman(param(sp.hal)),
   };
-  const varian = ["jenjang", "unggulan", "kota", "ukt", "urut", "hal"].some((k) => param(sp[k]));
+  const varian = ["jenjang", "qs", "unggulan", "kota", "ukt", "urut", "hal"].some((k) => param(sp[k]));
   return { slug, pilihan, varian, data: await load(slug, JSON.stringify(pilihan)) };
 }
 
@@ -97,7 +99,7 @@ export async function generateMetadata(props: PageProps<"/jurusan/[slug]">): Pro
 // the Bandingkan control.
 const KOLOM_PRODI = "minmax(0,1fr) 10rem 10rem 9rem 8.5rem";
 
-function BarisProdi({ p }: { p: ProdiJurusan }) {
+function BarisProdi({ p, edisiQs }: { p: ProdiJurusan; edisiQs?: number }) {
   return (
     <BarisJadwal kolom={KOLOM_PRODI}>
       <div className="flex min-w-0 items-start gap-3">
@@ -123,7 +125,7 @@ function BarisProdi({ p }: { p: ProdiJurusan }) {
               </Link>
             </span>
           </p>
-          {p.kampus.unggulan ? <UnggulanBadge className="mt-1.5 h-5" /> : null}
+          {p.kampus.peringkatQs && edisiQs ? <PeringkatQsBadge peringkat={p.kampus.peringkatQs} edisi={edisiQs} className="mt-1.5 h-5" /> : null}
         </div>
       </div>
       <SelJadwal>
@@ -165,15 +167,15 @@ function BarisProdi({ p }: { p: ProdiJurusan }) {
 export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
   const { slug, pilihan, data } = await resolve(props);
   if (!data) notFound();
-  const { jurusan, perJenjang, perKota, semua, tersaring, prodi, info, promosi } = data;
-  const { jenjang, unggulanOnly, kotaSlug, uktJuta, urut, halaman } = pilihan;
+  const { jurusan, perJenjang, perKota, semua, tersaring, prodi, info, qs, promosi } = data;
+  const { jenjang, qsOnly, kotaSlug, uktJuta, urut, halaman } = pilihan;
 
   const base = `/jurusan/${slug}`;
   // The current choices with some changed; any change returns to page 1.
   const href = (ubah: Record<string, string | number | null | false> = {}) =>
     hrefWith(base, {
       jenjang,
-      unggulan: unggulanOnly && "1",
+      qs: qsOnly && "1",
       kota: kotaSlug,
       ukt: uktJuta,
       urut: urut === "nama" ? null : urut,
@@ -229,8 +231,8 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
             <FilterChips
               label="Kampus"
               chips={[
-                { href: href({ unggulan: null }), label: "Semua Kampus", active: !unggulanOnly },
-                { href: href({ unggulan: "1" }), label: "Daftar Kampus Unggulan", active: unggulanOnly },
+                { href: href({ qs: null }), label: "Semua Kampus", active: !qsOnly },
+                { href: href({ qs: "1" }), label: qs ? judulQs(qs.edisi) : "QS World University Rankings", active: qsOnly },
               ]}
             />
             <FilterChips
@@ -242,7 +244,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
             />
             <Form action={base} className="flex flex-wrap items-center gap-2" aria-label="Kota">
               {jenjang ? <input type="hidden" name="jenjang" value={jenjang} /> : null}
-              {unggulanOnly ? <input type="hidden" name="unggulan" value="1" /> : null}
+              {qsOnly ? <input type="hidden" name="qs" value="1" /> : null}
               {uktJuta !== null ? <input type="hidden" name="ukt" value={uktJuta} /> : null}
               {urut !== "nama" ? <input type="hidden" name="urut" value={urut} /> : null}
               <label htmlFor="filter-kota" className="mr-1 text-sm text-muted-foreground">
@@ -288,7 +290,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
               <p>
                 UKT di sini adalah UKT/SPP tertinggi per semester dari data biaya yang sudah diperiksa.
                 {uktJuta !== null ? " Prodi yang biayanya belum tersedia tidak ikut ditampilkan." : " Prodi yang biayanya belum tersedia ada di akhir."} Data
-                biaya baru dikumpulkan untuk Daftar Kampus Unggulan.
+                biaya baru dikumpulkan untuk sebagian Kampus, dimulai dari Kampus di QS World University Rankings.
               </p>
             ) : null}
             {urut === "bintang" ? (
@@ -312,7 +314,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
               <KepalaJadwal kolom={KOLOM_PRODI} judul={["Prodi", "UKT maks./semester", "Akreditasi Kampus", "Ulasan", ""]} kanan={[1]} />
               <DaftarJadwal>
                 {prodi.map((p) => (
-                  <BarisProdi key={p.slug} p={p} />
+                  <BarisProdi key={p.slug} p={p} edisiQs={qs?.edisi} />
                 ))}
               </DaftarJadwal>
             </div>
@@ -320,7 +322,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
 
           <Paging halaman={halaman} total={halamanTotal} href={(n) => href({ hal: n > 1 ? n : null })} />
           <div className="space-y-2 px-1">
-            <UnggulanFootnote info={info} />
+            {qsOnly || prodi.some((p) => p.kampus.peringkatQs) ? <QsFootnote qs={qs} /> : null}
             <KatalogAsOf info={info} />
           </div>
         </div>

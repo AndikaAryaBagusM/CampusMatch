@@ -9,6 +9,7 @@ import {
   getRingkasanUlasan,
   listUlasanTerbit,
 } from "@/lib/katalog";
+import { getInfoQs } from "@/lib/peringkat-qs/kueri";
 
 // Everything a Kampus page needs, in one pool and one round of parallel
 // queries. cache() shares it between generateMetadata and the page, so both
@@ -16,16 +17,17 @@ import {
 // Ulasan the page shows.
 export const loadKampus = cache((slug: string, ulasanTampil: number) =>
   withDb(async (db) => {
-    const [kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan] = await Promise.all([
+    const [kampus, prodiPerJenjang, jumlahUlasan, info, qs, ringkasan, ulasan] = await Promise.all([
       getKampus(db, slug),
       countProdiPerJenjang(db, slug),
       countUlasanKampus(db, slug),
       getInfoKatalog(db),
+      getInfoQs(db),
       getRingkasanUlasan(db, { kampusSlug: slug }),
       listUlasanTerbit(db, { kampusSlug: slug }, ulasanTampil),
     ]);
     if (!kampus) return null;
     const fakta = await getFaktaKampus(db, kampus.id);
-    return { kampus, prodiPerJenjang, jumlahUlasan, info, ringkasan, ulasan, fakta };
+    return { kampus, prodiPerJenjang, jumlahUlasan, info, qs, ringkasan, ulasan, fakta };
   }),
 );

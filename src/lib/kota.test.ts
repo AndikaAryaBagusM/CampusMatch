@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, expect, test } from "vitest";
 import { eq } from "drizzle-orm";
-import { kampus, kota } from "@/db/schema";
+import { kampus, kota, peringkatQs } from "@/db/schema";
 import type { ScreeningModel } from "@/lib/screening";
 import { createTestDb, type TestDb } from "../../test/db";
 import { buatKatalog, buatPengguna, dataUlasan } from "../../test/fixtures";
@@ -30,7 +30,7 @@ async function buatKota(namaKampus: string[], nama = "Kota Uji") {
   return { kota: k, daftar };
 }
 
-const filter = { unggulanOnly: false, bentuk: null, limit: 20, offset: 0 };
+const filter = { qsOnly: false, bentuk: null, limit: 20, offset: 0 };
 
 test("namaKota names each Provinsi's Lainnya; slugProvinsi", () => {
   expect(namaKota({ nama: "Lainnya", provinsi: "Prov. D.K.I. Jakarta" })).toBe("Lainnya (D.K.I. Jakarta)");
@@ -39,17 +39,23 @@ test("namaKota names each Provinsi's Lainnya; slugProvinsi", () => {
   expect(slugProvinsi("Prov. Kepulauan Bangka Belitung")).toBe("kepulauan-bangka-belitung");
 });
 
-test("Kampus of a Kota in name order; Unggulan and Bentuk filter, never reorder", async () => {
+test("Kampus of a Kota in name order; the QS and Bentuk filters never reorder", async () => {
   const { kota: k, daftar } = await buatKota(["Universitas Citra", "Institut Alfa", "Universitas Beta"]);
-  await t.db.update(kampus).set({ unggulan: true }).where(eq(kampus.id, daftar[0].kampus.id));
+  // Citra is in the latest QS edition; Alfa only in an older one, so it is not counted.
+  const qs = { namaQs: "x", sumberUrl: "https://www.topuniversities.com/", tanggalAmbil: "2026-10-07" };
+  await t.db.insert(peringkatQs).values([
+    { ...qs, kampusId: daftar[0].kampus.id, edisi: 2027, peringkat: "=191", peringkatMin: 191, peringkatMax: 191 },
+    { ...qs, kampusId: daftar[1].kampus.id, edisi: 2026, peringkat: "1", peringkatMin: 1, peringkatMax: 1 },
+  ]);
   await t.db.update(kampus).set({ bentuk: "Institut" }).where(eq(kampus.id, daftar[1].kampus.id));
 
   const semua = await listKampusKota(t.db, k.slug, filter);
   expect(semua.map((x) => x.nama)).toEqual(["Institut Alfa", "Universitas Beta", "Universitas Citra"]);
   expect(semua[0].jumlahProdi).toBe(2);
+  expect(semua.map((x) => x.peringkatQs)).toEqual([null, null, "=191"]);
   expect(await countKampusKota(t.db, k.slug, filter)).toBe(3);
 
-  expect((await listKampusKota(t.db, k.slug, { ...filter, unggulanOnly: true })).map((x) => x.nama)).toEqual(["Universitas Citra"]);
+  expect((await listKampusKota(t.db, k.slug, { ...filter, qsOnly: true })).map((x) => x.nama)).toEqual(["Universitas Citra"]);
   expect((await listKampusKota(t.db, k.slug, { ...filter, bentuk: "Institut" })).map((x) => x.nama)).toEqual(["Institut Alfa"]);
   expect(await countKampusKota(t.db, k.slug, { ...filter, bentuk: "Universitas" })).toBe(2);
   expect(await countBentukKota(t.db, k.slug)).toEqual([

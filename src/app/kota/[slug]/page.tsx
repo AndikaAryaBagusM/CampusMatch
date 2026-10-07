@@ -8,7 +8,7 @@ import { EmptyState } from "@/components/empty-state";
 import { FilterBar, FilterChips } from "@/components/filter-bar";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusLogo } from "@/components/kampus/kampus-logo";
-import { UnggulanBadge, UnggulanFootnote } from "@/components/kampus/unggulan-badge";
+import { judulQs, PeringkatQsBadge, QsFootnote } from "@/components/kampus/peringkat-qs";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Paging } from "@/components/paging";
@@ -17,6 +17,7 @@ import { BarisJadwal, DaftarJadwal, KepalaJadwal, Sel, SelJadwal } from "@/compo
 import { BintangTampil } from "@/components/ulasan/bintang-tampil";
 import { formatAngka, formatProvinsi } from "@/lib/format";
 import { getInfoKatalog } from "@/lib/katalog";
+import { filterQsAktif, getInfoQs } from "@/lib/peringkat-qs/kueri";
 import {
   countBentukKota,
   countKampusKota,
@@ -33,29 +34,30 @@ import { hrefWith, jumlahHalaman, param, parseHalaman } from "@/lib/url";
 
 const PER_HALAMAN = 20;
 
-const load = cache((slug: string, unggulanOnly: boolean, bentuk: Bentuk | null, halaman: number) =>
+const load = cache((slug: string, qsOnly: boolean, bentuk: Bentuk | null, halaman: number) =>
   withDb(async (db) => {
-    const filter = { unggulanOnly, bentuk };
-    const [kota, perBentuk, tersaring, kampus, info] = await Promise.all([
+    const filter = { qsOnly, bentuk };
+    const [kota, perBentuk, tersaring, kampus, info, qs] = await Promise.all([
       getKota(db, slug),
       countBentukKota(db, slug),
       countKampusKota(db, slug, filter),
       listKampusKota(db, slug, { ...filter, limit: PER_HALAMAN, offset: (halaman - 1) * PER_HALAMAN }),
       getInfoKatalog(db),
+      getInfoQs(db),
     ]);
     if (!kota) return null;
     const lain = await listKotaSeprovinsi(db, kota.provinsi, slug);
-    return { kota, perBentuk, tersaring, kampus, info, lain };
+    return { kota, perBentuk, tersaring, kampus, info, qs, lain };
   }),
 );
 
 async function resolve(props: PageProps<"/kota/[slug]">) {
   const [{ slug }, sp] = await Promise.all([props.params, props.searchParams]);
-  const unggulanOnly = param(sp.unggulan) === "1";
+  const qsOnly = filterQsAktif(sp);
   const bentuk = parseBentuk(param(sp.bentuk));
   const halaman = parseHalaman(param(sp.hal));
-  const varian = ["unggulan", "bentuk", "hal"].some((k) => param(sp[k]));
-  return { slug, unggulanOnly, bentuk, halaman, varian, data: await load(slug, unggulanOnly, bentuk, halaman) };
+  const varian = ["qs", "unggulan", "bentuk", "hal"].some((k) => param(sp[k]));
+  return { slug, qsOnly, bentuk, halaman, varian, data: await load(slug, qsOnly, bentuk, halaman) };
 }
 
 export async function generateMetadata(props: PageProps<"/kota/[slug]">): Promise<Metadata> {
@@ -73,7 +75,7 @@ export async function generateMetadata(props: PageProps<"/kota/[slug]">): Promis
 // Departure-board columns for the Kampus list: destination, then the facts.
 const KOLOM_KAMPUS = "minmax(0,1fr) 11rem 5rem 11rem";
 
-function BarisKampus({ k }: { k: KampusKota }) {
+function BarisKampus({ k, edisiQs }: { k: KampusKota; edisiQs?: number }) {
   return (
     <BarisJadwal kolom={KOLOM_KAMPUS}>
       <div className="flex min-w-0 items-center gap-3">
@@ -87,7 +89,7 @@ function BarisKampus({ k }: { k: KampusKota }) {
           </Link>
           <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
             {k.bentuk}
-            {k.unggulan ? <UnggulanBadge className="h-5" /> : null}
+            {k.peringkatQs && edisiQs ? <PeringkatQsBadge peringkat={k.peringkatQs} edisi={edisiQs} className="h-5" /> : null}
           </p>
         </div>
       </div>
@@ -115,15 +117,15 @@ function BarisKampus({ k }: { k: KampusKota }) {
 }
 
 export default async function KotaPage(props: PageProps<"/kota/[slug]">) {
-  const { slug, unggulanOnly, bentuk, halaman, data } = await resolve(props);
+  const { slug, qsOnly, bentuk, halaman, data } = await resolve(props);
   if (!data) notFound();
-  const { kota, perBentuk, tersaring, kampus, info, lain } = data;
+  const { kota, perBentuk, tersaring, kampus, info, qs, lain } = data;
   const nama = namaKota(kota);
   const provinsi = formatProvinsi(kota.provinsi);
 
   const base = `/kota/${slug}`;
   const href = (ubah: Record<string, string | number | null | false> = {}) =>
-    hrefWith(base, { unggulan: unggulanOnly && "1", bentuk, ...ubah });
+    hrefWith(base, { qs: qsOnly && "1", bentuk, ...ubah });
   const halamanTotal = jumlahHalaman(tersaring, PER_HALAMAN);
   if (halaman > halamanTotal) redirect(href({ hal: halamanTotal > 1 ? halamanTotal : null }));
 
@@ -147,8 +149,8 @@ export default async function KotaPage(props: PageProps<"/kota/[slug]">) {
           <FilterChips
             label="Kampus"
             chips={[
-              { href: href({ unggulan: null }), label: "Semua Kampus", active: !unggulanOnly },
-              { href: href({ unggulan: "1" }), label: "Daftar Kampus Unggulan", active: unggulanOnly },
+              { href: href({ qs: null }), label: "Semua Kampus", active: !qsOnly },
+              { href: href({ qs: "1" }), label: qs ? judulQs(qs.edisi) : "QS World University Rankings", active: qsOnly },
             ]}
           />
           {perBentuk.length > 1 ? (
@@ -181,7 +183,7 @@ export default async function KotaPage(props: PageProps<"/kota/[slug]">) {
             <KepalaJadwal kolom={KOLOM_KAMPUS} judul={["Kampus", "Akreditasi", "Prodi", <span key="u" className="md:pl-6">Ulasan</span>]} kanan={[2]} />
             <DaftarJadwal>
               {kampus.map((k) => (
-                <BarisKampus key={k.slug} k={k} />
+                <BarisKampus key={k.slug} k={k} edisiQs={qs?.edisi} />
               ))}
             </DaftarJadwal>
           </div>
@@ -210,7 +212,7 @@ export default async function KotaPage(props: PageProps<"/kota/[slug]">) {
         ) : null}
 
         <div className="space-y-2 px-1">
-          <UnggulanFootnote info={info} />
+          {qsOnly || kampus.some((k) => k.peringkatQs) ? <QsFootnote qs={qs} /> : null}
           <KatalogAsOf info={info} />
         </div>
       </div>

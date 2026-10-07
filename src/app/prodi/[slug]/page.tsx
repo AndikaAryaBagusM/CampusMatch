@@ -12,7 +12,7 @@ import { withDb } from "@/db";
 import { FactList } from "@/components/fact-list";
 import { labelAkreditasi } from "@/components/kampus/akreditasi-badge";
 import { KampusLogo } from "@/components/kampus/kampus-logo";
-import { UnggulanBadge, UnggulanFootnote } from "@/components/kampus/unggulan-badge";
+import { PeringkatQsBadge, QsFootnote } from "@/components/kampus/peringkat-qs";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { PageBreadcrumb } from "@/components/page-breadcrumb";
 import { Plat } from "@/components/trayek/plat";
@@ -24,6 +24,7 @@ import { RuteUlasanPertama } from "@/components/ulasan/rute-ulasan-pertama";
 import { DaftarUlasan } from "@/components/ulasan/ulasan-card";
 import { formatAngka, formatProvinsi } from "@/lib/format";
 import { countUlasanProdi, getInfoKatalog, getProdi, getRingkasanUlasan, listUlasanTerbit } from "@/lib/katalog";
+import { getInfoQs } from "@/lib/peringkat-qs/kueri";
 
 // Render on first visit, cache for a day; Ulasan changes revalidate it
 // (src/lib/ulasan/revalidasi.ts). No session is read here, so it stays static.
@@ -38,10 +39,11 @@ export function generateStaticParams() {
 
 const load = cache((slug: string) =>
   withDb(async (db) => {
-    const [prodi, jumlahUlasan, info, ringkasan, ulasan] = await Promise.all([
+    const [prodi, jumlahUlasan, info, qs, ringkasan, ulasan] = await Promise.all([
       getProdi(db, slug),
       countUlasanProdi(db, slug),
       getInfoKatalog(db),
+      getInfoQs(db),
       getRingkasanUlasan(db, { prodiSlug: slug }),
       listUlasanTerbit(db, { prodiSlug: slug }, ULASAN_TAMPIL),
     ]);
@@ -51,7 +53,7 @@ const load = cache((slug: string) =>
       listBiayaKampus(db, prodi.kampus.id),
       estimasiProdi(db, [prodi.id]),
     ]);
-    return { prodi, jumlahUlasan, info, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi: estimasi.get(prodi.id)! };
+    return { prodi, jumlahUlasan, info, qs, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi: estimasi.get(prodi.id)! };
   }),
 );
 
@@ -71,7 +73,7 @@ export async function generateMetadata({ params }: PageProps<"/prodi/[slug]">): 
 export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) {
   const data = await load((await params).slug);
   if (!data) notFound();
-  const { prodi, jumlahUlasan, info, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi } = data;
+  const { prodi, jumlahUlasan, info, qs, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi } = data;
   const { kampus } = prodi;
 
   return (
@@ -119,10 +121,10 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
           </p>
         </div>
       </div>
-      {kampus.unggulan ? (
+      {kampus.peringkatQs && qs ? (
         <div className="mt-3 flex flex-col gap-2 px-1 sm:flex-row sm:items-start">
-          <UnggulanBadge className="shrink-0 self-start" />
-          <UnggulanFootnote info={info} />
+          <PeringkatQsBadge peringkat={kampus.peringkatQs} edisi={qs.edisi} className="shrink-0 self-start" />
+          <QsFootnote qs={qs} />
         </div>
       ) : null}
 

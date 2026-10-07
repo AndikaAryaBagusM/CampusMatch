@@ -1,11 +1,12 @@
 // The Prodi list of a Jurusan (decisions.md 17f, 17k): one row per Prodi at
 // every Kampus, sorted by Kampus name unless the visitor picks UKT or Bintang,
-// with filters for Jenjang, Unggulan, Kota and maximum UKT. It only lays the
+// with filters for Jenjang, QS, Kota and maximum UKT. It only lays the
 // facts out; nothing here ranks a Prodi as better.
 import { and, asc, count, countDistinct, desc, eq, inArray, isNotNull, isNull, sql, type SQL } from "drizzle-orm";
 import type { Db } from "@/db";
 import { biaya, jurusan, kampus, kota, prodi, ulasan, ulasanRevisi } from "@/db/schema";
 import { jenjangOrder, joinJurusan, ulasanTerbit, type Jenjang } from "@/lib/katalog";
+import { diQs, peringkatQsKampus } from "@/lib/peringkat-qs/kueri";
 
 // The Bintang sort only orders Prodi with at least this many Terbit Ulasan;
 // an average of one or two Ulasan says too little.
@@ -29,13 +30,13 @@ export function parseUktMaksJuta(value: unknown): number | null {
 
 export type FilterProdiJurusan = {
   jenjang: Jenjang | null;
-  unggulanOnly: boolean;
+  qsOnly: boolean;
   kotaSlug: string | null;
   // Rupiah per semester; keeps only Prodi whose UKT is known and at most this.
   uktMaks: number | null;
 };
 
-export const TANPA_FILTER: FilterProdiJurusan = { jenjang: null, unggulanOnly: false, kotaSlug: null, uktMaks: null };
+export const TANPA_FILTER: FilterProdiJurusan = { jenjang: null, qsOnly: false, kotaSlug: null, uktMaks: null };
 
 // The UKT of a Prodi for this list: the highest per-semester UKT or SPP of the
 // newest Tahun Akademik (what a student without a reduction pays), from Diperiksa
@@ -84,7 +85,7 @@ function syarat(jurusanSlug: string, f: FilterProdiJurusan, ukt: SQL<number | nu
   return and(
     eq(jurusan.slug, jurusanSlug),
     f.jenjang ? eq(prodi.jenjang, f.jenjang) : undefined,
-    f.unggulanOnly ? eq(kampus.unggulan, true) : undefined,
+    f.qsOnly ? diQs : undefined,
     f.kotaSlug ? eq(kota.slug, f.kotaSlug) : undefined,
     f.uktMaks !== null ? sql`${ukt} <= ${f.uktMaks}` : undefined,
   );
@@ -115,7 +116,7 @@ export async function listProdiJurusan(
           nama: kampus.nama,
           slug: kampus.slug,
           akreditasi: kampus.akreditasi,
-          unggulan: kampus.unggulan,
+          peringkatQs: peringkatQsKampus,
         },
         kotaNama: kota.nama,
         kotaSlug: kota.slug,

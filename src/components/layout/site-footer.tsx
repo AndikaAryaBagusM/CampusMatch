@@ -6,7 +6,7 @@ const JELAJAHI = [
   { href: "/", label: "Beranda" },
   { href: "/cari", label: "Cari" },
   { href: "/#bidang", label: "Bidang" },
-  { href: "/#unggulan", label: "Daftar Kampus Unggulan" },
+  { href: "/#qs", label: "Peringkat QS" },
   { href: "/kota", label: "Kampus per Kota" },
   { href: "/tes-minat", label: "Tes Minat" },
 ];

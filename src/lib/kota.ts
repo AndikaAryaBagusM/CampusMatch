@@ -1,11 +1,12 @@
 // Kota browsing (decisions.md 17l): every Kota by Provinsi, and the Kampus of
-// one Kota in name order. Unggulan and Bintang never change that order
-// (ADR 0003, ADR 0007).
+// one Kota in name order. QS rank and Bintang never change that order
+// (ADR 0007, ADR 0011).
 import { and, asc, count, countDistinct, eq, sql } from "drizzle-orm";
 import type { Db } from "@/db";
 import { bentukKampus, kampus, kota, prodi, ulasan, ulasanRevisi } from "@/db/schema";
 import { formatProvinsi } from "@/lib/format";
 import { ulasanTerbit } from "@/lib/katalog";
+import { diQs, peringkatQsKampus } from "@/lib/peringkat-qs/kueri";
 
 export type Bentuk = (typeof bentukKampus.enumValues)[number];
 
@@ -80,12 +81,12 @@ export async function listKotaSeprovinsi(db: Db, provinsi: string, kecuali: stri
   return rows.sort(lainnyaTerakhir);
 }
 
-export type FilterKampusKota = { unggulanOnly: boolean; bentuk: Bentuk | null };
+export type FilterKampusKota = { qsOnly: boolean; bentuk: Bentuk | null };
 
-function syarat(kotaSlug: string, { unggulanOnly, bentuk }: FilterKampusKota) {
+function syarat(kotaSlug: string, { qsOnly, bentuk }: FilterKampusKota) {
   return and(
     eq(kota.slug, kotaSlug),
-    unggulanOnly ? eq(kampus.unggulan, true) : undefined,
+    qsOnly ? diQs : undefined,
     bentuk ? eq(kampus.bentuk, bentuk) : undefined,
   );
 }
@@ -111,7 +112,7 @@ export async function listKampusKota(db: Db, kotaSlug: string, filter: FilterKam
       slug: kampus.slug,
       bentuk: kampus.bentuk,
       akreditasi: kampus.akreditasi,
-      unggulan: kampus.unggulan,
+      peringkatQs: peringkatQsKampus,
       jumlahProdi: sql<number>`(SELECT count(*)::int FROM ${prodi} WHERE ${prodi.kampusId} = ${kampus.id})`,
       bintang: bintang.rata,
       jumlahUlasan: sql<number>`coalesce(${bintang.jumlah}, 0)`,

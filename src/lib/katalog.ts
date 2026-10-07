@@ -6,6 +6,7 @@ import { and, asc, countDistinct, count, desc, eq, isNotNull, isNull, sql, type 
 import type { PgSelect } from "drizzle-orm/pg-core";
 import type { Db } from "@/db";
 import { imporKatalog, jenjang as jenjangEnum, jurusan, kampus, kodeProdiJurusan, kota, prodi, ulasan, ulasanRevisi, verifikasiKampus } from "@/db/schema";
+import { peringkatQsKampus } from "@/lib/peringkat-qs/kueri";
 import { jurusanEfektif } from "@/lib/search";
 import type { KolomAspek } from "@/lib/ulasan/skema";
 
@@ -25,14 +26,12 @@ const jurusanProdi = sql`${jurusan.id} = ${jurusanEfektif}`;
 // Publicly shown Ulasan: a live revision and not deleted.
 export const ulasanTerbit = and(isNotNull(ulasan.revisiTerbitId), isNull(ulasan.dihapusAt));
 
-// --- Catalogue as-of date and Daftar Kampus Unggulan provenance ------------
+// --- Catalogue as-of date ---------------------------------------------------
 
 export type InfoKatalog = {
   tanggalData: string;
   jumlahKampus: number;
   jumlahProdi: number;
-  unggulanSumber: string | null;
-  unggulanTanggalAmbil: string | null;
 };
 
 export async function getInfoKatalog(db: Db): Promise<InfoKatalog | null> {
@@ -41,8 +40,6 @@ export async function getInfoKatalog(db: Db): Promise<InfoKatalog | null> {
       tanggalData: imporKatalog.tanggalData,
       jumlahKampus: imporKatalog.jumlahKampus,
       jumlahProdi: imporKatalog.jumlahProdi,
-      unggulanSumber: imporKatalog.unggulanSumber,
-      unggulanTanggalAmbil: imporKatalog.unggulanTanggalAmbil,
     })
     .from(imporKatalog)
     .orderBy(desc(imporKatalog.id))
@@ -61,7 +58,7 @@ export async function getKampus(db: Db, slug: string) {
       slug: kampus.slug,
       bentuk: kampus.bentuk,
       akreditasi: kampus.akreditasi,
-      unggulan: kampus.unggulan,
+      peringkatQs: peringkatQsKampus,
       kotaNama: kota.nama,
       kotaSlug: kota.slug,
       provinsi: kota.provinsi,
@@ -172,7 +169,7 @@ export async function getProdi(db: Db, slug: string) {
         slug: kampus.slug,
         bentuk: kampus.bentuk,
         akreditasi: kampus.akreditasi,
-        unggulan: kampus.unggulan,
+        peringkatQs: peringkatQsKampus,
       },
       kotaNama: kota.nama,
       kotaSlug: kota.slug,
@@ -233,15 +230,6 @@ export async function getBidangSorotan(db: Db): Promise<BidangSorotan[]> {
     jumlahProdi: t.jumlahProdi,
     jurusan: top.rows.filter((r) => r.bidang === t.bidang).map((r) => ({ nama: r.nama, slug: r.slug, jumlahProdi: r.jumlah })),
   }));
-}
-
-export async function listKampusUnggulan(db: Db) {
-  return db
-    .select({ npsn: kampus.npsn, nama: kampus.nama, slug: kampus.slug, kotaNama: kota.nama })
-    .from(kampus)
-    .innerJoin(kota, eq(kampus.kotaId, kota.id))
-    .where(eq(kampus.unggulan, true))
-    .orderBy(asc(kampus.nama));
 }
 
 // --- Ulasan (public) ---------------------------------------------------------

@@ -8,6 +8,7 @@ config({ path: ".env.local" });
 import { desc, sql } from "drizzle-orm";
 import { withDb } from "../src/db";
 import { imporKatalog } from "../src/db/schema";
+import { getInfoQs } from "../src/lib/peringkat-qs/kueri";
 import { searchKatalog } from "../src/lib/search";
 
 const queries = process.argv.slice(2).length
@@ -24,7 +25,7 @@ async function main() {
         (SELECT count(*) FROM kota)::int AS kota,
         (SELECT count(*) FROM kampus)::int AS kampus,
         (SELECT count(*) FROM kampus WHERE akreditasi IS NULL)::int AS kampus_akreditasi_null,
-        (SELECT count(*) FROM kampus WHERE unggulan)::int AS kampus_unggulan,
+        (SELECT count(*) FROM peringkat_qs WHERE edisi = (SELECT max(edisi) FROM peringkat_qs))::int AS kampus_qs_terbaru,
         (SELECT count(*) FROM prodi)::int AS prodi,
         (SELECT count(*) FROM jurusan)::int AS jurusan,
         (SELECT count(*) FROM kode_prodi_jurusan)::int AS kode_prodi_jurusan`),
@@ -46,10 +47,8 @@ async function main() {
 
     const [latest] = await db.select().from(imporKatalog).orderBy(desc(imporKatalog.id)).limit(1);
     console.log("\nLatest import:", latest ? `${latest.tanggalData} (row ${latest.id}, at ${latest.createdAt.toISOString()})` : "none");
-    console.log(
-      "Daftar Kampus Unggulan provenance:",
-      latest?.unggulanSumber ? `${latest.unggulanSumber}, diambil ${latest.unggulanTanggalAmbil}` : "none",
-    );
+    const qs = await getInfoQs(db);
+    console.log("QS World University Rankings:", qs ? `${qs.edisi}, ${qs.jumlahKampus} Kampus, diambil ${qs.tanggalAmbil}` : "none");
 
     for (const q of queries) {
       const r = await searchKatalog(db, q, { limit: 5 });
