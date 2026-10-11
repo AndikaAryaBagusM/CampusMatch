@@ -5,12 +5,10 @@ import { jalankanScreening } from "@/lib/ulasan/jalankan-screening";
 import { revisiMenungguLama } from "@/lib/ulasan/proses-screening";
 import { berwenangCron } from "@/lib/rahasia-cron";
 
-// Each round can take up to three model calls and their delays.
-export const maxDuration = 300;
-
-// Vercel Cron: one more Screening round for every Menunggu revision older than
-// 10 minutes (ADR 0002). Revisions are screened one at a time; each is locked
-// with SKIP LOCKED, so an overlapping run or a late after() can't double-screen.
+// Daily cron (.github/workflows/cron-screening.yml): one more Screening round
+// for every Menunggu revision older than 10 minutes (ADR 0002). Revisions are
+// screened one at a time; each is locked with SKIP LOCKED, so an overlapping
+// run or a late after() can't double-screen.
 export async function GET(request: Request) {
   if (!berwenangCron(request)) return new Response("Unauthorized", { status: 401 });
 

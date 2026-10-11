@@ -1,0 +1,10 @@
+# Catatan untuk pemeriksa
+
+- Halaman Admisi ITB "Seleksi Mandiri: Seleksi Siswa Unggul (SSU-ITB)".
+- Halaman Admisi ITB ini dirender dengan JavaScript dari API situs (pada 2026-10-11 pagi API sempat memberi galat 502, lalu pulih). Salinan Wayback mungkin tidak menampilkan tabelnya.
+- Jalur dan tanggal dari tabel "Jadwal Pendaftaran". Untuk Non Tes Rapor dan UTBK, tanggal tutup sudah termasuk perpanjangan (tanda * di halaman). Jalur Tes: pembuatan akun 4 Mei – 14 Juni 2026, finalisasi 15 Juni, tes 17–19 Juni, pengumuman 26 Juni. Kolom Talenta Keolahragaan/Kesenian/Keagamaan menulis "7 Juni 2025" untuk batas finalisasi; diduga salah ketik, dan tidak dipakai (yang dicatat tanggal pendaftarannya, 4 Mei – 7 Juni 2026).
+- Tes: Jalur Tes memakai Tes Kemampuan Akademik ITB (Matematika, Fisika) dan Tes Kemampuan Menggambar untuk FSRD/Arsitektur. Non Tes Rapor memakai rapor semester 1–5 dan portofolio khusus pendaftar FSRD. Non Tes UTBK memakai skor UTBK-SNBT 2026 dan portofolio khusus FSRD/Arsitektur. Kedua jalur Talenta memakai verifikasi portofolio prestasi dan sertifikat kejuaraan. Surat motivasi (komponen pendukung) tidak dicatat.
+- Tidak dicatat sebagai jalur: "Jalur Khusus Afirmasi Nusantara (3T)", karena halaman tidak memberi tanggal atau cara seleksinya sendiri (peserta 3T tetap boleh ikut jalur SSU lain).
+- Biaya: UKT SSU hanya UKT-7 per kelompok Fakultas/Sekolah (FMIPA-M, SBM, selain keduanya). Tabel Prodi tiap jalur SSU menyebut Fakultas/Sekolah tiap Prodi, jadi UKT-7 dicatat per Prodi (50 Prodi Ganesa dan Jatinangor; jalur SSU tidak memuat Prodi Kampus Cirebon). IPI-1 sampai IPI-4: halaman tidak menyebut siapa dikenai tiap golongan, jadi dicatat tingkat Kampus. Tidak dicatat: skema cicilan IPI (50% / 25% / 25%).
+- Biaya pendaftaran: Rp750.000 per jalur SSU yang diikuti; Rp1.250.000 untuk Pendaftaran Integrasi (Jalur Tes dan Non-Tes UTBK sekaligus). Peserta KIP-K dibebaskan.
+- Beasiswa: halaman menyatakan ITB menerima peserta KIP-K di SNBP, SNBT dan SSU ITB (dicatat sebagai ikut KIP Kuliah), dan menjelaskan Program Beasiswa Unggul milik ITB.

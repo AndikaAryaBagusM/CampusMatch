@@ -34,7 +34,7 @@ Ulasan are about one Prodi (one programme at one Kampus), are anonymous, and eac
 - Every official figure shows its date and source.
 - Ulasan are shown anonymously (Status Pengulas, entry year, Terverifikasi badge). Estimasi Pengulas shows only aggregates, and only once 5 Pengulas have answered.
 - The site header is static (it reads no session) so catalogue pages stay cached.
-- Stack: Next.js 16 App Router, Tailwind 4, shadcn/ui on Base UI, lucide icons, Neon Postgres, Auth.js, on Vercel.
+- Stack: Next.js 16 App Router, Tailwind 4, shadcn/ui on Base UI, lucide icons, Neon Postgres, Auth.js, on Railway (moved from Vercel 2026-10-11).
 - There are no uploads, photos or Kampus logos. Kampus are shown with initials.
 
 ## Brand Commitments

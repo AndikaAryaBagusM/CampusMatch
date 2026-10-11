@@ -163,7 +163,8 @@ export const biaya = pgTable(
     check("biaya_jumlah_check", sql`${t.jumlah} >= 0`),
     check(
       "biaya_periode_check",
-      sql`(${t.jenis} NOT IN ('ukt', 'spp') OR ${t.periode} = 'per_semester')
+      sql`(${t.jenis} <> 'ukt' OR ${t.periode} = 'per_semester')
+        AND (${t.jenis} <> 'spp' OR ${t.periode}::text IN ('per_semester', 'per_sks'))
         AND (${t.jenis} NOT IN ('uang_pangkal', 'pendaftaran') OR ${t.periode} = 'sekali')`,
     ),
     ...cekFakta("biaya", t),

@@ -3,7 +3,15 @@ import { AlertTriangle } from "lucide-react";
 import { Panel } from "@/components/panel";
 import { formatTanggal } from "@/lib/format";
 import type { BeasiswaTampil, BiayaTampil, FaktaKampus, JalurTampil, SumberRingkas, Bagian } from "@/lib/fakta/kueri";
-import { formatRupiah, LABEL_JENIS_BIAYA, LABEL_KATEGORI_JALUR, LABEL_PERIODE, LABEL_TES } from "@/lib/fakta/label";
+import {
+  CATATAN_PER_SKS,
+  CATATAN_TIDAK_DICATAT,
+  formatRupiah,
+  LABEL_JENIS_BIAYA,
+  LABEL_KATEGORI_JALUR,
+  LABEL_PERIODE,
+  LABEL_TES,
+} from "@/lib/fakta/label";
 import { formatTahunAkademik, tahunAkademikLama } from "@/lib/fakta/tahun-akademik";
 
 // Biaya & Masuk facts on the Kampus and Prodi pages (decisions.md 17a–17f).
@@ -68,7 +76,8 @@ export function Keterangan() {
   return (
     <p className="text-xs leading-relaxed text-muted-foreground">
       Dicatat dari sumber resmi pada tanggal yang tertera dan diperiksa dua orang tim CampusMatch. Biaya dan jalur masuk
-      bisa berubah, jadi pastikan lagi ke Kampus sebelum mendaftar. CampusMatch tidak berafiliasi dengan Kampus mana pun.{" "}
+      bisa berubah, jadi pastikan lagi ke Kampus sebelum mendaftar. {CATATAN_TIDAK_DICATAT} CampusMatch tidak berafiliasi
+      dengan Kampus mana pun.{" "}
       <Link href="/ketentuan#biaya-masuk" className="text-primary hover:underline">
         Selengkapnya
       </Link>
@@ -94,7 +103,11 @@ function JudulBagian({ judul, tahunAkademik }: { judul: string; tahunAkademik: n
   );
 }
 
-function TabelBiaya({ daftar, r }: { daftar: BiayaTampil[]; r: Rujukan }) {
+export const adaPerSks = (daftar: BiayaTampil[]) => daftar.some((b) => b.periode === "per_sks");
+
+// `perSks`: the Kampus also charges per SKS (in this table or the other one of
+// the panel), so a per-semester SPP is noted as not the whole semester.
+function TabelBiaya({ daftar, r, perSks = false }: { daftar: BiayaTampil[]; r: Rujukan; perSks?: boolean }) {
   const adaJalur = daftar.some((b) => b.jalurNama);
   return (
     <div className="overflow-x-auto">
@@ -127,6 +140,9 @@ function TabelBiaya({ daftar, r }: { daftar: BiayaTampil[]; r: Rujukan }) {
                 <span className="font-semibold">{formatRupiah(b.jumlah, b.batas)}</span>
                 <Ref sumber={b.sumber} r={r} />
                 <span className="block text-xs text-muted-foreground">{LABEL_PERIODE[b.periode]}</span>
+                {perSks && b.jenis === "spp" && b.periode === "per_semester" ? (
+                  <span className="block text-xs whitespace-normal text-muted-foreground">{CATATAN_PER_SKS}</span>
+                ) : null}
               </td>
             </tr>
           ))}
@@ -233,7 +249,7 @@ export function PanelBiayaMasukKampus({ fakta }: { fakta: FaktaKampus }) {
         {biaya ? (
           <section>
             <JudulBagian judul="Biaya untuk seluruh Kampus" tahunAkademik={biaya.tahunAkademik} />
-            <TabelBiaya daftar={biaya.daftar} r={r} />
+            <TabelBiaya daftar={biaya.daftar} r={r} perSks={adaPerSks(biaya.daftar)} />
           </section>
         ) : null}
         <p className="text-sm text-muted-foreground">UKT atau SPP per Prodi ada di halaman masing-masing Prodi.</p>
@@ -261,6 +277,7 @@ export function PanelBiayaProdi({
 }) {
   if (!biayaProdi && !biayaKampus) return null;
   const r = rujukan([...(biayaProdi?.daftar ?? []), ...(biayaKampus?.daftar ?? [])].map((b) => b.sumber), "prodi");
+  const perSks = adaPerSks([...(biayaProdi?.daftar ?? []), ...(biayaKampus?.daftar ?? [])]);
   return (
     <Panel title="Biaya resmi" id="biaya">
       <div className="space-y-6">
@@ -268,13 +285,13 @@ export function PanelBiayaProdi({
         {biayaProdi ? (
           <section>
             <JudulBagian judul="Biaya Prodi ini" tahunAkademik={biayaProdi.tahunAkademik} />
-            <TabelBiaya daftar={biayaProdi.daftar} r={r} />
+            <TabelBiaya daftar={biayaProdi.daftar} r={r} perSks={perSks} />
           </section>
         ) : null}
         {biayaKampus ? (
           <section>
             <JudulBagian judul={`Biaya untuk seluruh ${kampus.nama}`} tahunAkademik={biayaKampus.tahunAkademik} />
-            <TabelBiaya daftar={biayaKampus.daftar} r={r} />
+            <TabelBiaya daftar={biayaKampus.daftar} r={r} perSks={perSks} />
           </section>
         ) : null}
         <Link href={`/kampus/${kampus.slug}#biaya-masuk`} className="inline-flex text-sm font-semibold text-primary hover:underline">

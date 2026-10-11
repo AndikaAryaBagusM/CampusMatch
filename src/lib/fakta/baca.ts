@@ -96,6 +96,15 @@ const skemaMeta = z.strictObject({
     .default(null),
 });
 
+// The periods each jenis allows; the first is the default when `periode` is
+// empty, and `lain` has none. SPP may also be a private Kampus's fee per SKS.
+const PERIODE_SAH: Record<JenisBiaya, readonly PeriodeBiaya[]> = {
+  ukt: ["per_semester"],
+  spp: ["per_semester", "per_sks"],
+  uang_pangkal: ["sekali"],
+  pendaftaran: ["sekali"],
+  lain: periodeBiaya.enumValues,
+};
 const PERIODE_BAWAAN: Record<JenisBiaya, PeriodeBiaya | null> = {
   ukt: "per_semester",
   spp: "per_semester",
@@ -246,10 +255,11 @@ function bacaBiaya(rows: Baris[], galat: string[]): BiayaBaru[] {
 
     const periodeTeks = teks(r, "periode");
     let periode = periodeTeks ? pilih(periodeTeks, periodeBiaya.enumValues) : jenis ? PERIODE_BAWAAN[jenis] : null;
-    if (periodeTeks && !periode) catat(`periode must be ${periodeBiaya.enumValues.join(" or ")}`);
+    if (periodeTeks && !periode) catat(`periode must be ${periodeBiaya.enumValues.join(", ")}`);
     else if (!periode && jenis) catat(`periode is needed for jenis ${jenis}`);
-    if (jenis && periode && PERIODE_BAWAAN[jenis] && PERIODE_BAWAAN[jenis] !== periode) {
-      catat(`jenis ${jenis} is always ${PERIODE_BAWAAN[jenis]}`);
+    if (jenis && periode && !PERIODE_SAH[jenis].includes(periode)) {
+      const sah = PERIODE_SAH[jenis];
+      catat(sah.length === 1 ? `jenis ${jenis} is always ${sah[0]}` : `jenis ${jenis} must be ${sah.join(" or ")}`);
       periode = null;
     }
 

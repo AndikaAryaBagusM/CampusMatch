@@ -1,0 +1,373 @@
+tahun_akademik,jenis,prodi,jenjang,prodi_slug,jalur,label,jumlah,batas,periode
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 1, termin 1",7195000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 1, termin 2",7400000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 2, termin 1",6205000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 2, termin 2",7400000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 3, termin 1",6710000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 3, termin 2",7650000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 4, termin 1",6360000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 4, termin 2",7650000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 5, termin 1",6490000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 5, termin 2",6900000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 6, termin 1",4780000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 6, termin 2",6400000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 7, termin 1",5610000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 7, termin 2",5900000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 8, termin 1",3175000,,per_semester
+2026/2027,spp,"S1 Teknik Sipil",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-sipil,,"Perkiraan semester 8, termin 2",4400000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 1, termin 1",7055000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 1, termin 2",6150000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 2, termin 1",5145000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 2, termin 2",6150000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 3, termin 1",5660000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 3, termin 2",5900000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 4, termin 1",5895000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 4, termin 2",5900000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 5, termin 1",6130000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 5, termin 2",5150000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 6, termin 1",6035000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 6, termin 2",5150000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 7, termin 1",2840000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 7, termin 2",4650000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 8, termin 1",2710000,,per_semester
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-elektro,,"Perkiraan semester 8, termin 2",3650000,,per_semester
+2026/2027,spp,"S1 Teknik Mesin",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-mesin,,"Perkiraan semester 1, termin 1",8343400,,per_semester
+2026/2027,spp,"S1 Teknik Mesin",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-mesin,,"Perkiraan semester 1, termin 2",5900000,,per_semester
+2026/2027,spp,"S1 Teknik Mesin",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-mesin,,"Perkiraan semester 2, termin 1",6385000,,per_semester
+2026/2027,spp,"S1 Teknik Mesin",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-mesin,,"Perkiraan semester 3, termin 1",6565000,,per_semester
+2026/2027,spp,"S1 Teknik Mesin",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-mesin,,"Perkiraan semester 4, termin 1",7792000,,per_semester
+2026/2027,spp,"S1 Teknik Mesin",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-mesin,,"Perkiraan semester 5, termin 1",6918000,,per_semester
+2026/2027,spp,"S1 Teknik Mesin",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-mesin,,"Perkiraan semester 6, termin 1",5190000,,per_semester
+2026/2027,spp,"S1 Teknik Mesin",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-mesin,,"Perkiraan semester 7, termin 1",3972000,,per_semester
+2026/2027,spp,"S1 Teknik Mesin",S1,universitas-muhammadiyah-yogyakarta-s1-teknik-mesin,,"Perkiraan semester 8, termin 1",1110000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 1, termin 1",8860000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 1, termin 2",6800000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 2, termin 1",8150000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 2, termin 2",6800000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 3, termin 1",8290000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 3, termin 2",7050000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 4, termin 1",8790000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 4, termin 2",7050000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 5, termin 1",7790000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 5, termin 2",6300000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 6, termin 1",8250000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 6, termin 2",6300000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 7, termin 1",5440000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 7, termin 2",5300000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 8, termin 1",2710000,,per_semester
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-muhammadiyah-yogyakarta-s1-teknologi-informasi,,"Perkiraan semester 8, termin 2",4300000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 1, termin 1",7020000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 1, termin 2",3700000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 2, termin 1",4950000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 2, termin 2",3700000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 3, termin 1",5460000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 3, termin 2",3800000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 4, termin 1",5990000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 4, termin 2",3800000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 5, termin 1",6230000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 5, termin 2",3700000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 6, termin 1",4910000,,per_semester
+2026/2027,spp,"D3 Teknologi Elektro-medis",D3,universitas-muhammadiyah-yogyakarta-d3-teknologi-elektro-medis,,"Perkiraan semester 6, termin 2",3200000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 1, termin 1",8540000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 1, termin 2",2950000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 2, termin 1",7210000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 2, termin 2",2950000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 3, termin 1",8310000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 3, termin 2",3050000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 4, termin 1",8360000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 4, termin 2",3050000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 5, termin 1",7860000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 5, termin 2",2450000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 6, termin 1",6860000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 6, termin 2",2450000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 7, termin 1",5310000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 7, termin 2",1950000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 8, termin 1",2610000,,per_semester
+2026/2027,spp,"D4 Teknologi Rekayasa Otomotif",D4,universitas-muhammadiyah-yogyakarta-d4-teknologi-rekayasa-otomotif,,"Perkiraan semester 8, termin 2",1950000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 1, termin 1",6300000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 1, termin 2",4500000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 2, termin 1",4532000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 2, termin 2",4500000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 3, termin 1",5084000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 3, termin 2",4350000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 4, termin 1",4946000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 4, termin 2",4350000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 5, termin 1",5084000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 5, termin 2",4250000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 6, termin 1",4708000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 6, termin 2",4250000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 7, termin 1",2710000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 7, termin 2",4250000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 8, termin 1",2910000,,per_semester
+2026/2027,spp,"S1 Agroteknologi",S1,universitas-muhammadiyah-yogyakarta-s1-agroteknologi,,"Perkiraan semester 8, termin 2",3250000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 1, termin 1",6153000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 1, termin 2",4500000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 2, termin 1",4223000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 2, termin 2",4500000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 3, termin 1",4731000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 3, termin 2",4350000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 4, termin 1",4731000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 4, termin 2",4350000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 5, termin 1",4731000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 5, termin 2",4250000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 6, termin 1",4758000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 6, termin 2",4250000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 7, termin 1",2810000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 7, termin 2",4250000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 8, termin 1",1910000,,per_semester
+2026/2027,spp,"S1 Agribisnis",S1,universitas-muhammadiyah-yogyakarta-s1-agribisnis,,"Perkiraan semester 8, termin 2",3250000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 1, termin 1",8410000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 1, termin 2",7200000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 2, termin 1",4510000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 2, termin 2",6700000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 3, termin 1",6430000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 3, termin 2",6700000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 4, termin 1",5360000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 4, termin 2",6200000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 5, termin 1",6560000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 5, termin 2",6200000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 6, termin 1",4660000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 6, termin 2",5700000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 7, termin 1",2630000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 7, termin 2",5200000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 8, termin 1",2710000,,per_semester
+2026/2027,spp,"S1 Manajemen Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-manajemen,,"Perkiraan semester 8, termin 2",3700000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 1, termin 1",7400000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 1, termin 2",7550000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 2, termin 1",4920000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 2, termin 2",7550000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 3, termin 1",6210000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 3, termin 2",6300000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 4, termin 1",6360000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 4, termin 2",6300000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 5, termin 1",5425000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 5, termin 2",5050000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 6, termin 1",5060000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 6, termin 2",5050000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 7, termin 1",4575000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 7, termin 2",5050000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 8, termin 1",1730000,,per_semester
+2026/2027,spp,"S1 Akuntansi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-akuntansi,,"Perkiraan semester 8, termin 2",3550000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 1, termin 1",6050000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 1, termin 2",4300000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 2, termin 1",5480000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 2, termin 2",4300000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 3, termin 1",5860000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 3, termin 2",3800000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 4, termin 1",4915000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 4, termin 2",3800000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 5, termin 1",5140000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 5, termin 2",3300000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 6, termin 1",5095000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 6, termin 2",3300000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 7, termin 1",3160000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 7, termin 2",3300000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 8, termin 1",2660000,,per_semester
+2026/2027,spp,"S1 Ekonomi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi,,"Perkiraan semester 8, termin 2",2300000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 1, termin 1",7890000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 1, termin 2",7800000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 2, termin 1",5860000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 2, termin 2",7800000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 3, termin 1",5860000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 3, termin 2",6550000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 4, termin 1",6030000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 4, termin 2",6550000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 5, termin 1",5790000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 5, termin 2",5300000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 6, termin 1",5945000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 6, termin 2",5300000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 7, termin 1",4330000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 7, termin 2",5300000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 8, termin 1",1735000,,per_semester
+2026/2027,spp,"S1 Hubungan Internasional Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hubungan-internasional,,"Perkiraan semester 8, termin 2",3800000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 1, termin 1",6990000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 1, termin 2",5600000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 2, termin 1",5310000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 2, termin 2",5600000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 3, termin 1",5610000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 3, termin 2",5100000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 4, termin 1",5610000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 4, termin 2",5100000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 5, termin 1",5610000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 5, termin 2",4600000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 6, termin 1",4560000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 6, termin 2",4600000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 7, termin 1",3010000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 7, termin 2",4100000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 8, termin 1",1610000,,per_semester
+2026/2027,spp,"S1 Ilmu Pemerintahan Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-pemerintahan,,"Perkiraan semester 8, termin 2",3100000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 1, termin 1",7890000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 1, termin 2",6800000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 2, termin 1",5510000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 2, termin 2",6800000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 3, termin 1",5860000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 3, termin 2",7050000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 4, termin 1",5560000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 4, termin 2",6550000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 5, termin 1",6110000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 5, termin 2",6300000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 6, termin 1",6710000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 6, termin 2",5800000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 7, termin 1",3975000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 7, termin 2",5800000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 8, termin 1",1735000,,per_semester
+2026/2027,spp,"S1 Ilmu Komunikasi Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-ilmu-komunikasi,,"Perkiraan semester 8, termin 2",3800000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 1, termin 1",7315000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 1, termin 2",7000000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 2, termin 1",5730000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 2, termin 2",6500000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 3, termin 1",6305000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 3, termin 2",6750000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 4, termin 1",5730000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 4, termin 2",6750000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 5, termin 1",6255000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 5, termin 2",6500000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 6, termin 1",5875000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 6, termin 2",6000000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 7, termin 1",3255000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 7, termin 2",6000000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 8, termin 1",1510000,,per_semester
+2026/2027,spp,"S1 Hukum Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-hukum,,"Perkiraan semester 8, termin 2",4000000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 1, termin 1",5275000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 1, termin 2",2700000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 2, termin 1",4615000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 2, termin 2",2700000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 3, termin 1",4875000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 3, termin 2",2600000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 4, termin 1",4580000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 4, termin 2",2600000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 5, termin 1",4980000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 5, termin 2",2300000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 6, termin 1",4735000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 6, termin 2",2300000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 7, termin 1",2960000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 7, termin 2",2300000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 8, termin 1",2060000,,per_semester
+2026/2027,spp,"S1 Komunikasi & Penyiaran Islam Kelas Reguler",S1,universitas-muhammadiyah-yogyakarta-s1-komunikasi-dan-penyiaran-islam,,"Perkiraan semester 8, termin 2",1900000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 1, termin 1",5590000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 1, termin 2",2650000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 2, termin 1",4410000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 2, termin 2",3150000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 3, termin 1",5180000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 3, termin 2",3000000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 4, termin 1",4630000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 4, termin 2",3000000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 5, termin 1",5230000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 5, termin 2",2900000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 6, termin 1",4050000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 6, termin 2",2900000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 7, termin 1",2860000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 7, termin 2",2650000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 8, termin 1",1960000,,per_semester
+2026/2027,spp,"S1 Pendidikan Agama Islam",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-agama-islam,,"Perkiraan semester 8, termin 2",2150000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 1, termin 1",5660000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 1, termin 2",4000000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 2, termin 1",4410000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 2, termin 2",3500000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 3, termin 1",5090000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 3, termin 2",3600000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 4, termin 1",4970000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 4, termin 2",3350000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 5, termin 1",5290000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 5, termin 2",3250000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 6, termin 1",4770000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 6, termin 2",3000000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 7, termin 1",2610000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 7, termin 2",3000000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 8, termin 1",2560000,,per_semester
+2026/2027,spp,"S1 Ekonomi Syariah",S1,universitas-muhammadiyah-yogyakarta-s1-ekonomi-syariah,,"Perkiraan semester 8, termin 2",2500000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 1, termin 1",6380000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 1, termin 2",3850000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 2, termin 1",4950000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 2, termin 2",3350000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 3, termin 1",5664000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 3, termin 2",3450000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 4, termin 1",5478000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 4, termin 2",3450000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 5, termin 1",5914000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 5, termin 2",3350000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 6, termin 1",4550000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 6, termin 2",3350000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 7, termin 1",3874000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 7, termin 2",3350000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 8, termin 1",1960000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Inggris",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-inggris,,"Perkiraan semester 8, termin 2",2350000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 1, termin 1",6340000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 1, termin 2",3650000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 2, termin 1",5410000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 2, termin 2",3150000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 3, termin 1",5830000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 3, termin 2",3150000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 4, termin 1",5830000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 4, termin 2",3150000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 5, termin 1",5680000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 5, termin 2",3150000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 6, termin 1",5310000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 6, termin 2",3150000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 7, termin 1",3060000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 7, termin 2",3150000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 8, termin 1",1910000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Arab",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-arab,,"Perkiraan semester 8, termin 2",2150000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 1, termin 1",5490000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 1, termin 2",3150000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 2, termin 1",4460000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 2, termin 2",3150000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 3, termin 1",5240000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 3, termin 2",3000000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 4, termin 1",4250000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 4, termin 2",3000000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 5, termin 1",5630000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 5, termin 2",2650000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 6, termin 1",5160000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 6, termin 2",2650000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 7, termin 1",3880000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 7, termin 2",2650000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 8, termin 1",1960000,,per_semester
+2026/2027,spp,"S1 Pendidikan Bahasa Jepang",S1,universitas-muhammadiyah-yogyakarta-s1-pendidikan-bahasa-jepang,,"Perkiraan semester 8, termin 2",2150000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 1, termin 1",6840000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 1, termin 2",3000000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 2, termin 1",6085000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 2, termin 2",3200000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 3, termin 1",6785000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 3, termin 2",3050000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 4, termin 1",5960000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 4, termin 2",3050000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 5, termin 1",6360000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 5, termin 2",2950000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 6, termin 1",5185000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 6, termin 2",2950000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 7, termin 1",3210000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 7, termin 2",2700000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 8, termin 1",2060000,,per_semester
+2026/2027,spp,"S1 Psikologi",S1,universitas-muhammadiyah-yogyakarta-s1-psikologi,,"Perkiraan semester 8, termin 2",2200000,,per_semester
+2026/2027,spp,"S1 Kedokteran",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran,,"Perkiraan semester 1",108266000,,per_semester
+2026/2027,spp,"S1 Kedokteran",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran,,"Perkiraan semester 2",95821000,,per_semester
+2026/2027,spp,"S1 Kedokteran",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran,,"Perkiraan semester 3",89221000,,per_semester
+2026/2027,spp,"S1 Kedokteran",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran,,"Perkiraan semester 4",88721000,,per_semester
+2026/2027,spp,"S1 Kedokteran",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran,,"Perkiraan semester 5",26910000,,per_semester
+2026/2027,spp,"S1 Kedokteran",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran,,"Perkiraan semester 6",25560000,,per_semester
+2026/2027,spp,"S1 Kedokteran",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran,,"Perkiraan semester 7",24960000,,per_semester
+2026/2027,spp,"S1 Keperawatan",S1,universitas-muhammadiyah-yogyakarta-s1-keperawatan,,"Perkiraan semester 1",18552500,,per_semester
+2026/2027,spp,"S1 Keperawatan",S1,universitas-muhammadiyah-yogyakarta-s1-keperawatan,,"Perkiraan semester 2",16560000,,per_semester
+2026/2027,spp,"S1 Keperawatan",S1,universitas-muhammadiyah-yogyakarta-s1-keperawatan,,"Perkiraan semester 3",14547500,,per_semester
+2026/2027,spp,"S1 Keperawatan",S1,universitas-muhammadiyah-yogyakarta-s1-keperawatan,,"Perkiraan semester 4",15560000,,per_semester
+2026/2027,spp,"S1 Keperawatan",S1,universitas-muhammadiyah-yogyakarta-s1-keperawatan,,"Perkiraan semester 5",14010000,,per_semester
+2026/2027,spp,"S1 Keperawatan",S1,universitas-muhammadiyah-yogyakarta-s1-keperawatan,,"Perkiraan semester 6",13035000,,per_semester
+2026/2027,spp,"S1 Keperawatan",S1,universitas-muhammadiyah-yogyakarta-s1-keperawatan,,"Perkiraan semester 7",14472500,,per_semester
+2026/2027,spp,"S1 Keperawatan",S1,universitas-muhammadiyah-yogyakarta-s1-keperawatan,,"Perkiraan semester 8",6860000,,per_semester
+2026/2027,spp,"S1 Farmasi",S1,universitas-muhammadiyah-yogyakarta-s1-farmasi,,"Perkiraan semester 1",22184500,,per_semester
+2026/2027,spp,"S1 Farmasi",S1,universitas-muhammadiyah-yogyakarta-s1-farmasi,,"Perkiraan semester 2",20996500,,per_semester
+2026/2027,spp,"S1 Farmasi",S1,universitas-muhammadiyah-yogyakarta-s1-farmasi,,"Perkiraan semester 3",20664500,,per_semester
+2026/2027,spp,"S1 Farmasi",S1,universitas-muhammadiyah-yogyakarta-s1-farmasi,,"Perkiraan semester 4",20743250,,per_semester
+2026/2027,spp,"S1 Farmasi",S1,universitas-muhammadiyah-yogyakarta-s1-farmasi,,"Perkiraan semester 5",16694000,,per_semester
+2026/2027,spp,"S1 Farmasi",S1,universitas-muhammadiyah-yogyakarta-s1-farmasi,,"Perkiraan semester 6",15838500,,per_semester
+2026/2027,spp,"S1 Farmasi",S1,universitas-muhammadiyah-yogyakarta-s1-farmasi,,"Perkiraan semester 7",16736250,,per_semester
+2026/2027,spp,"S1 Farmasi",S1,universitas-muhammadiyah-yogyakarta-s1-farmasi,,"Perkiraan semester 8",8230500,,per_semester
+2026/2027,spp,"S1 Kedokteran Gigi",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran-gigi,,"Perkiraan semester 1",86660400,,per_semester
+2026/2027,spp,"S1 Kedokteran Gigi",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran-gigi,,"Perkiraan semester 2",69835100,,per_semester
+2026/2027,spp,"S1 Kedokteran Gigi",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran-gigi,,"Perkiraan semester 3",74731450,,per_semester
+2026/2027,spp,"S1 Kedokteran Gigi",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran-gigi,,"Perkiraan semester 4",66832550,,per_semester
+2026/2027,spp,"S1 Kedokteran Gigi",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran-gigi,,"Perkiraan semester 5",27201550,,per_semester
+2026/2027,spp,"S1 Kedokteran Gigi",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran-gigi,,"Perkiraan semester 6",23782500,,per_semester
+2026/2027,spp,"S1 Kedokteran Gigi",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran-gigi,,"Perkiraan semester 7",16679800,,per_semester
+2026/2027,spp,"S1 Kedokteran Gigi",S1,universitas-muhammadiyah-yogyakarta-s1-kedokteran-gigi,,"Perkiraan semester 8",15714000,,per_semester

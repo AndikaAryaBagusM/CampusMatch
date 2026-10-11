@@ -89,7 +89,9 @@ function DaftarBiaya({ daftar, r }: { daftar: BiayaTampil[]; r: Rujukan }) {
           {b.jalurNama ? <span className="text-muted-foreground"> ({b.jalurNama})</span> : null}:{" "}
           <span className="font-semibold whitespace-nowrap">{formatRupiah(b.jumlah, b.batas)}</span>
           <Ref sumber={b.sumber} r={r} />
-          {b.jenis === "lain" || b.jenis === "pendaftaran" ? <span className="text-muted-foreground">, {LABEL_PERIODE[b.periode]}</span> : null}
+          {b.jenis === "lain" || b.jenis === "pendaftaran" || b.periode === "per_sks" ? (
+            <span className="text-muted-foreground">, {LABEL_PERIODE[b.periode]}</span>
+          ) : null}
         </li>
       ))}
     </ul>
@@ -98,11 +100,14 @@ function DaftarBiaya({ daftar, r }: { daftar: BiayaTampil[]; r: Rujukan }) {
 
 // The Prodi's own rows of these jenis, then the Kampus-wide ones: for UKT and
 // Uang Pangkal only when the Prodi has none (a Kampus-wide value applies to
-// it); for other costs both, since they add up.
+// it); for other costs both, since they add up. A Kampus-wide fee per SKS is
+// shown beside the Prodi's own SPP, since it adds to it.
 function SelBiaya({ k, jenis, r, gabung = false }: { k: Kolom; jenis: BiayaTampil["jenis"][]; r: Rujukan; gabung?: boolean }) {
   const milikProdi = k.biayaProdi?.daftar.filter((b) => jenis.includes(b.jenis)) ?? [];
-  const seKampus = k.fakta?.biaya?.daftar.filter((b) => jenis.includes(b.jenis)) ?? [];
-  const tampilKampus = seKampus.length > 0 && (gabung || milikProdi.length === 0);
+  const seKampus = (k.fakta?.biaya?.daftar ?? []).filter(
+    (b) => jenis.includes(b.jenis) && (gabung || !milikProdi.some((p) => p.periode === b.periode)),
+  );
+  const tampilKampus = seKampus.length > 0;
   if (!milikProdi.length && !tampilKampus) return <Kosong />;
   return (
     <div className="space-y-3">

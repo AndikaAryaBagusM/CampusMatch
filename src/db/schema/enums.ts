@@ -86,7 +86,9 @@ export const jenisBiaya = pgEnum("jenis_biaya", [
 // NULL batas means the amount is exact.
 export const batasBiaya = pgEnum("batas_biaya", ["minimal", "maksimal"]);
 
-export const periodeBiaya = pgEnum("periode_biaya", ["per_semester", "sekali"]);
+// per_sks: a private Kampus's fee per credit, on top of its fixed SPP; shown
+// as published, never multiplied into a semester total.
+export const periodeBiaya = pgEnum("periode_biaya", ["per_semester", "sekali", "per_sks"]);
 
 export const kategoriJalur = pgEnum("kategori_jalur", [
   "snbp",

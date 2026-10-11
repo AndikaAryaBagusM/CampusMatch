@@ -1,0 +1,274 @@
+tahun_akademik,jenis,prodi,jenjang,prodi_slug,jalur,label,jumlah,batas,periode
+2025/2026,ukt,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"UKT I",500000,,
+2025/2026,ukt,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"UKT II",1000000,,
+2025/2026,ukt,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"UKT III",2400000,,
+2025/2026,ukt,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"UKT IV",3145000,,
+2025/2026,ukt,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"UKT V",3630000,,
+2025/2026,ukt,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"UKT VI",4235000,,
+2025/2026,ukt,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"UKT VII",4940000,,
+2025/2026,ukt,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"UKT VIII",5950000,,
+2025/2026,ukt,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"UKT I",500000,,
+2025/2026,ukt,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"UKT II",1000000,,
+2025/2026,ukt,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"UKT III",2400000,,
+2025/2026,ukt,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"UKT IV",3145000,,
+2025/2026,ukt,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"UKT V",3630000,,
+2025/2026,ukt,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"UKT VI",4235000,,
+2025/2026,ukt,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"UKT VII",4940000,,
+2025/2026,ukt,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"UKT VIII",5950000,,
+2025/2026,ukt,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"UKT I",500000,,
+2025/2026,ukt,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"UKT II",1000000,,
+2025/2026,ukt,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"UKT III",2400000,,
+2025/2026,ukt,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"UKT IV",3145000,,
+2025/2026,ukt,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"UKT V",3630000,,
+2025/2026,ukt,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"UKT VI",4235000,,
+2025/2026,ukt,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"UKT VII",4940000,,
+2025/2026,ukt,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"UKT VIII",5950000,,
+2025/2026,ukt,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"UKT I",500000,,
+2025/2026,ukt,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"UKT II",1000000,,
+2025/2026,ukt,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"UKT III",2400000,,
+2025/2026,ukt,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"UKT IV",4235000,,
+2025/2026,ukt,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"UKT V",4840000,,
+2025/2026,ukt,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"UKT VI",5445000,,
+2025/2026,ukt,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"UKT VII",6350000,,
+2025/2026,ukt,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"UKT VIII",7250000,,
+2025/2026,ukt,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"UKT I",500000,,
+2025/2026,ukt,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"UKT II",1000000,,
+2025/2026,ukt,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"UKT III",2400000,,
+2025/2026,ukt,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"UKT IV",4235000,,
+2025/2026,ukt,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"UKT V",4840000,,
+2025/2026,ukt,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"UKT VI",5445000,,
+2025/2026,ukt,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"UKT VII",6350000,,
+2025/2026,ukt,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"UKT VIII",7250000,,
+2025/2026,ukt,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"UKT I",500000,,
+2025/2026,ukt,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"UKT II",1000000,,
+2025/2026,ukt,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"UKT III",2400000,,
+2025/2026,ukt,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"UKT IV",4235000,,
+2025/2026,ukt,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"UKT V",4840000,,
+2025/2026,ukt,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"UKT VI",5445000,,
+2025/2026,ukt,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"UKT VII",6350000,,
+2025/2026,ukt,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"UKT VIII",7250000,,
+2025/2026,ukt,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"UKT I",500000,,
+2025/2026,ukt,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"UKT II",1000000,,
+2025/2026,ukt,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"UKT III",2400000,,
+2025/2026,ukt,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"UKT IV",4235000,,
+2025/2026,ukt,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"UKT V",4840000,,
+2025/2026,ukt,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"UKT VI",5445000,,
+2025/2026,ukt,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"UKT VII",6350000,,
+2025/2026,ukt,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"UKT VIII",7250000,,
+2025/2026,ukt,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"UKT I",500000,,
+2025/2026,ukt,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"UKT II",1000000,,
+2025/2026,ukt,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"UKT III",2400000,,
+2025/2026,ukt,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"UKT IV",4235000,,
+2025/2026,ukt,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"UKT V",4840000,,
+2025/2026,ukt,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"UKT VI",5445000,,
+2025/2026,ukt,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"UKT VII",6350000,,
+2025/2026,ukt,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"UKT VIII",7250000,,
+2025/2026,ukt,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"UKT I",500000,,
+2025/2026,ukt,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"UKT II",1000000,,
+2025/2026,ukt,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"UKT III",2400000,,
+2025/2026,ukt,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"UKT IV",4235000,,
+2025/2026,ukt,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"UKT V",4840000,,
+2025/2026,ukt,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"UKT VI",5445000,,
+2025/2026,ukt,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"UKT VII",6350000,,
+2025/2026,ukt,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"UKT VIII",7250000,,
+2025/2026,ukt,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"UKT I",500000,,
+2025/2026,ukt,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"UKT II",1000000,,
+2025/2026,ukt,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"UKT III",2400000,,
+2025/2026,ukt,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"UKT IV",4235000,,
+2025/2026,ukt,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"UKT V",4840000,,
+2025/2026,ukt,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"UKT VI",5445000,,
+2025/2026,ukt,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"UKT VII",6350000,,
+2025/2026,ukt,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"UKT VIII",7250000,,
+2025/2026,ukt,"Pengobatan Traditional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"UKT I",500000,,
+2025/2026,ukt,"Pengobatan Traditional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"UKT II",1000000,,
+2025/2026,ukt,"Pengobatan Traditional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"UKT III",2400000,,
+2025/2026,ukt,"Pengobatan Traditional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"UKT IV",3630000,,
+2025/2026,ukt,"Pengobatan Traditional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"UKT V",4235000,,
+2025/2026,ukt,"Pengobatan Traditional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"UKT VI",4840000,,
+2025/2026,ukt,"Pengobatan Traditional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"UKT VII",5645000,,
+2025/2026,ukt,"Pengobatan Traditional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"UKT VIII",6800000,,
+2025/2026,ukt,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"UKT I",500000,,
+2025/2026,ukt,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"UKT II",1000000,,
+2025/2026,ukt,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"UKT III",2400000,,
+2025/2026,ukt,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"UKT IV",3630000,,
+2025/2026,ukt,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"UKT V",4235000,,
+2025/2026,ukt,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"UKT VI",4840000,,
+2025/2026,ukt,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"UKT VII",5645000,,
+2025/2026,ukt,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"UKT I",500000,,
+2025/2026,ukt,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"UKT II",1000000,,
+2025/2026,ukt,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"UKT III",2400000,,
+2025/2026,ukt,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"UKT IV",3630000,,
+2025/2026,ukt,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"UKT V",4235000,,
+2025/2026,ukt,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"UKT VI",4840000,,
+2025/2026,ukt,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"UKT VII",5645000,,
+2025/2026,ukt,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"UKT VIII",6800000,,
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",D4,universitas-negeri-yogyakarta-d4-akuntansi,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pemasaran",D4,universitas-negeri-yogyakarta-d4-manajemen-pemasaran,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Perkantoran",D4,universitas-negeri-yogyakarta-d4-administrasi-perkantoran,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",D4,universitas-negeri-yogyakarta-d4-teknik-elektro,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektronika",D4,universitas-negeri-yogyakarta-d4-teknik-elektronika,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Teknik Mesin",D4,universitas-negeri-yogyakarta-d4-teknik-mesin,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",D4,universitas-negeri-yogyakarta-d4-teknik-sipil,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Tata Boga",D4,universitas-negeri-yogyakarta-d4-tata-boga,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Tata Busana",D4,universitas-negeri-yogyakarta-d4-tata-busana,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Tata Rias & Kecantikan",D4,universitas-negeri-yogyakarta-d4-tata-rias-dan-kecantikan,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pengobatan Tradisional Indonesia",D4,universitas-negeri-yogyakarta-d4-pengobatan-tradisional-indonesia,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Promosi Kesehatan",D4,universitas-negeri-yogyakarta-d4-promosi-kesehatan,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pengelolaan Usaha Rekresasi",D4,universitas-negeri-yogyakarta-d4-pengelolaan-usaha-rekreasi,,"IPI XIII",100000000,,sekali

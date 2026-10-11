@@ -1,0 +1,234 @@
+tahun_akademik,jenis,prodi,jenjang,prodi_slug,jalur,label,jumlah,batas,periode
+2026/2027,spp,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",27300000,,per_semester
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",3250000,,per_semester
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika,,"DP3 (biaya normal), BINUS @Kemanggisan",48000000,,sekali
+2026/2027,spp,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",27300000,,per_semester
+2026/2027,lain,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",3250000,,per_semester
+2026/2027,lain,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi,,"DP3 (biaya normal), BINUS @Kemanggisan",48000000,,sekali
+2026/2027,spp,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",26400000,,per_semester
+2026/2027,lain,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",3250000,,per_semester
+2026/2027,lain,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior,,"DP3 (biaya normal), BINUS @Kemanggisan",52000000,,sekali
+2026/2027,spp,"Visual Communication Design – Animation",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Kuliah Semester 1, Visual Communication Design – Animation, BINUS @Kemanggisan",26400000,,per_semester
+2026/2027,lain,"Visual Communication Design – Animation",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Laboratorium (semester 1–4), Visual Communication Design – Animation, BINUS @Kemanggisan",3250000,,per_semester
+2026/2027,lain,"Visual Communication Design – Animation",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Peralatan, Visual Communication Design – Animation, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Visual Communication Design – Animation",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"DP3 (biaya normal), Visual Communication Design – Animation, BINUS @Kemanggisan",52000000,,sekali
+2026/2027,spp,"Visual Communication Design – Creative Advertising",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Kuliah Semester 1, Visual Communication Design – Creative Advertising, BINUS @Kemanggisan",26400000,,per_semester
+2026/2027,lain,"Visual Communication Design – Creative Advertising",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Laboratorium (semester 1–4), Visual Communication Design – Creative Advertising, BINUS @Kemanggisan",3250000,,per_semester
+2026/2027,lain,"Visual Communication Design – Creative Advertising",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Peralatan, Visual Communication Design – Creative Advertising, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Visual Communication Design – Creative Advertising",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"DP3 (biaya normal), Visual Communication Design – Creative Advertising, BINUS @Kemanggisan",52000000,,sekali
+2026/2027,spp,"Visual Communication Design – New Media",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Kuliah Semester 1, Visual Communication Design – New Media, BINUS @Kemanggisan",26400000,,per_semester
+2026/2027,lain,"Visual Communication Design – New Media",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Laboratorium (semester 1–4), Visual Communication Design – New Media, BINUS @Kemanggisan",3250000,,per_semester
+2026/2027,lain,"Visual Communication Design – New Media",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Peralatan, Visual Communication Design – New Media, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Visual Communication Design – New Media",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"DP3 (biaya normal), Visual Communication Design – New Media, BINUS @Kemanggisan",52000000,,sekali
+2026/2027,spp,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",24200000,,per_semester
+2026/2027,lain,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",2250000,,per_semester
+2026/2027,lain,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"DP3 (biaya normal), BINUS @Kemanggisan",46000000,,sekali
+2026/2027,spp,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",24200000,,per_semester
+2026/2027,lain,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",2250000,,per_semester
+2026/2027,lain,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"DP3 (biaya normal), BINUS @Kemanggisan",46000000,,sekali
+2026/2027,spp,"Communication – Marketing Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",22500000,,per_semester
+2026/2027,lain,"Communication – Marketing Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",3125000,,per_semester
+2026/2027,lain,"Communication – Marketing Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Communication – Marketing Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi,,"DP3 (biaya normal), BINUS @Kemanggisan",43000000,,sekali
+2026/2027,spp,"Hotel Management (D4)",D4,universitas-bina-nusantara-d4-perhotelan,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",20750000,,per_semester
+2026/2027,lain,"Hotel Management (D4)",D4,universitas-bina-nusantara-d4-perhotelan,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",2375000,,per_semester
+2026/2027,lain,"Hotel Management (D4)",D4,universitas-bina-nusantara-d4-perhotelan,,"Biaya Peralatan, BINUS @Kemanggisan",7700000,,sekali
+2026/2027,uang_pangkal,"Hotel Management (D4)",D4,universitas-bina-nusantara-d4-perhotelan,,"DP3 (biaya normal), BINUS @Kemanggisan",10000000,,sekali
+2026/2027,spp,"Law – Business Law",S1,universitas-bina-nusantara-s1-ilmu-hukum,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",24000000,,per_semester
+2026/2027,lain,"Law – Business Law",S1,universitas-bina-nusantara-s1-ilmu-hukum,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",2250000,,per_semester
+2026/2027,lain,"Law – Business Law",S1,universitas-bina-nusantara-s1-ilmu-hukum,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Law – Business Law",S1,universitas-bina-nusantara-s1-ilmu-hukum,,"DP3 (biaya normal), BINUS @Kemanggisan",44000000,,sekali
+2026/2027,spp,"Psychology",S1,universitas-bina-nusantara-s1-psikologi,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",24000000,,per_semester
+2026/2027,lain,"Psychology",S1,universitas-bina-nusantara-s1-psikologi,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",2250000,,per_semester
+2026/2027,lain,"Psychology",S1,universitas-bina-nusantara-s1-psikologi,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Psychology",S1,universitas-bina-nusantara-s1-psikologi,,"DP3 (biaya normal), BINUS @Kemanggisan",44000000,,sekali
+2026/2027,spp,"International Relations",S1,universitas-bina-nusantara-s1-hubungan-internasional,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",22500000,,per_semester
+2026/2027,lain,"International Relations",S1,universitas-bina-nusantara-s1-hubungan-internasional,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",2125000,,per_semester
+2026/2027,lain,"International Relations",S1,universitas-bina-nusantara-s1-hubungan-internasional,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"International Relations",S1,universitas-bina-nusantara-s1-hubungan-internasional,,"DP3 (biaya normal), BINUS @Kemanggisan",42000000,,sekali
+2026/2027,spp,"Chinese – Global Business Chinese",S1,universitas-bina-nusantara-s1-sastra-cina,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",22500000,,per_semester
+2026/2027,lain,"Chinese – Global Business Chinese",S1,universitas-bina-nusantara-s1-sastra-cina,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",2125000,,per_semester
+2026/2027,lain,"Chinese – Global Business Chinese",S1,universitas-bina-nusantara-s1-sastra-cina,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Chinese – Global Business Chinese",S1,universitas-bina-nusantara-s1-sastra-cina,,"DP3 (biaya normal), BINUS @Kemanggisan",42000000,,sekali
+2026/2027,spp,"English – Creative Digital English",S1,universitas-bina-nusantara-s1-sastra-inggris,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",22500000,,per_semester
+2026/2027,lain,"English – Creative Digital English",S1,universitas-bina-nusantara-s1-sastra-inggris,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",2125000,,per_semester
+2026/2027,lain,"English – Creative Digital English",S1,universitas-bina-nusantara-s1-sastra-inggris,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"English – Creative Digital English",S1,universitas-bina-nusantara-s1-sastra-inggris,,"DP3 (biaya normal), BINUS @Kemanggisan",42000000,,sekali
+2026/2027,spp,"Japanese Popular Culture",S1,universitas-bina-nusantara-s1-sastra-jepang,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",22500000,,per_semester
+2026/2027,lain,"Japanese Popular Culture",S1,universitas-bina-nusantara-s1-sastra-jepang,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",2125000,,per_semester
+2026/2027,lain,"Japanese Popular Culture",S1,universitas-bina-nusantara-s1-sastra-jepang,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Japanese Popular Culture",S1,universitas-bina-nusantara-s1-sastra-jepang,,"DP3 (biaya normal), BINUS @Kemanggisan",42000000,,sekali
+2026/2027,spp,"Primary Teacher Education",S1,universitas-bina-nusantara-s1-pendidikan-guru-sekolah-dasar,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",24300000,,per_semester
+2026/2027,lain,"Primary Teacher Education",S1,universitas-bina-nusantara-s1-pendidikan-guru-sekolah-dasar,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",1950000,,per_semester
+2026/2027,lain,"Primary Teacher Education",S1,universitas-bina-nusantara-s1-pendidikan-guru-sekolah-dasar,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Primary Teacher Education",S1,universitas-bina-nusantara-s1-pendidikan-guru-sekolah-dasar,,"DP3 (biaya normal), BINUS @Kemanggisan",39000000,,sekali
+2026/2027,spp,"Architecture",S1,universitas-bina-nusantara-s1-arsitektur,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",22900000,,per_semester
+2026/2027,lain,"Architecture",S1,universitas-bina-nusantara-s1-arsitektur,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",3625000,,per_semester
+2026/2027,lain,"Architecture",S1,universitas-bina-nusantara-s1-arsitektur,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Architecture",S1,universitas-bina-nusantara-s1-arsitektur,,"DP3 (biaya normal), BINUS @Kemanggisan",44000000,,sekali
+2026/2027,spp,"Civil Engineering",S1,universitas-bina-nusantara-s1-teknik-sipil,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",22900000,,per_semester
+2026/2027,lain,"Civil Engineering",S1,universitas-bina-nusantara-s1-teknik-sipil,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",3625000,,per_semester
+2026/2027,lain,"Civil Engineering",S1,universitas-bina-nusantara-s1-teknik-sipil,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Civil Engineering",S1,universitas-bina-nusantara-s1-teknik-sipil,,"DP3 (biaya normal), BINUS @Kemanggisan",44000000,,sekali
+2026/2027,spp,"Industrial Engineering",S1,universitas-bina-nusantara-s1-teknik-industri,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",22900000,,per_semester
+2026/2027,lain,"Industrial Engineering",S1,universitas-bina-nusantara-s1-teknik-industri,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",3625000,,per_semester
+2026/2027,lain,"Industrial Engineering",S1,universitas-bina-nusantara-s1-teknik-industri,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Industrial Engineering",S1,universitas-bina-nusantara-s1-teknik-industri,,"DP3 (biaya normal), BINUS @Kemanggisan",44000000,,sekali
+2026/2027,spp,"Computer Engineering",S1,universitas-bina-nusantara-s1-sistem-komputer,,"Biaya Kuliah Semester 1, BINUS @Kemanggisan",23900000,,per_semester
+2026/2027,lain,"Computer Engineering",S1,universitas-bina-nusantara-s1-sistem-komputer,,"Biaya Laboratorium (semester 1–4), BINUS @Kemanggisan",3625000,,per_semester
+2026/2027,lain,"Computer Engineering",S1,universitas-bina-nusantara-s1-sistem-komputer,,"Biaya Peralatan, BINUS @Kemanggisan",10200000,,sekali
+2026/2027,uang_pangkal,"Computer Engineering",S1,universitas-bina-nusantara-s1-sistem-komputer,,"DP3 (biaya normal), BINUS @Kemanggisan",44000000,,sekali
+2026/2027,spp,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika,,"Biaya Kuliah Semester 1, BINUS @Alam Sutera",27300000,,per_semester
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika,,"Biaya Laboratorium (semester 1–4), BINUS @Alam Sutera",3250000,,per_semester
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika,,"Biaya Peralatan, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika,,"DP3 (biaya normal), BINUS @Alam Sutera",48000000,,sekali
+2026/2027,spp,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi,,"Biaya Kuliah Semester 1, BINUS @Alam Sutera",27300000,,per_semester
+2026/2027,lain,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi,,"Biaya Laboratorium (semester 1–4), BINUS @Alam Sutera",3250000,,per_semester
+2026/2027,lain,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi,,"Biaya Peralatan, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi,,"DP3 (biaya normal), BINUS @Alam Sutera",48000000,,sekali
+2026/2027,spp,"Visual Communication Design – Animation",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Kuliah Semester 1, Visual Communication Design – Animation, BINUS @Alam Sutera",26400000,,per_semester
+2026/2027,lain,"Visual Communication Design – Animation",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Laboratorium (semester 1–4), Visual Communication Design – Animation, BINUS @Alam Sutera",3250000,,per_semester
+2026/2027,lain,"Visual Communication Design – Animation",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Peralatan, Visual Communication Design – Animation, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Visual Communication Design – Animation",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"DP3 (biaya normal), Visual Communication Design – Animation, BINUS @Alam Sutera",52000000,,sekali
+2026/2027,spp,"Visual Communication Design – New Media",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Kuliah Semester 1, Visual Communication Design – New Media, BINUS @Alam Sutera",26400000,,per_semester
+2026/2027,lain,"Visual Communication Design – New Media",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Laboratorium (semester 1–4), Visual Communication Design – New Media, BINUS @Alam Sutera",3250000,,per_semester
+2026/2027,lain,"Visual Communication Design – New Media",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"Biaya Peralatan, Visual Communication Design – New Media, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Visual Communication Design – New Media",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual,,"DP3 (biaya normal), Visual Communication Design – New Media, BINUS @Alam Sutera",52000000,,sekali
+2026/2027,spp,"Film",S1,universitas-bina-nusantara-s1-film,,"Biaya Kuliah Semester 1, BINUS @Alam Sutera",21900000,,per_semester
+2026/2027,lain,"Film",S1,universitas-bina-nusantara-s1-film,,"Biaya Laboratorium (semester 1–4), BINUS @Alam Sutera",1375000,,per_semester
+2026/2027,lain,"Film",S1,universitas-bina-nusantara-s1-film,,"Biaya Peralatan, BINUS @Alam Sutera",7700000,,sekali
+2026/2027,uang_pangkal,"Film",S1,universitas-bina-nusantara-s1-film,,"DP3 (biaya normal), BINUS @Alam Sutera",10000000,,sekali
+2026/2027,spp,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital,,"Biaya Kuliah Semester 1, BINUS @Alam Sutera",24200000,,per_semester
+2026/2027,lain,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital,,"Biaya Laboratorium (semester 1–4), BINUS @Alam Sutera",2250000,,per_semester
+2026/2027,lain,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital,,"Biaya Peralatan, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital,,"DP3 (biaya normal), BINUS @Alam Sutera",46000000,,sekali
+2026/2027,spp,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"Biaya Kuliah Semester 1, BINUS @Alam Sutera",24200000,,per_semester
+2026/2027,lain,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"Biaya Laboratorium (semester 1–4), BINUS @Alam Sutera",2250000,,per_semester
+2026/2027,lain,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"Biaya Peralatan, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"DP3 (biaya normal), BINUS @Alam Sutera",46000000,,sekali
+2026/2027,spp,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"Biaya Kuliah Semester 1, BINUS @Alam Sutera",24200000,,per_semester
+2026/2027,lain,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"Biaya Laboratorium (semester 1–4), BINUS @Alam Sutera",2250000,,per_semester
+2026/2027,lain,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"Biaya Peralatan, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"DP3 (biaya normal), BINUS @Alam Sutera",46000000,,sekali
+2026/2027,spp,"Communication – Marketing Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi,,"Biaya Kuliah Semester 1, BINUS @Alam Sutera",22500000,,per_semester
+2026/2027,lain,"Communication – Marketing Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi,,"Biaya Laboratorium (semester 1–4), BINUS @Alam Sutera",3125000,,per_semester
+2026/2027,lain,"Communication – Marketing Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi,,"Biaya Peralatan, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Communication – Marketing Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi,,"DP3 (biaya normal), BINUS @Alam Sutera",43000000,,sekali
+2026/2027,spp,"Chinese – Global Business Chinese",S1,universitas-bina-nusantara-s1-sastra-cina,,"Biaya Kuliah Semester 1, BINUS @Alam Sutera",22500000,,per_semester
+2026/2027,lain,"Chinese – Global Business Chinese",S1,universitas-bina-nusantara-s1-sastra-cina,,"Biaya Laboratorium (semester 1–4), BINUS @Alam Sutera",2125000,,per_semester
+2026/2027,lain,"Chinese – Global Business Chinese",S1,universitas-bina-nusantara-s1-sastra-cina,,"Biaya Peralatan, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Chinese – Global Business Chinese",S1,universitas-bina-nusantara-s1-sastra-cina,,"DP3 (biaya normal), BINUS @Alam Sutera",42000000,,sekali
+2026/2027,spp,"Food Technology",S1,universitas-bina-nusantara-s1-teknologi-pangan,,"Biaya Kuliah Semester 1, BINUS @Alam Sutera",22900000,,per_semester
+2026/2027,lain,"Food Technology",S1,universitas-bina-nusantara-s1-teknologi-pangan,,"Biaya Laboratorium (semester 1–4), BINUS @Alam Sutera",4375000,,per_semester
+2026/2027,lain,"Food Technology",S1,universitas-bina-nusantara-s1-teknologi-pangan,,"Biaya Peralatan, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Food Technology",S1,universitas-bina-nusantara-s1-teknologi-pangan,,"DP3 (biaya normal), BINUS @Alam Sutera",48000000,,sekali
+2026/2027,spp,"Biotechnology",S1,universitas-bina-nusantara-s1-bioteknologi,,"Biaya Kuliah Semester 1, BINUS @Alam Sutera",22900000,,per_semester
+2026/2027,lain,"Biotechnology",S1,universitas-bina-nusantara-s1-bioteknologi,,"Biaya Laboratorium (semester 1–4), BINUS @Alam Sutera",4375000,,per_semester
+2026/2027,lain,"Biotechnology",S1,universitas-bina-nusantara-s1-bioteknologi,,"Biaya Peralatan, BINUS @Alam Sutera",10200000,,sekali
+2026/2027,uang_pangkal,"Biotechnology",S1,universitas-bina-nusantara-s1-bioteknologi,,"DP3 (biaya normal), BINUS @Alam Sutera",48000000,,sekali
+2026/2027,spp,"Computer Science – Software Engineering",S1,universitas-bina-nusantara-s1-teknik-informatika,,"Biaya Kuliah Semester 1, BINUS @Bekasi",23500000,,per_semester
+2026/2027,lain,"Computer Science – Software Engineering",S1,universitas-bina-nusantara-s1-teknik-informatika,,"Biaya Laboratorium (semester 1–4), BINUS @Bekasi",3000000,,per_semester
+2026/2027,lain,"Computer Science – Software Engineering",S1,universitas-bina-nusantara-s1-teknik-informatika,,"Biaya Peralatan, BINUS @Bekasi",10200000,,sekali
+2026/2027,uang_pangkal,"Computer Science – Software Engineering",S1,universitas-bina-nusantara-s1-teknik-informatika,,"DP3 (biaya normal), BINUS @Bekasi",42000000,,sekali
+2026/2027,spp,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"Biaya Kuliah Semester 1, BINUS @Bekasi",21300000,,per_semester
+2026/2027,lain,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"Biaya Laboratorium (semester 1–4), BINUS @Bekasi",2000000,,per_semester
+2026/2027,lain,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"Biaya Peralatan, BINUS @Bekasi",10200000,,sekali
+2026/2027,uang_pangkal,"Management",S1,universitas-bina-nusantara-s1-manajemen,,"DP3 (biaya normal), BINUS @Bekasi",42000000,,sekali
+2026/2027,spp,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"Biaya Kuliah Semester 1, BINUS @Bekasi",21300000,,per_semester
+2026/2027,lain,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"Biaya Laboratorium (semester 1–4), BINUS @Bekasi",2000000,,per_semester
+2026/2027,lain,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"Biaya Peralatan, BINUS @Bekasi",10200000,,sekali
+2026/2027,uang_pangkal,"Accounting",S1,universitas-bina-nusantara-s1-akuntansi,,"DP3 (biaya normal), BINUS @Bekasi",42000000,,sekali
+2026/2027,spp,"Business Hotel Management (D4)",D4,universitas-bina-nusantara-d4-perhotelan,,"Biaya Kuliah Semester 1, BINUS @Bekasi",19150000,,per_semester
+2026/2027,lain,"Business Hotel Management (D4)",D4,universitas-bina-nusantara-d4-perhotelan,,"Biaya Laboratorium (semester 1–4), BINUS @Bekasi",2375000,,per_semester
+2026/2027,lain,"Business Hotel Management (D4)",D4,universitas-bina-nusantara-d4-perhotelan,,"Biaya Peralatan, BINUS @Bekasi",7400000,,sekali
+2026/2027,uang_pangkal,"Business Hotel Management (D4)",D4,universitas-bina-nusantara-d4-perhotelan,,"DP3 (biaya normal), BINUS @Bekasi",10000000,,sekali
+2026/2027,spp,"Psychology",S1,universitas-bina-nusantara-s1-psikologi,,"Biaya Kuliah Semester 1, BINUS @Bekasi",20700000,,per_semester
+2026/2027,lain,"Psychology",S1,universitas-bina-nusantara-s1-psikologi,,"Biaya Laboratorium (semester 1–4), BINUS @Bekasi",2000000,,per_semester
+2026/2027,lain,"Psychology",S1,universitas-bina-nusantara-s1-psikologi,,"Biaya Peralatan, BINUS @Bekasi",10200000,,sekali
+2026/2027,uang_pangkal,"Psychology",S1,universitas-bina-nusantara-s1-psikologi,,"DP3 (biaya normal), BINUS @Bekasi",39000000,,sekali
+2026/2027,spp,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-bandung,,"Biaya Kuliah Semester 1, BINUS @Bandung",17700000,,per_semester
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-bandung,,"Biaya Laboratorium (semester 1 saja), BINUS @Bandung",8500000,,sekali
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-bandung,,"Biaya Peralatan, BINUS @Bandung",4200000,,sekali
+2026/2027,uang_pangkal,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-bandung,,"DP3 (biaya normal), BINUS @Bandung",28000000,,sekali
+2026/2027,spp,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior-kampus-kota-bandung,,"Biaya Kuliah Semester 1, BINUS @Bandung",17700000,,per_semester
+2026/2027,lain,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior-kampus-kota-bandung,,"Biaya Laboratorium (semester 1 saja), BINUS @Bandung",8500000,,sekali
+2026/2027,lain,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior-kampus-kota-bandung,,"Biaya Peralatan, BINUS @Bandung",4200000,,sekali
+2026/2027,uang_pangkal,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior-kampus-kota-bandung,,"DP3 (biaya normal), BINUS @Bandung",28000000,,sekali
+2026/2027,spp,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-bandung,,"Biaya Kuliah Semester 1, BINUS @Bandung",17700000,,per_semester
+2026/2027,lain,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-bandung,,"Biaya Laboratorium (semester 1 saja), BINUS @Bandung",8500000,,sekali
+2026/2027,lain,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-bandung,,"Biaya Peralatan, BINUS @Bandung",4200000,,sekali
+2026/2027,uang_pangkal,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-bandung,,"DP3 (biaya normal), BINUS @Bandung",28000000,,sekali
+2026/2027,spp,"Creativepreneurship",S1,universitas-bina-nusantara-s1-kewirausahaan-kampus-kota-bandung,,"Biaya Kuliah Semester 1, BINUS @Bandung",17700000,,per_semester
+2026/2027,lain,"Creativepreneurship",S1,universitas-bina-nusantara-s1-kewirausahaan-kampus-kota-bandung,,"Biaya Laboratorium (semester 1 saja), BINUS @Bandung",8500000,,sekali
+2026/2027,lain,"Creativepreneurship",S1,universitas-bina-nusantara-s1-kewirausahaan-kampus-kota-bandung,,"Biaya Peralatan, BINUS @Bandung",4200000,,sekali
+2026/2027,uang_pangkal,"Creativepreneurship",S1,universitas-bina-nusantara-s1-kewirausahaan-kampus-kota-bandung,,"DP3 (biaya normal), BINUS @Bandung",28000000,,sekali
+2026/2027,spp,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-malang,,"Biaya Kuliah Semester 1, BINUS @Malang",16500000,,per_semester
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-malang,,"Biaya Laboratorium (semester 1 saja), BINUS @Malang",7200000,,sekali
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-malang,,"Biaya Peralatan, BINUS @Malang",4000000,,sekali
+2026/2027,uang_pangkal,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-malang,,"DP3 (biaya normal), BINUS @Malang",19000000,,sekali
+2026/2027,spp,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior-kampus-kota-malang,,"Biaya Kuliah Semester 1, BINUS @Malang",16500000,,per_semester
+2026/2027,lain,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior-kampus-kota-malang,,"Biaya Laboratorium (semester 1 saja), BINUS @Malang",7200000,,sekali
+2026/2027,lain,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior-kampus-kota-malang,,"Biaya Peralatan, BINUS @Malang",4000000,,sekali
+2026/2027,uang_pangkal,"Interior Design",S1,universitas-bina-nusantara-s1-desain-interior-kampus-kota-malang,,"DP3 (biaya normal), BINUS @Malang",19000000,,sekali
+2026/2027,spp,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-malang,,"Biaya Kuliah Semester 1, BINUS @Malang",16500000,,per_semester
+2026/2027,lain,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-malang,,"Biaya Laboratorium (semester 1 saja), BINUS @Malang",7200000,,sekali
+2026/2027,lain,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-malang,,"Biaya Peralatan, BINUS @Malang",4000000,,sekali
+2026/2027,uang_pangkal,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-malang,,"DP3 (biaya normal), BINUS @Malang",19000000,,sekali
+2026/2027,spp,"Entrepreneurship – Business Creation",S1,universitas-bina-nusantara-s1-kewirausahaan-kampus-kota-malang,,"Biaya Kuliah Semester 1, BINUS @Malang",16500000,,per_semester
+2026/2027,lain,"Entrepreneurship – Business Creation",S1,universitas-bina-nusantara-s1-kewirausahaan-kampus-kota-malang,,"Biaya Laboratorium (semester 1 saja), BINUS @Malang",7200000,,sekali
+2026/2027,lain,"Entrepreneurship – Business Creation",S1,universitas-bina-nusantara-s1-kewirausahaan-kampus-kota-malang,,"Biaya Peralatan, BINUS @Malang",4000000,,sekali
+2026/2027,uang_pangkal,"Entrepreneurship – Business Creation",S1,universitas-bina-nusantara-s1-kewirausahaan-kampus-kota-malang,,"DP3 (biaya normal), BINUS @Malang",19000000,,sekali
+2026/2027,spp,"Digital Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi-kampus-kota-malang,,"Biaya Kuliah Semester 1, BINUS @Malang",16500000,,per_semester
+2026/2027,lain,"Digital Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi-kampus-kota-malang,,"Biaya Laboratorium (semester 1 saja), BINUS @Malang",7200000,,sekali
+2026/2027,lain,"Digital Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi-kampus-kota-malang,,"Biaya Peralatan, BINUS @Malang",4000000,,sekali
+2026/2027,uang_pangkal,"Digital Communication",S1,universitas-bina-nusantara-s1-ilmu-komunikasi-kampus-kota-malang,,"DP3 (biaya normal), BINUS @Malang",19000000,,sekali
+2026/2027,spp,"Public Relations",S1,universitas-bina-nusantara-s1-hubungan-masyarakat-kampus-kota-malang,,"Biaya Kuliah Semester 1, BINUS @Malang",16500000,,per_semester
+2026/2027,lain,"Public Relations",S1,universitas-bina-nusantara-s1-hubungan-masyarakat-kampus-kota-malang,,"Biaya Laboratorium (semester 1 saja), BINUS @Malang",7200000,,sekali
+2026/2027,lain,"Public Relations",S1,universitas-bina-nusantara-s1-hubungan-masyarakat-kampus-kota-malang,,"Biaya Peralatan, BINUS @Malang",4000000,,sekali
+2026/2027,uang_pangkal,"Public Relations",S1,universitas-bina-nusantara-s1-hubungan-masyarakat-kampus-kota-malang,,"DP3 (biaya normal), BINUS @Malang",19000000,,sekali
+2026/2027,spp,"Computer Science",S1,universitas-bina-nusantara-s1-informatika-kampus-kota-medan,,"Biaya Kuliah Semester 1, BINUS @Medan",15400000,,per_semester
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-informatika-kampus-kota-medan,,"Biaya Laboratorium (semester 1 saja), BINUS @Medan",7200000,,sekali
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-informatika-kampus-kota-medan,,"Biaya Peralatan, BINUS @Medan",4000000,,sekali
+2026/2027,uang_pangkal,"Computer Science",S1,universitas-bina-nusantara-s1-informatika-kampus-kota-medan,,"DP3 (biaya normal), BINUS @Medan",18000000,,sekali
+2026/2027,spp,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi-kampus-kota-medan,,"Biaya Kuliah Semester 1, BINUS @Medan",15400000,,per_semester
+2026/2027,lain,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi-kampus-kota-medan,,"Biaya Laboratorium (semester 1 saja), BINUS @Medan",7200000,,sekali
+2026/2027,lain,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi-kampus-kota-medan,,"Biaya Peralatan, BINUS @Medan",4000000,,sekali
+2026/2027,uang_pangkal,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi-kampus-kota-medan,,"DP3 (biaya normal), BINUS @Medan",18000000,,sekali
+2026/2027,spp,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-medan,,"Biaya Kuliah Semester 1, BINUS @Medan",15400000,,per_semester
+2026/2027,lain,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-medan,,"Biaya Laboratorium (semester 1 saja), BINUS @Medan",7200000,,sekali
+2026/2027,lain,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-medan,,"Biaya Peralatan, BINUS @Medan",4000000,,sekali
+2026/2027,uang_pangkal,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-medan,,"DP3 (biaya normal), BINUS @Medan",18000000,,sekali
+2026/2027,spp,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital-kampus-kota-medan,,"Biaya Kuliah Semester 1, BINUS @Medan",15400000,,per_semester
+2026/2027,lain,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital-kampus-kota-medan,,"Biaya Laboratorium (semester 1 saja), BINUS @Medan",7200000,,sekali
+2026/2027,lain,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital-kampus-kota-medan,,"Biaya Peralatan, BINUS @Medan",4000000,,sekali
+2026/2027,uang_pangkal,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital-kampus-kota-medan,,"DP3 (biaya normal), BINUS @Medan",18000000,,sekali
+2026/2027,spp,"International Trade",S1,universitas-bina-nusantara-s1-perdagangan-internasional-kampus-kota-medan,,"Biaya Kuliah Semester 1, BINUS @Medan",15400000,,per_semester
+2026/2027,lain,"International Trade",S1,universitas-bina-nusantara-s1-perdagangan-internasional-kampus-kota-medan,,"Biaya Laboratorium (semester 1 saja), BINUS @Medan",7200000,,sekali
+2026/2027,lain,"International Trade",S1,universitas-bina-nusantara-s1-perdagangan-internasional-kampus-kota-medan,,"Biaya Peralatan, BINUS @Medan",4000000,,sekali
+2026/2027,uang_pangkal,"International Trade",S1,universitas-bina-nusantara-s1-perdagangan-internasional-kampus-kota-medan,,"DP3 (biaya normal), BINUS @Medan",18000000,,sekali
+2026/2027,spp,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-semarang,,"Biaya Kuliah Semester 1, BINUS @Semarang",13400000,,per_semester
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-semarang,,"Biaya Laboratorium (semester 1 saja), BINUS @Semarang",5600000,,sekali
+2026/2027,lain,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-semarang,,"Biaya Peralatan, BINUS @Semarang",3600000,,sekali
+2026/2027,uang_pangkal,"Computer Science",S1,universitas-bina-nusantara-s1-teknik-informatika-kampus-kota-semarang,,"DP3 (biaya normal), BINUS @Semarang",14000000,,sekali
+2026/2027,spp,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi-kampus-kota-semarang,,"Biaya Kuliah Semester 1, BINUS @Semarang",13400000,,per_semester
+2026/2027,lain,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi-kampus-kota-semarang,,"Biaya Laboratorium (semester 1 saja), BINUS @Semarang",5600000,,sekali
+2026/2027,lain,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi-kampus-kota-semarang,,"Biaya Peralatan, BINUS @Semarang",3600000,,sekali
+2026/2027,uang_pangkal,"Information Systems",S1,universitas-bina-nusantara-s1-sistem-informasi-kampus-kota-semarang,,"DP3 (biaya normal), BINUS @Semarang",14000000,,sekali
+2026/2027,spp,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-semarang,,"Biaya Kuliah Semester 1, BINUS @Semarang",13400000,,per_semester
+2026/2027,lain,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-semarang,,"Biaya Laboratorium (semester 1 saja), BINUS @Semarang",5600000,,sekali
+2026/2027,lain,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-semarang,,"Biaya Peralatan, BINUS @Semarang",3600000,,sekali
+2026/2027,uang_pangkal,"Visual Communication Design",S1,universitas-bina-nusantara-s1-desain-komunikasi-visual-kampus-kota-semarang,,"DP3 (biaya normal), BINUS @Semarang",14000000,,sekali
+2026/2027,spp,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital-kampus-kota-semarang,,"Biaya Kuliah Semester 1, BINUS @Semarang",13400000,,per_semester
+2026/2027,lain,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital-kampus-kota-semarang,,"Biaya Laboratorium (semester 1 saja), BINUS @Semarang",5600000,,sekali
+2026/2027,lain,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital-kampus-kota-semarang,,"Biaya Peralatan, BINUS @Semarang",3600000,,sekali
+2026/2027,uang_pangkal,"Digital Business",S1,universitas-bina-nusantara-s1-bisnis-digital-kampus-kota-semarang,,"DP3 (biaya normal), BINUS @Semarang",14000000,,sekali
+2026/2027,spp,"Smart Industrial Engineering",S1,universitas-bina-nusantara-s1-teknik-industri-kampus-kota-semarang,,"Biaya Kuliah Semester 1, BINUS @Semarang",13400000,,per_semester
+2026/2027,lain,"Smart Industrial Engineering",S1,universitas-bina-nusantara-s1-teknik-industri-kampus-kota-semarang,,"Biaya Laboratorium (semester 1 saja), BINUS @Semarang",5600000,,sekali
+2026/2027,lain,"Smart Industrial Engineering",S1,universitas-bina-nusantara-s1-teknik-industri-kampus-kota-semarang,,"Biaya Peralatan, BINUS @Semarang",3600000,,sekali
+2026/2027,uang_pangkal,"Smart Industrial Engineering",S1,universitas-bina-nusantara-s1-teknik-industri-kampus-kota-semarang,,"DP3 (biaya normal), BINUS @Semarang",14000000,,sekali
+2026/2027,pendaftaran,,,,,"Pendaftaran BINUS University",300000,,sekali

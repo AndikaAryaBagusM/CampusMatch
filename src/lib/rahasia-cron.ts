@@ -1,7 +1,8 @@
 import { timingSafeEqual } from "node:crypto";
 
-// True when the request carries "Authorization: Bearer <CRON_SECRET>": Vercel
-// Cron sends it, and so does `npm run cache:segarkan`. False without a secret.
+// True when the request carries "Authorization: Bearer <CRON_SECRET>": the
+// daily GitHub Actions cron sends it, and so does `npm run cache:segarkan`.
+// False without a secret.
 export function berwenangCron(request: Request): boolean {
   const secret = process.env.CRON_SECRET;
   const header = request.headers.get("authorization") ?? "";

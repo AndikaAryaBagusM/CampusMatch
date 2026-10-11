@@ -47,11 +47,11 @@ The academic year a fact applies to, e.g. 2026/2027. Every fact has its own; fac
 _Avoid_: TA (in prose), tahun ajaran, periode
 
 **Biaya**:
-One published amount a student pays a Kampus: UKT, SPP, Uang Pangkal, a registration fee or a Biaya Lain. It belongs to a Prodi when the Kampus publishes it per Prodi, otherwise to the Kampus.
+One published amount a student pays a Kampus: UKT, SPP, Uang Pangkal, a registration fee or a Biaya Lain, paid per semester, per SKS or once. It belongs to a Prodi when the Kampus publishes it for that Prodi (also when the Kampus publishes it for a named group of Prodi), otherwise to the Kampus.
 _Avoid_: Tarif, harga, cost
 
 **UKT** (Uang Kuliah Tunggal):
-The per-semester fee at a public Kampus, published per Prodi in groups (Kelompok I, II, …). At a private Kampus the per-semester fee is called SPP.
+The per-semester fee at a public Kampus, published per Prodi in groups (Kelompok I, II, …). At a private Kampus the per-semester fee is called SPP; some private Kampus charge a fee per SKS on top of it, so their SPP is not the whole semester.
 _Avoid_: SPP (for a public Kampus), biaya kuliah
 
 **Uang Pangkal**:
@@ -79,7 +79,7 @@ Whether a fact may be shown:
 _Avoid_: Terverifikasi (that is the Pengulas badge), verified, approved
 
 **Info Biaya**:
-One Pengulas's own account of what they paid at one Prodi (UKT or SPP, Uang Pangkal, other fees at entry) and how they got in (Jalur Masuk, tests, Beasiswa). It is never a fact, never shown on its own, and never includes living costs.
+One Pengulas's own account of what they paid at one Prodi (the total UKT or SPP per semester, fees per SKS included; Uang Pangkal; other fees at entry) and how they got in (Jalur Masuk, tests, Beasiswa). It is never a fact, never shown on its own, and never includes living costs.
 _Avoid_: Laporan, Fakta, Biaya (on its own), data crowdsourcing
 
 **Estimasi Pengulas**:

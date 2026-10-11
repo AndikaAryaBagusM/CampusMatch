@@ -8,7 +8,8 @@ export function hashIp(ip: string, secret = process.env.IP_HASH_SECRET): string 
   return createHmac("sha256", secret).update(ip).digest("hex");
 }
 
-// The caller's IP as Vercel reports it: the first x-forwarded-for entry.
+// The caller's IP: the first x-forwarded-for entry. Railway's edge, like
+// Vercel, overwrites the header with the real client IP.
 export async function ipPemanggil(): Promise<string> {
   const h = await headers();
   return h.get("x-forwarded-for")?.split(",")[0]?.trim() || h.get("x-real-ip") || "unknown";
