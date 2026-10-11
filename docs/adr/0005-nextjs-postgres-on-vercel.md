@@ -23,7 +23,7 @@ The site now runs on a **Render web service** (`render.yaml`, Singapore region, 
 - **Auth.js.** `AUTH_TRUST_HOST=true` is set, since Auth.js trusts the request host by default only on Vercel. `AUTH_URL` must hold the public origin: behind `next start`, `request.url` reports `localhost:<port>`, and Auth.js builds OAuth callbacks and magic links from it.
 - **ISR cache.** Pages are cached on the instance's local disk. There is no ISR write quota, but the cache is empty after every deploy or restart, and a free instance that sleeps starts cold.
 - **Client IP.** Render, like Vercel, puts the real client IP first in `x-forwarded-for`, so `src/lib/ip.ts` is unchanged.
-- **Neon** stays where it is. If the Neon project was created through the Vercel Marketplace, move it to a Neon-owned organisation before removing the Vercel project or integration.
+- **Neon** stays where it is, in the Vercel-managed organisation the Marketplace created. Neon cannot transfer projects out of a Vercel-managed organisation, so the Vercel account and the Neon integration stay installed. Uninstalling the integration deletes the Neon organisation and its database. To retire the Vercel project, first disconnect the database from it (that only removes Vercel's env vars). Moving to a Neon-owned project would mean copying the data (`pg_dump`/`pg_restore`) into a new project.
 
 ## Considered Options
 
