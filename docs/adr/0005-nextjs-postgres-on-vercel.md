@@ -16,13 +16,19 @@ Rules that follow from the Neon driver docs:
 
 **Exception for Auth.js (decided 2026-10-03).** The Auth.js Drizzle adapter is configured once, outside any request handler, so it cannot use a per-request `Pool`. Sessions and accounts need only single statements, so the adapter gets its own **`neon-http`** Drizzle instance (stateless HTTP, nothing to close). All other app queries keep using `withDb()`.
 
-## Hosting moved to Render (amended 2026-10-11)
+## Hosting moved to Railway (amended 2026-10-11)
 
-The site now runs on a **Render web service** (`render.yaml`, Singapore region, next to Neon) as a plain `next start` Node server. Vercel was the original host. What changed:
-- **Cron.** `vercel.json` crons are gone. A GitHub Actions schedule (`.github/workflows/cron-screening.yml`) calls `/api/cron/screening` daily with `CRON_SECRET`, retrying while a sleeping instance wakes.
-- **Auth.js.** `AUTH_TRUST_HOST=true` is set, since Auth.js trusts the request host by default only on Vercel. `AUTH_URL` must hold the public origin: behind `next start`, `request.url` reports `localhost:<port>`, and Auth.js builds OAuth callbacks and magic links from it.
-- **ISR cache.** Pages are cached on the instance's local disk. There is no ISR write quota, but the cache is empty after every deploy or restart, and a free instance that sleeps starts cold.
-- **Client IP.** Render, like Vercel, puts the real client IP first in `x-forwarded-for`, so `src/lib/ip.ts` is unchanged.
+The site now runs on a **Railway service** as a plain `next start` Node server. Vercel was the original host.
+- **Plan and region.** Hobby plan, always on, in the Singapore region next to Neon.
+- **Configuration.** Build and deploy settings live in `railway.json`. Variables are set in the Railway dashboard.
+
+Render was tried first and dropped, because its card verification rejected the user's card. What changed:
+- **Cron.** `vercel.json` crons are gone. A GitHub Actions schedule (`.github/workflows/cron-screening.yml`) calls `/api/cron/screening` daily with `CRON_SECRET`.
+- **Auth.js.** Two variables are needed off Vercel:
+  - `AUTH_TRUST_HOST=true`, because Auth.js trusts the request host by default only on Vercel.
+  - `AUTH_URL`, holding the public origin (`https://${{RAILWAY_PUBLIC_DOMAIN}}`). Behind `next start`, `request.url` reports `localhost:<port>`, and Auth.js builds OAuth callbacks and magic links from it.
+- **ISR cache.** Pages are cached on the instance's local disk. There is no ISR write quota, but the cache is empty after every deploy or restart.
+- **Client IP.** Railway's edge overwrites `x-forwarded-for` with the client IP first, as Vercel does, so `src/lib/ip.ts` is unchanged.
 - **Neon** stays where it is, in the Vercel-managed organisation the Marketplace created. Neon cannot transfer projects out of a Vercel-managed organisation, so the Vercel account and the Neon integration stay installed. Uninstalling the integration deletes the Neon organisation and its database. To retire the Vercel project, first disconnect the database from it (that only removes Vercel's env vars). Moving to a Neon-owned project would mean copying the data (`pg_dump`/`pg_restore`) into a new project.
 
 ## Considered Options
