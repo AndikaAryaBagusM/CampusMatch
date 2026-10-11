@@ -49,7 +49,7 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 
 ## Technology
 
-15. **Stack**: Next.js (App Router, TypeScript) on Render (Vercel until 2026-10-11); Neon Postgres; Drizzle; Auth.js; name search with `pg_trgm` (substring and typo matching; Postgres has no Indonesian text-search configuration, and catalogue names are too short for stemming to help); Tailwind with shadcn/ui; Screening via `after()` calling `claude-haiku-4-5-20251001`, plus a cron retry; the xlsx import uses SheetJS. See [ADR 0005](./adr/0005-nextjs-postgres-on-vercel.md).
+15. **Stack**: Next.js (App Router, TypeScript) on Railway (Vercel until 2026-10-11); Neon Postgres; Drizzle; Auth.js; name search with `pg_trgm` (substring and typo matching; Postgres has no Indonesian text-search configuration, and catalogue names are too short for stemming to help); Tailwind with shadcn/ui; Screening via `after()` calling `claude-haiku-4-5-20251001`, plus a cron retry; the xlsx import uses SheetJS. See [ADR 0005](./adr/0005-nextjs-postgres-on-vercel.md).
 16. **Name**: CampusMatch. The GitHub repo is `AndikaAryaBagusM/CampusMatch` (renamed from `kampusCheck`).
 
 ## Info Biaya & Masuk and Profil Minat (decided 2026-10-06)
