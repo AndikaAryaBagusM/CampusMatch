@@ -21,6 +21,7 @@
     "riasec:load": "tsx scripts/load-riasec.ts",
     "kampus:load-domain": "tsx scripts/load-domain.ts",
     "kampus:load-qs": "tsx scripts/load-qs.ts",
+    "cache:segarkan": "tsx scripts/segarkan-cache.ts",
     "test": "vitest run"
   },
   "engines": {

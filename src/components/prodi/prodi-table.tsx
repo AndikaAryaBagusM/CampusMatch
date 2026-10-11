@@ -47,7 +47,7 @@ export function ProdiTable({ rows }: { rows: ProdiBaris[] }) {
                 key={p.id}
                 className="grid gap-1 px-5 py-3 text-sm md:grid-cols-[minmax(0,2fr)_minmax(0,1.5fr)_8rem] md:items-center md:gap-4"
               >
-                <Link href={`/prodi/${p.slug}`} className="font-semibold text-foreground decoration-jade decoration-2 underline-offset-4 hover:underline">
+                <Link href={`/prodi/${p.slug}`} prefetch={false} className="font-semibold text-foreground decoration-jade decoration-2 underline-offset-4 hover:underline">
                   {p.jenjang} {p.nama}
                 </Link>
                 <span className="text-muted-foreground md:text-foreground/90">

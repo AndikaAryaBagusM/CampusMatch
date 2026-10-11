@@ -26,9 +26,10 @@ import { formatAngka, formatProvinsi } from "@/lib/format";
 import { countUlasanProdi, getInfoKatalog, getProdi, getRingkasanUlasan, listUlasanTerbit } from "@/lib/katalog";
 import { getInfoQs } from "@/lib/peringkat-qs/kueri";
 
-// Render on first visit, cache for a day; Ulasan changes revalidate it
-// (src/lib/ulasan/revalidasi.ts). No session is read here, so it stays static.
-export const revalidate = 86400;
+// Render on first visit, cache for 7 days. Changes refresh it on demand: Ulasan
+// (src/lib/ulasan/revalidasi.ts), Moderator actions (src/lib/halaman-cache.ts)
+// and imports (`npm run cache:segarkan`). No session is read, so it stays static.
+export const revalidate = 604800;
 // Newest first. Paging would make the page dynamic, so it waits until a Prodi
 // has this many Ulasan.
 const ULASAN_TAMPIL = 50;

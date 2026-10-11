@@ -18,9 +18,10 @@ import { DaftarUlasan } from "@/components/ulasan/ulasan-card";
 import { formatAngka, formatProvinsi, formatTanggal } from "@/lib/format";
 import { loadKampus } from "./data";
 
-// Render on first visit, cache for a day; Ulasan changes revalidate it
-// (src/lib/ulasan/revalidasi.ts).
-export const revalidate = 86400;
+// Render on first visit, cache for 7 days. Changes refresh it on demand: Ulasan
+// (src/lib/ulasan/revalidasi.ts), Moderator actions (src/lib/halaman-cache.ts)
+// and imports (`npm run cache:segarkan`).
+export const revalidate = 604800;
 const ULASAN_TAMPIL = 3;
 
 export function generateStaticParams() {
@@ -132,6 +133,7 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
                 <DaftarUlasan ulasan={ulasan} tampilkanProdi />
                 <Link
                   href={`/kampus/${kampus.slug}/ulasan`}
+                  prefetch={false}
                   className="mt-5 inline-flex text-sm font-semibold text-primary hover:underline"
                 >
                   Lihat semua {formatAngka(jumlahUlasan)} ulasan

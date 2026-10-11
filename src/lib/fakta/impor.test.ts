@@ -103,6 +103,19 @@ describe("import", () => {
     expect(await jumlahBiaya(pertama.sumberId)).toBe(1);
   });
 
+  test("rows with the same amount keep a fixed order, so the cached page doesn't change", async () => {
+    const { kampus, prodi } = await buatKatalog(t.db);
+    const { sumberId } = await imporSumber(
+      t.db,
+      paket(kode(), meta(kampus.npsn), {
+        biaya: [ukt("Informatika", "500.000", { label: "Kelompok 1 (SNBP/SNBT)" }), ukt("Informatika", "500.000", { label: "Kelompok 1 (Mandiri)" })],
+      }),
+      pemasuk,
+    );
+    await tandaiDiperiksa(t.db, { sumberId, moderatorId: pemeriksa });
+    expect((await listBiayaProdi(t.db, prodi[0].id))?.daftar.map((b) => b.label)).toEqual(["Kelompok 1 (Mandiri)", "Kelompok 1 (SNBP/SNBT)"]);
+  });
+
   test("an SPP with a fee per SKS loads, and the fixed SPP is listed first", async () => {
     const { kampus, prodi } = await buatKatalog(t.db);
     const { sumberId } = await imporSumber(

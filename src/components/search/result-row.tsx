@@ -63,7 +63,7 @@ export function KampusResult({ k, edisiQs }: { k: SearchResults["kampus"][number
       <div className="flex min-w-0 items-center gap-3">
         <KampusLogo kampus={k} size="sm" />
         <div className="min-w-0">
-          <Link href={`/kampus/${k.slug}`} className={tautan}>
+          <Link href={`/kampus/${k.slug}`} prefetch={false} className={tautan}>
             {k.nama}
           </Link>
           <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
@@ -86,7 +86,7 @@ export function ProdiResult({ p, tulis, edisiQs }: { p: SearchResults["prodi"][n
       <div className="flex min-w-0 items-center gap-3">
         <KampusLogo kampus={{ npsn: p.kampusNpsn, nama: p.kampusNama }} size="sm" />
         <div className="min-w-0">
-          <Link href={tulis ? `/prodi/${p.slug}/tulis` : `/prodi/${p.slug}`} className={`flex flex-wrap items-center gap-x-2 ${tautan}`}>
+          <Link href={tulis ? `/prodi/${p.slug}/tulis` : `/prodi/${p.slug}`} prefetch={false} className={`flex flex-wrap items-center gap-x-2 ${tautan}`}>
             <Plat warna="var(--foreground)" ukuran="sm">
               {p.jenjang}
             </Plat>
@@ -97,7 +97,7 @@ export function ProdiResult({ p, tulis, edisiQs }: { p: SearchResults["prodi"][n
       </div>
       <SelJadwal>
         <Sel label="Kampus">
-          <Link href={`/kampus/${p.kampusSlug}`} className="underline-offset-4 hover:underline">
+          <Link href={`/kampus/${p.kampusSlug}`} prefetch={false} className="underline-offset-4 hover:underline">
             {p.kampusNama}
           </Link>
         </Sel>

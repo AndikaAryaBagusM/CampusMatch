@@ -1,8 +1,8 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { withDb } from "@/db";
+import { halamanKodeProdi, segarkanHalaman } from "@/lib/halaman-cache";
 import { requireModerator } from "@/lib/moderator";
 import { kodeSah, PemetaanDitolak, setOverrideProdi, ubahJurusanKode } from "@/lib/pemetaan-jurusan";
 
@@ -19,14 +19,13 @@ function angka(v: unknown): number | null {
 const hrefKode = (kode: string, pesan?: string, ok = false) =>
   `/moderasi/jurusan/kode/${kode}${pesan ? `?pesan=${encodeURIComponent(pesan)}${ok ? "&ok=1" : ""}` : ""}`;
 
-// A Prodi's Jurusan shows on its own page, its Kampus pages and the home
-// page's Bidang highlights; Jurusan, search, Kota and Tes Minat pages render
-// per request already.
-function segarkan() {
-  revalidatePath("/prodi/[slug]", "page");
-  revalidatePath("/kampus/[slug]", "page");
-  revalidatePath("/kampus/[slug]/prodi", "page");
-  revalidatePath("/", "page");
+// A Prodi's Jurusan shows on its own page and in the home page's Bidang
+// highlights; Kampus pages don't show it, and the Kampus Prodi list, Jurusan,
+// search, Kota and Tes Minat pages render per request. Both actions only touch
+// Prodi of this Kode, so only those pages are refreshed.
+async function segarkan(kode: string) {
+  const paths = await withDb((db) => halamanKodeProdi(db, kode));
+  segarkanHalaman(paths, ["/prodi/[slug]", "/"]);
 }
 
 async function jalankan(kode: string, ubah: (moderatorId: string) => Promise<string>) {
@@ -39,7 +38,7 @@ async function jalankan(kode: string, ubah: (moderatorId: string) => Promise<str
     if (!(e instanceof PemetaanDitolak)) throw e;
     redirect(hrefKode(kode, e.message));
   }
-  segarkan();
+  await segarkan(kode);
   redirect(hrefKode(kode, pesan, true));
 }
 
