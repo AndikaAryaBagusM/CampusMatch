@@ -1,0 +1,213 @@
+tahun_akademik,jenis,prodi,jenjang,prodi_slug,jalur,label,jumlah,batas,periode
+2026/2027,uang_pangkal,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi,,"UP3",11000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi,,"SDP2 (Jalur Umum)",15000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi,,"SDP2 (Jalur USM)",35000000,,sekali
+2026/2027,spp,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi,,"BPP",11000000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Elektro",S1,universitas-telkom-s1-teknik-elektro,,"UP3",10000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Elektro",S1,universitas-telkom-s1-teknik-elektro,,"SDP2 (Jalur Umum)",11000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Elektro",S1,universitas-telkom-s1-teknik-elektro,,"SDP2 (Jalur USM)",22500000,,sekali
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-telkom-s1-teknik-elektro,,"BPP",12000000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Komputer",S1,universitas-telkom-s1-teknik-komputer,,"UP3",10000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Komputer",S1,universitas-telkom-s1-teknik-komputer,,"SDP2 (Jalur Umum)",11000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Komputer",S1,universitas-telkom-s1-teknik-komputer,,"SDP2 (Jalur USM)",22500000,,sekali
+2026/2027,spp,"S1 Teknik Komputer",S1,universitas-telkom-s1-teknik-komputer,,"BPP",12000000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Biomedis",S1,universitas-telkom-s1-teknik-biomedis,,"UP3",10000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Biomedis",S1,universitas-telkom-s1-teknik-biomedis,,"SDP2 (Jalur Umum)",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Biomedis",S1,universitas-telkom-s1-teknik-biomedis,,"SDP2 (Jalur USM)",20000000,,sekali
+2026/2027,spp,"S1 Teknik Biomedis",S1,universitas-telkom-s1-teknik-biomedis,,"BPP",9000000,,per_semester
+2026/2027,uang_pangkal,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi,,"UP3",10000000,,sekali
+2026/2027,uang_pangkal,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi,,"SDP2 (Jalur Umum)",11000000,,sekali
+2026/2027,uang_pangkal,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi,,"SDP2 (Jalur USM)",22500000,,sekali
+2026/2027,spp,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi,,"BPP",13000000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Industri",S1,universitas-telkom-s1-teknik-industri,,"UP3",11000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Industri",S1,universitas-telkom-s1-teknik-industri,,"SDP2 (Jalur Umum)",15000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Industri",S1,universitas-telkom-s1-teknik-industri,,"SDP2 (Jalur USM)",35000000,,sekali
+2026/2027,spp,"S1 Teknik Industri",S1,universitas-telkom-s1-teknik-industri,,"BPP",13000000,,per_semester
+2026/2027,uang_pangkal,"S1 Digital Supply Chain",S1,universitas-telkom-s1-teknik-logistik,,"UP3",10000000,,sekali
+2026/2027,uang_pangkal,"S1 Digital Supply Chain",S1,universitas-telkom-s1-teknik-logistik,,"SDP2 (Jalur Umum)",11000000,,sekali
+2026/2027,uang_pangkal,"S1 Digital Supply Chain",S1,universitas-telkom-s1-teknik-logistik,,"SDP2 (Jalur USM)",22500000,,sekali
+2026/2027,spp,"S1 Digital Supply Chain",S1,universitas-telkom-s1-teknik-logistik,,"BPP",9000000,,per_semester
+2026/2027,uang_pangkal,"S1 Manajemen Rekayasa Industri",S1,universitas-telkom-s1-manajemen-rekayasa,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Manajemen Rekayasa Industri",S1,universitas-telkom-s1-manajemen-rekayasa,,"SDP2 (Jalur Umum)",10000000,,sekali
+2026/2027,uang_pangkal,"S1 Manajemen Rekayasa Industri",S1,universitas-telkom-s1-manajemen-rekayasa,,"SDP2 (Jalur USM)",20000000,,sekali
+2026/2027,spp,"S1 Manajemen Rekayasa Industri",S1,universitas-telkom-s1-manajemen-rekayasa,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"S1 Informatika",S1,universitas-telkom-s1-informatika,,"UP3",11000000,,sekali
+2026/2027,uang_pangkal,"S1 Informatika",S1,universitas-telkom-s1-informatika,,"SDP2 (Jalur Umum)",15000000,,sekali
+2026/2027,uang_pangkal,"S1 Informatika",S1,universitas-telkom-s1-informatika,,"SDP2 (Jalur USM)",35000000,,sekali
+2026/2027,spp,"S1 Informatika",S1,universitas-telkom-s1-informatika,,"BPP",13500000,,per_semester
+2026/2027,spp,"S1 Informatika PJJ (Online Learning)",S1,universitas-telkom-s1-pjj-informatika,,"BPP per SKS",560000,,per_sks
+2026/2027,uang_pangkal,"S1 Rekayasa Perangkat Lunak",S1,universitas-telkom-s1-rekayasa-perangkat-lunak,,"UP3",10000000,,sekali
+2026/2027,uang_pangkal,"S1 Rekayasa Perangkat Lunak",S1,universitas-telkom-s1-rekayasa-perangkat-lunak,,"SDP2 (Jalur Umum)",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Rekayasa Perangkat Lunak",S1,universitas-telkom-s1-rekayasa-perangkat-lunak,,"SDP2 (Jalur USM)",20000000,,sekali
+2026/2027,spp,"S1 Rekayasa Perangkat Lunak",S1,universitas-telkom-s1-rekayasa-perangkat-lunak,,"BPP",12000000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknologi Informasi (Cyber Security & Digital Innovation)",S1,universitas-telkom-s1-teknologi-informasi,,"UP3",10000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknologi Informasi (Cyber Security & Digital Innovation)",S1,universitas-telkom-s1-teknologi-informasi,,"SDP2 (Jalur Umum)",11000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknologi Informasi (Cyber Security & Digital Innovation)",S1,universitas-telkom-s1-teknologi-informasi,,"SDP2 (Jalur USM)",22500000,,sekali
+2026/2027,spp,"S1 Teknologi Informasi (Cyber Security & Digital Innovation)",S1,universitas-telkom-s1-teknologi-informasi,,"BPP",12000000,,per_semester
+2026/2027,uang_pangkal,"S1 Sains Data",S1,universitas-telkom-s1-sains-data,,"UP3",10000000,,sekali
+2026/2027,uang_pangkal,"S1 Sains Data",S1,universitas-telkom-s1-sains-data,,"SDP2 (Jalur Umum)",11000000,,sekali
+2026/2027,uang_pangkal,"S1 Sains Data",S1,universitas-telkom-s1-sains-data,,"SDP2 (Jalur USM)",22500000,,sekali
+2026/2027,spp,"S1 Sains Data",S1,universitas-telkom-s1-sains-data,,"BPP",11000000,,per_semester
+2026/2027,uang_pangkal,"S1 Manajemen Bisnis Telekomunikasi & Informatika (MBTI)",S1,universitas-telkom-s1-manajemen,,"UP3",11000000,,sekali
+2026/2027,uang_pangkal,"S1 Manajemen Bisnis Telekomunikasi & Informatika (MBTI)",S1,universitas-telkom-s1-manajemen,,"SDP2 (Jalur Umum)",15000000,,sekali
+2026/2027,uang_pangkal,"S1 Manajemen Bisnis Telekomunikasi & Informatika (MBTI)",S1,universitas-telkom-s1-manajemen,,"SDP2 (Jalur USM)",25000000,,sekali
+2026/2027,spp,"S1 Manajemen Bisnis Telekomunikasi & Informatika (MBTI)",S1,universitas-telkom-s1-manajemen,,"BPP",13500000,,per_semester
+2026/2027,uang_pangkal,"S1 Akuntansi",S1,universitas-telkom-s1-akuntansi,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Akuntansi",S1,universitas-telkom-s1-akuntansi,,"SDP2 (Jalur Umum)",12000000,,sekali
+2026/2027,uang_pangkal,"S1 Akuntansi",S1,universitas-telkom-s1-akuntansi,,"SDP2 (Jalur USM)",20000000,,sekali
+2026/2027,spp,"S1 Akuntansi",S1,universitas-telkom-s1-akuntansi,,"BPP",13000000,,per_semester
+2026/2027,uang_pangkal,"S1 Administrasi Bisnis",S1,universitas-telkom-s1-administrasi-bisnis,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Administrasi Bisnis",S1,universitas-telkom-s1-administrasi-bisnis,,"SDP2 (Jalur Umum)",12000000,,sekali
+2026/2027,uang_pangkal,"S1 Administrasi Bisnis",S1,universitas-telkom-s1-administrasi-bisnis,,"SDP2 (Jalur USM)",20000000,,sekali
+2026/2027,spp,"S1 Administrasi Bisnis",S1,universitas-telkom-s1-administrasi-bisnis,,"BPP",13500000,,per_semester
+2026/2027,uang_pangkal,"S1 Leisure Management",S1,universitas-telkom-s1-manajemen-bisnis-rekreasi,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Leisure Management",S1,universitas-telkom-s1-manajemen-bisnis-rekreasi,,"SDP2 (Jalur Umum)",12000000,,sekali
+2026/2027,uang_pangkal,"S1 Leisure Management",S1,universitas-telkom-s1-manajemen-bisnis-rekreasi,,"SDP2 (Jalur USM)",20000000,,sekali
+2026/2027,spp,"S1 Leisure Management",S1,universitas-telkom-s1-manajemen-bisnis-rekreasi,,"BPP",10000000,,per_semester
+2026/2027,uang_pangkal,"S1 Bisnis Digital (Digital Business)",S1,universitas-telkom-s1-bisnis-digital,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Bisnis Digital (Digital Business)",S1,universitas-telkom-s1-bisnis-digital,,"SDP2 (Jalur Umum)",12000000,,sekali
+2026/2027,uang_pangkal,"S1 Bisnis Digital (Digital Business)",S1,universitas-telkom-s1-bisnis-digital,,"SDP2 (Jalur USM)",20000000,,sekali
+2026/2027,spp,"S1 Bisnis Digital (Digital Business)",S1,universitas-telkom-s1-bisnis-digital,,"BPP",8000000,,per_semester
+2026/2027,uang_pangkal,"S1 Ilmu Komunikasi",S1,universitas-telkom-s1-ilmu-komunikasi,,"UP3",9500000,,sekali
+2026/2027,uang_pangkal,"S1 Ilmu Komunikasi",S1,universitas-telkom-s1-ilmu-komunikasi,,"SDP2 (Jalur Umum)",13000000,,sekali
+2026/2027,uang_pangkal,"S1 Ilmu Komunikasi",S1,universitas-telkom-s1-ilmu-komunikasi,,"SDP2 (Jalur USM)",21000000,,sekali
+2026/2027,spp,"S1 Ilmu Komunikasi",S1,universitas-telkom-s1-ilmu-komunikasi,,"BPP",14500000,,per_semester
+2026/2027,uang_pangkal,"S1 Digital Public Relation",S1,universitas-telkom-s1-hubungan-masyarakat,,"UP3",9500000,,sekali
+2026/2027,uang_pangkal,"S1 Digital Public Relation",S1,universitas-telkom-s1-hubungan-masyarakat,,"SDP2 (Jalur Umum)",13000000,,sekali
+2026/2027,uang_pangkal,"S1 Digital Public Relation",S1,universitas-telkom-s1-hubungan-masyarakat,,"SDP2 (Jalur USM)",21000000,,sekali
+2026/2027,spp,"S1 Digital Public Relation",S1,universitas-telkom-s1-hubungan-masyarakat,,"BPP",12500000,,per_semester
+2026/2027,uang_pangkal,"S1 Digital Content Broadcasting",S1,universitas-telkom-s1-penyiaran-konten-digital,,"UP3",9500000,,sekali
+2026/2027,uang_pangkal,"S1 Digital Content Broadcasting",S1,universitas-telkom-s1-penyiaran-konten-digital,,"SDP2 (Jalur Umum)",13000000,,sekali
+2026/2027,uang_pangkal,"S1 Digital Content Broadcasting",S1,universitas-telkom-s1-penyiaran-konten-digital,,"SDP2 (Jalur USM)",21000000,,sekali
+2026/2027,spp,"S1 Digital Content Broadcasting",S1,universitas-telkom-s1-penyiaran-konten-digital,,"BPP",11000000,,per_semester
+2026/2027,uang_pangkal,"S1 Psikologi (Digital Psychology)",S1,universitas-telkom-s1-psikologi,,"UP3",9500000,,sekali
+2026/2027,uang_pangkal,"S1 Psikologi (Digital Psychology)",S1,universitas-telkom-s1-psikologi,,"SDP2 (Jalur Umum)",13000000,,sekali
+2026/2027,uang_pangkal,"S1 Psikologi (Digital Psychology)",S1,universitas-telkom-s1-psikologi,,"SDP2 (Jalur USM)",21000000,,sekali
+2026/2027,spp,"S1 Psikologi (Digital Psychology)",S1,universitas-telkom-s1-psikologi,,"BPP",10000000,,per_semester
+2026/2027,uang_pangkal,"S1 Desain Komunikasi Visual",S1,universitas-telkom-s1-desain-komunikasi-visual,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Desain Komunikasi Visual",S1,universitas-telkom-s1-desain-komunikasi-visual,,"SDP2 (Jalur Umum)",12000000,,sekali
+2026/2027,uang_pangkal,"S1 Desain Komunikasi Visual",S1,universitas-telkom-s1-desain-komunikasi-visual,,"SDP2 (Jalur USM)",20000000,,sekali
+2026/2027,spp,"S1 Desain Komunikasi Visual",S1,universitas-telkom-s1-desain-komunikasi-visual,,"BPP",13500000,,per_semester
+2026/2027,uang_pangkal,"S1 Desain Interior",S1,universitas-telkom-s1-desain-interior,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Desain Interior",S1,universitas-telkom-s1-desain-interior,,"SDP2 (Jalur Umum)",5000000,,sekali
+2026/2027,uang_pangkal,"S1 Desain Interior",S1,universitas-telkom-s1-desain-interior,,"SDP2 (Jalur USM)",15000000,,sekali
+2026/2027,spp,"S1 Desain Interior",S1,universitas-telkom-s1-desain-interior,,"BPP",12000000,,per_semester
+2026/2027,uang_pangkal,"S1 Desain Produk & Inovasi",S1,universitas-telkom-s1-desain-produk,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Desain Produk & Inovasi",S1,universitas-telkom-s1-desain-produk,,"SDP2 (Jalur Umum)",5000000,,sekali
+2026/2027,uang_pangkal,"S1 Desain Produk & Inovasi",S1,universitas-telkom-s1-desain-produk,,"SDP2 (Jalur USM)",15000000,,sekali
+2026/2027,spp,"S1 Desain Produk & Inovasi",S1,universitas-telkom-s1-desain-produk,,"BPP",11000000,,per_semester
+2026/2027,uang_pangkal,"S1 Kriya (Fashion & Textile Design)",S1,universitas-telkom-s1-kriya,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Kriya (Fashion & Textile Design)",S1,universitas-telkom-s1-kriya,,"SDP2 (Jalur Umum)",5000000,,sekali
+2026/2027,uang_pangkal,"S1 Kriya (Fashion & Textile Design)",S1,universitas-telkom-s1-kriya,,"SDP2 (Jalur USM)",15000000,,sekali
+2026/2027,spp,"S1 Kriya (Fashion & Textile Design)",S1,universitas-telkom-s1-kriya,,"BPP",11000000,,per_semester
+2026/2027,uang_pangkal,"S1 Film dan Animasi",S1,universitas-telkom-s1-film,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Film dan Animasi",S1,universitas-telkom-s1-film,,"SDP2 (Jalur Umum)",5000000,,sekali
+2026/2027,uang_pangkal,"S1 Film dan Animasi",S1,universitas-telkom-s1-film,,"SDP2 (Jalur USM)",15000000,,sekali
+2026/2027,spp,"S1 Film dan Animasi",S1,universitas-telkom-s1-film,,"BPP",12000000,,per_semester
+2026/2027,uang_pangkal,"D3 Teknologi Telekomunikasi",D3,universitas-telkom-d3-teknologi-telekomunikasi,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"D3 Teknologi Telekomunikasi",D3,universitas-telkom-d3-teknologi-telekomunikasi,,"SDP2 (Jalur Umum)",10000000,,sekali
+2026/2027,uang_pangkal,"D3 Teknologi Telekomunikasi",D3,universitas-telkom-d3-teknologi-telekomunikasi,,"SDP2 (Jalur USM)",16000000,,sekali
+2026/2027,spp,"D3 Teknologi Telekomunikasi",D3,universitas-telkom-d3-teknologi-telekomunikasi,,"BPP",8000000,,per_semester
+2026/2027,uang_pangkal,"D3 Sistem Informasi",D3,universitas-telkom-d3-sistem-informasi,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"D3 Sistem Informasi",D3,universitas-telkom-d3-sistem-informasi,,"SDP2 (Jalur Umum)",5000000,,sekali
+2026/2027,uang_pangkal,"D3 Sistem Informasi",D3,universitas-telkom-d3-sistem-informasi,,"SDP2 (Jalur USM)",15000000,,sekali
+2026/2027,spp,"D3 Sistem Informasi",D3,universitas-telkom-d3-sistem-informasi,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"D3 Teknik Komputer",D3,universitas-telkom-d3-teknologi-komputer,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"D3 Teknik Komputer",D3,universitas-telkom-d3-teknologi-komputer,,"SDP2 (Jalur Umum)",5000000,,sekali
+2026/2027,uang_pangkal,"D3 Teknik Komputer",D3,universitas-telkom-d3-teknologi-komputer,,"SDP2 (Jalur USM)",15000000,,sekali
+2026/2027,spp,"D3 Teknik Komputer",D3,universitas-telkom-d3-teknologi-komputer,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"D3 Digital Accounting (Sistem Informasi Akuntansi)",D3,universitas-telkom-d3-sistem-informasi-akuntansi,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"D3 Digital Accounting (Sistem Informasi Akuntansi)",D3,universitas-telkom-d3-sistem-informasi-akuntansi,,"SDP2 (Jalur Umum)",5000000,,sekali
+2026/2027,uang_pangkal,"D3 Digital Accounting (Sistem Informasi Akuntansi)",D3,universitas-telkom-d3-sistem-informasi-akuntansi,,"SDP2 (Jalur USM)",15000000,,sekali
+2026/2027,spp,"D3 Digital Accounting (Sistem Informasi Akuntansi)",D3,universitas-telkom-d3-sistem-informasi-akuntansi,,"BPP",8000000,,per_semester
+2026/2027,uang_pangkal,"S1 Terapan Sistem Informasi Kota Cerdas",D4,universitas-telkom-d4-sistem-informasi-kota-cerdas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Terapan Sistem Informasi Kota Cerdas",D4,universitas-telkom-d4-sistem-informasi-kota-cerdas,,"SDP2 (Jalur Umum)",5000000,,sekali
+2026/2027,uang_pangkal,"S1 Terapan Sistem Informasi Kota Cerdas",D4,universitas-telkom-d4-sistem-informasi-kota-cerdas,,"SDP2 (Jalur USM)",15000000,,sekali
+2026/2027,spp,"S1 Terapan Sistem Informasi Kota Cerdas",D4,universitas-telkom-d4-sistem-informasi-kota-cerdas,,"BPP",9000000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi-kampus-jakarta,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi-kampus-jakarta,,"SDP2",8000000,,sekali
+2026/2027,spp,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi-kampus-jakarta,,"BPP",9500000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknologi Informasi",S1,universitas-telkom-s1-teknologi-informasi-kampus-jakarta,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknologi Informasi",S1,universitas-telkom-s1-teknologi-informasi-kampus-jakarta,,"SDP2",8000000,,sekali
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-telkom-s1-teknologi-informasi-kampus-jakarta,,"BPP",9500000,,per_semester
+2026/2027,uang_pangkal,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi-kampus-jakarta,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi-kampus-jakarta,,"SDP2",8000000,,sekali
+2026/2027,spp,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi-kampus-jakarta,,"BPP",9500000,,per_semester
+2026/2027,uang_pangkal,"S1 Desain Komunikasi Visual",S1,universitas-telkom-s1-desain-komunikasi-visual-kampus-jakarta,,"UP3",9000000,,sekali
+2026/2027,uang_pangkal,"S1 Desain Komunikasi Visual",S1,universitas-telkom-s1-desain-komunikasi-visual-kampus-jakarta,,"SDP2",8000000,,sekali
+2026/2027,spp,"S1 Desain Komunikasi Visual",S1,universitas-telkom-s1-desain-komunikasi-visual-kampus-jakarta,,"BPP",9500000,,per_semester
+2026/2027,uang_pangkal,"S1 Informatika",S1,universitas-telkom-s1-informatika-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Informatika",S1,universitas-telkom-s1-informatika-kampus-kota-surabaya,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Informatika",S1,universitas-telkom-s1-informatika-kampus-kota-surabaya,,"BPP",9500000,,per_semester
+2026/2027,uang_pangkal,"S1 Digital Business",S1,universitas-telkom-s1-bisnis-digital-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Digital Business",S1,universitas-telkom-s1-bisnis-digital-kampus-kota-surabaya,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Digital Business",S1,universitas-telkom-s1-bisnis-digital-kampus-kota-surabaya,,"BPP",9500000,,per_semester
+2026/2027,uang_pangkal,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi-kampus-kota-surabaya,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi-kampus-kota-surabaya,,"BPP",9000000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Industri",S1,universitas-telkom-s1-teknik-industri-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Industri",S1,universitas-telkom-s1-teknik-industri-kampus-kota-surabaya,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Teknik Industri",S1,universitas-telkom-s1-teknik-industri-kampus-kota-surabaya,,"BPP",9000000,,per_semester
+2026/2027,uang_pangkal,"S1 Sains Data",S1,universitas-telkom-s1-sains-data-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Sains Data",S1,universitas-telkom-s1-sains-data-kampus-kota-surabaya,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Sains Data",S1,universitas-telkom-s1-sains-data-kampus-kota-surabaya,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknologi Informasi",S1,universitas-telkom-s1-teknologi-informasi-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknologi Informasi",S1,universitas-telkom-s1-teknologi-informasi-kampus-kota-surabaya,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Teknologi Informasi",S1,universitas-telkom-s1-teknologi-informasi-kampus-kota-surabaya,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"S1 Rekayasa Perangkat Lunak",S1,universitas-telkom-s1-rekayasa-perangkat-lunak-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Rekayasa Perangkat Lunak",S1,universitas-telkom-s1-rekayasa-perangkat-lunak-kampus-kota-surabaya,,"SDP2",12500000,,sekali
+2026/2027,spp,"S1 Rekayasa Perangkat Lunak",S1,universitas-telkom-s1-rekayasa-perangkat-lunak-kampus-kota-surabaya,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi-kampus-kota-surabaya,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi-kampus-kota-surabaya,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Elektro",S1,universitas-telkom-s1-teknik-elektro-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Elektro",S1,universitas-telkom-s1-teknik-elektro-kampus-kota-surabaya,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-telkom-s1-teknik-elektro-kampus-kota-surabaya,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Komputer",S1,universitas-telkom-s1-teknik-komputer-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Komputer",S1,universitas-telkom-s1-teknik-komputer-kampus-kota-surabaya,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Teknik Komputer",S1,universitas-telkom-s1-teknik-komputer-kampus-kota-surabaya,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"S1 Digital Supply Chain",S1,universitas-telkom-s1-teknik-logistik-kampus-kota-surabaya,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Digital Supply Chain",S1,universitas-telkom-s1-teknik-logistik-kampus-kota-surabaya,,"SDP2",12500000,,sekali
+2026/2027,spp,"S1 Digital Supply Chain",S1,universitas-telkom-s1-teknik-logistik-kampus-kota-surabaya,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"D3 Teknologi Telekomunikasi",D3,universitas-telkom-d3-teknik-telekomunikasi-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"D3 Teknologi Telekomunikasi",D3,universitas-telkom-d3-teknik-telekomunikasi-kampus-kabupaten-banyumas,,"SDP2",15000000,,sekali
+2026/2027,spp,"D3 Teknologi Telekomunikasi",D3,universitas-telkom-d3-teknik-telekomunikasi-kampus-kabupaten-banyumas,,"BPP",5500000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi-kampus-kabupaten-banyumas,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Teknik Telekomunikasi",S1,universitas-telkom-s1-teknik-telekomunikasi-kampus-kabupaten-banyumas,,"BPP",7000000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Elektro",S1,universitas-telkom-s1-teknik-elektro-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Elektro",S1,universitas-telkom-s1-teknik-elektro-kampus-kabupaten-banyumas,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Teknik Elektro",S1,universitas-telkom-s1-teknik-elektro-kampus-kabupaten-banyumas,,"BPP",7500000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Biomedis",S1,universitas-telkom-s1-teknik-biomedis-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Biomedis",S1,universitas-telkom-s1-teknik-biomedis-kampus-kabupaten-banyumas,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Teknik Biomedis",S1,universitas-telkom-s1-teknik-biomedis-kampus-kabupaten-banyumas,,"BPP",7500000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknologi Pangan",S1,universitas-telkom-s1-teknologi-pangan-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknologi Pangan",S1,universitas-telkom-s1-teknologi-pangan-kampus-kabupaten-banyumas,,"SDP2",13500000,,sekali
+2026/2027,spp,"S1 Teknologi Pangan",S1,universitas-telkom-s1-teknologi-pangan-kampus-kabupaten-banyumas,,"BPP",8000000,,per_semester
+2026/2027,uang_pangkal,"S1 Teknik Industri",S1,universitas-telkom-s1-teknik-industri-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Teknik Industri",S1,universitas-telkom-s1-teknik-industri-kampus-kabupaten-banyumas,,"SDP2",15000000,,sekali
+2026/2027,spp,"S1 Teknik Industri",S1,universitas-telkom-s1-teknik-industri-kampus-kabupaten-banyumas,,"BPP",8500000,,per_semester
+2026/2027,uang_pangkal,"S1 Digital Supply Chain",S1,universitas-telkom-s1-teknik-logistik-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Digital Supply Chain",S1,universitas-telkom-s1-teknik-logistik-kampus-kabupaten-banyumas,,"SDP2",15000000,,sekali
+2026/2027,spp,"S1 Digital Supply Chain",S1,universitas-telkom-s1-teknik-logistik-kampus-kabupaten-banyumas,,"BPP",7000000,,per_semester
+2026/2027,uang_pangkal,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi-kampus-kabupaten-banyumas,,"SDP2",15000000,,sekali
+2026/2027,spp,"S1 Sistem Informasi",S1,universitas-telkom-s1-sistem-informasi-kampus-kabupaten-banyumas,,"BPP",7000000,,per_semester
+2026/2027,uang_pangkal,"S1 Informatika",S1,universitas-telkom-s1-teknik-informatika-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Informatika",S1,universitas-telkom-s1-teknik-informatika-kampus-kabupaten-banyumas,,"SDP2",12500000,,sekali
+2026/2027,spp,"S1 Informatika",S1,universitas-telkom-s1-teknik-informatika-kampus-kabupaten-banyumas,,"BPP",8000000,,per_semester
+2026/2027,uang_pangkal,"S1 Rekayasa Perangkat Lunak",S1,universitas-telkom-s1-rekayasa-perangkat-lunak-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Rekayasa Perangkat Lunak",S1,universitas-telkom-s1-rekayasa-perangkat-lunak-kampus-kabupaten-banyumas,,"SDP2",15000000,,sekali
+2026/2027,spp,"S1 Rekayasa Perangkat Lunak",S1,universitas-telkom-s1-rekayasa-perangkat-lunak-kampus-kabupaten-banyumas,,"BPP",7000000,,per_semester
+2026/2027,uang_pangkal,"S1 Sains Data",S1,universitas-telkom-s1-sains-data-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Sains Data",S1,universitas-telkom-s1-sains-data-kampus-kabupaten-banyumas,,"SDP2",15000000,,sekali
+2026/2027,spp,"S1 Sains Data",S1,universitas-telkom-s1-sains-data-kampus-kabupaten-banyumas,,"BPP",7000000,,per_semester
+2026/2027,uang_pangkal,"S1 Bisnis Digital",S1,universitas-telkom-s1-bisnis-digital-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Bisnis Digital",S1,universitas-telkom-s1-bisnis-digital-kampus-kabupaten-banyumas,,"SDP2",15000000,,sekali
+2026/2027,spp,"S1 Bisnis Digital",S1,universitas-telkom-s1-bisnis-digital-kampus-kabupaten-banyumas,,"BPP",8000000,,per_semester
+2026/2027,uang_pangkal,"S1 Desain Komunikasi Visual",S1,universitas-telkom-s1-desain-komunikasi-visual-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Desain Komunikasi Visual",S1,universitas-telkom-s1-desain-komunikasi-visual-kampus-kabupaten-banyumas,,"SDP2",15000000,,sekali
+2026/2027,spp,"S1 Desain Komunikasi Visual",S1,universitas-telkom-s1-desain-komunikasi-visual-kampus-kabupaten-banyumas,,"BPP",7000000,,per_semester
+2026/2027,uang_pangkal,"S1 Desain Produk & Inovasi",S1,universitas-telkom-s1-desain-produk-kampus-kabupaten-banyumas,,"UP3",8000000,,sekali
+2026/2027,uang_pangkal,"S1 Desain Produk & Inovasi",S1,universitas-telkom-s1-desain-produk-kampus-kabupaten-banyumas,,"SDP2",15000000,,sekali
+2026/2027,spp,"S1 Desain Produk & Inovasi",S1,universitas-telkom-s1-desain-produk-kampus-kabupaten-banyumas,,"BPP",7000000,,per_semester
