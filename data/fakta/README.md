@@ -18,6 +18,7 @@ Re-importing a folder replaces its Draf facts. Once its facts are Diperiksa, a f
 
 - Copy only what the Sumber states. **Never** copy a Kampus-wide amount into a row per Prodi: leave `prodi` empty instead.
 - Every row has a `tahun_akademik` such as `2026/2027`.
+- **Older amounts**: if the newest amounts a Kampus publishes are labelled for an earlier Tahun Akademik (e.g. a 2026 admission page still showing the 2025/2026 SK), record them with that `tahun_akademik`, as labelled. Never relabel them for the current year. If the Sumber states no Tahun Akademik at all, skip the amounts and say so in `catatan.md`.
 - Amounts are whole rupiah: `7500000`, `7.500.000` or `Rp 7.500.000`. No decimals, no "juta".
 - No cost-of-living estimates, daya tampung or keketatan.
 - **Skip** kelas internasional/IUP/KKI, paralel, ekstensi and karyawan; S2, S3 and profesi; and Prodi that aren't in the catalogue (new or renamed). List them in `catatan.md`.
