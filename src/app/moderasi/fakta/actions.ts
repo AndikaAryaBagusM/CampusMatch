@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { withDb, type Db } from "@/db";
+import { halamanSumberFakta, segarkanHalaman } from "@/lib/halaman-cache";
 import { kembalikanSumber, PemeriksaanDitolak, tandaiDiperiksa, tarikFakta, type PilihanTarik } from "@/lib/fakta/periksa";
 import { requireModerator } from "@/lib/moderator";
 
@@ -24,14 +25,21 @@ async function putuskan(formData: FormData, keputusan: (db: Db, moderatorId: str
   revalidatePath("/moderasi", "layout");
 }
 
+// A Sumber's facts show on its Kampus page and every Prodi page there, or for
+// a national Beasiswa on the Kampus pages of every Kampus taking part. Only
+// those pages are refreshed on their next visit.
+async function segarkanFakta(formData: FormData) {
+  const sumberId = Number(formData.get("sumberId"));
+  if (!Number.isSafeInteger(sumberId) || sumberId <= 0) return;
+  const paths = await withDb((db) => halamanSumberFakta(db, sumberId));
+  segarkanHalaman(paths, ["/kampus/[slug]", "/prodi/[slug]"]);
+}
+
 export async function periksa(formData: FormData) {
   await putuskan(formData, (db, moderatorId, sumberId) =>
     tandaiDiperiksa(db, { sumberId, moderatorId, alasanTanpaArsip: teks(formData, "alasanTanpaArsip") }),
   );
-  // Facts can appear on any Kampus page (a national Beasiswa) and on every
-  // Prodi page of the Kampus, so refresh them all on their next visit.
-  revalidatePath("/kampus/[slug]", "page");
-  revalidatePath("/prodi/[slug]", "page");
+  await segarkanFakta(formData);
   redirect("/moderasi/fakta");
 }
 
@@ -59,7 +67,6 @@ export async function tarik(formData: FormData) {
       throw new PemeriksaanDitolak("Pilih fakta yang mau ditarik.");
     return tarikFakta(db, { sumberId: id, moderatorId, alasan: teks(formData, "alasan"), pilihan });
   });
-  revalidatePath("/kampus/[slug]", "page");
-  revalidatePath("/prodi/[slug]", "page");
+  await segarkanFakta(formData);
   redirect(`/moderasi/fakta/${sumberId}?pesan=${encodeURIComponent("Fakta ditarik dan tidak tampil lagi.")}&ok=1`);
 }

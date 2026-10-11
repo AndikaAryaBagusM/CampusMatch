@@ -53,7 +53,11 @@ const URUTAN_JENIS = ["ukt", "spp", "uang_pangkal", "lain", "pendaftaran"] as co
 const urutBiaya = (a: BiayaTampil, b: BiayaTampil) =>
   URUTAN_JENIS.indexOf(a.jenis) - URUTAN_JENIS.indexOf(b.jenis) ||
   (a.jalurNama ?? "").localeCompare(b.jalurNama ?? "", "id") ||
-  a.jumlah - b.jumlah;
+  a.jumlah - b.jumlah ||
+  // Rows the Sumber lists with the same amount (e.g. one UKT group per jalur):
+  // a fixed order keeps the cached page identical between renders.
+  (a.label ?? "").localeCompare(b.label ?? "", "id") ||
+  a.id - b.id;
 
 // Biaya the Kampus publishes for one Prodi.
 export async function listBiayaProdi(db: Db, prodiId: number): Promise<Bagian<BiayaTampil>> {
@@ -112,7 +116,7 @@ export async function listJalurMasuk(db: Db, kampusId: number) {
         eq(biaya.status, "diperiksa"),
       ),
     )
-    .orderBy(asc(biaya.jumlah));
+    .orderBy(asc(biaya.jumlah), asc(biaya.id));
   const URUTAN = ["snbp", "snbt", "mandiri", "pts"];
   return {
     tahunAkademik: bagian.tahunAkademik,

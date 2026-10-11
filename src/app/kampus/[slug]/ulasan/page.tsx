@@ -9,8 +9,8 @@ import { DaftarUlasan } from "@/components/ulasan/ulasan-card";
 import { formatAngka } from "@/lib/format";
 import { loadKampus } from "../data";
 
-// Render on first visit, cache for a day; Ulasan changes revalidate it.
-export const revalidate = 86400;
+// Render on first visit, cache for 7 days; Ulasan changes revalidate it.
+export const revalidate = 604800;
 // Newest first. Paging would make the page dynamic, so it waits until a
 // Kampus has this many Ulasan.
 const ULASAN_TAMPIL = 50;

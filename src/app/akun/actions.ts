@@ -9,6 +9,7 @@ import { withDb } from "@/db";
 import { kampus } from "@/db/schema";
 import { hapusVerifikasi, konfirmasiVerifikasi, mintaVerifikasi, VerifikasiDitolak } from "@/lib/akun/verifikasi-kampus";
 import { EmailTidakTersedia, kirimEmail } from "@/lib/email";
+import { halamanKampus, segarkanHalaman } from "@/lib/halaman-cache";
 import { hapusInfoBiaya } from "@/lib/info-biaya/layanan";
 import { hashIpPemanggil } from "@/lib/ip";
 import { hapusProfilMinat } from "@/lib/riasec/profil";
@@ -59,11 +60,13 @@ export async function hapusProfilSaya(formData: FormData) {
 }
 
 // Every cached page that can show this Pengulas's Ulasan at the Kampus: the
-// badge appears or disappears there.
-function segarkanHalamanKampus(kampusSlug: string) {
-  revalidatePath("/prodi/[slug]", "page");
-  revalidatePath(`/kampus/${kampusSlug}`);
-  revalidatePath(`/kampus/${kampusSlug}/ulasan`);
+// badge appears or disappears there. Only this Kampus's pages, not every Prodi.
+async function segarkanHalamanKampus(kampusSlug: string) {
+  const paths = await withDb(async (db) => {
+    const [k] = await db.select({ id: kampus.id }).from(kampus).where(eq(kampus.slug, kampusSlug));
+    return k ? halamanKampus(db, [k.id], { prodi: true, ulasan: true }) : [];
+  });
+  segarkanHalaman(paths, ["/kampus/[slug]", "/kampus/[slug]/ulasan", "/prodi/[slug]"]);
 }
 
 async function asalSitus() {
@@ -110,7 +113,7 @@ export async function hapusVerifikasiKampus(formData: FormData) {
     const [k] = await db.select({ slug: kampus.slug }).from(kampus).where(eq(kampus.id, kampusId));
     return k?.slug ?? null;
   });
-  if (slug) segarkanHalamanKampus(slug);
+  if (slug) await segarkanHalamanKampus(slug);
   revalidatePath("/akun");
 }
 
@@ -125,6 +128,6 @@ export async function konfirmasiVerifikasiKampus(formData: FormData) {
     if (!(e instanceof VerifikasiDitolak)) throw e;
     redirect(`/akun/verifikasi-kampus?gagal=1`);
   }
-  segarkanHalamanKampus(k.slug);
+  await segarkanHalamanKampus(k.slug);
   redirect(`/akun/verifikasi-kampus?berhasil=${encodeURIComponent(k.nama)}`);
 }
