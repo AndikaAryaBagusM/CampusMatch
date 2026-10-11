@@ -16,6 +16,15 @@ Rules that follow from the Neon driver docs:
 
 **Exception for Auth.js (decided 2026-10-03).** The Auth.js Drizzle adapter is configured once, outside any request handler, so it cannot use a per-request `Pool`. Sessions and accounts need only single statements, so the adapter gets its own **`neon-http`** Drizzle instance (stateless HTTP, nothing to close). All other app queries keep using `withDb()`.
 
+## Hosting moved to Render (amended 2026-10-11)
+
+The site now runs on a **Render web service** (`render.yaml`, Singapore region, next to Neon) as a plain `next start` Node server. Vercel was the original host. What changed:
+- **Cron.** `vercel.json` crons are gone. A GitHub Actions schedule (`.github/workflows/cron-screening.yml`) calls `/api/cron/screening` daily with `CRON_SECRET`, retrying while a sleeping instance wakes.
+- **Auth.js.** `AUTH_TRUST_HOST=true` is set, since Auth.js trusts the request host by default only on Vercel. `AUTH_URL` must hold the public origin: behind `next start`, `request.url` reports `localhost:<port>`, and Auth.js builds OAuth callbacks and magic links from it.
+- **ISR cache.** Pages are cached on the instance's local disk. There is no ISR write quota, but the cache is empty after every deploy or restart, and a free instance that sleeps starts cold.
+- **Client IP.** Render, like Vercel, puts the real client IP first in `x-forwarded-for`, so `src/lib/ip.ts` is unchanged.
+- **Neon** stays where it is. If the Neon project was created through the Vercel Marketplace, move it to a Neon-owned organisation before removing the Vercel project or integration.
+
 ## Considered Options
 
 - Laravel + MySQL + Filament: the admin panel comes almost free and it runs on XAMPP, but the team chose Next.js on Vercel.

@@ -1,0 +1,60 @@
+# Render Blueprint for the CampusMatch site (ADR 0005, amended 2026-10-11).
+# Secrets are marked sync: false: Render asks for them when the Blueprint is
+# first applied and never reads them from this file.
+services:
+  - type: web
+    name: campusmatch
+    runtime: node
+    # Same region as the Neon database.
+    region: singapore
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    autoDeployTrigger: commit
+    # Lets after() Screening finish before an old instance stops.
+    maxShutdownDelaySeconds: 60
+    # Data, docs and scripts never change the built site.
+    buildFilter:
+      ignoredPaths:
+        - data/**
+        - docs/**
+        - design/**
+        - scripts/**
+        - test/**
+        - drizzle/**
+        - "**/*.md"
+        - "**/*.test.ts"
+        - .github/**
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # Auth.js only trusts the request host on Vercel unless this is set.
+      - key: AUTH_TRUST_HOST
+        value: "true"
+      # The public origin, e.g. https://campusmatch.onrender.com. Behind next
+      # start, request.url says localhost:<port>, so Auth.js would build OAuth
+      # callbacks and email links on localhost without it.
+      - key: AUTH_URL
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: AUTH_SECRET
+        sync: false
+      - key: AUTH_GOOGLE_ID
+        sync: false
+      - key: AUTH_GOOGLE_SECRET
+        sync: false
+      - key: AUTH_RESEND_KEY
+        sync: false
+      - key: AUTH_EMAIL_FROM
+        sync: false
+      - key: MODERATOR_EMAILS
+        sync: false
+      - key: KONTAK_EMAIL
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: CRON_SECRET
+        sync: false
+      - key: IP_HASH_SECRET
+        sync: false
