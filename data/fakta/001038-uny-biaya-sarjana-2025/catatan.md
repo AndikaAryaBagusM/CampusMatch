@@ -1,0 +1,21 @@
+# Catatan untuk pemeriksa
+
+- Halaman "S-1 Biaya Pendidikan" PMB UNY hanya berisi dua tautan: "Uang Kuliah Tunggal (UKT)" dan "Iuran Pengembangan Institusi (IPI)". Tabel ada di halaman tautannya, dan halaman indeks beserta dua halaman itu dicatat sebagai **satu Sumber** (seperti Brawijaya):
+  - UKT: https://pmb.uny.ac.id/program-sarjana/ukt-2024 (arsip: https://web.archive.org/web/20261011105737/https://pmb.uny.ac.id/program-sarjana/ukt-2024)
+  - IPI: https://pmb.uny.ac.id/sarjana-ipi (arsip: https://web.archive.org/web/20261011110312/https://pmb.uny.ac.id/sarjana-ipi)
+- **Tahun Akademik 2025/2026.** Judul tabel: "Tarif Biaya Pendidikan … Universitas Negeri Yogyakarta Tahun 2025/2026" (halaman UKT beralamat `ukt-2024`, tetapi isinya 2025/2026). Ini angka terbaru yang dipublikasikan UNY saat diakses (2026-10-11, menu situs: "UKT 2025/2026", "IPI 2025/2026"). Sesuai aturan README, nilai dicatat dengan `tahun_akademik` 2025/2026, tidak diubah menjadi 2026/2027.
+- UKT: kolom UKT I–VIII, label sama dengan judul kolom. IPI: kolom IPI I–XIII, `uang_pangkal` sekali. IPI I tertulis 0 dan dicatat Rp0. Sel "-" (Prodi tanpa IPI tingkat itu) tidak dicatat.
+- Halaman tidak menyebut jalur masuk mana yang dikenai IPI, jadi kolom `jalur` dikosongkan dan labelnya tidak diberi nama jalur.
+- Jalur Masuk tidak dicatat dari Sumber ini.
+- Tidak dicatat: S1 Pendidikan Agama Islam (tidak ada di katalog).
+- Nama yang berbeda dengan katalog (nama di halaman = nama katalog). "Pendidikan Luar Sekolah = Pendidikan Nonformal" **perlu dicek**: katalog tidak punya Pendidikan Luar Sekolah, dan Pendidikan Nonformal adalah nama nomenklatur barunya.
+- S1 Pend. Jasmani Sekolah Dasar = Pendidikan Jasmani Sekolah Dasar
+- S1 Pend. Kepelatihan Olahraga = Pendidikan Kepelatihan Olahraga
+- S1 Pend. Seni Kerajinan ( Pend. Kriya ) = Pendidikan Kriya
+- S1 Pend. Teknik Sipil & Perencanaan = Pendidikan Teknik Sipil dan Perencanaan
+- S1 Pendidikan IPA = Pendidikan Ilmu Pengetahuan Alam
+- S1 Pendidikan Luar Sekolah = Pendidikan Nonformal
+- S1 Pendidikan Teknik Boga = Pendidikan Tata Boga
+- S1 Pendidikan Teknik Busana = Pendidikan Tata Busana
+- S1 PJKR = Pendidikan Jasmani, Kesehatan Dan Rekreasi
+- Draf: 1382 baris biaya (67 Prodi).

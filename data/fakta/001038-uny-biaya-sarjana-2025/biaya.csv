@@ -1,0 +1,1383 @@
+tahun_akademik,jenis,prodi,jenjang,prodi_slug,jalur,label,jumlah,batas,periode
+2025/2026,ukt,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"UKT I",500000,,
+2025/2026,ukt,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"UKT II",1000000,,
+2025/2026,ukt,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"UKT III",2400000,,
+2025/2026,ukt,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"UKT IV",3145000,,
+2025/2026,ukt,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"UKT V",3630000,,
+2025/2026,ukt,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"UKT VI",4235000,,
+2025/2026,ukt,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"UKT VII",4940000,,
+2025/2026,ukt,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"UKT VIII",5950000,,
+2025/2026,ukt,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"UKT I",500000,,
+2025/2026,ukt,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"UKT II",1000000,,
+2025/2026,ukt,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"UKT III",2400000,,
+2025/2026,ukt,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"UKT IV",3145000,,
+2025/2026,ukt,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"UKT V",3630000,,
+2025/2026,ukt,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"UKT VI",4235000,,
+2025/2026,ukt,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"UKT VII",4940000,,
+2025/2026,ukt,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"UKT VIII",5950000,,
+2025/2026,ukt,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"UKT I",500000,,
+2025/2026,ukt,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"UKT II",1000000,,
+2025/2026,ukt,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"UKT III",2400000,,
+2025/2026,ukt,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"UKT IV",3145000,,
+2025/2026,ukt,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"UKT V",3630000,,
+2025/2026,ukt,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"UKT VI",4235000,,
+2025/2026,ukt,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"UKT VII",4940000,,
+2025/2026,ukt,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"UKT IV",3630000,,
+2025/2026,ukt,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"UKT V",4235000,,
+2025/2026,ukt,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"UKT VI",4840000,,
+2025/2026,ukt,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"UKT VII",5645000,,
+2025/2026,ukt,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"UKT VIII",5950000,,
+2025/2026,ukt,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"UKT I",500000,,
+2025/2026,ukt,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"UKT II",1000000,,
+2025/2026,ukt,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"UKT III",2400000,,
+2025/2026,ukt,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"UKT IV",3145000,,
+2025/2026,ukt,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"UKT V",3630000,,
+2025/2026,ukt,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"UKT VI",4235000,,
+2025/2026,ukt,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"UKT VII",4940000,,
+2025/2026,ukt,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"UKT IV",3630000,,
+2025/2026,ukt,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"UKT V",4235000,,
+2025/2026,ukt,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"UKT VI",4840000,,
+2025/2026,ukt,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"UKT VII",5645000,,
+2025/2026,ukt,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"UKT I",500000,,
+2025/2026,ukt,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"UKT II",1000000,,
+2025/2026,ukt,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"UKT III",2400000,,
+2025/2026,ukt,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"UKT IV",3630000,,
+2025/2026,ukt,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"UKT V",4235000,,
+2025/2026,ukt,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"UKT VI",4840000,,
+2025/2026,ukt,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"UKT VII",5645000,,
+2025/2026,ukt,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"UKT IV",3630000,,
+2025/2026,ukt,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"UKT V",4235000,,
+2025/2026,ukt,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"UKT VI",4840000,,
+2025/2026,ukt,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"UKT VII",5645000,,
+2025/2026,ukt,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"UKT IV",3630000,,
+2025/2026,ukt,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"UKT V",4235000,,
+2025/2026,ukt,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"UKT VI",4840000,,
+2025/2026,ukt,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"UKT VII",5645000,,
+2025/2026,ukt,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"UKT VIII",6800000,,
+2025/2026,ukt,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"UKT I",500000,,
+2025/2026,ukt,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"UKT II",1000000,,
+2025/2026,ukt,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"UKT III",2400000,,
+2025/2026,ukt,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"UKT IV",3145000,,
+2025/2026,ukt,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"UKT V",3630000,,
+2025/2026,ukt,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"UKT VI",4235000,,
+2025/2026,ukt,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"UKT VII",4940000,,
+2025/2026,ukt,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"UKT VIII",5950000,,
+2025/2026,ukt,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"UKT I",500000,,
+2025/2026,ukt,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"UKT II",1000000,,
+2025/2026,ukt,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"UKT III",2400000,,
+2025/2026,ukt,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"UKT IV",3145000,,
+2025/2026,ukt,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"UKT V",3630000,,
+2025/2026,ukt,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"UKT VI",4235000,,
+2025/2026,ukt,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"UKT VII",4940000,,
+2025/2026,ukt,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"UKT VIII",5950000,,
+2025/2026,ukt,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"UKT I",500000,,
+2025/2026,ukt,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"UKT II",1000000,,
+2025/2026,ukt,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"UKT III",2400000,,
+2025/2026,ukt,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"UKT IV",3630000,,
+2025/2026,ukt,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"UKT V",4235000,,
+2025/2026,ukt,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"UKT VI",4840000,,
+2025/2026,ukt,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"UKT VII",5645000,,
+2025/2026,ukt,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"UKT VIII",6800000,,
+2025/2026,ukt,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"UKT I",500000,,
+2025/2026,ukt,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"UKT II",1000000,,
+2025/2026,ukt,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"UKT III",2400000,,
+2025/2026,ukt,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"UKT IV",3630000,,
+2025/2026,ukt,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"UKT V",4235000,,
+2025/2026,ukt,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"UKT VI",4840000,,
+2025/2026,ukt,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"UKT VII",5645000,,
+2025/2026,ukt,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"UKT VIII",6800000,,
+2025/2026,ukt,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"UKT I",500000,,
+2025/2026,ukt,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"UKT II",1000000,,
+2025/2026,ukt,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"UKT III",2400000,,
+2025/2026,ukt,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"UKT IV",3630000,,
+2025/2026,ukt,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"UKT V",4235000,,
+2025/2026,ukt,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"UKT VI",4840000,,
+2025/2026,ukt,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"UKT VII",5645000,,
+2025/2026,ukt,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"UKT VIII",6800000,,
+2025/2026,ukt,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"UKT I",500000,,
+2025/2026,ukt,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"UKT II",1000000,,
+2025/2026,ukt,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"UKT III",2400000,,
+2025/2026,ukt,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"UKT IV",3630000,,
+2025/2026,ukt,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"UKT V",4235000,,
+2025/2026,ukt,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"UKT VI",4840000,,
+2025/2026,ukt,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"UKT VII",5645000,,
+2025/2026,ukt,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"UKT VIII",6800000,,
+2025/2026,ukt,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"UKT I",500000,,
+2025/2026,ukt,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"UKT II",1000000,,
+2025/2026,ukt,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"UKT III",2400000,,
+2025/2026,ukt,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"UKT IV",3630000,,
+2025/2026,ukt,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"UKT V",4235000,,
+2025/2026,ukt,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"UKT VI",4840000,,
+2025/2026,ukt,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"UKT VII",5645000,,
+2025/2026,ukt,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"UKT IV",3630000,,
+2025/2026,ukt,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"UKT V",4235000,,
+2025/2026,ukt,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"UKT VI",4840000,,
+2025/2026,ukt,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"UKT VII",5645000,,
+2025/2026,ukt,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"UKT IV",3630000,,
+2025/2026,ukt,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"UKT V",4235000,,
+2025/2026,ukt,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"UKT VI",4840000,,
+2025/2026,ukt,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"UKT VII",5645000,,
+2025/2026,ukt,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"UKT IV",3630000,,
+2025/2026,ukt,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"UKT V",4235000,,
+2025/2026,ukt,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"UKT VI",4840000,,
+2025/2026,ukt,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"UKT VII",5645000,,
+2025/2026,ukt,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"UKT IV",3630000,,
+2025/2026,ukt,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"UKT V",4235000,,
+2025/2026,ukt,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"UKT VI",4840000,,
+2025/2026,ukt,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"UKT VII",5645000,,
+2025/2026,ukt,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"UKT IV",3630000,,
+2025/2026,ukt,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"UKT V",4235000,,
+2025/2026,ukt,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"UKT VI",4840000,,
+2025/2026,ukt,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"UKT VII",5645000,,
+2025/2026,ukt,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"UKT VIII",6800000,,
+2025/2026,ukt,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"UKT I",500000,,
+2025/2026,ukt,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"UKT II",1000000,,
+2025/2026,ukt,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"UKT III",2400000,,
+2025/2026,ukt,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"UKT IV",3630000,,
+2025/2026,ukt,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"UKT V",4235000,,
+2025/2026,ukt,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"UKT VI",4840000,,
+2025/2026,ukt,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"UKT VII",5645000,,
+2025/2026,ukt,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"UKT VIII",6800000,,
+2025/2026,ukt,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"UKT I",500000,,
+2025/2026,ukt,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"UKT II",1000000,,
+2025/2026,ukt,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"UKT III",2400000,,
+2025/2026,ukt,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"UKT IV",3145000,,
+2025/2026,ukt,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"UKT V",3630000,,
+2025/2026,ukt,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"UKT VI",4235000,,
+2025/2026,ukt,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"UKT VII",4940000,,
+2025/2026,ukt,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"UKT VIII",5950000,,
+2025/2026,ukt,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"UKT I",500000,,
+2025/2026,ukt,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"UKT II",1000000,,
+2025/2026,ukt,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"UKT III",2400000,,
+2025/2026,ukt,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"UKT IV",3145000,,
+2025/2026,ukt,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"UKT V",3630000,,
+2025/2026,ukt,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"UKT VI",4235000,,
+2025/2026,ukt,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"UKT VII",4940000,,
+2025/2026,ukt,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"UKT VIII",5950000,,
+2025/2026,ukt,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"UKT I",500000,,
+2025/2026,ukt,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"UKT II",1000000,,
+2025/2026,ukt,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"UKT III",2400000,,
+2025/2026,ukt,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"UKT IV",3145000,,
+2025/2026,ukt,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"UKT V",3630000,,
+2025/2026,ukt,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"UKT VI",4235000,,
+2025/2026,ukt,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"UKT VII",4940000,,
+2025/2026,ukt,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"UKT IV",3630000,,
+2025/2026,ukt,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"UKT V",4235000,,
+2025/2026,ukt,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"UKT VI",4840000,,
+2025/2026,ukt,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"UKT VII",5645000,,
+2025/2026,ukt,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"UKT I",500000,,
+2025/2026,ukt,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"UKT II",1000000,,
+2025/2026,ukt,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"UKT III",2400000,,
+2025/2026,ukt,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"UKT IV",3630000,,
+2025/2026,ukt,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"UKT V",4235000,,
+2025/2026,ukt,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"UKT VI",4840000,,
+2025/2026,ukt,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"UKT VII",5645000,,
+2025/2026,ukt,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"UKT VIII",6800000,,
+2025/2026,ukt,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"UKT I",500000,,
+2025/2026,ukt,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"UKT II",1000000,,
+2025/2026,ukt,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"UKT III",2400000,,
+2025/2026,ukt,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"UKT IV",3630000,,
+2025/2026,ukt,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"UKT V",4235000,,
+2025/2026,ukt,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"UKT VI",4840000,,
+2025/2026,ukt,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"UKT VII",5645000,,
+2025/2026,ukt,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"UKT IV",4235000,,
+2025/2026,ukt,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"UKT V",4840000,,
+2025/2026,ukt,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"UKT VI",5445000,,
+2025/2026,ukt,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"UKT VII",6350000,,
+2025/2026,ukt,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"UKT VIII",7250000,,
+2025/2026,ukt,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"UKT IV",4235000,,
+2025/2026,ukt,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"UKT V",4840000,,
+2025/2026,ukt,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"UKT VI",5445000,,
+2025/2026,ukt,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"UKT VII",6350000,,
+2025/2026,ukt,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"UKT VIII",7250000,,
+2025/2026,ukt,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"UKT IV",4235000,,
+2025/2026,ukt,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"UKT V",4840000,,
+2025/2026,ukt,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"UKT VI",5445000,,
+2025/2026,ukt,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"UKT VII",6350000,,
+2025/2026,ukt,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"UKT VIII",7250000,,
+2025/2026,ukt,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"UKT IV",4235000,,
+2025/2026,ukt,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"UKT V",4840000,,
+2025/2026,ukt,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"UKT VI",5445000,,
+2025/2026,ukt,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"UKT VII",6350000,,
+2025/2026,ukt,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"UKT VIII",7250000,,
+2025/2026,ukt,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"UKT I",500000,,
+2025/2026,ukt,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"UKT II",1000000,,
+2025/2026,ukt,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"UKT III",2400000,,
+2025/2026,ukt,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"UKT IV",4235000,,
+2025/2026,ukt,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"UKT V",4840000,,
+2025/2026,ukt,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"UKT VI",5445000,,
+2025/2026,ukt,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"UKT VII",6350000,,
+2025/2026,ukt,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"UKT VIII",7250000,,
+2025/2026,ukt,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"UKT IV",4235000,,
+2025/2026,ukt,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"UKT V",4840000,,
+2025/2026,ukt,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"UKT VI",5445000,,
+2025/2026,ukt,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"UKT VII",6350000,,
+2025/2026,ukt,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"UKT VIII",7250000,,
+2025/2026,ukt,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"UKT IV",4235000,,
+2025/2026,ukt,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"UKT V",4840000,,
+2025/2026,ukt,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"UKT VI",5445000,,
+2025/2026,ukt,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"UKT VII",6350000,,
+2025/2026,ukt,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"UKT VIII",7250000,,
+2025/2026,ukt,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"UKT IV",4235000,,
+2025/2026,ukt,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"UKT V",4840000,,
+2025/2026,ukt,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"UKT VI",5445000,,
+2025/2026,ukt,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"UKT VII",6350000,,
+2025/2026,ukt,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"UKT VIII",7250000,,
+2025/2026,ukt,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"UKT IV",4235000,,
+2025/2026,ukt,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"UKT V",4840000,,
+2025/2026,ukt,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"UKT VI",5445000,,
+2025/2026,ukt,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"UKT VII",6350000,,
+2025/2026,ukt,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"UKT VIII",7250000,,
+2025/2026,ukt,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"UKT I",500000,,
+2025/2026,ukt,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"UKT II",1000000,,
+2025/2026,ukt,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"UKT III",2400000,,
+2025/2026,ukt,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"UKT IV",4235000,,
+2025/2026,ukt,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"UKT V",4840000,,
+2025/2026,ukt,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"UKT VI",5445000,,
+2025/2026,ukt,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"UKT VII",6350000,,
+2025/2026,ukt,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"UKT VIII",7250000,,
+2025/2026,ukt,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"UKT I",500000,,
+2025/2026,ukt,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"UKT II",1000000,,
+2025/2026,ukt,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"UKT III",2400000,,
+2025/2026,ukt,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"UKT IV",4235000,,
+2025/2026,ukt,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"UKT V",4840000,,
+2025/2026,ukt,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"UKT VI",5445000,,
+2025/2026,ukt,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"UKT VII",6350000,,
+2025/2026,ukt,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"UKT VIII",7250000,,
+2025/2026,ukt,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"UKT I",500000,,
+2025/2026,ukt,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"UKT II",1000000,,
+2025/2026,ukt,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"UKT III",2400000,,
+2025/2026,ukt,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"UKT IV",4235000,,
+2025/2026,ukt,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"UKT V",4840000,,
+2025/2026,ukt,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"UKT VI",5445000,,
+2025/2026,ukt,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"UKT VII",6350000,,
+2025/2026,ukt,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"UKT VIII",7250000,,
+2025/2026,ukt,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"UKT I",500000,,
+2025/2026,ukt,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"UKT II",1000000,,
+2025/2026,ukt,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"UKT III",2400000,,
+2025/2026,ukt,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"UKT IV",4235000,,
+2025/2026,ukt,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"UKT V",4840000,,
+2025/2026,ukt,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"UKT VI",5445000,,
+2025/2026,ukt,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"UKT VII",6350000,,
+2025/2026,ukt,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"UKT VIII",7250000,,
+2025/2026,ukt,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"UKT I",500000,,
+2025/2026,ukt,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"UKT II",1000000,,
+2025/2026,ukt,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"UKT III",2400000,,
+2025/2026,ukt,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"UKT IV",4235000,,
+2025/2026,ukt,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"UKT V",4840000,,
+2025/2026,ukt,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"UKT VI",5445000,,
+2025/2026,ukt,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"UKT VII",6350000,,
+2025/2026,ukt,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"UKT VIII",7250000,,
+2025/2026,ukt,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"UKT I",500000,,
+2025/2026,ukt,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"UKT II",1000000,,
+2025/2026,ukt,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"UKT III",2400000,,
+2025/2026,ukt,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"UKT IV",4235000,,
+2025/2026,ukt,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"UKT V",4840000,,
+2025/2026,ukt,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"UKT VI",5445000,,
+2025/2026,ukt,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"UKT VII",6350000,,
+2025/2026,ukt,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"UKT VIII",7250000,,
+2025/2026,ukt,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"UKT I",500000,,
+2025/2026,ukt,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"UKT II",1000000,,
+2025/2026,ukt,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"UKT III",2400000,,
+2025/2026,ukt,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"UKT IV",3630000,,
+2025/2026,ukt,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"UKT V",4235000,,
+2025/2026,ukt,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"UKT VI",4840000,,
+2025/2026,ukt,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"UKT VII",5645000,,
+2025/2026,ukt,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"UKT I",500000,,
+2025/2026,ukt,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"UKT II",1000000,,
+2025/2026,ukt,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"UKT III",2400000,,
+2025/2026,ukt,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"UKT IV",3630000,,
+2025/2026,ukt,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"UKT V",4235000,,
+2025/2026,ukt,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"UKT VI",4840000,,
+2025/2026,ukt,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"UKT VII",5645000,,
+2025/2026,ukt,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"UKT VIII",6800000,,
+2025/2026,ukt,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"UKT I",500000,,
+2025/2026,ukt,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"UKT II",1000000,,
+2025/2026,ukt,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"UKT III",2400000,,
+2025/2026,ukt,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"UKT IV",3630000,,
+2025/2026,ukt,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"UKT V",4235000,,
+2025/2026,ukt,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"UKT VI",4840000,,
+2025/2026,ukt,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"UKT VII",5645000,,
+2025/2026,ukt,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"UKT I",500000,,
+2025/2026,ukt,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"UKT II",1000000,,
+2025/2026,ukt,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"UKT III",2400000,,
+2025/2026,ukt,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"UKT IV",3630000,,
+2025/2026,ukt,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"UKT V",4235000,,
+2025/2026,ukt,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"UKT VI",4840000,,
+2025/2026,ukt,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"UKT VII",5645000,,
+2025/2026,ukt,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"UKT VIII",6800000,,
+2025/2026,ukt,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"UKT VIII",5950000,,
+2025/2026,ukt,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"UKT I",500000,,
+2025/2026,ukt,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"UKT II",1000000,,
+2025/2026,ukt,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"UKT III",2400000,,
+2025/2026,ukt,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"UKT IV",3145000,,
+2025/2026,ukt,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"UKT V",3630000,,
+2025/2026,ukt,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"UKT VI",4235000,,
+2025/2026,ukt,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"UKT VII",4940000,,
+2025/2026,ukt,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"UKT VIII",5950000,,
+2025/2026,ukt,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"UKT I",500000,,
+2025/2026,ukt,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"UKT II",1000000,,
+2025/2026,ukt,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"UKT III",2400000,,
+2025/2026,ukt,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"UKT IV",3145000,,
+2025/2026,ukt,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"UKT V",3630000,,
+2025/2026,ukt,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"UKT VI",4235000,,
+2025/2026,ukt,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"UKT VII",4940000,,
+2025/2026,ukt,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"UKT VIII",5950000,,
+2025/2026,ukt,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"UKT I",500000,,
+2025/2026,ukt,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"UKT II",1000000,,
+2025/2026,ukt,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"UKT III",2400000,,
+2025/2026,ukt,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"UKT IV",3145000,,
+2025/2026,ukt,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"UKT V",3630000,,
+2025/2026,ukt,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"UKT VI",4235000,,
+2025/2026,ukt,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"UKT VII",4940000,,
+2025/2026,ukt,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"UKT VIII",5950000,,
+2025/2026,ukt,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"UKT I",500000,,
+2025/2026,ukt,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"UKT II",1000000,,
+2025/2026,ukt,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"UKT III",8000000,,
+2025/2026,ukt,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"UKT IV",17500000,,
+2025/2026,ukt,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"UKT V",22500000,,
+2025/2026,ukt,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"UKT VI",25000000,,
+2025/2026,ukt,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"UKT VII",27500000,,
+2025/2026,ukt,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"UKT VIII",30000000,,
+2025/2026,ukt,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"UKT I",500000,,
+2025/2026,ukt,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"UKT II",1000000,,
+2025/2026,ukt,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"UKT III",2400000,,
+2025/2026,ukt,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"UKT IV",3145000,,
+2025/2026,ukt,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"UKT V",3630000,,
+2025/2026,ukt,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"UKT VI",4235000,,
+2025/2026,ukt,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"UKT VII",4940000,,
+2025/2026,ukt,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"UKT VIII",5950000,,
+2025/2026,ukt,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"UKT I",500000,,
+2025/2026,ukt,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"UKT II",1000000,,
+2025/2026,ukt,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"UKT III",2400000,,
+2025/2026,ukt,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"UKT IV",3630000,,
+2025/2026,ukt,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"UKT V",4235000,,
+2025/2026,ukt,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"UKT VI",4840000,,
+2025/2026,ukt,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"UKT VII",5645000,,
+2025/2026,ukt,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"UKT VIII",6800000,,
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Bimbingan dan Konseling",S1,universitas-negeri-yogyakarta-s1-bimbingan-dan-konseling,,"IPI XII",72200000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Kebijakan Pendidikan",S1,universitas-negeri-yogyakarta-s1-kebijakan-pendidikan,,"IPI XII",72200000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Manajemen Pendidikan",S1,universitas-negeri-yogyakarta-s1-manajemen-pendidikan,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Pendidikan Anak Usia Dini",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-pendidikan-anak-usia-dini,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Guru Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-guru-sekolah-dasar,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Sekolah",S1,universitas-negeri-yogyakarta-s1-pendidikan-nonformal,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Luar Biasa",S1,universitas-negeri-yogyakarta-s1-pendidikan-luar-biasa,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Pendidikan",S1,universitas-negeri-yogyakarta-s1-teknologi-pendidikan,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa dan Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-dan-sastra-indonesia,,"IPI XII",69312200,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Inggris",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-inggris,,"IPI XII",72200000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jerman",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jerman,,"IPI XII",69312200,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Perancis",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-perancis,,"IPI XII",69312200,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Bahasa Jawa",S1,universitas-negeri-yogyakarta-s1-pendidikan-bahasa-jawa,,"IPI XII",69312200,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Rupa",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-rupa,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pend. Seni Kerajinan ( Pend. Kriya )",S1,universitas-negeri-yogyakarta-s1-pendidikan-kriya,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Musik",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-musik,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Seni Tari",S1,universitas-negeri-yogyakarta-s1-pendidikan-seni-tari,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Sastra Indonesia",S1,universitas-negeri-yogyakarta-s1-sastra-indonesia,,"IPI XII",69312200,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Sastra Inggris",S1,universitas-negeri-yogyakarta-s1-sastra-inggris,,"IPI XII",69312200,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Desain Komunikasi Visual",S1,universitas-negeri-yogyakarta-s1-desain-komunikasi-visual,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Biologi",S1,universitas-negeri-yogyakarta-s1-biologi,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Fisika",S1,universitas-negeri-yogyakarta-s1-fisika,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Kimia",S1,universitas-negeri-yogyakarta-s1-kimia,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Matematika",S1,universitas-negeri-yogyakarta-s1-matematika,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Biologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-biologi,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Fisika",S1,universitas-negeri-yogyakarta-s1-pendidikan-fisika,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Kimia",S1,universitas-negeri-yogyakarta-s1-pendidikan-kimia,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Matematika",S1,universitas-negeri-yogyakarta-s1-pendidikan-matematika,,"IPI XII",72200000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan IPA",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-alam,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Statistika",S1,universitas-negeri-yogyakarta-s1-statistika,,"IPI XIII",98336000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Administrasi Publik",S1,universitas-negeri-yogyakarta-s1-administrasi-publik,,"IPI XII",72200000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Komunikasi",S1,universitas-negeri-yogyakarta-s1-ilmu-komunikasi,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Sejarah",S1,universitas-negeri-yogyakarta-s1-ilmu-sejarah,,"IPI XII",69712200,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Geografi",S1,universitas-negeri-yogyakarta-s1-pendidikan-geografi,,"IPI XII",69312200,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ilmu Pengetahuan Sosial",S1,universitas-negeri-yogyakarta-s1-pendidikan-ilmu-pengetahuan-sosial,,"IPI XII",69312200,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Pancasila dan Kewarganegaraan",S1,universitas-negeri-yogyakarta-s1-pendidikan-pancasila-dan-kewarganegaraan,,"IPI XII",72200000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sejarah",S1,universitas-negeri-yogyakarta-s1-pendidikan-sejarah,,"IPI XII",69312200,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Sosiologi",S1,universitas-negeri-yogyakarta-s1-pendidikan-sosiologi,,"IPI XII",69312200,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pariwisata",S1,universitas-negeri-yogyakarta-s1-pariwisata,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Politik",S1,universitas-negeri-yogyakarta-s1-ilmu-politik,,"IPI XII",60456000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektro,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Elektronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-elektronika,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mesin",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mesin,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Otomotif",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-otomotif,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pend. Teknik Sipil & Perencanaan",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-sipil-dan-perencanaan,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Boga",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-boga,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Busana",S1,universitas-negeri-yogyakarta-s1-pendidikan-tata-busana,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Mekatronika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-mekatronika,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Teknik Informatika",S1,universitas-negeri-yogyakarta-s1-pendidikan-teknik-informatika,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Teknik Elektro",S1,universitas-negeri-yogyakarta-s1-teknik-elektro,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Teknologi Informasi",S1,universitas-negeri-yogyakarta-s1-teknologi-informasi,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Teknik Manufaktur",S1,universitas-negeri-yogyakarta-s1-teknik-manufaktur,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Teknik Sipil",S1,universitas-negeri-yogyakarta-s1-teknik-sipil,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Teknik Industri",S1,universitas-negeri-yogyakarta-s1-teknik-industri,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Arsitektur",S1,universitas-negeri-yogyakarta-s1-arsitektur,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"PJKR",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-kesehatan-dan-rekreasi,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pend. Kepelatihan Olahraga",S1,universitas-negeri-yogyakarta-s1-pendidikan-kepelatihan-olahraga,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Keolahragaan",S1,universitas-negeri-yogyakarta-s1-ilmu-keolahragaan,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Pend. Jasmani Sekolah Dasar",S1,universitas-negeri-yogyakarta-s1-pendidikan-jasmani-sekolah-dasar,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Administrasi Perkantoran",S1,universitas-negeri-yogyakarta-s1-pendidikan-administrasi-perkantoran,,"IPI XII",72200000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Akuntansi",S1,universitas-negeri-yogyakarta-s1-pendidikan-akuntansi,,"IPI XII",72200000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Pendidikan Ekonomi",S1,universitas-negeri-yogyakarta-s1-pendidikan-ekonomi,,"IPI XII",72200000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Manajemen",S1,universitas-negeri-yogyakarta-s1-manajemen,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Akuntansi",S1,universitas-negeri-yogyakarta-s1-akuntansi,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"IPI II",75000000,,sekali
+2025/2026,uang_pangkal,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"IPI III",100000000,,sekali
+2025/2026,uang_pangkal,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"IPI IV",125000000,,sekali
+2025/2026,uang_pangkal,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"IPI V",150000000,,sekali
+2025/2026,uang_pangkal,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"IPI VI",175000000,,sekali
+2025/2026,uang_pangkal,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"IPI VII",200000000,,sekali
+2025/2026,uang_pangkal,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"IPI VIII",225000000,,sekali
+2025/2026,uang_pangkal,"Kedokteran",S1,universitas-negeri-yogyakarta-s1-kedokteran,,"IPI IX",250000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Psikologi",S1,universitas-negeri-yogyakarta-s1-psikologi,,"IPI XIII",100000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI I",0,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI II",5000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI III",10000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI IV",15000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI V",20000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI VI",25000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI VII",30000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI VIII",35000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI IX",40000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI X",50000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI XI",60000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI XII",75000000,,sekali
+2025/2026,uang_pangkal,"Ilmu Hukum",S1,universitas-negeri-yogyakarta-s1-ilmu-hukum,,"IPI XIII",100000000,,sekali
