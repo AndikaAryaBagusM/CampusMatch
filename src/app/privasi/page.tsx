@@ -162,7 +162,7 @@ export default function PrivasiPage() {
         <p>Kami memakai penyedia layanan berikut. Mereka memproses data atas nama kami untuk menjalankan CampusMatch:</p>
         <ul>
           <li>
-            <strong>Vercel</strong>: menjalankan situs dan server aplikasi.
+            <strong>Render</strong>: menjalankan situs dan server aplikasi.
           </li>
           <li>
             <strong>Neon</strong>: basis data Postgres tempat akun, ulasan, laporan, dan riwayat moderasi disimpan.
