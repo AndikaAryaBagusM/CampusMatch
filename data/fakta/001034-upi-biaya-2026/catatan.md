@@ -1,0 +1,31 @@
+# Catatan untuk pemeriksa
+
+- Halaman "Biaya Pendidikan" PMB UPI 2026 memuat dua tabel:
+  - "UKT SNBP, SNBT & Seleksi Mandiri 2026": satu tabel untuk ketiga jalur, Kelompok I–VIII. Label "UKT Kelompok …", tanpa nama jalur.
+  - "IPI Seleksi Mandiri 2026": "dibayarkan di awal masuk", Kelompok I–VIII. Label "IPI Kelompok … (Seleksi Mandiri)", `uang_pangkal` sekali.
+  - "Pengelompokan UKT & IPI berdasarkan biodata yang diisikan setelah kelulusan seleksi."
+- Tahun: tabel berjudul "… 2026" (PMB UPI 2026), dicatat sebagai `tahun_akademik` 2026/2027, sama seperti Kampus lain yang menyebut tahun penerimaan.
+- Baris per Departemen (Prodi) dengan kolom Unit Kerja (Fakultas atau "Kampus UPI di …"). Prodi di kampus daerah dicocokkan ke Prodi katalog "… Kampus Cibiru/Sumedang/Purwakarta/Tasikmalaya/Serang".
+- Prodi yang hanya ada di kampus daerah tercatat di katalog tanpa nama kampus, jadi dicocokkan ke nama itu: Rekayasa Perangkat Lunak dan Teknik Komputer (Cibiru), Industri Pariwisata (Sumedang), Sistem Telekomunikasi (Purwakarta), Bisnis Digital (Tasikmalaya), Sistem Informasi Kelautan dan Logistik Kelautan (Serang).
+- Tabel IPI memuat satu baris berisi angka "1" di semua kolom (tanpa nama Prodi). Baris ini tidak dicatat.
+- Di tabel UKT, Departemen G065 Kampus Cibiru tertulis "PENDIDIKAN GURU SEKOLAH DASAR PENDIDIKAN GURU" dan G075 "PENDIDIKAN ANAK USIA DINI". Di tabel IPI keduanya tertulis PGSD dan PGPAUD, jadi dicocokkan ke PGSD/PGPAUD Kampus Cibiru.
+- Nama yang berbeda dengan katalog:
+- S1|PENDIDIKAN KEWARGANEGARAAN = Pendidikan Pancasila Dan Kewarganegaraan
+- S1|PENDIDIKAN ILMU PENGETAHUAN SOSIAL = Pendidikan IPS
+- S1|PENDIDIKAN ILMU PENGETAHUAN ALAM = Pendidikan IPA
+- S1|PENDIDIKAN GURU SEKOLAH DASAR PENDIDIKAN JASMANI = PGSD Pendidikan Jasmani
+- S1|PENDIDIKAN GURU SEKOLAH DASAR PENDIDIKAN GURU @Cibiru = PGSD Kampus Cibiru
+- S1|PENDIDIKAN ANAK USIA DINI @Cibiru = PGPAUD Kampus Cibiru
+- S1|PENDIDIKAN GURU SEKOLAH DASAR @Sumedang = PGSD Kampus Sumedang
+- S1|PENDIDIKAN GURU SEKOLAH DASAR PENDIDIKAN JASMANI @Sumedang = PGSD Penjas Kampus Sumedang
+- S1|PENDIDIKAN GURU SEKOLAH DASAR @Purwakarta = PGSD Kampus Purwakarta
+- S1|PENDIDIKAN GURU PENDIDIKAN ANAK USIA DINI @Purwakarta = PGPAUD Kampus Purwakarta
+- S1|PENDIDIKAN GURU SEKOLAH DASAR @Tasikmalaya = PGSD Kampus Tasikmalaya
+- S1|PENDIDIKAN GURU PENDIDIKAN ANAK USIA DINI @Tasikmalaya = PGPAUD Kampus Tasikmalaya
+- S1|PENDIDIKAN GURU SEKOLAH DASAR @Serang = PGSD Kampus Serang
+- S1|PENDIDIKAN GURU PENDIDIKAN ANAK USIA DINI @Serang = PGPAUD Kampus Serang
+- S1|PENDIDIKAN GURU SEKOLAH DASAR @Cibiru = PGSD Kampus Cibiru
+- S1|PENDIDIKAN GURU PENDIDIKAN ANAK USIA DINI @Cibiru = PGPAUD Kampus Cibiru
+- Prodi katalog yang tidak ada di tabel: D3 Keperawatan (Bandung dan Kampus Sumedang).
+- Jalur Masuk dan Beasiswa tidak dicatat dari Sumber ini.
+- Draf: 1696 baris biaya (106 Prodi).
