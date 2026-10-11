@@ -1,0 +1,28 @@
+# Catatan untuk pemeriksa
+
+- Halaman "Jalur Masuk" SPMB UNS jenjang Sarjana/Sarjana Terapan/Diploma. Satu halaman berisi semua tab jalur: SNBP, SNBT, Seleksi Mandiri (SM), kelas internasional, Beasiswa Afirmasi dan RPL. URL dengan `jalur=snbp`, `jalur=snbt` dan `jalur=sm` menampilkan isi yang sama, jadi semuanya dicatat sebagai satu Sumber.
+- Halaman "Biaya Pendidikan" (spmb.uns.ac.id/jalur-masuk/biaya-pendidikan) kosong saat dibuka pada 2026-10-11, baik lewat curl maupun peramban.
+- **UKT SNBP dan SNBT:** masing-masing tab punya satu tabel UKT Program Sarjana, Kelompok I–VIII, 75 Prodi. Isi kedua tabel sama, tetapi dicatat terpisah dengan label "(SNBP)" dan "(SNBT)", sesuai keputusan "Both, faithfully". Tab SNBP/SNBT tidak memuat tabel D4 atau D3.
+- **Seleksi Mandiri:** tujuh tab SM reguler (Reguler Ujian, Reguler UTBK, Afirmasi Bibit Unggul, Disabilitas, Kemaslahatan, KIP Kuliah, Kemitraan) memuat enam tabel yang sama persis (sudah dicek per sel): UKT Kelompok I–VIII dan IPI Kelompok 1–3, untuk Sarjana, Sarjana Terapan dan Diploma Tiga. Tabel ini dicatat sekali dengan label "(Seleksi Mandiri)" tanpa `jalur`, sama seperti Unpad SMUP.
+- Nilai UKT SM untuk Prodi S1 sama dengan tabel SNBP/SNBT, kecuali bahwa tabel SM memuat dua Prodi lagi (Bahasa dan Kebudayaan Jepang, Ekonomi dan Keuangan Islam; keduanya tidak ada di katalog).
+- Jalur Kemitraan: "dikenakan UKT Kelompok VIII dan IPI Kelompok III". Ini tidak dicatat sebagai baris terpisah.
+- IPI: "Peserta dapat menentukan pilihan tarif IPI sesuai kemampuan ekonomi masing-masing", dipungut sekali, jadi `uang_pangkal`.
+- SM Batch 2 hanya untuk Sarjana Terapan Akuntansi Perpajakan dan Sarjana Terapan Produksi Media Digital. Keduanya tidak ada di katalog, jadi UKT/IPI-nya tidak dicatat; jalurnya dicatat.
+- Biaya pendaftaran: Reguler Ujian Tulis dan Batch 2 Ujian Tulis Rp350.000; Reguler UTBK dan Batch 2 UTBK Rp200.000. Biaya pendaftaran tab Afirmasi dan Kemitraan tidak disebut, jadi tidak dicatat.
+- Tes: pada semua jalur SM, Prodi olahraga dan seni juga dinilai dengan portofolio dan/atau uji keterampilan. Ini tidak dicatat sebagai `tes` karena hanya berlaku untuk sebagian Prodi.
+- Afirmasi Bibit Unggul untuk calon berprestasi, tetapi kriteria seleksinya Nilai Ujian Tulis UNS, jadi tes = `tes_kampus`. Afirmasi Disabilitas: nilai rapor semester 1–5 dan wawancara.
+- Tanggal: SNBP = Pendaftaran SNBP 3–18 Februari 2026; SNBT = Pendaftaran UTBK-SNBT 25 Maret – 7 April 2026; SM = Pendaftaran Online 11 Mei – 2 Juni 2026; Batch 2 = 29 Juni – 8 Juli 2026.
+- Beasiswa: ada tab "SM Jalur Afirmasi - KIP Kuliah" untuk pemegang KIP-K, jadi dicatat bahwa UNS ikut KIP Kuliah. Tab "Jalur Beasiswa Afirmasi UNS" hanya berisi judul "Mahasiswa Afirmasi ADIK 2026" tanpa isi. ADik tidak dicatat karena belum ada Sumber nasionalnya.
+- Tidak dicatat:
+  - kelas internasional (4 tab, biaya pendaftaran Rp600.000);
+  - RPL;
+  - daya tampung;
+  - Prodi yang tidak ada di katalog: S1 Bahasa dan Kebudayaan Jepang, S1 Ekonomi dan Keuangan Islam, D4 Perpustakaan dan Informasi, D4 Teknologi Informasi dan Kecerdasan Artifisial, D4 Teknologi Rekayasa Pangan.
+- Nama yang berbeda dengan katalog:
+- S1 Ilmu Administrasi Negara (Kampus Kabupaten Kebumen) = Ilmu Administrasi Negara PSDKU (Kampus Kabupaten Kebumen)
+- S1 Informatika (Kampus Kabupaten Kebumen) = Informatika PSDKU (Kampus Kabupaten Kebumen)
+- S1 Pendidikan Dokter = Kedokteran
+- D3 Budidaya Ternak = Budi Daya Ternak
+- D3 PSDKU Akuntansi = Akuntansi (Kampus Kab. Madiun)
+- D3 PSDKU Teknik Informatika = Teknik Informatika K. Kab. Madiun
+- Draf: 2282 baris biaya (98 Prodi), 11 jalur, 1 beasiswa.
