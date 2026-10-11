@@ -46,8 +46,8 @@ export function IsianInfoBiaya({ isian, galat }: { isian: IsianInfoBiaya; galat:
       <div className="grid gap-4 sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
         <Rupiah
           name="biayaSemester"
-          label="UKT atau SPP per semester"
-          bantuan="Yang ditetapkan untukmu, sebelum dipotong beasiswa."
+          label="Total UKT atau SPP per semester"
+          bantuan="Yang ditetapkan untukmu, sebelum dipotong beasiswa. Jika Kampus juga memungut biaya per SKS, jumlahkan semuanya untuk satu semester."
           isian={isian}
           galat={galat}
           maks={BATAS_INFO_BIAYA.biayaSemester}
@@ -75,7 +75,14 @@ export function IsianInfoBiaya({ isian, galat }: { isian: IsianInfoBiaya; galat:
       </div>
 
       <div>
-        <Rupiah name="uangPangkal" label="Uang Pangkal (IPI, SPI)" isian={isian} galat={galat} maks={BATAS_INFO_BIAYA.uangPangkal} />
+        <Rupiah
+          name="uangPangkal"
+          label="Uang Pangkal"
+          bantuan="Jumlahkan semua bagiannya, misalnya IPI, SPI, DP3, UP3 atau SDP2."
+          isian={isian}
+          galat={galat}
+          maks={BATAS_INFO_BIAYA.uangPangkal}
+        />
         <label className="mt-2 flex items-center gap-2 text-sm">
           <input type="checkbox" name="tanpaUangPangkal" value="1" defaultChecked={isian.tanpaUangPangkal === "1"} className="size-4 accent-primary" />
           Saya tidak membayar Uang Pangkal

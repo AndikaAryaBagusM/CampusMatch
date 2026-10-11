@@ -44,14 +44,22 @@ async function buatSumber(kampusId: number) {
 }
 
 type Status = "draf" | "diperiksa" | "ditarik";
-async function ukt(kampusId: number, prodiId: number | null, jumlah: number, tahunAkademik = 2026, status: Status = "diperiksa") {
+async function ukt(
+  kampusId: number,
+  prodiId: number | null,
+  jumlah: number,
+  tahunAkademik = 2026,
+  status: Status = "diperiksa",
+  jenis: "ukt" | "spp" = "ukt",
+  periode: "per_semester" | "per_sks" = "per_semester",
+) {
   const [a, b] = [await buatPengguna(t.db), await buatPengguna(t.db)];
   await t.db.insert(biaya).values({
     kampusId,
     prodiId,
-    jenis: "ukt",
+    jenis,
     jumlah,
-    periode: "per_semester",
+    periode,
     sumberId: await buatSumber(kampusId),
     tahunAkademik,
     status,
@@ -81,7 +89,7 @@ test("default order is by Kampus name; Kota filter and per-Kota counts", async (
   const kota = await countJurusanPerKota(t.db, j.slug);
   expect(kota).toHaveLength(3);
   expect((await daftar(j.slug, "nama", { kotaSlug: kota[0].slug })).map((p) => p.kotaNama)).toEqual([kota[0].nama]);
-  expect(await countProdiJurusan(t.db, j.slug, { ...TANPA_FILTER, kotaSlug: kota[0].slug })).toEqual({ jumlahProdi: 1, jumlahKampus: 1 });
+  expect(await countProdiJurusan(t.db, j.slug, { ...TANPA_FILTER, kotaSlug: kota[0].slug })).toEqual({ jumlahProdi: 1, jumlahKampus: 1, jumlahPerSks: 0 });
 });
 
 test("UKT: the highest Diperiksa UKT of the newest Tahun Akademik, Prodi before Kampus-wide", async () => {
@@ -108,7 +116,31 @@ test("UKT: the highest Diperiksa UKT of the newest Tahun Akademik, Prodi before 
 
   const murah = await daftar(j.slug, "nama", { uktMaks: 5_000_000 });
   expect(murah.map((r) => r.kampus.nama)).toEqual(["A Kampus", "B Kampus"]);
-  expect(await countProdiJurusan(t.db, j.slug, { ...TANPA_FILTER, uktMaks: 5_000_000 })).toEqual({ jumlahProdi: 2, jumlahKampus: 2 });
+  expect(await countProdiJurusan(t.db, j.slug, { ...TANPA_FILTER, uktMaks: 5_000_000 })).toEqual({ jumlahProdi: 2, jumlahKampus: 2, jumlahPerSks: 0 });
+});
+
+test("a Prodi whose Kampus also charges per SKS: left out of the UKT filter (and counted), last in the UKT sort", async () => {
+  const j = await buatJurusan(["A Kampus", "B Kampus", "C Kampus", "D Kampus"]);
+  const [a, b, c] = j.daftar;
+  await ukt(a.kampus.id, a.prodi.id, 4_000_000);
+  // B: a low SPP per Prodi plus a Kampus-wide fee per SKS. C: both per Prodi.
+  await ukt(b.kampus.id, b.prodi.id, 2_000_000, 2026, "diperiksa", "spp");
+  await ukt(b.kampus.id, null, 300_000, 2026, "diperiksa", "spp", "per_sks");
+  await ukt(c.kampus.id, c.prodi.id, 1_000_000, 2026, "diperiksa", "spp");
+  await ukt(c.kampus.id, c.prodi.id, 250_000, 2026, "diperiksa", "spp", "per_sks");
+
+  const rows = await daftar(j.slug, "ukt");
+  // The fee per SKS is never the UKT itself.
+  expect(rows.map((r) => [r.kampus.nama, r.ukt, r.uktPerSks])).toEqual([
+    ["A Kampus", 4_000_000, false],
+    ["B Kampus", 2_000_000, true],
+    ["C Kampus", 1_000_000, true],
+    ["D Kampus", null, false],
+  ]);
+
+  const f = { ...TANPA_FILTER, uktMaks: 5_000_000 };
+  expect((await daftar(j.slug, "nama", f)).map((r) => r.kampus.nama)).toEqual(["A Kampus"]);
+  expect(await countProdiJurusan(t.db, j.slug, f)).toEqual({ jumlahProdi: 1, jumlahKampus: 1, jumlahPerSks: 2 });
 });
 
 test("Bintang sort orders only Prodi with enough Ulasan; the rest follow by name", async () => {

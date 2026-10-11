@@ -98,6 +98,25 @@ describe("bacaPaket", () => {
     ]);
   });
 
+  test("a fee per SKS is an SPP or Biaya Lain, never a UKT", () => {
+    const { paket, galat } = bacaPaket("binus-biaya-2026", meta, {
+      biaya: [biayaUkt({ jenis: "spp", periode: "per_sks", label: "Biaya SKS", jumlah: "Rp 350.000" }), biayaUkt({ jenis: "spp" })],
+    });
+    expect(galat).toEqual([]);
+    expect(paket?.biaya.map((b) => [b.jenis, b.periode, b.jumlah])).toEqual([
+      ["spp", "per_sks", 350000],
+      ["spp", "per_semester", 7500000],
+    ]);
+
+    const salah = bacaPaket("ugm-ukt-2026", meta, {
+      biaya: [biayaUkt({ periode: "per_sks" }), biayaUkt({ jenis: "spp", periode: "sekali" }), biayaUkt()],
+    });
+    expect(salah.galat).toEqual([
+      expect.stringMatching(/^biaya\.csv row 2: jenis ukt is always per_semester/),
+      expect.stringMatching(/^biaya\.csv row 3: jenis spp must be per_semester or per_sks/),
+    ]);
+  });
+
   test("reads Jalur Masuk with several tests", () => {
     const { paket, galat } = bacaPaket("ugm-jalur-2026", meta, {
       jalur: [

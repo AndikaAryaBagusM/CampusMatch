@@ -8,6 +8,10 @@ Facts belong to a Kampus or Prodi, not to the highlighted list (the Daftar Kampu
 
 Any single Moderator can withdraw (*tarik*) Diperiksa facts, chosen rows or a whole Sumber, with a required reason. Unlike Diperiksa this needs no second person: taking a wrong fee down must be quick, and withdrawing never shows students a new number. A Ditarik fact is no longer shown but stays in the database with who withdrew it, when and why. Withdrawing a Jalur Masuk also withdraws the Diperiksa Biaya attached to it. Uniqueness rules ignore Ditarik facts, so the correction is imported as a new Sumber under the same name; until it is Diperiksa, an older Tahun Akademik (if any) shows again with its "mungkin sudah berubah" label.
 
+## Drafting with Claude (amended 2026-10-07)
+
+"Copied by hand" now means checked by hand. For the first collection (the QS Kampus, about 1,460 Prodi and well over 10,000 UKT rows), Claude drafts each Sumber folder from the archived document and makes the Wayback copy with Save Page Now. A Moderator imports it under their own name, and a **different** Moderator checks every fact against the Sumber, so two people still stand behind each number. Until a second Moderator exists, imported facts stay Draf and nothing is shown. Retyping long PDF tables by hand is where wrong numbers come from; a drafted table that two people compare with the document is safer. What is collected and what is skipped is in [decisions.md](../decisions.md) 17q.
+
 ## Considered Options
 
 - **Our own archived copy in Vercel Blob**: more reliable than Wayback, but it needs storage and an upload feature, which [decisions.md](../decisions.md) 10f keeps out. If Wayback cannot capture a page, the Sumber is marked "tanpa arsip" and the checking Moderator records why it was accepted anyway.

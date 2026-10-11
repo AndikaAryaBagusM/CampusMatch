@@ -37,4 +37,12 @@ export function formatRupiah(jumlah: number, batas: BatasBiaya | null = null): s
 export const LABEL_PERIODE: Record<PeriodeBiaya, string> = {
   per_semester: "per semester",
   sekali: "sekali bayar",
+  per_sks: "per SKS",
 };
+
+// Beside an SPP per semester when the Kampus also charges per SKS: the
+// semester's total depends on the credits taken, so we never add it up.
+export const CATATAN_PER_SKS = "belum termasuk biaya per SKS";
+
+// The classes facts are not collected for (decisions.md 17q).
+export const CATATAN_TIDAK_DICATAT = "Biaya kelas internasional, paralel dan karyawan tidak dicatat.";

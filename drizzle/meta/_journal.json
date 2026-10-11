@@ -92,6 +92,13 @@
       "when": 1791381298933,
       "tag": "0012_drop_unggulan",
       "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1791382955255,
+      "tag": "0013_fakta_per_sks",
+      "breakpoints": true
     }
   ]
 }
