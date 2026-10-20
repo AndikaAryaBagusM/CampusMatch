@@ -12,6 +12,11 @@ One folder per **Sumber** (one official document or page), named with lowercase 
 
 Re-importing a folder replaces its Draf facts. Once its facts are Diperiksa, a folder can't be re-imported: record a change (e.g. a new Tahun Akademik or a corrected SK) as a new folder.
 
+**Every folder at once** (e.g. into a new database): `npm run fakta:import-semua -- --oleh <your moderator email> --dry-run`, then again without `--dry-run`.
+- It imports only the folders the database doesn't have yet. A folder already there is skipped; change one with `fakta:import`.
+- The order follows what folders use: national Sumber first, and a folder after the one defining the Jalur Masuk its Biaya point at. A folder's Biaya can't be imported before that Jalur Masuk exists.
+- It stops at the first folder with an error. The folders before it stay imported, so fix it and run the command again to continue.
+
 **A wrong number is already shown?** Find its Sumber under "Sudah Diperiksa" in `/moderasi/fakta`, tick the wrong facts and **Tarik** them with a reason (one Moderator is enough; withdrawing a Jalur Masuk also withdraws its fees). Then import the corrected facts as a new folder.
 
 ## Rules
