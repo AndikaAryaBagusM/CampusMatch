@@ -8,16 +8,13 @@ import { config } from "dotenv";
 
 config({ path: ".env.local" });
 
-import { existsSync, readFileSync, statSync } from "node:fs";
-import { basename, join } from "node:path";
 import { eq } from "drizzle-orm";
 import { withDb, type Db } from "../src/db";
 import { users } from "../src/db/schema";
-import { bacaPaket, KOLOM, type Baris } from "../src/lib/fakta/baca";
 import { FaktaDitolak, imporSumber } from "../src/lib/fakta/impor";
 import { isModerator } from "../src/lib/moderator-email";
-import { readRows } from "./catalogue/exports";
 import { guardDatabase } from "./catalogue/guard";
+import { bacaFolder } from "./fakta/baca-folder";
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
@@ -34,24 +31,9 @@ class UjiCoba extends Error {}
 async function main() {
   if (!folder || !args.includes("--oleh") || !oleh)
     gagal("Usage: npm run fakta:import -- data/fakta/<kode> --oleh <moderator email> [--dry-run] [--allow-production]");
-  if (!existsSync(folder) || !statSync(folder).isDirectory()) gagal(`${folder} is not a folder.`);
-  const kode = basename(folder);
-  if (kode.startsWith("_")) gagal(`${kode} is an example folder (starts with _); copy it to a new name first.`);
   if (!isModerator(oleh)) gagal(`${oleh} is not in MODERATOR_EMAILS.`);
 
-  const metaPath = join(folder, "sumber.json");
-  if (!existsSync(metaPath)) gagal(`${metaPath} not found.`);
-  let meta: unknown;
-  try {
-    meta = JSON.parse(readFileSync(metaPath, "utf8"));
-  } catch (e) {
-    gagal(`${metaPath} is not valid JSON: ${(e as Error).message}`);
-  }
-  const csv = (nama: keyof typeof KOLOM): Baris[] | undefined => {
-    const path = join(folder, `${nama}.csv`);
-    return existsSync(path) ? readRows(path, [...KOLOM[nama]]) : undefined;
-  };
-  const { paket, galat } = bacaPaket(kode, meta, { jalur: csv("jalur"), biaya: csv("biaya"), beasiswa: csv("beasiswa") });
+  const { kode, paket, galat } = bacaFolder(folder);
   if (!paket) gagal(`${kode} has errors; fix them and re-run:`, ...galat.map((g) => `  ${g}`));
 
   if (dryRun) console.log(`Target database: ${new URL(process.env.DATABASE_URL ?? "").host} (dry run, nothing is written)`);
