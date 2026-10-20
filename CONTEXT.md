@@ -190,5 +190,9 @@ _Avoid_: Guest, tamu, visitor
 ## Commercial
 
 **Promosi**:
-A paid, clearly labelled placement of a Kampus beside a list, never inside it. It never changes Bintang, Tingkat Rekomendasi or the order of organic results. It shows (is *Tayang*) between its dates once a second Moderator has activated it.
+A paid, clearly labelled placement beside a list, never inside it, bought by a **Pengiklan**. It never changes Bintang, Tingkat Rekomendasi or the order of organic results. It shows (is *Tayang*) between its dates once a second Moderator has activated it. A Kampus's Promosi links to its CampusMatch page; a bimbel's links to one reviewed address on its own site.
 _Avoid_: Iklan (in reference to Kampus), sponsored, featured, Terverifikasi
+
+**Pengiklan**:
+Whoever pays for a Promosi: a Kampus, or a bimbel (a test-prep provider or platform for getting into a Kampus).
+_Avoid_: Sponsor, mitra, klien

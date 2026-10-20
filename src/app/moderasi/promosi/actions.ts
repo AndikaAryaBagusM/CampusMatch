@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { withDb, type Db } from "@/db";
 import { requireModerator } from "@/lib/moderator";
-import { aktifkan, buatDraf, hapusDraf, hentikan, PromosiDitolak } from "@/lib/promosi";
+import { aktifkan, buatDraf, hapusDraf, hentikan, PromosiDitolak, type DataPromosi } from "@/lib/promosi";
 
 // Every action checks the Moderator itself; the page check isn't enough,
 // because a Server Action can be called directly.
@@ -23,27 +23,25 @@ const segarkan = () => revalidatePath("/", "page");
 
 export async function buat(formData: FormData) {
   const moderator = await requireModerator();
+  const bimbel = formData.get("jenis") === "bimbel";
   const kampusId = angka(formData.get("kampusId"));
+  const umum = {
+    jurusanIds: formData.getAll("jurusan").map(angka).filter(Boolean),
+    diBeranda: formData.get("diBeranda") === "1",
+    mulai: teks(formData, "mulai"),
+    selesai: teks(formData, "selesai"),
+    teks: teks(formData, "teks"),
+    catatanInternal: teks(formData, "catatanInternal"),
+  };
+  const data: DataPromosi = bimbel
+    ? { ...umum, jenis: "bimbel", namaPengiklan: teks(formData, "namaPengiklan"), tautan: teks(formData, "tautan") }
+    : { ...umum, jenis: "kampus", kampusId };
   let id: number;
   try {
-    id = await withDb((db) =>
-      buatDraf(
-        db,
-        {
-          kampusId,
-          jurusanIds: formData.getAll("jurusan").map(angka).filter(Boolean),
-          diBeranda: formData.get("diBeranda") === "1",
-          mulai: teks(formData, "mulai"),
-          selesai: teks(formData, "selesai"),
-          teks: teks(formData, "teks"),
-          catatanInternal: teks(formData, "catatanInternal"),
-        },
-        moderator.id,
-      ),
-    );
+    id = await withDb((db) => buatDraf(db, data, moderator.id));
   } catch (e) {
     if (!(e instanceof PromosiDitolak)) throw e;
-    redirect(`${pesan("/moderasi/promosi/baru", e.message)}&kampus=${kampusId}`);
+    redirect(`${pesan("/moderasi/promosi/baru", e.message)}&${bimbel ? "jenis=bimbel" : `kampus=${kampusId}`}`);
   }
   redirect(pesan(`/moderasi/promosi/${id}`, "Draf tersimpan. Minta Moderator lain memeriksa dan mengaktifkannya.", true));
 }

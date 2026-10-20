@@ -1,8 +1,8 @@
 import { kontainer, Panel } from "@/components/panel";
 import { kontakEmail } from "@/lib/kontak";
 
-// Shared layout for /privasi and /ketentuan. Both are drafts until a lawyer
-// reviews them (docs/legal-todo.md).
+// Shared layout for /privasi, /ketentuan and /pasang-promosi. All are drafts
+// until a lawyer reviews them (docs/legal-todo.md).
 
 export function HalamanHukum({
   judul,

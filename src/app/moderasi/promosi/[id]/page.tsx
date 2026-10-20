@@ -34,9 +34,12 @@ export default async function DetailPromosiPage(props: PageProps<"/moderasi/prom
 
   return (
     <div className={`${kontainer} max-w-3xl space-y-6 py-8`}>
-      <PageBreadcrumb items={[{ label: "Promosi", href: "/moderasi/promosi" }, { label: p.kampus.nama }]} />
+      <PageBreadcrumb items={[{ label: "Promosi", href: "/moderasi/promosi" }, { label: p.nama }]} />
       <div>
-        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Promosi {p.kampus.nama}</h1>
+        <h1 className="text-2xl leading-tight font-extrabold tracking-tight">
+          Promosi {p.nama}
+          {p.tampil.jenis === "bimbel" ? <span className="ml-2 align-middle text-sm font-semibold text-muted-foreground">(bimbel)</span> : null}
+        </h1>
         <p className="mt-1 text-sm text-muted-foreground">
           <span className="font-semibold text-foreground">{LABEL_KEADAAN[p.keadaan]}</span> · {formatTanggal(p.mulai)} –{" "}
           {formatTanggal(p.selesai)} · {[p.diBeranda ? "Beranda" : null, p.jurusan].filter(Boolean).join(" · ")}
@@ -53,22 +56,39 @@ export default async function DetailPromosiPage(props: PageProps<"/moderasi/prom
       ) : null}
 
       <Panel lembar title="Pratinjau">
-        <KotakPromosi promosi={{ id: p.id, teks: p.teks, kampus: p.kampus }} />
+        <KotakPromosi promosi={p.tampil} />
         <p className="mt-3 text-xs text-muted-foreground">
           Tautan mengarah ke{" "}
-          <Link href={`/kampus/${p.kampus.slug}`} className="text-primary hover:underline">
-            halaman Kampus di CampusMatch
-          </Link>
+          {p.tampil.jenis === "bimbel" ? (
+            <a href={p.tampil.tautan} rel="noopener noreferrer" target="_blank" className="break-all text-primary hover:underline">
+              {p.tampil.tautan}
+            </a>
+          ) : (
+            <Link href={`/kampus/${p.tampil.kampus.slug}`} className="text-primary hover:underline">
+              halaman Kampus di CampusMatch
+            </Link>
+          )}
           . Klik dari pratinjau ini tidak dihitung kecuali Promosi sedang tayang.
         </p>
       </Panel>
 
       {p.status === "draf" ? (
         <Panel lembar title="Periksa">
-          <p className="mb-3 text-sm text-muted-foreground">
-            Cocokkan Kampus, tempat tampil, tanggal, dan teks dengan kontraknya. Teks hanya boleh berisi fakta tentang Kampus,
-            tanpa klaim &ldquo;terbaik&rdquo; atau perbandingan.
-          </p>
+          {p.tampil.jenis === "bimbel" ? (
+            <div className="mb-3 text-sm text-muted-foreground">
+              <p>Cocokkan nama, tautan, tempat tampil, tanggal, dan teks dengan kontraknya, lalu pastikan:</p>
+              <ul className="mt-1 list-disc space-y-0.5 pl-5">
+                <li>tautan membuka situs bimbel itu sendiri, bukan pengalihan atau situs lain;</li>
+                <li>teks tidak menjanjikan lolos atau diterima (&ldquo;pasti lolos&rdquo;, &ldquo;jaminan diterima&rdquo;);</li>
+                <li>teks tidak memberi kesan didukung Kampus atau CampusMatch, dan tanpa klaim &ldquo;terbaik&rdquo;.</li>
+              </ul>
+            </div>
+          ) : (
+            <p className="mb-3 text-sm text-muted-foreground">
+              Cocokkan Kampus, tempat tampil, tanggal, dan teks dengan kontraknya. Teks hanya boleh berisi fakta tentang Kampus,
+              tanpa klaim &ldquo;terbaik&rdquo; atau perbandingan.
+            </p>
+          )}
           <div className="flex flex-wrap gap-3">
             <form action={aktifkanPromosi}>
               <input type="hidden" name="id" value={p.id} />
@@ -113,16 +133,24 @@ export default async function DetailPromosiPage(props: PageProps<"/moderasi/prom
         {p.klik.length === 0 ? (
           <p className="text-sm text-muted-foreground">Belum ada klik.</p>
         ) : (
-          <table className="w-full text-sm">
-            <tbody className="divide-y divide-border">
-              {p.klik.map((k) => (
-                <tr key={k.tanggal}>
-                  <td className="py-1.5">{formatTanggal(k.tanggal)}</td>
-                  <td className="py-1.5 text-right tabular-nums">{formatAngka(k.jumlah)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <>
+            <p className="mb-2 text-sm">
+              <a href={`/moderasi/promosi/${p.id}/klik.csv`} className="font-semibold text-primary hover:underline">
+                Unduh laporan klik (CSV)
+              </a>
+              <span className="text-muted-foreground"> untuk dikirim ke pengiklan.</span>
+            </p>
+            <table className="w-full text-sm">
+              <tbody className="divide-y divide-border">
+                {p.klik.map((k) => (
+                  <tr key={k.tanggal}>
+                    <td className="py-1.5">{formatTanggal(k.tanggal)}</td>
+                    <td className="py-1.5 text-right tabular-nums">{formatAngka(k.jumlah)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </>
         )}
       </Panel>
 

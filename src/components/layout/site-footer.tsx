@@ -48,12 +48,15 @@ export function SiteFooter() {
       <div className="bg-jade-deep">
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4 text-sm sm:px-6">
           <span>© 2026 CampusMatch</span>
-          <nav aria-label="Informasi hukum" className="flex gap-4">
+          <nav aria-label="Informasi hukum" className="flex flex-wrap gap-x-4 gap-y-1">
             <Link href="/privasi" className="hover:underline">
               Kebijakan Privasi
             </Link>
             <Link href="/ketentuan" className="hover:underline">
               Ketentuan Layanan
+            </Link>
+            <Link href="/pasang-promosi" className="hover:underline">
+              Pasang Promosi
             </Link>
           </nav>
         </div>

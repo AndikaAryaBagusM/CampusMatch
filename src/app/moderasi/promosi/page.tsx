@@ -30,7 +30,7 @@ export default async function PromosiPage() {
         <div>
           <h1 className="text-2xl leading-tight font-extrabold tracking-tight">Promosi</h1>
           <p className="mt-1 max-w-3xl text-sm text-muted-foreground">
-            Tempat berbayar untuk Kampus di Beranda, halaman Jurusan, dan pencarian, selalu berlabel Promosi. Satu Moderator
+            Tempat berbayar untuk Kampus dan bimbel di Beranda, halaman Jurusan, dan pencarian, selalu berlabel Promosi. Satu Moderator
             memasukkan Draf, Moderator lain memeriksa teks dan pengaturannya lalu mengaktifkannya. Klik dihitung per hari,
             tanpa data pengunjung.
           </p>
@@ -56,8 +56,9 @@ export default async function PromosiPage() {
                   <li key={p.id} className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between">
                     <div className="min-w-0">
                       <Link href={`/moderasi/promosi/${p.id}`} className="font-semibold hover:underline">
-                        {p.kampusNama}
+                        {p.nama}
                       </Link>
+                      {p.jenis === "bimbel" ? <span className="ml-2 rounded-sm bg-secondary px-2 py-0.5 text-xs">Bimbel</span> : null}
                       <span
                         className={cn(
                           "ml-2 rounded-sm px-2 py-0.5 text-xs",
