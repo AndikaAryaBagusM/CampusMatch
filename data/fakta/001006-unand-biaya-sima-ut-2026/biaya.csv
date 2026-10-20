@@ -1,0 +1,115 @@
+tahun_akademik,jenis,prodi,jenjang,prodi_slug,jalur,label,jumlah,batas,periode
+2026/2027,ukt,Hukum,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Hukum,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Agroteknologi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Agroteknologi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Agribisnis,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Agribisnis,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Ilmu Tanah,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Ilmu Tanah,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Agroekoteknologi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Agroekoteknologi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Proteksi Tanaman,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Proteksi Tanaman,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Penyuluhan Pertanian,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Penyuluhan Pertanian,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Kedokteran,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),14500000,,per_semester
+2026/2027,uang_pangkal,Kedokteran,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),100000000,,sekali
+2026/2027,ukt,Psikologi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),8000000,,per_semester
+2026/2027,uang_pangkal,Psikologi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Kebidanan,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),8500000,,per_semester
+2026/2027,uang_pangkal,Kebidanan,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Ilmu Biomedis,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),8500000,,per_semester
+2026/2027,uang_pangkal,Ilmu Biomedis,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Kimia,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Kimia,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Biologi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Biologi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Matematika,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Matematika,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Fisika,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Fisika,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Statistika dan Sains Data,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Statistika dan Sains Data,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Akuntansi,D3,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),4000000,,per_semester
+2026/2027,uang_pangkal,Akuntansi,D3,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),4000000,,sekali
+2026/2027,ukt,Administrasi Perkantoran,D3,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),4000000,,per_semester
+2026/2027,uang_pangkal,Administrasi Perkantoran,D3,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),4000000,,sekali
+2026/2027,ukt,Perbankan Dan Keuangan,D3,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),4000000,,per_semester
+2026/2027,uang_pangkal,Perbankan Dan Keuangan,D3,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),4000000,,sekali
+2026/2027,ukt,Manajemen Pemasaran,D3,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),4000000,,per_semester
+2026/2027,uang_pangkal,Manajemen Pemasaran,D3,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),4000000,,sekali
+2026/2027,ukt,Ekonomi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Ekonomi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Manajemen,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Manajemen,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Akuntansi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Akuntansi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Ekonomi Islam,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6500000,,per_semester
+2026/2027,uang_pangkal,Ekonomi Islam,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Kewirausahaan,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6500000,,per_semester
+2026/2027,uang_pangkal,Kewirausahaan,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Manajemen (Kampus Payakumbuh),S1,universitas-andalas-s1-manajemen-kampus-payakumbuh,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Manajemen (Kampus Payakumbuh),S1,universitas-andalas-s1-manajemen-kampus-payakumbuh,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Peternakan,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,Peternakan,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,"Peternakan, Kampus Payakumbuh",S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),6000000,,per_semester
+2026/2027,uang_pangkal,"Peternakan, Kampus Payakumbuh",S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),10000000,,sekali
+2026/2027,ukt,Sejarah,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Sejarah,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Sastra Indonesia,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Sastra Indonesia,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Sastra Inggris,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Sastra Inggris,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Sastra Minangkabau,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Sastra Minangkabau,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Sastra Jepang,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Sastra Jepang,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Arkeologi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Arkeologi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Sosiologi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Sosiologi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),20000000,,sekali
+2026/2027,ukt,Antropologi Sosial,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Antropologi Sosial,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Ilmu Politik,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Ilmu Politik,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),20000000,,sekali
+2026/2027,ukt,Administrasi Publik,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Administrasi Publik,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),25000000,,sekali
+2026/2027,ukt,Hubungan Internasional,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Hubungan Internasional,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),30000000,,sekali
+2026/2027,ukt,Ilmu Komunikasi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),5500000,,per_semester
+2026/2027,uang_pangkal,Ilmu Komunikasi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),30000000,,sekali
+2026/2027,ukt,Teknik Mesin,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Teknik Mesin,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),30000000,,sekali
+2026/2027,ukt,Teknik Sipil,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Teknik Sipil,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),20000000,,sekali
+2026/2027,ukt,Teknik Industri,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Teknik Industri,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),30000000,,sekali
+2026/2027,ukt,Teknik Lingkungan,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Teknik Lingkungan,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),30000000,,sekali
+2026/2027,ukt,Teknik Elektro,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Teknik Elektro,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),25000000,,sekali
+2026/2027,ukt,Arsitektur,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Arsitektur,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),20000000,,sekali
+2026/2027,ukt,Farmasi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),10000000,,per_semester
+2026/2027,uang_pangkal,Farmasi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),25000000,,sekali
+2026/2027,ukt,Teknik Pertanian Dan Biosistem,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Teknik Pertanian Dan Biosistem,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Teknologi Pangan Dan Hasil Pertanian,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Teknologi Pangan Dan Hasil Pertanian,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Teknologi Industri Pertanian,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Teknologi Industri Pertanian,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),12000000,,sekali
+2026/2027,ukt,Kesehatan Masyarakat,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7700000,,per_semester
+2026/2027,uang_pangkal,Kesehatan Masyarakat,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Gizi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7700000,,per_semester
+2026/2027,uang_pangkal,Gizi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),15000000,,sekali
+2026/2027,ukt,Keperawatan,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7700000,,per_semester
+2026/2027,uang_pangkal,Keperawatan,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),25000000,,sekali
+2026/2027,ukt,Kedokteran Gigi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),14500000,,per_semester
+2026/2027,uang_pangkal,Kedokteran Gigi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),175000000,,sekali
+2026/2027,ukt,Teknik Komputer,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Teknik Komputer,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),20000000,,sekali
+2026/2027,ukt,Sistem Informasi,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Sistem Informasi,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),20000000,,sekali
+2026/2027,ukt,Informatika,S1,,SIMA Akademik Ujian Tulis,UKT (SIMA Akademik Ujian Tulis),7500000,,per_semester
+2026/2027,uang_pangkal,Informatika,S1,,SIMA Akademik Ujian Tulis,IPI (SIMA Akademik Ujian Tulis),20000000,,sekali
