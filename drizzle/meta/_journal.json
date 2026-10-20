@@ -99,6 +99,13 @@
       "when": 1791382955255,
       "tag": "0013_fakta_per_sks",
       "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1792511081944,
+      "tag": "0014_promosi_bimbel",
+      "breakpoints": true
     }
   ]
 }

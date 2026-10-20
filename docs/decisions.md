@@ -44,7 +44,7 @@ Product-level decision log from the scoping interview on 2026-10-02. Terms are d
 
 ## Scope
 
-13. **In the MVP**: home with a large search box, search results, Jurusan page, Kampus page, Prodi page with Ulasan, the Ulasan form, the Tes Minat, Pengulas accounts, and the Moderator area (Antrean Moderasi, catalogue, Jurusan and Kode RIASEC mapping). Also Biaya & Masuk facts (17a–17f), Kota browsing, the **Perbandingan** of 2–3 Prodi (facts side by side only, 17f), and a labelled **Promosi** Kampus slot that never affects scores or organic ordering.
+13. **In the MVP**: home with a large search box, search results, Jurusan page, Kampus page, Prodi page with Ulasan, the Ulasan form, the Tes Minat, Pengulas accounts, and the Moderator area (Antrean Moderasi, catalogue, Jurusan and Kode RIASEC mapping). Also Biaya & Masuk facts (17a–17f), Kota browsing, the **Perbandingan** of 2–3 Prodi (facts side by side only, 17f), and a labelled **Promosi** slot for a Kampus or a bimbel (17n, 17r) that never affects scores or organic ordering.
 14. **Out of the MVP**: Profesi/salary pages, Kampus partner / Reputation Manager, awards, social features (chat, following, feeds), and off-topic articles.
 
 ## Technology
@@ -86,6 +86,12 @@ From a lecturer requirement: complete, factual cost and admission information fo
    - **Beasiswa**: the Kampus's own, national schemes (KIP Kuliah, ADik, …) and outside sponsors only when the Kampus's official page lists them. Per Kampus, no deadline, `cakupan` as text.
    - **Who**: Claude drafts each folder and makes the Wayback copy; a Moderator imports, a different Moderator checks (amends ADR 0006). There is no second Moderator yet, so facts stay Draf until one is added. The user runs production imports.
    - **Info Biaya**: Pengulas now give the **total** paid per semester (per-SKS fees included) and the sum of all Uang Pangkal parts, so the Estimasi is labelled "Total UKT / SPP per semester". It is the one number the facts can't give.
+17r. **Revenue: Promosi for bimbel first, then PTS (decided 2026-10-20)**: see [ADR 0012](./adr/0012-promosi-from-bimbel-with-one-reviewed-link.md). Revenue is Promosi sold directly, never through an ad network, and never from data about readers (17g, 17p).
+   - **Who buys**: bimbel and test-prep platforms first, since they already buy online ads aimed at exactly these readers; PTS second, using the bimbel click figures. PTN are not expected to buy.
+   - **What a bimbel gets**: the same slots as a Kampus (Beranda, any Jurusan it buys, matching search), its name plus up to 140 characters, and one https link to its own site that two Moderators checked (only `utm_` parameters). No image. The box names the bimbel as the payer and shows the domain the link leads to.
+   - **Price**: a flat fee per slot (Beranda, or one Jurusan) per month, agreed in a contract and paid by bank transfer against an invoice. No per-click billing and no payment code in the app. Prices are set after a pilot with 2–3 bimbel in the run-up to SNBT.
+   - **Report**: the Moderator downloads the daily clicks as CSV from `/moderasi/promosi/[id]` and sends it each month. Views are not counted (ADR 0009); counting them without cookies is possible on Railway but would change `/privasi`, and is revisited after launch.
+   - **Public**: `/pasang-promosi` explains the offer without prices; `/ketentuan` section 10 and `/privasi` cover bimbel and the external link. Migration `0014`.
 17i. **Legal**: `/privasi` adds the Profil Minat and the age declaration; `/ketentuan` adds a disclaimer that facts come from official sources on a stated date, may change, and that CampusMatch is not affiliated with any Kampus. Both are written when the features ship.
 
 See also: [roadmap.md](./roadmap.md) and [legal-todo.md](./legal-todo.md).

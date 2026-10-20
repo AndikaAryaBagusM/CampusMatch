@@ -14,7 +14,7 @@ export default function PrivasiPage() {
   return (
     <HalamanHukum
       judul="Kebijakan Privasi"
-      diperbarui="6 Oktober 2026"
+      diperbarui="20 Oktober 2026"
       ringkas="Kebijakan ini menjelaskan data apa yang dikumpulkan CampusMatch, untuk apa, siapa yang ikut memprosesnya, berapa lama disimpan, dan hakmu sebagai subjek data pribadi menurut Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP)."
     >
       <Bagian id="ringkasan" judul="Ringkasnya">
@@ -89,7 +89,9 @@ export default function PrivasiPage() {
         </p>
         <p>
           <strong>Saat kamu mengeklik Promosi.</strong> Kami hanya menambah satu pada jumlah klik Promosi itu untuk hari
-          tersebut. Tidak ada cookie, alamat IP, atau data lain tentang siapa yang mengeklik.
+          tersebut. Tidak ada cookie, alamat IP, atau data lain tentang siapa yang mengeklik. Promosi dari bimbel
+          membawamu ke situs bimbel itu; tautannya bisa memuat tanda utm_ yang hanya memberi tahu bahwa kamu datang dari
+          CampusMatch. Data yang kamu berikan di situs itu diatur kebijakan privasi bimbel tersebut, bukan kebijakan ini.
         </p>
         <p>
           <strong>Alamat IP dalam bentuk hash.</strong> Saat kamu menulis ulasan, melaporkan ulasan, membagikan info
@@ -98,8 +100,8 @@ export default function PrivasiPage() {
           mencegah penyalahgunaan. Alamat IP aslinya tidak kami simpan.
         </p>
         <p>
-          <strong>Yang tidak kami kumpulkan.</strong> Tidak ada foto, unggahan berkas, data lokasi, atau alat analitik
-          dan iklan pihak ketiga.
+          <strong>Yang tidak kami kumpulkan.</strong> Tidak ada foto, unggahan berkas, data lokasi, alat analitik, atau
+          jaringan iklan. Promosi kami pasang sendiri, tanpa skrip atau pelacak dari pengiklan.
         </p>
       </Bagian>
 

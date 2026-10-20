@@ -1,8 +1,8 @@
-// Promosi (ADR 0009, decisions.md 17n): a paid, labelled Kampus placement on
-// the home page, Jurusan pages and search. A Moderator enters it as Draf, a
-// different Moderator activates it, and it shows (Tayang) between its dates.
-// It never changes Ulasan, Bintang or the order of any list, and only daily
-// click totals are kept.
+// Promosi (ADR 0009 and 0012, decisions.md 17n and 17r): a paid, labelled
+// placement by a Kampus or a bimbel on the home page, Jurusan pages and
+// search. A Moderator enters it as Draf, a different Moderator activates it,
+// and it shows (Tayang) between its dates. It never changes Ulasan, Bintang or
+// the order of any list, and only daily click totals are kept.
 import { and, asc, count, desc, eq, gte, ilike, inArray, isNotNull, lte, or, sql } from "drizzle-orm";
 import { alias } from "drizzle-orm/pg-core";
 import type { Db } from "@/db";
@@ -12,7 +12,40 @@ import { jurusanEfektif } from "@/lib/search";
 export class PromosiDitolak extends Error {}
 
 export const TEKS_MAKS = 140;
+export const NAMA_MAKS = 80;
 const ALASAN_MAKS = 500;
+const TAUTAN_MAKS = 500;
+
+// A bimbel's address, normalised: https on a public domain name, no
+// credentials or port, and no query parameters but utm_*, so the link tells
+// the bimbel only that the visitor came from CampusMatch (ADR 0012).
+export function periksaTautan(masukan: string): string {
+  let u: URL;
+  try {
+    u = new URL(masukan.trim());
+  } catch {
+    throw new PromosiDitolak("Tautan tidak sah. Tulis alamat lengkap yang diawali https://.");
+  }
+  if (u.protocol !== "https:") throw new PromosiDitolak("Tautan harus diawali https://.");
+  if (u.username || u.password || u.port) throw new PromosiDitolak("Tautan tidak boleh memuat nama pengguna, kata sandi, atau port.");
+  const host = u.hostname;
+  if (!host.includes(".") || host.endsWith(".") || host.startsWith("[") || /^[\d.]+$/.test(host) || host.endsWith(".localhost"))
+    throw new PromosiDitolak("Tautan harus memakai nama domain publik.");
+  for (const k of u.searchParams.keys())
+    if (!k.toLowerCase().startsWith("utm_")) throw new PromosiDitolak(`Parameter "${k}" tidak boleh; hanya parameter utm_ yang diizinkan.`);
+  const hasil = u.toString();
+  if (hasil.length > TAUTAN_MAKS) throw new PromosiDitolak(`Tautan paling panjang ${TAUTAN_MAKS} karakter.`);
+  return hasil;
+}
+
+// "ruangguru.com": what a reader sees before leaving CampusMatch.
+export const domainTautan = (tautan: string) => new URL(tautan).hostname.replace(/^www\./, "");
+
+// The click report a Moderator sends the Pengiklan: one row per day, oldest first.
+export function klikCsv(klik: { tanggal: string; jumlah: number }[]): string {
+  const baris = [...klik].sort((a, b) => a.tanggal.localeCompare(b.tanggal)).map((k) => `${k.tanggal},${k.jumlah}`);
+  return ["tanggal,klik", ...baris].join("\r\n") + "\r\n";
+}
 
 const tanggalJakarta = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jakarta", year: "numeric", month: "2-digit", day: "2-digit" });
 
@@ -47,14 +80,41 @@ const tayang = (hariIni: string) => and(eq(promosi.status, "aktif"), lte(promosi
 
 export type Tempat = { tempat: "beranda" } | { tempat: "jurusan"; jurusanIds: number[] };
 
-export type PromosiTampil = {
-  id: number;
-  teks: string | null;
-  kampus: { npsn: string; nama: string; slug: string; akreditasi: string | null; kotaNama: string };
+type KampusTampil = { npsn: string; nama: string; slug: string; akreditasi: string | null; kotaNama: string };
+
+export type PromosiTampil = { id: number; teks: string | null } & (
+  | { jenis: "kampus"; kampus: KampusTampil }
+  | { jenis: "bimbel"; nama: string; tautan: string }
+);
+
+// The columns a Promosi box needs; Kampus is left-joined, so a bimbel row has none.
+const kolomTampil = {
+  id: promosi.id,
+  jenis: promosi.jenis,
+  teks: promosi.teks,
+  namaPengiklan: promosi.namaPengiklan,
+  tautan: promosi.tautan,
+  kampus: { npsn: kampus.npsn, nama: kampus.nama, slug: kampus.slug, akreditasi: kampus.akreditasi, kotaNama: kota.nama },
 };
 
-// The Promosi to show in one place, or null. Several qualifying Promosi take
-// turns by the hour, so a cached page needs no randomness or visitor state.
+type BarisTampil = {
+  id: number;
+  jenis: "kampus" | "bimbel";
+  teks: string | null;
+  namaPengiklan: string | null;
+  tautan: string | null;
+  kampus: { npsn: string | null; nama: string | null; slug: string | null; akreditasi: string | null; kotaNama: string | null } | null;
+};
+
+// The database check guarantees the columns each kind needs.
+export function keTampil(r: BarisTampil): PromosiTampil {
+  if (r.jenis === "bimbel") return { id: r.id, teks: r.teks, jenis: "bimbel", nama: r.namaPengiklan!, tautan: r.tautan! };
+  return { id: r.id, teks: r.teks, jenis: "kampus", kampus: r.kampus as KampusTampil };
+}
+
+// The Promosi to show in one place, or null. Several qualifying Promosi of
+// either kind take turns by the hour, so a cached page needs no randomness or
+// visitor state.
 export async function pilihPromosi(db: Db, t: Tempat, sekarang = new Date()): Promise<PromosiTampil | null> {
   if (t.tempat === "jurusan" && t.jurusanIds.length === 0) return null;
   const tempat =
@@ -62,28 +122,25 @@ export async function pilihPromosi(db: Db, t: Tempat, sekarang = new Date()): Pr
       ? eq(promosi.diBeranda, true)
       : sql`EXISTS (SELECT 1 FROM ${promosiJurusan} WHERE ${promosiJurusan.promosiId} = ${promosi.id} AND ${inArray(promosiJurusan.jurusanId, t.jurusanIds)})`;
   const calon = await db
-    .select({
-      id: promosi.id,
-      teks: promosi.teks,
-      kampus: { npsn: kampus.npsn, nama: kampus.nama, slug: kampus.slug, akreditasi: kampus.akreditasi, kotaNama: kota.nama },
-    })
+    .select(kolomTampil)
     .from(promosi)
-    .innerJoin(kampus, eq(promosi.kampusId, kampus.id))
-    .innerJoin(kota, eq(kampus.kotaId, kota.id))
+    .leftJoin(kampus, eq(promosi.kampusId, kampus.id))
+    .leftJoin(kota, eq(kampus.kotaId, kota.id))
     .where(and(tayang(hariIniJakarta(sekarang)), tempat))
     .orderBy(asc(promosi.id));
   if (calon.length === 0) return null;
-  return calon[Math.floor(sekarang.getTime() / 3_600_000) % calon.length];
+  return keTampil(calon[Math.floor(sekarang.getTime() / 3_600_000) % calon.length]);
 }
 
-// Counts a click if the Promosi is showing, and returns where it leads (its
-// Kampus page), or null for an unknown id. Only a daily total is stored.
+// Counts a click if the Promosi is showing, and returns where it leads (the
+// Kampus's page, or the bimbel's checked address), or null for an unknown id.
+// Only a daily total is stored.
 export async function catatKlik(db: Db, id: number, sekarang = new Date()): Promise<string | null> {
   const hariIni = hariIniJakarta(sekarang);
   const [p] = await db
-    .select({ slug: kampus.slug, sedangTayang: sql<boolean>`${tayang(hariIni)}` })
+    .select({ jenis: promosi.jenis, tautan: promosi.tautan, slug: kampus.slug, sedangTayang: sql<boolean>`${tayang(hariIni)}` })
     .from(promosi)
-    .innerJoin(kampus, eq(promosi.kampusId, kampus.id))
+    .leftJoin(kampus, eq(promosi.kampusId, kampus.id))
     .where(eq(promosi.id, id));
   if (!p) return null;
   if (p.sedangTayang)
@@ -91,7 +148,7 @@ export async function catatKlik(db: Db, id: number, sekarang = new Date()): Prom
       .insert(promosiKlik)
       .values({ promosiId: id, tanggal: hariIni, jumlah: 1 })
       .onConflictDoUpdate({ target: [promosiKlik.promosiId, promosiKlik.tanggal], set: { jumlah: sql`${promosiKlik.jumlah} + 1` } });
-  return p.slug;
+  return p.jenis === "bimbel" ? p.tautan : `/kampus/${p.slug}`;
 }
 
 // --- Entering ---------------------------------------------------------------
@@ -130,8 +187,7 @@ export async function listJurusanKampus(db: Db, kampusId: number) {
     .orderBy(asc(jurusan.nama));
 }
 
-export type DataPromosi = {
-  kampusId: number;
+type DataUmum = {
   jurusanIds: number[];
   diBeranda: boolean;
   mulai: string;
@@ -140,25 +196,46 @@ export type DataPromosi = {
   catatanInternal: string;
 };
 
+export type DataPromosi = DataUmum &
+  ({ jenis: "kampus"; kampusId: number } | { jenis: "bimbel"; namaPengiklan: string; tautan: string });
+
+const rapikan = (s: string) => s.replace(/\s+/g, " ").trim();
+
+// A Kampus targets only the Jurusan it offers; a bimbel any Jurusan, and it
+// needs its name, text and a checked address.
+async function pengiklan(db: Db, data: DataPromosi, teks: string, jurusanIds: number[]) {
+  if (data.jenis === "bimbel") {
+    const nama = rapikan(data.namaPengiklan);
+    if (!nama || nama.length > NAMA_MAKS) throw new PromosiDitolak(`Tulis nama bimbel, paling banyak ${NAMA_MAKS} karakter.`);
+    if (!teks) throw new PromosiDitolak("Promosi bimbel perlu teks.");
+    const tautan = periksaTautan(data.tautan);
+    const ada = jurusanIds.length ? await db.select({ id: jurusan.id }).from(jurusan).where(inArray(jurusan.id, jurusanIds)) : [];
+    if (ada.length !== jurusanIds.length) throw new PromosiDitolak("Ada Jurusan yang tidak ditemukan.");
+    return { jenis: "bimbel" as const, namaPengiklan: nama, tautan };
+  }
+  const k = await getKampusPromosi(db, data.kampusId);
+  if (!k) throw new PromosiDitolak("Kampus tidak ditemukan.");
+  const ditawarkan = new Set((await listJurusanKampus(db, k.id)).map((j) => j.id));
+  if (jurusanIds.some((id) => !ditawarkan.has(id))) throw new PromosiDitolak("Ada Jurusan yang tidak ditawarkan Kampus ini.");
+  return { jenis: "kampus" as const, kampusId: k.id };
+}
+
 export async function buatDraf(db: Db, data: DataPromosi, moderatorId: string, sekarang = new Date()): Promise<number> {
-  const teks = data.teks.replace(/\s+/g, " ").trim();
+  const teks = rapikan(data.teks);
   if (teks.length > TEKS_MAKS) throw new PromosiDitolak(`Teks paling banyak ${TEKS_MAKS} karakter.`);
   if (!tanggalSah(data.mulai) || !tanggalSah(data.selesai)) throw new PromosiDitolak("Isi tanggal mulai dan selesai.");
   if (data.selesai < data.mulai) throw new PromosiDitolak("Tanggal selesai harus sama dengan atau setelah tanggal mulai.");
   if (data.selesai < hariIniJakarta(sekarang)) throw new PromosiDitolak("Tanggal selesai sudah lewat.");
   const jurusanIds = [...new Set(data.jurusanIds)];
   if (!data.diBeranda && jurusanIds.length === 0) throw new PromosiDitolak("Pilih tempat tampil: Beranda atau minimal satu Jurusan.");
-  const k = await getKampusPromosi(db, data.kampusId);
-  if (!k) throw new PromosiDitolak("Kampus tidak ditemukan.");
-  const ditawarkan = new Set((await listJurusanKampus(db, k.id)).map((j) => j.id));
-  if (jurusanIds.some((id) => !ditawarkan.has(id))) throw new PromosiDitolak("Ada Jurusan yang tidak ditawarkan Kampus ini.");
+  const siapa = await pengiklan(db, data, teks, jurusanIds);
 
   return db.transaction(async (tx) => {
     const t = tx as unknown as Db;
     const [baru] = await t
       .insert(promosi)
       .values({
-        kampusId: k.id,
+        ...siapa,
         teks: teks || null,
         diBeranda: data.diBeranda,
         mulai: data.mulai,
@@ -234,13 +311,14 @@ export async function listPromosiModerasi(db: Db, sekarang = new Date()) {
       mulai: promosi.mulai,
       selesai: promosi.selesai,
       diBeranda: promosi.diBeranda,
-      kampusNama: kampus.nama,
+      jenis: promosi.jenis,
+      nama: sql<string>`coalesce(${kampus.nama}, ${promosi.namaPengiklan})`,
       jurusan: jurusanPromosi,
       klikTotal: sql<number>`(SELECT coalesce(sum(${promosiKlik.jumlah}), 0)::int FROM ${promosiKlik} WHERE ${promosiKlik.promosiId} = ${promosi.id})`,
       klik14: sql<number>`(SELECT coalesce(sum(${promosiKlik.jumlah}), 0)::int FROM ${promosiKlik} WHERE ${promosiKlik.promosiId} = ${promosi.id} AND ${promosiKlik.tanggal} >= ${duaMinggu})`,
     })
     .from(promosi)
-    .innerJoin(kampus, eq(promosi.kampusId, kampus.id))
+    .leftJoin(kampus, eq(promosi.kampusId, kampus.id))
     .orderBy(desc(promosi.mulai), desc(promosi.id))
     .limit(200);
   return rows.map((r) => ({ ...r, keadaan: keadaanPromosi(r, hariIni) }));
@@ -252,9 +330,8 @@ export async function getPromosi(db: Db, id: number, sekarang = new Date()) {
   const henti = alias(users, "dihentikan");
   const [p] = await db
     .select({
-      id: promosi.id,
+      ...kolomTampil,
       status: promosi.status,
-      teks: promosi.teks,
       diBeranda: promosi.diBeranda,
       mulai: promosi.mulai,
       selesai: promosi.selesai,
@@ -267,12 +344,11 @@ export async function getPromosi(db: Db, id: number, sekarang = new Date()) {
       dihentikanAt: promosi.dihentikanAt,
       alasanDihentikan: promosi.alasanDihentikan,
       createdAt: promosi.createdAt,
-      kampus: { npsn: kampus.npsn, nama: kampus.nama, slug: kampus.slug, akreditasi: kampus.akreditasi, kotaNama: kota.nama },
       jurusan: jurusanPromosi,
     })
     .from(promosi)
-    .innerJoin(kampus, eq(promosi.kampusId, kampus.id))
-    .innerJoin(kota, eq(kampus.kotaId, kota.id))
+    .leftJoin(kampus, eq(promosi.kampusId, kampus.id))
+    .leftJoin(kota, eq(kampus.kotaId, kota.id))
     .leftJoin(masuk, eq(promosi.dimasukkanOleh, masuk.id))
     .leftJoin(aktif, and(isNotNull(promosi.diaktifkanOleh), eq(promosi.diaktifkanOleh, aktif.id)))
     .leftJoin(henti, eq(promosi.dihentikanOleh, henti.id))
@@ -283,7 +359,9 @@ export async function getPromosi(db: Db, id: number, sekarang = new Date()) {
     .from(promosiKlik)
     .where(eq(promosiKlik.promosiId, id))
     .orderBy(desc(promosiKlik.tanggal));
-  return { ...p, keadaan: keadaanPromosi(p, hariIniJakarta(sekarang)), klik };
+  const tampil = keTampil(p);
+  const nama = tampil.jenis === "bimbel" ? tampil.nama : tampil.kampus.nama;
+  return { ...p, tampil, nama, keadaan: keadaanPromosi(p, hariIniJakarta(sekarang)), klik };
 }
 
 export type PromosiDetail = NonNullable<Awaited<ReturnType<typeof getPromosi>>>;

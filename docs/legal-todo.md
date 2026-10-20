@@ -24,8 +24,18 @@ None of the four items below is finished. All four must be done before public la
 9. **Account suspension.** `/ketentuan` section 5 reserves the right to disable accounts that keep breaking the rules. The app has no such switch yet.
 10. **Tes Minat validation.** The O*NET Tools Developer License requires a Validation Study for the translated Interest Profiler ([ADR 0004](./adr/0004-riasec-via-onet-interest-profiler.md)). Confirm what the study must cover for an Indonesian adaptation, and whether the "belum divalidasi" notice on the pages is acceptable meanwhile. This blocks launching the Tes Minat.
 
-11. **Promosi disclosure.** Paid Kampus placements are labelled "Promosi" with the line "Promosi berbayar dari Kampus…" and explained in `/ketentuan` section 10. Confirm this meets Indonesian advertising and consumer-protection rules (e.g. UU Perlindungan Konsumen, Etika Pariwara Indonesia), and what the contract with a Kampus must say about the text it supplies.
+11. **Promosi disclosure.** Paid placements are labelled "Promosi" with the line "Promosi berbayar dari Kampus…" (or the bimbel's name) and explained in `/ketentuan` section 10. Confirm this meets Indonesian advertising and consumer-protection rules (e.g. UU Perlindungan Konsumen, Etika Pariwara Indonesia), and what the contract with a Pengiklan must say about the text it supplies.
 
 12. **Info Biaya as specific personal data.** Pengulas can share their UKT and Kelompok, Uang Pangkal and Beasiswa kind ([ADR 0010](./adr/0010-pengulas-estimates-beside-official-facts.md)), which UU PDP Article 4(2) treats as personal financial data. We ask for explicit consent with a checkbox on every save, show only aggregates of at least 5 answers per question without cross-tabulation, let the Pengulas delete it from `/akun`, and delete it automatically after five angkatan. Confirm the consent wording, whether a data protection impact assessment is required, and whether a minimum of 5 is enough to prevent re-identification.
+
+13. **Bimbel Promosi** ([ADR 0012](./adr/0012-promosi-from-bimbel-with-one-reviewed-link.md)). Reading needs no account, so many readers are under 18. Confirm that advertising test-prep services to them is allowed and on what terms. Also:
+    - which admission claims must be refused beyond "pasti lolos" and "jaminan diterima";
+    - whether CampusMatch is liable for the site a bimbel's link leads to;
+    - whether `/privasi` says enough about leaving the site with `utm_` tags.
+
+14. **Selling Promosi** (decisions.md 17r). Settle:
+    - which entity signs and invoices (e.g. PT Perorangan) and the NPWP;
+    - when PPN registration becomes necessary;
+    - a one-page contract template covering the text and link, the two-Moderator check, stopping early (with or without a refund), and the monthly click report as proof of delivery.
 
 Related: the O*NET attribution requirement for the Tes Minat is recorded in [ADR 0004](./adr/0004-riasec-via-onet-interest-profiler.md).

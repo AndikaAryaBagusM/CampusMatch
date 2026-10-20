@@ -7,12 +7,15 @@ import {
   aktifkan,
   buatDraf,
   catatKlik,
+  domainTautan,
   getPromosi,
   hapusDraf,
   hariIniJakarta,
   hentikan,
   keadaanPromosi,
+  klikCsv,
   listJurusanKampus,
+  periksaTautan,
   pilihPromosi,
   PromosiDitolak,
   type DataPromosi,
@@ -47,7 +50,11 @@ async function siapkan() {
   return { kampus: kat.kampus, a, b, c, m1, m2 };
 }
 
-const data = (s: Awaited<ReturnType<typeof siapkan>>, ubah: Partial<DataPromosi> = {}): DataPromosi => ({
+type DataKampus = Extract<DataPromosi, { jenis: "kampus" }>;
+type DataBimbel = Extract<DataPromosi, { jenis: "bimbel" }>;
+
+const data = (s: Awaited<ReturnType<typeof siapkan>>, ubah: Partial<DataKampus> = {}): DataKampus => ({
+  jenis: "kampus",
   kampusId: s.kampus.id,
   jurusanIds: [s.a.id],
   diBeranda: false,
@@ -89,15 +96,15 @@ test("only a second Moderator activates; it shows only where and when it should"
   await aktifkan(t.db, id, s.m2.id, SEKARANG);
 
   const tampil = await pilihPromosi(t.db, { tempat: "jurusan", jurusanIds: [s.a.id, s.c.id] }, SEKARANG);
-  expect(tampil).toMatchObject({ id, teks: "Pendaftaran Mandiri dibuka", kampus: { slug: s.kampus.slug } });
-  expect(Object.keys(tampil!.kampus).sort()).toEqual(["akreditasi", "kotaNama", "nama", "npsn", "slug"]);
+  expect(tampil).toMatchObject({ id, jenis: "kampus", teks: "Pendaftaran Mandiri dibuka", kampus: { slug: s.kampus.slug } });
+  expect(Object.keys(tampil!.jenis === "kampus" ? tampil!.kampus : {}).sort()).toEqual(["akreditasi", "kotaNama", "nama", "npsn", "slug"]);
   expect(await pilihPromosi(t.db, { tempat: "jurusan", jurusanIds: [s.b.id] }, SEKARANG)).toBeNull();
   expect((await pilihPromosi(t.db, { tempat: "beranda" }, SEKARANG))?.id).toBeDefined();
   expect(await pilihPromosi(t.db, { tempat: "jurusan", jurusanIds: [s.a.id] }, new Date("2026-11-01T03:00:00Z"))).toBeNull();
   expect(await pilihPromosi(t.db, { tempat: "jurusan", jurusanIds: [] }, SEKARANG)).toBeNull();
 
   // Clicks: a daily total, only while it shows.
-  expect(await catatKlik(t.db, id, SEKARANG)).toBe(s.kampus.slug);
+  expect(await catatKlik(t.db, id, SEKARANG)).toBe(`/kampus/${s.kampus.slug}`);
   await catatKlik(t.db, id, SEKARANG);
   await catatKlik(t.db, id, new Date("2026-11-02T03:00:00Z"));
   expect(await t.db.select({ tanggal: promosiKlik.tanggal, jumlah: promosiKlik.jumlah }).from(promosiKlik).where(eq(promosiKlik.promosiId, id))).toEqual([
@@ -137,4 +144,124 @@ test("a Draf can be deleted; the database refuses a self-activated Promosi", asy
   ).rejects.toThrow();
   await hapusDraf(t.db, id);
   expect(await getPromosi(t.db, id)).toBeNull();
+});
+
+// --- Bimbel (ADR 0012) -----------------------------------------------------------
+
+const bimbel = (s: Awaited<ReturnType<typeof siapkan>>, ubah: Partial<DataBimbel> = {}): DataBimbel => ({
+  jenis: "bimbel",
+  namaPengiklan: "Bimbel Contoh",
+  tautan: "https://www.contoh-bimbel.id/snbt?utm_source=campusmatch",
+  jurusanIds: [s.c.id],
+  diBeranda: false,
+  mulai: "2026-10-01",
+  selesai: "2026-10-31",
+  teks: "Kelas persiapan SNBT 2027",
+  catatanInternal: "",
+  ...ubah,
+});
+
+test("periksaTautan accepts https on a public domain with utm_ only", () => {
+  expect(periksaTautan(" https://Contoh-Bimbel.id/snbt?utm_source=campusmatch&UTM_Medium=promosi ")).toBe(
+    "https://contoh-bimbel.id/snbt?utm_source=campusmatch&UTM_Medium=promosi",
+  );
+  expect(domainTautan("https://www.contoh-bimbel.id/a")).toBe("contoh-bimbel.id");
+  for (const [tautan, pesan] of [
+    ["contoh-bimbel.id", /https/],
+    ["http://contoh-bimbel.id", /https/],
+    ["javascript:alert(1)", /https/],
+    ["https://user:pw@contoh-bimbel.id", /kata sandi/],
+    ["https://contoh-bimbel.id:8443", /port/],
+    ["https://localhost/", /domain publik/],
+    ["https://127.0.0.1/", /domain publik/],
+    ["https://[::1]/", /domain publik/],
+    ["https://contoh-bimbel.id/?ref=abc", /"ref"/],
+    ["https://contoh-bimbel.id/?utm_source=x&fbclid=y", /"fbclid"/],
+    [`https://contoh-bimbel.id/${"a".repeat(500)}`, /500/],
+  ] as const)
+    expect(() => periksaTautan(tautan), tautan).toThrow(pesan);
+});
+
+test("a bimbel Draf targets any Jurusan and needs its name, text and link", async () => {
+  const s = await siapkan();
+  await tolak(buatDraf(t.db, bimbel(s, { namaPengiklan: " " }), s.m1.id, SEKARANG), /nama bimbel/);
+  await tolak(buatDraf(t.db, bimbel(s, { namaPengiklan: "x".repeat(81) }), s.m1.id, SEKARANG), /80/);
+  await tolak(buatDraf(t.db, bimbel(s, { teks: " " }), s.m1.id, SEKARANG), /perlu teks/);
+  await tolak(buatDraf(t.db, bimbel(s, { tautan: "http://contoh-bimbel.id" }), s.m1.id, SEKARANG), /https/);
+  await tolak(buatDraf(t.db, bimbel(s, { jurusanIds: [999999] }), s.m1.id, SEKARANG), /tidak ditemukan/);
+
+  // Jurusan C is offered by no Kampus here; a bimbel may still buy it.
+  const id = await buatDraf(t.db, bimbel(s), s.m1.id, SEKARANG);
+  await aktifkan(t.db, id, s.m2.id, SEKARANG);
+  expect(await pilihPromosi(t.db, { tempat: "jurusan", jurusanIds: [s.c.id] }, SEKARANG)).toEqual({
+    id,
+    jenis: "bimbel",
+    nama: "Bimbel Contoh",
+    teks: "Kelas persiapan SNBT 2027",
+    tautan: "https://www.contoh-bimbel.id/snbt?utm_source=campusmatch",
+  });
+  expect(await catatKlik(t.db, id, SEKARANG)).toBe("https://www.contoh-bimbel.id/snbt?utm_source=campusmatch");
+  const detail = await getPromosi(t.db, id, SEKARANG);
+  expect(detail).toMatchObject({
+    nama: "Bimbel Contoh",
+    keadaan: "tayang",
+    klik: [{ tanggal: "2026-10-06", jumlah: 1 }],
+  });
+  expect(detail!.tampil.jenis).toBe("bimbel");
+});
+
+test("a Kampus Promosi and a bimbel one take turns in the same slot", async () => {
+  const s = await siapkan();
+  const ids = [
+    await buatDraf(t.db, data(s, { jurusanIds: [s.b.id] }), s.m1.id, SEKARANG),
+    await buatDraf(t.db, bimbel(s, { jurusanIds: [s.b.id] }), s.m1.id, SEKARANG),
+  ];
+  for (const id of ids) await aktifkan(t.db, id, s.m2.id, SEKARANG);
+  const jam = (h: number) => new Date(Date.UTC(2026, 9, 6, h));
+  const pilih = async (d: Date) => (await pilihPromosi(t.db, { tempat: "jurusan", jurusanIds: [s.b.id] }, d))!;
+  const [satu, dua] = [await pilih(jam(3)), await pilih(jam(4))];
+  expect(new Set([satu.id, dua.id])).toEqual(new Set(ids));
+  expect(new Set([satu.jenis, dua.jenis])).toEqual(new Set(["kampus", "bimbel"]));
+});
+
+test("the database refuses a row that mixes the two kinds", async () => {
+  const s = await siapkan();
+  const dasar = { mulai: "2026-10-01", selesai: "2026-10-31", teks: "Teks" };
+  await expect(t.db.insert(promosi).values({ ...dasar, jenis: "bimbel", namaPengiklan: "X" })).rejects.toThrow();
+  await expect(
+    t.db.insert(promosi).values({
+      ...dasar,
+      jenis: "bimbel",
+      namaPengiklan: "X",
+      tautan: "https://x.id",
+      kampusId: s.kampus.id,
+    }),
+  ).rejects.toThrow();
+  await expect(
+    t.db.insert(promosi).values({
+      ...dasar,
+      jenis: "bimbel",
+      namaPengiklan: "X",
+      tautan: "http://x.id",
+    }),
+  ).rejects.toThrow();
+  await expect(
+    t.db.insert(promosi).values({
+      ...dasar,
+      jenis: "kampus",
+      kampusId: s.kampus.id,
+      tautan: "https://x.id",
+    }),
+  ).rejects.toThrow();
+  await expect(t.db.insert(promosi).values({ ...dasar, jenis: "kampus" })).rejects.toThrow();
+});
+
+test("klikCsv lists days oldest first", () => {
+  expect(klikCsv([])).toBe("tanggal,klik\r\n");
+  expect(
+    klikCsv([
+      { tanggal: "2026-10-07", jumlah: 3 },
+      { tanggal: "2026-10-05", jumlah: 12 },
+    ]),
+  ).toBe("tanggal,klik\r\n2026-10-05,12\r\n2026-10-07,3\r\n");
 });
