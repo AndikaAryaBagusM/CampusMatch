@@ -19,6 +19,11 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
+  // Absolute URLs for the shared image (app/opengraph-image.png). Off Vercel,
+  // Next.js would otherwise build them from localhost.
+  metadataBase: new URL(process.env.AUTH_URL ?? "https://www.campusmatch.site"),
+  openGraph: { siteName: "CampusMatch", locale: "id_ID", type: "website" },
+  twitter: { card: "summary_large_image" },
   title: {
     default: "CampusMatch: pilih Jurusan dan Kampus",
     template: "%s | CampusMatch",
