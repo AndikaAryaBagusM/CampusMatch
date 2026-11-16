@@ -5,7 +5,20 @@
 import { and, asc, countDistinct, count, desc, eq, isNotNull, isNull, sql, type AnyColumn } from "drizzle-orm";
 import type { PgSelect } from "drizzle-orm/pg-core";
 import type { Db } from "@/db";
-import { imporKatalog, jenjang as jenjangEnum, jurusan, kampus, kodeProdiJurusan, kota, prodi, ulasan, ulasanRevisi, verifikasiKampus } from "@/db/schema";
+import {
+  biaya,
+  imporKatalog,
+  jenjang as jenjangEnum,
+  jurusan,
+  kampus,
+  kodeProdiJurusan,
+  kota,
+  prodi,
+  ulasan,
+  ulasanMembantu,
+  ulasanRevisi,
+  verifikasiKampus,
+} from "@/db/schema";
 import { peringkatQsKampus } from "@/lib/peringkat-qs/kueri";
 import { jurusanEfektif } from "@/lib/search";
 import type { KolomAspek } from "@/lib/ulasan/skema";
@@ -276,13 +289,9 @@ export async function getRingkasanUlasan(
   return { jumlah, bintang, tingkatRekomendasi, aspek };
 }
 
-export async function listUlasanTerbit(
-  db: Db,
-  target: { prodiSlug: string } | { kampusSlug: string },
-  limit: number,
-) {
-  return db
-    .select({
+// What every public Ulasan list selects. judul and isi are null for an Ulasan
+// with ratings only (decisions.md 17s).
+const kolomUlasanPublik = {
       id: ulasan.id,
       statusPengulas: ulasan.statusPengulas,
       tahunMasuk: ulasan.tahunMasuk,
@@ -296,14 +305,97 @@ export async function listUlasanTerbit(
       // Terverifikasi at this Prodi's Kampus (decisions.md 17o): only the date,
       // never who or which address.
       terverifikasiSejak: sql<Date | null>`(SELECT ${verifikasiKampus.verifiedAt} FROM ${verifikasiKampus} WHERE ${verifikasiKampus.userId} = ${ulasan.pengulasId} AND ${verifikasiKampus.kampusId} = ${prodi.kampusId})`.mapWith((v) => (v ? new Date(v) : null)),
-    })
+      // How many readers marked it Membantu; never who.
+      jumlahMembantu: sql<number>`(SELECT count(*)::int FROM ${ulasanMembantu} WHERE ${ulasanMembantu.ulasanId} = ${ulasan.id})`,
+};
+
+// Ulasan with a story first, then ratings only; newest first within each.
+export async function listUlasanTerbit(
+  db: Db,
+  target: { prodiSlug: string } | { kampusSlug: string },
+  limit: number,
+) {
+  return db
+    .select(kolomUlasanPublik)
     .from(ulasan)
     .innerJoin(ulasanRevisi, eq(ulasan.revisiTerbitId, ulasanRevisi.id))
     .innerJoin(prodi, eq(ulasan.prodiId, prodi.id))
     .innerJoin(kampus, eq(prodi.kampusId, kampus.id))
     .where(filterUlasan(target))
-    .orderBy(desc(ulasanRevisi.createdAt), desc(ulasan.id))
+    .orderBy(sql`${ulasanRevisi.isi} IS NULL`, desc(ulasanRevisi.createdAt), desc(ulasan.id))
     .limit(limit);
 }
 
 export type UlasanPublik = Awaited<ReturnType<typeof listUlasanTerbit>>[number];
+
+// --- Beranda: signs of life ---------------------------------------------------
+
+// The newest Ulasan that have a story, from any Prodi, with their Kampus.
+export async function listUlasanTerbaru(db: Db, limit: number) {
+  return db
+    .select({ ...kolomUlasanPublik, kampusNama: kampus.nama })
+    .from(ulasan)
+    .innerJoin(ulasanRevisi, eq(ulasan.revisiTerbitId, ulasanRevisi.id))
+    .innerJoin(prodi, eq(ulasan.prodiId, prodi.id))
+    .innerJoin(kampus, eq(prodi.kampusId, kampus.id))
+    .where(and(ulasanTerbit, isNotNull(ulasanRevisi.isi)))
+    .orderBy(desc(ulasanRevisi.createdAt), desc(ulasan.id))
+    .limit(limit);
+}
+
+// The Prodi with the most Ulasan. Ordered by count only, never by Bintang, so
+// the list says where there is something to read, not which Prodi is better.
+export async function listProdiTerbanyakUlasan(db: Db, limit: number) {
+  return db
+    .select({
+      slug: prodi.slug,
+      nama: prodi.nama,
+      jenjang: prodi.jenjang,
+      kampusNama: kampus.nama,
+      jumlahUlasan: count(),
+      bintang: rata(ulasanRevisi.bintang),
+    })
+    .from(ulasan)
+    .innerJoin(ulasanRevisi, eq(ulasan.revisiTerbitId, ulasanRevisi.id))
+    .innerJoin(prodi, eq(ulasan.prodiId, prodi.id))
+    .innerJoin(kampus, eq(prodi.kampusId, kampus.id))
+    .where(ulasanTerbit)
+    .groupBy(prodi.id, kampus.id)
+    .orderBy(desc(count()), asc(kampus.nama), asc(prodi.nama), asc(prodi.id))
+    .limit(limit);
+}
+
+export async function countUlasanSemua(db: Db): Promise<number> {
+  const [row] = await db.select({ jumlah: count() }).from(ulasan).where(ulasanTerbit);
+  return row?.jumlah ?? 0;
+}
+
+// --- Sitemap -----------------------------------------------------------------
+
+// Prodi pages worth a search result: those with an Ulasan, or with checked
+// fees of their own or of their Kampus. The same rule as the page's robots tag.
+export async function listSlugProdiTerindeks(db: Db): Promise<string[]> {
+  const { rows } = await db.execute<{ slug: string }>(sql`
+    SELECT p.slug FROM ${prodi} p
+    WHERE EXISTS (SELECT 1 FROM ${ulasan} WHERE ${ulasan.prodiId} = p.id AND ${ulasanTerbit})
+       OR EXISTS (SELECT 1 FROM ${biaya} b WHERE b.status = 'diperiksa'
+                  AND (b.prodi_id = p.id OR (b.prodi_id IS NULL AND b.kampus_id = p.kampus_id
+                         AND NOT (b.jenis = 'pendaftaran' AND b.jalur_masuk_id IS NOT NULL))))
+    ORDER BY p.slug`);
+  return rows.map((r) => r.slug);
+}
+
+export async function listSlugSitemap(db: Db) {
+  const [daftarKampus, daftarJurusan, daftarKota, daftarProdi] = await Promise.all([
+    db.select({ slug: kampus.slug }).from(kampus).orderBy(asc(kampus.slug)),
+    db.select({ slug: jurusan.slug }).from(jurusan).orderBy(asc(jurusan.slug)),
+    db.selectDistinct({ slug: kota.slug }).from(kota).innerJoin(kampus, eq(kampus.kotaId, kota.id)).orderBy(asc(kota.slug)),
+    listSlugProdiTerindeks(db),
+  ]);
+  return {
+    kampus: daftarKampus.map((r) => r.slug),
+    jurusan: daftarJurusan.map((r) => r.slug),
+    kota: daftarKota.map((r) => r.slug),
+    prodi: daftarProdi,
+  };
+}

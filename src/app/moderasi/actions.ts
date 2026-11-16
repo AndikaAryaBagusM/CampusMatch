@@ -13,6 +13,7 @@ import {
   tutupLaporan,
   type HasilKeputusan,
 } from "@/lib/ulasan/moderasi";
+import { kabariTerbit } from "@/lib/ulasan/kabar-terbit";
 import { revalidasiHalamanUlasan } from "@/lib/ulasan/revalidasi";
 import { TransisiTidakSah } from "@/lib/ulasan/status";
 
@@ -27,6 +28,7 @@ async function putuskan(formData: FormData, keputusan: Keputusan) {
   try {
     const hasil = await withDb((db) => keputusan(db, moderator.id));
     if (hasil.liveBerubah) revalidasiHalamanUlasan(hasil.target);
+    if (hasil.pertamaTerbit) await kabariTerbit(hasil.pertamaTerbit.ulasanId);
   } catch (e) {
     if (!(e instanceof KeputusanTidakBerlaku || e instanceof TransisiTidakSah)) throw e;
     pesan = e.message;

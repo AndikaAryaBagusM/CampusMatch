@@ -4,6 +4,7 @@ import { withDb } from "@/db";
 import { FaqList } from "@/components/faq-list";
 import { GarisBidang, gayaBidang, idBidang } from "@/components/home/garis-bidang";
 import { KampusQsList } from "@/components/home/kampus-qs-list";
+import { ProdiRamaiUlasan, UlasanTerbaru } from "@/components/home/ulasan-terbaru";
 import { judulQs, QsFootnote } from "@/components/kampus/peringkat-qs";
 import { KatalogAsOf } from "@/components/katalog-as-of";
 import { kontainer } from "@/components/panel";
@@ -12,7 +13,7 @@ import { SearchForm } from "@/components/search-form";
 import { GarisRute } from "@/components/trayek/garis-rute";
 import { Plat } from "@/components/trayek/plat";
 import { formatAngka } from "@/lib/format";
-import { getBidangSorotan, getInfoKatalog } from "@/lib/katalog";
+import { countUlasanSemua, getBidangSorotan, getInfoKatalog, listProdiTerbanyakUlasan, listUlasanTerbaru } from "@/lib/katalog";
 import { getInfoQs, listKampusQs } from "@/lib/peringkat-qs/kueri";
 import { pilihPromosi } from "@/lib/promosi";
 import { cn } from "@/lib/utils";
@@ -32,19 +33,22 @@ const RUTE_PENGULAS = [
     keterangan: "Ketik nama Prodi atau Kampus di kolom pencarian, lalu buka halaman Prodi.",
   },
   { label: "Masuk", keterangan: "Dengan Google atau tautan email. Akun hanya untuk usia 18 tahun ke atas." },
-  { label: "Tulis ulasan", href: "/cari?tulis=1", keterangan: "Bintang, enam Aspek, Rekomendasi, dan ceritamu sendiri." },
+  { label: "Tulis ulasan", href: "/cari?tulis=1", keterangan: "Bintang, enam Aspek dan Rekomendasi. Ceritamu boleh menyusul." },
   { label: "Diperiksa", keterangan: "Diperiksa otomatis, lalu ditinjau tim kami bila perlu." },
   { label: "Terbit tanpa nama", keterangan: "Hanya status (mahasiswa aktif atau alumni) dan tahun masuk yang tampil." },
 ];
 
 export default async function Beranda() {
-  const [info, bidang, kampusQs, qs, promosi] = await withDb((db) =>
+  const [info, bidang, kampusQs, qs, promosi, ulasanBaru, prodiRamai, jumlahUlasan] = await withDb((db) =>
     Promise.all([
       getInfoKatalog(db),
       getBidangSorotan(db),
       listKampusQs(db),
       getInfoQs(db),
       pilihPromosi(db, { tempat: "beranda" }),
+      listUlasanTerbaru(db, 3),
+      listProdiTerbanyakUlasan(db, 8),
+      countUlasanSemua(db),
     ]),
   );
 
@@ -122,6 +126,24 @@ export default async function Beranda() {
       <div className={kontainer}>
         <div className="relative pl-10 sm:pl-14">
           <span aria-hidden className="absolute top-0 bottom-10 left-[9px] w-(--garis) rounded-b-full bg-jade sm:left-[13px]" />
+
+          {/* Signs of life first, once there are stories to show (decisions.md 17s). */}
+          {ulasanBaru.length > 0 ? (
+            <Stasiun id="ulasan" judul="Cerita terbaru dari mahasiswa dan alumni">
+              <p className="mb-5 max-w-[68ch] text-sm leading-relaxed text-muted-foreground">
+                <span className="tabular font-plate text-lg font-bold text-foreground">{formatAngka(jumlahUlasan)}</span> ulasan
+                sudah tampil, semuanya tanpa nama dan diperiksa sebelum terbit.
+              </p>
+              <UlasanTerbaru ulasan={ulasanBaru} />
+              {prodiRamai.length > 0 ? (
+                <div className="mt-8">
+                  <h3 className="mb-1 text-lg font-bold">Prodi dengan ulasan terbanyak</h3>
+                  <p className="mb-2 text-sm text-muted-foreground">Urut menurut jumlah ulasan, bukan nilainya.</p>
+                  <ProdiRamaiUlasan prodi={prodiRamai} />
+                </div>
+              ) : null}
+            </Stasiun>
+          ) : null}
 
           <Stasiun id="bidang" judul="Jelajahi berdasarkan bidang">
             <p className="max-w-[68ch] text-sm leading-relaxed text-muted-foreground">

@@ -1,6 +1,7 @@
 import { after } from "next/server";
 import { withDb } from "@/db";
 import { modelClaude } from "@/lib/screening/model-claude";
+import { kabariTerbit } from "./kabar-terbit";
 import { prosesScreening } from "./proses-screening";
 import { revalidasiHalamanUlasan } from "./revalidasi";
 
@@ -11,6 +12,7 @@ export async function jalankanScreening(revisiId: string) {
   try {
     const hasil = await withDb((db) => prosesScreening(db, revisiId, modelClaude()));
     if (hasil.diproses && hasil.liveBerubah) revalidasiHalamanUlasan(hasil.target);
+    if (hasil.diproses && hasil.pertamaTerbit) await kabariTerbit(hasil.ulasanId);
     return hasil;
   } catch (e) {
     console.error("Screening gagal dijalankan", { revisiId, e });

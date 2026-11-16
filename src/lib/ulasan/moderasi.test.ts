@@ -47,7 +47,12 @@ describe("Ditinjau revisions", () => {
   test("Setujui publishes and records who decided", async () => {
     const { ulasanId, revisiId, prodi } = await ulasanDengan("perlu_dicek");
     const hasil = await setujuiRevisi(t.db, { revisiId, moderatorId });
-    expect(hasil).toEqual({ liveBerubah: true, target: expect.objectContaining({ prodiSlug: prodi.slug }) });
+    expect(hasil).toEqual({
+      liveBerubah: true,
+      target: expect.objectContaining({ prodiSlug: prodi.slug }),
+      // Its first time live: the Pengulas is told by email.
+      pertamaTerbit: { ulasanId },
+    });
     expect(await revisi(revisiId)).toMatchObject({ status: "terbit", diputuskanOleh: moderatorId });
     expect((await induk(ulasanId)).revisiTerbitId).toBe(revisiId);
   });

@@ -42,8 +42,8 @@ function isianDari(u: UlasanSaya): IsianUlasan {
     aspekOrganisasi: String(r.aspek_organisasi),
     aspekBiayaKualitas: String(r.aspek_biaya_kualitas),
     rekomendasi: r.rekomendasi ? "ya" : "tidak",
-    judul: r.judul,
-    isi: r.isi,
+    judul: r.judul ?? undefined,
+    isi: r.isi ?? undefined,
     statusPengulas: u.statusPengulas,
     tahunMasuk: String(u.tahunMasuk),
   };

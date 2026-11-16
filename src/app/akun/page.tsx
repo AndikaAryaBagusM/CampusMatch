@@ -294,7 +294,18 @@ export default async function AkunPage(props: PageProps<"/akun">) {
                     </div>
                     <RuteStatus status={u.revisi.status} />
                   </div>
-                  <p className="text-sm">“{u.revisi.judul}”</p>
+                  {u.revisi.judul ? (
+                    <p className="text-sm">“{u.revisi.judul}”</p>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">
+                      Baru penilaian.{" "}
+                      {u.revisi.status === "terbit" ? (
+                        <Link href={`/prodi/${u.prodiSlug}/tulis`} className="font-semibold text-pengulas-ink underline-offset-4 hover:underline">
+                          Tambahkan ceritamu
+                        </Link>
+                      ) : null}
+                    </p>
+                  )}
                   {u.revisi.status === "ditolak" && u.revisi.alasan_moderator ? (
                     <p className="text-sm text-destructive">Alasan: {u.revisi.alasan_moderator}</p>
                   ) : null}

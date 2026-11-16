@@ -14,7 +14,7 @@ export default function KetentuanPage() {
   return (
     <HalamanHukum
       judul="Ketentuan Layanan"
-      diperbarui="20 Oktober 2026"
+      diperbarui="16 November 2026"
       ringkas="Ketentuan ini berlaku saat kamu memakai CampusMatch, termasuk saat membaca, menulis, atau melaporkan ulasan. Dengan masuk atau mengirim ulasan, kamu menyetujui ketentuan ini dan Kebijakan Privasi."
     >
       <Bagian id="layanan" judul="1. Tentang CampusMatch">
@@ -44,7 +44,10 @@ export default function KetentuanPage() {
           <li>ulasan ditulis berdasarkan pengalamanmu sendiri dan dengan jujur;</li>
           <li>kamu tidak dibayar atau diminta pihak mana pun untuk menulisnya.</li>
         </ul>
-        <p>Satu akun hanya bisa menulis satu ulasan untuk setiap Prodi. Kamu bisa mengubah atau menghapusnya kapan saja.</p>
+        <p>
+          Satu akun hanya bisa menulis satu ulasan untuk setiap Prodi. Ulasan boleh berupa penilaian saja; ceritanya bisa
+          kamu tambahkan kemudian. Kamu bisa mengubah atau menghapus ulasanmu kapan saja.
+        </p>
         <p>Ulasan tidak boleh berisi:</p>
         <ul>
           <li>SARA, ujaran kebencian, atau konten yang merendahkan kelompok tertentu;</li>

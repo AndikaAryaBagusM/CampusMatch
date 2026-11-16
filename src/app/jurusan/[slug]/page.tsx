@@ -16,6 +16,7 @@ import { Paging } from "@/components/paging";
 import { kontainer, Panel } from "@/components/panel";
 import { TombolBandingkan } from "@/components/perbandingan/tombol-bandingkan";
 import { KotakPromosi } from "@/components/promosi/kotak-promosi";
+import { TombolSimpan } from "@/components/simpanan/tombol-simpan";
 import { BarisJadwal, DaftarJadwal, KepalaJadwal, Sel, SelJadwal } from "@/components/trayek/jadwal";
 import { Plat } from "@/components/trayek/plat";
 import { BintangTampil } from "@/components/ulasan/bintang-tampil";
@@ -158,8 +159,9 @@ function BarisProdi({ p, edisiQs }: { p: ProdiJurusan; edisiQs?: number }) {
             <span className="text-muted-foreground">Belum ada ulasan</span>
           )}
         </Sel>
-        <div className="md:text-right">
+        <div className="flex flex-wrap gap-2 md:flex-col md:items-end">
           <TombolBandingkan slug={p.slug} label={`${p.jenjang} ${p.nama}, ${p.kampus.nama}`} />
+          <TombolSimpan slug={p.slug} label={`${p.jenjang} ${p.nama}, ${p.kampus.nama}`} />
         </div>
       </SelJadwal>
     </BarisJadwal>

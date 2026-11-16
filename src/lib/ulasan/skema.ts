@@ -29,34 +29,37 @@ const nilai = z.coerce
   .max(5, "Pilih 1 sampai 5 bintang.");
 
 // Server-side check of the Ulasan form (decisions.md 9). Takes the current year
-// so tests don't depend on the clock.
+// so tests don't depend on the clock. The title and text are optional as a
+// pair (decisions.md 17s): both empty is an Ulasan with ratings only (null);
+// once either is filled in, both must meet their lengths.
 export function skemaUlasan(tahunIni = new Date().getFullYear()) {
-  return z.object({
-    bintang: nilai,
-    aspekKurikulum: nilai,
-    aspekDosen: nilai,
-    aspekFasilitas: nilai,
-    aspekSuasanaBelajar: nilai,
-    aspekOrganisasi: nilai,
-    aspekBiayaKualitas: nilai,
-    rekomendasi: z.enum(["ya", "tidak"], { error: "Pilih ya atau tidak." }).transform((v) => v === "ya"),
-    judul: z
-      .string()
-      .trim()
-      .min(JUDUL_MIN, `Judul minimal ${JUDUL_MIN} karakter.`)
-      .max(JUDUL_MAKS, `Judul maksimal ${JUDUL_MAKS} karakter.`),
-    isi: z
-      .string()
-      .trim()
-      .min(ISI_MIN, `Ulasan minimal ${ISI_MIN} karakter.`)
-      .max(ISI_MAKS, `Ulasan maksimal ${ISI_MAKS} karakter.`),
-    statusPengulas: z.enum(["mahasiswa_aktif", "alumni"], { error: "Pilih status kamu." }),
-    tahunMasuk: z.coerce
-      .number({ error: "Isi tahun masuk." })
-      .int("Isi tahun masuk.")
-      .min(TAHUN_MIN, `Tahun masuk paling awal ${TAHUN_MIN}.`)
-      .max(tahunIni, "Tahun masuk tidak boleh di masa depan."),
-  });
+  return z
+    .object({
+      bintang: nilai,
+      aspekKurikulum: nilai,
+      aspekDosen: nilai,
+      aspekFasilitas: nilai,
+      aspekSuasanaBelajar: nilai,
+      aspekOrganisasi: nilai,
+      aspekBiayaKualitas: nilai,
+      rekomendasi: z.enum(["ya", "tidak"], { error: "Pilih ya atau tidak." }).transform((v) => v === "ya"),
+      judul: z.string().trim().max(JUDUL_MAKS, `Judul maksimal ${JUDUL_MAKS} karakter.`).default(""),
+      isi: z.string().trim().max(ISI_MAKS, `Ulasan maksimal ${ISI_MAKS} karakter.`).default(""),
+      statusPengulas: z.enum(["mahasiswa_aktif", "alumni"], { error: "Pilih status kamu." }),
+      tahunMasuk: z.coerce
+        .number({ error: "Isi tahun masuk." })
+        .int("Isi tahun masuk.")
+        .min(TAHUN_MIN, `Tahun masuk paling awal ${TAHUN_MIN}.`)
+        .max(tahunIni, "Tahun masuk tidak boleh di masa depan."),
+    })
+    .superRefine((d, ctx) => {
+      if (!d.judul && !d.isi) return;
+      if (d.judul.length < JUDUL_MIN)
+        ctx.addIssue({ code: "custom", path: ["judul"], message: `Judul minimal ${JUDUL_MIN} karakter.` });
+      if (d.isi.length < ISI_MIN)
+        ctx.addIssue({ code: "custom", path: ["isi"], message: `Cerita minimal ${ISI_MIN} karakter, atau kosongkan judul dan cerita.` });
+    })
+    .transform((d) => ({ ...d, judul: d.judul || null, isi: d.isi || null }));
 }
 
 export type DataUlasan = z.output<ReturnType<typeof skemaUlasan>>;

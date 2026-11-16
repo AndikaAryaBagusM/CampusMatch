@@ -4,17 +4,23 @@ import { formatBulan, formatHari } from "@/lib/format";
 import type { UlasanPublik } from "@/lib/katalog";
 import { STATUS_PENGULAS } from "@/lib/ulasan/skema";
 import { BintangTampil } from "./bintang-tampil";
+import { TombolMembantu } from "./tombol-membantu";
 
 // One Terbit Ulasan, anonymous: only Status Pengulas and tahun masuk identify
 // the writer, plus the Terverifikasi badge and its month. Text is rendered as React text (escaped, never HTML or markdown);
-// whitespace-pre-line keeps the writer's line breaks.
+// whitespace-pre-line keeps the writer's line breaks. An Ulasan with ratings only
+// (no title or text) shows as one short row with nothing to mark or report.
 export function UlasanCard({ ulasan, tampilkanProdi }: { ulasan: UlasanPublik; tampilkanProdi?: boolean }) {
   const status = STATUS_PENGULAS.find((s) => s.nilai === ulasan.statusPengulas)?.label;
   return (
     <article className="space-y-2">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         <BintangTampil nilai={ulasan.bintang} />
-        <h3 className="text-lg leading-snug font-bold">{ulasan.judul}</h3>
+        {ulasan.judul ? (
+          <h3 className="text-lg leading-snug font-bold">{ulasan.judul}</h3>
+        ) : (
+          <h3 className="text-sm font-semibold text-muted-foreground">Penilaian tanpa cerita</h3>
+        )}
       </div>
       <p className="text-sm text-muted-foreground">
         {status}, masuk {ulasan.tahunMasuk}
@@ -38,7 +44,7 @@ export function UlasanCard({ ulasan, tampilkanProdi }: { ulasan: UlasanPublik; t
           </>
         ) : null}
       </p>
-      <p className="max-w-[68ch] leading-relaxed break-words whitespace-pre-line">{ulasan.isi}</p>
+      {ulasan.isi ? <p className="max-w-[68ch] leading-relaxed break-words whitespace-pre-line">{ulasan.isi}</p> : null}
       <div className="flex flex-wrap items-center justify-between gap-2 pt-1 text-sm">
         <span className="inline-flex items-center gap-1.5 font-semibold">
           {ulasan.rekomendasi ? (
@@ -51,6 +57,9 @@ export function UlasanCard({ ulasan, tampilkanProdi }: { ulasan: UlasanPublik; t
             </>
           )}
         </span>
+        {ulasan.isi ? (
+        <span className="inline-flex flex-wrap items-center gap-x-4 gap-y-2">
+        <TombolMembantu ulasanId={ulasan.id} jumlah={ulasan.jumlahMembantu} />
         {/* A plain link: the target asks for login, so this page stays static. */}
         <Link
           href={`/ulasan/${ulasan.id}/laporkan`}
@@ -61,6 +70,8 @@ export function UlasanCard({ ulasan, tampilkanProdi }: { ulasan: UlasanPublik; t
           <Flag className="size-3.5" aria-hidden />
           Laporkan
         </Link>
+        </span>
+        ) : null}
       </div>
     </article>
   );

@@ -15,6 +15,7 @@ const ulasan = (ubah: Partial<UlasanPublik> = {}): UlasanPublik => ({
   prodiNama: "S1 Informatika",
   prodiSlug: "kampus-s1-informatika",
   terverifikasiSejak: null,
+  jumlahMembantu: 0,
   ...ubah,
 });
 

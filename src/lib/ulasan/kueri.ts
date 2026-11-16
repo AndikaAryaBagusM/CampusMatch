@@ -36,8 +36,8 @@ export type RevisiSaya = {
   id: string;
   nomor: number;
   status: "menunggu" | "terbit" | "ditinjau" | "ditolak";
-  judul: string;
-  isi: string;
+  judul: string | null;
+  isi: string | null;
   bintang: number;
   aspek_kurikulum: number;
   aspek_dosen: number;

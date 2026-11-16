@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PenLine, Search, UserRound } from "lucide-react";
 import { SearchForm } from "@/components/search-form";
 import { Wordmark } from "@/components/layout/wordmark";
+import { TautanTersimpan } from "@/components/simpanan/tautan-tersimpan";
 
 const NAV = [
   { href: "/#bidang", label: "Bidang" },
@@ -37,6 +38,7 @@ export function SiteHeader() {
         >
           <Search className="size-5" aria-hidden />
         </Link>
+        <TautanTersimpan />
         <Link
           href="/cari?tulis=1"
           className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-sm bg-pengulas px-3 text-sm font-semibold text-pengulas-foreground transition-colors hover:bg-pengulas-ink"

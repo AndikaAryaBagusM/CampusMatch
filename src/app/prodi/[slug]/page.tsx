@@ -6,6 +6,9 @@ import { BookOpen, GraduationCap, Hash, Landmark, Layers, MapPin, ShieldCheck } 
 import { PanelBiayaProdi } from "@/components/fakta/biaya-masuk";
 import { PanelEstimasiPengulas } from "@/components/info-biaya/estimasi-pengulas";
 import { TombolBandingkan } from "@/components/perbandingan/tombol-bandingkan";
+import { TombolSimpan } from "@/components/simpanan/tombol-simpan";
+import { MintaUlasan } from "@/components/ulasan/minta-ulasan";
+import { urlSitus } from "@/lib/situs";
 import { listBiayaKampus, listBiayaProdi } from "@/lib/fakta/kueri";
 import { estimasiProdi } from "@/lib/info-biaya/estimasi";
 import { withDb } from "@/db";
@@ -58,16 +61,25 @@ const load = cache((slug: string) =>
   }),
 );
 
+const adaBiaya = (data: { biayaProdi: unknown; biayaKampus: unknown }) => data.biayaProdi !== null || data.biayaKampus !== null;
+
 export async function generateMetadata({ params }: PageProps<"/prodi/[slug]">): Promise<Metadata> {
   const data = await load((await params).slug);
   if (!data) return {};
   const { prodi } = data;
   return {
     title: `${prodi.jenjang} ${prodi.nama}, ${prodi.kampus.nama}`,
-    description: `${prodi.jenjang} ${prodi.nama} di ${prodi.kampus.nama}, ${prodi.kotaNama}.`,
+    description: [
+      `${prodi.jenjang} ${prodi.nama} di ${prodi.kampus.nama}, ${prodi.kotaNama}.`,
+      data.jumlahUlasan > 0 ? `${formatAngka(data.jumlahUlasan)} ulasan dari mahasiswa dan alumni.` : null,
+      adaBiaya(data) ? "Biaya kuliah dari sumber resmi." : null,
+    ]
+      .filter(Boolean)
+      .join(" "),
     alternates: { canonical: `/prodi/${prodi.slug}` },
-    // Hidden from search engines until it has Ulasan.
-    robots: { index: data.jumlahUlasan > 0, follow: true },
+    // Hidden from search engines until it has something of its own to read:
+    // an Ulasan or checked fees. listSlugProdiTerindeks (the sitemap) follows the same rule.
+    robots: { index: data.jumlahUlasan > 0 || adaBiaya(data), follow: true },
   };
 }
 
@@ -76,9 +88,33 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
   if (!data) notFound();
   const { prodi, jumlahUlasan, info, qs, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi } = data;
   const { kampus } = prodi;
+  const namaProdi = `${prodi.jenjang} ${prodi.nama}`;
+
+  // Structured data for search results: the programme, its Kampus and, once
+  // there are Ulasan, their average. "<" is escaped so no text can close the tag.
+  const dataTerstruktur = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: namaProdi,
+    description: `${namaProdi} di ${kampus.nama}, ${prodi.kotaNama}.`,
+    url: urlSitus(`/prodi/${prodi.slug}`),
+    provider: { "@type": "CollegeOrUniversity", name: kampus.nama, url: urlSitus(`/kampus/${kampus.slug}`) },
+    ...(ringkasan
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: ringkasan.bintang,
+            bestRating: 5,
+            worstRating: 1,
+            ratingCount: ringkasan.jumlah,
+          },
+        }
+      : {}),
+  }).replace(/</g, String.fromCharCode(92) + "u003c");
 
   return (
     <div className={kontainer}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: dataTerstruktur }} />
       <PageBreadcrumb
         items={[
           ...(prodi.jurusanSlug ? [{ label: prodi.jurusanNama!, href: `/jurusan/${prodi.jurusanSlug}` }] : []),
@@ -183,7 +219,8 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
             />
           </Panel>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <TombolBandingkan slug={prodi.slug} label={`${prodi.jenjang} ${prodi.nama}, ${kampus.nama}`} />
+            <TombolSimpan slug={prodi.slug} label={`${namaProdi}, ${kampus.nama}`} />
+            <TombolBandingkan slug={prodi.slug} label={`${namaProdi}, ${kampus.nama}`} />
             {prodi.jurusanSlug ? (
               <Link
                 href={`/jurusan/${prodi.jurusanSlug}`}
@@ -213,6 +250,7 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
         <div className="space-y-6">
           <TombolTulis href={`/prodi/${prodi.slug}/tulis`} className="w-full justify-center" />
           {ringkasan ? <RingkasanUlasan ringkasan={ringkasan} /> : <RatingSummaryPlaceholder />}
+          <MintaUlasan namaProdi={namaProdi} kampusNama={kampus.nama} prodiSlug={prodi.slug} adaUlasan={jumlahUlasan > 0} />
           <KatalogAsOf info={info} className="px-1" />
         </div>
       </div>

@@ -20,7 +20,7 @@ export function RuteUlasanPertama({ hrefTulis, dari }: { hrefTulis: string; dari
             ? {
                 label: "Tulis ulasan",
                 href: hrefTulis,
-                keterangan: "Bintang, enam Aspek, Rekomendasi, dan ceritamu sendiri.",
+                keterangan: "Bintang, enam Aspek dan Rekomendasi. Ceritamu boleh menyusul.",
                 keadaan: "kini",
               }
             : {

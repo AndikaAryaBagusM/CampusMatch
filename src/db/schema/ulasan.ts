@@ -6,6 +6,7 @@ import {
   index,
   integer,
   pgTable,
+  primaryKey,
   smallint,
   text,
   timestamp,
@@ -81,8 +82,10 @@ export const ulasanRevisi = pgTable(
       .notNull()
       .references((): AnyPgColumn => ulasan.id, { onDelete: "cascade" }),
     nomor: smallint("nomor").notNull(),
-    judul: text("judul").notNull(),
-    isi: text("isi").notNull(),
+    // Both NULL for an Ulasan with ratings only; the Pengulas can add the text
+    // later as a new revision (decisions.md 17s).
+    judul: text("judul"),
+    isi: text("isi"),
     bintang: nilai("bintang"),
     aspekKurikulum: nilai("aspek_kurikulum"),
     aspekDosen: nilai("aspek_dosen"),
@@ -111,6 +114,7 @@ export const ulasanRevisi = pgTable(
     // Target of ulasan_revisi_terbit_fk.
     unique("ulasan_revisi_ulasan_id_id_unique").on(t.ulasanId, t.id),
     index("ulasan_revisi_status_idx").on(t.status),
+    check("ulasan_revisi_teks_check", sql`(${t.judul} IS NULL) = (${t.isi} IS NULL)`),
     ...aspekKolom.map((kolom) =>
       check(
         `ulasan_revisi_${kolom}_check`,
@@ -177,4 +181,19 @@ export const riwayatModerasi = pgTable(
     createdAt: createdAt(),
   },
   (t) => [index("riwayat_moderasi_ulasan_id_idx").on(t.ulasanId)],
+);
+
+// "Membantu" marks on a Terbit Ulasan. Readers have no account (ADR 0008), so
+// it is one mark per Ulasan per ip_hash (the same HMAC as laporan.ip_hash,
+// never a raw IP). Only the count is ever shown.
+export const ulasanMembantu = pgTable(
+  "ulasan_membantu",
+  {
+    ulasanId: uuid("ulasan_id")
+      .notNull()
+      .references(() => ulasan.id, { onDelete: "cascade" }),
+    ipHash: text("ip_hash").notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [primaryKey({ columns: [t.ulasanId, t.ipHash] })],
 );
