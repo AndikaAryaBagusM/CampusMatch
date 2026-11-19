@@ -41,7 +41,7 @@ test("lists only Terbit, not-deleted Ulasan, newest first, without any Pengulas 
   expect(daftar.map((u) => u.judul)).toEqual(["Ulasan baru", "Ulasan lama"]);
   expect(daftar[0].id).toBe(baru.ulasanId);
   expect(Object.keys(daftar[0]).sort()).toEqual(
-    ["bintang", "id", "isi", "judul", "prodiNama", "prodiSlug", "rekomendasi", "statusPengulas", "tahunMasuk", "terbitAt", "terverifikasiSejak"].sort(),
+    ["bintang", "id", "isi", "judul", "jumlahMembantu", "prodiNama", "prodiSlug", "rekomendasi", "statusPengulas", "tahunMasuk", "terbitAt", "terverifikasiSejak"].sort(),
   );
   expect(JSON.stringify(daftar)).not.toContain(baru.pengulas.id);
   expect(JSON.stringify(daftar)).not.toContain(baru.pengulas.email!);

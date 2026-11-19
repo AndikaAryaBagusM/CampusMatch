@@ -23,6 +23,7 @@ const { default: BuatPromosiPage } = await import("./promosi/baru/page");
 const { default: DetailPromosiPage } = await import("./promosi/[id]/page");
 const aksiInfoBiaya = await import("./info-biaya/actions");
 const { default: InfoBiayaPage } = await import("./info-biaya/page");
+const { default: StatistikPage } = await import("./statistik/page");
 const mockAuth = vi.mocked(auth as unknown as () => Promise<unknown>);
 
 const form = () => {
@@ -107,6 +108,12 @@ describe.each(Object.entries(pemanggil))("%s", (_, sesi) => {
   test("is refused by the Info Biaya page", async () => {
     const props = { params: Promise.resolve({}), searchParams: Promise.resolve({ prodi: "p" }) };
     await expect(InfoBiayaPage(props as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
+    expect(withDb).not.toHaveBeenCalled();
+  });
+
+  test("is refused by the statistics page", async () => {
+    const props = { params: Promise.resolve({}), searchParams: Promise.resolve({ hari: "7" }) };
+    await expect(StatistikPage(props as never)).rejects.toMatchObject({ digest: expect.stringContaining("404") });
     expect(withDb).not.toHaveBeenCalled();
   });
 

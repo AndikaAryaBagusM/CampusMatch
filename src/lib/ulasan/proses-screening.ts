@@ -1,7 +1,7 @@
 import { and, asc, eq, isNull, lt, sql } from "drizzle-orm";
 import type { Db } from "@/db";
 import { kampus, prodi, riwayatModerasi, ulasan, ulasanRevisi } from "@/db/schema";
-import { screenUlasan, type OpsiPutaran, type ScreeningModel } from "@/lib/screening";
+import { screenUlasan, type HasilScreening, type OpsiPutaran, type ScreeningModel } from "@/lib/screening";
 import { ALASAN_SCREENING_GAGAL, transisi, type StatusUlasan } from "./status";
 
 // The pages that show an Ulasan, for revalidation.
@@ -9,13 +9,25 @@ export type TargetHalaman = { prodiSlug: string; kampusSlug: string };
 
 export type HasilProses =
   | { diproses: false }
-  | { diproses: true; status: StatusUlasan; percobaan: number; liveBerubah: boolean; target: TargetHalaman };
+  | {
+      diproses: true;
+      status: StatusUlasan;
+      percobaan: number;
+      liveBerubah: boolean;
+      // The Ulasan went live for the first time: the Pengulas is told by email.
+      pertamaTerbit: boolean;
+      ulasanId: string;
+      target: TargetHalaman;
+    };
+
+// An Ulasan with ratings only has no text to screen, so no model is called.
+export const MODEL_TANPA_TEKS = "tanpa-teks";
 
 // Runs one Screening round on a Menunggu revision and applies the result.
 // The revision is locked with FOR UPDATE SKIP LOCKED for the whole round, so
 // the after() call and the cron can never screen it twice at once; a locked or
 // already-decided revision is skipped. Only a rendah result moves the live
-// pointer (fail-closed, ADR 0002).
+// pointer (fail-closed, ADR 0002). A revision without text is rendah at once.
 export async function prosesScreening(
   db: Db,
   revisiId: string,
@@ -35,6 +47,7 @@ export async function prosesScreening(
         prodiSlug: prodi.slug,
         kampusNama: kampus.nama,
         kampusSlug: kampus.slug,
+        terbitSebelumnya: ulasan.revisiTerbitId,
       })
       .from(ulasanRevisi)
       .innerJoin(ulasan, eq(ulasanRevisi.ulasanId, ulasan.id))
@@ -44,11 +57,10 @@ export async function prosesScreening(
       .for("update", { of: ulasanRevisi, skipLocked: true });
     if (!r) return { diproses: false };
 
-    const hasil = await screenUlasan(
-      { judul: r.judul, isi: r.isi, prodi: r.prodiNama, kampus: r.kampusNama },
-      model,
-      opsi,
-    );
+    const hasil: HasilScreening =
+      r.judul === null || r.isi === null
+        ? { ok: true, tingkatRisiko: "rendah", alasan: "Hanya penilaian, tanpa teks.", model: MODEL_TANPA_TEKS }
+        : await screenUlasan({ judul: r.judul, isi: r.isi, prodi: r.prodiNama, kampus: r.kampusNama }, model, opsi);
     const ke = transisi(
       { status: r.status, percobaan: r.percobaan },
       hasil.ok ? { jenis: "screening", tingkatRisiko: hasil.tingkatRisiko } : { jenis: "screening_gagal" },
@@ -94,6 +106,8 @@ export async function prosesScreening(
       status: ke.status,
       percobaan: ke.percobaan,
       liveBerubah,
+      pertamaTerbit: liveBerubah && r.terbitSebelumnya === null,
+      ulasanId: r.ulasanId,
       target: { prodiSlug: r.prodiSlug, kampusSlug: r.kampusSlug },
     };
   });

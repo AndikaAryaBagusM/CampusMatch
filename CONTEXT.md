@@ -89,8 +89,24 @@ _Avoid_: Rata-rata biaya, estimasi resmi
 ## Ulasan
 
 **Ulasan**:
-A Pengulas's account of studying at one Prodi, made up of Bintang, Aspek ratings, a Rekomendasi and written text.
+A Pengulas's account of studying at one Prodi, made up of Bintang, Aspek ratings, a Rekomendasi and, optionally, a title with written text. An Ulasan without the text has ratings only; the Pengulas can add the text later.
 _Avoid_: Review, testimoni, komentar
+
+**Membantu**:
+A reader's mark that an Ulasan with text helped them. No account is needed; only the count is shown.
+_Avoid_: Like, upvote, suka
+
+**Minta ulasan**:
+A reader asking someone they know at a Prodi to write an Ulasan, with a ready WhatsApp message that links to that Prodi's form.
+_Avoid_: Invite, referral, undangan
+
+**Prodi tersimpan**:
+The Prodi a reader saved to come back to. The list lives only in their browser, like the Bandingkan list.
+_Avoid_: Favorit, wishlist, bookmark
+
+**Kunjungan**:
+One opening of a public page, kept only as a daily total per page and referrer group, with nothing about who opened it.
+_Avoid_: Analytics, tracking, sesi
 
 **Pengulas**:
 A student or alumnus with an account who writes Ulasan. Each Pengulas has at most one Ulasan per Prodi.

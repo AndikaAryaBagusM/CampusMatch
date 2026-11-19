@@ -24,7 +24,9 @@ const masukan =
   "w-full rounded-sm border border-input bg-white px-3 text-base outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive";
 
 // The Ulasan form (design frame: "Wie gefällt Dir Dein Studium?"), with our
-// field set from decisions.md 9. The server re-validates everything.
+// field set from decisions.md 9. The ratings come first and are all a Pengulas
+// must give; the story is optional and can follow later (17s). The server
+// re-validates everything.
 export function FormUlasan({
   prodiSlug,
   awal,
@@ -68,31 +70,6 @@ export function FormUlasan({
           </Baris>
         </ul>
       </fieldset>
-
-      <section className={kotak}>
-        <h2 className="text-lg font-bold">Bagaimana pengalamanmu di Prodi ini?</h2>
-        <div className="mt-4 space-y-4">
-          <TeksDenganHitungan
-            name="judul"
-            label="Judul"
-            placeholder="Judul singkat ulasanmu"
-            defaultValue={isian.judul ?? ""}
-            min={JUDUL_MIN}
-            max={JUDUL_MAKS}
-            galat={galat.judul}
-          />
-          <TeksDenganHitungan
-            name="isi"
-            label="Ceritamu"
-            placeholder="Ceritakan kuliah di Prodi ini: materi, dosen, fasilitas, suasana, administrasi, biaya."
-            defaultValue={isian.isi ?? ""}
-            min={ISI_MIN}
-            max={ISI_MAKS}
-            galat={galat.isi}
-            panjang
-          />
-        </div>
-      </section>
 
       <fieldset className={kotak}>
         <legend className="sr-only">Rekomendasi</legend>
@@ -153,6 +130,37 @@ export function FormUlasan({
           </div>
         </div>
       </fieldset>
+
+      <section className={kotak}>
+        <h2 className="text-lg font-bold">
+          Ceritakan pengalamanmu <span className="font-normal text-muted-foreground">(opsional)</span>
+        </h2>
+        <p className="mt-1 max-w-[62ch] text-sm text-muted-foreground">
+          Cerita singkat paling membantu calon mahasiswa. Sedang buru-buru? Kirim penilaianmu dulu, lalu tambahkan
+          cerita kapan saja dari halaman Akun.
+        </p>
+        <div className="mt-4 space-y-4">
+          <TeksDenganHitungan
+            name="judul"
+            label="Judul"
+            placeholder="Judul singkat ulasanmu"
+            defaultValue={isian.judul ?? ""}
+            min={JUDUL_MIN}
+            max={JUDUL_MAKS}
+            galat={galat.judul}
+          />
+          <TeksDenganHitungan
+            name="isi"
+            label="Ceritamu"
+            placeholder="Ceritakan kuliah di Prodi ini: materi, dosen, fasilitas, suasana, administrasi, biaya."
+            defaultValue={isian.isi ?? ""}
+            min={ISI_MIN}
+            max={ISI_MAKS}
+            galat={galat.isi}
+            panjang
+          />
+        </div>
+      </section>
 
       {/* Optional Info Biaya (ADR 0010): stored apart from the Ulasan, shown only combined.
           An existing one is changed in its own form, so editing the Ulasan never asks for consent again. */}
@@ -238,7 +246,7 @@ function TeksDenganHitungan({
     name,
     placeholder,
     defaultValue,
-    required: true,
+    // Optional as a pair (decisions.md 17s); the server checks that both or neither are given.
     minLength: min,
     maxLength: max,
     "aria-invalid": !!galat || undefined,
@@ -256,7 +264,7 @@ function TeksDenganHitungan({
         <input {...props} type="text" className={cn(masukan, "mt-2 h-11")} />
       )}
       <p id={`${name}-hitung`} className={cn("mt-1 text-xs", jumlah < min ? "text-muted-foreground" : "font-semibold text-success")}>
-        {jumlah} karakter{jumlah < min ? ` (minimal ${min})` : ""}
+        {jumlah} karakter{jumlah > 0 && jumlah < min ? ` (minimal ${min})` : ""}
       </p>
       <Galat pesan={galat} />
     </div>

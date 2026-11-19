@@ -100,7 +100,7 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
             />
           </Panel>
 
-          {fakta ? <PanelBiayaMasukKampus fakta={fakta} /> : null}
+          {fakta ? <PanelBiayaMasukKampus fakta={fakta} kampusNama={kampus.nama} /> : null}
 
           <Panel title="Prodi per Jenjang">
             <ul className="tabular divide-y divide-border">

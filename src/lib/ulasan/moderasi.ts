@@ -17,7 +17,8 @@ export class KeputusanTidakBerlaku extends Error {
   }
 }
 
-export type HasilKeputusan = { target: TargetHalaman; liveBerubah: boolean };
+// pertamaTerbit: the Ulasan went live for the first time (the Pengulas is told by email).
+export type HasilKeputusan = { target: TargetHalaman; liveBerubah: boolean; pertamaTerbit?: { ulasanId: string } };
 
 const ALASAN_MAKS = 1000;
 function alasanWajib(alasan: string) {
@@ -31,7 +32,14 @@ const kolomTarget = { prodiSlug: prodi.slug, kampusSlug: kampus.slug };
 // A Ditinjau revision, locked, with the pages it appears on.
 async function kunciRevisi(tx: Tx, revisiId: string) {
   const [r] = await tx
-    .select({ id: ulasanRevisi.id, ulasanId: ulasanRevisi.ulasanId, status: ulasanRevisi.status, percobaan: ulasanRevisi.percobaanScreening, ...kolomTarget })
+    .select({
+      id: ulasanRevisi.id,
+      ulasanId: ulasanRevisi.ulasanId,
+      status: ulasanRevisi.status,
+      percobaan: ulasanRevisi.percobaanScreening,
+      terbitSebelumnya: ulasan.revisiTerbitId,
+      ...kolomTarget,
+    })
     .from(ulasanRevisi)
     .innerJoin(ulasan, eq(ulasanRevisi.ulasanId, ulasan.id))
     .innerJoin(prodi, eq(ulasan.prodiId, prodi.id))
@@ -53,7 +61,11 @@ export async function setujuiRevisi(db: Db, { revisiId, moderatorId }: { revisiI
       .where(eq(ulasanRevisi.id, r.id));
     await tx.update(ulasan).set({ revisiTerbitId: r.id }).where(eq(ulasan.id, r.ulasanId));
     await tx.insert(riwayatModerasi).values({ ulasanId: r.ulasanId, revisiId: r.id, aksi: "disetujui", oleh: moderatorId });
-    return { target: { prodiSlug: r.prodiSlug, kampusSlug: r.kampusSlug }, liveBerubah: true };
+    return {
+      target: { prodiSlug: r.prodiSlug, kampusSlug: r.kampusSlug },
+      liveBerubah: true,
+      pertamaTerbit: r.terbitSebelumnya === null ? { ulasanId: r.ulasanId } : undefined,
+    };
   });
 }
 

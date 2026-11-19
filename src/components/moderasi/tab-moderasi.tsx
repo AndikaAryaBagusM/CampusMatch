@@ -1,11 +1,12 @@
 import { TabNav } from "@/components/tab-nav";
 
-export type TabModerasi = "antrean" | "laporan" | "menunggu" | "fakta" | "jurusan" | "promosi" | "info-biaya";
+export type TabModerasi = "antrean" | "laporan" | "menunggu" | "fakta" | "jurusan" | "promosi" | "info-biaya" | "statistik";
 
 export type JumlahModerasi = { ditinjau: number; laporan: number; menunggu: number; fakta: number; promosi: number };
 
 // The Moderator area's tabs: three Ulasan queues, the Biaya & Masuk facts to
-// check, the Jurusan mapping tool, Promosi, and Info Biaya (no queue, so no count).
+// check, the Jurusan mapping tool, Promosi, Info Biaya and the visit totals
+// (the last two have no queue, so no count).
 export function TabModerasiNav({ jumlah, aktif }: { jumlah: JumlahModerasi; aktif: TabModerasi }) {
   return (
     <div className="rounded-md bg-card px-1 ring-1 ring-foreground/10 sm:px-4">
@@ -19,6 +20,7 @@ export function TabModerasiNav({ jumlah, aktif }: { jumlah: JumlahModerasi; akti
           { href: "/moderasi/jurusan", label: "Jurusan", active: aktif === "jurusan" },
           { href: "/moderasi/promosi", label: `Promosi (${jumlah.promosi})`, active: aktif === "promosi" },
           { href: "/moderasi/info-biaya", label: "Info Biaya", active: aktif === "info-biaya" },
+          { href: "/moderasi/statistik", label: "Statistik", active: aktif === "statistik" },
         ]}
       />
     </div>

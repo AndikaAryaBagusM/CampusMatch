@@ -113,7 +113,7 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
                 {l.catatan ? <p className="mt-1 whitespace-pre-line">{l.catatan}</p> : null}
                 <p className="mt-1 text-xs text-muted-foreground">Dilaporkan {formatWaktu(l.createdAt)}</p>
               </div>
-              {l.masihTerbit && l.judul && l.isi && l.bintang ? (
+              {l.masihTerbit && l.bintang ? (
                 <IsiUlasan judul={l.judul} isi={l.isi} bintang={l.bintang} />
               ) : (
                 <p className="mt-3 text-sm text-muted-foreground">Ulasan ini sudah tidak tampil.</p>
@@ -142,7 +142,7 @@ export default async function ModerasiPage(props: PageProps<"/moderasi">) {
               {menunggu.map((m) => (
                 <li key={m.revisiId} className="flex flex-wrap justify-between gap-2 py-3 text-sm">
                   <Link href={`/moderasi/ulasan/${m.ulasanId}`} className="font-semibold hover:underline">
-                    “{m.judul}”
+                    {m.judul ? `“${m.judul}”` : "Hanya penilaian"}
                   </Link>
                   <span className="text-muted-foreground">
                     {m.prodiNama}, {m.kampusNama} · {m.percobaan} putaran gagal · {formatWaktu(m.createdAt)}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Overpass } from "next/font/google";
+import { PencatatKunjungan } from "@/components/pencatat-kunjungan";
 import { BilahBandingkan } from "@/components/perbandingan/bilah-bandingkan";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <SiteFooter />
         <BilahBandingkan />
+        <PencatatKunjungan />
       </body>
     </html>
   );

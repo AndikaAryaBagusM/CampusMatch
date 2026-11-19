@@ -3,6 +3,8 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ArrowRight, ListChecks } from "lucide-react";
 import { withDb } from "@/db";
+import { TautanWhatsApp } from "@/components/bagikan/tautan-whatsapp";
+import { TombolSalin } from "@/components/bagikan/tombol-salin";
 import { EmptyState } from "@/components/empty-state";
 import { kontainer, Panel } from "@/components/panel";
 import { AtribusiOnet } from "@/components/tes-minat/atribusi-onet";
@@ -10,14 +12,31 @@ import { formatAngka } from "@/lib/format";
 import { DESKRIPSI_TIPE, LABEL_TIPE, type Tipe } from "@/lib/riasec/item";
 import { listRekomendasiJurusan } from "@/lib/riasec/profil";
 import { bacaProfil, hitungProfil, kodekanProfil, SKOR_MAKS, totalProfil, urutkanTipe } from "@/lib/riasec/skor";
+import { urlSitus } from "@/lib/situs";
 import { cn } from "@/lib/utils";
 import { simpanProfil } from "../actions";
 
-export const metadata: Metadata = {
-  title: "Hasil Tes Minat",
-  // Every result is its own URL; none should be indexed.
-  robots: { index: false, follow: true },
-};
+// Every result is its own URL; none should be indexed. A shared link shows the
+// three strongest interests and a picture drawn from the scores in the link.
+export async function generateMetadata(props: PageProps<"/tes-minat/hasil">): Promise<Metadata> {
+  const sp = await props.searchParams;
+  const profil = bacaProfil(Array.isArray(sp.p) ? sp.p[0] : sp.p);
+  const dasar: Metadata = { title: "Hasil Tes Minat", robots: { index: false, follow: true } };
+  if (!profil || totalProfil(profil) === 0) return dasar;
+  const teratas = urutkanTipe(profil).slice(0, 3);
+  const judul = `Minatku: ${teratas.map((t) => LABEL_TIPE[t.tipe]).join(", ")} (${teratas.map((t) => t.tipe).join("")})`;
+  const deskripsi = "Hasil Tes Minat RIASEC di CampusMatch. Coba tesnya: sekitar 5 menit, gratis, tanpa akun.";
+  return {
+    ...dasar,
+    title: judul,
+    description: deskripsi,
+    openGraph: {
+      title: judul,
+      description: deskripsi,
+      images: [{ url: `/tes-minat/hasil/gambar?p=${kodekanProfil(profil)}`, width: 1200, height: 630, alt: judul }],
+    },
+  };
+}
 
 export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/hasil">) {
   const sp = await props.searchParams;
@@ -50,7 +69,8 @@ export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/has
   const adaSeri = teratas.some((t) => t.seri);
   const rekomendasi = await withDb((db) => listRekomendasiJurusan(db, profil, 10));
   const kodeTeratas = new Set<Tipe>(teratas.map((t) => t.tipe));
-  const tautan = `/tes-minat/hasil?p=${kodekanProfil(profil)}`;
+  const tautan = urlSitus(`/tes-minat/hasil?p=${kodekanProfil(profil)}`);
+  const pesanBagikan = `Hasil Tes Minatku di CampusMatch: ${teratas.map((t) => LABEL_TIPE[t.tipe]).join(", ")} (${teratas.map((t) => t.tipe).join("")}). Punyamu apa? ${tautan}`;
 
   return (
     <div className={`${kontainer} max-w-4xl space-y-6 py-10`}>
@@ -170,7 +190,15 @@ export default async function HasilTesMinatPage(props: PageProps<"/tes-minat/has
               value={tautan}
               className="h-10 w-full rounded-sm border border-input bg-secondary/50 px-3 text-sm"
             />
-            <p className="text-xs text-muted-foreground">Tautan ini memuat skormu saja; kami tidak menyimpannya.</p>
+            <div className="flex flex-wrap gap-2">
+              <TautanWhatsApp pesan={pesanBagikan} utama>
+                Bagikan ke WhatsApp
+              </TautanWhatsApp>
+              <TombolSalin teks={tautan} />
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Tautan ini memuat skormu saja; kami tidak menyimpannya. Ajak teman sekelas mencoba, lalu bandingkan hasilnya.
+            </p>
           </div>
         </div>
       </Panel>

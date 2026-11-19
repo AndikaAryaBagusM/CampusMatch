@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, CalendarPlus } from "lucide-react";
 import { Panel } from "@/components/panel";
 import { formatTanggal } from "@/lib/format";
+import { pengingatJalur } from "@/lib/fakta/kalender";
 import type { BeasiswaTampil, BiayaTampil, FaktaKampus, JalurTampil, SumberRingkas, Bagian } from "@/lib/fakta/kueri";
 import {
   CATATAN_PER_SKS,
@@ -152,10 +153,12 @@ function TabelBiaya({ daftar, r, perSks = false }: { daftar: BiayaTampil[]; r: R
   );
 }
 
-function DaftarJalur({ daftar, r }: { daftar: JalurTampil[]; r: Rujukan }) {
+function DaftarJalur({ daftar, r, kampusNama }: { daftar: JalurTampil[]; r: Rujukan; kampusNama: string }) {
   return (
     <ul className="space-y-3">
-      {daftar.map((j) => (
+      {daftar.map((j) => {
+        const pengingat = pengingatJalur(j, kampusNama);
+        return (
         <li key={j.id} className="rounded-sm p-3 text-sm ring-1 ring-foreground/10">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <p className="font-semibold">
@@ -174,6 +177,17 @@ function DaftarJalur({ daftar, r }: { daftar: JalurTampil[]; r: Rujukan }) {
                 <dt>Pendaftaran</dt>
                 <dd className="text-foreground/90">
                   {j.pendaftaranBuka ? formatTanggal(j.pendaftaranBuka) : "…"} – {j.pendaftaranTutup ? formatTanggal(j.pendaftaranTutup) : "…"}
+                  {pengingat ? (
+                    <a
+                      href={pengingat}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 flex w-fit items-center gap-1.5 font-semibold text-primary hover:underline"
+                    >
+                      <CalendarPlus className="size-4" aria-hidden />
+                      Ingatkan di Google Kalender
+                    </a>
+                  ) : null}
                 </dd>
               </>
             ) : null}
@@ -188,7 +202,8 @@ function DaftarJalur({ daftar, r }: { daftar: JalurTampil[]; r: Rujukan }) {
             ))}
           </dl>
         </li>
-      ))}
+        );
+      })}
     </ul>
   );
 }
@@ -226,7 +241,7 @@ function DaftarBeasiswa({ daftar, r }: { daftar: BeasiswaTampil[]; r: Rujukan })
   );
 }
 
-export function PanelBiayaMasukKampus({ fakta }: { fakta: FaktaKampus }) {
+export function PanelBiayaMasukKampus({ fakta, kampusNama }: { fakta: FaktaKampus; kampusNama: string }) {
   const { jalur, biaya, beasiswa } = fakta;
   const r = rujukan(
     [
@@ -243,7 +258,7 @@ export function PanelBiayaMasukKampus({ fakta }: { fakta: FaktaKampus }) {
         {jalur ? (
           <section>
             <JudulBagian judul="Jalur Masuk" tahunAkademik={jalur.tahunAkademik} />
-            <DaftarJalur daftar={jalur.daftar} r={r} />
+            <DaftarJalur daftar={jalur.daftar} r={r} kampusNama={kampusNama} />
           </section>
         ) : null}
         {biaya ? (

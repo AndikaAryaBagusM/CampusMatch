@@ -14,15 +14,18 @@ export default function PrivasiPage() {
   return (
     <HalamanHukum
       judul="Kebijakan Privasi"
-      diperbarui="20 Oktober 2026"
+      diperbarui="16 November 2026"
       ringkas="Kebijakan ini menjelaskan data apa yang dikumpulkan CampusMatch, untuk apa, siapa yang ikut memprosesnya, berapa lama disimpan, dan hakmu sebagai subjek data pribadi menurut Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP)."
     >
       <Bagian id="ringkasan" judul="Ringkasnya">
         <ul>
-          <li>Membaca CampusMatch tidak perlu akun dan tidak memakai cookie pelacak atau alat analitik.</li>
+          <li>
+            Membaca CampusMatch tidak perlu akun dan tidak memakai cookie pelacak atau alat analitik pihak ketiga. Kami
+            hanya menghitung berapa kali tiap halaman dibuka per hari, tanpa data apa pun tentang pembukanya.
+          </li>
           <li>Kami hanya meminta data saat kamu masuk untuk menulis atau melaporkan ulasan, atau menyimpan hasil Tes Minat.</li>
           <li>Akun hanya untuk usia 18 tahun ke atas. Tes Minat bisa dikerjakan tanpa akun, dan hasilnya tidak kami simpan.</li>
-          <li>Daftar Prodi yang kamu pilih untuk dibandingkan hanya tersimpan di browsermu, tidak dikirim ke kami.</li>
+          <li>Daftar Prodi yang kamu simpan atau pilih untuk dibandingkan hanya tersimpan di browsermu, tidak dikirim ke kami.</li>
           <li>
             Info biaya yang kamu bagikan tidak pernah ditampilkan sendiri, hanya sebagai estimasi gabungan dari minimal 5
             Pengulas.
@@ -57,7 +60,31 @@ export default function PrivasiPage() {
         <p>
           <strong>Saat kamu menulis ulasan.</strong> Kami menyimpan judul dan teks ulasan, Bintang dan nilai per aspek,
           jawaban rekomendasi, Prodi yang diulas, status (mahasiswa aktif atau alumni), dan tahun masuk yang kamu isi
-          sendiri. Setiap perubahan disimpan sebagai revisi baru beserta hasil pemeriksaannya.
+          sendiri. Judul dan teks boleh dikosongkan dan ditambahkan nanti. Setiap perubahan disimpan sebagai revisi baru
+          beserta hasil pemeriksaannya. Saat ulasanmu pertama kali tampil, kami mengirim satu email pemberitahuan ke
+          alamat email akunmu.
+        </p>
+        <p id="kunjungan">
+          <strong>Saat kamu membuka halaman.</strong> Kami menambah satu pada jumlah kunjungan halaman itu untuk hari
+          tersebut, beserta kelompok asal kunjungan: langsung, dari halaman CampusMatch lain, mesin pencari, media
+          sosial, atau situs lain. Yang disimpan hanya alamat halaman tanpa kata pencarian atau isi tautannya, kelompok
+          asal, tanggal, dan jumlah. Tidak ada cookie, alamat IP, atau pengenal perangkat, sehingga angka ini tidak bisa
+          dikaitkan dengan siapa pun. Halaman Akun tidak dihitung. Jika browsermu mengirim sinyal Do Not Track atau
+          Global Privacy Control, kunjunganmu tidak dihitung sama sekali.
+        </p>
+        <p>
+          <strong>Saat kamu menandai ulasan Membantu.</strong> Tanpa akun. Kami menyimpan tanda itu bersama alamat
+          IP-mu dalam bentuk hash (lihat di bawah), hanya supaya satu jaringan dihitung satu kali per ulasan. Browsermu
+          mengingat ulasan mana yang sudah kamu tandai; daftar itu tidak dikirim ke kami.
+        </p>
+        <p>
+          <strong>Saat kamu menyimpan Prodi.</strong> Daftar Prodi tersimpan berada di penyimpanan lokal browsermu
+          (localStorage), bukan di server kami, dan bisa kamu kosongkan kapan saja.
+        </p>
+        <p>
+          <strong>Saat kamu membagikan lewat WhatsApp atau menambah pengingat ke Google Kalender.</strong> Tombol itu
+          hanya membuka WhatsApp atau Google Kalender dengan teks yang sudah disiapkan. Pesan dan pengingatnya kamu
+          kirim atau simpan sendiri di layanan tersebut; kami tidak tahu apakah dan kepada siapa kamu mengirimnya.
         </p>
         <p>
           <strong>Saat kamu melaporkan ulasan.</strong> Kami menyimpan ulasan yang dilaporkan, alasan, catatan yang kamu
@@ -94,21 +121,24 @@ export default function PrivasiPage() {
           CampusMatch. Data yang kamu berikan di situs itu diatur kebijakan privasi bimbel tersebut, bukan kebijakan ini.
         </p>
         <p>
-          <strong>Alamat IP dalam bentuk hash.</strong> Saat kamu menulis ulasan, melaporkan ulasan, membagikan info
-          biaya, atau meminta tautan masuk lewat email, kami mengubah alamat IP-mu menjadi kode hash (HMAC-SHA256 dengan kunci rahasia) yang
-          tidak bisa dikembalikan menjadi alamat IP. Kode ini hanya dipakai untuk membatasi jumlah permintaan dan
-          mencegah penyalahgunaan. Alamat IP aslinya tidak kami simpan.
+          <strong>Alamat IP dalam bentuk hash.</strong> Saat kamu menulis ulasan, melaporkan ulasan, menandai ulasan
+          Membantu, membagikan info biaya, atau meminta tautan masuk lewat email, kami mengubah alamat IP-mu menjadi
+          kode hash (HMAC-SHA256 dengan kunci rahasia) yang tidak bisa dikembalikan menjadi alamat IP. Kode ini hanya
+          dipakai untuk membatasi jumlah permintaan, menghitung tanda Membantu satu kali per jaringan, dan mencegah
+          penyalahgunaan. Alamat IP aslinya tidak kami simpan.
         </p>
         <p>
-          <strong>Yang tidak kami kumpulkan.</strong> Tidak ada foto, unggahan berkas, data lokasi, alat analitik, atau
-          jaringan iklan. Promosi kami pasang sendiri, tanpa skrip atau pelacak dari pengiklan.
+          <strong>Yang tidak kami kumpulkan.</strong> Tidak ada foto, unggahan berkas, data lokasi, alat analitik pihak
+          ketiga, atau jaringan iklan. Promosi kami pasang sendiri, tanpa skrip atau pelacak dari pengiklan.
         </p>
       </Bagian>
 
       <Bagian id="tujuan" judul="2. Untuk apa data dipakai">
         <ul>
           <li>Mengenali akunmu dan menjaga sesi masukmu.</li>
-          <li>Menampilkan ulasanmu secara anonim di halaman Prodi dan Kampus.</li>
+          <li>Menampilkan ulasanmu secara anonim di halaman Prodi dan Kampus, dan di Beranda sebagai ulasan terbaru.</li>
+          <li>Memberi tahu kamu lewat satu email saat ulasanmu pertama kali tampil.</li>
+          <li>Mengetahui halaman mana yang dibaca dan dari mana pembaca datang, dalam jumlah total saja, untuk memperbaiki situs.</li>
           <li>Menampilkan Profil Minat yang kamu simpan beserta Rekomendasi Jurusan-nya, hanya untukmu.</li>
           <li>Memastikan akun hanya dipakai oleh orang berusia 18 tahun ke atas.</li>
           <li>Menandai ulasanmu sebagai Terverifikasi di Kampus tempat kamu membuktikan email kampusmu.</li>
@@ -149,7 +179,8 @@ export default function PrivasiPage() {
 
       <Bagian id="screening" judul="4. Pemeriksaan otomatis dengan Claude API">
         <p>
-          Setiap ulasan baru atau yang diubah dikirim ke Claude API milik Anthropic untuk diperiksa otomatis (Screening).
+          Setiap ulasan baru atau yang diubah, jika memuat judul dan teks, dikirim ke Claude API milik Anthropic untuk
+          diperiksa otomatis (Screening). Ulasan yang hanya berisi penilaian tidak dikirim, karena tidak ada teks untuk diperiksa.
           Yang dikirim hanya judul dan teks ulasan beserta nama Prodi dan Kampus, tanpa nama, email, atau ID akunmu.
           Hasilnya berupa tingkat risiko dan alasan singkat, yang kami simpan bersama ulasan.
         </p>
@@ -170,7 +201,8 @@ export default function PrivasiPage() {
             <strong>Neon</strong>: basis data Postgres tempat akun, ulasan, laporan, dan riwayat moderasi disimpan.
           </li>
           <li>
-            <strong>Resend</strong>: mengirim email tautan masuk ke alamat email-mu.
+            <strong>Resend</strong>: mengirim email tautan masuk, konfirmasi email kampus, dan pemberitahuan ulasan
+            tampil ke alamat email-mu.
           </li>
           <li>
             <strong>Google</strong>: jika kamu memilih masuk dengan Google, Google memverifikasi akunmu dan memberi kami
@@ -200,6 +232,10 @@ export default function PrivasiPage() {
           </li>
           <li>Sesi masuk berakhir setelah 30 hari. Tautan masuk lewat email berlaku 24 jam dan hanya sekali pakai.</li>
           <li>Penghitung batas permintaan (dengan IP dalam bentuk hash) dihapus otomatis setelah sekitar dua hari.</li>
+          <li>
+            Tanda Membantu (dengan IP dalam bentuk hash) disimpan selama ulasannya ada. Jumlah kunjungan per halaman per
+            hari disimpan tanpa batas waktu, karena tidak memuat data pribadi.
+          </li>
           <li>
             Saat kamu menghapus ulasan dari halaman <Link href="/akun">Akun</Link>, ulasan langsung hilang dari tampilan
             publik. Catatannya masih kami simpan untuk menangani sengketa dan penyalahgunaan, sampai kamu meminta

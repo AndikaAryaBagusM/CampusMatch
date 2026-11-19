@@ -22,6 +22,7 @@
     "riasec:load": "tsx scripts/load-riasec.ts",
     "kampus:load-domain": "tsx scripts/load-domain.ts",
     "kampus:load-qs": "tsx scripts/load-qs.ts",
+    "jurusan:load-deskripsi": "tsx scripts/load-deskripsi.ts",
     "cache:segarkan": "tsx scripts/segarkan-cache.ts",
     "test": "vitest run"
   },
