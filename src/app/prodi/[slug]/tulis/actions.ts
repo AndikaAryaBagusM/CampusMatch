@@ -17,6 +17,7 @@ import {
 import { hashIpPemanggil } from "@/lib/ip";
 import { requirePengulas } from "@/lib/sesi";
 import { screeningSetelahRespons } from "@/lib/ulasan/jalankan-screening";
+import { faktaKampusBerlaku } from "@/lib/katalog";
 import { getProdiTujuan, getUlasanSaya } from "@/lib/ulasan/kueri";
 import { editUlasan, RevisiMasihDiperiksa, tulisUlasan, UlasanSudahAda } from "@/lib/ulasan/layanan";
 import { bacaIsian, skemaUlasan, type DataUlasan, type IsianUlasan } from "@/lib/ulasan/skema";
@@ -71,7 +72,7 @@ export async function kirimUlasan(prev: StatusFormUlasan, formData: FormData): P
         : await tulisUlasan(db, { pengulasId: pengulas.id, prodiId: prodi.id, data: parsed.data });
       // The Ulasan is saved; Info Biaya failing (e.g. its rate limit) never undoes it.
       let infoBiayaTersimpan: boolean | null = null;
-      if (infoBiaya?.success) {
+      if (infoBiaya?.success && faktaKampusBerlaku(prodi.jenjang)) {
         try {
           await simpanInfoBiaya(db, { userId: pengulas.id, prodiId: prodi.id, ipHash, data: infoBiaya.data });
           infoBiayaTersimpan = true;

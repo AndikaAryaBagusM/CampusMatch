@@ -1,6 +1,8 @@
 // Proposes a curated Jurusan list and the Kode Prodi → Jurusan mapping from the
 // exports, as a CSV for review. Edit the `jurusan` column, then run
 // `npm run catalogue:load-jurusan`. A blank `jurusan` leaves that Kode unmapped.
+// D3, D4 and S1 only: S2 Kode are added by `npm run catalogue:propose-jurusan-s2`,
+// which never creates a Jurusan (ADR 0013); run it after this one.
 //
 //   npm run catalogue:propose-jurusan [-- --force]
 import { existsSync, writeFileSync } from "node:fs";
@@ -40,7 +42,7 @@ function main() {
     process.exit(1);
   }
 
-  const { prodi } = loadExports();
+  const prodi = loadExports().prodi.filter((p) => p.jenjang !== "S2");
   const groups = new Map<string, KodeGroup>();
   for (const p of prodi) {
     let g = groups.get(p.kodeProdi);

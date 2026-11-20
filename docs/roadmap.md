@@ -35,3 +35,4 @@
    - **To be reviewed**: the 370 Jurusan descriptions.
    - **Not built**: sorting Ulasan by Membantu; "your Ulasan was read N times" (possible now from `kunjungan_harian`); a WhatsApp Channel for deadlines; `.ics` files for calendars other than Google's.
    - **Not code**: collect Ulasan densely at one or two Kampus first (himpunan, BEM, class groups) before going wide; reach readers through guru BK and short videos built on real Ulasan.
+14. **S2 at the QS Kampus** (2026-11-20): S2 Prodi of the 20 Kampus with a Peringkat QS, "Lanjut S2" on S1 and D4 pages. See 17w and ADR 0013. Later: S2 fees and Jalur Masuk.

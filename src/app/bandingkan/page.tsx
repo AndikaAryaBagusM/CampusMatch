@@ -17,7 +17,7 @@ import { estimasiProdi, K } from "@/lib/info-biaya/estimasi";
 import { LABEL_BEASISWA } from "@/lib/info-biaya/label";
 import { formatTahunAkademik, tahunAkademikLama } from "@/lib/fakta/tahun-akademik";
 import { formatAngka } from "@/lib/format";
-import { getProdi, getRingkasanUlasan } from "@/lib/katalog";
+import { faktaKampusBerlaku, getProdi, getRingkasanUlasan } from "@/lib/katalog";
 import { getInfoQs } from "@/lib/peringkat-qs/kueri";
 import { bacaSlugs, hrefBandingkan } from "@/lib/perbandingan/daftar";
 import { ASPEK } from "@/lib/ulasan/skema";
@@ -43,7 +43,8 @@ async function muat(slugs: string[]) {
           if (!prodi) return null;
           const [biayaProdi, fakta, ringkasan] = await Promise.all([
             listBiayaProdi(db, prodi.id),
-            getFaktaKampus(db, prodi.kampus.id),
+            // Kampus-wide facts are for D3, D4 and S1, never an S2 Prodi (ADR 0013).
+            faktaKampusBerlaku(prodi.jenjang) ? getFaktaKampus(db, prodi.kampus.id) : null,
             getRingkasanUlasan(db, { prodiSlug: slug }),
           ]);
           return { prodi, biayaProdi, fakta, ringkasan };

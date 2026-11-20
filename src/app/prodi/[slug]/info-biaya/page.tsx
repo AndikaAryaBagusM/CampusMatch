@@ -8,6 +8,7 @@ import { kontainer, Panel } from "@/components/panel";
 import { K } from "@/lib/info-biaya/estimasi";
 import { getInfoBiayaSaya } from "@/lib/info-biaya/layanan";
 import { requirePengulas } from "@/lib/sesi";
+import { faktaKampusBerlaku } from "@/lib/katalog";
 import { getProdiTujuan, getUlasanSaya } from "@/lib/ulasan/kueri";
 import { FormInfoBiaya } from "./form-info-biaya";
 
@@ -28,7 +29,8 @@ export default async function InfoBiayaPage({ params }: PageProps<"/prodi/[slug]
     const [ada, ulasan] = await Promise.all([getInfoBiayaSaya(db, pengulas.id, prodi.id), getUlasanSaya(db, pengulas.id, prodi.id)]);
     return { prodi, ada, ulasan };
   });
-  if (!data) notFound();
+  // Not asked for an S2 Prodi: its Jalur Masuk are not the undergraduate ones (ADR 0013).
+  if (!data || !faktaKampusBerlaku(data.prodi.jenjang)) notFound();
   const { prodi, ada, ulasan } = data;
   const namaProdi = `${prodi.jenjang} ${prodi.nama}`;
   const awal = ada

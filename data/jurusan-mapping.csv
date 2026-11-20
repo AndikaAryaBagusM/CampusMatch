@@ -1478,3 +1478,308 @@
 39201,S1,Teknik,4,Transportasi (3); Manajemen Transportasi (1),75%,,Transportasi,Transportasi
 39302,D4,Teknik,1,Transportasi Darat (1),100%,,Transportasi Darat,Transportasi
 39303,D4,Teknik,8,Transportasi Laut (8),100%,,Transportasi Laut,Manajemen Pelabuhan dan Pelayaran
+11101,S2,Kesehatan,4,Ilmu Kedokteran Dasar (2); Ilmu Biomedik (1); Magister Ilmu Biomedik (1),0%,,,
+11103,S2,Kesehatan,3,Ilmu Kedokteran Klinik (1); Ilmu Kedokteran Klinis (1); Magister Ilmu Kedokteran Klinis (1),0%,,,
+11104,S2,Kesehatan,3,Ilmu Kedokteran Tropis (2); Magister Ilmu Kedokteran Tropis (1),0%,,,
+11105,S2,Kesehatan,1,Imunologi (1),0%,,,
+11106,S2,Kesehatan,3,Ilmu Biomedik (3),0%,,,
+11108,S2,Kesehatan,1,Kedokteran Kerja (1),0%,,,
+11109,S2,Kesehatan,4,Pendidikan Kedokteran (2); Ilmu Pendidikan Kedokteran dan Kesehatan (1); Magister Ilmu Pendidikan Kedokteran dan Kesehatan (1),0%,,,
+11110,S2,Kesehatan,1,Vaksinologi dan Imunoterapetika (1),0%,,,
+11111,S2,Kesehatan,3,Ilmu Biomedis (2); Biomedis (1),100%,,Ilmu Biomedis,Ilmu Biomedis
+11115,S2,Kesehatan,1,Teknik Biomedik (1),0%,,,
+11122,S2,Kesehatan,1,Ilmu Kesehatan Olah Raga (1),0%,,,
+11123,S2,Kesehatan,3,Magister Teknik Biomedis (1); Teknik Biomedis (1); Teknologi Biomedis (1),67%,,,
+11124,S2,Kesehatan,1,Ilmu Forensik (1),0%,,,
+12101,S2,Kesehatan,6,Ilmu Kedokteran Gigi (3); Ilmu Kesehatan Gigi (1); Kedokteran Gigi (1),83%,ya,Kedokteran Gigi,Kedokteran Gigi
+12102,S2,Kesehatan,2,Ilmu Kedokteran Gigi Dasar (1); Magister Ilmu Kedokteran Gigi Klinis (1),0%,,,
+12103,S2,Kesehatan,1,Ilmu Kedokteran Gigi Komunitas (1),0%,,,
+13101,S2,Kesehatan,9,Ilmu Kesehatan Masyarakat (5); Kesehatan Masyarakat (3); Magister Kesehatan Masyarakat (1),100%,,Kesehatan Masyarakat,Kesehatan Masyarakat
+13102,S2,Kesehatan,1,Anti Aging dan Aesthetic Medicine (1),0%,,,
+13111,S2,Kesehatan,7,Ilmu Gizi (7),100%,,Gizi,Gizi
+13114,S2,Pertanian,1,Keamanan Pangan (1),0%,,,
+13121,S2,Kesehatan,5,Epidemiologi (5),0%,,,
+13122,S2,Kesehatan,2,Ilmu Kesehatan Reproduksi (1); Kesehatan Reproduksi (1),0%,,,
+13131,S2,Kesehatan,1,Promosi Kesehatan (1),100%,,Promosi Kesehatan,Promosi Kesehatan
+13141,S2,Kesehatan,3,Keselamatan dan Kesehatan Kerja (2); Kesehatan dan Keselamatan Kerja (1),67%,,,
+13151,S2,Kesehatan,3,Kesehatan Lingkungan (2); Kesehatan LIngkungan (1),100%,,Kesehatan Lingkungan,Kesehatan Lingkungan
+13161,S2,Kesehatan,5,Administrasi Rumah Sakit (3); Kajian Administrasi Rumah Sakit (1); Manajemen Rumah Sakit (1),60%,,,
+13163,S2,Kesehatan,3,Administrasi Dan Kebijakan Kesehatan (2); Magister Kebijakan dan Manajemen Kesehatan (1),0%,,,
+14101,S2,Kesehatan,9,Ilmu Keperawatan (4); Keperawatan (3); Magister Keperawatan (2),100%,,Keperawatan,Keperawatan
+14105,S2,Kesehatan,1,Keperawatan (1),100%,,Keperawatan,Keperawatan
+15101,S2,Kesehatan,3,Kebidanan (2); Ilmu Kebidanan (1),100%,,Kebidanan,Kebidanan
+15103,S2,Kesehatan,2,Kebidanan (1); Magister Kebidanan (1),100%,,Kebidanan,Kebidanan
+20101,S2,Teknik,13,Teknik Elektro (12); Magister Teknik Elektro (1),100%,,Teknik Elektro,Teknik Elektro
+20103,S2,MIPA,1,Magister Elektronika dan Instrumentasi (1),0%,,,
+21101,S2,Teknik,11,Teknik Mesin (10); Magister Teknik Mesin (1),100%,,Teknik Mesin,Teknik Mesin
+21102,S2,Teknik,1,Energi (1),0%,,,
+21103,S2,Teknik,1,Teknik Mesin (1),100%,,Teknik Mesin,Teknik Mesin
+21104,S2,Teknik,1,Teknik Sistem Energi (1),0%,,,
+21209,S2,Teknik,1,Teknik Transportasi Laut (1),100%,,Teknik Transportasi Laut,Teknik Transportasi Laut
+22101,S2,Teknik,15,Teknik Sipil (13); Magister Teknik Sipil (1); Teknik Sipil Dan Lingkungan (1),93%,ya,Teknik Sipil,Teknik Sipil
+22102,S2,Teknik,4,Magister Sistem dan Teknik Transportasi (1); Sistem Dan Teknik Jalan Raya (1); Teknik Pengairan (1),0%,,,
+22103,S2,Teknik,1,Pengelolaan Sumberdaya Air (1),0%,,,
+22105,S2,Teknik,1,Magister Teknik Pengelolaan Bencana Alam (1),0%,,,
+22106,S2,Ekonomi,3,Manajemen Bencana (3),100%,,Manajemen Bencana,Manajemen Bencana
+23101,S2,Teknik,11,Arsitektur (8); Arsitektur Lingkungan Binaan (1); Magister Arsitektur (1),82%,ya,Arsitektur,Arsitektur
+24101,S2,Teknik,7,Teknik Kimia (5); Kimia (1); Magister Teknik Kimia (1),86%,ya,Teknik Kimia,Teknik Kimia
+24103,S2,Teknik,1,Magister Teknik Pengendalian Pencemaran Industrial (1),0%,,,
+25002,S2,Teknik,1,Teknik Lingkungan (1),100%,,Teknik Lingkungan,Teknik Lingkungan
+25101,S2,Teknik,4,Teknik Lingkungan (4),100%,,Teknik Lingkungan,Teknik Lingkungan
+25104,S2,Teknik,1,Teknik Bioproses (1),0%,,,
+26101,S2,Teknik,13,Teknik Industri (10); Teknik Dan Manajemen Industri (2); Magister Teknik Industri (1),85%,ya,Teknik Industri,Teknik Industri
+26102,S2,Ekonomi,1,Pengembangan Industri Kecil Menengah (1),0%,,,
+27101,S2,Teknik,3,Teknik Material dan Metalurgi (1); Teknik Metalurgi (1); Teknik Metalurgi dan Material (1),33%,,,
+28101,S2,Teknik,2,Ilmu Dan Teknik Material (1); Ilmu Material (1),0%,,,
+28102,S2,Teknik,1,Manajemen Integritas Material (1),0%,,,
+29101,S2,Teknik,3,Magister Teknik Geomatika (1); Teknik Geodesi Dan Geomatika (1); Teknik Geomatika (1),0%,,,
+30101,S2,Teknik,3,Teknik Fisika (2); Magister Teknik Fisika (1),100%,,Teknik Fisika,Teknik Fisika
+30102,S2,Teknik,1,Instrumentasi Dan Kontrol (1),0%,,,
+30403,S2,Teknik,1,Teknologi Nano (1),0%,,,
+31101,S2,Teknik,2,Rekayasa Pertambangan (1); Teknik Pertambangan (1),50%,,,
+31102,S2,Teknik,1,Teknik Geotermal (1),0%,,,
+31103,S2,Teknik,1,Magister Teknik Sistem (1),0%,,,
+32101,S2,Teknik,2,Teknik Perminyakan (2),100%,,Teknik Perminyakan,Teknik Perminyakan
+33101,S2,Teknik,3,Teknik Geofisika (2); Geofisika (1),33%,,,
+34101,S2,Teknik,4,Teknik Geologi (2); Geologi (1); Magister Teknik Geologi (1),75%,ya,Teknik Geologi,Teknik Geologi
+34102,S2,Teknik,1,Sains Kebumian (1),0%,,,
+34103,S2,Teknik,1,Teknik Air Tanah (1),0%,,,
+34104,S2,MIPA,1,Ilmu Keberlanjutan (1),0%,,,
+34105,S2,Teknik,1,Teknik Geologi (1),100%,,Teknik Geologi,Teknik Geologi
+35101,S2,Teknik,2,Manajemen Perkotaan (1); Perencanaan Wilayah Dan Kota (1),50%,,,
+35102,S2,Teknik,2,Magister Rancang Kota (1); Rancang Kota (1),0%,,,
+35103,S2,Teknik,5,Perencanaan Wilayah dan Kota (4); Perencanaan Wilayah Dan Kota (1),100%,,Perencanaan Wilayah dan Kota,Perencanaan Wilayah dan Kota
+36101,S2,Teknik,2,Teknik Perkapalan (1); Teknik Sistem Perkapalan (1),50%,,,
+36102,S2,Teknik,1,Teknik Perkapalan (1),100%,,Teknik Perkapalan,Teknik Perkapalan
+37101,S2,Teknik,1,Ilmu Dan Rekayasa Nuklir (1),0%,,,
+38101,S2,Teknik,4,Teknik Kelautan (3); Teknologi Kelautan (1),75%,ya,Teknik Kelautan,Teknik Kelautan
+39101,S2,Teknik,2,Transportasi (2),100%,,Transportasi,Transportasi
+40101,S2,Teknik,1,Teknik Dirgantara (1),100%,,Teknik Dirgantara,Teknik Dirgantara
+41101,S2,Pertanian,4,Keteknikan Pertanian (2); Magister Teknik Pertanian (1); Teknik Pertanian dan Biosistem (1),50%,,,
+41103,S2,Pertanian,2,Ilmu Dan Teknologi Pangan (1); Magister Ilmu dan Teknologi Pangan (1),100%,,Teknologi Pangan,Teknologi Pangan
+41111,S2,Pertanian,6,Teknologi Industri Pertanian (2); Magister Teknologi Industri Pertanian (1); Teknik Agroindustri (1),50%,,,
+41121,S2,Pertanian,2,Ilmu Pangan (1); Magister Ilmu Pangan (1),0%,,,
+41122,S2,MIPA,1,Teknologi Pangan (1),100%,,Teknologi Pangan,Teknologi Pangan
+41123,S2,Pertanian,1,Teknologi Pangan Dan Hasil Pertanian (1),0%,,,
+41133,S2,Pertanian,1,Magister Teknologi Hasil Perkebunan (1),0%,,,
+44101,S2,MIPA,13,Matematika (11); Magister Matematika (1); Matematika Terapan (1),92%,ya,Matematika,Matematika
+45101,S2,MIPA,10,Fisika (6); Ilmu Fisika (2); Biofisika (1),90%,ya,Fisika,Fisika
+45102,S2,MIPA,3,Fisika (3),100%,,Fisika,Fisika
+45103,S2,MIPA,1,Fisika Medis (1),0%,,,
+46101,S2,MIPA,13,Biologi (10); Biosain (1); Bioteknologi (1),85%,ya,Biologi,Biologi
+46102,S2,MIPA,2,Biosains Hewan (1); Magister Bioteknologi (1),50%,,,
+46103,S2,MIPA,1,Biologi Tumbuhan (1),0%,,,
+46104,S2,MIPA,1,Mikrobiologi (1),100%,,Mikrobiologi,Mikrobiologi
+46105,S2,MIPA,1,Manajemen Sumber Daya Hayati (1),0%,,,
+47101,S2,MIPA,11,Kimia (7); Ilmu Kimia (2); Biokimia (1),91%,ya,Kimia,Kimia
+47102,S2,MIPA,4,Kimia (3); Teknik Kimia (1),75%,ya,Kimia,Kimia
+48101,S2,MIPA,8,Farmasi (4); Ilmu Farmasi (2); Ilmu Kefarmasian (1),88%,ya,Farmasi,Farmasi
+48102,S2,MIPA,3,Farmasi Klinik (2); Magister Farmasi Klinik (1),0%,,,
+48103,S2,MIPA,1,Farmasi Industri (1),0%,,,
+48104,S2,MIPA,1,Herbal (1),0%,,,
+48105,S2,Kesehatan,1,Magister Manajemen Farmasi (1),0%,,,
+49101,S2,MIPA,6,Statistika (3); Sains Komputasi (1); Statistika dan Sains Data (1),50%,,,
+49102,S2,MIPA,1,Statistika Terapan (1),0%,,,
+49104,S2,Teknik,1,Sains Data (1),100%,,Sains Data,Sains Data
+49302,S2,Teknik,2,Magister Kecerdasan Artifisial (1); Sains Data dan Kecerdasan Buatan (1),0%,,,
+50101,S2,MIPA,1,Astronomi (1),100%,,Astronomi,Astronomi
+51101,S2,MIPA,2,Geografi (1); Magister Geografi (1),100%,,Geografi,Geografi
+51111,S2,MIPA,1,Magister Penginderaan Jauh (1),0%,,,
+54101,S2,Pertanian,7,Agribisnis (5); Magister Manajemen Agribisnis (1); Sains Agribisnis (1),71%,ya,Agribisnis,Agribisnis
+54102,S2,Pertanian,5,Ekonomi Pertanian (3); Ilmu Ekonomi Pertanian (1); Magister Ekonomi Pertanian (1),0%,,,
+54103,S2,Pertanian,2,Magister Penyuluhan dan Komunikasi Pembangunan (1); Penyuluhan Pembangunan (1),0%,,,
+54104,S2,Pertanian,6,Agronomi (4); Agronomi Dan Hortikultura (1); Magister Agronomi (1),0%,,,
+54105,S2,Pertanian,6,Ilmu Tanah (4); Magister Ilmu Tanah (1); Pengelolaan Tanah Dan Air (1),83%,ya,Ilmu Tanah,Ilmu Tanah
+54106,S2,Pertanian,4,Biologi Reproduksi (1); Entomologi Pertanian (1); Ilmu Hama Dan Penyakit Tumbuhan (1),0%,,,
+54107,S2,Pertanian,5,Bioteknologi (3); Magister Pemuliaan Tanaman (1); Pemuliaan Dan Bioteknologi Tanaman (1),60%,,,
+54108,S2,Pertanian,1,Sistem-Sistem Pertanian (1),0%,,,
+54109,S2,Pertanian,1,Arsitektur Lanskap (1),100%,,Arsitektur Lanskap,Arsitektur Lanskap
+54110,S2,Pertanian,1,Klimatologi Terapan (1),0%,,,
+54111,S2,Pertanian,3,Agroteknologi (2); Magister Fitopatologi (1),67%,,,
+54112,S2,Pertanian,1,Ilmu dan Teknologi Benih (1),100%,,Teknologi Benih,Teknologi Benih
+54114,S2,Pertanian,1,Pengendalian Hama Terpadu (1),0%,,,
+54118,S2,Pertanian,1,Ekonomi Pertanian Pendidikan Jarak Jauh (1),0%,,,
+54131,S2,Pertanian,8,Ilmu Peternakan (3); Peternakan (2); Ilmu dan Teknologi Peternakan (1),75%,ya,Peternakan,Peternakan
+54133,S2,Pertanian,1,Ilmu Produksi Dan Teknologi Peternakan (1),0%,,,
+54134,S2,Pertanian,1,Ilmu Nutrisi Dan Pakan (1),0%,,,
+54136,S2,Pertanian,1,Ilmu Peternakan Pendidikan Jarak Jauh (1),0%,,,
+54141,S2,Pertanian,5,Ilmu Kelautan (4); Konservasi Laut (1),80%,ya,Ilmu Kelautan,Ilmu Kelautan
+54142,S2,Pertanian,3,Ekonomi Kelautan Tropika (1); Ekonomi Sumber Daya (1); Manajemen Sumberdaya Perairan (1),0%,,,
+54143,S2,Pertanian,2,Budidaya Perairan (1); Ilmu Akuakultur (1),50%,,,
+54144,S2,Pertanian,2,Pengelolaan Infrastruktur Air Bersih dan Sanitasi (1); Pengelolaan Sumberdaya Perairan (1),0%,,,
+54145,S2,Pertanian,2,Pengelolaan Sumberdaya Pesisir Dan Lautan (1); Pengelolaan Sumberdaya Pesisir Terpadu (1),0%,,,
+54146,S2,Pertanian,2,Ilmu Perikanan (1); Magister Ilmu Perikanan (1),100%,,Ilmu Perikanan,Ilmu Perikanan
+54147,S2,Pertanian,3,Ilmu Perikanan (1); Perikanan (1); Teknologi Hasil Perairan (1),67%,,,
+54148,S2,Pertanian,2,Bioteknologi Perikanan dan Kelautan (1); Teknologi Perikanan Laut (1),0%,,,
+54151,S2,Pertanian,4,Ilmu Kehutanan (1); Ilmu Pengelolaan Hutan (1); Kehutanan (1),75%,ya,Kehutanan,Kehutanan
+54152,S2,Pertanian,1,Ilmu Dan Teknologi Hasil Hutan (1),0%,,,
+54153,S2,Pertanian,1,Konservasi Biodiversitas Tropika (1),0%,,,
+54154,S2,Pertanian,1,Silvikultur Tropika (1),0%,,,
+54162,S2,Pertanian,3,Ilmu Penyakit dan Kesehatan Masyarakat Veteriner (1); Kesehatan Masyarakat Veteriner (1); Magister Sains Veteriner (1),0%,,,
+54163,S2,Pertanian,1,Agribisnis Veteriner (1),0%,,,
+54164,S2,Pertanian,1,Fitopatologi (1),0%,,,
+54165,S2,Pertanian,1,Entomologi (1),0%,,,
+54167,S2,Pertanian,1,Primatologi (1),0%,,,
+54169,S2,Pertanian,1,Ilmu Biomedis Hewan (1),0%,,,
+54192,S2,Pertanian,1,Arsitektur Lanskap (1),100%,,Arsitektur Lanskap,Arsitektur Lanskap
+54195,S2,Pertanian,1,Proteksi Tanaman (1),100%,,Proteksi Tanaman,Proteksi Tanaman
+55101,S2,Teknik,9,Teknik Informatika (3); Ilmu Komputer (2); Informatika (2),33%,,,
+55102,S2,Teknik,1,Teknik Informatika (1),100%,,Teknik Informatika,Teknik Informatika
+55103,S2,Teknik,1,Ilmu Forensik (1),0%,,,
+57101,S2,Teknik,3,Ilmu Komputer (1); Manajemen Sistem Informasi (1); Sistem Informasi (1),33%,,,
+59101,S2,Teknik,4,Sistem Informasi (3); Magister Teknologi informasi (1),75%,ya,Sistem Informasi,Sistem Informasi
+59205,S2,Teknik,1,Sistem dan Teknologi Informasi (1),0%,,,
+60101,S2,Ekonomi,13,Ilmu Ekonomi (8); Ekonomi (1); Ekonomi dan Studi Pembangunan (1),69%,,,
+60102,S2,Ekonomi,4,Magister Ekonomika Pembangunan (1); Manajemen Pembangunan Daerah (1); Sains Ekonomi Islam (1),0%,,,
+60107,S2,Ekonomi,1,Ilmu Ekonomi Syariah (1),100%,,Ekonomi Syariah,Ekonomi Syariah
+60130,S2,Ekonomi,1,Ekonomi dan Bisnis Islam (1),0%,,,
+60131,S2,Ekonomi,1,Ekonomi Kesehatan (1),0%,,,
+61101,S2,Ekonomi,19,Manajemen (11); Ilmu Manajemen (4); Magister Manajemen (2),89%,ya,Manajemen,Manajemen
+61102,S2,Ekonomi,7,Magister Manajemen (3); Ilmu Manajemen (1); Magister Sains Manajemen (1),57%,,,
+61103,S2,Ekonomi,1,Magister Manajemen Properti dan Penilaian (1),0%,,,
+61104,S2,Ekonomi,2,Magister Manajemen Bencana (1); Manajemen Bencana (1),100%,,Manajemen Bencana,Manajemen Bencana
+61105,S2,Ekonomi,2,Manajemen (1); Manajemen dan Bisnis (1),50%,,,
+61106,S2,Ekonomi,2,Keuangan Mikro (1); Manajemen Keuangan Mikro Terpadu (1),0%,,,
+61107,S2,Ekonomi,1,Keuangan Daerah (1),0%,,,
+61109,S2,Ekonomi,1,Manajemen Perkantoran (1),0%,,,
+61110,S2,Ekonomi,1,Sains Manajemen (1),0%,,,
+61114,S2,Ekonomi,1,Manajemen (1),100%,,Manajemen,Manajemen
+61115,S2,Ekonomi,1,Manajemen Kampus Jakarta (1),0%,,,
+61171,S2,Ekonomi,1,Magister Manajemen (Kampus Jakarta) (1),100%,,Manajemen,Manajemen
+62101,S2,Ekonomi,16,Akuntansi (13); Ilmu Akuntansi (2); Magister Sains Akuntansi (1),94%,ya,Akuntansi,Akuntansi
+62103,S2,Ekonomi,3,Magister Akuntansi (2); Magister Ilmu Akuntansi (1),100%,,Akuntansi,Akuntansi
+63101,S2,Sosial,10,Administrasi Publik (5); Ilmu Administrasi (1); Ilmu Administrasi Negara (1),60%,,,
+63102,S2,Sosial,2,Ekonomi Terapan (1); Magister Ilmu Administrasi Publik (1),50%,,,
+63104,S2,Sosial,1,Kebijakan Publik dan Governansi (1),0%,,,
+63105,S2,Ekonomi,1,Magister Perencanaan Ekonomi dan Kebijakan Pembangunan (1),0%,,,
+63111,S2,Sosial,5,Administrasi Bisnis (5),100%,,Administrasi Bisnis,Administrasi Bisnis
+63171,S2,Sosial,1,Administrasi Bisnis (Kampus Jakarta) (1),100%,,Administrasi Bisnis,Administrasi Bisnis
+64101,S2,Sosial,4,Hubungan Internasional (2); Ilmu Hubungan Internasional (1); Magister Ilmu Hubungan Internasional (1),100%,,Hubungan Internasional,Hubungan Internasional
+64114,S2,Sosial,2,Logistik (1); Logistik Agro-Maritim (1),50%,,,
+65101,S2,Sosial,3,Ilmu Pemerintahan (3),100%,,Ilmu Pemerintahan,Ilmu Pemerintahan
+66101,S2,Sosial,2,Kriminologi (2),100%,,Kriminologi,Kriminologi
+67101,S2,Sosial,8,Ilmu Politik (7); Magister Politik dan Pemerintahan (1),88%,ya,Ilmu Politik,Ilmu Politik
+68101,S2,Sosial,1,Ilmu Sosial (1),0%,,,
+68102,S2,Sosial,1,Magister Bioetika (1),0%,,,
+69101,S2,Sosial,11,Sosiologi (7); Magister Sosiologi (2); Pendidikan Sosiologi (1),82%,ya,Sosiologi,Sosiologi
+70102,S2,Sosial,1,Media dan Komunikasi (1),0%,,,
+71101,S2,Humaniora,1,Ilmu Perpustakaan (1),100%,,Ilmu Perpustakaan,Ilmu Perpustakaan
+71102,S2,MIPA,1,Teknologi Informasi Pengelolaan Sumber Daya Alam (1),0%,,,
+71103,S2,Teknik,1,Sains Informasi dan Perpustakaan (1),0%,,,
+72101,S2,Sosial,2,Ilmu Kesejahteraan Sosial (2),100%,,Kesejahteraan Sosial,Kesejahteraan Sosial
+73101,S2,Sosial,8,Psikologi (6); Magister Psikologi (1); Psikologi Sains (1),88%,ya,Psikologi,Psikologi
+73102,S2,Sosial,1,Psikologi Terapan (1),0%,,,
+73103,S2,Sosial,5,Psikologi Profesi (4); Magister Psikologi Profesi (1),0%,,,
+73104,S2,Sosial,1,Psikologi Terapan (1),0%,,,
+73105,S2,Sosial,1,Sains Psikologi (1),0%,,,
+74101,S2,Agama,11,Ilmu Hukum (8); Hukum (2); Magister Ilmu Hukum (1),100%,,Ilmu Hukum,Ilmu Hukum
+74102,S2,Sosial,10,Kenotariatan (9); Magister Kenotariatan (1),0%,,,
+74103,S2,Sosial,2,Magister Hukum Litigasi (1); Sains Hukum dan Pembangunan (1),0%,,,
+74104,S2,Sosial,1,Magister Hukum Kesehatan (1),0%,,,
+74105,S2,Sosial,1,Magister Hukum Bisnis dan Kenegaraan (1),0%,,,
+74106,S2,Sosial,1,Kenotariatan Kampus Jakarta (1),0%,,,
+74108,S2,Sosial,1,Hukum (1),100%,,Ilmu Hukum,Ilmu Hukum
+74171,S2,Sosial,2,Ilmu Hukum Kampus Jakarta (1); Magister Ilmu Hukum (Kampus Jakarta) (1),50%,,,
+75101,S2,Humaniora,2,Ilmu Filsafat (1); Magister Filsafat (1),100%,,Ilmu Filsafat,Ilmu Filsafat
+76101,S2,Agama,1,Magister Agama dan Lintas Budaya (1),0%,,,
+78201,S2,Teknik,1,Inovasi Sistem dan Teknologi (1),0%,,,
+79101,S2,Humaniora,5,Bahasa Indonesia (1); Ilmu Sastra (1); Ilmu Susastra (1),0%,,,
+79102,S2,Humaniora,11,Ilmu Linguistik (7); Linguistik (2); Linguistik Terapan (1),9%,,,
+79103,S2,Humaniora,2,Bahasa Inggris (1); Pendidikan Bahasa Arab (1),50%,,,
+79104,S2,Humaniora,1,Linguistik (1),0%,,,
+79105,S2,Humaniora,1,Susastra (1),0%,,,
+80101,S2,Humaniora,6,Ilmu Sejarah (3); Sejarah (2); Magister Sejarah (1),100%,,Ilmu Sejarah,Ilmu Sejarah
+80102,S2,Humaniora,1,Kajian Sejarah (1),0%,,,
+80103,S2,Pertanian,2,Teknik Pertanian dan Biosistem (2),0%,,,
+81101,S2,Humaniora,3,Arkeologi (2); Magister Arkeologi (1),100%,,Arkeologi,Arkeologi
+81403,S2,Agama,1,Patologi Tumbuhan (1),0%,,,
+83101,S2,Pendidikan,4,Pendidikan Teknologi dan Kejuruan (2); Pendidikan Guru Vokasi (1); Pendidikan Teknologi Dan Kejuruan (1),0%,,,
+83102,S2,Pendidikan,1,Pendidikan Teknik Elektronika dan Informatika (1),0%,,,
+83103,S2,Pendidikan,1,Pendidikan Teknik Elektro (1),100%,,Pendidikan Teknik Elektro,Pendidikan Teknik Elektro
+83104,S2,Pendidikan,1,Pendidikan Teknik Mesin (1),100%,,Pendidikan Teknik Mesin,Pendidikan Teknik Mesin
+83105,S2,Pendidikan,1,Pendidikan Ilmu Komputer (1),0%,,,
+83106,S2,Pendidikan,1,Pendidikan Kesejahteraan Keluarga (1),100%,,Pendidikan Kesejahteraan Keluarga,Pendidikan Kesejahteraan Keluarga
+83107,S2,Pendidikan,1,Pendidikan Jarak Jauh Pendidikan Teknologi dan Kejuruan (1),0%,,,
+84101,S2,Pendidikan,3,Pendidikan Sains (2); Pendidikan Ilmu Pengetahuan Alam (1),33%,,,
+84102,S2,Pendidikan,5,Pendidikan Matematika (4); Pengajaran Matematika (1),80%,ya,Pendidikan Matematika,Pendidikan Matematika
+84103,S2,Pendidikan,5,Pendidikan Fisika (4); Pengajaran Fisika (1),80%,ya,Pendidikan Fisika,Pendidikan Fisika
+84104,S2,Pendidikan,5,Pendidikan Kimia (4); Pengajaran Kimia (1),80%,ya,Pendidikan Kimia,Pendidikan Kimia
+84105,S2,Pendidikan,4,Pendidikan Biologi (4),100%,,Pendidikan Biologi,Pendidikan Biologi
+85101,S2,Pendidikan,3,Pendidikan Olahraga (2); Pendidikan Jasmani (1),0%,,,
+85102,S2,Pendidikan,1,Pendidikan Jasmani Sekolah Dasar (1),0%,,,
+85171,S2,Pendidikan,1,Pendidikan Jasmani (1),0%,,,
+85301,S2,Pendidikan,1,Pendidikan Kepelatihan Olahraga (1),100%,,Pendidikan Kepelatihan Olahraga,Pendidikan Kepelatihan Olahraga
+86101,S2,Pendidikan,3,Bimbingan Dan Konseling (3),100%,,Bimbingan Dan Konseling,Bimbingan Dan Konseling
+86102,S2,Pendidikan,2,Magister Pembangunan Sosial dan Kesejahteraan (1); Pendidikan Khusus (1),0%,,,
+86103,S2,Pendidikan,3,Teknologi Pendidikan (2); Teknologi Pembelajaran (1),67%,,,
+86104,S2,Pendidikan,3,Administrasi Pendidikan (2); Manajemen Pendidikan (1),67%,,,
+86105,S2,Pendidikan,3,Magister Manajemen Pendidikan Tinggi (1); Manajemen Pendidikan Tinggi (1); Pendidikan Masyarakat (1),0%,,,
+86106,S2,Pendidikan,2,Pendidikan Guru Sekolah Dasar (1); Pendidikan Guru Sekolah Dasar Kampus Cibiru (1),50%,,,
+86107,S2,Pendidikan,2,Pendidikan Anak Usia Dini (2),0%,,,
+86108,S2,Pendidikan,1,Pendidikan Agama Islam (1),100%,,Pendidikan Agama Islam,Pendidikan Agama Islam
+86110,S2,Pendidikan,1,Pedagogik (1),0%,,,
+86111,S2,Pendidikan,1,Psikologi Pendidikan (1),0%,,,
+86112,S2,Pendidikan,1,Pendidikan Guru (1),0%,,,
+86117,S2,Pendidikan,2,Pendidikan Luar Biasa (2),100%,,Pendidikan Luar Biasa,Pendidikan Luar Biasa
+86120,S2,Pendidikan,1,Penelitian Dan Evaluasi Pendidikan (1),0%,,,
+86121,S2,Pendidikan,1,Pengembangan Kurikulum (1),0%,,,
+86122,S2,Pendidikan,3,Pendidikan Dasar (3),0%,,,
+86124,S2,Pendidikan,1,Pendidikan Guru Sekolah Dasar Kampus Tasikmalaya (1),0%,,,
+86125,S2,Pendidikan,1,Kebijakan Pendidikan (1),0%,,,
+86127,S2,Pendidikan,1,Pendidikan Khusus (1),0%,,,
+86128,S2,Pendidikan,2,Pendidikan Non Formal (1); Pendidikan Nonformal (1),0%,,,
+86131,S2,Pendidikan,1,Ilmu Agama Islam (1),0%,,,
+86134,S2,Pendidikan,1,Pendidikan Anak Usia Dini (1),0%,,,
+86138,S2,Pendidikan,1,Manajemen Sumber Daya Manusia Pendidikan (1),0%,,,
+86142,S2,Pendidikan,1,Pendidikan Jarak Jauh Penelitian dan Evaluasi Pendidikan (1),0%,,,
+86245,S2,Pendidikan,1,Pendidikan Guru Sekolah Dasar (Kampus Kabupaten Kebumen) (1),100%,,Pendidikan Guru Sekolah Dasar,Pendidikan Guru Sekolah Dasar
+87101,S2,Pendidikan,3,Pendidikan Sejarah (3),100%,,Pendidikan Sejarah,Pendidikan Sejarah
+87102,S2,Pendidikan,4,Pendidikan Geografi (4),100%,,Pendidikan Geografi,Pendidikan Geografi
+87105,S2,Pendidikan,1,Pendidikan Kewarganegaraan (1),0%,,,
+87106,S2,Pendidikan,1,Pendidikan Umum dan Karakter (1),0%,,,
+87120,S2,Pendidikan,3,Pendidikan Ilmu Pengetahuan Sosial (3),100%,,Pendidikan Ilmu Pengetahuan Sosial,Pendidikan Ilmu Pengetahuan Sosial
+87122,S2,Ekonomi,2,Ekonomi (2),100%,,Ekonomi,Ekonomi
+87157,S2,Pendidikan,3,Pendidikan Pancasila dan Kewarganegaraan (3),100%,,Pendidikan Pancasila Dan Kewarganegaraan,Pendidikan Pancasila Dan Kewarganegaraan
+88101,S2,Pendidikan,4,Pendidikan Bahasa Indonesia (2); Pendidikan Bahasa dan Sastra Indonesia (1); Pendidikan Bahasa Dan Sastra Indonesia (1),50%,,,
+88102,S2,Pendidikan,3,Pendidikan Bahasa dan Budaya Sunda (1); Pendidikan Bahasa dan Sastra Daerah (1); Pendidikan Bahasa Jawa (1),33%,,,
+88103,S2,Pendidikan,5,Pendidikan Bahasa Inggris (4); Bahasa Inggris (1),80%,ya,Pendidikan Bahasa Inggris,Pendidikan Bahasa Inggris
+88105,S2,Pendidikan,1,Pendidikan Bahasa Jepang (1),100%,,Pendidikan Bahasa Jepang,Pendidikan Bahasa Jepang
+88109,S2,Pendidikan,1,Pendidikan Seni (1),0%,,,
+88110,S2,Pendidikan,2,Pendidikan Seni (2),0%,,,
+88112,S2,Pendidikan,1,Pendidikan Bahasa Indonesia Bagi Penutur Asing (1),0%,,,
+88114,S2,Seni,1,Pendidikan Seni (1),0%,,,
+89101,S2,Pendidikan,4,Ilmu Keolahragaan (3); Keolahragaan (1),100%,,Ilmu Keolahragaan,Ilmu Keolahragaan
+90021,S2,Seni,1,Desain Interior (1),100%,,Desain Interior,Desain Interior
+90101,S2,Seni,2,Seni Rupa (2),100%,,Seni Rupa,Seni Rupa
+90102,S2,Seni,3,Desain (3),0%,,,
+90131,S2,Seni,1,Desain Produk (1),100%,,Desain Produk,Desain Produk
+91101,S2,Seni,2,Magister Pengkajian Seni Pertunjukan dan Seni Rupa (1); Penciptaan dan Pengkajian Seni (1),0%,,,
+93103,S2,Sosial,1,Pariwisata Berkelanjutan (1),0%,,,
+94101,S2,MIPA,1,Aktuaria (1),100%,,Ilmu Aktuaria,Ilmu Aktuaria
+94102,S2,Sosial,1,Inovasi Regional (1),0%,,,
+95101,S2,Sosial,5,Ilmu Lingkungan (1); Ilmu Pengelolaan Sumberdaya Alam Dan Lingkungan (1); Pengelolaan Sumber Daya Alam dan Lingkungan (1),20%,,,
+95102,S2,Sosial,1,Magister Kependudukan (1),0%,,,
+95103,S2,Sosial,6,Ilmu Perencanaan Pembangunan Wilayah Dan Pedesaan (1); Magister Perencanaan Wilayah dan Kota (1); Pembangunan Wilayah Dan Pedesaan (1),33%,,,
+95104,S2,Sosial,4,Pariwisata (2); Magister Kajian Pariwisata (1); Perencanaan Kepariwisataan (1),50%,,,
+95105,S2,Sosial,2,Administrasi Publik (1); Ilmu Perencanaan Wilayah (1),50%,,,
+95106,S2,Sosial,3,Ilmu Penyuluhan dan Komunikasi Pembangunan (1); Komunikasi Pembangunan Pertanian dan Pedesaan (1); Pengembangan Sumber Daya Manusia (1),0%,,,
+95107,S2,Sosial,3,Kebijakan Publik (1); Kepemimpinan dan Inovasi Kebijakan (1); Magister Kepemimpinan dan Inovasi Kebijakan (1),0%,,,
+95110,S2,Ekonomi,1,Magister Ekonomi Kependudukan dan Ketenagakerjaan (1),0%,,,
+95112,S2,Sosial,1,Pengelolaan Sumber Daya Alam (1),0%,,,
+95120,S2,Sosial,2,Kajian Ilmu Kepolisian (2),0%,,,
+95121,S2,Sosial,2,Kajian Wilayah Amerika (1); Magister Pengkajian Amerika (1),0%,,,
+95122,S2,Sosial,1,Kajian Wilayah Jepang (1),0%,,,
+95123,S2,Sosial,1,Kajian Wilayah Eropa (1),0%,,,
+95124,S2,Agama,2,Kajian Wilayah Timur Tengah Islam (1); Magister Kajian Budaya Timur Tengah (1),0%,,,
+95125,S2,Sosial,2,Kajian Pengembangan Perkotaan (1); Perencanaan Wilayah dan Kota (1),50%,,,
+95126,S2,Sosial,2,Kajian Gender (1); Kajian Wanita (1),0%,,,
+95127,S2,Sosial,6,Kajian Budaya (4); Kajian Sastra dan Budaya (1); Magister Kajian Budaya dan Media (1),17%,,,
+95128,S2,Sosial,3,Kajian Ketahanan Nasional (1); Magister Ketahanan Nasional (1); Wawasan Pertahanan Nasional (1),0%,,,
+95129,S2,Sosial,9,Ilmu Lingkungan (6); Biomanajemen (1); Magister Ilmu Lingkungan (1),78%,ya,Ilmu Lingkungan,Ilmu Lingkungan
+95130,S2,Sosial,1,Jender Dan Pembangunan (1),0%,,,
+95131,S2,Sosial,1,Ekonomi Sumberdaya Dan Lingkungan (1),0%,,,
+95132,S2,Sosial,1,Ilmu Keluarga Dan Perkembangan Anak (1),0%,,,
+95136,S2,Sosial,1,Perumahan dan Pemukiman (1),0%,,,
+95165,S2,Sosial,1,Kajian Terorisme (1),0%,,,
+96101,S2,Humaniora,1,Asia Tenggara (1),0%,,,
+96102,S2,Humaniora,1,Asia Timur (1),0%,,,

@@ -14,6 +14,7 @@
     "db:smoke": "tsx scripts/smoke-schema.ts",
     "catalogue:import": "tsx scripts/import-catalogue.ts",
     "catalogue:propose-jurusan": "tsx scripts/propose-jurusan.ts",
+    "catalogue:propose-jurusan-s2": "tsx scripts/propose-jurusan-s2.ts",
     "catalogue:load-jurusan": "tsx scripts/load-jurusan.ts",
     "catalogue:check": "tsx scripts/check-catalogue.ts",
     "fakta:import": "tsx scripts/import-fakta.ts",

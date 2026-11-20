@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps<"/kampus/[slug]">):
   const { kampus } = data;
   return {
     title: kampus.nama,
-    description: `${kampus.nama} di ${kampus.kotaNama}: ${labelAkreditasi(kampus.akreditasi).toLowerCase()}, daftar Prodi D3, D4 dan S1.`,
+    description: `${kampus.nama} di ${kampus.kotaNama}: ${labelAkreditasi(kampus.akreditasi).toLowerCase()}, daftar Prodi D3, D4 dan S1${kampus.peringkatQs ? ", serta S2" : ""}.`,
     alternates: { canonical: `/kampus/${kampus.slug}` },
   };
 }
@@ -100,7 +100,7 @@ export default async function KampusPage({ params }: PageProps<"/kampus/[slug]">
             />
           </Panel>
 
-          {fakta ? <PanelBiayaMasukKampus fakta={fakta} kampusNama={kampus.nama} /> : null}
+          {fakta ? <PanelBiayaMasukKampus fakta={fakta} kampusNama={kampus.nama} adaS2={prodiPerJenjang.some((j) => j.jenjang === "S2")} /> : null}
 
           <Panel title="Prodi per Jenjang">
             <ul className="tabular divide-y divide-border">

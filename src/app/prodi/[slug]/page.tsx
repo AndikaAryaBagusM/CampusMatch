@@ -26,7 +26,17 @@ import { TombolTulis } from "@/components/ulasan/tombol-tulis";
 import { RuteUlasanPertama } from "@/components/ulasan/rute-ulasan-pertama";
 import { DaftarUlasan } from "@/components/ulasan/ulasan-card";
 import { formatAngka, formatProvinsi } from "@/lib/format";
-import { countUlasanProdi, getInfoKatalog, getProdi, getRingkasanUlasan, listUlasanTerbit } from "@/lib/katalog";
+import {
+  countUlasanProdi,
+  faktaKampusBerlaku,
+  getInfoKatalog,
+  getProdi,
+  getRingkasanUlasan,
+  JENJANG_LANJUT,
+  listLanjutS2,
+  listUlasanTerbit,
+  type LanjutS2,
+} from "@/lib/katalog";
 import { getInfoQs } from "@/lib/peringkat-qs/kueri";
 
 // Render on first visit, cache for 7 days. Changes refresh it on demand: Ulasan
@@ -52,12 +62,15 @@ const load = cache((slug: string) =>
       listUlasanTerbit(db, { prodiSlug: slug }, ULASAN_TAMPIL),
     ]);
     if (!prodi) return null;
-    const [biayaProdi, biayaKampus, estimasi] = await Promise.all([
+    // An S1 or D4 graduate can go on to S2: offer the S2 Prodi of the same Jurusan (ADR 0013).
+    const tawarkanS2 = prodi.jurusanSlug !== null && (prodi.jenjang === "S1" || prodi.jenjang === "D4");
+    const [biayaProdi, biayaKampus, estimasi, lanjutS2] = await Promise.all([
       listBiayaProdi(db, prodi.id),
-      listBiayaKampus(db, prodi.kampus.id),
+      faktaKampusBerlaku(prodi.jenjang) ? listBiayaKampus(db, prodi.kampus.id) : null,
       estimasiProdi(db, [prodi.id]),
+      tawarkanS2 ? listLanjutS2(db, prodi.jurusanSlug!, prodi.kampus.id, 5) : null,
     ]);
-    return { prodi, jumlahUlasan, info, qs, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi: estimasi.get(prodi.id)! };
+    return { prodi, jumlahUlasan, info, qs, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi: estimasi.get(prodi.id)!, lanjutS2 };
   }),
 );
 
@@ -83,11 +96,46 @@ export async function generateMetadata({ params }: PageProps<"/prodi/[slug]">): 
   };
 }
 
+// The S2 Prodi of this Prodi's Jurusan, this Kampus first, under the names
+// their Kampus publish. Every one is at a Kampus with a Peringkat QS.
+function PanelLanjutS2({ lanjut, kampusSlug, jurusan }: { lanjut: LanjutS2; kampusSlug: string; jurusan: { nama: string; slug: string } }) {
+  return (
+    <Panel title="Lanjut S2" id="lanjut-s2">
+      <p className="text-sm text-muted-foreground">
+        {formatAngka(lanjut.jumlahProdi)} Prodi S2 {jurusan.nama} di {formatAngka(lanjut.jumlahKampus)} Kampus QS World University
+        Rankings.
+      </p>
+      <ul className="mt-3 divide-y divide-border">
+        {lanjut.daftar.map((p) => (
+          <li key={p.slug} className="py-2.5">
+            <Link href={`/prodi/${p.slug}`} prefetch={false} className="flex flex-wrap items-center gap-x-2 font-semibold hover:underline">
+              <Plat warna="var(--foreground)" ukuran="sm">
+                S2
+              </Plat>
+              {p.nama}
+            </Link>
+            <p className="text-sm text-muted-foreground">
+              {p.kampus.nama}
+              {p.kampus.slug === kampusSlug ? " (Kampus ini)" : `, ${p.kotaNama}`}
+            </p>
+          </li>
+        ))}
+      </ul>
+      {lanjut.jumlahProdi > lanjut.daftar.length ? (
+        <Link href={`/jurusan/${jurusan.slug}?jenjang=S2`} className="mt-2 inline-flex text-sm font-semibold text-primary hover:underline">
+          Lihat semua Prodi S2 {jurusan.nama}
+        </Link>
+      ) : null}
+    </Panel>
+  );
+}
+
 export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) {
   const data = await load((await params).slug);
   if (!data) notFound();
-  const { prodi, jumlahUlasan, info, qs, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi } = data;
+  const { prodi, jumlahUlasan, info, qs, ringkasan, ulasan, biayaProdi, biayaKampus, estimasi, lanjutS2 } = data;
   const { kampus } = prodi;
+  const s2 = prodi.jenjang === JENJANG_LANJUT;
   const namaProdi = `${prodi.jenjang} ${prodi.nama}`;
 
   // Structured data for search results: the programme, its Kampus and, once
@@ -223,15 +271,26 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
             <TombolBandingkan slug={prodi.slug} label={`${namaProdi}, ${kampus.nama}`} />
             {prodi.jurusanSlug ? (
               <Link
-                href={`/jurusan/${prodi.jurusanSlug}`}
+                href={`/jurusan/${prodi.jurusanSlug}${s2 ? "?jenjang=S2" : ""}`}
                 className="inline-flex text-sm font-semibold text-primary hover:underline"
               >
-                Lihat Prodi {prodi.jurusanNama} di Kampus lain
+                Lihat Prodi {s2 ? "S2 " : ""}{prodi.jurusanNama} di Kampus lain
               </Link>
             ) : null}
           </div>
           <PanelBiayaProdi biayaProdi={biayaProdi} biayaKampus={biayaKampus} kampus={kampus} />
-          <PanelEstimasiPengulas estimasi={estimasi} prodiSlug={prodi.slug} />
+          {s2 ? (
+            biayaProdi ? null : (
+              <Panel title="Biaya resmi" id="biaya">
+                <p className="text-sm text-muted-foreground">
+                  Biaya dan jalur masuk S2 belum dicatat. Biaya, Jalur Masuk dan Beasiswa di halaman {kampus.nama} berlaku untuk
+                  Prodi D3, D4 dan S1.
+                </p>
+              </Panel>
+            )
+          ) : (
+            <PanelEstimasiPengulas estimasi={estimasi} prodiSlug={prodi.slug} />
+          )}
           <Panel title={jumlahUlasan > 0 ? `Ulasan (${formatAngka(jumlahUlasan)})` : "Ulasan"} id="ulasan">
             {ulasan.length === 0 ? (
               <RuteUlasanPertama dari="prodi" hrefTulis={`/prodi/${prodi.slug}/tulis`} />
@@ -251,6 +310,9 @@ export default async function ProdiPage({ params }: PageProps<"/prodi/[slug]">) 
           <TombolTulis href={`/prodi/${prodi.slug}/tulis`} className="w-full justify-center" />
           {ringkasan ? <RingkasanUlasan ringkasan={ringkasan} /> : <RatingSummaryPlaceholder />}
           <MintaUlasan namaProdi={namaProdi} kampusNama={kampus.nama} prodiSlug={prodi.slug} adaUlasan={jumlahUlasan > 0} />
+          {lanjutS2 && lanjutS2.jumlahProdi > 0 ? (
+            <PanelLanjutS2 lanjut={lanjutS2} kampusSlug={kampus.slug} jurusan={{ nama: prodi.jurusanNama!, slug: prodi.jurusanSlug! }} />
+          ) : null}
           <KatalogAsOf info={info} className="px-1" />
         </div>
       </div>

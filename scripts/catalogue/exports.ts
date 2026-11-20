@@ -9,12 +9,19 @@ import { AKREDITASI, bentukKampus, jenjang as jenjangEnum } from "../../src/db/s
 export const PRODI_FILE = "data/raw/Program Studi.xlsx";
 export const PT_FILE = "data/raw/Perguruan Tinggi Terakreditasi.xlsx";
 export const MAPPING_FILE = "data/jurusan-mapping.csv";
+// The reviewed QS matches (ADR 0011): S2 is imported only for these Kampus (ADR 0013).
+export const QS_FILE = "data/qs-kampus.csv";
 
 type Jenjang = (typeof jenjangEnum.enumValues)[number];
 type Bentuk = (typeof bentukKampus.enumValues)[number];
 const JENJANG = new Set<string>(jenjangEnum.enumValues);
 const BENTUK = new Set<string>(bentukKampus.enumValues);
 const AKRED = new Set<string>(AKREDITASI);
+
+// The NPSN of every Kampus matched to a QS entry.
+export function npsnQs(): Set<string> {
+  return new Set(readRows(QS_FILE, ["npsn"]).map((r) => clean(r.npsn)).filter(Boolean));
+}
 
 export type KotaRow = { key: string; nama: string; provinsi: string; slug: string };
 export type KampusRow = {
@@ -162,6 +169,7 @@ export function loadExports(): Catalogue {
     "nm_kel_bidang",
   ]);
   const ptRaw = readRows(PT_FILE, ["npsn", "nama_pt", "kab_kota_pt", "provinsi_pt", "akred_pt"]);
+  const qs = npsnQs();
 
   const akredByNpsn = new Map<string, string>();
   for (const r of ptRaw) {
@@ -186,6 +194,10 @@ export function loadExports(): Catalogue {
       continue;
     }
     const npsn = clean(r.npsn);
+    if (jenjangRaw === "S2" && !qs.has(npsn)) {
+      report.skip("Jenjang S2 at a Kampus without a Peringkat QS");
+      continue;
+    }
     const kodeProdi = clean(r.kode_prodi);
     const nama = clean(r.nm_prodi);
     const namaPt = clean(r.nama_pt);
@@ -236,8 +248,8 @@ export function loadExports(): Catalogue {
   for (const r of ptRaw) {
     const npsn = clean(r.npsn);
     if (npsn && !kampusByNpsn.has(npsn)) {
-      report.skip("Kampus in PT file with no S1/D3/D4 Prodi");
-      report.note("Kampus in PT file with no S1/D3/D4 Prodi (not imported)", `${npsn} ${clean(r.nama_pt)}`);
+      report.skip("Kampus in PT file with no D3/D4/S1 Prodi");
+      report.note("Kampus in PT file with no D3/D4/S1 Prodi (not imported)", `${npsn} ${clean(r.nama_pt)}`);
     }
   }
   for (const k of kampusByNpsn.values())
