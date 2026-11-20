@@ -25,7 +25,7 @@ import { formatTahunAkademik } from "@/lib/fakta/tahun-akademik";
 import { formatAngka } from "@/lib/format";
 import { namaKota } from "@/lib/kota";
 import { pilihPromosi } from "@/lib/promosi";
-import { countJurusanPerJenjang, getInfoKatalog, getJurusan, parseJenjang } from "@/lib/katalog";
+import { countJurusanPerJenjang, getInfoKatalog, getJurusan, JENJANG_LANJUT, parseJenjang } from "@/lib/katalog";
 import { filterQsAktif, getInfoQs } from "@/lib/peringkat-qs/kueri";
 import {
   countJurusanPerKota,
@@ -54,7 +54,7 @@ const load = cache((slug: string, kunci: string) =>
     const [jurusan, perJenjang, perKota, semua, tersaring, prodi, info, qs] = await Promise.all([
       getJurusan(db, slug),
       countJurusanPerJenjang(db, slug),
-      countJurusanPerKota(db, slug),
+      countJurusanPerKota(db, slug, p.jenjang === JENJANG_LANJUT),
       countProdiJurusan(db, slug, TANPA_FILTER),
       countProdiJurusan(db, slug, p),
       listProdiJurusan(db, slug, { ...p, limit: PER_HALAMAN, offset: (p.halaman - 1) * PER_HALAMAN }),
@@ -70,14 +70,19 @@ const load = cache((slug: string, kunci: string) =>
 
 async function resolve(props: PageProps<"/jurusan/[slug]">) {
   const [{ slug }, sp] = await Promise.all([props.params, props.searchParams]);
-  const uktJuta = parseUktMaksJuta(param(sp.ukt));
+  const jenjang = parseJenjang(param(sp.jenjang));
+  // S2 Prodi are all at QS Kampus and have no fees recorded yet (ADR 0013),
+  // so the QS and UKT choices do not apply to them.
+  const s2 = jenjang === JENJANG_LANJUT;
+  const uktJuta = s2 ? null : parseUktMaksJuta(param(sp.ukt));
+  const urut = parseUrut(param(sp.urut));
   const pilihan: Pilihan = {
-    jenjang: parseJenjang(param(sp.jenjang)),
-    qsOnly: filterQsAktif(sp),
+    jenjang,
+    qsOnly: !s2 && filterQsAktif(sp),
     kotaSlug: param(sp.kota) || null,
     uktJuta,
     uktMaks: uktJuta === null ? null : uktJuta * 1_000_000,
-    urut: parseUrut(param(sp.urut)),
+    urut: s2 && urut === "ukt" ? "nama" : urut,
     halaman: parseHalaman(param(sp.hal)),
   };
   const varian = ["jenjang", "qs", "unggulan", "kota", "ukt", "urut", "hal"].some((k) => param(sp[k]));
@@ -188,6 +193,9 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
   const halamanTotal = jumlahHalaman(tersaring.jumlahProdi, PER_HALAMAN);
   if (halaman > halamanTotal) redirect(href({ hal: halamanTotal > 1 ? halamanTotal : null }));
   const kotaDipilih = perKota.find((k) => k.slug === kotaSlug);
+  const s2 = jenjang === JENJANG_LANJUT;
+  const perJenjangAwal = perJenjang.filter((j) => j.jenjang !== JENJANG_LANJUT);
+  const jumlahS2 = perJenjang.find((j) => j.jenjang === JENJANG_LANJUT);
 
   return (
     <div className={kontainer}>
@@ -200,6 +208,14 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
             <span className="tabular font-plate text-2xl font-bold text-on-jade">{formatAngka(semua.jumlahProdi)}</span> Prodi di{" "}
             <span className="tabular font-plate text-2xl font-bold text-on-jade">{formatAngka(semua.jumlahKampus)}</span> Kampus
           </p>
+          {jumlahS2 ? (
+            <p className="mt-1 text-sm text-on-jade-muted">
+              Lanjut S2:{" "}
+              <Link href={href({ jenjang: JENJANG_LANJUT, qs: null, kota: null, ukt: null, urut: null })} className="font-semibold text-on-jade underline underline-offset-4">
+                {formatAngka(jumlahS2.jumlahProdi)} Prodi S2 di {formatAngka(jumlahS2.jumlahKampus)} Kampus QS
+              </Link>
+            </p>
+          ) : null}
         </div>
         <div className="max-w-3xl px-1 pt-4 text-sm leading-relaxed">
           {jurusan.deskripsi ? (
@@ -210,7 +226,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
         </div>
       </div>
 
-      {semua.jumlahProdi === 0 ? (
+      {semua.jumlahProdi === 0 && !jumlahS2 ? (
         <Panel className="mt-6">
           <EmptyState icon={BookOpen} title="Belum ada Prodi yang dipetakan ke Jurusan ini.">
             Prodi akan muncul di sini setelah tim CampusMatch memetakannya ke Jurusan {jurusan.nama}.
@@ -218,34 +234,41 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
         </Panel>
       ) : (
         <div className="mt-6 space-y-4">
-          <h2 className="text-xl font-bold">Prodi {jurusan.nama} di setiap Kampus</h2>
+          <h2 className="text-xl font-bold">{s2 ? `Prodi S2 ${jurusan.nama}` : `Prodi ${jurusan.nama} di setiap Kampus`}</h2>
           {promosi ? <KotakPromosi promosi={promosi} /> : null}
           <FilterBar>
             <FilterChips
               label="Jenjang"
               chips={[
-                { href: href({ jenjang: null }), label: "Semua", active: !jenjang },
-                ...perJenjang.map((j) => ({
+                { href: href({ jenjang: null }), label: "D3–S1", active: !jenjang },
+                ...perJenjangAwal.map((j) => ({
                   href: href({ jenjang: j.jenjang }),
                   label: `${j.jenjang} (${formatAngka(j.jumlahProdi)})`,
                   active: jenjang === j.jenjang,
                 })),
+                ...(jumlahS2
+                  ? [{ href: href({ jenjang: JENJANG_LANJUT, qs: null, ukt: null, urut: urut === "ukt" ? null : urut }), label: `S2 (${formatAngka(jumlahS2.jumlahProdi)})`, active: s2 }]
+                  : []),
               ]}
             />
-            <FilterChips
-              label="Kampus"
-              chips={[
-                { href: href({ qs: null }), label: "Semua Kampus", active: !qsOnly },
-                { href: href({ qs: "1" }), label: qs ? judulQs(qs.edisi) : "QS World University Rankings", active: qsOnly },
-              ]}
-            />
-            <FilterChips
-              label="UKT maks."
-              chips={[
-                { href: href({ ukt: null }), label: "Semua", active: uktJuta === null },
-                ...UKT_MAKS_JUTA.map((n) => ({ href: href({ ukt: n }), label: `≤ Rp ${n} jt`, active: uktJuta === n })),
-              ]}
-            />
+            {s2 ? null : (
+              <>
+                <FilterChips
+                  label="Kampus"
+                  chips={[
+                    { href: href({ qs: null }), label: "Semua Kampus", active: !qsOnly },
+                    { href: href({ qs: "1" }), label: qs ? judulQs(qs.edisi) : "QS World University Rankings", active: qsOnly },
+                  ]}
+                />
+                <FilterChips
+                  label="UKT maks."
+                  chips={[
+                    { href: href({ ukt: null }), label: "Semua", active: uktJuta === null },
+                    ...UKT_MAKS_JUTA.map((n) => ({ href: href({ ukt: n }), label: `≤ Rp ${n} jt`, active: uktJuta === n })),
+                  ]}
+                />
+              </>
+            )}
             <Form action={base} className="flex flex-wrap items-center gap-2" aria-label="Kota">
               {jenjang ? <input type="hidden" name="jenjang" value={jenjang} /> : null}
               {qsOnly ? <input type="hidden" name="qs" value="1" /> : null}
@@ -276,7 +299,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
             </Form>
             <FilterChips
               label="Urutkan"
-              chips={(["nama", "ukt", "bintang"] as const).map((u) => ({
+              chips={(s2 ? (["nama", "bintang"] as const) : (["nama", "ukt", "bintang"] as const)).map((u) => ({
                 href: href({ urut: u === "nama" ? null : u }),
                 label: LABEL_URUT[u],
                 active: urut === u,
@@ -290,6 +313,12 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
               {LABEL_URUT[urut].toLowerCase()}
               {kotaDipilih ? `, di ${namaKota(kotaDipilih)}` : null}
             </p>
+            {s2 ? (
+              <p>
+                Prodi S2 dimuat hanya untuk Kampus di {qs ? judulQs(qs.edisi) : "QS World University Rankings"}, dengan nama Prodi
+                seperti yang diterbitkan Kampus. Biaya dan jalur masuk S2 belum dicatat.
+              </p>
+            ) : null}
             {uktJuta !== null || urut === "ukt" ? (
               <p>
                 UKT di sini adalah UKT/SPP tertinggi per semester dari data biaya yang sudah diperiksa.
@@ -320,7 +349,7 @@ export default async function JurusanPage(props: PageProps<"/jurusan/[slug]">) {
             </Panel>
           ) : (
             <div>
-              <KepalaJadwal kolom={KOLOM_PRODI} judul={["Prodi", "UKT maks./semester", "Akreditasi Kampus", "Ulasan", ""]} kanan={[1]} />
+              <KepalaJadwal kolom={KOLOM_PRODI} judul={["Prodi", s2 ? "Biaya/semester" : "UKT maks./semester", "Akreditasi Kampus", "Ulasan", ""]} kanan={[1]} />
               <DaftarJadwal>
                 {prodi.map((p) => (
                   <BarisProdi key={p.slug} p={p} edisiQs={qs?.edisi} />

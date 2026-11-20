@@ -31,11 +31,14 @@ export function FormUlasan({
   prodiSlug,
   awal,
   adaInfoBiaya,
+  infoBiayaDibuka,
   edit,
 }: {
   prodiSlug: string;
   awal: IsianUlasan;
   adaInfoBiaya: boolean;
+  // False for an S2 Prodi: Info Biaya asks for undergraduate Jalur Masuk (ADR 0013).
+  infoBiayaDibuka: boolean;
   edit: boolean;
 }) {
   const [status, action, pending] = useActionState<StatusFormUlasan, FormData>(kirimUlasan, null);
@@ -164,7 +167,7 @@ export function FormUlasan({
 
       {/* Optional Info Biaya (ADR 0010): stored apart from the Ulasan, shown only combined.
           An existing one is changed in its own form, so editing the Ulasan never asks for consent again. */}
-      {adaInfoBiaya ? (
+      {!infoBiayaDibuka ? null : adaInfoBiaya ? (
         <p className={cn(kotak, "text-sm")}>
           Kamu sudah membagikan info biaya untuk Prodi ini.{" "}
           <Link href={`/prodi/${prodiSlug}/info-biaya`} className="font-semibold text-primary hover:underline">

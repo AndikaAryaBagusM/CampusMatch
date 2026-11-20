@@ -4,6 +4,7 @@ import { biaya, jurusan, kampus, kodeProdiJurusan, prodi, sumber } from "@/db/sc
 import type { ScreeningModel } from "@/lib/screening";
 import { createTestDb, type TestDb } from "../../test/db";
 import { buatKatalog, buatPengguna, dataUlasan } from "../../test/fixtures";
+import { countJurusanPerJenjang, listLanjutS2, listSlugProdiTerindeks } from "./katalog";
 import { countJurusanPerKota, countProdiJurusan, listProdiJurusan, TANPA_FILTER, type Urut } from "./prodi-jurusan";
 import { tulisUlasan } from "./ulasan/layanan";
 import { prosesScreening } from "./ulasan/proses-screening";
@@ -157,4 +158,49 @@ test("Bintang sort orders only Prodi with enough Ulasan; the rest follow by name
     ["A Kampus", 5, 2],
     ["D Kampus", null, 0],
   ]);
+});
+
+// An S2 Prodi of the Jurusan at the given Kampus, under its own S2 Kode (ADR 0013).
+async function buatS2(jurusanSlug: string, kampusId: number, nama: string) {
+  const [j] = await t.db.select({ id: jurusan.id }).from(jurusan).where(eq(jurusan.slug, jurusanSlug));
+  const kode = `8${String(++n).padStart(4, "0")}`;
+  await t.db.insert(kodeProdiJurusan).values({ kodeProdi: kode, jurusanId: j.id });
+  const [p] = await t.db.insert(prodi).values({ kampusId, kodeProdi: kode, nama, jenjang: "S2", slug: `s2-${kode}` }).returning();
+  return p;
+}
+
+test("S2: left out of the default list and counts, listed when chosen, never given a Kampus-wide UKT", async () => {
+  const j = await buatJurusan(["A Kampus", "B Kampus"]);
+  const [a, b] = j.daftar;
+  const s2 = await buatS2(j.slug, a.kampus.id, "Magister Ilmu Uji");
+  await ukt(a.kampus.id, null, 3_000_000);
+
+  expect((await daftar(j.slug)).map((p) => p.jenjang)).toEqual(["S1", "S1"]);
+  expect(await countProdiJurusan(t.db, j.slug, TANPA_FILTER)).toEqual({ jumlahProdi: 2, jumlahKampus: 2, jumlahPerSks: 0 });
+  expect((await countJurusanPerKota(t.db, j.slug)).map((k) => k.jumlahProdi)).toEqual([1, 1]);
+  expect((await countJurusanPerKota(t.db, j.slug, true)).map((k) => k.jumlahProdi)).toEqual([1]);
+  expect((await countJurusanPerJenjang(t.db, j.slug)).map((r) => [r.jenjang, r.jumlahProdi])).toEqual([["S1", 2], ["S2", 1]]);
+
+  const rows = await daftar(j.slug, "nama", { jenjang: "S2" });
+  expect(rows.map((r) => [r.slug, r.ukt, r.uktTingkat])).toEqual([[s2.slug, null, null]]);
+  // The S1 Prodi at the same Kampus still gets the Kampus-wide UKT.
+  expect((await daftar(j.slug)).find((r) => r.slug === a.prodi.slug)?.ukt).toBe(3_000_000);
+
+  // Indexed for its Kampus's fees: the S1 Prodi, never the S2 one.
+  const terindeks = await listSlugProdiTerindeks(t.db);
+  expect(terindeks).toContain(a.prodi.slug);
+  expect(terindeks).not.toContain(s2.slug);
+  expect(terindeks).not.toContain(b.prodi.slug);
+});
+
+test("Lanjut S2: the Jurusan's S2 Prodi, this Kampus first, then by Kampus name", async () => {
+  const j = await buatJurusan(["C Kampus", "A Kampus", "B Kampus"]);
+  const [c, a, b] = j.daftar;
+  const s2A = await buatS2(j.slug, a.kampus.id, "Ilmu Uji");
+  const s2C = await buatS2(j.slug, c.kampus.id, "Magister Ilmu Uji");
+
+  const dariC = await listLanjutS2(t.db, j.slug, c.kampus.id, 5);
+  expect(dariC.daftar.map((p) => p.slug)).toEqual([s2C.slug, s2A.slug]);
+  expect([dariC.jumlahProdi, dariC.jumlahKampus]).toEqual([2, 2]);
+  expect((await listLanjutS2(t.db, j.slug, b.kampus.id, 1)).daftar.map((p) => p.slug)).toEqual([s2A.slug]);
 });

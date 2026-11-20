@@ -2,7 +2,7 @@
 // request's Db so a page can run all of its queries in one Promise.all on one
 // pool. Lists filter by slug through joins, never by an id fetched first, so no
 // query waits on another.
-import { and, asc, countDistinct, count, desc, eq, isNotNull, isNull, sql, type AnyColumn } from "drizzle-orm";
+import { and, asc, countDistinct, count, desc, eq, isNotNull, isNull, ne, sql, type AnyColumn } from "drizzle-orm";
 import type { PgSelect } from "drizzle-orm/pg-core";
 import type { Db } from "@/db";
 import {
@@ -24,14 +24,25 @@ import { jurusanEfektif } from "@/lib/search";
 import type { KolomAspek } from "@/lib/ulasan/skema";
 
 export type Jenjang = (typeof jenjangEnum.enumValues)[number];
-// Display order: S1 first, the level most visitors look for.
-export const JENJANG_URUTAN: readonly Jenjang[] = ["S1", "D4", "D3"];
+// Display order: S1 first, the level most visitors look for; S2 last.
+export const JENJANG_URUTAN: readonly Jenjang[] = ["S1", "D4", "D3", "S2"];
+
+// S2 Prodi exist only at Kampus with a Peringkat QS (ADR 0013). Lists for
+// choosing a first degree (a Jurusan's default list, Beranda counts) show
+// D3, D4 and S1 only; S2 is shown when asked for.
+export const JENJANG_LANJUT: Jenjang = "S2";
+export const jenjangAwal = ne(prodi.jenjang, JENJANG_LANJUT);
+
+// Kampus-wide Biaya & Masuk facts (UKT groups, SNBP/SNBT, KIP Kuliah) are
+// collected for D3, D4 and S1; they never apply to an S2 Prodi, and an S2
+// Pengulas is not asked for Info Biaya, whose Jalur Masuk are undergraduate.
+export const faktaKampusBerlaku = (j: Jenjang) => j !== JENJANG_LANJUT;
 
 export function parseJenjang(value: unknown): Jenjang | null {
   return typeof value === "string" && (JENJANG_URUTAN as readonly string[]).includes(value) ? (value as Jenjang) : null;
 }
 
-export const jenjangOrder = sql`array_position(array['S1','D4','D3']::jenjang[], ${prodi.jenjang})`;
+export const jenjangOrder = sql`array_position(array['S1','D4','D3','S2']::jenjang[], ${prodi.jenjang})`;
 
 // Prodi LEFT JOIN its effective Jurusan; the Jurusan columns are NULL when unmapped.
 const jurusanProdi = sql`${jurusan.id} = ${jurusanEfektif}`;
@@ -209,6 +220,32 @@ export async function countUlasanProdi(db: Db, prodiSlug: string): Promise<numbe
   return row?.jumlah ?? 0;
 }
 
+// "Lanjut S2": the S2 Prodi of a Jurusan, those at the given Kampus first,
+// then by Kampus name. Every one is at a Kampus with a Peringkat QS (ADR 0013).
+export async function listLanjutS2(db: Db, jurusanSlug: string, kampusId: number, limit: number) {
+  const syarat = and(eq(jurusan.slug, jurusanSlug), eq(prodi.jenjang, JENJANG_LANJUT));
+  const [daftar, [jumlah]] = await Promise.all([
+    joinJurusan(
+      db
+        .select({
+          nama: prodi.nama,
+          slug: prodi.slug,
+          kampus: { nama: kampus.nama, slug: kampus.slug, npsn: kampus.npsn, akreditasi: kampus.akreditasi, peringkatQs: peringkatQsKampus },
+          kotaNama: kota.nama,
+        })
+        .from(prodi)
+        .$dynamic(),
+    )
+      .where(syarat)
+      .orderBy(sql`${prodi.kampusId} = ${kampusId} DESC`, asc(kampus.nama), asc(prodi.nama), asc(prodi.id))
+      .limit(limit),
+    joinJurusan(db.select({ prodi: count(), kampus: countDistinct(prodi.kampusId) }).from(prodi).$dynamic()).where(syarat),
+  ]);
+  return { daftar, jumlahProdi: jumlah?.prodi ?? 0, jumlahKampus: jumlah?.kampus ?? 0 };
+}
+
+export type LanjutS2 = Awaited<ReturnType<typeof listLanjutS2>>;
+
 // --- Beranda ---------------------------------------------------------------
 
 export type BidangSorotan = {
@@ -224,7 +261,7 @@ export async function getBidangSorotan(db: Db): Promise<BidangSorotan[]> {
     db
       .select({ bidang: prodi.bidang, jumlahProdi: count() })
       .from(prodi)
-      .where(isNotNull(prodi.bidang))
+      .where(and(isNotNull(prodi.bidang), jenjangAwal))
       .groupBy(prodi.bidang)
       .orderBy(desc(count()), asc(prodi.bidang)),
     db.execute<{ bidang: string; nama: string; slug: string; jumlah: number }>(sql`
@@ -234,7 +271,7 @@ export async function getBidangSorotan(db: Db): Promise<BidangSorotan[]> {
         FROM ${prodi}
         LEFT JOIN ${kodeProdiJurusan} ON ${prodi.kodeProdi} = ${kodeProdiJurusan.kodeProdi}
         JOIN ${jurusan} ON ${jurusanProdi}
-        WHERE ${prodi.bidang} IS NOT NULL
+        WHERE ${prodi.bidang} IS NOT NULL AND ${jenjangAwal}
         GROUP BY ${prodi.bidang}, ${jurusan.id}
       ) t WHERE urutan <= 5 ORDER BY bidang, urutan`),
   ]);
@@ -373,13 +410,13 @@ export async function countUlasanSemua(db: Db): Promise<number> {
 // --- Sitemap -----------------------------------------------------------------
 
 // Prodi pages worth a search result: those with an Ulasan, or with checked
-// fees of their own or of their Kampus. The same rule as the page's robots tag.
+// fees of their own or (not for S2) of their Kampus. The same rule as the page's robots tag.
 export async function listSlugProdiTerindeks(db: Db): Promise<string[]> {
   const { rows } = await db.execute<{ slug: string }>(sql`
     SELECT p.slug FROM ${prodi} p
     WHERE EXISTS (SELECT 1 FROM ${ulasan} WHERE ${ulasan.prodiId} = p.id AND ${ulasanTerbit})
        OR EXISTS (SELECT 1 FROM ${biaya} b WHERE b.status = 'diperiksa'
-                  AND (b.prodi_id = p.id OR (b.prodi_id IS NULL AND b.kampus_id = p.kampus_id
+                  AND (b.prodi_id = p.id OR (b.prodi_id IS NULL AND b.kampus_id = p.kampus_id AND p.jenjang <> 'S2'
                          AND NOT (b.jenis = 'pendaftaran' AND b.jalur_masuk_id IS NOT NULL))))
     ORDER BY p.slug`);
   return rows.map((r) => r.slug);

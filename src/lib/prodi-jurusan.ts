@@ -1,11 +1,12 @@
 // The Prodi list of a Jurusan (decisions.md 17f, 17k): one row per Prodi at
 // every Kampus, sorted by Kampus name unless the visitor picks UKT or Bintang,
 // with filters for Jenjang, QS, Kota and maximum UKT. It only lays the
-// facts out; nothing here ranks a Prodi as better.
+// facts out; nothing here ranks a Prodi as better. Without a Jenjang it lists
+// D3, D4 and S1; S2 Prodi (ADR 0013) are listed only when S2 is chosen.
 import { and, asc, count, countDistinct, desc, eq, inArray, isNotNull, isNull, sql, type SQL } from "drizzle-orm";
 import type { Db } from "@/db";
 import { biaya, jurusan, kampus, kota, prodi, ulasan, ulasanRevisi } from "@/db/schema";
-import { jenjangOrder, joinJurusan, ulasanTerbit, type Jenjang } from "@/lib/katalog";
+import { JENJANG_LANJUT, jenjangAwal, jenjangOrder, joinJurusan, ulasanTerbit, type Jenjang } from "@/lib/katalog";
 import { diQs, peringkatQsKampus } from "@/lib/peringkat-qs/kueri";
 
 // The Bintang sort only orders Prodi with at least this many Terbit Ulasan;
@@ -40,7 +41,8 @@ export const TANPA_FILTER: FilterProdiJurusan = { jenjang: null, qsOnly: false, 
 
 // The UKT of a Prodi for this list: the highest per-semester UKT or SPP of the
 // newest Tahun Akademik (what a student without a reduction pays), from Diperiksa
-// rows only. The Prodi's own rows first; without them, the Kampus-wide ones.
+// rows only. The Prodi's own rows first; without them, the Kampus-wide ones,
+// which never apply to an S2 Prodi (see uktKampusBerlaku).
 // Computed here only; a Kampus-wide value is never stored per Prodi (17a).
 // `perSks`: the Prodi's or the Kampus's rows of that year include a fee per
 // SKS, so the SPP is not the whole semester; such a Prodi is left out of the
@@ -87,11 +89,13 @@ function subkueri(db: Db) {
   return { uktProdi, uktKampus, bintang, ukt, perSks };
 }
 
+const uktKampusBerlaku = (uktKampus: ReturnType<typeof subkueri>["uktKampus"]) => and(eq(uktKampus.kampusId, kampus.id), jenjangAwal);
+
 // `hanyaPerSks`: count the Prodi the maximum-UKT filter left out for a fee per SKS.
 function syarat(jurusanSlug: string, f: FilterProdiJurusan, ukt: SQL<number | null>, perSks: SQL<boolean>, hanyaPerSks = false) {
   return and(
     eq(jurusan.slug, jurusanSlug),
-    f.jenjang ? eq(prodi.jenjang, f.jenjang) : undefined,
+    f.jenjang ? eq(prodi.jenjang, f.jenjang) : jenjangAwal,
     f.qsOnly ? diQs : undefined,
     f.kotaSlug ? eq(kota.slug, f.kotaSlug) : undefined,
     f.uktMaks !== null ? sql`${ukt} <= ${f.uktMaks} AND ${hanyaPerSks ? perSks : sql`NOT ${perSks}`}` : undefined,
@@ -138,7 +142,7 @@ export async function listProdiJurusan(
       .$dynamic(),
   )
     .leftJoin(uktProdi, eq(uktProdi.prodiId, prodi.id))
-    .leftJoin(uktKampus, eq(uktKampus.kampusId, kampus.id))
+    .leftJoin(uktKampus, uktKampusBerlaku(uktKampus))
     .leftJoin(bintang, eq(bintang.prodiId, prodi.id))
     .where(syarat(jurusanSlug, filter, ukt, perSks))
     .orderBy(...urutan)
@@ -155,7 +159,7 @@ export async function countProdiJurusan(db: Db, jurusanSlug: string, filter: Fil
   const hitung = (hanyaPerSks: boolean) =>
     joinJurusan(db.select({ jumlahProdi: count(), jumlahKampus: countDistinct(prodi.kampusId) }).from(prodi).$dynamic())
       .leftJoin(uktProdi, eq(uktProdi.prodiId, prodi.id))
-      .leftJoin(uktKampus, eq(uktKampus.kampusId, kampus.id))
+      .leftJoin(uktKampus, uktKampusBerlaku(uktKampus))
       .where(syarat(jurusanSlug, filter, ukt, perSks, hanyaPerSks));
   const [[row], [perSksRow]] = await Promise.all([
     hitung(false),
@@ -164,10 +168,11 @@ export async function countProdiJurusan(db: Db, jurusanSlug: string, filter: Fil
   return { jumlahProdi: row?.jumlahProdi ?? 0, jumlahKampus: row?.jumlahKampus ?? 0, jumlahPerSks: perSksRow?.jumlahProdi ?? 0 };
 }
 
-// The Kota with this Jurusan's Prodi, for the Kota filter (unfiltered counts).
-export async function countJurusanPerKota(db: Db, jurusanSlug: string) {
+// The Kota with this Jurusan's Prodi, for the Kota filter: counts of S2 Prodi
+// when S2 is chosen, otherwise of D3, D4 and S1, with no other filter.
+export async function countJurusanPerKota(db: Db, jurusanSlug: string, s2 = false) {
   return joinJurusan(db.select({ slug: kota.slug, nama: kota.nama, provinsi: kota.provinsi, jumlahProdi: count() }).from(prodi).$dynamic())
-    .where(eq(jurusan.slug, jurusanSlug))
+    .where(and(eq(jurusan.slug, jurusanSlug), s2 ? eq(prodi.jenjang, JENJANG_LANJUT) : jenjangAwal))
     .groupBy(kota.id)
     .orderBy(asc(kota.nama));
 }

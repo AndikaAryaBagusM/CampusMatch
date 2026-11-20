@@ -21,7 +21,7 @@ A generic field of study from CampusMatch's own curated list, e.g. "Teknik Infor
 _Avoid_: Bidang, major, field, department
 
 **Jenjang**:
-The level of a Prodi. CampusMatch covers only D3, D4 and S1.
+The level of a Prodi. CampusMatch covers D3, D4 and S1, and S2 only at Kampus with a Peringkat QS. Lists for choosing a first degree show D3, D4 and S1; S2 is shown when asked for, or as "Lanjut S2".
 _Avoid_: Strata, degree level
 
 **Akreditasi**:

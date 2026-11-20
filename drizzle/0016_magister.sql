@@ -1,0 +1,1 @@
+ALTER TYPE "public"."jenjang" ADD VALUE 'S2';

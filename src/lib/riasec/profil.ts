@@ -2,6 +2,7 @@ import { and, asc, count, desc, eq, sql } from "drizzle-orm";
 import type { Db } from "@/db";
 import { jurusan, kodeProdiJurusan, kodeRiasec, prodi, profilMinat } from "@/db/schema";
 import type { Tipe } from "./item";
+import { jenjangAwal } from "@/lib/katalog";
 import { jurusanEfektif } from "@/lib/search";
 import { kecocokan, type ProfilRiasec } from "./skor";
 
@@ -27,11 +28,13 @@ export async function listRekomendasiJurusan(db: Db, profil: ProfilRiasec, batas
       .innerJoin(jurusan, eq(kodeRiasec.jurusanId, jurusan.id))
       .orderBy(asc(jurusan.id), asc(kodeRiasec.urutan)),
     // Prodi per effective Jurusan (a Moderator override counts where it moved
-    // the Prodi), as on the Jurusan pages; it is shown, and orders ties.
+    // the Prodi), as on the Jurusan pages: D3, D4 and S1 only, since the Tes Minat
+    // is about a first degree. It is shown, and orders ties.
     db
       .select({ jurusanId: sql<number | null>`${jurusanEfektif}`, n: count() })
       .from(prodi)
       .leftJoin(kodeProdiJurusan, eq(prodi.kodeProdi, kodeProdiJurusan.kodeProdi))
+      .where(jenjangAwal)
       .groupBy(jurusanEfektif),
   ]);
   const jumlahPerJurusan = new Map(jumlah.map((j) => [j.jurusanId, Number(j.n)]));

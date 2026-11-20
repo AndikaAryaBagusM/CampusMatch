@@ -7,6 +7,7 @@ import { InfoBiayaDitolak, simpanInfoBiaya } from "@/lib/info-biaya/layanan";
 import { bacaIsianInfoBiaya, galatDari, skemaInfoBiaya, type GalatInfoBiaya, type IsianInfoBiaya } from "@/lib/info-biaya/skema";
 import { hashIpPemanggil } from "@/lib/ip";
 import { requirePengulas } from "@/lib/sesi";
+import { faktaKampusBerlaku } from "@/lib/katalog";
 import { getProdiTujuan } from "@/lib/ulasan/kueri";
 
 export type StatusFormInfoBiaya = {
@@ -31,6 +32,7 @@ export async function kirimInfoBiaya(prev: StatusFormInfoBiaya, formData: FormDa
   const pesan = await withDb(async (db) => {
     const prodi = await getProdiTujuan(db, prodiSlug);
     if (!prodi) return "Prodi tidak ditemukan.";
+    if (!faktaKampusBerlaku(prodi.jenjang)) return "Info biaya belum dibuka untuk Prodi S2.";
     try {
       await simpanInfoBiaya(db, { userId: pengulas.id, prodiId: prodi.id, ipHash, data: parsed.data });
       return null;

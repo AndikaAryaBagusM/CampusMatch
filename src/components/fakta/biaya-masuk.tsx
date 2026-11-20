@@ -241,7 +241,8 @@ function DaftarBeasiswa({ daftar, r }: { daftar: BeasiswaTampil[]; r: Rujukan })
   );
 }
 
-export function PanelBiayaMasukKampus({ fakta, kampusNama }: { fakta: FaktaKampus; kampusNama: string }) {
+// `adaS2`: the Kampus also has S2 Prodi, to which these facts do not apply (ADR 0013).
+export function PanelBiayaMasukKampus({ fakta, kampusNama, adaS2 = false }: { fakta: FaktaKampus; kampusNama: string; adaS2?: boolean }) {
   const { jalur, biaya, beasiswa } = fakta;
   const r = rujukan(
     [
@@ -255,6 +256,7 @@ export function PanelBiayaMasukKampus({ fakta, kampusNama }: { fakta: FaktaKampu
     <Panel title="Biaya & Masuk" id="biaya-masuk">
       <div className="space-y-6">
         <Keterangan />
+        {adaS2 ? <p className="text-sm text-muted-foreground">Berlaku untuk Prodi D3, D4 dan S1. Biaya dan jalur masuk S2 belum dicatat.</p> : null}
         {jalur ? (
           <section>
             <JudulBagian judul="Jalur Masuk" tahunAkademik={jalur.tahunAkademik} />

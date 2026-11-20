@@ -2,7 +2,8 @@ import { pgEnum } from "drizzle-orm/pg-core";
 
 // Terms follow CONTEXT.md.
 
-export const jenjang = pgEnum("jenjang", ["D3", "D4", "S1"]);
+// S2 is imported only for Kampus with a Peringkat QS (ADR 0013).
+export const jenjang = pgEnum("jenjang", ["D3", "D4", "S1", "S2"]);
 
 export const bentukKampus = pgEnum("bentuk_kampus", [
   "Universitas",

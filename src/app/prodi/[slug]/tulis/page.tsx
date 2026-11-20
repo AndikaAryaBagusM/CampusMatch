@@ -10,6 +10,7 @@ import { GarisRute } from "@/components/trayek/garis-rute";
 import { PanduanUlasan } from "@/components/ulasan/panduan-ulasan";
 import { getInfoBiayaSaya } from "@/lib/info-biaya/layanan";
 import { requirePengulas } from "@/lib/sesi";
+import { faktaKampusBerlaku } from "@/lib/katalog";
 import { getProdiTujuan, getUlasanSaya, type UlasanSaya } from "@/lib/ulasan/kueri";
 import type { IsianUlasan } from "@/lib/ulasan/skema";
 import { sedangDiperiksa } from "@/lib/ulasan/status";
@@ -110,7 +111,7 @@ export default async function TulisUlasanPage({ params }: PageProps<"/prodi/[slu
               </EmptyState>
             </Panel>
           ) : (
-            <FormUlasan prodiSlug={prodi.slug} awal={ada ? isianDari(ada) : {}} adaInfoBiaya={adaInfoBiaya} edit={!!ada} />
+            <FormUlasan prodiSlug={prodi.slug} awal={ada ? isianDari(ada) : {}} adaInfoBiaya={adaInfoBiaya} infoBiayaDibuka={faktaKampusBerlaku(prodi.jenjang)} edit={!!ada} />
           )}
         </div>
         <aside className="space-y-6">

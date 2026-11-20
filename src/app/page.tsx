@@ -186,7 +186,7 @@ export default async function Beranda() {
                   {
                     tanya: "Dari mana data Kampus dan Prodi berasal?",
                     jawab:
-                      "Dari ekspor resmi Kemenristekdikti: data Program Studi dan data Perguruan Tinggi terakreditasi. CampusMatch memuat Prodi jenjang D3, D4 dan S1. Tanggal data tertera di halaman Kampus, Jurusan dan Prodi.",
+                      "Dari ekspor resmi Kemenristekdikti: data Program Studi dan data Perguruan Tinggi terakreditasi. CampusMatch memuat Prodi jenjang D3, D4 dan S1, serta S2 di Kampus yang masuk QS World University Rankings. Tanggal data tertera di halaman Kampus, Jurusan dan Prodi.",
                   },
                   {
                     tanya: "Apa arti akreditasi yang ditampilkan?",

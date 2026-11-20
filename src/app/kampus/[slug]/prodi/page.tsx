@@ -52,7 +52,7 @@ export async function generateMetadata(props: PageProps<"/kampus/[slug]/prodi">)
   if (!data) return {};
   return {
     title: `Prodi di ${data.kampus.nama}`,
-    description: `Daftar Prodi D3, D4 dan S1 di ${data.kampus.nama}, ${data.kampus.kotaNama}.`,
+    description: `Daftar Prodi D3, D4 dan S1${data.kampus.peringkatQs ? ", serta S2" : ""} di ${data.kampus.nama}, ${data.kampus.kotaNama}.`,
     alternates: { canonical: `/kampus/${slug}/prodi` },
     robots: varian ? { index: false, follow: true } : undefined,
   };
